@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "title": "The Future of OMR in AI-Driven Education",
+        "excerpt": "How modern OMR technology is integrating with AI for 100% accurate results.",
+        "author": "EVAL Tech Team",
+        "date": "April 5, 2026",
+        "image": "/assets/images/omr_design_1775641567973.png"
+    },
+    {
+        "id": 2,
+        "title": "Securing High-Stakes Exams with CBT",
+        "excerpt": "Exploring the latest anti-cheating protocols in computerized testing.",
+        "author": "Security Dept.",
+        "date": "March 28, 2026",
+        "image": "/assets/images/omr_scanning_unit_1775641546229.png"
+    }
+]
