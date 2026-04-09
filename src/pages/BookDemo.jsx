@@ -5,7 +5,7 @@ const BookDemo = () => {
   return (
     <div style={{ paddingTop: '8rem', minHeight: '100vh', background: 'var(--muted)' }}>
       <div className="container" style={{ maxWidth: '1100px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '6rem', alignItems: 'center' }}>
           <div>
             <span className="badge">Institutional Pilot</span>
             <h1 style={{ fontSize: '3.5rem' }}>Experience <br/><span className="gradient-text">EVAL Suite</span></h1>

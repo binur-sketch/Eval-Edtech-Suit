@@ -65,7 +65,7 @@ const ServicesSection = () => {
         {/* Services Grid — 2x2 vertical cards */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
           gap: '2.5rem'
         }}>
           {services.map((s, idx) => (

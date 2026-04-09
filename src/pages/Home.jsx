@@ -3,10 +3,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import SectionHeader from '@/components/common/SectionHeader';
+import ClientLogoMarquee from '@/components/ClientLogoMarquee';
 import TrustSection from '@/components/TrustSection';
 import ValueComparison from '@/components/ValueComparison';
 import WorkflowSection from '@/components/WorkflowSection';
 import ServicesSection from '@/components/ServicesSection';
+import IndustryVerticals from '@/components/IndustryVerticals';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import CertificationsSection from '@/components/CertificationsSection';
 import FAQ from '@/components/FAQ';
 import StatsSection from '@/components/StatsSection';
 import TeamSection from '@/components/TeamSection';
@@ -55,6 +59,9 @@ const Home = () => {
     <div className="home-page">
       <Hero />
 
+      {/* Client Logo Marquee */}
+      <ClientLogoMarquee />
+
       {/* Social Proof */}
       <TrustSection />
 
@@ -70,7 +77,7 @@ const Home = () => {
             text="From paper-based evaluations to high-stakes computer-based tests, we provide the tools to scale your institutional assessments."
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '2.5rem' }}>
             {solutions.map((s, i) => (
               <div key={i} className="card" style={{ borderTop: `4px solid ${s.color}` }}>
                 <div style={{ fontSize: '3rem', marginBottom: '1.5rem', filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))' }}>{s.symbol}</div>
@@ -97,16 +104,22 @@ const Home = () => {
       {/* Services Grid */}
       <ServicesSection />
 
+      {/* Industry Verticals */}
+      <IndustryVerticals />
+
       {/* Visual Workflow */}
       <WorkflowSection />
 
       {/* Value Proposition */}
       <ValueComparison />
 
+      {/* Certifications Bar */}
+      <CertificationsSection />
+
       {/* Why EVAL Enhanced Section */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: 'clamp(3rem, 5vw, 6rem)', alignItems: 'center' }}>
             <div>
               <span className="badge">Why EVAL?</span>
               <h2 style={{ marginBottom: '2rem' }}>Precision Engineered for <span className="gradient-text">Institutional Trust</span></h2>
@@ -138,7 +151,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div style={{ background: 'var(--card)', padding: '3.5rem', borderRadius: '3rem', border: '1px solid var(--border)', boxShadow: 'var(--shadow-lg)' }}>
+            <div className="card" style={{ padding: 'clamp(2rem, 5vw, 3.5rem)', borderRadius: '3rem', border: '1px solid var(--border)', boxShadow: 'var(--shadow-lg)' }}>
                <h3 style={{ marginBottom: '2.5rem', textAlign: 'center' }}>Institutional Impact</h3>
                <div style={{ display: 'grid', gap: '2rem' }}>
                   {[
@@ -165,6 +178,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <TestimonialsSection />
+
       {/* Leadership Team */}
       <TeamSection />
 
@@ -179,8 +195,8 @@ const Home = () => {
         <div className="container">
           <div style={{ 
             background: 'var(--secondary)', 
-            borderRadius: '3rem', 
-            padding: '7rem 3rem', 
+            borderRadius: 'clamp(1.5rem, 3vw, 3rem)', 
+            padding: 'clamp(3rem, 5vw, 7rem) clamp(1.5rem, 3vw, 3rem)', 
             color: 'white', 
             textAlign: 'center', 
             position: 'relative', 

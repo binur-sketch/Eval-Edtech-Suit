@@ -16,6 +16,24 @@ const About = () => {
     { label: 'Global Offices', value: '4' }
   ];
 
+  const milestones = [
+    { year: '2015', title: 'Company Founded', desc: 'Vir Softech Pvt. Ltd. established in Noida with a mission to digitize academic evaluation.', icon: <Icons.Flag size={20} /> },
+    { year: '2016', title: 'First OMR Product', desc: 'Launched the first hardware-independent OMR processing software, eliminating the need for specialty scanners.', icon: <Icons.Lightbulb size={20} /> },
+    { year: '2018', title: '1000+ Institutions', desc: 'Reached the milestone of 1,000 institutions across 5 states in India.', icon: <Icons.Users size={20} /> },
+    { year: '2019', title: 'CBT Platform Launch', desc: 'Introduced the Computer-Based Testing platform with AI-powered proctoring capabilities.', icon: <Icons.Monitor size={20} /> },
+    { year: '2020', title: 'Pandemic Response', desc: 'Rapid deployment of remote examination solutions for 500+ institutions during COVID-19.', icon: <Icons.ShieldCheck size={20} /> },
+    { year: '2021', title: 'Global Expansion', desc: 'Opened regional offices in Dubai and Nairobi. Expanded to Middle East and African education markets.', icon: <Icons.Globe size={20} /> },
+    { year: '2023', title: 'Complete Suite', desc: 'Launched the full EVAL Suite: OMR, CBT, LMS, QTB, and OSM — a complete examination ecosystem.', icon: <Icons.Layers size={20} /> },
+    { year: '2025', title: '5000+ Institutions', desc: 'Crossed 5,000 institutional partners spanning 12 countries with 10M+ students impacted annually.', icon: <Icons.Award size={20} /> }
+  ];
+
+  const leadership = [
+    { name: 'Vikram Rathi', role: 'Founder & CEO', desc: 'Serial entrepreneur with 15+ years in EdTech. Previously led digital transformation at a leading Indian university.' },
+    { name: 'Dr. Sunita Verma', role: 'Chief Technology Officer', desc: 'PhD in Computer Science with expertise in AI/ML for education. 20+ publications in assessment technology.' },
+    { name: 'Arjun Kapoor', role: 'VP of Engineering', desc: 'Former engineering lead at a SaaS unicorn. Architect of the cloud-native EVAL platform.' },
+    { name: 'Priya Sharma', role: 'Chief Revenue Officer', desc: 'Enterprise sales leader with a track record of building 100+ institutional partnerships.' }
+  ];
+
   return (
     <div style={{ paddingTop: '5rem' }}>
       {/* Hero */}
@@ -31,7 +49,7 @@ const About = () => {
 
       {/* Stats Bar */}
       <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'white' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', padding: '4rem 0', gap: '3rem' }}>
+        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', padding: '4rem 0', gap: '3rem' }}>
            {stats.map((s, i) => (
              <div key={i} style={{ textAlign: 'center' }}>
                <div style={{ fontSize: '3rem', fontWeight: '900', color: 'var(--primary)', marginBottom: '0.5rem' }}>{s.value}</div>
@@ -41,10 +59,36 @@ const About = () => {
         </div>
       </section>
 
-      {/* Why EVAL Section */}
+      {/* Mission & Vision */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '3rem' }}>
+            <div className="card" style={{ padding: '3.5rem', borderTop: '4px solid var(--primary)' }}>
+              <div style={{ color: 'var(--primary)', marginBottom: '2rem' }}>
+                <Icons.Target size={36} />
+              </div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Our Mission</h3>
+              <p style={{ fontSize: '1.0625rem', color: 'var(--muted-foreground)', lineHeight: '1.8', marginBottom: 0 }}>
+                To democratize accurate, high-speed examination technology by removing hardware barriers and making enterprise-grade evaluation accessible to every institution—from rural schools to national boards.
+              </p>
+            </div>
+            <div className="card" style={{ padding: '3.5rem', borderTop: '4px solid var(--secondary)' }}>
+              <div style={{ color: 'var(--secondary)', marginBottom: '2rem' }}>
+                <Icons.Eye size={36} />
+              </div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Our Vision</h3>
+              <p style={{ fontSize: '1.0625rem', color: 'var(--muted-foreground)', lineHeight: '1.8', marginBottom: 0 }}>
+                To build the world's most intelligent, unbiased, and scalable examination ecosystem that serves as the global standard for academic and professional evaluation by 2030.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Innovation Section */}
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
               <span className="badge">Innovation</span>
               <h2 style={{ marginBottom: '2rem' }}>Solving the <span className="gradient-text">"Hardware Gap"</span></h2>
@@ -57,7 +101,7 @@ const About = () => {
                   { title: 'AI-Proctoring Enabled', desc: 'Secure high-stakes examinations with advanced computer vision systems.' }
                 ].map((f, i) => (
                   <div key={i} style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-                    <div style={{ background: 'var(--primary-light)', padding: '0.75rem', borderRadius: '1rem', color: 'var(--primary)' }}>
+                    <div style={{ background: 'white', padding: '0.75rem', borderRadius: '1rem', color: 'var(--primary)', border: '1px solid var(--border)' }}>
                         <Icons.CheckCircle2 size={24} />
                     </div>
                     <div style={{ fontWeight: '800', fontSize: '1.125rem' }}>{f.title}</div>
@@ -84,7 +128,74 @@ const About = () => {
         </div>
       </section>
 
-      {/* Leadership / Vision */}
+      {/* Timeline */}
+      <section className="section-padding">
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <span className="badge">Our Journey</span>
+            <h2>A Decade of <span className="gradient-text">Innovation</span></h2>
+          </div>
+
+          <div style={{ position: 'relative' }}>
+            {/* Vertical Line */}
+            <div style={{ position: 'absolute', left: '30px', top: 0, bottom: 0, width: '2px', background: 'var(--border)' }}></div>
+
+            <div style={{ display: 'grid', gap: '2rem' }}>
+              {milestones.map((m, i) => (
+                <div key={i} style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', position: 'relative' }}>
+                  {/* Timeline Node */}
+                  <div style={{
+                    width: '60px', height: '60px', borderRadius: '50%', flexShrink: 0,
+                    background: 'white', border: '3px solid var(--primary)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: 'var(--primary)', zIndex: 1
+                  }}>{m.icon}</div>
+
+                  <div className="card" style={{ padding: '2rem 2.5rem', flex: 1 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.75rem' }}>
+                      <span style={{
+                        padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.75rem',
+                        fontWeight: '800', background: 'var(--primary)', color: 'white'
+                      }}>{m.year}</span>
+                      <h4 style={{ marginBottom: 0, fontSize: '1.0625rem' }}>{m.title}</h4>
+                    </div>
+                    <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', marginBottom: 0, lineHeight: '1.6' }}>{m.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <span className="badge">Leadership</span>
+            <h2>The People Behind <span className="gradient-text">EVAL</span></h2>
+            <p style={{ maxWidth: '600px', margin: '0 auto' }}>A team of technologists, educators, and business leaders committed to transforming examination technology.</p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '2.5rem' }}>
+            {leadership.map((leader, i) => (
+              <div key={i} className="card" style={{ padding: '3rem', textAlign: 'center' }}>
+                <div style={{
+                  width: '80px', height: '80px', borderRadius: '50%',
+                  background: i % 2 === 0 ? 'var(--primary)' : 'var(--secondary)',
+                  color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontWeight: '900', fontSize: '2rem', margin: '0 auto 2rem'
+                }}>{leader.name.charAt(0)}</div>
+                <h4 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>{leader.name}</h4>
+                <div style={{ fontSize: '0.8125rem', fontWeight: '700', color: 'var(--primary)', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{leader.role}</div>
+                <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{leader.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vision Section */}
       <section className="section-padding">
         <div className="container">
            <div style={{ background: 'var(--secondary)', color: 'white', padding: '6rem 4rem', borderRadius: '4rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
@@ -92,7 +203,7 @@ const About = () => {
                 <h2 style={{ color: 'white' }}>A Vision for <span className="gradient-text">Universal Assessment</span></h2>
                 <p style={{ color: 'rgba(255,255,255,0.6)', maxWidth: '700px', margin: '2rem auto 5rem', fontSize: '1.125rem' }}>We are committed to building the world's most intelligent, unbiased, and scalable examination ecosystem for generations to come.</p>
                 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '3rem' }}>
                    {[
                      { icon: <Icons.Star />, title: 'AI Integration', text: 'Auto-marking descriptive answers with semantic understanding.' },
                      { icon: <Icons.Users />, title: 'Community Led', text: 'Sharing educational best practices and question banks globally.' },
@@ -111,12 +222,40 @@ const About = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* Awards & Recognition */}
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <span className="badge">Recognition</span>
+          <h2 style={{ marginBottom: '4rem' }}>Awards & <span className="gradient-text">Accolades</span></h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem' }}>
+            {[
+              { title: 'Best EdTech Startup 2022', org: 'NASSCOM' },
+              { title: 'Innovation Award 2023', org: 'India EdTech Forum' },
+              { title: 'Top 50 EdTech Companies', org: 'Analytics India Magazine' },
+              { title: 'Excellence in Exam Tech', org: 'AICTE' }
+            ].map((award, i) => (
+              <div key={i} style={{
+                padding: '2rem 3rem', background: 'white', borderRadius: '2rem',
+                border: '1px solid var(--border)', minWidth: '220px'
+              }}>
+                <Icons.Award size={32} style={{ color: 'var(--primary)', marginBottom: '1rem' }} />
+                <h4 style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>{award.title}</h4>
+                <div style={{ fontSize: '0.8125rem', color: 'var(--muted-foreground)', fontWeight: '600' }}>{award.org}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="section-padding">
         <div className="container" style={{ textAlign: 'center' }}>
-           <h2 style={{ fontSize: '3rem' }}>Empowering <span className="gradient-text">Vir Softech</span> Standards</h2>
+           <h2 style={{ fontSize: '3rem' }}>Join the <span className="gradient-text">EVAL</span> Ecosystem</h2>
            <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)', fontSize: '1.125rem' }}>Experience the most accurate and high-speed evaluation system in the industry.</p>
-           <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 4rem' }}>Connect with Us</Link>
+           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
+             <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Connect with Us</Link>
+             <Link to="/careers" className="btn btn-outline" style={{ padding: '1.25rem 3.5rem' }}>Join Our Team</Link>
+           </div>
         </div>
       </section>
     </div>

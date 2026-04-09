@@ -36,7 +36,7 @@ const CBTPage = () => {
       {/* Highlights */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2.5rem' }}>
             {highlights.map((h, i) => (
               <div key={i} className="card" style={{ textAlign: 'center' }}>
                 <div style={{ color: 'var(--primary)', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
@@ -53,7 +53,7 @@ const CBTPage = () => {
       {/* Detailed Features */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '6rem', alignItems: 'center' }}>
               <div>
                  <span className="badge">Why EVAL?</span>
                  <h2 style={{ marginBottom: '2rem' }}>Why institutional leaders trust <br/><span className="gradient-text">EVAL CBT Platform</span>?</h2>

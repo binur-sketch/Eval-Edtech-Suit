@@ -28,7 +28,7 @@ const LMSPage = () => {
       {/* Main Features Grid */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2.5rem' }}>
              {features.map((f, i) => (
                 <div key={i} className="card">
                    <div style={{ color: 'var(--primary)', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
@@ -45,7 +45,7 @@ const LMSPage = () => {
       {/* Mobile-First Learning Section */}
       <section className="section-padding" style={{ background: 'var(--primary-light)' }}>
          <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '6rem', alignItems: 'center' }}>
                <div style={{ padding: '4rem', background: 'var(--secondary)', borderRadius: '3rem', color: 'white', boxShadow: 'var(--shadow-lg)' }}>
                   <div style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '2.5rem', marginBottom: '2.5rem' }}>
                     <div style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', marginBottom: '0.5rem', color: 'var(--primary)', letterSpacing: '0.1em' }}>Student Experience</div>
@@ -80,7 +80,7 @@ const LMSPage = () => {
          <div className="container" style={{ textAlign: 'center' }}>
             <span className="badge">Infrastructure</span>
             <h2 style={{ fontSize: '3rem', marginBottom: '5rem' }}>Built for <span className="gradient-text">Enterprise Resilience</span></h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2.5rem' }}>
                {[
                  { t: 'Multi-Tenancy', d: 'Run separate isolated environments for different departments or sister concerns.' },
                  { t: 'Single Sign-On', d: 'Integration with Azure AD, Okta, and institutional LDAP for secure login.' },

@@ -1,0 +1,147 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const TermsOfService = () => {
+  const lastUpdated = 'April 1, 2026';
+
+  const sections = [
+    {
+      title: '1. Acceptance of Terms',
+      content: [
+        'By accessing or using any EVAL product or service ("Services"), you agree to be bound by these Terms of Service. If you are using the Services on behalf of an institution, you represent that you have the authority to bind that institution to these terms.',
+        'If you do not agree with these terms, do not use our Services.'
+      ]
+    },
+    {
+      title: '2. Description of Services',
+      content: [
+        'EVAL provides a suite of examination and evaluation technology solutions including but not limited to OMR processing, Computer-Based Testing (CBT), Learning Management System (LMS), Question Test Bank (QTB), and On-Screen Marking (OSM).',
+        'Services are provided on a subscription basis as outlined in the applicable pricing plan or enterprise agreement.'
+      ]
+    },
+    {
+      title: '3. Account Responsibilities',
+      content: [
+        'You are responsible for:',
+        '• Maintaining the confidentiality of your account credentials',
+        '• All activities that occur under your account',
+        '• Ensuring that your use complies with all applicable laws and regulations',
+        '• Providing accurate and complete registration information',
+        'You must notify us immediately of any unauthorized use of your account.'
+      ]
+    },
+    {
+      title: '4. Acceptable Use',
+      content: [
+        'You agree not to:',
+        '• Use the Services for any unlawful purpose or to solicit others to act unlawfully',
+        '• Attempt to reverse engineer, decompile, or disassemble any part of the Services',
+        '• Introduce malware, viruses, or any harmful code into the platform',
+        '• Circumvent or disable security features including anti-cheating mechanisms',
+        '• Share, resell, or redistribute access without written authorization',
+        '• Use the platform to conduct assessments that violate examination integrity standards'
+      ]
+    },
+    {
+      title: '5. Intellectual Property',
+      content: [
+        'All intellectual property rights in the Services, including software, algorithms, interfaces, documentation, and branding, remain the exclusive property of Vir Softech Pvt. Ltd.',
+        'Content you upload (question banks, answer scripts, institutional data) remains your intellectual property. By using the Services, you grant us a limited license to process this content solely for the purpose of delivering the Services.'
+      ]
+    },
+    {
+      title: '6. Service Level Agreement (SLA)',
+      content: [
+        'EVAL commits to the uptime guarantees specified in your subscription tier:',
+        '• Starter: 99.5% monthly uptime',
+        '• Professional: 99.9% monthly uptime  ',
+        '• Enterprise: 99.99% monthly uptime with dedicated SLA terms',
+        'Scheduled maintenance windows are excluded from uptime calculations and will be communicated at least 48 hours in advance.'
+      ]
+    },
+    {
+      title: '7. Payment Terms',
+      content: [
+        'Subscription fees are due as specified in your plan. Annual plans are billed upfront. Monthly plans are billed on the first of each month.',
+        'Failure to pay within 15 days of the due date may result in service suspension. Enterprise agreements may have custom payment terms as outlined in the applicable Statement of Work.'
+      ]
+    },
+    {
+      title: '8. Limitation of Liability',
+      content: [
+        'TO THE MAXIMUM EXTENT PERMITTED BY LAW, EVAL\'S TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT PAID BY YOU IN THE 12 MONTHS PRECEDING THE CLAIM.',
+        'WE SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SERVICES.',
+        'This limitation applies even if EVAL has been advised of the possibility of such damages.'
+      ]
+    },
+    {
+      title: '9. Termination',
+      content: [
+        'Either party may terminate the agreement:',
+        '• By providing 30 days written notice for convenience',
+        '• Immediately for material breach that remains uncured for 15 days after written notice',
+        '• Immediately if the other party becomes subject to insolvency proceedings',
+        'Upon termination, you may export your data within 30 days. After this period, data will be deleted per our retention policy.'
+      ]
+    },
+    {
+      title: '10. Governing Law',
+      content: [
+        'These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts in New Delhi, India.',
+        'For international clients, disputes may be resolved through binding arbitration under the rules of the Singapore International Arbitration Centre (SIAC) if mutually agreed upon.'
+      ]
+    }
+  ];
+
+  return (
+    <div style={{ paddingTop: '5rem' }}>
+      {/* Hero */}
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)', paddingBottom: '4rem' }}>
+        <div className="container" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+          <span className="badge">Legal</span>
+          <h1>Terms of <span className="gradient-text">Service</span></h1>
+          <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+            Please read these terms carefully before using the EVAL Suite of products and services.
+          </p>
+          <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', fontWeight: '700' }}>Effective date: {lastUpdated}</p>
+        </div>
+      </section>
+
+      {/* Content */}
+      <section style={{ background: 'white', padding: '4rem 0 8rem' }}>
+        <div className="container" style={{ maxWidth: '800px' }}>
+          {sections.map((section, i) => (
+            <div key={i} style={{ marginBottom: '3.5rem' }}>
+              <h3 style={{ fontSize: '1.375rem', marginBottom: '1.5rem', color: 'var(--foreground)' }}>{section.title}</h3>
+              {section.content.map((paragraph, j) => (
+                <p key={j} style={{ 
+                  fontSize: '1rem', 
+                  lineHeight: '1.8', 
+                  color: 'var(--muted-foreground)', 
+                  marginBottom: '0.75rem',
+                  paddingLeft: paragraph.startsWith('•') ? '1rem' : '0'
+                }}>{paragraph}</p>
+              ))}
+            </div>
+          ))}
+
+          <div className="card" style={{ 
+            padding: '3rem', 
+            background: 'var(--muted)', 
+            borderRadius: '2rem', 
+            marginTop: '4rem',
+            textAlign: 'center' 
+          }}>
+            <h4 style={{ marginBottom: '1rem' }}>Need a Custom Enterprise Agreement?</h4>
+            <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', marginBottom: '2rem' }}>
+              For national boards and large institutions, we offer tailored legal agreements with custom SLA, liability, and compliance terms.
+            </p>
+            <Link to="/contact" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>Contact Legal Team</Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default TermsOfService;

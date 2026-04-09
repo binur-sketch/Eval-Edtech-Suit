@@ -11,32 +11,28 @@ const TeamSection = () => {
   return (
     <section className="section-padding" style={{ background: 'white' }}>
       <div className="container">
-        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 6rem' }} class="reveal">
+        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem' }} className="reveal">
           <span className="badge">Our People</span>
           <h2>Driven by <span className="gradient-text">Academic Experts</span></h2>
           <p>The EVAL suite is built by a multidisciplinary team of educators, data scientists, and security engineers.</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem' }}>
           {team.map((member, idx) => (
-            <div key={idx} className="card reveal" style={{ textAlign: 'center', padding: '3.5rem 2rem' }}>
+            <div key={idx} className="card reveal" style={{ textAlign: 'center' }}>
               <img 
                 src={member.img} 
                 alt={member.name} 
                 style={{ 
-                  width: '120px', 
-                  height: '120px', 
-                  borderRadius: '50%', 
-                  marginBottom: '1.5rem',
-                  border: '4px solid var(--primary-light)',
-                  objectFit: 'cover'
+                  width: '100px', height: '100px', borderRadius: '50%', 
+                  marginBottom: '1.25rem', border: '4px solid var(--primary-light)', objectFit: 'cover'
                 }} 
               />
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{member.name}</h3>
-              <div style={{ color: 'var(--primary)', fontWeight: '800', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1.25rem' }}>{member.role}</div>
+              <h3 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>{member.name}</h3>
+              <div style={{ color: 'var(--primary)', fontWeight: '800', fontSize: '0.6875rem', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>{member.role}</div>
               <p style={{ fontSize: '0.875rem', marginBottom: 0, color: 'var(--muted-foreground)' }}>{member.bio}</p>
               
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', marginTop: '1.5rem', opacity: 0.5 }}>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', marginTop: '1.25rem', opacity: 0.5 }}>
                 <a href="#"><Icons.Linkedin size={16} /></a>
                 <a href="#"><Icons.Twitter size={16} /></a>
               </div>

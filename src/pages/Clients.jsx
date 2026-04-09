@@ -31,7 +31,7 @@ const Clients = () => {
 
       {/* Main Stats bar */}
       <section style={{ borderTop: '1px solid var(--border)', background: 'white' }}>
-        <div className="container" style={{ padding: '4.5rem 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', textAlign: 'center', gap: '3rem' }}>
+        <div className="container" style={{ padding: '4.5rem 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', textAlign: 'center', gap: '3rem' }}>
            {[
              { label: 'Total Institutions', value: '5000+' },
              { label: 'Answer Sheets Evaluated', value: '50M+' },
@@ -67,7 +67,7 @@ const Clients = () => {
             <h2>Detailed <span className="gradient-text">Impact Analysis</span></h2>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '3rem' }}>
             {caseStudies.map((cs, i) => (
               <div key={i} className="card" style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '3.5rem' }}>
                 <div style={{ color: 'var(--primary)', marginBottom: '2.5rem' }}>
@@ -93,7 +93,7 @@ const Clients = () => {
                 <h2 style={{ color: 'white' }}>A Global <span className="gradient-text">Trust Network</span></h2>
                 <p style={{ margin: '2rem 0 4rem', color: 'rgba(255,255,255,0.6)', fontSize: '1.125rem', maxWidth: '640px', marginInline: 'auto' }}>EVAL solutions are currently powering national evaluations in India, Middle East, and Sub-Saharan Africa.</p>
                 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2.5rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '2.5rem' }}>
                    {[
                      { icon: <Icons.MapPin />, title: 'New Delhi', text: 'Regional HQ & National Board Support' },
                      { icon: <Icons.MapPin />, title: 'Dubai', text: 'Middle East Educational Hub' },
@@ -115,7 +115,7 @@ const Clients = () => {
       {/* Testimonials */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '3rem' }}>
              {[
                { q: 'EVAL transformed our internal test bank from an Excel sheet to an AI-powered pedagogical engine.', a: 'Senior Faculty', b: 'IIT Delhi' },
                { q: 'The security proctoring system is robust—we saw a 95% decrease in suspicious activity flags.', a: 'Assessment Head', b: 'FIITJEE' },

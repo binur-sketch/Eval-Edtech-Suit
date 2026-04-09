@@ -7,11 +7,11 @@ const NewsletterSection = () => {
       <div className="container">
         <div style={{ 
           background: 'white', 
-          borderRadius: '3rem', 
-          padding: '5rem',
+          borderRadius: 'clamp(1.5rem, 3vw, 3rem)', 
+          padding: 'clamp(2rem, 5vw, 5rem)',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '4rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+          gap: 'clamp(2rem, 4vw, 4rem)',
           alignItems: 'center',
           boxShadow: 'var(--shadow-lg)',
           border: '1px solid var(--border)'
@@ -21,20 +21,22 @@ const NewsletterSection = () => {
             <h2>Get Expert Assessment <span className="gradient-text">Insights</span></h2>
             <p style={{ marginBottom: 0 }}>Join 2000+ educational leaders receiving our monthly briefing on evaluation trends and security protocols.</p>
           </div>
-          <div style={{ display: 'flex', gap: '1rem' }}>
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
             <input 
               type="email" 
               placeholder="Your professional email" 
               style={{ 
-                flex: 1, 
-                padding: '1.25rem 2rem', 
+                flex: '1 1 200px',
+                minWidth: 0,
+                padding: '1rem 1.5rem', 
                 borderRadius: '1rem', 
                 border: '1px solid var(--border)',
                 background: 'var(--muted)',
-                fontSize: '1rem'
+                fontSize: '0.9375rem',
+                width: '100%'
               }} 
             />
-            <button className="btn btn-primary" style={{ padding: '0 2.5rem' }}>Subscribe</button>
+            <button className="btn btn-primary" style={{ flexShrink: 0 }}>Subscribe</button>
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ const Contact = () => {
             <p style={{ fontSize: '1.125rem' }}>Discuss your institutional needs with our assessment experts and discover how EVAL can transform your evaluation process.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem' }}>
             {/* Contact Info */}
             <div>
               <div style={{ display: 'grid', gap: '2rem' }}>

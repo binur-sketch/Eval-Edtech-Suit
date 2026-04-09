@@ -44,7 +44,7 @@ const OSMPage = () => {
       {/* Feature Grid */}
       <section className="section-padding">
         <div className="container">
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2.5rem' }}>
              {features.map((f, i) => (
                <div key={i} className="card" style={{ textAlign: 'center' }}>
                  <div style={{ color: 'var(--primary)', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
@@ -61,7 +61,7 @@ const OSMPage = () => {
       {/* Workflow Visualization Mockup */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
          <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '6rem', alignItems: 'center' }}>
                <div style={{ padding: '4rem', background: 'white', borderRadius: '3rem', boxShadow: 'var(--shadow-lg)' }}>
                   <div style={{ fontWeight: '900', fontSize: '1.25rem', marginBottom: '3rem', display: 'flex', gap: '15px', alignItems: 'center' }}>
                      <div style={{ padding: '10px', background: 'var(--primary-light)', borderRadius: '10px', color: 'var(--primary)' }}><Icons.FileSearch size={24} /></div>

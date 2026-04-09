@@ -24,7 +24,7 @@ const OMRPage = () => {
       {/* Hero Section */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
               <span className="badge">Elite OMR Engine</span>
               <h1 style={{ fontSize: '3.5rem' }}>Precision Engineered <br/><span className="gradient-text">OMR Suite</span></h1>
@@ -71,7 +71,7 @@ const OMRPage = () => {
              <h2>The <span className="gradient-text">Zero-Hardware</span> Cycle</h2>
              <p>A simple, powerful workflow designed for volume and accuracy.</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '2.5rem' }}>
              {steps.map((s, i) => (
                <div key={i} className="card" style={{ textAlign: 'center' }}>
                   <div style={{ color: 'var(--primary)', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
@@ -88,7 +88,7 @@ const OMRPage = () => {
       {/* Advanced Features Grid */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem' }}>
               {features.map((f, i) => (
                 <div key={i} style={{ display: 'flex', gap: '1.5rem' }}>
                    <div style={{ color: 'var(--primary)', marginTop: '4px' }}>

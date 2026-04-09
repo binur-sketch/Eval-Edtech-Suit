@@ -34,7 +34,7 @@ const QTBPage = () => {
              <p>Move from a draft idea to an approved exam-ready question with institutional oversight.</p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '2.5rem' }}>
             {workflow.map((w, i) => (
               <div key={i} className="card" style={{ textAlign: 'center' }}>
                 <div style={{ color: 'var(--primary)', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
@@ -51,7 +51,7 @@ const QTBPage = () => {
       {/* Metadata & Search */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
          <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '6rem', alignItems: 'center' }}>
                <div>
                   <span className="badge">Pedagogy</span>
                   <h2 style={{ marginBottom: '2rem' }}>Power of <span className="gradient-text">Deep Metadata</span></h2>
@@ -95,7 +95,7 @@ const QTBPage = () => {
             <span className="badge">Security</span>
             <h2 style={{ fontSize: '3rem', marginBottom: '5rem' }}>Protecting Your <span className="gradient-text">IP Assets</span></h2>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2.5rem' }}>
                {[
                  { icon: <Icons.Lock size={32} />, title: 'Role-Based Access', text: 'Granular permissions for authors, reviewers, and publishers.' },
                  { icon: <Icons.Share2 size={32} />, title: 'Encryption at Rest', text: 'Your question content is AES-256 encrypted, even in our databases.' },

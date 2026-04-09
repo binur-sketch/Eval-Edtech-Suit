@@ -10,6 +10,11 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Clients = lazy(() => import('./pages/Clients'));
 const Resources = lazy(() => import('./pages/Resources'));
 const BookDemo = lazy(() => import('./pages/BookDemo'));
+const Pricing = lazy(() => import('./pages/Pricing'));
+const Careers = lazy(() => import('./pages/Careers'));
+const Partners = lazy(() => import('./pages/Partners'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const OMRPage = lazy(() => import('./pages/solutions/OMRPage'));
 const CBTPage = lazy(() => import('./pages/solutions/CBTPage'));
 const LMSPage = lazy(() => import('./pages/solutions/LMSPage'));
@@ -37,6 +42,11 @@ function App() {
           <Route path="/clients" element={<Clients />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/book-demo" element={<BookDemo />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           
           {/* Solution-Specific Routes */}
           <Route path="/omr" element={<OMRPage />} />

@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "The Future of OMR in AI-Driven Education",
-        "excerpt": "How modern OMR technology is integrating with AI for 100% accurate results.",
+        "excerpt": "How modern OMR technology is integrating with AI for 100% accurate results across diverse examination formats.",
         "author": "EVAL Tech Team",
         "date": "April 5, 2026",
         "image": "/assets/images/omr_design_1775641567973.png"
@@ -10,9 +10,33 @@
     {
         "id": 2,
         "title": "Securing High-Stakes Exams with CBT",
-        "excerpt": "Exploring the latest anti-cheating protocols in computerized testing.",
+        "excerpt": "Exploring the latest anti-cheating protocols and AI proctoring capabilities in computerized testing environments.",
         "author": "Security Dept.",
         "date": "March 28, 2026",
         "image": "/assets/images/omr_scanning_unit_1775641546229.png"
+    },
+    {
+        "id": 3,
+        "title": "Digital Transformation in Indian Universities",
+        "excerpt": "A comprehensive look at how tier-1 and tier-2 universities are adopting hybrid examination models for scalable evaluation.",
+        "author": "EVAL Research",
+        "date": "March 15, 2026",
+        "image": "/assets/images/omr_design_1775641567973.png"
+    },
+    {
+        "id": 4,
+        "title": "On-Screen Marking: Reducing Evaluator Fatigue by 60%",
+        "excerpt": "Research findings on how OSM software improves marking consistency and reduces evaluator burnout in large-scale assessments.",
+        "author": "Dr. Sunita Verma",
+        "date": "February 22, 2026",
+        "image": "/assets/images/omr_scanning_unit_1775641546229.png"
+    },
+    {
+        "id": 5,
+        "title": "Building Tamper-Proof Question Banks with Blockchain",
+        "excerpt": "How cryptographic verification is revolutionizing question paper security and eliminating pre-exam leaks.",
+        "author": "EVAL Engineering",
+        "date": "February 10, 2026",
+        "image": "/assets/images/omr_design_1775641567973.png"
     }
 ]
