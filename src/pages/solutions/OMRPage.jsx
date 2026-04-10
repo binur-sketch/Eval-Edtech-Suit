@@ -10,13 +10,30 @@ const OMRPage = () => {
     { title: 'Process', icon: <Icons.Zap size={32} />, desc: 'Instant processing with OCR/ICR integration to match handwritten data with OMR bubbles.' }
   ];
 
-  const features = [
-     { title: 'Damaged Sheet Logic', text: 'Intelligent algorithms that accurately read data from folded, skewed, or partially torn institutional sheets.' },
-     { title: 'Image Marking Overlays', text: 'Generates scanned images with right/wrong answer overlays—perfect digital proof for student review.' },
-     { title: 'OCR/ICR Hybrid Recognition', text: 'Seamlessly reads handwritten names, roll numbers, and barcodes alongside OMR bubble data.' },
-     { title: 'Built-in Designer', text: 'Drag-and-drop OMR template designer with multi-lingual support and custom branding options.' },
-     { title: 'Rank-wise Analytics', text: 'Comprehensive merit lists, category-wise ranks, and roll-wise reporting for high-stakes exams.' },
-     { title: 'Mismatch Detection', text: 'Real-time zoomable validation window to cross-verify handwritten data with OMR selections.' }
+  const whyChooseFeatures = [
+    { title: 'No Special Hardware Required', text: 'Works with regular A4 printers and scanners, no need for OMR machines.', icon: <Icons.Printer size={28} /> },
+    { title: 'High Processing Speed', text: 'Processes 300-500 sheets per minute on a standard PC.', icon: <Icons.Zap size={28} /> },
+    { title: 'Near-Perfect Accuracy', text: 'Offers almost 100% accuracy in reading marked responses.', icon: <Icons.Target size={28} /> },
+    { title: 'User-Friendly Interface', text: 'Easy-to-use design suitable for beginners.', icon: <Icons.Smile size={28} /> },
+    { title: 'Flexible Sheet Design', text: 'Create custom OMR sheets or import from Excel.', icon: <Icons.Layout size={28} /> },
+    { title: 'Supports Multiple Formats', text: 'Compatible with Excel, CSV, and PDF files.', icon: <Icons.FileText size={28} /> },
+    { title: 'Built-in Scoring & Analytics', text: 'Auto-generates scores and detailed performance analysis.', icon: <Icons.BarChart size={28} /> },
+    { title: 'Multi-Language Support', text: 'Operates in various Indian and international languages.', icon: <Icons.Globe size={28} /> },
+    { title: 'Tick & Cross Mark Detection', text: 'Accurately reads tick and cross marks.', icon: <Icons.CheckSquare size={28} /> },
+    { title: 'Barcode & QR Code Support', text: 'Scans barcodes and QR codes for better tracking.', icon: <Icons.Scan size={28} /> }
+  ];
+
+  const benefits = [
+    { title: 'Works with Photocopied Sheets', text: 'Efficiently processes printed or photocopied sheets.', icon: <Icons.Copy size={24} /> },
+    { title: 'Data Security & Backup', text: 'Provides data protection with backup and restore options.', icon: <Icons.Shield size={24} /> },
+    { title: 'Cloud & Offline Options', text: 'Available in both cloud and offline versions.', icon: <Icons.Cloud size={24} /> },
+    { title: 'Customizable Reports', text: 'Allows generation of institution-specific result formats.', icon: <Icons.FileSpreadsheet size={24} /> },
+    { title: 'Auto Error Detection', text: 'Identifies and flags incomplete or misfilled sheets.', icon: <Icons.AlertTriangle size={24} /> },
+    { title: 'Cost-Effective Solution', text: 'Reduces costs by eliminating specialized hardware needs.', icon: <Icons.CreditCard size={24} /> },
+    { title: 'Multiple Exam Types Supported', text: 'Suitable for exams, surveys, polls, and feedback forms.', icon: <Icons.CheckSquare size={24} /> },
+    { title: 'ICR/OCR Integration', text: 'Reads printed and handwritten text through OCR/ICR.', icon: <Icons.Type size={24} /> },
+    { title: 'Free Demo & Trial Available', text: 'Offers trial version for hands-on evaluation.', icon: <Icons.PlayCircle size={24} /> },
+    { title: 'Dedicated Customer Support', text: 'Provides reliable assistance for setup and usage.', icon: <Icons.Headphones size={24} /> }
   ];
 
   return (
@@ -27,9 +44,9 @@ const OMRPage = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
               <span className="badge">Elite OMR Engine</span>
-              <h1 style={{ fontSize: '3.5rem' }}>Precision Engineered <br/><span className="gradient-text">OMR Suite</span></h1>
+              <h1 style={{ fontSize: '3.5rem' }}>EVAL OMR Software <br/><span className="gradient-text">Pricing, Features & Reviews</span></h1>
               <p style={{ fontSize: '1.125rem', lineHeight: '1.7' }}>Process up to 3000 sheets per hour with 100% accuracy. Zero hardware overhead, full institutional integrity.</p>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem' }}>
+              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
                 <Link to="/book-demo" className="btn btn-primary">Start Free Trial</Link>
                 <Link to="/contact" className="btn btn-outline">Institutional Pricing</Link>
               </div>
@@ -63,17 +80,28 @@ const OMRPage = () => {
         </div>
       </section>
 
-      {/* The 4-Step Process */}
+      {/* What is eVAL OMR */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <span className="badge">Workflow</span>
-             <h2>The <span className="gradient-text">Zero-Hardware</span> Cycle</h2>
-             <p>A simple, powerful workflow designed for volume and accuracy.</p>
+          <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }} className="reveal">
+             <span className="badge">Software Overview</span>
+             <h2 style={{ marginBottom: '1.5rem' }}>What is <span className="gradient-text">EVAL OMR?</span></h2>
+             <p style={{ fontSize: '1.125rem', color: 'var(--muted-foreground)', lineHeight: '1.8' }}>
+               eVAL OMR is an OMR software by Vir Softech that accurately reads and evaluates OMR sheets used in exams, surveys, and feedback forms. It supports regular A4 sheets and works with standard scanners—no special hardware is needed. Users can create or import OMR sheet designs, print them using normal printers, and customize fields like names, roll numbers, and barcodes. The software offers fast processing (300-500 sheets/min), auto-scoring, and detailed result analysis with export options in Excel, PDF, and CSV formats.
+             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '2.5rem' }}>
+        </div>
+      </section>
+
+      {/* The 4-Step Process */}
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+             <h2>The <span className="gradient-text">Zero-Hardware</span> Cycle</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '2.5rem' }}>
              {steps.map((s, i) => (
-               <div key={i} className="card" style={{ textAlign: 'center' }}>
+               <div key={i} className="card" style={{ textAlign: 'center', background: 'white' }}>
                   <div style={{ color: 'var(--primary)', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
                     <div style={{ padding: '1.25rem', background: 'var(--primary-light)', borderRadius: '1.5rem' }}>{s.icon}</div>
                   </div>
@@ -85,19 +113,40 @@ const OMRPage = () => {
         </div>
       </section>
 
-      {/* Advanced Features Grid */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      {/* Why Choose EVAL OMR Software? */}
+      <section className="section-padding">
         <div className="container">
+           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+             <span className="badge">Features</span>
+             <h2>Why Choose <span className="gradient-text">EVAL OMR Software?</span></h2>
+           </div>
            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem' }}>
-              {features.map((f, i) => (
-                <div key={i} style={{ display: 'flex', gap: '1.5rem' }}>
-                   <div style={{ color: 'var(--primary)', marginTop: '4px' }}>
-                      <Icons.CheckCircle2 size={28} />
-                   </div>
+              {whyChooseFeatures.map((f, i) => (
+                <div key={i} style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }} className="reveal hover-lift">
+                   <div style={{ color: 'var(--primary)' }}>{f.icon}</div>
                    <div>
                       <h4 style={{ marginBottom: '0.75rem', fontSize: '1.125rem' }}>{f.title}</h4>
                       <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{f.text}</p>
                    </div>
+                </div>
+              ))}
+           </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="section-padding" style={{ background: '#1F1F1F', color: 'white' }}>
+        <div className="container">
+           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+             <span className="badge" style={{ background: 'rgba(255,255,255,0.1)', color: 'white' }}>Advantages</span>
+             <h2 style={{ color: 'white' }}>Benefits of <span style={{ color: 'var(--primary)' }}>EVAL OMR</span> Software</h2>
+           </div>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '2.5rem' }}>
+              {benefits.map((b, i) => (
+                <div key={i} style={{ background: 'rgba(255,255,255,0.05)', padding: '2rem', borderRadius: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
+                   <div style={{ color: 'var(--primary)', marginBottom: '1.25rem' }}>{b.icon}</div>
+                   <h4 style={{ color: 'white', marginBottom: '0.75rem', fontSize: '1.125rem' }}>{b.title}</h4>
+                   <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', lineHeight: '1.6', marginBottom: 0 }}>{b.text}</p>
                 </div>
               ))}
            </div>
@@ -125,4 +174,3 @@ const OMRPage = () => {
 };
 
 export default OMRPage;
-;

@@ -15,6 +15,7 @@ import FAQ from '@/components/FAQ';
 import StatsSection from '@/components/StatsSection';
 import TeamSection from '@/components/TeamSection';
 import NewsletterSection from '@/components/NewsletterSection';
+import ProductsSection from '@/components/ProductsSection';
 
 const Home = () => {
   const solutions = [
@@ -103,6 +104,9 @@ const Home = () => {
 
       {/* Services Grid */}
       <ServicesSection />
+      
+      {/* Products Section */}
+      <ProductsSection />
 
       {/* Industry Verticals */}
       <IndustryVerticals />

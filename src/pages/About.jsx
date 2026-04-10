@@ -28,10 +28,38 @@ const About = () => {
   ];
 
   const leadership = [
-    { name: 'Vikram Rathi', role: 'Founder & CEO', desc: 'Serial entrepreneur with 15+ years in EdTech. Previously led digital transformation at a leading Indian university.' },
-    { name: 'Dr. Sunita Verma', role: 'Chief Technology Officer', desc: 'PhD in Computer Science with expertise in AI/ML for education. 20+ publications in assessment technology.' },
-    { name: 'Arjun Kapoor', role: 'VP of Engineering', desc: 'Former engineering lead at a SaaS unicorn. Architect of the cloud-native EVAL platform.' },
-    { name: 'Priya Sharma', role: 'Chief Revenue Officer', desc: 'Enterprise sales leader with a track record of building 100+ institutional partnerships.' }
+    { 
+      name: 'Deepak Garg', 
+      role: 'Co-Founder & Managing Director', 
+      desc: 'Oversees sales, business development, operations, and financial divisions.', 
+      img: 'https://ui-avatars.com/api/?name=Deepak+Garg&background=E53935&color=fff&size=200',
+      linkedin: 'https://www.linkedin.com/in/deepak-garg-570a2b2/',
+      mail: 'deepak.garg@virsoftech.com'
+    },
+    { 
+      name: 'Abhijeet Jain', 
+      role: 'Co-Founder & Chief Technology Officer', 
+      desc: 'Key architect driving digital transformation and technical strategy.', 
+      img: 'https://ui-avatars.com/api/?name=Abhijeet+Jain&background=1F1F1F&color=fff&size=200',
+      linkedin: 'https://www.linkedin.com/in/abhijeet-jain-4467319/',
+      mail: 'abhijeet.jain@virsoftech.com'
+    },
+    { 
+      name: 'Pralaypati Ta', 
+      role: 'Co-Founder & Principal Architect', 
+      desc: 'Specializing in highly scalable and secure cloud-based solutions.', 
+      img: 'https://ui-avatars.com/api/?name=Pralaypati+Ta&background=E53935&color=fff&size=200',
+      linkedin: 'https://www.linkedin.com/in/pralaypatita/',
+      mail: 'pralaypati.ta@virsoftech.com'
+    },
+    { 
+      name: 'Sameer Manuja', 
+      role: 'Co-Founder & Principal Architect', 
+      desc: 'Architecting dynamic document management and evaluation platforms.', 
+      img: 'https://ui-avatars.com/api/?name=Sameer+Manuja&background=1F1F1F&color=fff&size=200',
+      linkedin: 'https://www.linkedin.com/in/sameermanuja/',
+      mail: 'sameer.manuja@virsoftech.com'
+    }
   ];
 
   return (
@@ -180,15 +208,31 @@ const About = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '2.5rem' }}>
             {leadership.map((leader, i) => (
               <div key={i} className="card" style={{ padding: '3rem', textAlign: 'center' }}>
-                <div style={{
-                  width: '80px', height: '80px', borderRadius: '50%',
-                  background: i % 2 === 0 ? 'var(--primary)' : 'var(--secondary)',
-                  color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontWeight: '900', fontSize: '2rem', margin: '0 auto 2rem'
-                }}>{leader.name.charAt(0)}</div>
+                <img 
+                  src={leader.img} 
+                  alt={leader.name} 
+                  loading="lazy"
+                  style={{ 
+                    width: '100px', height: '100px', borderRadius: '50%', 
+                    marginBottom: '1.25rem', border: '4px solid var(--primary-light)', objectFit: 'cover'
+                  }} 
+                />
                 <h4 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>{leader.name}</h4>
                 <div style={{ fontSize: '0.8125rem', fontWeight: '700', color: 'var(--primary)', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{leader.role}</div>
                 <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{leader.desc}</p>
+                
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', marginTop: '1.25rem' }}>
+                  {leader.linkedin && (
+                    <a href={leader.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', transition: 'opacity 0.2s', opacity: 0.7 }} onMouseEnter={e => e.currentTarget.style.opacity = 1} onMouseLeave={e => e.currentTarget.style.opacity = 0.7}>
+                      <Icons.Linkedin size={18} />
+                    </a>
+                  )}
+                  {leader.mail && (
+                    <a href={`mailto:${leader.mail}`} style={{ color: 'var(--primary)', transition: 'opacity 0.2s', opacity: 0.7 }} onMouseEnter={e => e.currentTarget.style.opacity = 1} onMouseLeave={e => e.currentTarget.style.opacity = 0.7}>
+                      <Icons.Mail size={18} />
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>

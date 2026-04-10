@@ -1,13 +1,42 @@
 import React from 'react';
 import * as Icons from '@/components/LucideFix';
 
-const TeamSection = () => {
-  const team = [
-    { name: 'Dr. Arpit Verma', role: 'Head of Evaluation Tech', bio: 'PhD in Cognitive Assessment with 15+ years in Psychometrics.', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop' },
-    { name: 'Sameer Malhotra', role: 'Chief Systems Architect', bio: 'Specialist in high-concurrency cloud examination frameworks.', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop' },
-    { name: 'Ananya Sharma', role: 'Director of Institutional Success', bio: 'Ensuring seamless digitisation for 2000+ government schools.', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&h=200&auto=format&fit=crop' }
-  ];
+const team = [
+  { 
+    name: 'Deepak Garg', 
+    role: 'Co-Founder & Managing Director', 
+    bio: 'Oversees sales, business development, operations, and financial divisions.', 
+    img: 'https://ui-avatars.com/api/?name=Deepak+Garg&background=E53935&color=fff&size=200',
+    linkedin: 'https://www.linkedin.com/in/deepak-garg-570a2b2/',
+    mail: 'deepak.garg@virsoftech.com'
+  },
+  { 
+    name: 'Abhijeet Jain', 
+    role: 'Co-Founder & Chief Technology Officer', 
+    bio: 'Key architect driving digital transformation and technical strategy.', 
+    img: 'https://ui-avatars.com/api/?name=Abhijeet+Jain&background=1F1F1F&color=fff&size=200',
+    linkedin: 'https://www.linkedin.com/in/abhijeet-jain-4467319/',
+    mail: 'abhijeet.jain@virsoftech.com'
+  },
+  { 
+    name: 'Pralaypati Ta', 
+    role: 'Co-Founder & Principal Architect', 
+    bio: 'Specializing in highly scalable and secure cloud-based solutions.', 
+    img: 'https://ui-avatars.com/api/?name=Pralaypati+Ta&background=E53935&color=fff&size=200',
+    linkedin: 'https://www.linkedin.com/in/pralaypatita/',
+    mail: 'pralaypati.ta@virsoftech.com'
+  },
+  { 
+    name: 'Sameer Manuja', 
+    role: 'Co-Founder & Principal Architect', 
+    bio: 'Architecting dynamic document management and evaluation platforms.', 
+    img: 'https://ui-avatars.com/api/?name=Sameer+Manuja&background=1F1F1F&color=fff&size=200',
+    linkedin: 'https://www.linkedin.com/in/sameermanuja/',
+    mail: 'sameer.manuja@virsoftech.com'
+  }
+];
 
+const TeamSection = () => {
   return (
     <section className="section-padding" style={{ background: 'white' }}>
       <div className="container">
@@ -23,6 +52,7 @@ const TeamSection = () => {
               <img 
                 src={member.img} 
                 alt={member.name} 
+                loading="lazy"
                 style={{ 
                   width: '100px', height: '100px', borderRadius: '50%', 
                   marginBottom: '1.25rem', border: '4px solid var(--primary-light)', objectFit: 'cover'
@@ -32,9 +62,17 @@ const TeamSection = () => {
               <div style={{ color: 'var(--primary)', fontWeight: '800', fontSize: '0.6875rem', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>{member.role}</div>
               <p style={{ fontSize: '0.875rem', marginBottom: 0, color: 'var(--muted-foreground)' }}>{member.bio}</p>
               
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', marginTop: '1.25rem', opacity: 0.5 }}>
-                <a href="#"><Icons.Linkedin size={16} /></a>
-                <a href="#"><Icons.Twitter size={16} /></a>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', marginTop: '1.25rem' }}>
+                {member.linkedin && (
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', transition: 'opacity 0.2s', opacity: 0.7 }} onMouseEnter={e => e.currentTarget.style.opacity = 1} onMouseLeave={e => e.currentTarget.style.opacity = 0.7}>
+                    <Icons.Linkedin size={18} />
+                  </a>
+                )}
+                {member.mail && (
+                  <a href={`mailto:${member.mail}`} style={{ color: 'var(--primary)', transition: 'opacity 0.2s', opacity: 0.7 }} onMouseEnter={e => e.currentTarget.style.opacity = 1} onMouseLeave={e => e.currentTarget.style.opacity = 0.7}>
+                    <Icons.Mail size={18} />
+                  </a>
+                )}
               </div>
             </div>
           ))}

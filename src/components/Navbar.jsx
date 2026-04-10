@@ -12,6 +12,7 @@ const Navbar = () => {
     { title: 'LMS Portal', path: '/lms', desc: 'Learning management system' },
     { title: 'Question Bank', path: '/qtb', desc: 'Intelligent question management' },
     { title: 'On-Screen Marking', path: '/osm', desc: 'Digital answer evaluation' },
+    { title: 'Hardware Products', path: '/products', desc: 'Advanced scanners & printers' },
   ];
 
   const companyLinks = [

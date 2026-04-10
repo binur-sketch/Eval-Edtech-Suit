@@ -1,34 +1,34 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
 
-const ServicesSection = () => {
-  const services = [
-    {
-      title: 'OMR Sheets Printing',
-      desc: 'Institutional-grade OMR/ICR sheets printing, customised to precision. Ideal for high-stakes examinations, surveys, and large-scale feedback collection for Govt. and Private organisations.',
-      img: '/assets/images/omr_printing.png',
-      tag: 'Most Popular'
-    },
-    {
-      title: 'OMR Sheets Scanning',
-      desc: 'End-to-end Pre and Post-examination result processing. We leverage advanced OMR/ICR/OCR tools for rapid and accurate data capture from Medical, Engineering, and General entrance exams.',
-      img: '/assets/images/omr_scanning.png',
-      tag: 'High Speed'
-    },
-    {
-      title: 'OMR Sheets Designing',
-      desc: 'Optimized form architecture designed for maximum scannability. We account for every data point, ensuring your institutional layouts are perfectly aligned for digital evaluation systems.',
-      img: '/assets/images/omr_design.png',
-      tag: 'Custom Design'
-    },
-    {
-      title: 'Scanner Services & AMC',
-      desc: 'Comprehensive maintenance and technical support for all OMR hardware. From consumable supplies and spare parts to regular servicing, we ensure your scanning infrastructure never fails.',
-      img: null,
-      tag: 'Support'
-    }
-  ];
+const services = [
+  {
+    title: 'OMR Sheets Printing',
+    desc: 'Institutional-grade OMR/ICR sheets printing, customised to precision. Ideal for high-stakes examinations, surveys, and large-scale feedback collection for Govt. and Private organisations.',
+    img: '/assets/images/omr_printing.png',
+    tag: 'Most Popular'
+  },
+  {
+    title: 'OMR Sheets Scanning',
+    desc: 'End-to-end Pre and Post-examination result processing. We leverage advanced OMR/ICR/OCR tools for rapid and accurate data capture from Medical, Engineering, and General entrance exams.',
+    img: '/assets/images/omr_scanning.png',
+    tag: 'High Speed'
+  },
+  {
+    title: 'OMR Sheets Designing',
+    desc: 'Optimized form architecture designed for maximum scannability. We account for every data point, ensuring your institutional layouts are perfectly aligned for digital evaluation systems.',
+    img: '/assets/images/omr_design.png',
+    tag: 'Custom Design'
+  },
+  {
+    title: 'Scanner Services & AMC',
+    desc: 'Comprehensive maintenance and technical support for all OMR hardware. From consumable supplies and spare parts to regular servicing, we ensure your scanning infrastructure never fails.',
+    img: null,
+    tag: 'Support'
+  }
+];
 
+const ServicesSection = () => {
   return (
     <section style={{
       padding: '8rem 0',
@@ -103,6 +103,7 @@ const ServicesSection = () => {
                   <img
                     src={s.img}
                     alt={s.title}
+                    loading="lazy"
                     style={{
                       width: '100%',
                       height: '100%',

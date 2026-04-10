@@ -78,7 +78,7 @@ const Resources = () => {
               {blogs.map((blog, i) => (
                 <article key={i} className="card reveal" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                   <div style={{ position: 'relative', overflow: 'hidden' }}>
-                    <img src={blog.image} alt={blog.title} style={{ width: '100%', height: '240px', objectFit: 'cover', transition: 'transform 0.5s ease' }} />
+                    <img src={blog.image} alt={blog.title} loading="lazy" style={{ width: '100%', height: '240px', objectFit: 'cover', transition: 'transform 0.5s ease' }} />
                     <div style={{ position: 'absolute', top: '1rem', left: '1rem' }}>
                       <span style={{ padding: '0.4rem 1rem', borderRadius: '9999px', background: 'rgba(0,0,0,0.7)', color: 'white', fontSize: '0.6875rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Article</span>
                     </div>

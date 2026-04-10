@@ -1,0 +1,83 @@
+﻿VSDOX - AN ENTERPRISE CONTENT MANAGEMENT
+Reduce operational burden and management cost for your document databases. Move online in a secured environment and make content access universal and role-based.
+
+
+All organizations want the highest productivity, security, and accessibility to all documents. Storing and accessing all organizational documents across departments, teams, and geographies is the key to success, security, and sustainability.
+Our opensource based ECM enables moving your document databases online in a highly secure environment that is cloud ready and scalable.
+ECM is the perfect place to store your archives, documents like electronic versions of documents and other rich media formats to create a high functioning repository with advanced search, workflow management and universal or role based content access.
+ECM Workflow
+The ECM workflow aids you in all aspects of documentation management.
+Capture
+
+Retrieve
+Workflow
+
+Capture, digitalize and secure data while saving and converting various file formats.
+Multilingual OCR
+Scanned Image Enhancement
+Compression
+Cleaning & QC
+Metadata Indexing
+Page-Level Tagging
+PDF Conversion
+Auto Upload to ECM
+Securely retrieve files and documents. Use advanced filters, searches, and full-text indexing.
+Structured Folders
+Folder & Document-Level Access
+Role-based Access & Authorization
+Content type Segregation
+Advanced search
+Full Text search
+Manage workflows, including review and verification, and maintain hierarchies, security, and user configurations.
+Review and Approval Workflows (e.g., invoice verification)
+Multilevel Hierarchy Parallel Workflows
+Secured Workflows User Configurable Workflows
+
+
+ECM Features
+Secured Opensource
+We are Certified Service Provider (RSP) for DSpace providing Custom implementation on the top of DSpace open-source platform with OWASP compliance.
+Enterprise integration
+Integrate your ECM with existing enterprise applications, such as SAP and Google Enterprise.
+Scalable expandable, future-ready
+The architecture and implementation take care of future readiness. Cluster architecture and Auto scalable.
+No additional hardware
+Save costs. Use what you have. Optimized for cloud including AWS, Azure, Google Cloud & more.
+Huge Data & Legacy Migration
+End to end implementation with migrating legacy data and handling huge data that is hundreds of terabytes.
+Paperless office
+Time to say Goodbye to file cabinets in your office basement.
+ECM Solutions for Verticals
+Corporate
+Human Resource: Employee docs & employment policies
+Secretarial: Shareholder, Investor relation documents
+Regular functions: R&D, Finance, Customer Experience content
+BFSI
+Banking: Account opening forms, Account holder details & forms, Retail & Commercial lending
+Insurance: New policies, Policy Servicing, Service request management
+Government
+Judiciary: Case File Digitization
+Ministries: Automation Repositories, Grants management
+Education
+Libraries: Research, Journals, Archives, Subject Text Repositories
+Institutions: Managing access to Repositories
+Health
+Hospitals & Clinics: Patient Records digitization, easy access for appointments
+Insurance: Patient case history and claims management
+Regardless of which industry, you are part of, and what is the scale of your operations, whether you have millions of documentations to store and archive or are a start up with expansive dreams, contact us for transforming your documentation management systems.
+Many prestigious clients have entrusted us already for digital document management including HDFC Life Insurance, Utkarsh Bank, Hero Motocorp, High Courts, District Courts, and Education Ministry.
+Why Vir Softech
+Vir Softech reduces the pain and cost of implementation, support and maintenance of organizational data.
+No proprietary licensing
+Save seat-based, recurring costs of popular ECM vendors with opensource ECM.
+Worry-free magic
+Technology is independent of the workflow. You concentrate on your workflow and the ECM-magic is all transparent to you.
+Reduced cost of ownership
+Significant savings in your return on investments. You save at all three phases of project: implementation, run-time, and future-scalability.
+Industry-specific solutions
+Vertical solutions for Corporate, BFSI, Government, Education, and Health industries.
+Track record of success
+Large scale and mid-scale implementation across the globe.
+Greener and cleaner world
+Leave the world greener and cleaner by reducing paper-based footprint and yet not losing any data, efficiency, and be scale-ready.
+
