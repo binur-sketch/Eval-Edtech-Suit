@@ -11,9 +11,9 @@
   --border: #EEEEEE;
   --card: #FFFFFF;
   --card-foreground: #121212;
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-  --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --glass: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.4);
   --glow-primary: radial-gradient(circle at 50% 50%, rgba(229, 57, 53, 0.15) 0%, transparent 70%);
@@ -23,21 +23,49 @@
   --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.hover-card {
+  transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
 /* ============================
    ANIMATIONS
    ============================ */
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-.float { animation: float 4s ease-in-out infinite; }
+.float {
+  animation: float 4s ease-in-out infinite;
+}
 
 @keyframes revealUp {
-  from { opacity: 0; transform: translateY(40px); filter: blur(8px); }
-  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
 .reveal {
@@ -45,14 +73,32 @@
   animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-up {
@@ -60,8 +106,13 @@
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ============================
@@ -93,9 +144,13 @@ a {
   transition: var(--transition);
 }
 
-ul { list-style: none; }
+ul {
+  list-style: none;
+}
 
-input, textarea, select {
+input,
+textarea,
+select {
   font-family: inherit;
   outline: none;
 }
@@ -123,7 +178,10 @@ img {
    TYPOGRAPHY
    ============================ */
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 900;
   line-height: 1.15;
   color: var(--foreground);
@@ -243,7 +301,7 @@ p {
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 25px 50px -15px rgba(0,0,0,0.1);
+  box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.1);
   border-color: rgba(229, 57, 53, 0.2);
 }
 
@@ -409,8 +467,13 @@ select:focus-visible {
     padding: 2rem;
   }
 
-  h1 { font-size: clamp(1.75rem, 5vw, 2.75rem); }
-  h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); }
+  h1 {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+  }
 }
 
 /* ============================
@@ -437,7 +500,7 @@ select:focus-visible {
 
   .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px -10px rgba(0,0,0,0.08);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
   }
 
   .badge {
@@ -481,9 +544,19 @@ select:focus-visible {
     padding: 2.5rem 0;
   }
 
-  h1 { font-size: 1.625rem; margin-bottom: 1rem; }
-  h2 { font-size: 1.375rem; margin-bottom: 1rem; }
-  h3 { font-size: 1.0625rem; }
+  h1 {
+    font-size: 1.625rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.375rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.0625rem;
+  }
 
   .card {
     padding: 1.25rem;
@@ -504,6 +577,7 @@ select:focus-visible {
   .md-hidden {
     display: none !important;
   }
+
   .md-flex {
     display: flex !important;
   }
@@ -518,7 +592,11 @@ select:focus-visible {
    ============================ */
 
 @media print {
-  .btn, nav, footer, .badge {
+
+  .btn,
+  nav,
+  footer,
+  .badge {
     display: none !important;
   }
 }

@@ -30,33 +30,33 @@ const About = () => {
   const leadership = [
     { 
       name: 'Deepak Garg', 
-      role: 'Co-Founder & Managing Director', 
-      desc: 'Oversees sales, business development, operations, and financial divisions.', 
-      img: 'https://ui-avatars.com/api/?name=Deepak+Garg&background=E53935&color=fff&size=200',
-      linkedin: 'https://www.linkedin.com/in/deepak-garg-570a2b2/',
+      role: 'Managing Director', 
+      desc: 'A gifted techno-businessman with over 20 years of experience in product innovation, strategic planning, and customer acquisition. Previously at HCL Technologies and Adobe Systems.', 
+      img: 'https://www.virsoftech.com/img/deepak_garg.jpg',
+      linkedin: 'https://www.linkedin.com/in/deepakgarg76/',
       mail: 'deepak.garg@virsoftech.com'
     },
     { 
       name: 'Abhijeet Jain', 
-      role: 'Co-Founder & Chief Technology Officer', 
-      desc: 'Key architect driving digital transformation and technical strategy.', 
-      img: 'https://ui-avatars.com/api/?name=Abhijeet+Jain&background=1F1F1F&color=fff&size=200',
-      linkedin: 'https://www.linkedin.com/in/abhijeet-jain-4467319/',
+      role: 'Chief Technology Officer', 
+      desc: 'A Computer Scientist, Entrepreneur, and Business Executive with over 20 years of R&D leadership. A contributor to PDF ISO specifications and chief architect for print projects.', 
+      img: 'https://www.virsoftech.com/img/abhijeet_pic.jpg',
+      linkedin: 'https://www.linkedin.com/in/abhijeet-jain-5a9b313/',
       mail: 'abhijeet.jain@virsoftech.com'
     },
     { 
       name: 'Pralaypati Ta', 
-      role: 'Co-Founder & Principal Architect', 
-      desc: 'Specializing in highly scalable and secure cloud-based solutions.', 
-      img: 'https://ui-avatars.com/api/?name=Pralaypati+Ta&background=E53935&color=fff&size=200',
-      linkedin: 'https://www.linkedin.com/in/pralaypatita/',
+      role: 'Principal Architect', 
+      desc: 'A coding geek with over 18 years of tech leadership experience leading R&D teams at global product companies like Samsung and Adobe Systems.', 
+      img: 'https://www.virsoftech.com/img/Pralay-photo.png',
+      linkedin: 'https://www.linkedin.com/in/pralaypati-ta-3944691/',
       mail: 'pralaypati.ta@virsoftech.com'
     },
     { 
       name: 'Sameer Manuja', 
-      role: 'Co-Founder & Principal Architect', 
-      desc: 'Architecting dynamic document management and evaluation platforms.', 
-      img: 'https://ui-avatars.com/api/?name=Sameer+Manuja&background=1F1F1F&color=fff&size=200',
+      role: 'Principal Architect', 
+      desc: 'Key solution architect for print and publishing technologies with over 20 years of industry experience creating path-setting innovations at Samsung and Adobe Systems.', 
+      img: 'https://www.virsoftech.com/sameer_manuja.jpg',
       linkedin: 'https://www.linkedin.com/in/sameermanuja/',
       mail: 'sameer.manuja@virsoftech.com'
     }

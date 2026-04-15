@@ -32,17 +32,17 @@ const Navbar = () => {
   return (
     <header style={{ position: 'fixed', width: '100%', zIndex: 1000, top: 0 }}>
       {/* Top Bar */}
-      <div style={{ 
-        background: '#1F1F1F', 
-        color: 'rgba(255,255,255,0.7)', 
-        padding: '0.6rem 0', 
+      <div style={{
+        background: '#1F1F1F',
+        color: 'rgba(255,255,255,0.7)',
+        padding: '0.6rem 0',
         fontSize: '0.75rem',
         borderBottom: '1px solid rgba(255,255,255,0.05)'
       }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '2rem' }}>
           <div className="md-flex" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.6875rem', color: 'rgba(255,255,255,0.5)' }}>
             <Icons.MapPin size={12} style={{ color: 'var(--primary)' }} />
-            <span>Noida, India • Dubai • Nairobi</span>
+            <span>Noida, India</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
             <div className="md-flex" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -61,45 +61,40 @@ const Navbar = () => {
               <a href="#" style={{ color: 'inherit' }}><Icons.Facebook size={14} /></a>
               <a href="#" style={{ color: 'inherit' }}><Icons.Twitter size={14} /></a>
               <a href="#" style={{ color: 'inherit' }}><Icons.Linkedin size={14} /></a>
+              <a href='#' style={{ color: 'inherit' }}><Icons.Youtube size={14} /></a>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Navbar */}
-      <nav style={{ 
-        background: 'white', 
+      <nav style={{
+        background: 'white',
         boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
         height: 'var(--nav-height)',
         display: 'flex',
         alignItems: 'center'
       }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100%', width: '100%' }}>
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div style={{ 
-              width: '36px', 
-              height: '36px', 
-              background: 'var(--primary)', 
-              borderRadius: '8px', 
-              display: 'flex', 
-              alignItems: 'center', 
-              justifyContent: 'center',
-              color: 'white',
-              fontWeight: '900',
-              fontSize: '1.25rem'
-            }}>
-              E
-            </div>
-            <span style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--secondary)', letterSpacing: '-0.5px' }}>EVAL</span>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+            <img
+              src="public/assets/images/logo.png"
+              alt="EVAL Logo"
+              style={{
+                height: '42px',
+                objectFit: 'contain',
+                transform: 'scale(1.1)' // adjust if needed
+              }}
+            />
           </Link>
 
           {/* Nav Items Container */}
           <div className="md-flex" style={{ alignItems: 'center', height: '100%' }}>
-            <Link to="/" style={{ 
-              padding: '0 1.75rem', 
-              height: '100%', 
-              display: 'flex', 
-              alignItems: 'center', 
+            <Link to="/" style={{
+              padding: '0 1.75rem',
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
               background: isActive('/') ? 'var(--primary)' : 'transparent',
               color: isActive('/') ? 'white' : 'var(--secondary)',
               fontWeight: '800',
@@ -112,9 +107,9 @@ const Navbar = () => {
 
             {/* Solutions Dropdown */}
             <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
-              <button style={{ 
-                padding: '0 1.25rem', height: '100%', background: 'none', border: 'none', 
-                color: 'var(--secondary)', fontWeight: '800', fontSize: '0.8125rem', 
+              <button style={{
+                padding: '0 1.25rem', height: '100%', background: 'none', border: 'none',
+                color: 'var(--secondary)', fontWeight: '800', fontSize: '0.8125rem',
                 textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
               }}>
@@ -132,9 +127,9 @@ const Navbar = () => {
 
             {/* Company Dropdown */}
             <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
-              <button style={{ 
-                padding: '0 1.25rem', height: '100%', background: 'none', border: 'none', 
-                color: 'var(--secondary)', fontWeight: '800', fontSize: '0.8125rem', 
+              <button style={{
+                padding: '0 1.25rem', height: '100%', background: 'none', border: 'none',
+                color: 'var(--secondary)', fontWeight: '800', fontSize: '0.8125rem',
                 textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
               }}>
@@ -152,9 +147,9 @@ const Navbar = () => {
 
             {/* Resources Dropdown */}
             <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
-              <button style={{ 
-                padding: '0 1.25rem', height: '100%', background: 'none', border: 'none', 
-                color: 'var(--secondary)', fontWeight: '800', fontSize: '0.8125rem', 
+              <button style={{
+                padding: '0 1.25rem', height: '100%', background: 'none', border: 'none',
+                color: 'var(--secondary)', fontWeight: '800', fontSize: '0.8125rem',
                 textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
               }}>
@@ -170,8 +165,8 @@ const Navbar = () => {
               </div>
             </div>
 
-            <Link to="/contact" style={{ 
-              padding: '0 1.25rem', color: 'var(--secondary)', fontWeight: '800', 
+            <Link to="/contact" style={{
+              padding: '0 1.25rem', color: 'var(--secondary)', fontWeight: '800',
               fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '1px',
               height: '100%', display: 'flex', alignItems: 'center'
             }}>
@@ -184,8 +179,8 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Toggle */}
-          <button 
-            className="md-hidden" 
+          <button
+            className="md-hidden"
             onClick={() => setIsOpen(!isOpen)}
             style={{ background: 'var(--muted)', width: '40px', height: '40px', border: 'none', borderRadius: '6px', cursor: 'pointer', color: 'var(--secondary)' }}
           >
@@ -195,20 +190,20 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="mobile-menu reveal" style={{ 
-            padding: '3rem 2rem', display: 'flex', flexDirection: 'column', gap: '2rem', 
-            background: 'white', position: 'absolute', top: '100%', left: 0, width: '100%', 
+          <div className="mobile-menu reveal" style={{
+            padding: '3rem 2rem', display: 'flex', flexDirection: 'column', gap: '2rem',
+            background: 'white', position: 'absolute', top: '100%', left: 0, width: '100%',
             height: 'calc(100vh - var(--nav-height))',
             boxShadow: '0 20px 40px rgba(0,0,0,0.1)', zIndex: 999, overflowY: 'auto'
           }}>
-            <Link to="/" onClick={() => setIsOpen(false)} style={{ 
+            <Link to="/" onClick={() => setIsOpen(false)} style={{
               fontWeight: '900', textTransform: 'uppercase', fontSize: '1.25rem',
               color: isActive('/') ? 'var(--primary)' : 'var(--secondary)',
               display: 'flex', alignItems: 'center', justifyContent: 'space-between'
             }}>
               Home {isActive('/') && <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%' }}></div>}
             </Link>
-            
+
             <div>
               <div style={{ fontWeight: '900', marginBottom: '1.25rem', color: 'var(--primary)', fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Solutions</div>
               <div style={{ display: 'grid', gap: '1rem', paddingLeft: '0.5rem' }}>
@@ -243,7 +238,7 @@ const Navbar = () => {
           </div>
         )}
       </nav>
-    </header>
+    </header >
   );
 };
 

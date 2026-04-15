@@ -4,33 +4,33 @@ import * as Icons from '@/components/LucideFix';
 const team = [
   { 
     name: 'Deepak Garg', 
-    role: 'Co-Founder & Managing Director', 
-    bio: 'Oversees sales, business development, operations, and financial divisions.', 
-    img: 'https://ui-avatars.com/api/?name=Deepak+Garg&background=E53935&color=fff&size=200',
-    linkedin: 'https://www.linkedin.com/in/deepak-garg-570a2b2/',
+    role: 'Managing Director', 
+    bio: 'Techno-businessman with 20+ years of product innovation at HCL and Adobe.', 
+    img: 'https://www.virsoftech.com/img/deepak_garg.jpg',
+    linkedin: 'https://www.linkedin.com/in/deepakgarg76/',
     mail: 'deepak.garg@virsoftech.com'
   },
   { 
     name: 'Abhijeet Jain', 
-    role: 'Co-Founder & Chief Technology Officer', 
-    bio: 'Key architect driving digital transformation and technical strategy.', 
-    img: 'https://ui-avatars.com/api/?name=Abhijeet+Jain&background=1F1F1F&color=fff&size=200',
-    linkedin: 'https://www.linkedin.com/in/abhijeet-jain-4467319/',
+    role: 'Chief Technology Officer', 
+    bio: 'Computer Scientist and contributor to PDF ISO specifications.', 
+    img: 'https://www.virsoftech.com/img/abhijeet_pic.jpg',
+    linkedin: 'https://www.linkedin.com/in/abhijeet-jain-5a9b313/',
     mail: 'abhijeet.jain@virsoftech.com'
   },
   { 
     name: 'Pralaypati Ta', 
-    role: 'Co-Founder & Principal Architect', 
-    bio: 'Specializing in highly scalable and secure cloud-based solutions.', 
-    img: 'https://ui-avatars.com/api/?name=Pralaypati+Ta&background=E53935&color=fff&size=200',
-    linkedin: 'https://www.linkedin.com/in/pralaypatita/',
+    role: 'Principal Architect', 
+    bio: '18+ years of tech leadership experience leading R&D at Samsung and Adobe.', 
+    img: 'https://www.virsoftech.com/img/Pralay-photo.png',
+    linkedin: 'https://www.linkedin.com/in/pralaypati-ta-3944691/',
     mail: 'pralaypati.ta@virsoftech.com'
   },
   { 
     name: 'Sameer Manuja', 
-    role: 'Co-Founder & Principal Architect', 
-    bio: 'Architecting dynamic document management and evaluation platforms.', 
-    img: 'https://ui-avatars.com/api/?name=Sameer+Manuja&background=1F1F1F&color=fff&size=200',
+    role: 'Principal Architect', 
+    bio: 'Key architect creating path-setting innovations holding US patents.', 
+    img: 'https://www.virsoftech.com/sameer_manuja.jpg',
     linkedin: 'https://www.linkedin.com/in/sameermanuja/',
     mail: 'sameer.manuja@virsoftech.com'
   }

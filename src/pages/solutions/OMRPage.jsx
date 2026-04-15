@@ -93,6 +93,138 @@ const OMRPage = () => {
         </div>
       </section>
 
+      {/* NEP 2020 Alignment Section */}
+      <section className="section-padding" style={{ background: '#f8f9fa' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+             <span className="badge">Aligning with NEP 2020</span>
+             <h2 style={{ marginBottom: '1.5rem' }}><span className="gradient-text">eVAL OMR Software</span> for Schools</h2>
+             <p style={{ fontSize: '1.125rem', color: 'var(--muted-foreground)', lineHeight: '1.8', maxWidth: '800px', margin: '0 auto' }}>
+                NEP 2020 emphasizes the importance of MCQs (Multiple Choice Questions) in assessments to focus on essential learning outcomes, reduce stress, and promote a more objective and efficient evaluation process. By including MCQs, the policy aims to make board exams less stressful and more formative.
+             </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+            {/* Left Column: NEP Principles */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              {[
+                {
+                  title: 'Objective Assessment and Standardized Evaluation:',
+                  items: [
+                    'MCQs provide a standardized and consistent way of evaluating student knowledge and understanding.',
+                    'Predefined answer choices make the assessment more objective and reduce the potential for bias in grading.',
+                    'This approach streamlines the evaluation process, allowing for quicker assessments.'
+                  ],
+                  bgColor: 'rgba(253, 242, 233, 0.7)',
+                  borderColor: '#f5cba7'
+                },
+                {
+                  title: 'Focusing on Learning Outcomes:',
+                  items: [
+                    "NEP 2020 aims to assess students' achievement of essential learning outcomes rather than rote memorization.",
+                    'MCQs can be designed to ensure that students demonstrate their understanding of key concepts.',
+                    'The emphasis is on "assessment for learning," meaning that the assessment should provide feedback to students and teachers.'
+                  ],
+                  bgColor: 'rgba(232, 248, 245, 0.7)',
+                  borderColor: '#a3e4d7'
+                },
+                {
+                  title: 'Reducing Stress and Promoting Holistic Development:',
+                  items: [
+                    'NEP 2020 aims to reduce the pressure and anxiety associated with traditional board exams.',
+                    'The flexible format allows students to choose the best score out of multiple exams.',
+                    'This approach promotes a more holistic & continuous assessment process that focuses on overall student development.'
+                  ],
+                  bgColor: 'rgba(234, 242, 248, 0.7)',
+                  borderColor: '#aed6f1'
+                },
+                {
+                  title: 'Continuous Learning and Feedback:',
+                  items: [
+                    'NEP 2020 encourages continuous learning and feedback throughout the educational process.',
+                    'MCQs can be used as part of a broader assessment strategy.',
+                    'This approach helps students identify their strengths and weaknesses.'
+                  ],
+                  bgColor: 'rgba(253, 237, 236, 0.7)',
+                  borderColor: '#f1948a'
+                }
+              ].map((item, idx) => (
+                <div key={idx} style={{ background: item.bgColor, borderLeft: `4px solid ${item.borderColor}`, padding: '1.5rem', borderRadius: '0.5rem' }}>
+                  <h4 style={{ fontSize: '1.125rem', marginBottom: '1rem', color: 'var(--foreground)' }}>{item.title}</h4>
+                  <ul style={{ paddingLeft: '1.5rem', color: 'var(--muted-foreground)', fontSize: '0.9375rem', lineHeight: '1.6', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    {item.items.map((line, i) => <li key={i}>{line}</li>)}
+                  </ul>
+                </div>
+              ))}
+              <div style={{ padding: '1.5rem', fontWeight: 'bold', fontSize: '1rem', color: 'var(--foreground)', textAlign: 'center', background: 'white', borderRadius: '0.5rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}>
+                In essence, NEP 2020 recognizes the value of MCQs in providing a more objective, efficient, and less stressful way to assess student learning and development.
+              </div>
+            </div>
+
+            {/* Right Column: Objectives and Features */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+              <div>
+                <h3 style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>Objective</h3>
+                <p style={{ color: 'var(--muted-foreground)', fontSize: '1rem', lineHeight: '1.7', marginBottom: '2rem' }}>
+                  eVAL OMR software is ideal for schools under NEP 2020, capable of reading thousands of sheets per minute with high accuracy. It reduces manpower, cuts processing costs, and saves time, making it perfect for large-scale evaluations.
+                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+                  {[
+                    { icon: <Icons.DollarSign size={24} />, title: "Save Costs:", desc: "Conduct in-house OMR tests—no need to hire vendors" },
+                    { icon: <Icons.Users size={24} />, title: "Staff Training:", desc: "We train your staff—no extra hires required" },
+                    { icon: <Icons.BookOpen size={24} />, title: "MCQ Practice:", desc: "Prepare students and staff with regular MCQ tests." },
+                    { icon: <Icons.BarChart2 size={24} />, title: "Smart Analytics:", desc: "Get advanced reports and insights" },
+                    { icon: <Icons.Award size={24} />, title: "Exam Readiness:", desc: "Train students early for competitive exams like JEE, NEET, CLAT, CUET, etc." },
+                    { icon: <Icons.Clock size={24} />, title: "Instant Results:", desc: "Generate results in minutes, saving time and effort" },
+                  ].map((obj, idx) => (
+                    <div key={idx} style={{ background: 'white', padding: '1.5rem', borderRadius: '0.75rem', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', textAlign: 'center' }}>
+                      <div style={{ color: 'var(--primary)', marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>{obj.icon}</div>
+                      <h5 style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>{obj.title}</h5>
+                      <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', margin: 0 }}>{obj.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>Top Features</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  {[
+                    { title: 'OMR Sheet Design: ', text: 'Design your own OMR sheet using MS Excel-based OMR Form Designer.', icon: <Icons.FileEdit size={24} /> },
+                    { title: 'Fast & Accurate: ', text: 'Processes 300-500 sheets/min with 100% accuracy, including pre-designed OMRs.', icon: <Icons.Zap size={24} /> },
+                    { title: 'Smart Reports: ', text: 'Auto-generated reports & graphs, exportable in CSV, Excel, PDF, and more.', icon: <Icons.PieChart size={24} /> },
+                    { title: 'User-Friendly: ', text: 'No special hardware needed; intuitive UI with easy support and training.', icon: <Icons.Monitor size={24} /> },
+                    { title: 'Affordable: ', text: 'Low-cost, scalable solution with lifetime license and integrated scanner.', icon: <Icons.Tag size={24} /> },
+                    { title: 'Trusted by Leaders: ', text: '5000+ installations across top schools, universities, coaching institutes & govt bodies.', icon: <Icons.ShieldCheck size={24} /> },
+                    { title: 'Nationwide Support: ', text: 'Includes 1-year warranty with expert online training and assistance.', icon: <Icons.Headset size={24} /> }
+                  ].map((feat, idx) => (
+                    <div key={idx} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start', background: 'white', padding: '1.25rem', borderRadius: '0.75rem', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                      <div style={{ color: 'var(--primary)' }}>{feat.icon}</div>
+                      <div>
+                        <span style={{ fontWeight: 'bold', fontSize: '1rem', color: 'var(--foreground)' }}>{feat.title}</span>
+                        <span style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)' }}>{feat.text}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div style={{ marginTop: '4rem', padding: '2.5rem', background: 'white', borderRadius: '1rem', textAlign: 'center', boxShadow: '0 4px 20px -2px rgba(0,0,0,0.1)' }}>
+            <p style={{ fontSize: '1.125rem', color: 'var(--foreground)', marginBottom: 0, lineHeight: '1.7', fontWeight: '500' }}>
+              eVAL OMR is a powerful, cost-effective solution tailored for schools to align with NEP 2020. It simplifies MCQ-based assessments, saves time and resources, and prepares students for competitive exams—all with accuracy, speed, and nationwide support.
+            </p>
+            <div style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', color: 'var(--muted-foreground)', fontSize: '0.875rem' }}>
+              <span>Vir Softech Pvt Ltd</span>
+              <span>www.virsoftech.com</span>
+              <span>corp@virsoftech.com</span>
+              <span>9315152290 | 9871258989</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* The 4-Step Process */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
