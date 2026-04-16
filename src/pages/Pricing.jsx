@@ -1,4 +1,4 @@
-import * as Icons from '@/components/LucideFix';
+﻿import * as Icons from '@/components/LucideFix';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -45,12 +45,12 @@ const Pricing = () => {
     },
     {
       name: 'Enterprise',
-      desc: 'For national boards and large organizations requiring the full power of the EVAL ecosystem.',
+      desc: 'For national boards and large organizations requiring the full power of the eVAL ecosystem.',
       price: 'Custom',
       period: '',
       highlight: false,
       features: [
-        'Complete EVAL Suite (All 5 Products)',
+        'Complete eVAL Suite (All 5 Products)',
         'Unlimited Users & Volume',
         'Dedicated Account Manager',
         'Custom API Integration',
@@ -86,7 +86,7 @@ const Pricing = () => {
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
           <span className="badge">Transparent Pricing</span>
-          <h1 style={{ fontSize: '3.5rem' }}>Plans That Scale with <br/><span className="gradient-text">Your Institution</span></h1>
+          <h1 style={{ fontSize: '3.5rem' }}>Plans That Scale with <br /><span className="gradient-text">Your Institution</span></h1>
           <p style={{ fontSize: '1.25rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
             No hidden fees. No surprise charges. Choose the plan that fits your evaluation needs—upgrade, downgrade, or cancel anytime.
           </p>

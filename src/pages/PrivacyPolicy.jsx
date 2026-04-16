@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
@@ -21,7 +21,7 @@ const PrivacyPolicy = () => {
       title: '2. How We Use Your Information',
       content: [
         'We use the information we collect to:',
-        '• Provide, maintain, and improve the EVAL Suite of products',
+        '• Provide, maintain, and improve the eVAL Suite of products',
         '• Process examination data and generate institutional analytics',
         '• Send transactional communications about your account and services',
         '• Provide technical support and respond to your inquiries',
@@ -89,7 +89,7 @@ const PrivacyPolicy = () => {
     {
       title: '8. International Data Transfers',
       content: [
-        'EVAL operates globally. Your data may be processed in India, where our primary data centers are located. For international clients:',
+        'eVAL operates globally. Your data may be processed in India, where our primary data centers are located. For international clients:',
         '• We offer data residency options in AWS Mumbai, AWS Bahrain, and Azure UAE North',
         '• EU data transfers are governed by Standard Contractual Clauses (SCCs)',
         '• We comply with applicable data protection regulations including GDPR, IT Act 2000, and PDPA'
@@ -98,7 +98,7 @@ const PrivacyPolicy = () => {
     {
       title: '9. Children\'s Privacy',
       content: [
-        'EVAL services are provided to educational institutions, not directly to children. We process student data as a data processor on behalf of the institution (data controller). We do not knowingly collect personal information directly from individuals under 13 years of age without institutional and parental consent.'
+        'eVAL services are provided to educational institutions, not directly to children. We process student data as a data processor on behalf of the institution (data controller). We do not knowingly collect personal information directly from individuals under 13 years of age without institutional and parental consent.'
       ]
     },
     {
@@ -117,7 +117,7 @@ const PrivacyPolicy = () => {
           <span className="badge">Legal</span>
           <h1>Privacy <span className="gradient-text">Policy</span></h1>
           <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
-            At EVAL, protecting your data is not just compliance—it's a core value. This policy explains how we collect, use, and safeguard your information.
+            At eVAL, protecting your data is not just compliance—it's a core value. This policy explains how we collect, use, and safeguard your information.
           </p>
           <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', fontWeight: '700' }}>Last updated: {lastUpdated}</p>
         </div>
@@ -130,10 +130,10 @@ const PrivacyPolicy = () => {
             <div key={i} style={{ marginBottom: '3.5rem' }}>
               <h3 style={{ fontSize: '1.375rem', marginBottom: '1.5rem', color: 'var(--foreground)' }}>{section.title}</h3>
               {section.content.map((paragraph, j) => (
-                <p key={j} style={{ 
-                  fontSize: '1rem', 
-                  lineHeight: '1.8', 
-                  color: 'var(--muted-foreground)', 
+                <p key={j} style={{
+                  fontSize: '1rem',
+                  lineHeight: '1.8',
+                  color: 'var(--muted-foreground)',
                   marginBottom: '0.75rem',
                   paddingLeft: paragraph.startsWith('•') ? '1rem' : '0'
                 }}>{paragraph}</p>
@@ -142,12 +142,12 @@ const PrivacyPolicy = () => {
           ))}
 
           {/* Contact Box */}
-          <div className="card" style={{ 
-            padding: '3rem', 
-            background: 'var(--muted)', 
-            borderRadius: '2rem', 
+          <div className="card" style={{
+            padding: '3rem',
+            background: 'var(--muted)',
+            borderRadius: '2rem',
             marginTop: '4rem',
-            textAlign: 'center' 
+            textAlign: 'center'
           }}>
             <h4 style={{ marginBottom: '1rem' }}>Questions About Your Data?</h4>
             <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', marginBottom: '2rem' }}>

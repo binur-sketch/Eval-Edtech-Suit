@@ -44,14 +44,23 @@ const SiteFooter = () => {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
-          gap: '3rem'
+          gridTemplateColumns: '2fr 1fr 1fr 1fr 1.5fr',
+          gap: '3rem',
+          flexWrap: 'wrap'
         }}>
           {/* Brand Info */}
-          <div style={{ maxWidth: '280px' }}>
-            <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.5rem', fontWeight: '800', marginBottom: '1.5rem', color: 'white' }}>
-              <div style={{ width: '36px', height: '36px', background: 'var(--primary)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem', fontWeight: '900' }}>E</div>
-              <span className="gradient-text">EVAL</span>
+          <div>
+            <Link to="/" style={{ display: 'inline-block', marginBottom: '1.5rem', background: 'white', borderRadius: '0.75rem', padding: '0.5rem 1rem' }}>
+              <img
+                src="/assets/images/logo.png"
+                alt="eVAL Logo"
+                style={{
+                  height: '44px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  display: 'block'
+                }}
+              />
             </Link>
             <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: '1.7', marginBottom: '2rem' }}>
               Transforming academic and corporate evaluations with 100% accurate, hardware-independent digital solutions. Trusted by 5000+ institutions globally.
@@ -73,44 +82,43 @@ const SiteFooter = () => {
             </div>
           </div>
 
+          {/* Explore Column */}
+          <div>
+            <h4 style={{ color: 'white', fontSize: '0.875rem', fontWeight: '800', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Explore</h4>
+            <div style={{ display: 'grid', gap: '0.875rem' }}>
+              <Link to="/about" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>About Us</Link>
+              <Link to="/clients" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Our Clients</Link>
+              <Link to="/partners" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Partners</Link>
+              <Link to="/careers" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Careers</Link>
+              <Link to="/contact" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Contact Us</Link>
+              <Link to="/blog" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Blog & Resources</Link>
+            </div>
+          </div>
+
           {/* Solutions Column */}
           <div>
             <h4 style={{ color: 'white', fontSize: '0.875rem', fontWeight: '800', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Solutions</h4>
             <div style={{ display: 'grid', gap: '0.875rem' }}>
               <Link to="/omr" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>OMR Software</Link>
+              <Link to="/osm" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>OSM Software</Link>
+              <Link to="/qpms" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>QPMS System</Link>
+              <Link to="/ai-proctoring" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>AI Proctoring</Link>
               <Link to="/cbt" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>CBT Platform</Link>
               <Link to="/lms" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>LMS Portal</Link>
-              <Link to="/qtb" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Question Bank</Link>
-              <Link to="/osm" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>On-Screen Marking</Link>
-              <Link to="/pricing" className="footer-link" style={{ color: 'var(--primary)', fontWeight: '700', fontSize: '0.875rem' }}>View Pricing →</Link>
             </div>
           </div>
 
-          {/* Company Column */}
+          {/* Services Column */}
           <div>
-            <h4 style={{ color: 'white', fontSize: '0.875rem', fontWeight: '800', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Company</h4>
+            <h4 style={{ color: 'white', fontSize: '0.875rem', fontWeight: '800', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Services</h4>
             <div style={{ display: 'grid', gap: '0.875rem' }}>
-              <Link to="/about" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>About EVAL</Link>
-              <Link to="/clients" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Our Clients</Link>
-              <Link to="/partners" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Partners</Link>
-              <Link to="/careers" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Careers</Link>
-              <Link to="/contact" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Contact Us</Link>
-              <Link to="/book-demo" className="footer-link" style={{ color: 'var(--primary)', fontWeight: '700', fontSize: '0.875rem' }}>Book a Demo →</Link>
+              <Link to="/omr-printing" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>OMR Printing</Link>
+              <Link to="/omr-scanning" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>OMR Scanning</Link>
+              <Link to="/custom-software" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Custom Software</Link>
             </div>
           </div>
 
-          {/* Resources Column */}
-          <div>
-            <h4 style={{ color: 'white', fontSize: '0.875rem', fontWeight: '800', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Resources</h4>
-            <div style={{ display: 'grid', gap: '0.875rem' }}>
-              <Link to="/resources" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Blog & Insights</Link>
-              <Link to="/resources" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Whitepapers</Link>
-              <Link to="/resources" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Webinars</Link>
-              <Link to="/resources" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Case Studies</Link>
-            </div>
-          </div>
-
-          {/* Global HQ Column */}
+          {/* Contact Column */}
           <div>
             <h4 style={{ color: 'white', fontSize: '0.875rem', fontWeight: '800', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Global HQ</h4>
             <div style={{ display: 'grid', gap: '1.25rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>
@@ -127,8 +135,6 @@ const SiteFooter = () => {
                 <span>+91-1800-3010-3232</span>
               </div>
             </div>
-
-
           </div>
         </div>
 
@@ -140,11 +146,10 @@ const SiteFooter = () => {
           flexWrap: 'wrap', gap: '1rem',
           color: 'rgba(255,255,255,0.3)', fontSize: '0.8125rem'
         }}>
-          <p style={{ marginBottom: 0 }}>© {new Date().getFullYear()} EVAL – Examination Evaluation & Learning Solutions. Powered by Vir Softech Pvt. Ltd.</p>
+          <p style={{ marginBottom: 0 }}>© {new Date().getFullYear()} eVAL – Examination Evaluation & Learning Solutions. Powered by Vir Softech Pvt. Ltd.</p>
           <div style={{ display: 'flex', gap: '2rem' }}>
-            <Link to="/privacy-policy" style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.8125rem' }}>Privacy</Link>
-            <Link to="/terms-of-service" style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.8125rem' }}>Terms</Link>
-            <span>Sitemap</span>
+            <Link to="/privacy-policy" style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.8125rem' }}>Privacy Policy</Link>
+            <Link to="/terms-of-service" style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.8125rem' }}>Terms of Service</Link>
           </div>
         </div>
       </div>
@@ -153,3 +158,4 @@ const SiteFooter = () => {
 };
 
 export default SiteFooter;
+

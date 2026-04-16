@@ -1,4 +1,4 @@
-import * as Icons from '@/components/LucideFix';
+﻿import * as Icons from '@/components/LucideFix';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ const QTBPage = () => {
         <div className="container" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
           <span className="badge">Intellectual Property</span>
           <h1 style={{ fontSize: '3.5rem' }}>Institutional <span className="gradient-text">Item Bank</span> Hub</h1>
-          <p style={{ fontSize: '1.25rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>EVAL QTB provides a collaborative and secure environment to build, manage, and audit your institution's most valuable asset: its question intellectual property.</p>
+          <p style={{ fontSize: '1.25rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>eVAL QTB provides a collaborative and secure environment to build, manage, and audit your institution's most valuable asset: its question intellectual property.</p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '3rem' }}>
             <Link to="/book-demo" className="btn btn-primary">Start Building Bank</Link>
             <Link to="/contact" className="btn btn-outline" style={{ color: 'var(--primary)', borderColor: 'var(--primary)' }}>Consult Experts</Link>
@@ -55,7 +55,7 @@ const QTBPage = () => {
                <div>
                   <span className="badge">Pedagogy</span>
                   <h2 style={{ marginBottom: '2rem' }}>Power of <span className="gradient-text">Deep Metadata</span></h2>
-                  <p style={{ marginBottom: '3rem', fontSize: '1.125rem' }}>Don't just store text. Every question in EVAL QTB is tagged with multi-dimensional intelligence, enabling instant test paper generation based on specific pedagogical requirements.</p>
+                  <p style={{ marginBottom: '3rem', fontSize: '1.125rem' }}>Don't just store text. Every question in eVAL QTB is tagged with multi-dimensional intelligence, enabling instant test paper generation based on specific pedagogical requirements.</p>
                   
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
                      {[

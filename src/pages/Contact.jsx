@@ -1,4 +1,4 @@
-import * as Icons from '@/components/LucideFix';
+﻿import * as Icons from '@/components/LucideFix';
 import React from 'react';
 
 const Contact = () => {
@@ -9,7 +9,7 @@ const Contact = () => {
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 5rem' }}>
             <span className="badge">Connect with Us</span>
             <h1>Get in <span className="gradient-text">Touch</span></h1>
-            <p style={{ fontSize: '1.125rem' }}>Discuss your institutional needs with our assessment experts and discover how EVAL can transform your evaluation process.</p>
+            <p style={{ fontSize: '1.125rem' }}>Discuss your institutional needs with our assessment experts and discover how eVAL can transform your evaluation process.</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem' }}>

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import * as Icons from './LucideFix';
 
 const ValueComparison = () => {
@@ -17,7 +17,7 @@ const ValueComparison = () => {
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <span className="badge">Comparison</span>
-          <h2>Traditional vs <span className="gradient-text">EVAL Ecosystem</span></h2>
+          <h2>Traditional vs <span className="gradient-text">eVAL Ecosystem</span></h2>
         </div>
 
         <div style={{ 
@@ -32,7 +32,7 @@ const ValueComparison = () => {
               <tr style={{ background: 'var(--muted)', borderBottom: '2px solid var(--border)' }}>
                 <th style={{ padding: '2rem', fontWeight: '800' }}>Feature / Benefit</th>
                 <th style={{ padding: '2rem', fontWeight: '800' }}>Traditional Systems</th>
-                <th style={{ padding: '2rem', fontWeight: '800', color: 'var(--primary)', textAlign: 'center' }}>EVAL Suite</th>
+                <th style={{ padding: '2rem', fontWeight: '800', color: 'var(--primary)', textAlign: 'center' }}>eVAL Suite</th>
               </tr>
             </thead>
             <tbody>

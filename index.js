@@ -60,13 +60,13 @@ function fy() {
         typeof T == "function" ? T : null);
   }
   var S = {
-      isMounted: function () {
-        return !1;
-      },
-      enqueueForceUpdate: function () {},
-      enqueueReplaceState: function () {},
-      enqueueSetState: function () {},
+    isMounted: function () {
+      return !1;
     },
+    enqueueForceUpdate: function () { },
+    enqueueReplaceState: function () { },
+    enqueueSetState: function () { },
+  },
     N = Object.assign,
     b = {};
   function _(T, z, le) {
@@ -86,7 +86,7 @@ function fy() {
     (_.prototype.forceUpdate = function (T) {
       this.updater.enqueueForceUpdate(this, T, "forceUpdate");
     }));
-  function O() {}
+  function O() { }
   O.prototype = _.prototype;
   function D(T, z, le) {
     ((this.props = T),
@@ -107,8 +107,8 @@ function fy() {
       Re = null;
     if (z != null)
       for (Se in (z.ref !== void 0 && (Re = z.ref),
-      z.key !== void 0 && (ke = "" + z.key),
-      z))
+        z.key !== void 0 && (ke = "" + z.key),
+        z))
         X.call(z, Se) && !ce.hasOwnProperty(Se) && (de[Se] = z[Se]);
     var we = arguments.length - 2;
     if (we === 1) de.children = le;
@@ -187,15 +187,15 @@ function fy() {
               return ct;
             }))
           : de != null &&
-            (G(de) &&
-              (de = ye(
-                de,
-                le +
-                  (!de.key || (Re && Re.key === de.key)
-                    ? ""
-                    : ("" + de.key).replace(be, "$&/") + "/") +
-                  T,
-              )),
+          (G(de) &&
+            (de = ye(
+              de,
+              le +
+              (!de.key || (Re && Re.key === de.key)
+                ? ""
+                : ("" + de.key).replace(be, "$&/") + "/") +
+              T,
+            )),
             z.push(de)),
         1
       );
@@ -206,7 +206,7 @@ function fy() {
         Re += Z(ke, z, le, Le, de);
       }
     else if (((Le = w(T)), typeof Le == "function"))
-      for (T = Le.call(T), we = 0; !(ke = T.next()).done; )
+      for (T = Le.call(T), we = 0; !(ke = T.next()).done;)
         ((ke = ke.value),
           (Le = Se + Ne(ke, we++)),
           (Re += Z(ke, z, le, Le, de)));
@@ -215,10 +215,10 @@ function fy() {
         (z = String(T)),
         Error(
           "Objects are not valid as a React child (found: " +
-            (z === "[object Object]"
-              ? "object with keys {" + Object.keys(T).join(", ") + "}"
-              : z) +
-            "). If you meant to render a collection of children, use an array instead.",
+          (z === "[object Object]"
+            ? "object with keys {" + Object.keys(T).join(", ") + "}"
+            : z) +
+          "). If you meant to render a collection of children, use an array instead.",
         )
       );
     return Re;
@@ -311,8 +311,8 @@ function fy() {
       if (T == null)
         throw Error(
           "React.cloneElement(...): The argument must be a React element, but you passed " +
-            T +
-            ".",
+          T +
+          ".",
         );
       var Se = N({}, T.props),
         de = T.key,
@@ -321,8 +321,8 @@ function fy() {
       if (z != null) {
         if (
           (z.ref !== void 0 && ((ke = z.ref), (Re = K.current)),
-          z.key !== void 0 && (de = "" + z.key),
-          T.type && T.type.defaultProps)
+            z.key !== void 0 && (de = "" + z.key),
+            T.type && T.type.defaultProps)
         )
           var we = T.type.defaultProps;
         for (Le in z)
@@ -396,7 +396,7 @@ function fy() {
     (Ce.useContext = function (T) {
       return me.current.useContext(T);
     }),
-    (Ce.useDebugValue = function () {}),
+    (Ce.useDebugValue = function () { }),
     (Ce.useDeferredValue = function (T) {
       return me.current.useDeferredValue(T);
     }),
@@ -489,12 +489,12 @@ var wf;
 function yy() {
   return (
     wf ||
-      ((wf = 1),
+    ((wf = 1),
       (function (n) {
         function e(M, J) {
           var F = M.length;
           M.push(J);
-          e: for (; 0 < F; ) {
+          e: for (; 0 < F;) {
             var T = (F - 1) >>> 1,
               z = M[T];
             if (0 < l(z, J)) ((M[T] = J), (M[F] = z), (F = T));
@@ -510,7 +510,7 @@ function yy() {
             F = M.pop();
           if (F !== J) {
             M[0] = F;
-            e: for (var T = 0, z = M.length, le = z >>> 1; T < le; ) {
+            e: for (var T = 0, z = M.length, le = z >>> 1; T < le;) {
               var Se = 2 * (T + 1) - 1,
                 de = M[Se],
                 ke = Se + 1,
@@ -561,7 +561,7 @@ function yy() {
           navigator.scheduling.isInputPending !== void 0 &&
           navigator.scheduling.isInputPending.bind(navigator.scheduling);
         function L(M) {
-          for (var J = i(g); J !== null; ) {
+          for (var J = i(g); J !== null;) {
             if (J.callback === null) a(g);
             else if (J.startTime <= M)
               (a(g), (J.sortIndex = J.expirationTime), e(m, J));
@@ -666,8 +666,8 @@ function yy() {
           (n.unstable_forceFrameRate = function (M) {
             0 > M || 125 < M
               ? console.error(
-                  "forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported",
-                )
+                "forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported",
+              )
               : (ye = 0 < M ? Math.floor(1e3 / M) : 5);
           }),
           (n.unstable_getCurrentPriorityLevel = function () {
@@ -694,8 +694,8 @@ function yy() {
               w = F;
             }
           }),
-          (n.unstable_pauseExecution = function () {}),
-          (n.unstable_requestPaint = function () {}),
+          (n.unstable_pauseExecution = function () { }),
+          (n.unstable_requestPaint = function () { }),
           (n.unstable_runWithPriority = function (M, J) {
             switch (M) {
               case 1:
@@ -718,10 +718,10 @@ function yy() {
           (n.unstable_scheduleCallback = function (M, J, F) {
             var T = n.unstable_now();
             switch (
-              (typeof F == "object" && F !== null
-                ? ((F = F.delay),
-                  (F = typeof F == "number" && 0 < F ? T + F : T))
-                : (F = T),
+            (typeof F == "object" && F !== null
+              ? ((F = F.delay),
+                (F = typeof F == "number" && 0 < F ? T + F : T))
+              : (F = T),
               M)
             ) {
               case 1:
@@ -753,8 +753,8 @@ function yy() {
                 ? ((M.sortIndex = F),
                   e(g, M),
                   i(m) === null &&
-                    M === i(g) &&
-                    (b ? (O(xe), (xe = -1)) : (b = !0), me(B, F - T)))
+                  M === i(g) &&
+                  (b ? (O(xe), (xe = -1)) : (b = !0), me(B, F - T)))
                 : ((M.sortIndex = z), e(m, M), N || S || ((N = !0), ae(X))),
               M
             );
@@ -789,7 +789,7 @@ function xy() {
   function i(t) {
     for (
       var r = "https://reactjs.org/docs/error-decoder.html?invariant=" + t,
-        o = 1;
+      o = 1;
       o < arguments.length;
       o++
     )
@@ -811,10 +811,10 @@ function xy() {
     for (l[t] = r, t = 0; t < r.length; t++) a.add(r[t]);
   }
   var f = !(
-      typeof window > "u" ||
-      typeof window.document > "u" ||
-      typeof window.document.createElement > "u"
-    ),
+    typeof window > "u" ||
+    typeof window.document > "u" ||
+    typeof window.document.createElement > "u"
+  ),
     m = Object.prototype.hasOwnProperty,
     g =
       /^[:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\-.0-9\u00B7\u0300-\u036F\u203F-\u2040]*$/,
@@ -957,22 +957,22 @@ function xy() {
     (h !== null
       ? h.type !== 0
       : u ||
-        !(2 < r.length) ||
-        (r[0] !== "o" && r[0] !== "O") ||
-        (r[1] !== "n" && r[1] !== "N")) &&
+      !(2 < r.length) ||
+      (r[0] !== "o" && r[0] !== "O") ||
+      (r[1] !== "n" && r[1] !== "N")) &&
       (N(r, o, h, u) && (o = null),
-      u || h === null
-        ? w(r) &&
+        u || h === null
+          ? w(r) &&
           (o === null ? t.removeAttribute(r) : t.setAttribute(r, "" + o))
-        : h.mustUseProperty
-          ? (t[h.propertyName] = o === null ? (h.type === 3 ? !1 : "") : o)
-          : ((r = h.attributeName),
-            (u = h.attributeNamespace),
-            o === null
-              ? t.removeAttribute(r)
-              : ((h = h.type),
-                (o = h === 3 || (h === 4 && o === !0) ? "" : "" + o),
-                u ? t.setAttributeNS(u, r, o) : t.setAttribute(r, o))));
+          : h.mustUseProperty
+            ? (t[h.propertyName] = o === null ? (h.type === 3 ? !1 : "") : o)
+            : ((r = h.attributeName),
+              (u = h.attributeNamespace),
+              o === null
+                ? t.removeAttribute(r)
+                : ((h = h.type),
+                  (o = h === 3 || (h === 4 && o === !0) ? "" : "" + o),
+                  u ? t.setAttributeNS(u, r, o) : t.setAttribute(r, o))));
   }
   var B = n.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED,
     X = Symbol.for("react.element"),
@@ -1024,12 +1024,12 @@ function xy() {
           ((r = function () {
             throw Error();
           }),
-          Object.defineProperty(r.prototype, "props", {
-            set: function () {
-              throw Error();
-            },
-          }),
-          typeof Reflect == "object" && Reflect.construct)
+            Object.defineProperty(r.prototype, "props", {
+              set: function () {
+                throw Error();
+              },
+            }),
+            typeof Reflect == "object" && Reflect.construct)
         ) {
           try {
             Reflect.construct(r, []);
@@ -1058,10 +1058,10 @@ function xy() {
         for (
           var h = I.stack.split(`
 `),
-            p = u.stack.split(`
+          p = u.stack.split(`
 `),
-            v = h.length - 1,
-            j = p.length - 1;
+          v = h.length - 1,
+          j = p.length - 1;
           1 <= v && 0 <= j && h[v] !== p[j];
         )
           j--;
@@ -1075,8 +1075,8 @@ function xy() {
 ` + h[v].replace(" at new ", " at ");
                   return (
                     t.displayName &&
-                      E.includes("<anonymous>") &&
-                      (E = E.replace("<anonymous>", t.displayName)),
+                    E.includes("<anonymous>") &&
+                    (E = E.replace("<anonymous>", t.displayName)),
                     E
                   );
                 }
@@ -1140,7 +1140,7 @@ function xy() {
           return (
             (t = t.displayName),
             t ||
-              ((t = r.displayName || r.name || ""),
+            ((t = r.displayName || r.name || ""),
               (t = t !== "" ? "ForwardRef(" + t + ")" : "ForwardRef")),
             t
           );
@@ -1153,7 +1153,7 @@ function xy() {
           ((r = t._payload), (t = t._init));
           try {
             return ke(t(r));
-          } catch {}
+          } catch { }
       }
     return null;
   }
@@ -1336,8 +1336,8 @@ function xy() {
       ? Yt(t, r.type, o)
       : r.hasOwnProperty("defaultValue") && Yt(t, r.type, we(r.defaultValue)),
       r.checked == null &&
-        r.defaultChecked != null &&
-        (t.defaultChecked = !!r.defaultChecked));
+      r.defaultChecked != null &&
+      (t.defaultChecked = !!r.defaultChecked));
   }
   function ft(t, r, o) {
     if (r.hasOwnProperty("value") || r.hasOwnProperty("defaultValue")) {
@@ -1412,8 +1412,8 @@ function xy() {
       u = we(r.defaultValue);
     (o != null &&
       ((o = "" + o),
-      o !== t.value && (t.value = o),
-      r.defaultValue == null && t.defaultValue !== o && (t.defaultValue = o)),
+        o !== t.value && (t.value = o),
+        r.defaultValue == null && t.defaultValue !== o && (t.defaultValue = o)),
       u != null && (t.defaultValue = "" + u));
   }
   function ar(t) {
@@ -1444,10 +1444,10 @@ function xy() {
     Xi = (function (t) {
       return typeof MSApp < "u" && MSApp.execUnsafeLocalFunction
         ? function (r, o, u, h) {
-            MSApp.execUnsafeLocalFunction(function () {
-              return t(r, o, u, h);
-            });
-          }
+          MSApp.execUnsafeLocalFunction(function () {
+            return t(r, o, u, h);
+          });
+        }
         : t;
     })(function (t, r) {
       if (t.namespaceURI !== "http://www.w3.org/2000/svg" || "innerHTML" in t)
@@ -1455,12 +1455,12 @@ function xy() {
       else {
         for (
           or = or || document.createElement("div"),
-            or.innerHTML = "<svg>" + r.valueOf().toString() + "</svg>",
-            r = or.firstChild;
+          or.innerHTML = "<svg>" + r.valueOf().toString() + "</svg>",
+          r = or.firstChild;
           t.firstChild;
         )
           t.removeChild(t.firstChild);
-        for (; r.firstChild; ) t.appendChild(r.firstChild);
+        for (; r.firstChild;) t.appendChild(r.firstChild);
       }
     });
   function lr(t, r) {
@@ -1474,50 +1474,50 @@ function xy() {
     t.textContent = r;
   }
   var Bn = {
-      animationIterationCount: !0,
-      aspectRatio: !0,
-      borderImageOutset: !0,
-      borderImageSlice: !0,
-      borderImageWidth: !0,
-      boxFlex: !0,
-      boxFlexGroup: !0,
-      boxOrdinalGroup: !0,
-      columnCount: !0,
-      columns: !0,
-      flex: !0,
-      flexGrow: !0,
-      flexPositive: !0,
-      flexShrink: !0,
-      flexNegative: !0,
-      flexOrder: !0,
-      gridArea: !0,
-      gridRow: !0,
-      gridRowEnd: !0,
-      gridRowSpan: !0,
-      gridRowStart: !0,
-      gridColumn: !0,
-      gridColumnEnd: !0,
-      gridColumnSpan: !0,
-      gridColumnStart: !0,
-      fontWeight: !0,
-      lineClamp: !0,
-      lineHeight: !0,
-      opacity: !0,
-      order: !0,
-      orphans: !0,
-      tabSize: !0,
-      widows: !0,
-      zIndex: !0,
-      zoom: !0,
-      fillOpacity: !0,
-      floodOpacity: !0,
-      stopOpacity: !0,
-      strokeDasharray: !0,
-      strokeDashoffset: !0,
-      strokeMiterlimit: !0,
-      strokeOpacity: !0,
-      strokeWidth: !0,
-    },
+    animationIterationCount: !0,
+    aspectRatio: !0,
+    borderImageOutset: !0,
+    borderImageSlice: !0,
+    borderImageWidth: !0,
+    boxFlex: !0,
+    boxFlexGroup: !0,
+    boxOrdinalGroup: !0,
+    columnCount: !0,
+    columns: !0,
+    flex: !0,
+    flexGrow: !0,
+    flexPositive: !0,
+    flexShrink: !0,
+    flexNegative: !0,
+    flexOrder: !0,
+    gridArea: !0,
+    gridRow: !0,
+    gridRowEnd: !0,
+    gridRowSpan: !0,
+    gridRowStart: !0,
+    gridColumn: !0,
+    gridColumnEnd: !0,
+    gridColumnSpan: !0,
+    gridColumnStart: !0,
+    fontWeight: !0,
+    lineClamp: !0,
+    lineHeight: !0,
+    opacity: !0,
+    order: !0,
+    orphans: !0,
+    tabSize: !0,
+    widows: !0,
+    zIndex: !0,
+    zoom: !0,
+    fillOpacity: !0,
+    floodOpacity: !0,
+    stopOpacity: !0,
+    strokeDasharray: !0,
+    strokeDashoffset: !0,
+    strokeMiterlimit: !0,
+    strokeOpacity: !0,
+    strokeWidth: !0,
+  },
     xa = ["Webkit", "ms", "Moz", "O"];
   Object.keys(Bn).forEach(function (t) {
     xa.forEach(function (r) {
@@ -1623,7 +1623,7 @@ function xy() {
   function Ze(t, r) {
     return t(r);
   }
-  function Un() {}
+  function Un() { }
   var Qi = !1;
   function Zi(t, r, o) {
     if (Qi) return t(r, o);
@@ -1654,12 +1654,12 @@ function xy() {
       case "onMouseEnter":
         ((u = !u.disabled) ||
           ((t = t.type),
-          (u = !(
-            t === "button" ||
-            t === "input" ||
-            t === "select" ||
-            t === "textarea"
-          ))),
+            (u = !(
+              t === "button" ||
+              t === "input" ||
+              t === "select" ||
+              t === "textarea"
+            ))),
           (t = !u));
         break e;
       default:
@@ -1715,7 +1715,7 @@ function xy() {
   function _n(t) {
     var r = t,
       o = t;
-    if (t.alternate) for (; r.return; ) r = r.return;
+    if (t.alternate) for (; r.return;) r = r.return;
     else {
       t = r;
       do ((r = t), (r.flags & 4098) !== 0 && (o = r.return), (t = r.return));
@@ -1728,7 +1728,7 @@ function xy() {
       var r = t.memoizedState;
       if (
         (r === null && ((t = t.alternate), t !== null && (r = t.memoizedState)),
-        r !== null)
+          r !== null)
       )
         return r.dehydrated;
     }
@@ -1743,7 +1743,7 @@ function xy() {
       if (((r = _n(t)), r === null)) throw Error(i(188));
       return r !== t ? null : t;
     }
-    for (var o = t, u = r; ; ) {
+    for (var o = t, u = r; ;) {
       var h = o.return;
       if (h === null) break;
       var p = h.alternate;
@@ -1755,7 +1755,7 @@ function xy() {
         break;
       }
       if (h.child === p.child) {
-        for (p = h.child; p; ) {
+        for (p = h.child; p;) {
           if (p === o) return (ns(h), t);
           if (p === u) return (ns(h), r);
           p = p.sibling;
@@ -1764,7 +1764,7 @@ function xy() {
       }
       if (o.return !== u.return) ((o = h), (u = p));
       else {
-        for (var v = !1, j = h.child; j; ) {
+        for (var v = !1, j = h.child; j;) {
           if (j === o) {
             ((v = !0), (o = h), (u = p));
             break;
@@ -1776,7 +1776,7 @@ function xy() {
           j = j.sibling;
         }
         if (!v) {
-          for (j = p.child; j; ) {
+          for (j = p.child; j;) {
             if (j === o) {
               ((v = !0), (o = p), (u = h));
               break;
@@ -1800,7 +1800,7 @@ function xy() {
   }
   function ue(t) {
     if (t.tag === 5 || t.tag === 6) return t;
-    for (t = t.child; t !== null; ) {
+    for (t = t.child; t !== null;) {
       var r = ue(t);
       if (r !== null) return r;
       t = t.sibling;
@@ -1824,7 +1824,7 @@ function xy() {
     if (Ft && typeof Ft.onCommitFiberRoot == "function")
       try {
         Ft.onCommitFiberRoot(Br, t, void 0, (t.current.flags & 128) === 128);
-      } catch {}
+      } catch { }
   }
   var pn = Math.clz32 ? Math.clz32 : Rm,
     Am = Math.log,
@@ -1903,7 +1903,7 @@ function xy() {
     )
       return r;
     if (((u & 4) !== 0 && (u |= o & 16), (r = t.entangledLanes), r !== 0))
-      for (t = t.entanglements, r &= u; 0 < r; )
+      for (t = t.entanglements, r &= u; 0 < r;)
         ((o = 31 - pn(r)), (h = 1 << o), (u |= t[o]), (r &= ~h));
     return u;
   }
@@ -1951,9 +1951,9 @@ function xy() {
   function Im(t, r) {
     for (
       var o = t.suspendedLanes,
-        u = t.pingedLanes,
-        h = t.expirationTimes,
-        p = t.pendingLanes;
+      u = t.pingedLanes,
+      h = t.expirationTimes,
+      p = t.pendingLanes;
       0 < p;
     ) {
       var v = 31 - pn(p),
@@ -1996,7 +1996,7 @@ function xy() {
       (t.entangledLanes &= r),
       (r = t.entanglements));
     var u = t.eventTimes;
-    for (t = t.expirationTimes; 0 < o; ) {
+    for (t = t.expirationTimes; 0 < o;) {
       var h = 31 - pn(o),
         p = 1 << h;
       ((r[h] = 0), (u[h] = -1), (t[h] = -1), (o &= ~p));
@@ -2004,7 +2004,7 @@ function xy() {
   }
   function pl(t, r) {
     var o = (t.entangledLanes |= r);
-    for (t = t.entanglements; o; ) {
+    for (t = t.entanglements; o;) {
       var u = 31 - pn(o),
         h = 1 << u;
       ((h & r) | (t[u] & r) && (t[u] |= r), (o &= ~h));
@@ -2060,12 +2060,12 @@ function xy() {
   function ls(t, r, o, u, h, p) {
     return t === null || t.nativeEvent !== p
       ? ((t = {
-          blockedOn: r,
-          domEventName: o,
-          eventSystemFlags: u,
-          nativeEvent: p,
-          targetContainers: [h],
-        }),
+        blockedOn: r,
+        domEventName: o,
+        eventSystemFlags: u,
+        nativeEvent: p,
+        targetContainers: [h],
+      }),
         r !== null && ((r = Ss(r)), r !== null && ml(r)),
         t)
       : ((t.eventSystemFlags |= u),
@@ -2116,7 +2116,7 @@ function xy() {
   }
   function Aa(t) {
     if (t.blockedOn !== null) return !1;
-    for (var r = t.targetContainers; 0 < r.length; ) {
+    for (var r = t.targetContainers; 0 < r.length;) {
       var o = vl(t.domEventName, t.eventSystemFlags, r[0], t.nativeEvent);
       if (o === null) {
         o = t.nativeEvent;
@@ -2141,9 +2141,9 @@ function xy() {
   function cs(t, r) {
     t.blockedOn === r &&
       ((t.blockedOn = null),
-      gl ||
+        gl ||
         ((gl = !0),
-        e.unstable_scheduleCallback(e.unstable_NormalPriority, Mm)));
+          e.unstable_scheduleCallback(e.unstable_NormalPriority, Mm)));
   }
   function us(t) {
     function r(h) {
@@ -2158,16 +2158,16 @@ function xy() {
     }
     for (
       fr !== null && cs(fr, t),
-        pr !== null && cs(pr, t),
-        mr !== null && cs(mr, t),
-        as.forEach(r),
-        os.forEach(r),
-        o = 0;
+      pr !== null && cs(pr, t),
+      mr !== null && cs(mr, t),
+      as.forEach(r),
+      os.forEach(r),
+      o = 0;
       o < gr.length;
       o++
     )
       ((u = gr[o]), u.blockedOn === t && (u.blockedOn = null));
-    for (; 0 < gr.length && ((o = gr[0]), o.blockedOn === null); )
+    for (; 0 < gr.length && ((o = gr[0]), o.blockedOn === null);)
       (Zu(o), o.blockedOn === null && gr.shift());
   }
   var ci = B.ReactCurrentBatchConfig,
@@ -2198,13 +2198,13 @@ function xy() {
       if (h === null) (Dl(t, r, u, Ra, o), Qu(t, u));
       else if (Lm(h, t, r, o, u)) u.stopPropagation();
       else if ((Qu(t, u), r & 4 && -1 < Dm.indexOf(t))) {
-        for (; h !== null; ) {
+        for (; h !== null;) {
           var p = Ss(h);
           if (
             (p !== null && Ku(p),
-            (p = vl(t, r, o, u)),
-            p === null && Dl(t, r, u, Ra, o),
-            p === h)
+              (p = vl(t, r, o, u)),
+              p === null && Dl(t, r, u, Ra, o),
+              p === h)
           )
             break;
           h = p;
@@ -2380,7 +2380,7 @@ function xy() {
             (o.preventDefault
               ? o.preventDefault()
               : typeof o.returnValue != "unknown" && (o.returnValue = !1),
-            (this.isDefaultPrevented = Oa));
+              (this.isDefaultPrevented = Oa));
         },
         stopPropagation: function () {
           var o = this.nativeEvent;
@@ -2388,24 +2388,24 @@ function xy() {
             (o.stopPropagation
               ? o.stopPropagation()
               : typeof o.cancelBubble != "unknown" && (o.cancelBubble = !0),
-            (this.isPropagationStopped = Oa));
+              (this.isPropagationStopped = Oa));
         },
-        persist: function () {},
+        persist: function () { },
         isPersistent: Oa,
       }),
       r
     );
   }
   var ui = {
-      eventPhase: 0,
-      bubbles: 0,
-      cancelable: 0,
-      timeStamp: function (t) {
-        return t.timeStamp || Date.now();
-      },
-      defaultPrevented: 0,
-      isTrusted: 0,
+    eventPhase: 0,
+    bubbles: 0,
+    cancelable: 0,
+    timeStamp: function (t) {
+      return t.timeStamp || Date.now();
     },
+    defaultPrevented: 0,
+    isTrusted: 0,
+  },
     wl = Ht(ui),
     ds = F({}, ui, { view: 0, detail: 0 }),
     Bm = Ht(ds),
@@ -2437,9 +2437,9 @@ function xy() {
         return "movementX" in t
           ? t.movementX
           : (t !== hs &&
-              (hs && t.type === "mousemove"
-                ? ((bl = t.screenX - hs.screenX), (Sl = t.screenY - hs.screenY))
-                : (Sl = bl = 0),
+            (hs && t.type === "mousemove"
+              ? ((bl = t.screenX - hs.screenX), (Sl = t.screenY - hs.screenY))
+              : (Sl = bl = 0),
               (hs = t)),
             bl);
       },
@@ -2532,40 +2532,40 @@ function xy() {
     return Qm;
   }
   var Zm = F({}, ds, {
-      key: function (t) {
-        if (t.key) {
-          var r = Jm[t.key] || t.key;
-          if (r !== "Unidentified") return r;
-        }
-        return t.type === "keypress"
-          ? ((t = Ia(t)), t === 13 ? "Enter" : String.fromCharCode(t))
-          : t.type === "keydown" || t.type === "keyup"
-            ? Xm[t.keyCode] || "Unidentified"
-            : "";
-      },
-      code: 0,
-      location: 0,
-      ctrlKey: 0,
-      shiftKey: 0,
-      altKey: 0,
-      metaKey: 0,
-      repeat: 0,
-      locale: 0,
-      getModifierState: jl,
-      charCode: function (t) {
-        return t.type === "keypress" ? Ia(t) : 0;
-      },
-      keyCode: function (t) {
-        return t.type === "keydown" || t.type === "keyup" ? t.keyCode : 0;
-      },
-      which: function (t) {
-        return t.type === "keypress"
-          ? Ia(t)
-          : t.type === "keydown" || t.type === "keyup"
-            ? t.keyCode
-            : 0;
-      },
-    }),
+    key: function (t) {
+      if (t.key) {
+        var r = Jm[t.key] || t.key;
+        if (r !== "Unidentified") return r;
+      }
+      return t.type === "keypress"
+        ? ((t = Ia(t)), t === 13 ? "Enter" : String.fromCharCode(t))
+        : t.type === "keydown" || t.type === "keyup"
+          ? Xm[t.keyCode] || "Unidentified"
+          : "";
+    },
+    code: 0,
+    location: 0,
+    ctrlKey: 0,
+    shiftKey: 0,
+    altKey: 0,
+    metaKey: 0,
+    repeat: 0,
+    locale: 0,
+    getModifierState: jl,
+    charCode: function (t) {
+      return t.type === "keypress" ? Ia(t) : 0;
+    },
+    keyCode: function (t) {
+      return t.type === "keydown" || t.type === "keyup" ? t.keyCode : 0;
+    },
+    which: function (t) {
+      return t.type === "keypress"
+        ? Ia(t)
+        : t.type === "keydown" || t.type === "keyup"
+          ? t.keyCode
+          : 0;
+    },
+  }),
     eg = Ht(Zm),
     tg = F({}, Da, {
       pointerId: 0,
@@ -2700,7 +2700,7 @@ function xy() {
     (wa(u),
       (r = Ba(r, "onChange")),
       0 < r.length &&
-        ((o = new wl("onChange", "change", null, o, u)),
+      ((o = new wl("onChange", "change", null, o, u)),
         t.push({ event: o, listeners: r })));
   }
   var ps = null,
@@ -2776,20 +2776,20 @@ function xy() {
     return !0;
   }
   function vd(t) {
-    for (; t && t.firstChild; ) t = t.firstChild;
+    for (; t && t.firstChild;) t = t.firstChild;
     return t;
   }
   function xd(t, r) {
     var o = vd(t);
     t = 0;
-    for (var u; o; ) {
+    for (var u; o;) {
       if (o.nodeType === 3) {
         if (((u = t + o.textContent.length), t <= r && u >= r))
           return { node: o, offset: r - t };
         t = u;
       }
       e: {
-        for (; o; ) {
+        for (; o;) {
           if (o.nextSibling) {
             o = o.nextSibling;
             break e;
@@ -2817,7 +2817,7 @@ function xy() {
       : !1;
   }
   function bd() {
-    for (var t = window, r = _e(); r instanceof t.HTMLIFrameElement; ) {
+    for (var t = window, r = _e(); r instanceof t.HTMLIFrameElement;) {
       try {
         var o = typeof r.contentWindow.location.href == "string";
       } catch {
@@ -2856,15 +2856,15 @@ function xy() {
       if (u !== null && Tl(o)) {
         if (
           ((r = u.start),
-          (t = u.end),
-          t === void 0 && (t = r),
-          "selectionStart" in o)
+            (t = u.end),
+            t === void 0 && (t = r),
+            "selectionStart" in o)
         )
           ((o.selectionStart = r),
             (o.selectionEnd = Math.min(t, o.value.length)));
         else if (
           ((t = ((r = o.ownerDocument || document) && r.defaultView) || window),
-          t.getSelection)
+            t.getSelection)
         ) {
           t = t.getSelection();
           var h = o.textContent.length,
@@ -2881,14 +2881,14 @@ function xy() {
               t.focusNode !== v.node ||
               t.focusOffset !== v.offset) &&
             ((r = r.createRange()),
-            r.setStart(h.node, h.offset),
-            t.removeAllRanges(),
-            p > u
-              ? (t.addRange(r), t.extend(v.node, v.offset))
-              : (r.setEnd(v.node, v.offset), t.addRange(r)));
+              r.setStart(h.node, h.offset),
+              t.removeAllRanges(),
+              p > u
+                ? (t.addRange(r), t.extend(v.node, v.offset))
+                : (r.setEnd(v.node, v.offset), t.addRange(r)));
         }
       }
-      for (r = [], t = o; (t = t.parentNode); )
+      for (r = [], t = o; (t = t.parentNode);)
         t.nodeType === 1 &&
           r.push({ element: t, left: t.scrollLeft, top: t.scrollTop });
       for (typeof o.focus == "function" && o.focus(), o = 0; o < r.length; o++)
@@ -2909,25 +2909,25 @@ function xy() {
       hi == null ||
       hi !== _e(u) ||
       ((u = hi),
-      "selectionStart" in u && Tl(u)
-        ? (u = { start: u.selectionStart, end: u.selectionEnd })
-        : ((u = (
+        "selectionStart" in u && Tl(u)
+          ? (u = { start: u.selectionStart, end: u.selectionEnd })
+          : ((u = (
             (u.ownerDocument && u.ownerDocument.defaultView) ||
             window
           ).getSelection()),
-          (u = {
-            anchorNode: u.anchorNode,
-            anchorOffset: u.anchorOffset,
-            focusNode: u.focusNode,
-            focusOffset: u.focusOffset,
-          })),
-      (ys && gs(ys, u)) ||
+            (u = {
+              anchorNode: u.anchorNode,
+              anchorOffset: u.anchorOffset,
+              focusNode: u.focusNode,
+              focusOffset: u.focusOffset,
+            })),
+        (ys && gs(ys, u)) ||
         ((ys = u),
-        (u = Ba(Al, "onSelect")),
-        0 < u.length &&
+          (u = Ba(Al, "onSelect")),
+          0 < u.length &&
           ((r = new wl("onSelect", "select", null, r, o)),
-          t.push({ event: r, listeners: u }),
-          (r.target = hi))));
+            t.push({ event: r, listeners: u }),
+            (r.target = hi))));
   }
   function Ma(t, r) {
     var o = {};
@@ -2939,20 +2939,20 @@ function xy() {
     );
   }
   var fi = {
-      animationend: Ma("Animation", "AnimationEnd"),
-      animationiteration: Ma("Animation", "AnimationIteration"),
-      animationstart: Ma("Animation", "AnimationStart"),
-      transitionend: Ma("Transition", "TransitionEnd"),
-    },
+    animationend: Ma("Animation", "AnimationEnd"),
+    animationiteration: Ma("Animation", "AnimationIteration"),
+    animationstart: Ma("Animation", "AnimationStart"),
+    transitionend: Ma("Transition", "TransitionEnd"),
+  },
     Rl = {},
     kd = {};
   f &&
     ((kd = document.createElement("div").style),
-    "AnimationEvent" in window ||
+      "AnimationEvent" in window ||
       (delete fi.animationend.animation,
-      delete fi.animationiteration.animation,
-      delete fi.animationstart.animation),
-    "TransitionEvent" in window || delete fi.transitionend.transition);
+        delete fi.animationiteration.animation,
+        delete fi.animationstart.animation),
+      "TransitionEvent" in window || delete fi.transitionend.transition);
   function za(t) {
     if (Rl[t]) return Rl[t];
     if (!fi[t]) return t;
@@ -3016,9 +3016,9 @@ function xy() {
       "compositionupdate focusout keydown keypress keyup mousedown".split(" "),
     ));
   var vs =
-      "abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange resize seeked seeking stalled suspend timeupdate volumechange waiting".split(
-        " ",
-      ),
+    "abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange resize seeked seeking stalled suspend timeupdate volumechange waiting".split(
+      " ",
+    ),
     jg = new Set(
       "cancel close invalid load scroll toggle".split(" ").concat(vs),
     );
@@ -3047,10 +3047,10 @@ function xy() {
           for (v = 0; v < u.length; v++) {
             if (
               ((j = u[v]),
-              (E = j.instance),
-              (I = j.currentTarget),
-              (j = j.listener),
-              E !== p && h.isPropagationStopped())
+                (E = j.instance),
+                (I = j.currentTarget),
+                (j = j.listener),
+                E !== p && h.isPropagationStopped())
             )
               break e;
             (Nd(h, j, I), (p = E));
@@ -3094,8 +3094,8 @@ function xy() {
     ((o = h.bind(null, r, o, t)),
       (h = void 0),
       !oi ||
-        (r !== "touchstart" && r !== "touchmove" && r !== "wheel") ||
-        (h = !0),
+      (r !== "touchstart" && r !== "touchmove" && r !== "wheel") ||
+      (h = !0),
       u
         ? h !== void 0
           ? t.addEventListener(r, o, { capture: !0, passive: h })
@@ -3107,24 +3107,24 @@ function xy() {
   function Dl(t, r, o, u, h) {
     var p = u;
     if ((r & 1) === 0 && (r & 2) === 0 && u !== null)
-      e: for (;;) {
+      e: for (; ;) {
         if (u === null) return;
         var v = u.tag;
         if (v === 3 || v === 4) {
           var j = u.stateNode.containerInfo;
           if (j === h || (j.nodeType === 8 && j.parentNode === h)) break;
           if (v === 4)
-            for (v = u.return; v !== null; ) {
+            for (v = u.return; v !== null;) {
               var E = v.tag;
               if (
                 (E === 3 || E === 4) &&
                 ((E = v.stateNode.containerInfo),
-                E === h || (E.nodeType === 8 && E.parentNode === h))
+                  E === h || (E.nodeType === 8 && E.parentNode === h))
               )
                 return;
               v = v.return;
             }
-          for (; j !== null; ) {
+          for (; j !== null;) {
             if (((v = Ur(j)), v === null)) return;
             if (((E = v.tag), E === 5 || E === 6)) {
               u = p = v;
@@ -3222,31 +3222,31 @@ function xy() {
             it = !se && t === "scroll",
             R = se ? ($ !== null ? $ + "Capture" : null) : $;
           se = [];
-          for (var A = I, P; A !== null; ) {
+          for (var A = I, P; A !== null;) {
             P = A;
             var q = P.stateNode;
             if (
               (P.tag === 5 &&
                 q !== null &&
                 ((P = q),
-                R !== null &&
+                  R !== null &&
                   ((q = Fn(A, R)), q != null && se.push(ws(A, q, P)))),
-              it)
+                it)
             )
               break;
             A = A.return;
           }
           0 < se.length &&
             (($ = new Y($, ee, null, o, U)),
-            H.push({ event: $, listeners: se }));
+              H.push({ event: $, listeners: se }));
         }
       }
       if ((r & 7) === 0) {
         e: {
           if (
             (($ = t === "mouseover" || t === "pointerover"),
-            (Y = t === "mouseout" || t === "pointerout"),
-            $ &&
+              (Y = t === "mouseout" || t === "pointerout"),
+              $ &&
               o !== zr &&
               (ee = o.relatedTarget || o.fromElement) &&
               (Ur(ee) || ee[Hn]))
@@ -3260,47 +3260,47 @@ function xy() {
                 : ($ = U.ownerDocument)
                   ? $.defaultView || $.parentWindow
                   : window),
-            Y
-              ? ((ee = o.relatedTarget || o.toElement),
-                (Y = I),
-                (ee = ee ? Ur(ee) : null),
-                ee !== null &&
+              Y
+                ? ((ee = o.relatedTarget || o.toElement),
+                  (Y = I),
+                  (ee = ee ? Ur(ee) : null),
+                  ee !== null &&
                   ((it = _n(ee)),
-                  ee !== it || (ee.tag !== 5 && ee.tag !== 6)) &&
+                    ee !== it || (ee.tag !== 5 && ee.tag !== 6)) &&
                   (ee = null))
-              : ((Y = null), (ee = I)),
-            Y !== ee)
+                : ((Y = null), (ee = I)),
+              Y !== ee)
           ) {
             if (
               ((se = id),
-              (q = "onMouseLeave"),
-              (R = "onMouseEnter"),
-              (A = "mouse"),
-              (t === "pointerout" || t === "pointerover") &&
+                (q = "onMouseLeave"),
+                (R = "onMouseEnter"),
+                (A = "mouse"),
+                (t === "pointerout" || t === "pointerover") &&
                 ((se = ad),
-                (q = "onPointerLeave"),
-                (R = "onPointerEnter"),
-                (A = "pointer")),
-              (it = Y == null ? $ : gi(Y)),
-              (P = ee == null ? $ : gi(ee)),
-              ($ = new se(q, A + "leave", Y, o, U)),
-              ($.target = it),
-              ($.relatedTarget = P),
-              (q = null),
-              Ur(U) === I &&
+                  (q = "onPointerLeave"),
+                  (R = "onPointerEnter"),
+                  (A = "pointer")),
+                (it = Y == null ? $ : gi(Y)),
+                (P = ee == null ? $ : gi(ee)),
+                ($ = new se(q, A + "leave", Y, o, U)),
+                ($.target = it),
+                ($.relatedTarget = P),
+                (q = null),
+                Ur(U) === I &&
                 ((se = new se(R, A + "enter", ee, o, U)),
-                (se.target = P),
-                (se.relatedTarget = it),
-                (q = se)),
-              (it = q),
-              Y && ee)
+                  (se.target = P),
+                  (se.relatedTarget = it),
+                  (q = se)),
+                (it = q),
+                Y && ee)
             )
               t: {
                 for (se = Y, R = ee, A = 0, P = se; P; P = pi(P)) A++;
                 for (P = 0, q = R; q; q = pi(q)) P++;
-                for (; 0 < A - P; ) ((se = pi(se)), A--);
-                for (; 0 < P - A; ) ((R = pi(R)), P--);
-                for (; A--; ) {
+                for (; 0 < A - P;) ((se = pi(se)), A--);
+                for (; 0 < P - A;) ((R = pi(R)), P--);
+                for (; A--;) {
                   if (se === R || (R !== null && se === R.alternate)) break t;
                   ((se = pi(se)), (R = pi(R)));
                 }
@@ -3314,8 +3314,8 @@ function xy() {
         e: {
           if (
             (($ = I ? gi(I) : window),
-            (Y = $.nodeName && $.nodeName.toLowerCase()),
-            Y === "select" || (Y === "input" && $.type === "file"))
+              (Y = $.nodeName && $.nodeName.toLowerCase()),
+              Y === "select" || (Y === "input" && $.type === "file"))
           )
             var oe = pg;
           else if (hd($))
@@ -3335,10 +3335,10 @@ function xy() {
           }
           (fe && fe(t, $, I),
             t === "focusout" &&
-              (fe = $._wrapperState) &&
-              fe.controlled &&
-              $.type === "number" &&
-              Yt($, "number", $.value));
+            (fe = $._wrapperState) &&
+            fe.controlled &&
+            $.type === "number" &&
+            Yt($, "number", $.value));
         }
         switch (((fe = I ? gi(I) : window), t)) {
           case "focusin":
@@ -3382,8 +3382,8 @@ function xy() {
           di
             ? ud(t, o) && (ve = "onCompositionEnd")
             : t === "keydown" &&
-              o.keyCode === 229 &&
-              (ve = "onCompositionStart");
+            o.keyCode === 229 &&
+            (ve = "onCompositionStart");
         (ve &&
           (od &&
             o.locale !== "ko" &&
@@ -3392,17 +3392,17 @@ function xy() {
               : ((yr = U),
                 (xl = "value" in yr ? yr.value : yr.textContent),
                 (di = !0))),
-          (fe = Ba(I, ve)),
-          0 < fe.length &&
+            (fe = Ba(I, ve)),
+            0 < fe.length &&
             ((ve = new sd(ve, t, null, o, U)),
-            H.push({ event: ve, listeners: fe }),
-            pe
-              ? (ve.data = pe)
-              : ((pe = dd(o)), pe !== null && (ve.data = pe)))),
+              H.push({ event: ve, listeners: fe }),
+              pe
+                ? (ve.data = pe)
+                : ((pe = dd(o)), pe !== null && (ve.data = pe)))),
           (pe = cg ? ug(t, o) : dg(t, o)) &&
-            ((I = Ba(I, "onBeforeInput")),
+          ((I = Ba(I, "onBeforeInput")),
             0 < I.length &&
-              ((U = new sd("onBeforeInput", "beforeinput", null, o, U)),
+            ((U = new sd("onBeforeInput", "beforeinput", null, o, U)),
               H.push({ event: U, listeners: I }),
               (U.data = pe))));
       }
@@ -3413,16 +3413,16 @@ function xy() {
     return { instance: t, listener: r, currentTarget: o };
   }
   function Ba(t, r) {
-    for (var o = r + "Capture", u = []; t !== null; ) {
+    for (var o = r + "Capture", u = []; t !== null;) {
       var h = t,
         p = h.stateNode;
       (h.tag === 5 &&
         p !== null &&
         ((h = p),
-        (p = Fn(t, o)),
-        p != null && u.unshift(ws(t, p, h)),
-        (p = Fn(t, r)),
-        p != null && u.push(ws(t, p, h))),
+          (p = Fn(t, o)),
+          p != null && u.unshift(ws(t, p, h)),
+          (p = Fn(t, r)),
+          p != null && u.push(ws(t, p, h))),
         (t = t.return));
     }
     return u;
@@ -3434,7 +3434,7 @@ function xy() {
     return t || null;
   }
   function Id(t, r, o, u, h) {
-    for (var p = r._reactName, v = []; o !== null && o !== u; ) {
+    for (var p = r._reactName, v = []; o !== null && o !== u;) {
       var j = o,
         E = j.alternate,
         I = j.stateNode;
@@ -3442,9 +3442,9 @@ function xy() {
       (j.tag === 5 &&
         I !== null &&
         ((j = I),
-        h
-          ? ((E = Fn(o, p)), E != null && v.unshift(ws(o, E, j)))
-          : h || ((E = Fn(o, p)), E != null && v.push(ws(o, E, j)))),
+          h
+            ? ((E = Fn(o, p)), E != null && v.unshift(ws(o, E, j)))
+            : h || ((E = Fn(o, p)), E != null && v.push(ws(o, E, j)))),
         (o = o.return));
     }
     v.length !== 0 && t.push({ event: r, listeners: v });
@@ -3463,7 +3463,7 @@ function xy() {
   function Ua(t, r, o) {
     if (((r = Od(r)), Od(t) !== r && o)) throw Error(i(425));
   }
-  function Fa() {}
+  function Fa() { }
   var Ll = null,
     Ml = null;
   function zl(t, r) {
@@ -3485,8 +3485,8 @@ function xy() {
         ? queueMicrotask
         : typeof Dd < "u"
           ? function (t) {
-              return Dd.resolve(null).then(t).catch(Ag);
-            }
+            return Dd.resolve(null).then(t).catch(Ag);
+          }
           : $l;
   function Ag(t) {
     setTimeout(function () {
@@ -3523,7 +3523,7 @@ function xy() {
   }
   function Ld(t) {
     t = t.previousSibling;
-    for (var r = 0; t; ) {
+    for (var r = 0; t;) {
       if (t.nodeType === 8) {
         var o = t.data;
         if (o === "$" || o === "$!" || o === "$?") {
@@ -3545,13 +3545,13 @@ function xy() {
   function Ur(t) {
     var r = t[En];
     if (r) return r;
-    for (var o = t.parentNode; o; ) {
+    for (var o = t.parentNode; o;) {
       if ((r = o[Hn] || o[En])) {
         if (
           ((o = r.alternate),
-          r.child !== null || (o !== null && o.child !== null))
+            r.child !== null || (o !== null && o.child !== null))
         )
-          for (t = Ld(t); t !== null; ) {
+          for (t = Ld(t); t !== null;) {
             if ((o = t[En])) return o;
             t = Ld(t);
           }
@@ -3602,7 +3602,7 @@ function xy() {
     for (p in o) h[p] = r[p];
     return (
       u &&
-        ((t = t.stateNode),
+      ((t = t.stateNode),
         (t.__reactInternalMemoizedUnmaskedChildContext = r),
         (t.__reactInternalMemoizedMaskedChildContext = h)),
       h
@@ -3711,9 +3711,9 @@ function xy() {
     t.return !== null && (Wr(t, 1), Ud(t, 1, 0));
   }
   function Vl(t) {
-    for (; t === Ga; )
+    for (; t === Ga;)
       ((Ga = xi[--wi]), (xi[wi] = null), (Ka = xi[--wi]), (xi[wi] = null));
-    for (; t === Hr; )
+    for (; t === Hr;)
       ((Hr = tn[--nn]),
         (tn[nn] = null),
         (qn = tn[--nn]),
@@ -3812,17 +3812,17 @@ function xy() {
       ((r = t.tag !== 3) &&
         !(r = t.tag !== 5) &&
         ((r = t.type),
-        (r = r !== "head" && r !== "body" && !zl(t.type, t.memoizedProps))),
-      r && (r = Vt))
+          (r = r !== "head" && r !== "body" && !zl(t.type, t.memoizedProps))),
+        r && (r = Vt))
     ) {
       if (ql(t)) throw (Vd(), Error(i(418)));
-      for (; r; ) (Fd(t, r), (r = xr(r.nextSibling)));
+      for (; r;) (Fd(t, r), (r = xr(r.nextSibling)));
     }
     if ((Wd(t), t.tag === 13)) {
       if (((t = t.memoizedState), (t = t !== null ? t.dehydrated : null), !t))
         throw Error(i(317));
       e: {
-        for (t = t.nextSibling, r = 0; t; ) {
+        for (t = t.nextSibling, r = 0; t;) {
           if (t.nodeType === 8) {
             var o = t.data;
             if (o === "/$") {
@@ -3841,7 +3841,7 @@ function xy() {
     return !0;
   }
   function Vd() {
-    for (var t = Vt; t; ) t = xr(t.nextSibling);
+    for (var t = Vt; t;) t = xr(t.nextSibling);
   }
   function bi() {
     ((Vt = Wt = null), (Ke = !1));
@@ -3853,7 +3853,7 @@ function xy() {
   function ks(t, r, o) {
     if (
       ((t = o.ref),
-      t !== null && typeof t != "function" && typeof t != "object")
+        t !== null && typeof t != "function" && typeof t != "object")
     ) {
       if (o._owner) {
         if (((o = o._owner), o)) {
@@ -3869,9 +3869,9 @@ function xy() {
           r.ref._stringRef === p
           ? r.ref
           : ((r = function (v) {
-              var j = h.refs;
-              v === null ? delete j[p] : (j[p] = v);
-            }),
+            var j = h.refs;
+            v === null ? delete j[p] : (j[p] = v);
+          }),
             (r._stringRef = p),
             r);
       }
@@ -3906,11 +3906,11 @@ function xy() {
     }
     function o(R, A) {
       if (!t) return null;
-      for (; A !== null; ) (r(R, A), (A = A.sibling));
+      for (; A !== null;) (r(R, A), (A = A.sibling));
       return null;
     }
     function u(R, A) {
-      for (R = new Map(); A !== null; )
+      for (R = new Map(); A !== null;)
         (A.key !== null ? R.set(A.key, A) : R.set(A.index, A), (A = A.sibling));
       return R;
     }
@@ -3941,11 +3941,11 @@ function xy() {
       return oe === ce
         ? U(R, A, P.props.children, q, P.key)
         : A !== null &&
-            (A.elementType === oe ||
-              (typeof oe == "object" &&
-                oe !== null &&
-                oe.$$typeof === ae &&
-                qd(oe) === A.type))
+          (A.elementType === oe ||
+            (typeof oe == "object" &&
+              oe !== null &&
+              oe.$$typeof === ae &&
+              qd(oe) === A.type))
           ? ((q = h(A, P.props)), (q.ref = ks(R, A, P)), (q.return = R), q)
           : ((q = bo(P.type, P.key, P.props, null, R.mode, q)),
             (q.ref = ks(R, A, P)),
@@ -4055,7 +4055,7 @@ function xy() {
         for (; ve < P.length; ve++)
           ((pe = H(R, P[ve], q)),
             pe !== null &&
-              ((A = p(pe, A, ve)),
+            ((A = p(pe, A, ve)),
               fe === null ? (oe = pe) : (fe.sibling = pe),
               (fe = pe)));
         return (Ke && Wr(R, ve), oe);
@@ -4063,17 +4063,17 @@ function xy() {
       for (pe = u(R, pe); ve < P.length; ve++)
         ((yt = Y(pe, R, ve, P[ve], q)),
           yt !== null &&
-            (t &&
-              yt.alternate !== null &&
-              pe.delete(yt.key === null ? ve : yt.key),
+          (t &&
+            yt.alternate !== null &&
+            pe.delete(yt.key === null ? ve : yt.key),
             (A = p(yt, A, ve)),
             fe === null ? (oe = yt) : (fe.sibling = yt),
             (fe = yt)));
       return (
         t &&
-          pe.forEach(function (Rr) {
-            return r(R, Rr);
-          }),
+        pe.forEach(function (Rr) {
+          return r(R, Rr);
+        }),
         Ke && Wr(R, ve),
         oe
       );
@@ -4104,7 +4104,7 @@ function xy() {
         for (; !Ie.done; ve++, Ie = P.next())
           ((Ie = H(R, Ie.value, q)),
             Ie !== null &&
-              ((A = p(Ie, A, ve)),
+            ((A = p(Ie, A, ve)),
               fe === null ? (oe = Ie) : (fe.sibling = Ie),
               (fe = Ie)));
         return (Ke && Wr(R, ve), oe);
@@ -4112,17 +4112,17 @@ function xy() {
       for (pe = u(R, pe); !Ie.done; ve++, Ie = P.next())
         ((Ie = Y(pe, R, ve, Ie.value, q)),
           Ie !== null &&
-            (t &&
-              Ie.alternate !== null &&
-              pe.delete(Ie.key === null ? ve : Ie.key),
+          (t &&
+            Ie.alternate !== null &&
+            pe.delete(Ie.key === null ? ve : Ie.key),
             (A = p(Ie, A, ve)),
             fe === null ? (oe = Ie) : (fe.sibling = Ie),
             (fe = Ie)));
       return (
         t &&
-          pe.forEach(function (hy) {
-            return r(R, hy);
-          }),
+        pe.forEach(function (hy) {
+          return r(R, hy);
+        }),
         Ke && Wr(R, ve),
         oe
       );
@@ -4134,12 +4134,12 @@ function xy() {
           P.type === ce &&
           P.key === null &&
           (P = P.props.children),
-        typeof P == "object" && P !== null)
+          typeof P == "object" && P !== null)
       ) {
         switch (P.$$typeof) {
           case X:
             e: {
-              for (var oe = P.key, fe = A; fe !== null; ) {
+              for (var oe = P.key, fe = A; fe !== null;) {
                 if (fe.key === oe) {
                   if (((oe = P.type), oe === ce)) {
                     if (fe.tag === 7) {
@@ -4180,7 +4180,7 @@ function xy() {
             return v(R);
           case K:
             e: {
-              for (fe = P.key; A !== null; ) {
+              for (fe = P.key; A !== null;) {
                 if (A.key === fe)
                   if (
                     A.tag === 4 &&
@@ -4233,13 +4233,13 @@ function xy() {
     (Ve(Ya), (t._currentValue = r));
   }
   function Ql(t, r, o) {
-    for (; t !== null; ) {
+    for (; t !== null;) {
       var u = t.alternate;
       if (
         ((t.childLanes & r) !== r
           ? ((t.childLanes |= r), u !== null && (u.childLanes |= r))
           : u !== null && (u.childLanes & r) !== r && (u.childLanes |= r),
-        t === o)
+          t === o)
       )
         break;
       t = t.return;
@@ -4250,8 +4250,8 @@ function xy() {
       (Jl = ki = null),
       (t = t.dependencies),
       t !== null &&
-        t.firstContext !== null &&
-        ((t.lanes & r) !== 0 && (Mt = !0), (t.firstContext = null)));
+      t.firstContext !== null &&
+      ((t.lanes & r) !== 0 && (Mt = !0), (t.firstContext = null)));
   }
   function rn(t) {
     var r = t._currentValue;
@@ -4277,7 +4277,7 @@ function xy() {
   function Gn(t, r) {
     t.lanes |= r;
     var o = t.alternate;
-    for (o !== null && (o.lanes |= r), o = t, t = t.return; t !== null; )
+    for (o !== null && (o.lanes |= r), o = t, t = t.return; t !== null;)
       ((t.childLanes |= r),
         (o = t.alternate),
         o !== null && (o.childLanes |= r),
@@ -4298,13 +4298,13 @@ function xy() {
   function Xd(t, r) {
     ((t = t.updateQueue),
       r.updateQueue === t &&
-        (r.updateQueue = {
-          baseState: t.baseState,
-          firstBaseUpdate: t.firstBaseUpdate,
-          lastBaseUpdate: t.lastBaseUpdate,
-          shared: t.shared,
-          effects: t.effects,
-        }));
+      (r.updateQueue = {
+        baseState: t.baseState,
+        firstBaseUpdate: t.firstBaseUpdate,
+        lastBaseUpdate: t.lastBaseUpdate,
+        shared: t.shared,
+        effects: t.effects,
+      }));
   }
   function Kn(t, r) {
     return {
@@ -4390,10 +4390,10 @@ function xy() {
       var U = t.alternate;
       U !== null &&
         ((U = U.updateQueue),
-        (j = U.lastBaseUpdate),
-        j !== v &&
+          (j = U.lastBaseUpdate),
+          j !== v &&
           (j === null ? (U.firstBaseUpdate = I) : (j.next = I),
-          (U.lastBaseUpdate = E)));
+            (U.lastBaseUpdate = E)));
     }
     if (p !== null) {
       var H = h.baseState;
@@ -4404,14 +4404,14 @@ function xy() {
         if ((u & $) === $) {
           U !== null &&
             (U = U.next =
-              {
-                eventTime: Y,
-                lane: 0,
-                tag: j.tag,
-                payload: j.payload,
-                callback: j.callback,
-                next: null,
-              });
+            {
+              eventTime: Y,
+              lane: 0,
+              tag: j.tag,
+              payload: j.payload,
+              callback: j.callback,
+              next: null,
+            });
           e: {
             var ee = t,
               se = j;
@@ -4428,8 +4428,8 @@ function xy() {
               case 0:
                 if (
                   ((ee = se.payload),
-                  ($ = typeof ee == "function" ? ee.call(Y, H, $) : ee),
-                  $ == null)
+                    ($ = typeof ee == "function" ? ee.call(Y, H, $) : ee),
+                    $ == null)
                 )
                   break e;
                 H = F({}, H, $);
@@ -4441,8 +4441,8 @@ function xy() {
           j.callback !== null &&
             j.lane !== 0 &&
             ((t.flags |= 64),
-            ($ = h.effects),
-            $ === null ? (h.effects = [j]) : $.push(j));
+              ($ = h.effects),
+              $ === null ? (h.effects = [j]) : $.push(j));
         } else
           ((Y = {
             eventTime: Y,
@@ -4465,11 +4465,11 @@ function xy() {
       } while (!0);
       if (
         (U === null && (E = H),
-        (h.baseState = E),
-        (h.firstBaseUpdate = I),
-        (h.lastBaseUpdate = U),
-        (r = h.shared.interleaved),
-        r !== null)
+          (h.baseState = E),
+          (h.firstBaseUpdate = I),
+          (h.lastBaseUpdate = U),
+          (r = h.shared.interleaved),
+          r !== null)
       ) {
         h = r;
         do ((v |= h.lane), (h = h.next));
@@ -4526,7 +4526,7 @@ function xy() {
   }
   var Xe = wr(0);
   function to(t) {
-    for (var r = t; r !== null; ) {
+    for (var r = t; r !== null;) {
       if (r.tag === 13) {
         var o = r.memoizedState;
         if (
@@ -4541,7 +4541,7 @@ function xy() {
         continue;
       }
       if (r === t) break;
-      for (; r.sibling === null; ) {
+      for (; r.sibling === null;) {
         if (r.return === null || r.return === t) return null;
         r = r.return;
       }
@@ -4577,13 +4577,13 @@ function xy() {
   function oc(t, r, o, u, h, p) {
     if (
       ((Gr = p),
-      (Ye = r),
-      (r.memoizedState = null),
-      (r.updateQueue = null),
-      (r.lanes = 0),
-      (no.current = t === null || t.memoizedState === null ? zg : $g),
-      (t = o(u, h)),
-      Cs)
+        (Ye = r),
+        (r.memoizedState = null),
+        (r.updateQueue = null),
+        (r.lanes = 0),
+        (no.current = t === null || t.memoizedState === null ? zg : $g),
+        (t = o(u, h)),
+        Cs)
     ) {
       p = 0;
       do {
@@ -4597,11 +4597,11 @@ function xy() {
     }
     if (
       ((no.current = ao),
-      (r = ut !== null && ut.next !== null),
-      (Gr = 0),
-      (mt = ut = Ye = null),
-      (ro = !1),
-      r)
+        (r = ut !== null && ut.next !== null),
+        (Gr = 0),
+        (mt = ut = Ye = null),
+        (ro = !1),
+        r)
     )
       throw Error(i(300));
     return t;
@@ -4669,13 +4669,13 @@ function xy() {
         if ((Gr & U) === U)
           (E !== null &&
             (E = E.next =
-              {
-                lane: 0,
-                action: I.action,
-                hasEagerState: I.hasEagerState,
-                eagerState: I.eagerState,
-                next: null,
-              }),
+            {
+              lane: 0,
+              action: I.action,
+              hasEagerState: I.hasEagerState,
+              eagerState: I.eagerState,
+              next: null,
+            }),
             (u = I.hasEagerState ? I.eagerState : t(u, I.action)));
         else {
           var H = {
@@ -4725,7 +4725,7 @@ function xy() {
     }
     return [p, u];
   }
-  function eh() {}
+  function eh() { }
   function th(t, r) {
     var o = Ye,
       u = sn(),
@@ -4733,14 +4733,14 @@ function xy() {
       p = !mn(u.memoizedState, h);
     if (
       (p && ((u.memoizedState = h), (Mt = !0)),
-      (u = u.queue),
-      dc(ih.bind(null, o, u, t), [t]),
-      u.getSnapshot !== r || p || (mt !== null && mt.memoizedState.tag & 1))
+        (u = u.queue),
+        dc(ih.bind(null, o, u, t), [t]),
+        u.getSnapshot !== r || p || (mt !== null && mt.memoizedState.tag & 1))
     ) {
       if (
         ((o.flags |= 2048),
-        Ns(9, rh.bind(null, o, u, h, r), void 0, null),
-        gt === null)
+          Ns(9, rh.bind(null, o, u, h, r), void 0, null),
+          gt === null)
       )
         throw Error(i(349));
       (Gr & 30) !== 0 || nh(o, r, h);
@@ -4869,7 +4869,7 @@ function xy() {
       so(4, 4, hh.bind(null, r, t), o)
     );
   }
-  function hc() {}
+  function hc() { }
   function ph(t, r) {
     var o = sn();
     r = r === void 0 ? null : r;
@@ -4890,7 +4890,7 @@ function xy() {
     return (Gr & 21) === 0
       ? (t.baseState && ((t.baseState = !1), (Mt = !0)), (t.memoizedState = o))
       : (mn(o, r) ||
-          ((o = qu()), (Ye.lanes |= o), (Kr |= o), (t.baseState = !0)),
+        ((o = qu()), (Ye.lanes |= o), (Kr |= o), (t.baseState = !0)),
         r);
   }
   function Dg(t, r) {
@@ -4917,7 +4917,7 @@ function xy() {
         eagerState: null,
         next: null,
       }),
-      vh(t))
+        vh(t))
     )
       xh(r, o);
     else if (((o = Jd(t, r, o, u)), o !== null)) {
@@ -4953,7 +4953,7 @@ function xy() {
               (r.interleaved = h));
             return;
           }
-        } catch {}
+        } catch { }
       ((o = Jd(t, r, h, u)),
         o !== null && ((h = At()), wn(o, t, u, h), wh(o, r, u)));
     }
@@ -4975,25 +4975,25 @@ function xy() {
     }
   }
   var ao = {
-      readContext: rn,
-      useCallback: _t,
-      useContext: _t,
-      useEffect: _t,
-      useImperativeHandle: _t,
-      useInsertionEffect: _t,
-      useLayoutEffect: _t,
-      useMemo: _t,
-      useReducer: _t,
-      useRef: _t,
-      useState: _t,
-      useDebugValue: _t,
-      useDeferredValue: _t,
-      useTransition: _t,
-      useMutableSource: _t,
-      useSyncExternalStore: _t,
-      useId: _t,
-      unstable_isNewReconciler: !1,
-    },
+    readContext: rn,
+    useCallback: _t,
+    useContext: _t,
+    useEffect: _t,
+    useImperativeHandle: _t,
+    useInsertionEffect: _t,
+    useLayoutEffect: _t,
+    useMemo: _t,
+    useReducer: _t,
+    useRef: _t,
+    useState: _t,
+    useDebugValue: _t,
+    useDeferredValue: _t,
+    useTransition: _t,
+    useMutableSource: _t,
+    useSyncExternalStore: _t,
+    useId: _t,
+    unstable_isNewReconciler: !1,
+  },
     zg = {
       readContext: rn,
       useCallback: function (t, r) {
@@ -5054,7 +5054,7 @@ function xy() {
           r = t[0];
         return ((t = Dg.bind(null, t[1])), (Tn().memoizedState = t), [r, t]);
       },
-      useMutableSource: function () {},
+      useMutableSource: function () { },
       useSyncExternalStore: function (t, r, o) {
         var u = Ye,
           h = Tn();
@@ -5227,7 +5227,7 @@ function xy() {
       (t.stateNode = r),
       (r._reactInternals = t),
       u &&
-        ((t = t.stateNode),
+      ((t = t.stateNode),
         (t.__reactInternalMemoizedUnmaskedChildContext = h),
         (t.__reactInternalMemoizedMaskedChildContext = p)),
       r
@@ -5236,9 +5236,9 @@ function xy() {
   function kh(t, r, o, u) {
     ((t = r.state),
       typeof r.componentWillReceiveProps == "function" &&
-        r.componentWillReceiveProps(o, u),
+      r.componentWillReceiveProps(o, u),
       typeof r.UNSAFE_componentWillReceiveProps == "function" &&
-        r.UNSAFE_componentWillReceiveProps(o, u),
+      r.UNSAFE_componentWillReceiveProps(o, u),
       r.state !== t && oo.enqueueReplaceState(r, r.state, null));
   }
   function pc(t, r, o, u) {
@@ -5252,13 +5252,13 @@ function xy() {
       (p = r.getDerivedStateFromProps),
       typeof p == "function" && (fc(t, r, p, o), (h.state = t.memoizedState)),
       typeof r.getDerivedStateFromProps == "function" ||
-        typeof h.getSnapshotBeforeUpdate == "function" ||
-        (typeof h.UNSAFE_componentWillMount != "function" &&
-          typeof h.componentWillMount != "function") ||
-        ((r = h.state),
+      typeof h.getSnapshotBeforeUpdate == "function" ||
+      (typeof h.UNSAFE_componentWillMount != "function" &&
+        typeof h.componentWillMount != "function") ||
+      ((r = h.state),
         typeof h.componentWillMount == "function" && h.componentWillMount(),
         typeof h.UNSAFE_componentWillMount == "function" &&
-          h.UNSAFE_componentWillMount(),
+        h.UNSAFE_componentWillMount(),
         r !== h.state && oo.enqueueReplaceState(h, h.state, null),
         eo(t, o, h, u),
         (h.state = t.memoizedState)),
@@ -5320,16 +5320,16 @@ Error generating stack: ` +
     var p = t.stateNode;
     return (
       p !== null &&
-        typeof p.componentDidCatch == "function" &&
-        (o.callback = function () {
-          (gc(t, r),
-            typeof u != "function" &&
-              (Er === null ? (Er = new Set([this])) : Er.add(this)));
-          var v = r.stack;
-          this.componentDidCatch(r.value, {
-            componentStack: v !== null ? v : "",
-          });
-        }),
+      typeof p.componentDidCatch == "function" &&
+      (o.callback = function () {
+        (gc(t, r),
+          typeof u != "function" &&
+          (Er === null ? (Er = new Set([this])) : Er.add(this)));
+        var v = r.stack;
+        this.componentDidCatch(r.value, {
+          componentStack: v !== null ? v : "",
+        });
+      }),
       o
     );
   }
@@ -5348,8 +5348,8 @@ Error generating stack: ` +
       if (
         ((r = t.tag === 13) &&
           ((r = t.memoizedState),
-          (r = r !== null ? r.dehydrated !== null : !0)),
-        r)
+            (r = r !== null ? r.dehydrated !== null : !0)),
+          r)
       )
         return t;
       t = t.return;
@@ -5359,15 +5359,15 @@ Error generating stack: ` +
   function Th(t, r, o, u, h) {
     return (t.mode & 1) === 0
       ? (t === r
-          ? (t.flags |= 65536)
-          : ((t.flags |= 128),
-            (o.flags |= 131072),
-            (o.flags &= -52805),
-            o.tag === 1 &&
-              (o.alternate === null
-                ? (o.tag = 17)
-                : ((r = Kn(-1, 1)), (r.tag = 2), jr(o, r, 1))),
-            (o.lanes |= 1)),
+        ? (t.flags |= 65536)
+        : ((t.flags |= 128),
+          (o.flags |= 131072),
+          (o.flags &= -52805),
+          o.tag === 1 &&
+          (o.alternate === null
+            ? (o.tag = 17)
+            : ((r = Kn(-1, 1)), (r.tag = 2), jr(o, r, 1))),
+          (o.lanes |= 1)),
         t)
       : ((t.flags |= 65536), (t.lanes = h), t);
   }
@@ -5526,16 +5526,16 @@ Error generating stack: ` +
           ? (typeof U == "function" && (fc(r, o, U, u), (E = r.memoizedState)),
             (j = kr || bh(r, o, j, u, $, E, I))
               ? (H ||
-                  (typeof v.UNSAFE_componentWillMount != "function" &&
-                    typeof v.componentWillMount != "function") ||
-                  (typeof v.componentWillMount == "function" &&
-                    v.componentWillMount(),
+                (typeof v.UNSAFE_componentWillMount != "function" &&
+                  typeof v.componentWillMount != "function") ||
+                (typeof v.componentWillMount == "function" &&
+                  v.componentWillMount(),
                   typeof v.UNSAFE_componentWillMount == "function" &&
-                    v.UNSAFE_componentWillMount()),
+                  v.UNSAFE_componentWillMount()),
                 typeof v.componentDidMount == "function" &&
-                  (r.flags |= 4194308))
+                (r.flags |= 4194308))
               : (typeof v.componentDidMount == "function" &&
-                  (r.flags |= 4194308),
+                (r.flags |= 4194308),
                 (r.memoizedProps = u),
                 (r.memoizedState = E)),
             (v.props = u),
@@ -5572,21 +5572,21 @@ Error generating stack: ` +
         ? (typeof Y == "function" && (fc(r, o, Y, u), (ee = r.memoizedState)),
           (I = kr || bh(r, o, I, u, $, ee, E) || !1)
             ? (U ||
-                (typeof v.UNSAFE_componentWillUpdate != "function" &&
-                  typeof v.componentWillUpdate != "function") ||
-                (typeof v.componentWillUpdate == "function" &&
-                  v.componentWillUpdate(u, ee, E),
+              (typeof v.UNSAFE_componentWillUpdate != "function" &&
+                typeof v.componentWillUpdate != "function") ||
+              (typeof v.componentWillUpdate == "function" &&
+                v.componentWillUpdate(u, ee, E),
                 typeof v.UNSAFE_componentWillUpdate == "function" &&
-                  v.UNSAFE_componentWillUpdate(u, ee, E)),
+                v.UNSAFE_componentWillUpdate(u, ee, E)),
               typeof v.componentDidUpdate == "function" && (r.flags |= 4),
               typeof v.getSnapshotBeforeUpdate == "function" &&
-                (r.flags |= 1024))
+              (r.flags |= 1024))
             : (typeof v.componentDidUpdate != "function" ||
-                (j === t.memoizedProps && $ === t.memoizedState) ||
-                (r.flags |= 4),
+              (j === t.memoizedProps && $ === t.memoizedState) ||
+              (r.flags |= 4),
               typeof v.getSnapshotBeforeUpdate != "function" ||
-                (j === t.memoizedProps && $ === t.memoizedState) ||
-                (r.flags |= 1024),
+              (j === t.memoizedProps && $ === t.memoizedState) ||
+              (r.flags |= 1024),
               (r.memoizedProps = u),
               (r.memoizedState = ee)),
           (v.props = u),
@@ -5594,11 +5594,11 @@ Error generating stack: ` +
           (v.context = E),
           (u = I))
         : (typeof v.componentDidUpdate != "function" ||
-            (j === t.memoizedProps && $ === t.memoizedState) ||
-            (r.flags |= 4),
+          (j === t.memoizedProps && $ === t.memoizedState) ||
+          (r.flags |= 4),
           typeof v.getSnapshotBeforeUpdate != "function" ||
-            (j === t.memoizedProps && $ === t.memoizedState) ||
-            (r.flags |= 1024),
+          (j === t.memoizedProps && $ === t.memoizedState) ||
+          (r.flags |= 1024),
           (u = !1));
     }
     return vc(t, r, o, u, p, h);
@@ -5643,21 +5643,21 @@ Error generating stack: ` +
     if (
       ((j = v) ||
         (j = t !== null && t.memoizedState === null ? !1 : (h & 2) !== 0),
-      j
-        ? ((p = !0), (r.flags &= -129))
-        : (t === null || t.memoizedState !== null) && (h |= 1),
-      Ue(Xe, h & 1),
-      t === null)
+        j
+          ? ((p = !0), (r.flags &= -129))
+          : (t === null || t.memoizedState !== null) && (h |= 1),
+        Ue(Xe, h & 1),
+        t === null)
     )
       return (
         Gl(r),
         (t = r.memoizedState),
         t !== null && ((t = t.dehydrated), t !== null)
           ? ((r.mode & 1) === 0
-              ? (r.lanes = 1)
-              : t.data === "$!"
-                ? (r.lanes = 8)
-                : (r.lanes = 1073741824),
+            ? (r.lanes = 1)
+            : t.data === "$!"
+              ? (r.lanes = 8)
+              : (r.lanes = 1073741824),
             null)
           : ((v = u.children),
             (t = u.fallback),
@@ -5702,10 +5702,10 @@ Error generating stack: ` +
           v === null
             ? wc(o)
             : {
-                baseLanes: v.baseLanes | o,
-                cachePool: null,
-                transitions: v.transitions,
-              }),
+              baseLanes: v.baseLanes | o,
+              cachePool: null,
+              transitions: v.transitions,
+            }),
         (p.memoizedState = v),
         (p.childLanes = t.childLanes & ~o),
         (r.memoizedState = xc),
@@ -5720,7 +5720,7 @@ Error generating stack: ` +
       (u.return = r),
       (u.sibling = null),
       t !== null &&
-        ((o = r.deletions),
+      ((o = r.deletions),
         o === null ? ((r.deletions = [t]), (r.flags |= 16)) : o.push(t)),
       (r.child = u),
       (r.memoizedState = null),
@@ -5813,8 +5813,8 @@ Error generating stack: ` +
         }
         ((h = (h & (u.suspendedLanes | v)) !== 0 ? 0 : h),
           h !== 0 &&
-            h !== p.retryLane &&
-            ((p.retryLane = h), Gn(t, h), wn(u, t, h, -1)));
+          h !== p.retryLane &&
+          ((p.retryLane = h), Gn(t, h), wn(u, t, h, -1)));
       }
       return (Mc(), (u = mc(Error(i(421)))), lo(t, r, v, u));
     }
@@ -5830,7 +5830,7 @@ Error generating stack: ` +
         (Ke = !0),
         (gn = null),
         t !== null &&
-          ((tn[nn++] = Vn),
+        ((tn[nn++] = Vn),
           (tn[nn++] = qn),
           (tn[nn++] = Hr),
           (Vn = t.id),
@@ -5849,13 +5849,13 @@ Error generating stack: ` +
     var p = t.memoizedState;
     p === null
       ? (t.memoizedState = {
-          isBackwards: r,
-          rendering: null,
-          renderingStartTime: 0,
-          last: u,
-          tail: o,
-          tailMode: h,
-        })
+        isBackwards: r,
+        rendering: null,
+        renderingStartTime: 0,
+        last: u,
+        tail: o,
+        tailMode: h,
+      })
       : ((p.isBackwards = r),
         (p.rendering = null),
         (p.renderingStartTime = 0),
@@ -5871,7 +5871,7 @@ Error generating stack: ` +
       ((u = (u & 1) | 2), (r.flags |= 128));
     else {
       if (t !== null && (t.flags & 128) !== 0)
-        e: for (t = r.child; t !== null; ) {
+        e: for (t = r.child; t !== null;) {
           if (t.tag === 13) t.memoizedState !== null && zh(t, o, r);
           else if (t.tag === 19) zh(t, o, r);
           else if (t.child !== null) {
@@ -5879,7 +5879,7 @@ Error generating stack: ` +
             continue;
           }
           if (t === r) break e;
-          for (; t.sibling === null; ) {
+          for (; t.sibling === null;) {
             if (t.return === null || t.return === r) break e;
             t = t.return;
           }
@@ -5891,7 +5891,7 @@ Error generating stack: ` +
     else
       switch (h) {
         case "forwards":
-          for (o = r.child, h = null; o !== null; )
+          for (o = r.child, h = null; o !== null;)
             ((t = o.alternate),
               t !== null && to(t) === null && (h = o),
               (o = o.sibling));
@@ -5902,7 +5902,7 @@ Error generating stack: ` +
             Sc(r, !1, h, o, p));
           break;
         case "backwards":
-          for (o = null, h = r.child, r.child = null; h !== null; ) {
+          for (o = null, h = r.child, r.child = null; h !== null;) {
             if (((t = h.alternate), t !== null && to(t) === null)) {
               r.child = h;
               break;
@@ -5927,8 +5927,8 @@ Error generating stack: ` +
   function Jn(t, r, o) {
     if (
       (t !== null && (r.dependencies = t.dependencies),
-      (Kr |= r.lanes),
-      (o & r.childLanes) === 0)
+        (Kr |= r.lanes),
+        (o & r.childLanes) === 0)
     )
       return null;
     if (t !== null && r.child !== t.child) throw Error(i(153));
@@ -5981,10 +5981,10 @@ Error generating stack: ` +
         }
         if (
           ((h = r.memoizedState),
-          h !== null &&
+            h !== null &&
             ((h.rendering = null), (h.tail = null), (h.lastEffect = null)),
-          Ue(Xe, Xe.current),
-          u)
+            Ue(Xe, Xe.current),
+            u)
         )
           break;
         return null;
@@ -5996,21 +5996,21 @@ Error generating stack: ` +
   }
   var Bh, kc, Uh, Fh;
   ((Bh = function (t, r) {
-    for (var o = r.child; o !== null; ) {
+    for (var o = r.child; o !== null;) {
       if (o.tag === 5 || o.tag === 6) t.appendChild(o.stateNode);
       else if (o.tag !== 4 && o.child !== null) {
         ((o.child.return = o), (o = o.child));
         continue;
       }
       if (o === r) break;
-      for (; o.sibling === null; ) {
+      for (; o.sibling === null;) {
         if (o.return === null || o.return === r) return;
         o = o.return;
       }
       ((o.sibling.return = o.return), (o = o.sibling));
     }
   }),
-    (kc = function () {}),
+    (kc = function () { }),
     (Uh = function (t, r, o, u) {
       var h = t.memoizedProps;
       if (h !== u) {
@@ -6054,7 +6054,7 @@ Error generating stack: ` +
           var E = u[I];
           if (
             ((j = h?.[I]),
-            u.hasOwnProperty(I) && E !== j && (E != null || j != null))
+              u.hasOwnProperty(I) && E !== j && (E != null || j != null))
           )
             if (I === "style")
               if (j) {
@@ -6074,13 +6074,13 @@ Error generating stack: ` +
                   E != null && j !== E && (p = p || []).push(I, E))
                 : I === "children"
                   ? (typeof E != "string" && typeof E != "number") ||
-                    (p = p || []).push(I, "" + E)
+                  (p = p || []).push(I, "" + E)
                   : I !== "suppressContentEditableWarning" &&
-                    I !== "suppressHydrationWarning" &&
-                    (l.hasOwnProperty(I)
-                      ? (E != null && I === "onScroll" && We("scroll", t),
-                        p || j === E || (p = []))
-                      : (p = p || []).push(I, E));
+                  I !== "suppressHydrationWarning" &&
+                  (l.hasOwnProperty(I)
+                    ? (E != null && I === "onScroll" && We("scroll", t),
+                      p || j === E || (p = []))
+                    : (p = p || []).push(I, E));
         }
         o && (p = p || []).push("style", o);
         var I = p;
@@ -6095,13 +6095,13 @@ Error generating stack: ` +
       switch (t.tailMode) {
         case "hidden":
           r = t.tail;
-          for (var o = null; r !== null; )
+          for (var o = null; r !== null;)
             (r.alternate !== null && (o = r), (r = r.sibling));
           o === null ? (t.tail = null) : (o.sibling = null);
           break;
         case "collapsed":
           o = t.tail;
-          for (var u = null; o !== null; )
+          for (var u = null; o !== null;)
             (o.alternate !== null && (u = o), (o = o.sibling));
           u === null
             ? r || t.tail === null
@@ -6115,14 +6115,14 @@ Error generating stack: ` +
       o = 0,
       u = 0;
     if (r)
-      for (var h = t.child; h !== null; )
+      for (var h = t.child; h !== null;)
         ((o |= h.lanes | h.childLanes),
           (u |= h.subtreeFlags & 14680064),
           (u |= h.flags & 14680064),
           (h.return = t),
           (h = h.sibling));
     else
-      for (h = t.child; h !== null; )
+      for (h = t.child; h !== null;)
         ((o |= h.lanes | h.childLanes),
           (u |= h.subtreeFlags),
           (u |= h.flags),
@@ -6154,13 +6154,13 @@ Error generating stack: ` +
           Ve(jt),
           ic(),
           u.pendingContext &&
-            ((u.context = u.pendingContext), (u.pendingContext = null)),
+          ((u.context = u.pendingContext), (u.pendingContext = null)),
           (t === null || t.child === null) &&
-            (Ja(r)
-              ? (r.flags |= 4)
-              : t === null ||
-                (t.memoizedState.isDehydrated && (r.flags & 256) === 0) ||
-                ((r.flags |= 1024), gn !== null && (Oc(gn), (gn = null)))),
+          (Ja(r)
+            ? (r.flags |= 4)
+            : t === null ||
+            (t.memoizedState.isDehydrated && (r.flags & 256) === 0) ||
+            ((r.flags |= 1024), gn !== null && (Oc(gn), (gn = null)))),
           kc(t, r),
           Et(r),
           null
@@ -6220,18 +6220,18 @@ Error generating stack: ` +
                 v === "children"
                   ? typeof j == "string"
                     ? u.textContent !== j &&
-                      (p.suppressHydrationWarning !== !0 &&
-                        Ua(u.textContent, j, t),
+                    (p.suppressHydrationWarning !== !0 &&
+                      Ua(u.textContent, j, t),
                       (h = ["children", j]))
                     : typeof j == "number" &&
-                      u.textContent !== "" + j &&
-                      (p.suppressHydrationWarning !== !0 &&
-                        Ua(u.textContent, j, t),
+                    u.textContent !== "" + j &&
+                    (p.suppressHydrationWarning !== !0 &&
+                      Ua(u.textContent, j, t),
                       (h = ["children", "" + j]))
                   : l.hasOwnProperty(v) &&
-                    j != null &&
-                    v === "onScroll" &&
-                    We("scroll", u);
+                  j != null &&
+                  v === "onScroll" &&
+                  We("scroll", u);
               }
             switch (o) {
               case "input":
@@ -6259,7 +6259,7 @@ Error generating stack: ` +
                     ? (t = v.createElement(o, { is: u.is }))
                     : ((t = v.createElement(o)),
                       o === "select" &&
-                        ((v = t),
+                      ((v = t),
                         u.multiple
                           ? (v.multiple = !0)
                           : u.size && (v.size = u.size)))
@@ -6324,11 +6324,11 @@ Error generating stack: ` +
                           ? (o !== "textarea" || E !== "") && lr(t, E)
                           : typeof E == "number" && lr(t, "" + E)
                         : p !== "suppressContentEditableWarning" &&
-                          p !== "suppressHydrationWarning" &&
-                          p !== "autoFocus" &&
-                          (l.hasOwnProperty(p)
-                            ? E != null && p === "onScroll" && We("scroll", t)
-                            : E != null && L(t, p, E, v));
+                        p !== "suppressHydrationWarning" &&
+                        p !== "autoFocus" &&
+                        (l.hasOwnProperty(p)
+                          ? E != null && p === "onScroll" && We("scroll", t)
+                          : E != null && L(t, p, E, v));
                 }
               switch (o) {
                 case "input":
@@ -6346,7 +6346,7 @@ Error generating stack: ` +
                     p != null
                       ? Qt(t, !!u.multiple, p, !1)
                       : u.defaultValue != null &&
-                        Qt(t, !!u.multiple, u.defaultValue, !0));
+                      Qt(t, !!u.multiple, u.defaultValue, !0));
                   break;
                 default:
                   typeof h.onClick == "function" && (t.onclick = Fa);
@@ -6377,9 +6377,9 @@ Error generating stack: ` +
           if (((o = qr(Es.current)), qr(Cn.current), Ja(r))) {
             if (
               ((u = r.stateNode),
-              (o = r.memoizedProps),
-              (u[En] = r),
-              (p = u.nodeValue !== o) && ((t = Wt), t !== null))
+                (o = r.memoizedProps),
+                (u[En] = r),
+                (p = u.nodeValue !== o) && ((t = Wt), t !== null))
             )
               switch (t.tag) {
                 case 3:
@@ -6399,8 +6399,8 @@ Error generating stack: ` +
       case 13:
         if (
           (Ve(Xe),
-          (u = r.memoizedState),
-          t === null ||
+            (u = r.memoizedState),
+            t === null ||
             (t.memoizedState !== null && t.memoizedState.dehydrated !== null))
         ) {
           if (Ke && Vt !== null && (r.mode & 1) !== 0 && (r.flags & 128) === 0)
@@ -6410,8 +6410,8 @@ Error generating stack: ` +
               if (!p) throw Error(i(318));
               if (
                 ((p = r.memoizedState),
-                (p = p !== null ? p.dehydrated : null),
-                !p)
+                  (p = p !== null ? p.dehydrated : null),
+                  !p)
               )
                 throw Error(i(317));
               p[En] = r;
@@ -6427,12 +6427,12 @@ Error generating stack: ` +
           ? ((r.lanes = o), r)
           : ((u = u !== null),
             u !== (t !== null && t.memoizedState !== null) &&
-              u &&
-              ((r.child.flags |= 8192),
+            u &&
+            ((r.child.flags |= 8192),
               (r.mode & 1) !== 0 &&
-                (t === null || (Xe.current & 1) !== 0
-                  ? dt === 0 && (dt = 3)
-                  : Mc())),
+              (t === null || (Xe.current & 1) !== 0
+                ? dt === 0 && (dt = 3)
+                : Mc())),
             r.updateQueue !== null && (r.flags |= 4),
             Et(r),
             null);
@@ -6454,16 +6454,16 @@ Error generating stack: ` +
           if (u) Rs(p, !1);
           else {
             if (dt !== 0 || (t !== null && (t.flags & 128) !== 0))
-              for (t = r.child; t !== null; ) {
+              for (t = r.child; t !== null;) {
                 if (((v = to(t)), v !== null)) {
                   for (
                     r.flags |= 128,
-                      Rs(p, !1),
-                      u = v.updateQueue,
-                      u !== null && ((r.updateQueue = u), (r.flags |= 4)),
-                      r.subtreeFlags = 0,
-                      u = o,
-                      o = r.child;
+                    Rs(p, !1),
+                    u = v.updateQueue,
+                    u !== null && ((r.updateQueue = u), (r.flags |= 4)),
+                    r.subtreeFlags = 0,
+                    u = o,
+                    o = r.child;
                     o !== null;
                   )
                     ((p = o),
@@ -6494,9 +6494,9 @@ Error generating stack: ` +
                             t === null
                               ? null
                               : {
-                                  lanes: t.lanes,
-                                  firstContext: t.firstContext,
-                                })),
+                                lanes: t.lanes,
+                                firstContext: t.firstContext,
+                              })),
                       (o = o.sibling));
                   return (Ue(Xe, (Xe.current & 1) | 2), r.child);
                 }
@@ -6511,11 +6511,11 @@ Error generating stack: ` +
             if (((t = to(v)), t !== null)) {
               if (
                 ((r.flags |= 128),
-                (u = !0),
-                (o = t.updateQueue),
-                o !== null && ((r.updateQueue = o), (r.flags |= 4)),
-                Rs(p, !0),
-                p.tail === null &&
+                  (u = !0),
+                  (o = t.updateQueue),
+                  o !== null && ((r.updateQueue = o), (r.flags |= 4)),
+                  Rs(p, !0),
+                  p.tail === null &&
                   p.tailMode === "hidden" &&
                   !v.alternate &&
                   !Ke)
@@ -6549,7 +6549,7 @@ Error generating stack: ` +
           t !== null && (t.memoizedState !== null) !== u && (r.flags |= 8192),
           u && (r.mode & 1) !== 0
             ? (qt & 1073741824) !== 0 &&
-              (Et(r), r.subtreeFlags & 6 && (r.flags |= 8192))
+            (Et(r), r.subtreeFlags & 6 && (r.flags |= 8192))
             : Et(r),
           null
         );
@@ -6656,21 +6656,21 @@ Error generating stack: ` +
               U = 0,
               H = t,
               $ = null;
-            t: for (;;) {
+            t: for (; ;) {
               for (
                 var Y;
                 H !== o || (h !== 0 && H.nodeType !== 3) || (j = v + h),
-                  H !== p || (u !== 0 && H.nodeType !== 3) || (E = v + u),
-                  H.nodeType === 3 && (v += H.nodeValue.length),
-                  (Y = H.firstChild) !== null;
+                H !== p || (u !== 0 && H.nodeType !== 3) || (E = v + u),
+                H.nodeType === 3 && (v += H.nodeValue.length),
+                (Y = H.firstChild) !== null;
               )
                 (($ = H), (H = Y));
-              for (;;) {
+              for (; ;) {
                 if (H === t) break t;
                 if (
                   ($ === o && ++I === h && (j = v),
-                  $ === p && ++U === u && (E = v),
-                  (Y = H.nextSibling) !== null)
+                    $ === p && ++U === u && (E = v),
+                    (Y = H.nextSibling) !== null)
                 )
                   break;
                 ((H = $), ($ = H.parentNode));
@@ -6689,7 +6689,7 @@ Error generating stack: ` +
       if (((r = Q), (t = r.child), (r.subtreeFlags & 1028) !== 0 && t !== null))
         ((t.return = r), (Q = t));
       else
-        for (; Q !== null; ) {
+        for (; Q !== null;) {
           r = Q;
           try {
             var ee = r.alternate;
@@ -6716,8 +6716,8 @@ Error generating stack: ` +
                   P.nodeType === 1
                     ? (P.textContent = "")
                     : P.nodeType === 9 &&
-                      P.documentElement &&
-                      P.removeChild(P.documentElement);
+                    P.documentElement &&
+                    P.removeChild(P.documentElement);
                   break;
                 case 5:
                 case 6:
@@ -6779,9 +6779,9 @@ Error generating stack: ` +
       (t.deletions = null),
       (t.sibling = null),
       t.tag === 5 &&
-        ((r = t.stateNode),
+      ((r = t.stateNode),
         r !== null &&
-          (delete r[En],
+        (delete r[En],
           delete r[bs],
           delete r[Ul],
           delete r[Ng],
@@ -6799,8 +6799,8 @@ Error generating stack: ` +
     return t.tag === 5 || t.tag === 3 || t.tag === 4;
   }
   function qh(t) {
-    e: for (;;) {
-      for (; t.sibling === null; ) {
+    e: for (; ;) {
+      for (; t.sibling === null;) {
         if (t.return === null || Vh(t.return)) return null;
         t = t.return;
       }
@@ -6823,12 +6823,12 @@ Error generating stack: ` +
             ? o.parentNode.insertBefore(t, r)
             : o.insertBefore(t, r)
           : (o.nodeType === 8
-              ? ((r = o.parentNode), r.insertBefore(t, o))
-              : ((r = o), r.appendChild(t)),
+            ? ((r = o.parentNode), r.insertBefore(t, o))
+            : ((r = o), r.appendChild(t)),
             (o = o._reactRootContainer),
             o != null || r.onclick !== null || (r.onclick = Fa)));
     else if (u !== 4 && ((t = t.child), t !== null))
-      for (Ec(t, r, o), t = t.sibling; t !== null; )
+      for (Ec(t, r, o), t = t.sibling; t !== null;)
         (Ec(t, r, o), (t = t.sibling));
   }
   function Cc(t, r, o) {
@@ -6836,19 +6836,19 @@ Error generating stack: ` +
     if (u === 5 || u === 6)
       ((t = t.stateNode), r ? o.insertBefore(t, r) : o.appendChild(t));
     else if (u !== 4 && ((t = t.child), t !== null))
-      for (Cc(t, r, o), t = t.sibling; t !== null; )
+      for (Cc(t, r, o), t = t.sibling; t !== null;)
         (Cc(t, r, o), (t = t.sibling));
   }
   var xt = null,
     vn = !1;
   function _r(t, r, o) {
-    for (o = o.child; o !== null; ) (Gh(t, r, o), (o = o.sibling));
+    for (o = o.child; o !== null;) (Gh(t, r, o), (o = o.sibling));
   }
   function Gh(t, r, o) {
     if (Ft && typeof Ft.onCommitFiberUnmount == "function")
       try {
         Ft.onCommitFiberUnmount(Br, o);
-      } catch {}
+      } catch { }
     switch (o.tag) {
       case 5:
         Ct || Ci(o, r);
@@ -6860,13 +6860,13 @@ Error generating stack: ` +
           (xt = u),
           (vn = h),
           xt !== null &&
-            (vn
-              ? ((t = xt),
-                (o = o.stateNode),
-                t.nodeType === 8
-                  ? t.parentNode.removeChild(o)
-                  : t.removeChild(o))
-              : xt.removeChild(o.stateNode)));
+          (vn
+            ? ((t = xt),
+              (o = o.stateNode),
+              t.nodeType === 8
+                ? t.parentNode.removeChild(o)
+                : t.removeChild(o))
+            : xt.removeChild(o.stateNode)));
         break;
       case 18:
         xt !== null &&
@@ -6911,8 +6911,8 @@ Error generating stack: ` +
         if (
           !Ct &&
           (Ci(o, r),
-          (u = o.stateNode),
-          typeof u.componentWillUnmount == "function")
+            (u = o.stateNode),
+            typeof u.componentWillUnmount == "function")
         )
           try {
             ((u.props = o.memoizedProps),
@@ -6956,7 +6956,7 @@ Error generating stack: ` +
           var p = t,
             v = r,
             j = v;
-          e: for (; j !== null; ) {
+          e: for (; j !== null;) {
             switch (j.tag) {
               case 5:
                 ((xt = j.stateNode), (vn = !1));
@@ -6979,7 +6979,7 @@ Error generating stack: ` +
         }
       }
     if (r.subtreeFlags & 12854)
-      for (r = r.child; r !== null; ) (Jh(r, t), (r = r.sibling));
+      for (r = r.child; r !== null;) (Jh(r, t), (r = r.sibling));
   }
   function Jh(t, r) {
     var o = t.alternate,
@@ -7008,9 +7008,9 @@ Error generating stack: ` +
       case 5:
         if (
           (xn(r, t),
-          An(t),
-          u & 512 && o !== null && Ci(o, o.return),
-          t.flags & 32)
+            An(t),
+            u & 512 && o !== null && Ci(o, o.return),
+            t.flags & 32)
         ) {
           var h = t.stateNode;
           try {
@@ -7057,9 +7057,9 @@ Error generating stack: ` +
                   Y != null
                     ? Qt(h, !!p.multiple, Y, !1)
                     : $ !== !!p.multiple &&
-                      (p.defaultValue != null
-                        ? Qt(h, !!p.multiple, p.defaultValue, !0)
-                        : Qt(h, !!p.multiple, p.multiple ? [] : "", !1));
+                    (p.defaultValue != null
+                      ? Qt(h, !!p.multiple, p.defaultValue, !0)
+                      : Qt(h, !!p.multiple, p.multiple ? [] : "", !1));
               }
               h[bs] = p;
             } catch (se) {
@@ -7096,26 +7096,26 @@ Error generating stack: ` +
           An(t),
           (h = t.child),
           h.flags & 8192 &&
-            ((p = h.memoizedState !== null),
+          ((p = h.memoizedState !== null),
             (h.stateNode.isHidden = p),
             !p ||
-              (h.alternate !== null && h.alternate.memoizedState !== null) ||
-              (Nc = Ee())),
+            (h.alternate !== null && h.alternate.memoizedState !== null) ||
+            (Nc = Ee())),
           u & 4 && Kh(t));
         break;
       case 22:
         if (
           ((U = o !== null && o.memoizedState !== null),
-          t.mode & 1 ? ((Ct = (I = Ct) || U), xn(r, t), (Ct = I)) : xn(r, t),
-          An(t),
-          u & 8192)
+            t.mode & 1 ? ((Ct = (I = Ct) || U), xn(r, t), (Ct = I)) : xn(r, t),
+            An(t),
+            u & 8192)
         ) {
           if (
             ((I = t.memoizedState !== null),
-            (t.stateNode.isHidden = I) && !U && (t.mode & 1) !== 0)
+              (t.stateNode.isHidden = I) && !U && (t.mode & 1) !== 0)
           )
-            for (Q = t, U = t.child; U !== null; ) {
-              for (H = Q = U; Q !== null; ) {
+            for (Q = t, U = t.child; U !== null;) {
+              for (H = Q = U; Q !== null;) {
                 switch ((($ = Q), (Y = $.child), $.tag)) {
                   case 0:
                   case 11:
@@ -7151,7 +7151,7 @@ Error generating stack: ` +
               }
               U = U.sibling;
             }
-          e: for (U = null, H = t; ; ) {
+          e: for (U = null, H = t; ;) {
             if (H.tag === 5) {
               if (U === null) {
                 U = H;
@@ -7190,7 +7190,7 @@ Error generating stack: ` +
               continue;
             }
             if (H === t) break e;
-            for (; H.sibling === null; ) {
+            for (; H.sibling === null;) {
               if (H.return === null || H.return === t) break e;
               (U === H && (U = null), (H = H.return));
             }
@@ -7214,7 +7214,7 @@ Error generating stack: ` +
     if (r & 2) {
       try {
         e: {
-          for (var o = t.return; o !== null; ) {
+          for (var o = t.return; o !== null;) {
             if (Vh(o)) {
               var u = o;
               break e;
@@ -7250,7 +7250,7 @@ Error generating stack: ` +
     ((Q = t), Xh(t));
   }
   function Xh(t, r, o) {
-    for (var u = (t.mode & 1) !== 0; Q !== null; ) {
+    for (var u = (t.mode & 1) !== 0; Q !== null;) {
       var h = Q,
         p = h.child;
       if (h.tag === 22 && u) {
@@ -7261,7 +7261,7 @@ Error generating stack: ` +
           j = uo;
           var I = Ct;
           if (((uo = v), (Ct = E) && !I))
-            for (Q = h; Q !== null; )
+            for (Q = h; Q !== null;)
               ((v = Q),
                 (E = v.child),
                 v.tag === 22 && v.memoizedState !== null
@@ -7269,7 +7269,7 @@ Error generating stack: ` +
                   : E !== null
                     ? ((E.return = v), (Q = E))
                     : Zh(h));
-          for (; p !== null; ) ((Q = p), Xh(p), (p = p.sibling));
+          for (; p !== null;) ((Q = p), Xh(p), (p = p.sibling));
           ((Q = h), (uo = j), (Ct = I));
         }
         Yh(t);
@@ -7280,7 +7280,7 @@ Error generating stack: ` +
     }
   }
   function Yh(t) {
-    for (; Q !== null; ) {
+    for (; Q !== null;) {
       var r = Q;
       if ((r.flags & 8772) !== 0) {
         var o = r.alternate;
@@ -7386,7 +7386,7 @@ Error generating stack: ` +
     }
   }
   function Qh(t) {
-    for (; Q !== null; ) {
+    for (; Q !== null;) {
       var r = Q;
       if (r === t) {
         Q = null;
@@ -7401,7 +7401,7 @@ Error generating stack: ` +
     }
   }
   function Zh(t) {
-    for (; Q !== null; ) {
+    for (; Q !== null;) {
       var r = Q;
       try {
         switch (r.tag) {
@@ -7497,19 +7497,19 @@ Error generating stack: ` +
           ? (xo === 0 && (xo = qu()), xo)
           : ((t = Me),
             t !== 0 ||
-              ((t = window.event), (t = t === void 0 ? 16 : td(t.type))),
+            ((t = window.event), (t = t === void 0 ? 16 : td(t.type))),
             t);
   }
   function wn(t, r, o, u) {
     if (50 < Ds) throw ((Ds = 0), (Pc = null), Error(i(185)));
     (ss(t, o, u),
       ((Pe & 2) === 0 || t !== gt) &&
-        (t === gt && ((Pe & 2) === 0 && (po |= o), dt === 4 && Ar(t, wt)),
+      (t === gt && ((Pe & 2) === 0 && (po |= o), dt === 4 && Ar(t, wt)),
         $t(t, u),
         o === 1 &&
-          Pe === 0 &&
-          (r.mode & 1) === 0 &&
-          ((Ai = Ee() + 500), qa && Sr())));
+        Pe === 0 &&
+        (r.mode & 1) === 0 &&
+        ((Ai = Ee() + 500), qa && Sr())));
   }
   function $t(t, r) {
     var o = t.callbackNode;
@@ -7575,18 +7575,18 @@ Error generating stack: ` +
     if (r !== 0) {
       if (
         (r === 2 && ((h = hl(t)), h !== 0 && ((u = h), (r = Ic(t, h)))),
-        r === 1)
+          r === 1)
       )
         throw ((o = Is), Xr(t, 0), Ar(t, u), $t(t, Ee()), o);
       if (r === 6) Ar(t, u);
       else {
         if (
           ((h = t.current.alternate),
-          (u & 30) === 0 &&
+            (u & 30) === 0 &&
             !Yg(h) &&
             ((r = wo(t, u)),
-            r === 2 && ((p = hl(t)), p !== 0 && ((u = p), (r = Ic(t, p)))),
-            r === 1))
+              r === 2 && ((p = hl(t)), p !== 0 && ((u = p), (r = Ic(t, p)))),
+              r === 1))
         )
           throw ((o = Is), Xr(t, 0), Ar(t, u), $t(t, Ee()), o);
         switch (((t.finishedWork = h), (t.finishedLanes = u), r)) {
@@ -7599,7 +7599,7 @@ Error generating stack: ` +
           case 3:
             if (
               (Ar(t, u),
-              (u & 130023424) === u && ((r = Nc + 500 - Ee()), 10 < r))
+                (u & 130023424) === u && ((r = Nc + 500 - Ee()), 10 < r))
             ) {
               if (Ca(t, 0) !== 0) break;
               if (((h = t.suspendedLanes), (h & u) !== u)) {
@@ -7613,28 +7613,28 @@ Error generating stack: ` +
             break;
           case 4:
             if ((Ar(t, u), (u & 4194240) === u)) break;
-            for (r = t.eventTimes, h = -1; 0 < u; ) {
+            for (r = t.eventTimes, h = -1; 0 < u;) {
               var v = 31 - pn(u);
               ((p = 1 << v), (v = r[v]), v > h && (h = v), (u &= ~p));
             }
             if (
               ((u = h),
-              (u = Ee() - u),
-              (u =
-                (120 > u
-                  ? 120
-                  : 480 > u
-                    ? 480
-                    : 1080 > u
-                      ? 1080
-                      : 1920 > u
-                        ? 1920
-                        : 3e3 > u
-                          ? 3e3
-                          : 4320 > u
-                            ? 4320
-                            : 1960 * Xg(u / 1960)) - u),
-              10 < u)
+                (u = Ee() - u),
+                (u =
+                  (120 > u
+                    ? 120
+                    : 480 > u
+                      ? 480
+                      : 1080 > u
+                        ? 1080
+                        : 1920 > u
+                          ? 1920
+                          : 3e3 > u
+                            ? 3e3
+                            : 4320 > u
+                              ? 4320
+                              : 1960 * Xg(u / 1960)) - u),
+                10 < u)
             ) {
               t.timeoutHandle = $l(Yr.bind(null, t, zt, Xn), u);
               break;
@@ -7664,7 +7664,7 @@ Error generating stack: ` +
     zt === null ? (zt = t) : zt.push.apply(zt, t);
   }
   function Yg(t) {
-    for (var r = t; ; ) {
+    for (var r = t; ;) {
       if (r.flags & 16384) {
         var o = r.updateQueue;
         if (o !== null && ((o = o.stores), o !== null))
@@ -7683,7 +7683,7 @@ Error generating stack: ` +
         ((o.return = r), (r = o));
       else {
         if (r === t) break;
-        for (; r.sibling === null; ) {
+        for (; r.sibling === null;) {
           if (r.return === null || r.return === t) return !0;
           r = r.return;
         }
@@ -7695,10 +7695,10 @@ Error generating stack: ` +
   function Ar(t, r) {
     for (
       r &= ~Ac,
-        r &= ~po,
-        t.suspendedLanes |= r,
-        t.pingedLanes &= ~r,
-        t = t.expirationTimes;
+      r &= ~po,
+      t.suspendedLanes |= r,
+      t.pingedLanes &= ~r,
+      t = t.expirationTimes;
       0 < r;
     ) {
       var o = 31 - pn(r),
@@ -7754,7 +7754,7 @@ Error generating stack: ` +
     ((t.finishedWork = null), (t.finishedLanes = 0));
     var o = t.timeoutHandle;
     if ((o !== -1 && ((t.timeoutHandle = -1), Cg(o)), ot !== null))
-      for (o = ot.return; o !== null; ) {
+      for (o = ot.return; o !== null;) {
         var u = o;
         switch ((Vl(u), u.tag)) {
           case 1:
@@ -7786,13 +7786,13 @@ Error generating stack: ` +
       }
     if (
       ((gt = t),
-      (ot = t = Nr(t.current, null)),
-      (wt = qt = r),
-      (dt = 0),
-      (Is = null),
-      (Ac = po = Kr = 0),
-      (zt = Os = null),
-      Vr !== null)
+        (ot = t = Nr(t.current, null)),
+        (wt = qt = r),
+        (dt = 0),
+        (Is = null),
+        (Ac = po = Kr = 0),
+        (zt = Os = null),
+        Vr !== null)
     ) {
       for (r = 0; r < Vr.length; r++)
         if (((o = Vr[r]), (u = o.interleaved), u !== null)) {
@@ -7814,7 +7814,7 @@ Error generating stack: ` +
       var o = ot;
       try {
         if ((Xl(), (no.current = ao), ro)) {
-          for (var u = Ye.memoizedState; u !== null; ) {
+          for (var u = Ye.memoizedState; u !== null;) {
             var h = u.queue;
             (h !== null && (h.pending = null), (u = u.next));
           }
@@ -7822,11 +7822,11 @@ Error generating stack: ` +
         }
         if (
           ((Gr = 0),
-          (mt = ut = Ye = null),
-          (Cs = !1),
-          (Ts = 0),
-          (Tc.current = null),
-          o === null || o.return === null)
+            (mt = ut = Ye = null),
+            (Cs = !1),
+            (Ts = 0),
+            (Tc.current = null),
+            o === null || o.return === null)
         ) {
           ((dt = 1), (Is = r), (ot = null));
           break;
@@ -7838,8 +7838,8 @@ Error generating stack: ` +
             E = r;
           if (
             ((r = wt),
-            (j.flags |= 32768),
-            E !== null && typeof E == "object" && typeof E.then == "function")
+              (j.flags |= 32768),
+              E !== null && typeof E == "object" && typeof E.then == "function")
           ) {
             var I = E,
               U = j,
@@ -7927,8 +7927,8 @@ Error generating stack: ` +
   function Mc() {
     ((dt === 0 || dt === 3 || dt === 2) && (dt = 4),
       gt === null ||
-        ((Kr & 268435455) === 0 && (po & 268435455) === 0) ||
-        Ar(gt, wt));
+      ((Kr & 268435455) === 0 && (po & 268435455) === 0) ||
+      Ar(gt, wt));
   }
   function wo(t, r) {
     var o = Pe;
@@ -7947,10 +7947,10 @@ Error generating stack: ` +
     return ((gt = null), (wt = 0), dt);
   }
   function Qg() {
-    for (; ot !== null; ) sf(ot);
+    for (; ot !== null;) sf(ot);
   }
   function Zg() {
-    for (; ot !== null && !re(); ) sf(ot);
+    for (; ot !== null && !re();) sf(ot);
   }
   function sf(t) {
     var r = cf(t.alternate, t, qt);
@@ -8010,15 +8010,15 @@ Error generating stack: ` +
     var p = o.lanes | o.childLanes;
     if (
       (Om(t, p),
-      t === gt && ((ot = gt = null), (wt = 0)),
-      ((o.subtreeFlags & 2064) === 0 && (o.flags & 2064) === 0) ||
+        t === gt && ((ot = gt = null), (wt = 0)),
+        ((o.subtreeFlags & 2064) === 0 && (o.flags & 2064) === 0) ||
         go ||
         ((go = !0),
-        uf(fn, function () {
-          return (Ni(), null);
-        })),
-      (p = (o.flags & 15990) !== 0),
-      (o.subtreeFlags & 15990) !== 0 || p)
+          uf(fn, function () {
+            return (Ni(), null);
+          })),
+        (p = (o.flags & 15990) !== 0),
+        (o.subtreeFlags & 15990) !== 0 || p)
     ) {
       ((p = an.transition), (an.transition = null));
       var v = Me;
@@ -8040,11 +8040,11 @@ Error generating stack: ` +
     } else t.current = o;
     if (
       (go && ((go = !1), (Cr = t), (yo = h)),
-      (p = t.pendingLanes),
-      p === 0 && (Er = null),
-      Tm(o.stateNode),
-      $t(t, Ee()),
-      r !== null)
+        (p = t.pendingLanes),
+        p === 0 && (Er = null),
+        Tm(o.stateNode),
+        $t(t, Ee()),
+        r !== null)
     )
       for (u = t.onRecoverableError, o = 0; o < r.length; o++)
         ((h = r[o]), u(h.value, { componentStack: h.stack, digest: h.digest }));
@@ -8069,7 +8069,7 @@ Error generating stack: ` +
           if (((t = Cr), (Cr = null), (yo = 0), (Pe & 6) !== 0))
             throw Error(i(331));
           var h = Pe;
-          for (Pe |= 4, Q = t.current; Q !== null; ) {
+          for (Pe |= 4, Q = t.current; Q !== null;) {
             var p = Q,
               v = p.child;
             if ((Q.flags & 16) !== 0) {
@@ -8077,7 +8077,7 @@ Error generating stack: ` +
               if (j !== null) {
                 for (var E = 0; E < j.length; E++) {
                   var I = j[E];
-                  for (Q = I; Q !== null; ) {
+                  for (Q = I; Q !== null;) {
                     var U = Q;
                     switch (U.tag) {
                       case 0:
@@ -8088,7 +8088,7 @@ Error generating stack: ` +
                     var H = U.child;
                     if (H !== null) ((H.return = U), (Q = H));
                     else
-                      for (; Q !== null; ) {
+                      for (; Q !== null;) {
                         U = Q;
                         var $ = U.sibling,
                           Y = U.return;
@@ -8121,7 +8121,7 @@ Error generating stack: ` +
             if ((p.subtreeFlags & 2064) !== 0 && v !== null)
               ((v.return = p), (Q = v));
             else
-              e: for (; Q !== null; ) {
+              e: for (; Q !== null;) {
                 if (((p = Q), (p.flags & 2048) !== 0))
                   switch (p.tag) {
                     case 0:
@@ -8138,13 +8138,13 @@ Error generating stack: ` +
               }
           }
           var A = t.current;
-          for (Q = A; Q !== null; ) {
+          for (Q = A; Q !== null;) {
             v = Q;
             var P = v.child;
             if ((v.subtreeFlags & 2064) !== 0 && P !== null)
               ((P.return = v), (Q = P));
             else
-              e: for (v = A; Q !== null; ) {
+              e: for (v = A; Q !== null;) {
                 if (((j = Q), (j.flags & 2048) !== 0))
                   try {
                     switch (j.tag) {
@@ -8170,12 +8170,12 @@ Error generating stack: ` +
           }
           if (
             ((Pe = h),
-            Sr(),
-            Ft && typeof Ft.onPostCommitFiberRoot == "function")
+              Sr(),
+              Ft && typeof Ft.onPostCommitFiberRoot == "function")
           )
             try {
               Ft.onPostCommitFiberRoot(Br, t);
-            } catch {}
+            } catch { }
           u = !0;
         }
         return u;
@@ -8195,7 +8195,7 @@ Error generating stack: ` +
   function tt(t, r, o) {
     if (t.tag === 3) of(t, t, o);
     else
-      for (; r !== null; ) {
+      for (; r !== null;) {
         if (r.tag === 3) {
           of(r, t, o);
           break;
@@ -8223,10 +8223,10 @@ Error generating stack: ` +
       (r = At()),
       (t.pingedLanes |= t.suspendedLanes & o),
       gt === t &&
-        (wt & o) === o &&
-        (dt === 4 || (dt === 3 && (wt & 130023424) === wt && 500 > Ee() - Nc)
-          ? Xr(t, 0)
-          : (Ac |= o)),
+      (wt & o) === o &&
+      (dt === 4 || (dt === 3 && (wt & 130023424) === wt && 500 > Ee() - Nc)
+        ? Xr(t, 0)
+        : (Ac |= o)),
       $t(t, r));
   }
   function lf(t, r) {
@@ -8278,9 +8278,9 @@ Error generating stack: ` +
         return (
           (r.flags |= 1),
           typeof h == "object" &&
-          h !== null &&
-          typeof h.render == "function" &&
-          h.$$typeof === void 0
+            h !== null &&
+            typeof h.render == "function" &&
+            h.$$typeof === void 0
             ? ((r.tag = 1),
               (r.memoizedState = null),
               (r.updateQueue = null),
@@ -8300,7 +8300,7 @@ Error generating stack: ` +
         u = r.elementType;
         e: {
           switch (
-            (co(t, r),
+          (co(t, r),
             (t = r.pendingProps),
             (h = u._init),
             (u = h(u._payload)),
@@ -8357,9 +8357,9 @@ Error generating stack: ` +
                 pendingSuspenseBoundaries: v.pendingSuspenseBoundaries,
                 transitions: v.transitions,
               }),
-              (r.updateQueue.baseState = p),
-              (r.memoizedState = p),
-              r.flags & 256)
+                (r.updateQueue.baseState = p),
+                (r.memoizedState = p),
+                r.flags & 256)
             ) {
               ((h = Ei(Error(i(423)), r)), (r = Lh(t, r, u, o, h)));
               break e;
@@ -8369,11 +8369,11 @@ Error generating stack: ` +
             } else
               for (
                 Vt = xr(r.stateNode.containerInfo.firstChild),
-                  Wt = r,
-                  Ke = !0,
-                  gn = null,
-                  o = Kd(r, null, u, o),
-                  r.child = o;
+                Wt = r,
+                Ke = !0,
+                gn = null,
+                o = Kd(r, null, u, o),
+                r.child = o;
                 o;
               )
                 ((o.flags = (o.flags & -3) | 4096), (o = o.sibling));
@@ -8428,12 +8428,12 @@ Error generating stack: ` +
         e: {
           if (
             ((u = r.type._context),
-            (h = r.pendingProps),
-            (p = r.memoizedProps),
-            (v = h.value),
-            Ue(Ya, u._currentValue),
-            (u._currentValue = v),
-            p !== null)
+              (h = r.pendingProps),
+              (p = r.memoizedProps),
+              (v = h.value),
+              Ue(Ya, u._currentValue),
+              (u._currentValue = v),
+              p !== null)
           )
             if (mn(p.value, v)) {
               if (p.children === h.children && !Dt.current) {
@@ -8441,11 +8441,11 @@ Error generating stack: ` +
                 break e;
               }
             } else
-              for (p = r.child, p !== null && (p.return = r); p !== null; ) {
+              for (p = r.child, p !== null && (p.return = r); p !== null;) {
                 var j = p.dependencies;
                 if (j !== null) {
                   v = p.child;
-                  for (var E = j.firstContext; E !== null; ) {
+                  for (var E = j.firstContext; E !== null;) {
                     if (E.context === u) {
                       if (p.tag === 1) {
                         ((E = Kn(-1, o & -o)), (E.tag = 2));
@@ -8479,7 +8479,7 @@ Error generating stack: ` +
                 } else v = p.child;
                 if (v !== null) v.return = p;
                 else
-                  for (v = p; v !== null; ) {
+                  for (v = p; v !== null;) {
                     if (v === r) {
                       v = null;
                       break;
@@ -8547,7 +8547,7 @@ Error generating stack: ` +
         this.stateNode =
         this.type =
         this.elementType =
-          null),
+        null),
       (this.index = 0),
       (this.ref = null),
       (this.pendingProps = r),
@@ -8555,7 +8555,7 @@ Error generating stack: ` +
         this.memoizedState =
         this.updateQueue =
         this.memoizedProps =
-          null),
+        null),
       (this.mode = u),
       (this.subtreeFlags = this.flags = 0),
       (this.deletions = null),
@@ -8699,7 +8699,7 @@ Error generating stack: ` +
         this.pingCache =
         this.current =
         this.pendingChildren =
-          null),
+        null),
       (this.timeoutHandle = -1),
       (this.callbackNode = this.pendingContext = this.context = null),
       (this.callbackPriority = 0),
@@ -8712,7 +8712,7 @@ Error generating stack: ` +
         this.pingedLanes =
         this.suspendedLanes =
         this.pendingLanes =
-          0),
+        0),
       (this.entanglements = fl(0)),
       (this.identifierPrefix = u),
       (this.onRecoverableError = h),
@@ -8828,8 +8828,8 @@ Error generating stack: ` +
     typeof reportError == "function"
       ? reportError
       : function (t) {
-          console.error(t);
-        };
+        console.error(t);
+      };
   function Hc(t) {
     this._internalRoot = t;
   }
@@ -8874,7 +8874,7 @@ Error generating stack: ` +
         (t.nodeType !== 8 || t.nodeValue !== " react-mount-point-unstable "))
     );
   }
-  function mf() {}
+  function mf() { }
   function cy(t, r, o, u, h) {
     if (h) {
       if (typeof u == "function") {
@@ -8893,7 +8893,7 @@ Error generating stack: ` +
         v
       );
     }
-    for (; (h = t.lastChild); ) t.removeChild(h);
+    for (; (h = t.lastChild);) t.removeChild(h);
     if (typeof u == "function") {
       var j = u;
       u = function () {
@@ -8935,8 +8935,8 @@ Error generating stack: ` +
           var o = is(r.pendingLanes);
           o !== 0 &&
             (pl(r, o | 1),
-            $t(r, Ee()),
-            (Pe & 6) === 0 && ((Ai = Ee() + 500), Sr()));
+              $t(r, Ee()),
+              (Pe & 6) === 0 && ((Ai = Ee() + 500), Sr()));
         }
         break;
       case 13:
@@ -8986,12 +8986,12 @@ Error generating stack: ` +
       switch (r) {
         case "input":
           if ((Je(t, o), (r = o.name), o.type === "radio" && r != null)) {
-            for (o = t; o.parentNode; ) o = o.parentNode;
+            for (o = t; o.parentNode;) o = o.parentNode;
             for (
               o = o.querySelectorAll(
                 "input[name=" + JSON.stringify("" + r) + '][type="radio"]',
               ),
-                r = 0;
+              r = 0;
               r < o.length;
               r++
             ) {
@@ -9051,7 +9051,7 @@ Error generating stack: ` +
     if (!To.isDisabled && To.supportsFiber)
       try {
         ((Br = To.inject(dy)), (Ft = To));
-      } catch {}
+      } catch { }
   }
   return (
     (Bt.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = uy),
@@ -9068,7 +9068,7 @@ Error generating stack: ` +
         h = pf;
       return (
         r != null &&
-          (r.unstable_strictMode === !0 && (o = !0),
+        (r.unstable_strictMode === !0 && (o = !0),
           r.identifierPrefix !== void 0 && (u = r.identifierPrefix),
           r.onRecoverableError !== void 0 && (h = r.onRecoverableError)),
         (r = Uc(t, 1, !1, null, null, o, !1, u, h)),
@@ -9103,12 +9103,12 @@ Error generating stack: ` +
       if (
         (o != null &&
           (o.unstable_strictMode === !0 && (h = !0),
-          o.identifierPrefix !== void 0 && (p = o.identifierPrefix),
-          o.onRecoverableError !== void 0 && (v = o.onRecoverableError)),
-        (r = hf(r, null, t, 1, o ?? null, h, !1, p, v)),
-        (t[Hn] = r.current),
-        xs(t),
-        u)
+            o.identifierPrefix !== void 0 && (p = o.identifierPrefix),
+            o.onRecoverableError !== void 0 && (v = o.onRecoverableError)),
+          (r = hf(r, null, t, 1, o ?? null, h, !1, p, v)),
+          (t[Hn] = r.current),
+          xs(t),
+          u)
       )
         for (t = 0; t < u.length; t++)
           ((o = u[t]),
@@ -9127,10 +9127,10 @@ Error generating stack: ` +
       if (!Eo(t)) throw Error(i(40));
       return t._reactRootContainer
         ? (Jr(function () {
-            Co(null, null, t, !1, function () {
-              ((t._reactRootContainer = null), (t[Hn] = null));
-            });
-          }),
+          Co(null, null, t, !1, function () {
+            ((t._reactRootContainer = null), (t[Hn] = null));
+          });
+        }),
           !0)
         : !1;
     }),
@@ -9196,7 +9196,7 @@ function zn(n, e) {
     typeof console < "u" && console.warn(e);
     try {
       throw new Error(e);
-    } catch {}
+    } catch { }
   }
 }
 function _y() {
@@ -9363,9 +9363,9 @@ function Ap(n, e = [], i = [], a = "", l = !1) {
         d.index !== !0,
         `Index routes must not have child routes. Please remove all child routes from route path "${x}".`,
       ),
-      Ap(d.children, e, w, x, m)),
+        Ap(d.children, e, w, x, m)),
       !(d.path == null && !d.index) &&
-        e.push({ path: x, score: Ly(x, d.index), routesMeta: w }));
+      e.push({ path: x, score: Ly(x, d.index), routesMeta: w }));
   };
   return (
     n.forEach((d, f) => {
@@ -9395,9 +9395,9 @@ function Ay(n) {
     e.score !== i.score
       ? i.score - e.score
       : My(
-          e.routesMeta.map((a) => a.childrenIndex),
-          i.routesMeta.map((a) => a.childrenIndex),
-        ),
+        e.routesMeta.map((a) => a.childrenIndex),
+        i.routesMeta.map((a) => a.childrenIndex),
+      ),
   );
 }
 var Ny = /^:[\w-]+$/,
@@ -9446,7 +9446,7 @@ function zy(n, e, i = !1) {
           { path: m.relativePath, caseSensitive: m.caseSensitive, end: !1 },
           y,
         )),
-      !x)
+        !x)
     )
       return null;
     (Object.assign(l, x.params),
@@ -9541,10 +9541,10 @@ function tr(n, e) {
 var Uy = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
 function Fy(n, e = "/") {
   let {
-      pathname: i,
-      search: a = "",
-      hash: l = "",
-    } = typeof n == "string" ? Fi(n) : n,
+    pathname: i,
+    search: a = "",
+    hash: l = "",
+  } = typeof n == "string" ? Fi(n) : n,
     c;
   return (
     i
@@ -9597,7 +9597,7 @@ function Pp(n, e, i, a = !1) {
     let x = e.length - 1;
     if (!a && d.startsWith("..")) {
       let w = d.split("/");
-      for (; w[0] === ".."; ) (w.shift(), (x -= 1));
+      for (; w[0] === "..";) (w.shift(), (x -= 1));
       l.pathname = w.join("/");
     }
     f = x >= 0 ? e[x] : "/";
@@ -9706,7 +9706,7 @@ function nv(n) {
         typeof e.replace == "boolean"
       )
         return e;
-    } catch {}
+    } catch { }
 }
 function rv(n) {
   if (n.startsWith(`${Mp}:${tv}:{`))
@@ -9719,7 +9719,7 @@ function rv(n) {
         typeof e.statusText == "string"
       )
         return new Gy(e.status, e.statusText, e.data);
-    } catch {}
+    } catch { }
 }
 function iv(n, { relative: e } = {}) {
   Qe(
@@ -9854,39 +9854,39 @@ Please change the parent <Route path="${D}"> to <Route path="${D === "/" ? "*" :
   ),
     zn(
       _ == null ||
-        _[_.length - 1].route.element !== void 0 ||
-        _[_.length - 1].route.Component !== void 0 ||
-        _[_.length - 1].route.lazy !== void 0,
+      _[_.length - 1].route.element !== void 0 ||
+      _[_.length - 1].route.Component !== void 0 ||
+      _[_.length - 1].route.lazy !== void 0,
       `Matched leaf route at location "${S.pathname}${S.search}${S.hash}" does not have an element or Component. This means it will render an <Outlet /> with a null value by default resulting in an "empty" page.`,
     ));
   let O = pv(
     _ &&
-      _.map((D) =>
-        Object.assign({}, D, {
-          params: Object.assign({}, m, D.params),
-          pathname: er([
-            y,
-            c.encodeLocation
-              ? c.encodeLocation(
-                  D.pathname.replace(/\?/g, "%3F").replace(/#/g, "%23"),
+    _.map((D) =>
+      Object.assign({}, D, {
+        params: Object.assign({}, m, D.params),
+        pathname: er([
+          y,
+          c.encodeLocation
+            ? c.encodeLocation(
+              D.pathname.replace(/\?/g, "%3F").replace(/#/g, "%23"),
+            ).pathname
+            : D.pathname,
+        ]),
+        pathnameBase:
+          D.pathnameBase === "/"
+            ? y
+            : er([
+              y,
+              c.encodeLocation
+                ? c.encodeLocation(
+                  D.pathnameBase
+                    .replace(/\?/g, "%3F")
+                    .replace(/#/g, "%23"),
                 ).pathname
-              : D.pathname,
-          ]),
-          pathnameBase:
-            D.pathnameBase === "/"
-              ? y
-              : er([
-                  y,
-                  c.encodeLocation
-                    ? c.encodeLocation(
-                        D.pathnameBase
-                          .replace(/\?/g, "%3F")
-                          .replace(/#/g, "%23"),
-                      ).pathname
-                    : D.pathnameBase,
-                ]),
-        }),
-      ),
+                : D.pathnameBase,
+            ]),
+      }),
+    ),
     d,
     i,
     a,
@@ -9894,22 +9894,22 @@ Please change the parent <Route path="${D}"> to <Route path="${D === "/" ? "*" :
   );
   return e && O
     ? k.createElement(
-        la.Provider,
-        {
-          value: {
-            location: {
-              pathname: "/",
-              search: "",
-              hash: "",
-              state: null,
-              key: "default",
-              ...S,
-            },
-            navigationType: "POP",
+      la.Provider,
+      {
+        value: {
+          location: {
+            pathname: "/",
+            search: "",
+            hash: "",
+            state: null,
+            key: "default",
+            ...S,
           },
+          navigationType: "POP",
         },
-        O,
-      )
+      },
+      O,
+    )
     : O;
 }
 function uv() {
@@ -9969,18 +9969,18 @@ var dv = k.createElement(uv, null),
         (e.revalidation !== "idle" && n.revalidation === "idle")
         ? { error: n.error, location: n.location, revalidation: n.revalidation }
         : {
-            error: n.error !== void 0 ? n.error : e.error,
-            location: e.location,
-            revalidation: n.revalidation || e.revalidation,
-          };
+          error: n.error !== void 0 ? n.error : e.error,
+          location: e.location,
+          revalidation: n.revalidation || e.revalidation,
+        };
     }
     componentDidCatch(n, e) {
       this.props.onError
         ? this.props.onError(n, e)
         : console.error(
-            "React Router caught the following error during render",
-            n,
-          );
+          "React Router caught the following error during render",
+          n,
+        );
     }
     render() {
       let n = this.state.error;
@@ -9997,13 +9997,13 @@ var dv = k.createElement(uv, null),
       let e =
         n !== void 0
           ? k.createElement(
-              kn.Provider,
-              { value: this.props.routeContext },
-              k.createElement(Pu.Provider, {
-                value: n,
-                children: this.props.component,
-              }),
-            )
+            kn.Provider,
+            { value: this.props.routeContext },
+            k.createElement(Pu.Provider, {
+              value: n,
+              children: this.props.component,
+            }),
+          )
           : this.props.children;
       return this.context ? k.createElement(hv, { error: n }, e) : e;
     }
@@ -10046,10 +10046,10 @@ function fv({ routeContext: n, match: e, children: i }) {
   let a = k.useContext(Hi);
   return (
     a &&
-      a.static &&
-      a.staticContext &&
-      (e.route.errorElement || e.route.ErrorBoundary) &&
-      (a.staticContext._deepestRenderedBoundaryId = e.route.id),
+    a.static &&
+    a.staticContext &&
+    (e.route.errorElement || e.route.ErrorBoundary) &&
+    (a.staticContext._deepestRenderedBoundaryId = e.route.id),
     k.createElement(kn.Provider, { value: n }, i)
   );
 }
@@ -10078,7 +10078,7 @@ function pv(n, e = [], i = null, a = null, l = null) {
       let x = c[y];
       if (
         ((x.route.HydrateFallback || x.route.hydrateFallbackElement) && (m = y),
-        x.route.id)
+          x.route.id)
       ) {
         let { loaderData: w, errors: S } = i,
           N =
@@ -10094,13 +10094,13 @@ function pv(n, e = [], i = null, a = null, l = null) {
   let g =
     i && a
       ? (y, x) => {
-          a(y, {
-            location: i.location,
-            params: i.matches?.[0]?.params ?? {},
-            unstable_pattern: Jy(i.matches),
-            errorInfo: x,
-          });
-        }
+        a(y, {
+          location: i.location,
+          params: i.matches?.[0]?.params ?? {},
+          unstable_pattern: Jy(i.matches),
+          errorInfo: x,
+        });
+      }
       : void 0;
   return c.reduceRight((y, x, w) => {
     let S,
@@ -10109,18 +10109,18 @@ function pv(n, e = [], i = null, a = null, l = null) {
       _ = null;
     i &&
       ((S = d && x.route.id ? d[x.route.id] : void 0),
-      (b = x.route.errorElement || dv),
-      f &&
+        (b = x.route.errorElement || dv),
+        f &&
         (m < 0 && w === 0
           ? (Fp(
-              "route-fallback",
-              !1,
-              "No `HydrateFallback` element provided to render during initial hydration",
-            ),
+            "route-fallback",
+            !1,
+            "No `HydrateFallback` element provided to render during initial hydration",
+          ),
             (N = !0),
             (_ = null))
           : m === w &&
-            ((N = !0), (_ = x.route.hydrateFallbackElement || null))));
+          ((N = !0), (_ = x.route.hydrateFallbackElement || null))));
     let O = e.concat(c.slice(0, w + 1)),
       D = () => {
         let L;
@@ -10143,14 +10143,14 @@ function pv(n, e = [], i = null, a = null, l = null) {
       };
     return i && (x.route.ErrorBoundary || x.route.errorElement || w === 0)
       ? k.createElement(Up, {
-          location: i.location,
-          revalidation: i.revalidation,
-          component: b,
-          error: S,
-          children: D(),
-          routeContext: { outlet: null, matches: O, isDataRoute: !0 },
-          onError: g,
-        })
+        location: i.location,
+        revalidation: i.revalidation,
+        component: b,
+        error: S,
+        children: D(),
+        routeContext: { outlet: null, matches: O, isDataRoute: !0 },
+        onError: g,
+      })
       : D();
   }, null);
 }
@@ -10201,9 +10201,9 @@ function wv() {
       async (l, c = {}) => {
         (zn(i.current, zp),
           i.current &&
-            (typeof l == "number"
-              ? await n.navigate(l)
-              : await n.navigate(l, { fromRouteId: e, ...c })));
+          (typeof l == "number"
+            ? await n.navigate(l)
+            : await n.navigate(l, { fromRouteId: e, ...c })));
       },
       [n, e],
     )
@@ -10252,20 +10252,20 @@ function kv({
     );
   typeof i == "string" && (i = Fi(i));
   let {
-      pathname: g = "/",
-      search: y = "",
-      hash: x = "",
-      state: w = null,
-      key: S = "default",
-    } = i,
+    pathname: g = "/",
+    search: y = "",
+    hash: x = "",
+    state: w = null,
+    key: S = "default",
+  } = i,
     N = k.useMemo(() => {
       let b = tr(g, f);
       return b == null
         ? null
         : {
-            location: { pathname: b, search: y, hash: x, state: w, key: S },
-            navigationType: a,
-          };
+          location: { pathname: b, search: y, hash: x, state: w, key: S },
+          navigationType: a,
+        };
     }, [f, g, y, x, w, S, a]);
   return (
     zn(
@@ -10275,10 +10275,10 @@ function kv({
     N == null
       ? null
       : k.createElement(
-          cn.Provider,
-          { value: m },
-          k.createElement(la.Provider, { children: e, value: N }),
-        )
+        cn.Provider,
+        { value: m },
+        k.createElement(la.Provider, { children: e, value: N }),
+      )
   );
 }
 function jv({ children: n, location: e }) {
@@ -10367,9 +10367,9 @@ var Rv = new Set([
 function Qc(n) {
   return n != null && !Rv.has(n)
     ? (zn(
-        !1,
-        `"${n}" is not a valid \`encType\` for \`<Form>\`/\`<fetcher.Form>\` and will default to "${Wo}"`,
-      ),
+      !1,
+      `"${n}" is not a valid \`encType\` for \`<Form>\`/\`<fetcher.Form>\` and will default to "${Wo}"`,
+    ),
       null)
     : n;
 }
@@ -10390,13 +10390,13 @@ function Pv(n, e) {
     let m = n.getAttribute("formaction") || f.getAttribute("action");
     if (
       ((a = m ? tr(m, e) : null),
-      (i = n.getAttribute("formmethod") || f.getAttribute("method") || Ho),
-      (l =
-        Qc(n.getAttribute("formenctype")) ||
-        Qc(f.getAttribute("enctype")) ||
-        Wo),
-      (c = new FormData(f, n)),
-      !Nv())
+        (i = n.getAttribute("formmethod") || f.getAttribute("method") || Ho),
+        (l =
+          Qc(n.getAttribute("formenctype")) ||
+          Qc(f.getAttribute("enctype")) ||
+          Wo),
+        (c = new FormData(f, n)),
+        !Nv())
     ) {
       let { name: g, type: y, value: x } = n;
       if (y === "image") {
@@ -10424,11 +10424,11 @@ function Iv(n, e, i, a) {
   let l =
     typeof n == "string"
       ? new URL(
-          n,
-          typeof window > "u"
-            ? "server://singlefetch/"
-            : window.location.origin,
-        )
+        n,
+        typeof window > "u"
+          ? "server://singlefetch/"
+          : window.location.origin,
+      )
       : n;
   return (
     i
@@ -10456,7 +10456,7 @@ async function Ov(n, e) {
       console.error(i),
       window.__reactRouterContext && window.__reactRouterContext.isSpaMode,
       window.location.reload(),
-      new Promise(() => {})
+      new Promise(() => { })
     );
   }
 }
@@ -10465,8 +10465,8 @@ function Dv(n) {
     ? !1
     : n.href == null
       ? n.rel === "preload" &&
-        typeof n.imageSrcSet == "string" &&
-        typeof n.imageSizes == "string"
+      typeof n.imageSrcSet == "string" &&
+      typeof n.imageSizes == "string"
       : typeof n.rel == "string" && typeof n.href == "string";
 }
 async function Lv(n, e, i) {
@@ -10501,24 +10501,24 @@ function Nf(n, e, i, a, l, c) {
     ? e.filter((m, g) => d(m, g) || f(m, g))
     : c === "data"
       ? e.filter((m, g) => {
-          let y = a.routes[m.route.id];
-          if (!y || !y.hasLoader) return !1;
-          if (d(m, g) || f(m, g)) return !0;
-          if (m.route.shouldRevalidate) {
-            let x = m.route.shouldRevalidate({
-              currentUrl: new URL(
-                l.pathname + l.search + l.hash,
-                window.origin,
-              ),
-              currentParams: i[0]?.params || {},
-              nextUrl: new URL(n, window.origin),
-              nextParams: m.params,
-              defaultShouldRevalidate: !0,
-            });
-            if (typeof x == "boolean") return x;
-          }
-          return !0;
-        })
+        let y = a.routes[m.route.id];
+        if (!y || !y.hasLoader) return !1;
+        if (d(m, g) || f(m, g)) return !0;
+        if (m.route.shouldRevalidate) {
+          let x = m.route.shouldRevalidate({
+            currentUrl: new URL(
+              l.pathname + l.search + l.hash,
+              window.origin,
+            ),
+            currentParams: i[0]?.params || {},
+            nextUrl: new URL(n, window.origin),
+            nextParams: m.params,
+            defaultShouldRevalidate: !0,
+          });
+          if (typeof x == "boolean") return x;
+        }
+        return !0;
+      })
       : [];
 }
 function Mv(n, e, { includeHydrateFallback: i } = {}) {
@@ -10532,8 +10532,8 @@ function Mv(n, e, { includeHydrateFallback: i } = {}) {
           l.clientActionModule && (c = c.concat(l.clientActionModule)),
           l.clientLoaderModule && (c = c.concat(l.clientLoaderModule)),
           i &&
-            l.hydrateFallbackModule &&
-            (c = c.concat(l.hydrateFallbackModule)),
+          l.hydrateFallbackModule &&
+          (c = c.concat(l.hydrateFallbackModule)),
           l.imports && (c = c.concat(l.imports)),
           c
         );
@@ -10604,10 +10604,10 @@ function Fv(n, e) {
   (k.useEffect(() => {
     if ((n === "render" && d(!0), n === "viewport")) {
       let b = (O) => {
-          O.forEach((D) => {
-            d(D.isIntersecting);
-          });
-        },
+        O.forEach((D) => {
+          d(D.isIntersecting);
+        });
+      },
         _ = new IntersectionObserver(b, { threshold: 0.5 });
       return (
         w.current && _.observe(w.current),
@@ -10628,8 +10628,8 @@ function Fv(n, e) {
       }
     }, [a]));
   let S = () => {
-      l(!0);
-    },
+    l(!0);
+  },
     N = () => {
       (l(!1), d(!1));
     };
@@ -10637,16 +10637,16 @@ function Fv(n, e) {
     ? n !== "intent"
       ? [c, w, {}]
       : [
-          c,
-          w,
-          {
-            onFocus: zs(f, S),
-            onBlur: zs(m, N),
-            onMouseEnter: zs(g, S),
-            onMouseLeave: zs(y, N),
-            onTouchStart: zs(x, S),
-          },
-        ]
+        c,
+        w,
+        {
+          onFocus: zs(f, S),
+          onBlur: zs(m, N),
+          onMouseEnter: zs(g, S),
+          onMouseLeave: zs(y, N),
+          onTouchStart: zs(x, S),
+        },
+      ]
     : [!1, w, {}];
 }
 function zs(n, e) {
@@ -10696,24 +10696,24 @@ function Vv({ page: n, matches: e, ...i }) {
             ((!y.some((B) => B.route.id === D.route.id) &&
               D.route.id in m &&
               d[D.route.id]?.shouldRevalidate) ||
-            L.hasClientLoader
+              L.hasClientLoader
               ? (_ = !0)
               : b.add(D.route.id));
         }),
-        b.size === 0)
+          b.size === 0)
       )
         return [];
       let O = Iv(n, f, l.unstable_trailingSlashAwareDataRequests, "data");
       return (
         _ &&
-          b.size > 0 &&
-          O.searchParams.set(
-            "_routes",
-            e
-              .filter((D) => b.has(D.route.id))
-              .map((D) => D.route.id)
-              .join(","),
-          ),
+        b.size > 0 &&
+        O.searchParams.set(
+          "_routes",
+          e
+            .filter((D) => b.has(D.route.id))
+            .map((D) => D.route.id)
+            .join(","),
+        ),
         [O.pathname + O.search]
       );
     }, [f, l.unstable_trailingSlashAwareDataRequests, m, a, c, y, e, n, d]),
@@ -10757,7 +10757,7 @@ var Gv =
   typeof window.document.createElement < "u";
 try {
   Gv && (window.__reactRouterVersion = "7.13.0");
-} catch {}
+} catch { }
 function Kv({
   basename: n,
   children: e,
@@ -10865,8 +10865,8 @@ var Jv = k.forwardRef(function (
         : null;
   (i ||
     ((D = D.toLowerCase()),
-    (L = L ? L.toLowerCase() : null),
-    (O = O.toLowerCase())),
+      (L = L ? L.toLowerCase() : null),
+      (O = O.toLowerCase())),
     L && b && (L = tr(L, b) || L));
   const B = O !== "/" && O.endsWith("/") ? O.length - 1 : O.length;
   let X = D === O || (!l && D.startsWith(O) && D.charAt(B) === "/"),
@@ -10879,13 +10879,13 @@ var Jv = k.forwardRef(function (
   typeof a == "function"
     ? (ye = a(ce))
     : (ye = [
-        a,
-        X ? "active" : null,
-        K ? "pending" : null,
-        _ ? "transitioning" : null,
-      ]
-        .filter(Boolean)
-        .join(" "));
+      a,
+      X ? "active" : null,
+      K ? "pending" : null,
+      _ ? "transitioning" : null,
+    ]
+      .filter(Boolean)
+      .join(" "));
   let G = typeof c == "function" ? c(ce) : c;
   return k.createElement(
     ne,
@@ -11060,8 +11060,8 @@ function nx(n, { relative: e } = {}) {
   }
   return (
     (!n || n === ".") &&
-      l.route.index &&
-      (c.search = c.search ? c.search.replace(/^\?/, "?index&") : "?index"),
+    l.route.index &&
+    (c.search = c.search ? c.search.replace(/^\?/, "?index&") : "?index"),
     i !== "/" && (c.pathname = c.pathname === "/" ? i : er([i, c.pathname])),
     ea(c)
   );
@@ -11098,8 +11098,8 @@ function ix(n, e, i, a) {
     return c instanceof i
       ? c
       : new i(function (d) {
-          d(c);
-        });
+        d(c);
+      });
   }
   return new (i || (i = Promise))(function (c, d) {
     function f(y) {
@@ -11194,7 +11194,7 @@ class ox {
           ((w["x-region"] = S), N.searchParams.set("forceFunctionRegion", S));
         let b;
         g &&
-        ((f && !Object.prototype.hasOwnProperty.call(f, "Content-Type")) || !f)
+          ((f && !Object.prototype.hasOwnProperty.call(f, "Content-Type")) || !f)
           ? (typeof Blob < "u" && g instanceof Blob) || g instanceof ArrayBuffer
             ? ((w["Content-Type"] = "application/octet-stream"), (b = g))
             : typeof g == "string"
@@ -11204,40 +11204,40 @@ class ox {
                 : ((w["Content-Type"] = "application/json"),
                   (b = JSON.stringify(g)))
           : g &&
-              typeof g != "string" &&
-              !(typeof Blob < "u" && g instanceof Blob) &&
-              !(g instanceof ArrayBuffer) &&
-              !(typeof FormData < "u" && g instanceof FormData)
+            typeof g != "string" &&
+            !(typeof Blob < "u" && g instanceof Blob) &&
+            !(g instanceof ArrayBuffer) &&
+            !(typeof FormData < "u" && g instanceof FormData)
             ? (b = JSON.stringify(g))
             : (b = g);
         let _ = y;
         x &&
           ((d = new AbortController()),
-          (c = setTimeout(() => d.abort(), x)),
-          y
-            ? ((_ = d.signal), y.addEventListener("abort", () => d.abort()))
-            : (_ = d.signal));
+            (c = setTimeout(() => d.abort(), x)),
+            y
+              ? ((_ = d.signal), y.addEventListener("abort", () => d.abort()))
+              : (_ = d.signal));
         const O = yield this.fetch(N.toString(), {
-            method: m || "POST",
-            headers: Object.assign(
-              Object.assign(Object.assign({}, w), this.headers),
-              f,
-            ),
-            body: b,
-            signal: _,
-          }).catch((X) => {
-            throw new ax(X);
-          }),
+          method: m || "POST",
+          headers: Object.assign(
+            Object.assign(Object.assign({}, w), this.headers),
+            f,
+          ),
+          body: b,
+          signal: _,
+        }).catch((X) => {
+          throw new ax(X);
+        }),
           D = O.headers.get("x-relay-error");
         if (D && D === "true") throw new Rf(O);
         if (!O.ok) throw new Pf(O);
         let L = (
-            (l = O.headers.get("Content-Type")) !== null && l !== void 0
-              ? l
-              : "text/plain"
-          )
-            .split(";")[0]
-            .trim(),
+          (l = O.headers.get("Content-Type")) !== null && l !== void 0
+            ? l
+            : "text/plain"
+        )
+          .split(";")[0]
+          .trim(),
           B;
         return (
           L === "application/json"
@@ -11264,14 +11264,14 @@ class ox {
   }
 }
 var lx = class extends Error {
-    constructor(n) {
-      (super(n.message),
-        (this.name = "PostgrestError"),
-        (this.details = n.details),
-        (this.hint = n.hint),
-        (this.code = n.code));
-    }
-  },
+  constructor(n) {
+    (super(n.message),
+      (this.name = "PostgrestError"),
+      (this.details = n.details),
+      (this.hint = n.hint),
+      (this.code = n.code));
+  }
+},
   cx = class {
     constructor(n) {
       var e, i, a;
@@ -11307,8 +11307,8 @@ var lx = class extends Error {
           ? this.headers.set("Accept-Profile", this.schema)
           : this.headers.set("Content-Profile", this.schema)),
         this.method !== "GET" &&
-          this.method !== "HEAD" &&
-          this.headers.set("Content-Type", "application/json"));
+        this.method !== "HEAD" &&
+        this.headers.set("Content-Type", "application/json"));
       const a = this.fetch;
       let l = a(this.url.toString(), {
         method: this.method,
@@ -11328,47 +11328,47 @@ var lx = class extends Error {
             const O = await c.text();
             O === "" ||
               (i.headers.get("Accept") === "text/csv" ||
-              (i.headers.get("Accept") &&
-                !((S = i.headers.get("Accept")) === null || S === void 0) &&
-                S.includes("application/vnd.pgrst.plan+text"))
+                (i.headers.get("Accept") &&
+                  !((S = i.headers.get("Accept")) === null || S === void 0) &&
+                  S.includes("application/vnd.pgrst.plan+text"))
                 ? (f = O)
                 : (f = JSON.parse(O)));
           }
           const b =
-              (x = i.headers.get("Prefer")) === null || x === void 0
-                ? void 0
-                : x.match(/count=(exact|planned|estimated)/),
+            (x = i.headers.get("Prefer")) === null || x === void 0
+              ? void 0
+              : x.match(/count=(exact|planned|estimated)/),
             _ =
               (w = c.headers.get("content-range")) === null || w === void 0
                 ? void 0
                 : w.split("/");
           (b && _ && _.length > 1 && (m = parseInt(_[1])),
             i.isMaybeSingle &&
-              i.method === "GET" &&
-              Array.isArray(f) &&
-              (f.length > 1
-                ? ((d = {
-                    code: "PGRST116",
-                    details: `Results contain ${f.length} rows, application/vnd.pgrst.object+json requires 1 row`,
-                    hint: null,
-                    message:
-                      "JSON object requested, multiple (or no) rows returned",
-                  }),
-                  (f = null),
-                  (m = null),
-                  (g = 406),
-                  (y = "Not Acceptable"))
-                : f.length === 1
-                  ? (f = f[0])
-                  : (f = null)));
+            i.method === "GET" &&
+            Array.isArray(f) &&
+            (f.length > 1
+              ? ((d = {
+                code: "PGRST116",
+                details: `Results contain ${f.length} rows, application/vnd.pgrst.object+json requires 1 row`,
+                hint: null,
+                message:
+                  "JSON object requested, multiple (or no) rows returned",
+              }),
+                (f = null),
+                (m = null),
+                (g = 406),
+                (y = "Not Acceptable"))
+              : f.length === 1
+                ? (f = f[0])
+                : (f = null)));
         } else {
           var N;
           const b = await c.text();
           try {
             ((d = JSON.parse(b)),
               Array.isArray(d) &&
-                c.status === 404 &&
-                ((f = []), (d = null), (g = 200), (y = "OK")));
+              c.status === 404 &&
+              ((f = []), (d = null), (g = 200), (y = "OK")));
           } catch {
             c.status === 404 && b === ""
               ? ((g = 204), (y = "No Content"))
@@ -11380,7 +11380,7 @@ var lx = class extends Error {
               !(d == null || (N = d.details) === null || N === void 0) &&
               N.includes("0 rows") &&
               ((d = null), (g = 200), (y = "OK")),
-            d && i.shouldThrowOnError)
+              d && i.shouldThrowOnError)
           )
             throw new lx(d);
         }
@@ -11388,55 +11388,55 @@ var lx = class extends Error {
       });
       return (
         this.shouldThrowOnError ||
-          (l = l.catch((c) => {
-            var d;
-            let f = "",
-              m = "",
-              g = "";
-            const y = c?.cause;
-            if (y) {
-              var x, w, S, N;
-              const O = (x = y?.message) !== null && x !== void 0 ? x : "",
-                D = (w = y?.code) !== null && w !== void 0 ? w : "";
-              ((f = `${(S = c?.name) !== null && S !== void 0 ? S : "FetchError"}: ${c?.message}`),
-                (f += `
+        (l = l.catch((c) => {
+          var d;
+          let f = "",
+            m = "",
+            g = "";
+          const y = c?.cause;
+          if (y) {
+            var x, w, S, N;
+            const O = (x = y?.message) !== null && x !== void 0 ? x : "",
+              D = (w = y?.code) !== null && w !== void 0 ? w : "";
+            ((f = `${(S = c?.name) !== null && S !== void 0 ? S : "FetchError"}: ${c?.message}`),
+              (f += `
 
 Caused by: ${(N = y?.name) !== null && N !== void 0 ? N : "Error"}: ${O}`),
-                D && (f += ` (${D})`),
-                y?.stack &&
-                  (f += `
+              D && (f += ` (${D})`),
+              y?.stack &&
+              (f += `
 ${y.stack}`));
-            } else {
-              var b;
-              f = (b = c?.stack) !== null && b !== void 0 ? b : "";
+          } else {
+            var b;
+            f = (b = c?.stack) !== null && b !== void 0 ? b : "";
+          }
+          const _ = this.url.toString().length;
+          return (
+            c?.name === "AbortError" || c?.code === "ABORT_ERR"
+              ? ((g = ""),
+                (m = "Request was aborted (timeout or manual cancellation)"),
+                _ > this.urlLengthLimit &&
+                (m += `. Note: Your request URL is ${_} characters, which may exceed server limits. If selecting many fields, consider using views. If filtering with large arrays (e.g., .in('id', [many IDs])), consider using an RPC function to pass values server-side.`))
+              : (y?.name === "HeadersOverflowError" ||
+                y?.code === "UND_ERR_HEADERS_OVERFLOW") &&
+              ((g = ""),
+                (m = "HTTP headers exceeded server limits (typically 16KB)"),
+                _ > this.urlLengthLimit &&
+                (m += `. Your request URL is ${_} characters. If selecting many fields, consider using views. If filtering with large arrays (e.g., .in('id', [200+ IDs])), consider using an RPC function instead.`)),
+            {
+              error: {
+                message: `${(d = c?.name) !== null && d !== void 0 ? d : "FetchError"}: ${c?.message}`,
+                details: f,
+                hint: m,
+                code: g,
+              },
+              data: null,
+              count: null,
+              status: 0,
+              statusText: "",
             }
-            const _ = this.url.toString().length;
-            return (
-              c?.name === "AbortError" || c?.code === "ABORT_ERR"
-                ? ((g = ""),
-                  (m = "Request was aborted (timeout or manual cancellation)"),
-                  _ > this.urlLengthLimit &&
-                    (m += `. Note: Your request URL is ${_} characters, which may exceed server limits. If selecting many fields, consider using views. If filtering with large arrays (e.g., .in('id', [many IDs])), consider using an RPC function to pass values server-side.`))
-                : (y?.name === "HeadersOverflowError" ||
-                    y?.code === "UND_ERR_HEADERS_OVERFLOW") &&
-                  ((g = ""),
-                  (m = "HTTP headers exceeded server limits (typically 16KB)"),
-                  _ > this.urlLengthLimit &&
-                    (m += `. Your request URL is ${_} characters. If selecting many fields, consider using views. If filtering with large arrays (e.g., .in('id', [200+ IDs])), consider using an RPC function instead.`)),
-              {
-                error: {
-                  message: `${(d = c?.name) !== null && d !== void 0 ? d : "FetchError"}: ${c?.message}`,
-                  details: f,
-                  hint: m,
-                  code: g,
-                },
-                data: null,
-                count: null,
-                status: 0,
-                statusText: "",
-              }
-            );
-          })),
+          );
+        })),
         l.then(n, e)
       );
     }
@@ -11526,14 +11526,14 @@ ${y.stack}`));
     } = {}) {
       var d;
       const f = [
-          n ? "analyze" : null,
-          e ? "verbose" : null,
-          i ? "settings" : null,
-          a ? "buffers" : null,
-          l ? "wal" : null,
-        ]
-          .filter(Boolean)
-          .join("|"),
+        n ? "analyze" : null,
+        e ? "verbose" : null,
+        i ? "settings" : null,
+        a ? "buffers" : null,
+        l ? "wal" : null,
+      ]
+        .filter(Boolean)
+        .join("|"),
         m =
           (d = this.headers.get("Accept")) !== null && d !== void 0
             ? d
@@ -11562,152 +11562,152 @@ ${y.stack}`));
   };
 const If = new RegExp("[,()]");
 var Mi = class extends ux {
-    eq(n, e) {
-      return (this.url.searchParams.append(n, `eq.${e}`), this);
-    }
-    neq(n, e) {
-      return (this.url.searchParams.append(n, `neq.${e}`), this);
-    }
-    gt(n, e) {
-      return (this.url.searchParams.append(n, `gt.${e}`), this);
-    }
-    gte(n, e) {
-      return (this.url.searchParams.append(n, `gte.${e}`), this);
-    }
-    lt(n, e) {
-      return (this.url.searchParams.append(n, `lt.${e}`), this);
-    }
-    lte(n, e) {
-      return (this.url.searchParams.append(n, `lte.${e}`), this);
-    }
-    like(n, e) {
-      return (this.url.searchParams.append(n, `like.${e}`), this);
-    }
-    likeAllOf(n, e) {
-      return (
-        this.url.searchParams.append(n, `like(all).{${e.join(",")}}`),
-        this
-      );
-    }
-    likeAnyOf(n, e) {
-      return (
-        this.url.searchParams.append(n, `like(any).{${e.join(",")}}`),
-        this
-      );
-    }
-    ilike(n, e) {
-      return (this.url.searchParams.append(n, `ilike.${e}`), this);
-    }
-    ilikeAllOf(n, e) {
-      return (
-        this.url.searchParams.append(n, `ilike(all).{${e.join(",")}}`),
-        this
-      );
-    }
-    ilikeAnyOf(n, e) {
-      return (
-        this.url.searchParams.append(n, `ilike(any).{${e.join(",")}}`),
-        this
-      );
-    }
-    regexMatch(n, e) {
-      return (this.url.searchParams.append(n, `match.${e}`), this);
-    }
-    regexIMatch(n, e) {
-      return (this.url.searchParams.append(n, `imatch.${e}`), this);
-    }
-    is(n, e) {
-      return (this.url.searchParams.append(n, `is.${e}`), this);
-    }
-    isDistinct(n, e) {
-      return (this.url.searchParams.append(n, `isdistinct.${e}`), this);
-    }
-    in(n, e) {
-      const i = Array.from(new Set(e))
-        .map((a) => (typeof a == "string" && If.test(a) ? `"${a}"` : `${a}`))
-        .join(",");
-      return (this.url.searchParams.append(n, `in.(${i})`), this);
-    }
-    notIn(n, e) {
-      const i = Array.from(new Set(e))
-        .map((a) => (typeof a == "string" && If.test(a) ? `"${a}"` : `${a}`))
-        .join(",");
-      return (this.url.searchParams.append(n, `not.in.(${i})`), this);
-    }
-    contains(n, e) {
-      return (
-        typeof e == "string"
-          ? this.url.searchParams.append(n, `cs.${e}`)
-          : Array.isArray(e)
-            ? this.url.searchParams.append(n, `cs.{${e.join(",")}}`)
-            : this.url.searchParams.append(n, `cs.${JSON.stringify(e)}`),
-        this
-      );
-    }
-    containedBy(n, e) {
-      return (
-        typeof e == "string"
-          ? this.url.searchParams.append(n, `cd.${e}`)
-          : Array.isArray(e)
-            ? this.url.searchParams.append(n, `cd.{${e.join(",")}}`)
-            : this.url.searchParams.append(n, `cd.${JSON.stringify(e)}`),
-        this
-      );
-    }
-    rangeGt(n, e) {
-      return (this.url.searchParams.append(n, `sr.${e}`), this);
-    }
-    rangeGte(n, e) {
-      return (this.url.searchParams.append(n, `nxl.${e}`), this);
-    }
-    rangeLt(n, e) {
-      return (this.url.searchParams.append(n, `sl.${e}`), this);
-    }
-    rangeLte(n, e) {
-      return (this.url.searchParams.append(n, `nxr.${e}`), this);
-    }
-    rangeAdjacent(n, e) {
-      return (this.url.searchParams.append(n, `adj.${e}`), this);
-    }
-    overlaps(n, e) {
-      return (
-        typeof e == "string"
-          ? this.url.searchParams.append(n, `ov.${e}`)
-          : this.url.searchParams.append(n, `ov.{${e.join(",")}}`),
-        this
-      );
-    }
-    textSearch(n, e, { config: i, type: a } = {}) {
-      let l = "";
-      a === "plain"
-        ? (l = "pl")
-        : a === "phrase"
-          ? (l = "ph")
-          : a === "websearch" && (l = "w");
-      const c = i === void 0 ? "" : `(${i})`;
-      return (this.url.searchParams.append(n, `${l}fts${c}.${e}`), this);
-    }
-    match(n) {
-      return (
-        Object.entries(n)
-          .filter(([e, i]) => i !== void 0)
-          .forEach(([e, i]) => {
-            this.url.searchParams.append(e, `eq.${i}`);
-          }),
-        this
-      );
-    }
-    not(n, e, i) {
-      return (this.url.searchParams.append(n, `not.${e}.${i}`), this);
-    }
-    or(n, { foreignTable: e, referencedTable: i = e } = {}) {
-      const a = i ? `${i}.or` : "or";
-      return (this.url.searchParams.append(a, `(${n})`), this);
-    }
-    filter(n, e, i) {
-      return (this.url.searchParams.append(n, `${e}.${i}`), this);
-    }
-  },
+  eq(n, e) {
+    return (this.url.searchParams.append(n, `eq.${e}`), this);
+  }
+  neq(n, e) {
+    return (this.url.searchParams.append(n, `neq.${e}`), this);
+  }
+  gt(n, e) {
+    return (this.url.searchParams.append(n, `gt.${e}`), this);
+  }
+  gte(n, e) {
+    return (this.url.searchParams.append(n, `gte.${e}`), this);
+  }
+  lt(n, e) {
+    return (this.url.searchParams.append(n, `lt.${e}`), this);
+  }
+  lte(n, e) {
+    return (this.url.searchParams.append(n, `lte.${e}`), this);
+  }
+  like(n, e) {
+    return (this.url.searchParams.append(n, `like.${e}`), this);
+  }
+  likeAllOf(n, e) {
+    return (
+      this.url.searchParams.append(n, `like(all).{${e.join(",")}}`),
+      this
+    );
+  }
+  likeAnyOf(n, e) {
+    return (
+      this.url.searchParams.append(n, `like(any).{${e.join(",")}}`),
+      this
+    );
+  }
+  ilike(n, e) {
+    return (this.url.searchParams.append(n, `ilike.${e}`), this);
+  }
+  ilikeAllOf(n, e) {
+    return (
+      this.url.searchParams.append(n, `ilike(all).{${e.join(",")}}`),
+      this
+    );
+  }
+  ilikeAnyOf(n, e) {
+    return (
+      this.url.searchParams.append(n, `ilike(any).{${e.join(",")}}`),
+      this
+    );
+  }
+  regexMatch(n, e) {
+    return (this.url.searchParams.append(n, `match.${e}`), this);
+  }
+  regexIMatch(n, e) {
+    return (this.url.searchParams.append(n, `imatch.${e}`), this);
+  }
+  is(n, e) {
+    return (this.url.searchParams.append(n, `is.${e}`), this);
+  }
+  isDistinct(n, e) {
+    return (this.url.searchParams.append(n, `isdistinct.${e}`), this);
+  }
+  in(n, e) {
+    const i = Array.from(new Set(e))
+      .map((a) => (typeof a == "string" && If.test(a) ? `"${a}"` : `${a}`))
+      .join(",");
+    return (this.url.searchParams.append(n, `in.(${i})`), this);
+  }
+  notIn(n, e) {
+    const i = Array.from(new Set(e))
+      .map((a) => (typeof a == "string" && If.test(a) ? `"${a}"` : `${a}`))
+      .join(",");
+    return (this.url.searchParams.append(n, `not.in.(${i})`), this);
+  }
+  contains(n, e) {
+    return (
+      typeof e == "string"
+        ? this.url.searchParams.append(n, `cs.${e}`)
+        : Array.isArray(e)
+          ? this.url.searchParams.append(n, `cs.{${e.join(",")}}`)
+          : this.url.searchParams.append(n, `cs.${JSON.stringify(e)}`),
+      this
+    );
+  }
+  containedBy(n, e) {
+    return (
+      typeof e == "string"
+        ? this.url.searchParams.append(n, `cd.${e}`)
+        : Array.isArray(e)
+          ? this.url.searchParams.append(n, `cd.{${e.join(",")}}`)
+          : this.url.searchParams.append(n, `cd.${JSON.stringify(e)}`),
+      this
+    );
+  }
+  rangeGt(n, e) {
+    return (this.url.searchParams.append(n, `sr.${e}`), this);
+  }
+  rangeGte(n, e) {
+    return (this.url.searchParams.append(n, `nxl.${e}`), this);
+  }
+  rangeLt(n, e) {
+    return (this.url.searchParams.append(n, `sl.${e}`), this);
+  }
+  rangeLte(n, e) {
+    return (this.url.searchParams.append(n, `nxr.${e}`), this);
+  }
+  rangeAdjacent(n, e) {
+    return (this.url.searchParams.append(n, `adj.${e}`), this);
+  }
+  overlaps(n, e) {
+    return (
+      typeof e == "string"
+        ? this.url.searchParams.append(n, `ov.${e}`)
+        : this.url.searchParams.append(n, `ov.{${e.join(",")}}`),
+      this
+    );
+  }
+  textSearch(n, e, { config: i, type: a } = {}) {
+    let l = "";
+    a === "plain"
+      ? (l = "pl")
+      : a === "phrase"
+        ? (l = "ph")
+        : a === "websearch" && (l = "w");
+    const c = i === void 0 ? "" : `(${i})`;
+    return (this.url.searchParams.append(n, `${l}fts${c}.${e}`), this);
+  }
+  match(n) {
+    return (
+      Object.entries(n)
+        .filter(([e, i]) => i !== void 0)
+        .forEach(([e, i]) => {
+          this.url.searchParams.append(e, `eq.${i}`);
+        }),
+      this
+    );
+  }
+  not(n, e, i) {
+    return (this.url.searchParams.append(n, `not.${e}.${i}`), this);
+  }
+  or(n, { foreignTable: e, referencedTable: i = e } = {}) {
+    const a = i ? `${i}.or` : "or";
+    return (this.url.searchParams.append(a, `(${n})`), this);
+  }
+  filter(n, e, i) {
+    return (this.url.searchParams.append(n, `${e}.${i}`), this);
+  }
+},
   dx = class {
     constructor(
       n,
@@ -11730,9 +11730,9 @@ var Mi = class extends ux {
         l = i ? "HEAD" : "GET";
       let c = !1;
       const d = (n ?? "*")
-          .split("")
-          .map((g) => (/\s/.test(g) && !c ? "" : (g === '"' && (c = !c), g)))
-          .join(""),
+        .split("")
+        .map((g) => (/\s/.test(g) && !c ? "" : (g === '"' && (c = !c), g)))
+        .join(""),
         { url: f, headers: m } = this.cloneRequestState();
       return (
         f.searchParams.set("select", d),
@@ -11753,8 +11753,8 @@ var Mi = class extends ux {
         { url: c, headers: d } = this.cloneRequestState();
       if (
         (e && d.append("Prefer", `count=${e}`),
-        i || d.append("Prefer", "missing=default"),
-        Array.isArray(n))
+          i || d.append("Prefer", "missing=default"),
+          Array.isArray(n))
       ) {
         const f = n.reduce((m, g) => m.concat(Object.keys(g)), []);
         if (f.length > 0) {
@@ -11786,10 +11786,10 @@ var Mi = class extends ux {
         { url: f, headers: m } = this.cloneRequestState();
       if (
         (m.append("Prefer", `resolution=${i ? "ignore" : "merge"}-duplicates`),
-        e !== void 0 && f.searchParams.set("on_conflict", e),
-        a && m.append("Prefer", `count=${a}`),
-        l || m.append("Prefer", "missing=default"),
-        Array.isArray(n))
+          e !== void 0 && f.searchParams.set("on_conflict", e),
+          a && m.append("Prefer", `count=${a}`),
+          l || m.append("Prefer", "missing=default"),
+          Array.isArray(n))
       ) {
         const g = n.reduce((y, x) => y.concat(Object.keys(x)), []);
         if (g.length > 0) {
@@ -11847,16 +11847,16 @@ function ta(n) {
     (ta =
       typeof Symbol == "function" && typeof Symbol.iterator == "symbol"
         ? function (e) {
-            return typeof e;
-          }
+          return typeof e;
+        }
         : function (e) {
-            return e &&
-              typeof Symbol == "function" &&
-              e.constructor === Symbol &&
-              e !== Symbol.prototype
-              ? "symbol"
-              : typeof e;
-          }),
+          return e &&
+            typeof Symbol == "function" &&
+            e.constructor === Symbol &&
+            e !== Symbol.prototype
+            ? "symbol"
+            : typeof e;
+        }),
     ta(n)
   );
 }
@@ -11878,11 +11878,11 @@ function px(n, e, i) {
   return (
     (e = fx(e)) in n
       ? Object.defineProperty(n, e, {
-          value: i,
-          enumerable: !0,
-          configurable: !0,
-          writable: !0,
-        })
+        value: i,
+        enumerable: !0,
+        configurable: !0,
+        writable: !0,
+      })
       : (n[e] = i),
     n
   );
@@ -11904,13 +11904,13 @@ function Ro(n) {
     var i = arguments[e] != null ? arguments[e] : {};
     e % 2
       ? Of(Object(i), !0).forEach(function (a) {
-          px(n, a, i[a]);
-        })
+        px(n, a, i[a]);
+      })
       : Object.getOwnPropertyDescriptors
         ? Object.defineProperties(n, Object.getOwnPropertyDescriptors(i))
         : Of(Object(i)).forEach(function (a) {
-            Object.defineProperty(n, a, Object.getOwnPropertyDescriptor(i, a));
-          });
+          Object.defineProperty(n, a, Object.getOwnPropertyDescriptor(i, a));
+        });
   }
   return n;
 }
@@ -11932,25 +11932,25 @@ var mx = class Gp {
     const f = l ?? globalThis.fetch;
     c !== void 0 && c > 0
       ? (this.fetch = (m, g) => {
-          const y = new AbortController(),
-            x = setTimeout(() => y.abort(), c),
-            w = g?.signal;
-          if (w) {
-            if (w.aborted) return (clearTimeout(x), f(m, g));
-            const S = () => {
-              (clearTimeout(x), y.abort());
-            };
-            return (
-              w.addEventListener("abort", S, { once: !0 }),
-              f(m, Ro(Ro({}, g), {}, { signal: y.signal })).finally(() => {
-                (clearTimeout(x), w.removeEventListener("abort", S));
-              })
-            );
-          }
-          return f(m, Ro(Ro({}, g), {}, { signal: y.signal })).finally(() =>
-            clearTimeout(x),
+        const y = new AbortController(),
+          x = setTimeout(() => y.abort(), c),
+          w = g?.signal;
+        if (w) {
+          if (w.aborted) return (clearTimeout(x), f(m, g));
+          const S = () => {
+            (clearTimeout(x), y.abort());
+          };
+          return (
+            w.addEventListener("abort", S, { once: !0 }),
+            f(m, Ro(Ro({}, g), {}, { signal: y.signal })).finally(() => {
+              (clearTimeout(x), w.removeEventListener("abort", S));
+            })
           );
-        })
+        }
+        return f(m, Ro(Ro({}, g), {}, { signal: y.signal })).finally(() =>
+          clearTimeout(x),
+        );
+      })
       : (this.fetch = f);
   }
   from(e) {
@@ -11979,7 +11979,7 @@ var mx = class Gp {
     const m = new URL(`${this.url}/rpc/${e}`);
     let g;
     const y = (S) =>
-        S !== null && typeof S == "object" && (!Array.isArray(S) || S.some(y)),
+      S !== null && typeof S == "object" && (!Array.isArray(S) || S.some(y)),
       x = a && Object.values(i).some(y);
     x
       ? ((f = "POST"), (g = i))
@@ -12013,7 +12013,7 @@ var mx = class Gp {
   }
 };
 class gx {
-  constructor() {}
+  constructor() { }
   static detectEnvironment() {
     var e;
     if (typeof WebSocket < "u")
@@ -12057,18 +12057,18 @@ class gx {
           ? typeof globalThis.WebSocket < "u"
             ? { type: "native", constructor: globalThis.WebSocket }
             : {
-                type: "unsupported",
-                error: `Node.js ${c} detected but native WebSocket not found.`,
-                workaround:
-                  "Provide a WebSocket implementation via the transport option.",
-              }
-          : {
               type: "unsupported",
-              error: `Node.js ${c} detected without native WebSocket support.`,
-              workaround: `For Node.js < 22, install "ws" package and provide it via the transport option:
+              error: `Node.js ${c} detected but native WebSocket not found.`,
+              workaround:
+                "Provide a WebSocket implementation via the transport option.",
+            }
+          : {
+            type: "unsupported",
+            error: `Node.js ${c} detected without native WebSocket support.`,
+            workaround: `For Node.js < 22, install "ws" package and provide it via the transport option:
 import ws from "ws"
 new RealtimeClient(url, { transport: ws })`,
-            };
+          };
       }
     }
     return {
@@ -12084,7 +12084,7 @@ new RealtimeClient(url, { transport: ws })`,
     let i = e.error || "WebSocket not supported in this environment.";
     throw (
       e.workaround &&
-        (i += `
+      (i += `
 
 Suggested solution: ${e.workaround}`),
       new Error(i)
@@ -12162,10 +12162,10 @@ class kx {
   _encodeJsonUserBroadcastPush(e) {
     var i, a;
     const l =
-        (a = (i = e.payload) === null || i === void 0 ? void 0 : i.payload) !==
-          null && a !== void 0
-          ? a
-          : {},
+      (a = (i = e.payload) === null || i === void 0 ? void 0 : i.payload) !==
+        null && a !== void 0
+        ? a
+        : {},
       d = new TextEncoder().encode(JSON.stringify(l)).buffer;
     return this._encodeUserBroadcastPush(e, this.JSON_ENCODING, d);
   }
@@ -12190,12 +12190,12 @@ class kx {
     if (x.length > 255)
       throw new Error(`metadata length ${x.length} exceeds maximum of 255`);
     const w =
-        this.USER_BROADCAST_PUSH_META_LENGTH +
-        m.length +
-        f.length +
-        d.length +
-        g.length +
-        x.length,
+      this.USER_BROADCAST_PUSH_META_LENGTH +
+      m.length +
+      f.length +
+      d.length +
+      g.length +
+      x.length,
       S = new ArrayBuffer(this.HEADER_LENGTH + w);
     let N = new DataView(S),
       b = 0;
@@ -12268,7 +12268,7 @@ class kx {
     return (
       e instanceof ArrayBuffer ||
       ((i = e?.constructor) === null || i === void 0 ? void 0 : i.name) ===
-        "ArrayBuffer"
+      "ArrayBuffer"
     );
   }
   _pick(e, i) {
@@ -12305,12 +12305,12 @@ var Fe;
     (n.tstzrange = "tstzrange"));
 })(Fe || (Fe = {}));
 const Df = (n, e, i = {}) => {
-    var a;
-    const l = (a = i.skipTypes) !== null && a !== void 0 ? a : [];
-    return e
-      ? Object.keys(e).reduce((c, d) => ((c[d] = jx(d, n, e, l)), c), {})
-      : {};
-  },
+  var a;
+  const l = (a = i.skipTypes) !== null && a !== void 0 ? a : [];
+  return e
+    ? Object.keys(e).reduce((c, d) => ((c[d] = jx(d, n, e, l)), c), {})
+    : {};
+},
   jx = (n, e, i, a) => {
     const l = e.find((f) => f.name === n),
       c = l?.type,
@@ -12416,11 +12416,11 @@ const Df = (n, e, i = {}) => {
     );
   };
 var Js = (n) =>
-    typeof n == "function"
-      ? n
-      : function () {
-          return n;
-        },
+  typeof n == "function"
+    ? n
+    : function () {
+      return n;
+    },
   Nx = typeof self < "u" ? self : null,
   zi = typeof window < "u" ? window : null,
   On = Nx || zi || globalThis,
@@ -12467,14 +12467,14 @@ var Js = (n) =>
     send() {
       this.hasReceived("timeout") ||
         (this.startTimeout(),
-        (this.sent = !0),
-        this.channel.socket.push({
-          topic: this.channel.topic,
-          event: this.event,
-          payload: this.payload(),
-          ref: this.ref,
-          join_ref: this.channel.joinRef(),
-        }));
+          (this.sent = !0),
+          this.channel.socket.push({
+            topic: this.channel.topic,
+            event: this.event,
+            payload: this.payload(),
+            ref: this.ref,
+            join_ref: this.channel.joinRef(),
+          }));
     }
     receive(n, e) {
       return (
@@ -12576,13 +12576,13 @@ var Js = (n) =>
         this.joinPush.receive("error", (a) => {
           ((this.state = Ut.errored),
             this.socket.hasLogger() &&
-              this.socket.log("channel", `error ${this.topic}`, a),
+            this.socket.log("channel", `error ${this.topic}`, a),
             this.socket.isConnected() && this.rejoinTimer.scheduleTimeout());
         }),
         this.onClose(() => {
           (this.rejoinTimer.reset(),
             this.socket.hasLogger() &&
-              this.socket.log("channel", `close ${this.topic}`),
+            this.socket.log("channel", `close ${this.topic}`),
             (this.state = Ut.closed),
             this.socket.remove(this));
         }),
@@ -12670,10 +12670,10 @@ var Js = (n) =>
         this.joinPush.cancelTimeout(),
         (this.state = Ut.leaving));
       let e = () => {
-          (this.socket.hasLogger() &&
-            this.socket.log("channel", `leave ${this.topic}`),
-            this.trigger(Yn.close, "leave"));
-        },
+        (this.socket.hasLogger() &&
+          this.socket.log("channel", `leave ${this.topic}`),
+          this.trigger(Yn.close, "leave"));
+      },
         i = new Po(this, Yn.leave, Js({}), n);
       return (
         i.receive("ok", () => e()).receive("timeout", () => e()),
@@ -12693,12 +12693,12 @@ var Js = (n) =>
         ? !1
         : a && a !== this.joinRef()
           ? (this.socket.hasLogger() &&
-              this.socket.log("channel", "dropping outdated message", {
-                topic: n,
-                event: e,
-                payload: i,
-                joinRef: a,
-              }),
+            this.socket.log("channel", "dropping outdated message", {
+              topic: n,
+              event: e,
+              payload: i,
+              joinRef: a,
+            }),
             !1)
           : !0;
     }
@@ -12708,8 +12708,8 @@ var Js = (n) =>
     rejoin(n = this.timeout) {
       this.isLeaving() ||
         (this.socket.leaveOpenTopic(this.topic),
-        (this.state = Ut.joining),
-        this.joinPush.resend(n));
+          (this.state = Ut.joining),
+          this.joinPush.resend(n));
     }
     trigger(n, e, i, a) {
       let l = this.onMessage(n, e, i, a);
@@ -12761,7 +12761,7 @@ var Js = (n) =>
         m = null;
       return (
         l &&
-          ((m = new AbortController()),
+        ((m = new AbortController()),
           setTimeout(() => m.abort(), l),
           (f.signal = m.signal)),
         On.fetch(e, f)
@@ -12783,7 +12783,7 @@ var Js = (n) =>
           d && d(f);
         }),
         c && (n.ontimeout = c),
-        (n.onprogress = () => {}),
+        (n.onprogress = () => { }),
         n.send(a),
         n
       );
@@ -12854,10 +12854,10 @@ var Js = (n) =>
         (this.currentBatch = null),
         (this.currentBatchTimer = null),
         (this.batchBuffer = []),
-        (this.onopen = function () {}),
-        (this.onerror = function () {}),
-        (this.onmessage = function () {}),
-        (this.onclose = function () {}),
+        (this.onopen = function () { }),
+        (this.onerror = function () { }),
+        (this.onmessage = function () { }),
+        (this.onclose = function () { }),
         (this.pollEndpoint = this.normalizeEndpoint(n)),
         (this.readyState = Dn.connecting),
         setTimeout(() => this.poll(), 0));
@@ -12950,7 +12950,7 @@ var Js = (n) =>
                 ? (this.onerror(e && e.status),
                   this.closeAndRetry(1011, "internal server error", !1))
                 : this.batchBuffer.length > 0 &&
-                  (this.batchSend(this.batchBuffer), (this.batchBuffer = [])));
+                (this.batchSend(this.batchBuffer), (this.batchBuffer = [])));
           },
         ));
     }
@@ -12987,9 +12987,9 @@ var Js = (n) =>
         (this.channel = e),
         (this.joinRef = null),
         (this.caller = {
-          onJoin: function () {},
-          onLeave: function () {},
-          onSync: function () {},
+          onJoin: function () { },
+          onLeave: function () { },
+          onSync: function () { },
         }),
         this.channel.on(a.state, (l) => {
           let { onJoin: c, onLeave: d, onSync: f } = this.caller;
@@ -13048,8 +13048,8 @@ var Js = (n) =>
     static syncDiff(e, i, a, l) {
       let { joins: c, leaves: d } = this.clone(i);
       return (
-        a || (a = function () {}),
-        l || (l = function () {}),
+        a || (a = function () { }),
+        l || (l = function () { }),
         this.map(c, (f, m) => {
           let g = e[f];
           if (((e[f] = this.clone(m)), g)) {
@@ -13073,9 +13073,9 @@ var Js = (n) =>
     static list(e, i) {
       return (
         i ||
-          (i = function (a, l) {
-            return l;
-          }),
+        (i = function (a, l) {
+          return l;
+        }),
         this.map(e, (a, l) => i(a, l))
       );
     }
@@ -13223,20 +13223,20 @@ var Js = (n) =>
         (zi.addEventListener("pagehide", (a) => {
           this.conn && (this.disconnect(), (i = this.connectClock));
         }),
-        zi.addEventListener("pageshow", (a) => {
-          i === this.connectClock && ((i = null), this.connect());
-        }),
-        zi.addEventListener("visibilitychange", () => {
-          document.visibilityState === "hidden"
-            ? (this.pageHidden = !0)
-            : ((this.pageHidden = !1),
-              !this.isConnected() &&
+          zi.addEventListener("pageshow", (a) => {
+            i === this.connectClock && ((i = null), this.connect());
+          }),
+          zi.addEventListener("visibilitychange", () => {
+            document.visibilityState === "hidden"
+              ? (this.pageHidden = !0)
+              : ((this.pageHidden = !1),
+                !this.isConnected() &&
                 !this.closeWasClean &&
                 this.teardown(() => this.connect()));
-        })),
+          })),
         (this.heartbeatIntervalMs = e.heartbeatIntervalMs || 3e4),
         (this.autoSendHeartbeat = e.autoSendHeartbeat ?? !0),
-        (this.heartbeatCallback = e.heartbeatCallback ?? (() => {})),
+        (this.heartbeatCallback = e.heartbeatCallback ?? (() => { })),
         (this.rejoinAfterMs = (a) =>
           e.rejoinAfterMs ? e.rejoinAfterMs(a) : [1e3, 2e3, 5e3][a - 1] || 1e4),
         (this.reconnectAfterMs = (a) =>
@@ -13245,10 +13245,10 @@ var Js = (n) =>
             : [10, 50, 100, 150, 200, 250, 500, 1e3, 2e3][a - 1] || 5e3),
         (this.logger = e.logger || null),
         !this.logger &&
-          e.debug &&
-          (this.logger = (a, l, c) => {
-            console.log(`${a}: ${l}`, c);
-          }),
+        e.debug &&
+        (this.logger = (a, l, c) => {
+          console.log(`${a}: ${l}`, c);
+        }),
         (this.longpollerTimeout = e.longpollerTimeout || 2e4),
         (this.params = Js(e.params || {})),
         (this.endPoint = `${n}/${vu.websocket}`),
@@ -13312,11 +13312,11 @@ var Js = (n) =>
           console.log(
             "passing params to connect is deprecated. Instead pass :params to the Socket constructor",
           ),
-        (this.params = Js(n))),
+          (this.params = Js(n))),
         !(this.conn && !this.disconnecting) &&
-          (this.longPollFallbackMs && this.transport !== Ri
-            ? this.connectWithFallback(Ri, this.longPollFallbackMs)
-            : this.transportConnect()));
+        (this.longPollFallbackMs && this.transport !== Ri
+          ? this.connectWithFallback(Ri, this.longPollFallbackMs)
+          : this.transportConnect()));
     }
     log(n, e, i) {
       this.logger && this.logger(n, e, i);
@@ -13401,7 +13401,7 @@ var Js = (n) =>
             let m = this.transportName(n);
             return (
               this.primaryPassedHealthCheck ||
-                this.storeSession(`phx:fallback:${m}`, "true"),
+              this.storeSession(`phx:fallback:${m}`, "true"),
               this.log("transport", `established ${m} fallback`)
             );
           }
@@ -13435,10 +13435,10 @@ var Js = (n) =>
         ((this.pendingHeartbeatRef = null),
           (this.heartbeatSentAt = null),
           this.hasLogger() &&
-            this.log(
-              "transport",
-              "heartbeat timeout. Attempting to re-establish connection",
-            ));
+          this.log(
+            "transport",
+            "heartbeat timeout. Attempting to re-establish connection",
+          ));
         try {
           this.heartbeatCallback("timeout");
         } catch (n) {
@@ -13456,11 +13456,11 @@ var Js = (n) =>
     resetHeartbeat() {
       (this.conn && this.conn.skipHeartbeat) ||
         ((this.pendingHeartbeatRef = null),
-        this.clearHeartbeats(),
-        (this.heartbeatTimer = setTimeout(
-          () => this.sendHeartbeat(),
-          this.heartbeatIntervalMs,
-        )));
+          this.clearHeartbeats(),
+          (this.heartbeatTimer = setTimeout(
+            () => this.sendHeartbeat(),
+            this.heartbeatIntervalMs,
+          )));
     }
     teardown(n, e, i) {
       if (!this.conn) return n && n();
@@ -13469,11 +13469,11 @@ var Js = (n) =>
         (e ? a.close(e, i || "") : a.close(),
           this.waitForSocketClosed(a, () => {
             (this.conn === a &&
-              ((this.conn.onopen = function () {}),
-              (this.conn.onerror = function () {}),
-              (this.conn.onmessage = function () {}),
-              (this.conn.onclose = function () {}),
-              (this.conn = null)),
+              ((this.conn.onopen = function () { }),
+                (this.conn.onerror = function () { }),
+                (this.conn.onmessage = function () { }),
+                (this.conn.onclose = function () { }),
+                (this.conn = null)),
               n && n());
           }));
       });
@@ -13497,7 +13497,7 @@ var Js = (n) =>
       }, 150 * i);
     }
     onConnClose(n) {
-      (this.conn && (this.conn.onclose = () => {}),
+      (this.conn && (this.conn.onclose = () => { }),
         this.hasLogger() && this.log("transport", "close", n),
         this.triggerChanError(),
         this.clearHeartbeats(),
@@ -13613,10 +13613,10 @@ var Js = (n) =>
           ((this.pendingHeartbeatRef = null),
             (this.heartbeatSentAt = null),
             this.autoSendHeartbeat &&
-              (this.heartbeatTimer = setTimeout(
-                () => this.sendHeartbeat(),
-                this.heartbeatIntervalMs,
-              )));
+            (this.heartbeatTimer = setTimeout(
+              () => this.sendHeartbeat(),
+              this.heartbeatIntervalMs,
+            )));
         }
         this.hasLogger() &&
           this.log(
@@ -13651,7 +13651,7 @@ var Js = (n) =>
       e &&
         (this.hasLogger() &&
           this.log("transport", `leaving duplicate topic "${n}"`),
-        e.leave());
+          e.leave());
     }
   };
 class Xs {
@@ -13870,27 +13870,27 @@ class Qs {
     var l, c;
     if (
       ((this.topic = e),
-      (this.params = i),
-      (this.socket = a),
-      (this.bindings = {}),
-      (this.subTopic = e.replace(/^realtime:/i, "")),
-      (this.params.config = Object.assign(
-        {
-          broadcast: { ack: !1, self: !1 },
-          presence: { key: "", enabled: !1 },
-          private: !1,
-        },
-        i.config,
-      )),
-      (this.channelAdapter = new Fx(this.socket.socketAdapter, e, this.params)),
-      (this.presence = new Ux(this)),
-      this._onClose(() => {
-        this.socket._remove(this);
-      }),
-      this._updateFilterTransform(),
-      (this.broadcastEndpointURL = Yp(this.socket.socketAdapter.endPointURL())),
-      (this.private = this.params.config.private || !1),
-      !this.private &&
+        (this.params = i),
+        (this.socket = a),
+        (this.bindings = {}),
+        (this.subTopic = e.replace(/^realtime:/i, "")),
+        (this.params.config = Object.assign(
+          {
+            broadcast: { ack: !1, self: !1 },
+            presence: { key: "", enabled: !1 },
+            private: !1,
+          },
+          i.config,
+        )),
+        (this.channelAdapter = new Fx(this.socket.socketAdapter, e, this.params)),
+        (this.presence = new Ux(this)),
+        this._onClose(() => {
+          this.socket._remove(this);
+        }),
+        this._updateFilterTransform(),
+        (this.broadcastEndpointURL = Yp(this.socket.socketAdapter.endPointURL())),
+        (this.private = this.params.config.private || !1),
+        !this.private &&
         !(
           (c =
             (l = this.params.config) === null || l === void 0
@@ -13905,11 +13905,11 @@ class Qs {
     var a, l, c;
     if (
       (this.socket.isConnected() || this.socket.connect(),
-      this.channelAdapter.isClosed())
+        this.channelAdapter.isClosed())
     ) {
       const {
-          config: { broadcast: d, presence: f, private: m },
-        } = this.params,
+        config: { broadcast: d, presence: f, private: m },
+      } = this.params,
         g =
           (l =
             (a = this.bindings.postgres_changes) === null || a === void 0
@@ -13943,7 +13943,7 @@ class Qs {
           .receive("ok", async ({ postgres_changes: S }) => {
             if (
               (this.socket._isManualToken() || this.socket.setAuth(),
-              S === void 0)
+                S === void 0)
             ) {
               e?.(Qn.SUBSCRIBED);
               return;
@@ -14032,19 +14032,19 @@ class Qs {
     this.socket.accessTokenValue &&
       (c.Authorization = `Bearer ${this.socket.accessTokenValue}`);
     const d = {
-        method: "POST",
-        headers: c,
-        body: JSON.stringify({
-          messages: [
-            {
-              topic: this.subTopic,
-              event: e,
-              payload: i,
-              private: this.private,
-            },
-          ],
-        }),
-      },
+      method: "POST",
+      headers: c,
+      body: JSON.stringify({
+        messages: [
+          {
+            topic: this.subTopic,
+            event: e,
+            payload: i,
+            private: this.private,
+          },
+        ],
+      }),
+    },
       f = await this._fetchWithTimeout(
         this.broadcastEndpointURL,
         d,
@@ -14055,7 +14055,7 @@ class Qs {
     try {
       const g = await f.json();
       m = g.error || g.message || m;
-    } catch {}
+    } catch { }
     return Promise.reject(new Error(m));
   }
   async send(e, i = {}) {
@@ -14183,9 +14183,9 @@ class Qs {
             ((d = i.ids) === null || d === void 0 ? void 0 : d.includes(S)) &&
             (N === "*" ||
               N?.toLocaleLowerCase() ===
-                ((f = i.data) === null || f === void 0
-                  ? void 0
-                  : f.type.toLocaleLowerCase()))
+              ((f = i.data) === null || f === void 0
+                ? void 0
+                : f.type.toLocaleLowerCase()))
           );
         } else {
           const S =
@@ -14197,9 +14197,9 @@ class Qs {
           return (
             S === "*" ||
             S ===
-              ((y = i?.event) === null || y === void 0
-                ? void 0
-                : y.toLocaleLowerCase())
+            ((y = i?.event) === null || y === void 0
+              ? void 0
+              : y.toLocaleLowerCase())
           );
         }
       else return w.type.toLocaleLowerCase() === x;
@@ -14240,9 +14240,9 @@ class Qs {
     const i = { new: {}, old: {} };
     return (
       (e.type === "INSERT" || e.type === "UPDATE") &&
-        (i.new = Df(e.columns, e.record)),
+      (i.new = Df(e.columns, e.record)),
       (e.type === "UPDATE" || e.type === "DELETE") &&
-        (i.old = Df(e.columns, e.old_record)),
+      (i.old = Df(e.columns, e.old_record)),
       i
     );
   }
@@ -14414,21 +14414,21 @@ class Jx {
     var a;
     if (
       ((this.channels = new Array()),
-      (this.accessTokenValue = null),
-      (this.accessToken = null),
-      (this.apiKey = null),
-      (this.httpEndpoint = ""),
-      (this.headers = {}),
-      (this.params = {}),
-      (this.ref = 0),
-      (this.serializer = new kx()),
-      (this._manuallySetToken = !1),
-      (this._authPromise = null),
-      (this._workerHeartbeatTimer = void 0),
-      (this._pendingWorkerHeartbeatRef = null),
-      (this._resolveFetch = (c) =>
-        c ? (...d) => c(...d) : (...d) => fetch(...d)),
-      !(!((a = i?.params) === null || a === void 0) && a.apikey))
+        (this.accessTokenValue = null),
+        (this.accessToken = null),
+        (this.apiKey = null),
+        (this.httpEndpoint = ""),
+        (this.headers = {}),
+        (this.params = {}),
+        (this.ref = 0),
+        (this.serializer = new kx()),
+        (this._manuallySetToken = !1),
+        (this._authPromise = null),
+        (this._workerHeartbeatTimer = void 0),
+        (this._pendingWorkerHeartbeatRef = null),
+        (this._resolveFetch = (c) =>
+          c ? (...d) => c(...d) : (...d) => fetch(...d)),
+        !(!((a = i?.params) === null || a === void 0) && a.apikey))
     )
       throw new Error("API key is required to connect to Realtime");
     this.apiKey = i.params.apikey;
@@ -14474,13 +14474,13 @@ Option 2: Install and provide the "ws" package:
     return this.isDisconnecting()
       ? "ok"
       : await this.socketAdapter.disconnect(
-          () => {
-            (clearInterval(this._workerHeartbeatTimer),
-              this._terminateWorker());
-          },
-          e,
-          i,
-        );
+        () => {
+          (clearInterval(this._workerHeartbeatTimer),
+            this._terminateWorker());
+        },
+        e,
+        i,
+      );
   }
   getChannels() {
     return this.channels;
@@ -14495,9 +14495,9 @@ Option 2: Install and provide the "ws" package:
   }
   async removeAllChannels() {
     const e = this.channels.map(async (a) => {
-        const l = await a.unsubscribe();
-        return (a.teardown(), l);
-      }),
+      const l = await a.unsubscribe();
+      return (a.teardown(), l);
+    }),
       i = await Promise.all(e);
     return (this.disconnect(), i);
   }
@@ -14567,13 +14567,13 @@ Option 2: Install and provide the "ws" package:
       ? (this._manuallySetToken = !0)
       : this.accessToken && (this._manuallySetToken = !1),
       this.accessTokenValue != i &&
-        ((this.accessTokenValue = i),
+      ((this.accessTokenValue = i),
         this.channels.forEach((l) => {
           const c = { access_token: i, version: vx };
           (i && l.updateJoinPayload(c),
             l.joinedOnce &&
-              l.channelAdapter.isJoined() &&
-              l.channelAdapter.push(Jp.access_token, { access_token: i }));
+            l.channelAdapter.isJoined() &&
+            l.channelAdapter.push(Jp.access_token, { access_token: i }));
         })));
   }
   async _waitForAuthIfNeeded() {
@@ -14637,8 +14637,8 @@ Option 2: Install and provide the "ws" package:
   _terminateWorker() {
     this.workerRef &&
       (this.log("worker", "terminating worker"),
-      this.workerRef.terminate(),
-      (this.workerRef = void 0));
+        this.workerRef.terminate(),
+        (this.workerRef = void 0));
   }
   _workerObjectUrl(e) {
     let i;
@@ -14687,15 +14687,15 @@ Option 2: Install and provide the "ws" package:
     }
     if (
       ((x.vsn = N),
-      (x.encode = (g = e?.encode) !== null && g !== void 0 ? g : w),
-      (x.decode = (y = e?.decode) !== null && y !== void 0 ? y : S),
-      (x.beforeReconnect = this._reconnectAuth.bind(this)),
-      (e?.logLevel || e?.log_level) &&
+        (x.encode = (g = e?.encode) !== null && g !== void 0 ? g : w),
+        (x.decode = (y = e?.decode) !== null && y !== void 0 ? y : S),
+        (x.beforeReconnect = this._reconnectAuth.bind(this)),
+        (e?.logLevel || e?.log_level) &&
         ((this.logLevel = e.logLevel || e.log_level),
-        (x.params = Object.assign(Object.assign({}, x.params), {
-          log_level: this.logLevel,
-        }))),
-      this.worker)
+          (x.params = Object.assign(Object.assign({}, x.params), {
+            log_level: this.logLevel,
+          }))),
+        this.worker)
     ) {
       if (typeof window < "u" && !window.Worker)
         throw new Error("Web Worker is not supported");
@@ -14850,92 +14850,92 @@ function Pi(n) {
   return n.join("");
 }
 var e0 = class {
-    constructor(n, e = "", i) {
-      ((this.client = n), (this.prefix = e), (this.accessDelegation = i));
-    }
-    async listTables(n) {
-      return (
+  constructor(n, e = "", i) {
+    ((this.client = n), (this.prefix = e), (this.accessDelegation = i));
+  }
+  async listTables(n) {
+    return (
+      await this.client.request({
+        method: "GET",
+        path: `${this.prefix}/namespaces/${Pi(n.namespace)}/tables`,
+      })
+    ).data.identifiers;
+  }
+  async createTable(n, e) {
+    const i = {};
+    return (
+      this.accessDelegation &&
+      (i["X-Iceberg-Access-Delegation"] = this.accessDelegation),
+      (
+        await this.client.request({
+          method: "POST",
+          path: `${this.prefix}/namespaces/${Pi(n.namespace)}/tables`,
+          body: e,
+          headers: i,
+        })
+      ).data.metadata
+    );
+  }
+  async updateTable(n, e) {
+    const i = await this.client.request({
+      method: "POST",
+      path: `${this.prefix}/namespaces/${Pi(n.namespace)}/tables/${n.name}`,
+      body: e,
+    });
+    return {
+      "metadata-location": i.data["metadata-location"],
+      metadata: i.data.metadata,
+    };
+  }
+  async dropTable(n, e) {
+    await this.client.request({
+      method: "DELETE",
+      path: `${this.prefix}/namespaces/${Pi(n.namespace)}/tables/${n.name}`,
+      query: { purgeRequested: String(e?.purge ?? !1) },
+    });
+  }
+  async loadTable(n) {
+    const e = {};
+    return (
+      this.accessDelegation &&
+      (e["X-Iceberg-Access-Delegation"] = this.accessDelegation),
+      (
         await this.client.request({
           method: "GET",
-          path: `${this.prefix}/namespaces/${Pi(n.namespace)}/tables`,
+          path: `${this.prefix}/namespaces/${Pi(n.namespace)}/tables/${n.name}`,
+          headers: e,
         })
-      ).data.identifiers;
-    }
-    async createTable(n, e) {
-      const i = {};
+      ).data.metadata
+    );
+  }
+  async tableExists(n) {
+    const e = {};
+    this.accessDelegation &&
+      (e["X-Iceberg-Access-Delegation"] = this.accessDelegation);
+    try {
       return (
-        this.accessDelegation &&
-          (i["X-Iceberg-Access-Delegation"] = this.accessDelegation),
-        (
-          await this.client.request({
-            method: "POST",
-            path: `${this.prefix}/namespaces/${Pi(n.namespace)}/tables`,
-            body: e,
-            headers: i,
-          })
-        ).data.metadata
+        await this.client.request({
+          method: "HEAD",
+          path: `${this.prefix}/namespaces/${Pi(n.namespace)}/tables/${n.name}`,
+          headers: e,
+        }),
+        !0
       );
+    } catch (i) {
+      if (i instanceof na && i.status === 404) return !1;
+      throw i;
     }
-    async updateTable(n, e) {
-      const i = await this.client.request({
-        method: "POST",
-        path: `${this.prefix}/namespaces/${Pi(n.namespace)}/tables/${n.name}`,
-        body: e,
-      });
-      return {
-        "metadata-location": i.data["metadata-location"],
-        metadata: i.data.metadata,
-      };
+  }
+  async createTableIfNotExists(n, e) {
+    try {
+      return await this.createTable(n, e);
+    } catch (i) {
+      if (i instanceof na && i.status === 409)
+        return await this.loadTable({ namespace: n.namespace, name: e.name });
+      throw i;
     }
-    async dropTable(n, e) {
-      await this.client.request({
-        method: "DELETE",
-        path: `${this.prefix}/namespaces/${Pi(n.namespace)}/tables/${n.name}`,
-        query: { purgeRequested: String(e?.purge ?? !1) },
-      });
-    }
-    async loadTable(n) {
-      const e = {};
-      return (
-        this.accessDelegation &&
-          (e["X-Iceberg-Access-Delegation"] = this.accessDelegation),
-        (
-          await this.client.request({
-            method: "GET",
-            path: `${this.prefix}/namespaces/${Pi(n.namespace)}/tables/${n.name}`,
-            headers: e,
-          })
-        ).data.metadata
-      );
-    }
-    async tableExists(n) {
-      const e = {};
-      this.accessDelegation &&
-        (e["X-Iceberg-Access-Delegation"] = this.accessDelegation);
-      try {
-        return (
-          await this.client.request({
-            method: "HEAD",
-            path: `${this.prefix}/namespaces/${Pi(n.namespace)}/tables/${n.name}`,
-            headers: e,
-          }),
-          !0
-        );
-      } catch (i) {
-        if (i instanceof na && i.status === 404) return !1;
-        throw i;
-      }
-    }
-    async createTableIfNotExists(n, e) {
-      try {
-        return await this.createTable(n, e);
-      } catch (i) {
-        if (i instanceof na && i.status === 409)
-          return await this.loadTable({ namespace: n.namespace, name: e.name });
-        throw i;
-      }
-    }
-  },
+  }
+},
   t0 = class {
     constructor(n) {
       let e = "v1";
@@ -15000,22 +15000,22 @@ function ll(n) {
   return typeof n == "object" && n !== null && "__isStorageError" in n;
 }
 var wu = class extends ol {
-    constructor(n, e, i, a = "storage") {
-      (super(n, a, e, i),
-        (this.name =
-          a === "vectors" ? "StorageVectorsApiError" : "StorageApiError"),
-        (this.status = e),
-        (this.statusCode = i));
-    }
-    toJSON() {
-      return {
-        name: this.name,
-        message: this.message,
-        status: this.status,
-        statusCode: this.statusCode,
-      };
-    }
-  },
+  constructor(n, e, i, a = "storage") {
+    (super(n, a, e, i),
+      (this.name =
+        a === "vectors" ? "StorageVectorsApiError" : "StorageApiError"),
+      (this.status = e),
+      (this.statusCode = i));
+  }
+  toJSON() {
+    return {
+      name: this.name,
+      message: this.message,
+      status: this.status,
+      statusCode: this.statusCode,
+    };
+  }
+},
   Zp = class extends ol {
     constructor(n, e, i = "storage") {
       (super(n, i),
@@ -15054,12 +15054,12 @@ const n0 = (n) => (n ? (...e) => n(...e) : (...e) => fetch(...e)),
   },
   i0 = (n) =>
     !n ||
-    typeof n != "string" ||
-    n.length === 0 ||
-    n.length > 100 ||
-    n.trim() !== n ||
-    n.includes("/") ||
-    n.includes("\\")
+      typeof n != "string" ||
+      n.length === 0 ||
+      n.length > 100 ||
+      n.trim() !== n ||
+      n.includes("/") ||
+      n.includes("\\")
       ? !1
       : /^[\w!.\*'() &$@=;:+,?-]+$/.test(n);
 function ra(n) {
@@ -15068,16 +15068,16 @@ function ra(n) {
     (ra =
       typeof Symbol == "function" && typeof Symbol.iterator == "symbol"
         ? function (e) {
-            return typeof e;
-          }
+          return typeof e;
+        }
         : function (e) {
-            return e &&
-              typeof Symbol == "function" &&
-              e.constructor === Symbol &&
-              e !== Symbol.prototype
-              ? "symbol"
-              : typeof e;
-          }),
+          return e &&
+            typeof Symbol == "function" &&
+            e.constructor === Symbol &&
+            e !== Symbol.prototype
+            ? "symbol"
+            : typeof e;
+        }),
     ra(n)
   );
 }
@@ -15099,11 +15099,11 @@ function o0(n, e, i) {
   return (
     (e = a0(e)) in n
       ? Object.defineProperty(n, e, {
-          value: i,
-          enumerable: !0,
-          configurable: !0,
-          writable: !0,
-        })
+        value: i,
+        enumerable: !0,
+        configurable: !0,
+        writable: !0,
+      })
       : (n[e] = i),
     n
   );
@@ -15125,30 +15125,30 @@ function ge(n) {
     var i = arguments[e] != null ? arguments[e] : {};
     e % 2
       ? $f(Object(i), !0).forEach(function (a) {
-          o0(n, a, i[a]);
-        })
+        o0(n, a, i[a]);
+      })
       : Object.getOwnPropertyDescriptors
         ? Object.defineProperties(n, Object.getOwnPropertyDescriptors(i))
         : $f(Object(i)).forEach(function (a) {
-            Object.defineProperty(n, a, Object.getOwnPropertyDescriptor(i, a));
-          });
+          Object.defineProperty(n, a, Object.getOwnPropertyDescriptor(i, a));
+        });
   }
   return n;
 }
 const Bf = (n) => {
-    var e;
-    return (
-      n.msg ||
-      n.message ||
-      n.error_description ||
-      (typeof n.error == "string"
-        ? n.error
-        : (e = n.error) === null || e === void 0
-          ? void 0
-          : e.message) ||
-      JSON.stringify(n)
-    );
-  },
+  var e;
+  return (
+    n.msg ||
+    n.message ||
+    n.error_description ||
+    (typeof n.error == "string"
+      ? n.error
+      : (e = n.error) === null || e === void 0
+        ? void 0
+        : e.message) ||
+    JSON.stringify(n)
+  );
+},
   l0 = async (n, e, i, a) => {
     if (n !== null && typeof n == "object" && typeof n.json == "function") {
       const l = n;
@@ -15171,12 +15171,12 @@ const Bf = (n) => {
     return n === "GET" || n === "HEAD" || !a
       ? ge(ge({}, l), i)
       : (r0(a)
-          ? ((l.headers = ge(
-              { "Content-Type": "application/json" },
-              e?.headers,
-            )),
-            (l.body = JSON.stringify(a)))
-          : (l.body = a),
+        ? ((l.headers = ge(
+          { "Content-Type": "application/json" },
+          e?.headers,
+        )),
+          (l.body = JSON.stringify(a)))
+        : (l.body = a),
         e?.duplex && (l.duplex = e.duplex),
         ge(ge({}, l), i));
   };
@@ -15212,30 +15212,30 @@ const u0 = em("storage"),
   { get: ia, post: Sn, put: Su, head: d0, remove: zu } = u0,
   Xt = em("vectors");
 var Wi = class {
-    constructor(n, e = {}, i, a = "storage") {
-      ((this.shouldThrowOnError = !1),
-        (this.url = n),
-        (this.headers = e),
-        (this.fetch = n0(i)),
-        (this.namespace = a));
+  constructor(n, e = {}, i, a = "storage") {
+    ((this.shouldThrowOnError = !1),
+      (this.url = n),
+      (this.headers = e),
+      (this.fetch = n0(i)),
+      (this.namespace = a));
+  }
+  throwOnError() {
+    return ((this.shouldThrowOnError = !0), this);
+  }
+  setHeader(n, e) {
+    return ((this.headers = ge(ge({}, this.headers), {}, { [n]: e })), this);
+  }
+  async handleOperation(n) {
+    var e = this;
+    try {
+      return { data: await n(), error: null };
+    } catch (i) {
+      if (e.shouldThrowOnError) throw i;
+      if (ll(i)) return { data: null, error: i };
+      throw i;
     }
-    throwOnError() {
-      return ((this.shouldThrowOnError = !0), this);
-    }
-    setHeader(n, e) {
-      return ((this.headers = ge(ge({}, this.headers), {}, { [n]: e })), this);
-    }
-    async handleOperation(n) {
-      var e = this;
-      try {
-        return { data: await n(), error: null };
-      } catch (i) {
-        if (e.shouldThrowOnError) throw i;
-        if (ll(i)) return { data: null, error: i };
-        throw i;
-      }
-    }
-  },
+  }
+},
   h0 = class {
     constructor(n, e) {
       ((this.downloadFn = n), (this.shouldThrowOnError = e));
@@ -15318,8 +15318,8 @@ var m0 = class extends Wi {
           ? ((c = i),
             c.has("cacheControl") || c.append("cacheControl", d.cacheControl),
             m &&
-              !c.has("metadata") &&
-              c.append("metadata", l.encodeMetadata(m)))
+            !c.has("metadata") &&
+            c.append("metadata", l.encodeMetadata(m)))
           : ((c = i),
             (f["cache-control"] = `max-age=${d.cacheControl}`),
             (f["content-type"] = d.contentType),
@@ -15329,8 +15329,8 @@ var m0 = class extends Wi {
                 typeof c == "object" &&
                 "pipe" in c &&
                 typeof c.pipe == "function")) &&
-              !d.duplex &&
-              (d.duplex = "half")),
+            !d.duplex &&
+            (d.duplex = "half")),
         a?.headers && (f = ge(ge({}, f), a.headers)));
       const g = l._removeEmptyFolders(e),
         y = l._getFinalPath(g),
@@ -15382,11 +15382,11 @@ var m0 = class extends Wi {
       const l = ge({}, i.headers);
       e?.upsert && (l["x-upsert"] = "true");
       const c = await Sn(
-          i.fetch,
-          `${i.url}/object/upload/sign/${a}`,
-          {},
-          { headers: l },
-        ),
+        i.fetch,
+        `${i.url}/object/upload/sign/${a}`,
+        {},
+        { headers: l },
+      ),
         d = new URL(i.url + c.url),
         f = d.searchParams.get("token");
       if (!f) throw new ol("No token returned by API");
@@ -15446,8 +15446,8 @@ var m0 = class extends Wi {
         { headers: a.headers },
       );
       const f = i?.download
-          ? `&download=${i.download === !0 ? "" : i.download}`
-          : "",
+        ? `&download=${i.download === !0 ? "" : i.download}`
+        : "",
         m =
           c && d.signedURL.includes("/object/sign/")
             ? d.signedURL.replace("/object/sign/", "/render/image/sign/")
@@ -15459,11 +15459,11 @@ var m0 = class extends Wi {
     var a = this;
     return a.handleOperation(async () => {
       const l = await Sn(
-          a.fetch,
-          `${a.url}/object/sign/${a.bucketId}`,
-          { expiresIn: e, paths: n },
-          { headers: a.headers },
-        ),
+        a.fetch,
+        `${a.url}/object/sign/${a.bucketId}`,
+        { expiresIn: e, paths: n },
+        { headers: a.headers },
+      ),
         c = i?.download
           ? `&download=${i.download === !0 ? "" : i.download}`
           : "";
@@ -15482,7 +15482,7 @@ var m0 = class extends Wi {
   }
   download(n, e, i) {
     const a =
-        typeof e?.transform < "u" ? "render/image/authenticated" : "object",
+      typeof e?.transform < "u" ? "render/image/authenticated" : "object",
       l = this.transformOptsToQueryString(e?.transform || {}),
       c = l ? `?${l}` : "",
       d = this._getFinalPath(n),
@@ -15609,99 +15609,99 @@ var m0 = class extends Wi {
 const g0 = "2.100.0",
   ha = { "X-Client-Info": `storage-js/${g0}` };
 var y0 = class extends Wi {
-    constructor(n, e = {}, i, a) {
-      const l = new URL(n);
-      a?.useNewHostname &&
-        /supabase\.(co|in|red)$/.test(l.hostname) &&
-        !l.hostname.includes("storage.supabase.") &&
-        (l.hostname = l.hostname.replace("supabase.", "storage.supabase."));
-      const c = l.href.replace(/\/$/, ""),
-        d = ge(ge({}, ha), e);
-      super(c, d, i, "storage");
-    }
-    async listBuckets(n) {
-      var e = this;
-      return e.handleOperation(async () => {
-        const i = e.listBucketOptionsToQueryString(n);
-        return await ia(e.fetch, `${e.url}/bucket${i}`, { headers: e.headers });
-      });
-    }
-    async getBucket(n) {
-      var e = this;
-      return e.handleOperation(
-        async () =>
-          await ia(e.fetch, `${e.url}/bucket/${n}`, { headers: e.headers }),
-      );
-    }
-    async createBucket(n, e = { public: !1 }) {
-      var i = this;
-      return i.handleOperation(
-        async () =>
-          await Sn(
-            i.fetch,
-            `${i.url}/bucket`,
-            {
-              id: n,
-              name: n,
-              type: e.type,
-              public: e.public,
-              file_size_limit: e.fileSizeLimit,
-              allowed_mime_types: e.allowedMimeTypes,
-            },
-            { headers: i.headers },
-          ),
-      );
-    }
-    async updateBucket(n, e) {
-      var i = this;
-      return i.handleOperation(
-        async () =>
-          await Su(
-            i.fetch,
-            `${i.url}/bucket/${n}`,
-            {
-              id: n,
-              name: n,
-              public: e.public,
-              file_size_limit: e.fileSizeLimit,
-              allowed_mime_types: e.allowedMimeTypes,
-            },
-            { headers: i.headers },
-          ),
-      );
-    }
-    async emptyBucket(n) {
-      var e = this;
-      return e.handleOperation(
-        async () =>
-          await Sn(
-            e.fetch,
-            `${e.url}/bucket/${n}/empty`,
-            {},
-            { headers: e.headers },
-          ),
-      );
-    }
-    async deleteBucket(n) {
-      var e = this;
-      return e.handleOperation(
-        async () =>
-          await zu(e.fetch, `${e.url}/bucket/${n}`, {}, { headers: e.headers }),
-      );
-    }
-    listBucketOptionsToQueryString(n) {
-      const e = {};
-      return (
-        n &&
-          ("limit" in n && (e.limit = String(n.limit)),
-          "offset" in n && (e.offset = String(n.offset)),
-          n.search && (e.search = n.search),
-          n.sortColumn && (e.sortColumn = n.sortColumn),
-          n.sortOrder && (e.sortOrder = n.sortOrder)),
-        Object.keys(e).length > 0 ? "?" + new URLSearchParams(e).toString() : ""
-      );
-    }
-  },
+  constructor(n, e = {}, i, a) {
+    const l = new URL(n);
+    a?.useNewHostname &&
+      /supabase\.(co|in|red)$/.test(l.hostname) &&
+      !l.hostname.includes("storage.supabase.") &&
+      (l.hostname = l.hostname.replace("supabase.", "storage.supabase."));
+    const c = l.href.replace(/\/$/, ""),
+      d = ge(ge({}, ha), e);
+    super(c, d, i, "storage");
+  }
+  async listBuckets(n) {
+    var e = this;
+    return e.handleOperation(async () => {
+      const i = e.listBucketOptionsToQueryString(n);
+      return await ia(e.fetch, `${e.url}/bucket${i}`, { headers: e.headers });
+    });
+  }
+  async getBucket(n) {
+    var e = this;
+    return e.handleOperation(
+      async () =>
+        await ia(e.fetch, `${e.url}/bucket/${n}`, { headers: e.headers }),
+    );
+  }
+  async createBucket(n, e = { public: !1 }) {
+    var i = this;
+    return i.handleOperation(
+      async () =>
+        await Sn(
+          i.fetch,
+          `${i.url}/bucket`,
+          {
+            id: n,
+            name: n,
+            type: e.type,
+            public: e.public,
+            file_size_limit: e.fileSizeLimit,
+            allowed_mime_types: e.allowedMimeTypes,
+          },
+          { headers: i.headers },
+        ),
+    );
+  }
+  async updateBucket(n, e) {
+    var i = this;
+    return i.handleOperation(
+      async () =>
+        await Su(
+          i.fetch,
+          `${i.url}/bucket/${n}`,
+          {
+            id: n,
+            name: n,
+            public: e.public,
+            file_size_limit: e.fileSizeLimit,
+            allowed_mime_types: e.allowedMimeTypes,
+          },
+          { headers: i.headers },
+        ),
+    );
+  }
+  async emptyBucket(n) {
+    var e = this;
+    return e.handleOperation(
+      async () =>
+        await Sn(
+          e.fetch,
+          `${e.url}/bucket/${n}/empty`,
+          {},
+          { headers: e.headers },
+        ),
+    );
+  }
+  async deleteBucket(n) {
+    var e = this;
+    return e.handleOperation(
+      async () =>
+        await zu(e.fetch, `${e.url}/bucket/${n}`, {}, { headers: e.headers }),
+    );
+  }
+  listBucketOptionsToQueryString(n) {
+    const e = {};
+    return (
+      n &&
+      ("limit" in n && (e.limit = String(n.limit)),
+        "offset" in n && (e.offset = String(n.offset)),
+        n.search && (e.search = n.search),
+        n.sortColumn && (e.sortColumn = n.sortColumn),
+        n.sortOrder && (e.sortOrder = n.sortOrder)),
+      Object.keys(e).length > 0 ? "?" + new URLSearchParams(e).toString() : ""
+    );
+  }
+},
   v0 = class extends Wi {
     constructor(n, e = {}, i) {
       const a = n.replace(/\/$/, ""),
@@ -15748,11 +15748,11 @@ var y0 = class extends Wi {
           "Invalid bucket name: File, folder, and bucket names must follow AWS object key naming guidelines and should avoid the use of any other characters.",
         );
       const i = new t0({
-          baseUrl: this.url,
-          catalogName: n,
-          auth: { type: "custom", getHeaders: async () => e.headers },
-          fetch: this.fetch,
-        }),
+        baseUrl: this.url,
+        catalogName: n,
+        auth: { type: "custom", getHeaders: async () => e.headers },
+        fetch: this.fetch,
+      }),
         a = this.shouldThrowOnError;
       return new Proxy(i, {
         get(l, c) {
@@ -15760,13 +15760,13 @@ var y0 = class extends Wi {
           return typeof d != "function"
             ? d
             : async (...f) => {
-                try {
-                  return { data: await d.apply(l, f), error: null };
-                } catch (m) {
-                  if (a) throw m;
-                  return { data: null, error: m };
-                }
-              };
+              try {
+                return { data: await d.apply(l, f), error: null };
+              } catch (m) {
+                if (a) throw m;
+                return { data: null, error: m };
+              }
+            };
         },
       });
     }
@@ -16223,9 +16223,9 @@ class Eu extends rr {
   }
 }
 const Yo =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_".split(
-      "",
-    ),
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_".split(
+    "",
+  ),
   Wf = ` 	
 \r=`.split(""),
   D0 = (() => {
@@ -16237,7 +16237,7 @@ const Yo =
   })();
 function Vf(n, e, i) {
   if (n !== null)
-    for (e.queue = (e.queue << 8) | n, e.queuedBits += 8; e.queuedBits >= 6; ) {
+    for (e.queue = (e.queue << 8) | n, e.queuedBits += 8; e.queuedBits >= 6;) {
       const a = (e.queue >> (e.queuedBits - 6)) & 63;
       (i(Yo[a]), (e.queuedBits -= 6));
     }
@@ -16253,7 +16253,7 @@ function Vf(n, e, i) {
 function im(n, e, i) {
   const a = D0[n];
   if (a > -1)
-    for (e.queue = (e.queue << 6) | a, e.queuedBits += 6; e.queuedBits >= 8; )
+    for (e.queue = (e.queue << 6) | a, e.queuedBits += 6; e.queuedBits >= 8;)
       (i((e.queue >> (e.queuedBits - 8)) & 255), (e.queuedBits -= 8));
   else {
     if (a === -2) return;
@@ -16381,7 +16381,7 @@ function F0(n) {
       new URLSearchParams(i.hash.substring(1)).forEach((l, c) => {
         e[c] = l;
       });
-    } catch {}
+    } catch { }
   return (
     i.searchParams.forEach((a, l) => {
       e[l] = a;
@@ -16463,7 +16463,7 @@ function G0() {
   const e = new Uint32Array(56);
   if (typeof crypto > "u") {
     const i =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~",
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~",
       a = i.length;
     let l = "";
     for (let c = 0; c < 56; c++) l += i.charAt(Math.floor(Math.random() * a));
@@ -16581,10 +16581,10 @@ function tw(n, e) {
       }
       return (
         !e.value &&
-          typeof a == "string" &&
-          (console.warn(
-            "Using the user object as returned from supabase.auth.getSession() or from some supabase.auth.onAuthStateChange() events could be insecure! This value comes directly from the storage medium (usually cookies on the server) and may not be authentic. Use supabase.auth.getUser() instead which authenticates the data by contacting the Supabase Auth server.",
-          ),
+        typeof a == "string" &&
+        (console.warn(
+          "Using the user object as returned from supabase.auth.getSession() or from some supabase.auth.onAuthStateChange() events could be insecure! This value comes directly from the storage medium (usually cookies on the server) and may not be authentic. Use supabase.auth.getUser() instead which authenticates the data by contacting the Supabase Auth server.",
+        ),
           (e.value = !0)),
         Reflect.get(i, a, l)
       );
@@ -16595,7 +16595,7 @@ function Gf(n) {
   return JSON.parse(JSON.stringify(n));
 }
 const ti = (n) =>
-    n.msg || n.message || n.error_description || n.error || JSON.stringify(n),
+  n.msg || n.message || n.error_description || n.error || JSON.stringify(n),
   nw = [502, 503, 504];
 async function Kf(n) {
   var e;
@@ -16611,23 +16611,23 @@ async function Kf(n) {
   const l = Y0(n);
   if (
     (l &&
-    l.getTime() >= rm["2024-01-01"].timestamp &&
-    typeof i == "object" &&
-    i &&
-    typeof i.code == "string"
+      l.getTime() >= rm["2024-01-01"].timestamp &&
+      typeof i == "object" &&
+      i &&
+      typeof i.code == "string"
       ? (a = i.code)
       : typeof i == "object" &&
-        i &&
-        typeof i.error_code == "string" &&
-        (a = i.error_code),
-    a)
+      i &&
+      typeof i.error_code == "string" &&
+      (a = i.error_code),
+      a)
   ) {
     if (a === "weak_password")
       throw new Hf(
         ti(i),
         n.status,
         ((e = i.weak_password) === null || e === void 0 ? void 0 : e.reasons) ||
-          [],
+        [],
       );
     if (a === "session_not_found") throw new Gt();
   } else if (
@@ -16647,9 +16647,9 @@ const rw = (n, e, i, a) => {
   return n === "GET"
     ? l
     : ((l.headers = Object.assign(
-        { "Content-Type": "application/json;charset=UTF-8" },
-        e?.headers,
-      )),
+      { "Content-Type": "application/json;charset=UTF-8" },
+      e?.headers,
+    )),
       (l.body = JSON.stringify(a)),
       Object.assign(Object.assign({}, l), i));
 };
@@ -16661,8 +16661,8 @@ async function he(n, e, i, a) {
   const d = (l = a?.query) !== null && l !== void 0 ? l : {};
   a?.redirectTo && (d.redirect_to = a.redirectTo);
   const f = Object.keys(d).length
-      ? "?" + new URLSearchParams(d).toString()
-      : "",
+    ? "?" + new URLSearchParams(d).toString()
+    : "",
     m = await iw(
       n,
       e,
@@ -16693,7 +16693,7 @@ function bn(n) {
   let i = null;
   ow(n) &&
     ((i = Object.assign({}, n)),
-    n.expires_at || (i.expires_at = B0(n.expires_in)));
+      n.expires_at || (i.expires_at = B0(n.expires_in)));
   const a = (e = n.user) !== null && e !== void 0 ? e : n;
   return { data: { session: i, user: a }, error: null };
 }
@@ -16701,14 +16701,14 @@ function Jf(n) {
   const e = bn(n);
   return (
     !e.error &&
-      n.weak_password &&
-      typeof n.weak_password == "object" &&
-      Array.isArray(n.weak_password.reasons) &&
-      n.weak_password.reasons.length &&
-      n.weak_password.message &&
-      typeof n.weak_password.message == "string" &&
-      n.weak_password.reasons.reduce((i, a) => i && typeof a == "string", !0) &&
-      (e.data.weak_password = n.weak_password),
+    n.weak_password &&
+    typeof n.weak_password == "object" &&
+    Array.isArray(n.weak_password.reasons) &&
+    n.weak_password.reasons.length &&
+    n.weak_password.message &&
+    typeof n.weak_password.message == "string" &&
+    n.weak_password.reasons.reduce((i, a) => i && typeof a == "string", !0) &&
+    (e.data.weak_password = n.weak_password),
     e
   );
 }
@@ -16724,12 +16724,12 @@ function sw(n) {
 }
 function aw(n) {
   const {
-      action_link: e,
-      email_otp: i,
-      hashed_token: a,
-      redirect_to: l,
-      verification_type: c,
-    } = n,
+    action_link: e,
+    email_otp: i,
+    hashed_token: a,
+    redirect_to: l,
+    verification_type: c,
+  } = n,
     d = al(n, [
       "action_link",
       "email_otp",
@@ -16880,11 +16880,11 @@ class lw {
             : [];
       return (
         S.length > 0 &&
-          (S.forEach((N) => {
-            const b = parseInt(N.split(";")[0].split("=")[1].substring(0, 1)),
-              _ = JSON.parse(N.split(";")[1].split("=")[1]);
-            g[`${_}Page`] = b;
-          }),
+        (S.forEach((N) => {
+          const b = parseInt(N.split(";")[0].split("=")[1].substring(0, 1)),
+            _ = JSON.parse(N.split(";")[1].split("=")[1]);
+          g[`${_}Page`] = b;
+        }),
           (g.total = parseInt(w))),
         { data: Object.assign(Object.assign({}, x), g), error: null }
       );
@@ -17004,11 +17004,11 @@ class lw {
             : [];
       return (
         S.length > 0 &&
-          (S.forEach((N) => {
-            const b = parseInt(N.split(";")[0].split("=")[1].substring(0, 1)),
-              _ = JSON.parse(N.split(";")[1].split("=")[1]);
-            g[`${_}Page`] = b;
-          }),
+        (S.forEach((N) => {
+          const b = parseInt(N.split(";")[0].split("=")[1].substring(0, 1)),
+            _ = JSON.parse(N.split(";")[1].split("=")[1]);
+          g[`${_}Page`] = b;
+        }),
           (g.total = parseInt(w))),
         { data: Object.assign(Object.assign({}, x), g), error: null }
       );
@@ -17198,7 +17198,7 @@ class om extends Error {
     (super(e), (this.isAcquireTimeout = !0));
   }
 }
-class Qf extends om {}
+class Qf extends om { }
 async function cw(n, e, i) {
   Nn.debug &&
     console.log("@supabase/gotrue-js: navigatorLock: acquire lock", n, e);
@@ -17208,10 +17208,10 @@ async function cw(n, e, i) {
     (l = setTimeout(() => {
       (a.abort(),
         Nn.debug &&
-          console.log(
-            "@supabase/gotrue-js: navigatorLock acquire timed out",
-            n,
-          ));
+        console.log(
+          "@supabase/gotrue-js: navigatorLock acquire timed out",
+          n,
+        ));
     }, e)),
     await Promise.resolve());
   try {
@@ -17224,11 +17224,11 @@ async function cw(n, e, i) {
         if (c) {
           (clearTimeout(l),
             Nn.debug &&
-              console.log(
-                "@supabase/gotrue-js: navigatorLock: acquired",
-                n,
-                c.name,
-              ));
+            console.log(
+              "@supabase/gotrue-js: navigatorLock: acquired",
+              n,
+              c.name,
+            ));
           try {
             return await i();
           } finally {
@@ -17243,10 +17243,10 @@ async function cw(n, e, i) {
           if (e === 0)
             throw (
               Nn.debug &&
-                console.log(
-                  "@supabase/gotrue-js: navigatorLock: not immediately available",
-                  n,
-                ),
+              console.log(
+                "@supabase/gotrue-js: navigatorLock: not immediately available",
+                n,
+              ),
               new Qf(
                 `Acquiring an exclusive Navigator LockManager lock "${n}" immediately failed`,
               )
@@ -17279,10 +17279,10 @@ async function cw(n, e, i) {
       if (a.signal.aborted)
         return (
           Nn.debug &&
-            console.log(
-              "@supabase/gotrue-js: navigatorLock: acquire timeout, recovering by stealing lock",
-              n,
-            ),
+          console.log(
+            "@supabase/gotrue-js: navigatorLock: acquire timeout, recovering by stealing lock",
+            n,
+          ),
           console.warn(
             `@supabase/gotrue-js: Lock "${n}" was not released within ${e}ms. This may indicate an orphaned lock from a component unmount (e.g., React Strict Mode). Forcefully acquiring the lock to recover.`,
           ),
@@ -17321,10 +17321,10 @@ async function cw(n, e, i) {
         );
       throw (
         Nn.debug &&
-          console.log(
-            "@supabase/gotrue-js: navigatorLock: lock was stolen by another request",
-            n,
-          ),
+        console.log(
+          "@supabase/gotrue-js: navigatorLock: lock was stolen by another request",
+          n,
+        ),
         new Qf(`Lock "${n}" was released because another request stole it`)
       );
     }
@@ -17415,24 +17415,23 @@ ${S}
 ${b}`;
   let O = `URI: ${x}
 Version: ${w}
-Chain ID: ${i}${
-    d
+Chain ID: ${i}${d
       ? `
 Nonce: ${d}`
       : ""
-  }
+    }
 Issued At: ${c.toISOString()}`;
   if (
     (l &&
       (O += `
 Expiration Time: ${l.toISOString()}`),
-    f &&
+      f &&
       (O += `
 Not Before: ${f.toISOString()}`),
-    m &&
+      m &&
       (O += `
 Request ID: ${m}`),
-    g)
+      g)
   ) {
     let D = `
 Resources:`;
@@ -17456,7 +17455,7 @@ class lt extends Error {
       (this.__isWebAuthnError = !0),
       (this.name =
         (c = l ?? (a instanceof Error ? a.name : void 0)) !== null &&
-        c !== void 0
+          c !== void 0
           ? c
           : "Unknown Error"),
       (this.code = i));
@@ -17536,16 +17535,16 @@ function pw({ error: n, options: e }) {
       return c.pubKeyCredParams.filter((f) => f.type === "public-key")
         .length === 0
         ? new lt({
-            message: 'No entry in pubKeyCredParams was of type "public-key"',
-            code: "ERROR_MALFORMED_PUBKEYCREDPARAMS",
-            cause: n,
-          })
+          message: 'No entry in pubKeyCredParams was of type "public-key"',
+          code: "ERROR_MALFORMED_PUBKEYCREDPARAMS",
+          cause: n,
+        })
         : new lt({
-            message:
-              "No available authenticator supported any of the specified pubKeyCredParams algorithms",
-            code: "ERROR_AUTHENTICATOR_NO_SUPPORTED_PUBKEYCREDPARAMS_ALG",
-            cause: n,
-          });
+          message:
+            "No available authenticator supported any of the specified pubKeyCredParams algorithms",
+          code: "ERROR_AUTHENTICATOR_NO_SUPPORTED_PUBKEYCREDPARAMS_ALG",
+          cause: n,
+        });
     if (n.name === "SecurityError") {
       const d = window.location.hostname;
       if (cm(d)) {
@@ -17761,9 +17760,9 @@ async function Sw(n) {
       ? e instanceof PublicKeyCredential
         ? { data: e, error: null }
         : {
-            data: null,
-            error: new Qo("Browser returned unexpected credential type", e),
-          }
+          data: null,
+          error: new Qo("Browser returned unexpected credential type", e),
+        }
       : { data: null, error: new Qo("Empty credential response", e) };
   } catch (e) {
     return { data: null, error: pw({ error: e, options: n }) };
@@ -17776,24 +17775,24 @@ async function kw(n) {
       ? e instanceof PublicKeyCredential
         ? { data: e, error: null }
         : {
-            data: null,
-            error: new Qo("Browser returned unexpected credential type", e),
-          }
+          data: null,
+          error: new Qo("Browser returned unexpected credential type", e),
+        }
       : { data: null, error: new Qo("Empty credential response", e) };
   } catch (e) {
     return { data: null, error: mw({ error: e, options: n }) };
   }
 }
 const jw = {
-    hints: ["security-key"],
-    authenticatorSelection: {
-      authenticatorAttachment: "cross-platform",
-      requireResidentKey: !1,
-      userVerification: "preferred",
-      residentKey: "discouraged",
-    },
-    attestation: "direct",
+  hints: ["security-key"],
+  authenticatorSelection: {
+    authenticatorAttachment: "cross-platform",
+    requireResidentKey: !1,
+    userVerification: "preferred",
+    residentKey: "discouraged",
   },
+  attestation: "direct",
+},
   _w = {
     userVerification: "preferred",
     hints: ["security-key"],
@@ -17874,13 +17873,13 @@ class Tw {
             { data: x, error: w } = await Sw({ publicKey: y, signal: g });
           return x
             ? {
-                data: {
-                  factorId: e,
-                  challengeId: f.id,
-                  webauthn: { type: f.webauthn.type, credential_response: x },
-                },
-                error: null,
-              }
+              data: {
+                factorId: e,
+                challengeId: f.id,
+                webauthn: { type: f.webauthn.type, credential_response: x },
+              },
+              error: null,
+            }
             : { data: null, error: w };
         }
         case "request": {
@@ -17893,13 +17892,13 @@ class Tw {
             );
           return x
             ? {
-                data: {
-                  factorId: e,
-                  challengeId: f.id,
-                  webauthn: { type: f.webauthn.type, credential_response: x },
-                },
-                error: null,
-              }
+              data: {
+                factorId: e,
+                challengeId: f.id,
+                webauthn: { type: f.webauthn.type, credential_response: x },
+              },
+              error: null,
+            }
             : { data: null, error: w };
         }
       }
@@ -17988,11 +17987,11 @@ class Tw {
               return (x = y.data) === null || x === void 0
                 ? void 0
                 : x.all.find(
-                    (w) =>
-                      w.factor_type === "webauthn" &&
-                      w.friendly_name === e &&
-                      w.status !== "unverified",
-                  );
+                  (w) =>
+                    w.factor_type === "webauthn" &&
+                    w.friendly_name === e &&
+                    w.status !== "unverified",
+                );
             })
             .then((y) =>
               y ? this.client.mfa.unenroll({ factorId: y?.id }) : void 0,
@@ -18010,15 +18009,15 @@ class Tw {
       );
       return m
         ? this._verify({
-            factorId: d.id,
-            challengeId: m.challengeId,
-            webauthn: {
-              rpId: i,
-              rpOrigins: a,
-              type: m.webauthn.type,
-              credential_response: m.webauthn.credential_response,
-            },
-          })
+          factorId: d.id,
+          challengeId: m.challengeId,
+          webauthn: {
+            rpId: i,
+            rpOrigins: a,
+            type: m.webauthn.type,
+            credential_response: m.webauthn.credential_response,
+          },
+        })
         : { data: null, error: g };
     } catch (d) {
       return te(d)
@@ -18096,70 +18095,70 @@ class aa {
     const c = Object.assign(Object.assign({}, Aw), e);
     if (
       ((this.storageKey = c.storageKey),
-      (this.instanceID =
-        (i = aa.nextInstanceID[this.storageKey]) !== null && i !== void 0
-          ? i
-          : 0),
-      (aa.nextInstanceID[this.storageKey] = this.instanceID + 1),
-      (this.logDebugMessages = !!c.debug),
-      typeof c.debug == "function" && (this.logger = c.debug),
-      this.instanceID > 0 && St())
+        (this.instanceID =
+          (i = aa.nextInstanceID[this.storageKey]) !== null && i !== void 0
+            ? i
+            : 0),
+        (aa.nextInstanceID[this.storageKey] = this.instanceID + 1),
+        (this.logDebugMessages = !!c.debug),
+        typeof c.debug == "function" && (this.logger = c.debug),
+        this.instanceID > 0 && St())
     ) {
       const d = `${this._logPrefix()} Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.`;
       (console.warn(d), this.logDebugMessages && console.trace(d));
     }
     if (
       ((this.persistSession = c.persistSession),
-      (this.autoRefreshToken = c.autoRefreshToken),
-      (this.admin = new lw({ url: c.url, headers: c.headers, fetch: c.fetch })),
-      (this.url = c.url),
-      (this.headers = c.headers),
-      (this.fetch = am(c.fetch)),
-      (this.lock = c.lock || ep),
-      (this.detectSessionInUrl = c.detectSessionInUrl),
-      (this.flowType = c.flowType),
-      (this.hasCustomAuthorizationHeader = c.hasCustomAuthorizationHeader),
-      (this.throwOnError = c.throwOnError),
-      (this.lockAcquireTimeout = c.lockAcquireTimeout),
-      c.lock
-        ? (this.lock = c.lock)
-        : this.persistSession &&
+        (this.autoRefreshToken = c.autoRefreshToken),
+        (this.admin = new lw({ url: c.url, headers: c.headers, fetch: c.fetch })),
+        (this.url = c.url),
+        (this.headers = c.headers),
+        (this.fetch = am(c.fetch)),
+        (this.lock = c.lock || ep),
+        (this.detectSessionInUrl = c.detectSessionInUrl),
+        (this.flowType = c.flowType),
+        (this.hasCustomAuthorizationHeader = c.hasCustomAuthorizationHeader),
+        (this.throwOnError = c.throwOnError),
+        (this.lockAcquireTimeout = c.lockAcquireTimeout),
+        c.lock
+          ? (this.lock = c.lock)
+          : this.persistSession &&
             St() &&
             !((a = globalThis?.navigator) === null || a === void 0) &&
             a.locks
-          ? (this.lock = cw)
-          : (this.lock = ep),
-      this.jwks ||
+            ? (this.lock = cw)
+            : (this.lock = ep),
+        this.jwks ||
         ((this.jwks = { keys: [] }),
-        (this.jwks_cached_at = Number.MIN_SAFE_INTEGER)),
-      (this.mfa = {
-        verify: this._verify.bind(this),
-        enroll: this._enroll.bind(this),
-        unenroll: this._unenroll.bind(this),
-        challenge: this._challenge.bind(this),
-        listFactors: this._listFactors.bind(this),
-        challengeAndVerify: this._challengeAndVerify.bind(this),
-        getAuthenticatorAssuranceLevel:
-          this._getAuthenticatorAssuranceLevel.bind(this),
-        webauthn: new Tw(this),
-      }),
-      (this.oauth = {
-        getAuthorizationDetails: this._getAuthorizationDetails.bind(this),
-        approveAuthorization: this._approveAuthorization.bind(this),
-        denyAuthorization: this._denyAuthorization.bind(this),
-        listGrants: this._listOAuthGrants.bind(this),
-        revokeGrant: this._revokeOAuthGrant.bind(this),
-      }),
-      this.persistSession
-        ? (c.storage
+          (this.jwks_cached_at = Number.MIN_SAFE_INTEGER)),
+        (this.mfa = {
+          verify: this._verify.bind(this),
+          enroll: this._enroll.bind(this),
+          unenroll: this._unenroll.bind(this),
+          challenge: this._challenge.bind(this),
+          listFactors: this._listFactors.bind(this),
+          challengeAndVerify: this._challengeAndVerify.bind(this),
+          getAuthenticatorAssuranceLevel:
+            this._getAuthenticatorAssuranceLevel.bind(this),
+          webauthn: new Tw(this),
+        }),
+        (this.oauth = {
+          getAuthorizationDetails: this._getAuthorizationDetails.bind(this),
+          approveAuthorization: this._approveAuthorization.bind(this),
+          denyAuthorization: this._denyAuthorization.bind(this),
+          listGrants: this._listOAuthGrants.bind(this),
+          revokeGrant: this._revokeOAuthGrant.bind(this),
+        }),
+        this.persistSession
+          ? (c.storage
             ? (this.storage = c.storage)
             : sm()
               ? (this.storage = globalThis.localStorage)
               : ((this.memoryStorage = {}),
                 (this.storage = Yf(this.memoryStorage))),
-          c.userStorage && (this.userStorage = c.userStorage))
-        : ((this.memoryStorage = {}), (this.storage = Yf(this.memoryStorage))),
-      St() &&
+            c.userStorage && (this.userStorage = c.userStorage))
+          : ((this.memoryStorage = {}), (this.storage = Yf(this.memoryStorage))),
+        St() &&
         globalThis.BroadcastChannel &&
         this.persistSession &&
         this.storageKey)
@@ -18213,10 +18212,10 @@ class aa {
     return this.initializePromise
       ? await this.initializePromise
       : ((this.initializePromise = (async () =>
-          await this._acquireLock(
-            this.lockAcquireTimeout,
-            async () => await this._initialize(),
-          ))()),
+        await this._acquireLock(
+          this.lockAcquireTimeout,
+          async () => await this._initialize(),
+        ))()),
         await this.initializePromise);
   }
   async _initialize() {
@@ -18227,10 +18226,10 @@ class aa {
       if (
         (St() &&
           ((i = F0(window.location.href)),
-          this._isImplicitGrantCallback(i)
-            ? (a = "implicit")
-            : (await this._isPKCECallback(i)) && (a = "pkce")),
-        St() && this.detectSessionInUrl && a !== "none")
+            this._isImplicitGrantCallback(i)
+              ? (a = "implicit")
+              : (await this._isPKCECallback(i)) && (a = "pkce")),
+          St() && this.detectSessionInUrl && a !== "none")
       ) {
         const { data: l, error: c } = await this._getSessionFromURL(i, a);
         if (c) {
@@ -18240,7 +18239,7 @@ class aa {
               "error detecting session from URL",
               c,
             ),
-            I0(c))
+              I0(c))
           ) {
             const m =
               (e = c.details) === null || e === void 0 ? void 0 : e.code;
@@ -18276,8 +18275,8 @@ class aa {
       return te(i)
         ? this._returnResult({ error: i })
         : this._returnResult({
-            error: new ni("Unexpected error during initialization", i),
-          });
+          error: new ni("Unexpected error during initialization", i),
+        });
     } finally {
       (await this._handleVisibilityChange(),
         this._debug("#_initialize()", "end"));
@@ -18287,23 +18286,23 @@ class aa {
     var i, a, l;
     try {
       const c = await he(this.fetch, "POST", `${this.url}/signup`, {
-          headers: this.headers,
-          body: {
-            data:
-              (a =
-                (i = e?.options) === null || i === void 0 ? void 0 : i.data) !==
-                null && a !== void 0
-                ? a
-                : {},
-            gotrue_meta_security: {
-              captcha_token:
-                (l = e?.options) === null || l === void 0
-                  ? void 0
-                  : l.captchaToken,
-            },
+        headers: this.headers,
+        body: {
+          data:
+            (a =
+              (i = e?.options) === null || i === void 0 ? void 0 : i.data) !==
+              null && a !== void 0
+              ? a
+              : {},
+          gotrue_meta_security: {
+            captcha_token:
+              (l = e?.options) === null || l === void 0
+                ? void 0
+                : l.captchaToken,
           },
-          xform: bn,
-        }),
+        },
+        xform: bn,
+      }),
         { data: d, error: f } = c;
       if (f || !d)
         return this._returnResult({
@@ -18314,7 +18313,7 @@ class aa {
         g = d.user;
       return (
         d.session &&
-          (await this._saveSession(d.session),
+        (await this._saveSession(d.session),
           await this._notifyAllSubscribers("SIGNED_IN", m)),
         this._returnResult({ data: { user: g, session: m }, error: null })
       );
@@ -18377,7 +18376,7 @@ class aa {
         g = d.user;
       return (
         d.session &&
-          (await this._saveSession(d.session),
+        (await this._saveSession(d.session),
           await this._notifyAllSubscribers("SIGNED_IN", m)),
         this._returnResult({ data: { user: g, session: m }, error: null })
       );
@@ -18444,7 +18443,7 @@ class aa {
       }
       return (
         a.session &&
-          (await this._saveSession(a.session),
+        (await this._saveSession(a.session),
           await this._notifyAllSubscribers("SIGNED_IN", a.session)),
         this._returnResult({
           data: Object.assign(
@@ -18527,8 +18526,8 @@ class aa {
         L = _;
       }
       const B = new URL(
-          (i = D?.url) !== null && i !== void 0 ? i : window.location.href,
-        ),
+        (i = D?.url) !== null && i !== void 0 ? i : window.location.href,
+      ),
         X = await L.request({ method: "eth_requestAccounts" })
           .then((ye) => ye)
           .catch(() => {
@@ -18598,13 +18597,13 @@ class aa {
             { chain: "ethereum", message: S, signature: N },
             !((x = e.options) === null || x === void 0) && x.captchaToken
               ? {
-                  gotrue_meta_security: {
-                    captcha_token:
-                      (w = e.options) === null || w === void 0
-                        ? void 0
-                        : w.captchaToken,
-                  },
-                }
+                gotrue_meta_security: {
+                  captcha_token:
+                    (w = e.options) === null || w === void 0
+                      ? void 0
+                      : w.captchaToken,
+                },
+              }
               : null,
           ),
           xform: bn,
@@ -18620,7 +18619,7 @@ class aa {
       }
       return (
         b.session &&
-          (await this._saveSession(b.session),
+        (await this._saveSession(b.session),
           await this._notifyAllSubscribers("SIGNED_IN", b.session)),
         this._returnResult({ data: Object.assign({}, b), error: _ })
       );
@@ -18730,11 +18729,11 @@ class aa {
           `URI: ${X.href}`,
           `Issued At: ${(l = (a = L?.signInWithSolana) === null || a === void 0 ? void 0 : a.issuedAt) !== null && l !== void 0 ? l : new Date().toISOString()}`,
           ...(!((c = L?.signInWithSolana) === null || c === void 0) &&
-          c.notBefore
+            c.notBefore
             ? [`Not Before: ${L.signInWithSolana.notBefore}`]
             : []),
           ...(!((d = L?.signInWithSolana) === null || d === void 0) &&
-          d.expirationTime
+            d.expirationTime
             ? [`Expiration Time: ${L.signInWithSolana.expirationTime}`]
             : []),
           ...(!((f = L?.signInWithSolana) === null || f === void 0) && f.chainId
@@ -18744,7 +18743,7 @@ class aa {
             ? [`Nonce: ${L.signInWithSolana.nonce}`]
             : []),
           ...(!((g = L?.signInWithSolana) === null || g === void 0) &&
-          g.requestId
+            g.requestId
             ? [`Request ID: ${L.signInWithSolana.requestId}`]
             : []),
           ...(!(
@@ -18754,9 +18753,9 @@ class aa {
                 : y.resources) === null || x === void 0
           ) && x.length
             ? [
-                "Resources",
-                ...L.signInWithSolana.resources.map((ce) => `- ${ce}`),
-              ]
+              "Resources",
+              ...L.signInWithSolana.resources.map((ce) => `- ${ce}`),
+            ]
             : []),
         ].join(`
 `);
@@ -18779,13 +18778,13 @@ class aa {
             { chain: "solana", message: N, signature: ri(b) },
             !((w = e.options) === null || w === void 0) && w.captchaToken
               ? {
-                  gotrue_meta_security: {
-                    captcha_token:
-                      (S = e.options) === null || S === void 0
-                        ? void 0
-                        : S.captchaToken,
-                  },
-                }
+                gotrue_meta_security: {
+                  captcha_token:
+                    (S = e.options) === null || S === void 0
+                      ? void 0
+                      : S.captchaToken,
+                },
+              }
               : null,
           ),
           xform: bn,
@@ -18801,7 +18800,7 @@ class aa {
       }
       return (
         _.session &&
-          (await this._saveSession(_.session),
+        (await this._saveSession(_.session),
           await this._notifyAllSubscribers("SIGNED_IN", _.session)),
         this._returnResult({ data: Object.assign({}, _), error: O })
       );
@@ -18840,7 +18839,7 @@ class aa {
       }
       return (
         c.session &&
-          (await this._saveSession(c.session),
+        (await this._saveSession(c.session),
           await this._notifyAllSubscribers("SIGNED_IN", c.session)),
         this._returnResult({
           data: Object.assign(Object.assign({}, c), {
@@ -18861,12 +18860,12 @@ class aa {
   async signInWithIdToken(e) {
     try {
       const {
-          options: i,
-          provider: a,
-          token: l,
-          access_token: c,
-          nonce: d,
-        } = e,
+        options: i,
+        provider: a,
+        token: l,
+        access_token: c,
+        nonce: d,
+      } = e,
         f = await he(
           this.fetch,
           "POST",
@@ -18898,7 +18897,7 @@ class aa {
       }
       return (
         m.session &&
-          (await this._saveSession(m.session),
+        (await this._saveSession(m.session),
           await this._notifyAllSubscribers("SIGNED_IN", m.session)),
         this._returnResult({ data: m, error: g })
       );
@@ -18977,8 +18976,8 @@ class aa {
       let l, c;
       "options" in e &&
         ((l = (i = e.options) === null || i === void 0 ? void 0 : i.redirectTo),
-        (c =
-          (a = e.options) === null || a === void 0 ? void 0 : a.captchaToken));
+          (c =
+            (a = e.options) === null || a === void 0 ? void 0 : a.captchaToken));
       const { data: d, error: f } = await he(
         this.fetch,
         "POST",
@@ -18998,7 +18997,7 @@ class aa {
         g = d.user;
       return (
         m?.access_token &&
-          (await this._saveSession(m),
+        (await this._saveSession(m),
           await this._notifyAllSubscribers(
             e.type == "recovery" ? "PASSWORD_RECOVERY" : "SIGNED_IN",
             m,
@@ -19044,10 +19043,10 @@ class aa {
             ),
             !((l = e?.options) === null || l === void 0) && l.captchaToken
               ? {
-                  gotrue_meta_security: {
-                    captcha_token: e.options.captchaToken,
-                  },
-                }
+                gotrue_meta_security: {
+                  captcha_token: e.options.captchaToken,
+                },
+              }
               : null,
           ),
           {
@@ -19061,12 +19060,12 @@ class aa {
       });
       return (
         !((c = g.data) === null || c === void 0) &&
-          c.url &&
-          St() &&
-          !(
-            !((d = e.options) === null || d === void 0) && d.skipBrowserRedirect
-          ) &&
-          window.location.assign(g.data.url),
+        c.url &&
+        St() &&
+        !(
+          !((d = e.options) === null || d === void 0) && d.skipBrowserRedirect
+        ) &&
+        window.location.assign(g.data.url),
         this._returnResult(g)
       );
     } catch (f) {
@@ -19171,15 +19170,15 @@ class aa {
     try {
       if (this.lockAcquired) {
         const a = this.pendingInLock.length
-            ? this.pendingInLock[this.pendingInLock.length - 1]
-            : Promise.resolve(),
+          ? this.pendingInLock[this.pendingInLock.length - 1]
+          : Promise.resolve(),
           l = (async () => (await a, await i()))();
         return (
           this.pendingInLock.push(
             (async () => {
               try {
                 await l;
-              } catch {}
+              } catch { }
             })(),
           ),
           l
@@ -19199,10 +19198,10 @@ class aa {
               (async () => {
                 try {
                   await a;
-                } catch {}
+                } catch { }
               })(),
             ),
-              await a;
+            await a;
             this.pendingInLock.length;
           ) {
             const l = [...this.pendingInLock];
@@ -19234,25 +19233,25 @@ class aa {
   async __loadSession() {
     (this._debug("#__loadSession()", "begin"),
       this.lockAcquired ||
-        this._debug(
-          "#__loadSession()",
-          "used outside of an acquired lock!",
-          new Error().stack,
-        ));
+      this._debug(
+        "#__loadSession()",
+        "used outside of an acquired lock!",
+        new Error().stack,
+      ));
     try {
       let e = null;
       const i = await ei(this.storage, this.storageKey);
       if (
         (this._debug("#getSession()", "session from storage", i),
-        i !== null &&
+          i !== null &&
           (this._isValidSession(i)
             ? (e = i)
             : (this._debug(
-                "#getSession()",
-                "session from storage is not valid",
-              ),
+              "#getSession()",
+              "session from storage is not valid",
+            ),
               await this._removeSession())),
-        !e)
+          !e)
       )
         return { data: { session: null }, error: null };
       const a = e.expires_at ? e.expires_at * 1e3 - Date.now() < Zc : !1;
@@ -19263,7 +19262,7 @@ class aa {
           "expires_at",
           e.expires_at,
         ),
-        !a)
+          !a)
       ) {
         if (this.userStorage) {
           const d = await ei(this.userStorage, this.storageKey + "-user");
@@ -19303,35 +19302,35 @@ class aa {
     try {
       return e
         ? await he(this.fetch, "GET", `${this.url}/user`, {
-            headers: this.headers,
-            jwt: e,
-            xform: Ir,
-          })
+          headers: this.headers,
+          jwt: e,
+          xform: Ir,
+        })
         : await this._useSession(async (i) => {
-            var a, l, c;
-            const { data: d, error: f } = i;
-            if (f) throw f;
-            return !(
-              !((a = d.session) === null || a === void 0) && a.access_token
-            ) && !this.hasCustomAuthorizationHeader
-              ? { data: { user: null }, error: new Gt() }
-              : await he(this.fetch, "GET", `${this.url}/user`, {
-                  headers: this.headers,
-                  jwt:
-                    (c =
-                      (l = d.session) === null || l === void 0
-                        ? void 0
-                        : l.access_token) !== null && c !== void 0
-                      ? c
-                      : void 0,
-                  xform: Ir,
-                });
-          });
+          var a, l, c;
+          const { data: d, error: f } = i;
+          if (f) throw f;
+          return !(
+            !((a = d.session) === null || a === void 0) && a.access_token
+          ) && !this.hasCustomAuthorizationHeader
+            ? { data: { user: null }, error: new Gt() }
+            : await he(this.fetch, "GET", `${this.url}/user`, {
+              headers: this.headers,
+              jwt:
+                (c =
+                  (l = d.session) === null || l === void 0
+                    ? void 0
+                    : l.access_token) !== null && c !== void 0
+                  ? c
+                  : void 0,
+              xform: Ir,
+            });
+        });
     } catch (i) {
       if (te(i))
         return (
           eu(i) &&
-            (await this._removeSession(),
+          (await this._removeSession(),
             await bt(this.storage, `${this.storageKey}-code-verifier`)),
           this._returnResult({ data: { user: null }, error: i })
         );
@@ -19471,18 +19470,18 @@ class aa {
         );
         return c
           ? this._returnResult({
-              data: { user: null, session: null },
-              error: c,
-            })
+            data: { user: null, session: null },
+            error: c,
+          })
           : l
             ? this._returnResult({
-                data: { user: l.user, session: l },
-                error: null,
-              })
+              data: { user: l.user, session: l },
+              error: null,
+            })
             : this._returnResult({
-                data: { user: null, session: null },
-                error: null,
-              });
+              data: { user: null, session: null },
+              error: null,
+            });
       });
     } catch (i) {
       if (te(i))
@@ -19499,7 +19498,7 @@ class aa {
       if (e.error || e.error_description || e.error_code)
         throw new Lo(
           e.error_description ||
-            "Error in URL with unspecified error_description",
+          "Error in URL with unspecified error_description",
           {
             error: e.error || "unspecified_error",
             code: e.error_code || "unspecified_code",
@@ -19554,18 +19553,18 @@ class aa {
       const N = w - x;
       y - N >= 120
         ? console.warn(
-            "@supabase/gotrue-js: Session as retrieved from URL was issued over 120s ago, URL could be stale",
-            N,
-            w,
-            y,
-          )
+          "@supabase/gotrue-js: Session as retrieved from URL was issued over 120s ago, URL could be stale",
+          N,
+          w,
+          y,
+        )
         : y - N < 0 &&
-          console.warn(
-            "@supabase/gotrue-js: Session as retrieved from URL was issued in the future? Check the device clock for skew",
-            N,
-            w,
-            y,
-          );
+        console.warn(
+          "@supabase/gotrue-js: Session as retrieved from URL was issued in the future? Check the device clock for skew",
+          N,
+          w,
+          y,
+        );
       const { data: b, error: _ } = await this._getUser(c);
       if (_) throw _;
       const O = {
@@ -19634,7 +19633,7 @@ class aa {
       }
       return (
         e !== "others" &&
-          (await this._removeSession(),
+        (await this._removeSession(),
           await bt(this.storage, `${this.storageKey}-code-verifier`)),
         this._returnResult({ error: null })
       );
@@ -19765,10 +19764,10 @@ class aa {
       if (l) throw l;
       return (
         St() &&
-          !(
-            !((i = e.options) === null || i === void 0) && i.skipBrowserRedirect
-          ) &&
-          window.location.assign(a?.url),
+        !(
+          !((i = e.options) === null || i === void 0) && i.skipBrowserRedirect
+        ) &&
+        window.location.assign(a?.url),
         this._returnResult({
           data: { provider: e.provider, url: a?.url },
           error: null,
@@ -19793,12 +19792,12 @@ class aa {
         } = i;
         if (l) throw l;
         const {
-            options: d,
-            provider: f,
-            token: m,
-            access_token: g,
-            nonce: y,
-          } = e,
+          options: d,
+          provider: f,
+          token: m,
+          access_token: g,
+          nonce: y,
+        } = e,
           x = await he(
             this.fetch,
             "POST",
@@ -19820,16 +19819,16 @@ class aa {
           { data: w, error: S } = x;
         return S
           ? this._returnResult({
-              data: { user: null, session: null },
-              error: S,
-            })
+            data: { user: null, session: null },
+            error: S,
+          })
           : !w || !w.session || !w.user
             ? this._returnResult({
-                data: { user: null, session: null },
-                error: new Ii(),
-              })
+              data: { user: null, session: null },
+              error: new Ii(),
+            })
             : (w.session &&
-                (await this._saveSession(w.session),
+              (await this._saveSession(w.session),
                 await this._notifyAllSubscribers("USER_UPDATED", w.session)),
               this._returnResult({ data: w, error: S }));
       } catch (l) {
@@ -19942,7 +19941,7 @@ class aa {
           Object.is(this.storage, this.userStorage) &&
           !d &&
           ((d = { user: l.user }),
-          await Bi(this.userStorage, this.storageKey + "-user", d)),
+            await Bi(this.userStorage, this.storageKey + "-user", d)),
           (l.user = (e = d?.user) !== null && e !== void 0 ? e : nu()));
       } else if (l && !l.user && !l.user) {
         const d = await ei(this.storage, this.storageKey + "-user");
@@ -19961,26 +19960,26 @@ class aa {
       }
       const c =
         ((i = l.expires_at) !== null && i !== void 0 ? i : 1 / 0) * 1e3 -
-          Date.now() <
+        Date.now() <
         Zc;
       if (
         (this._debug(
           a,
           `session has${c ? "" : " not"} expired with margin of ${Zc}s`,
         ),
-        c)
+          c)
       ) {
         if (this.autoRefreshToken && l.refresh_token) {
           const { error: d } = await this._callRefreshToken(l.refresh_token);
           d &&
             (console.error(d),
-            tu(d) ||
+              tu(d) ||
               (this._debug(
                 a,
                 "refresh failed with a non-retryable error, removing the session",
                 d,
               ),
-              await this._removeSession()));
+                await this._removeSession()));
         }
       } else if (l.user && l.user.__isUserNotAvailableProxy === !0)
         try {
@@ -19990,9 +19989,9 @@ class aa {
               await this._saveSession(l),
               await this._notifyAllSubscribers("SIGNED_IN", l))
             : this._debug(
-                a,
-                "could not get user data, skipping SIGNED_IN notification",
-              );
+              a,
+              "could not get user data, skipping SIGNED_IN notification",
+            );
         } catch (d) {
           (console.error("Error getting user data:", d),
             this._debug(
@@ -20030,8 +20029,8 @@ class aa {
         return (
           tu(c) || (await this._removeSession()),
           (i = this.refreshingDeferred) === null ||
-            i === void 0 ||
-            i.resolve(d),
+          i === void 0 ||
+          i.resolve(d),
           d
         );
       }
@@ -20094,7 +20093,7 @@ class aa {
       await bt(this.storage, this.storageKey + "-code-verifier"),
       await bt(this.storage, this.storageKey + "-user"),
       this.userStorage &&
-        (await bt(this.userStorage, this.storageKey + "-user")),
+      (await bt(this.userStorage, this.storageKey + "-user")),
       await this._notifyAllSubscribers("SIGNED_OUT", null));
   }
   _removeVisibilityChangedCallback() {
@@ -20117,8 +20116,8 @@ class aa {
       e && typeof e == "object" && typeof e.unref == "function"
         ? e.unref()
         : typeof Deno < "u" &&
-          typeof Deno.unrefTimer == "function" &&
-          Deno.unrefTimer(e));
+        typeof Deno.unrefTimer == "function" &&
+        Deno.unrefTimer(e));
     const i = setTimeout(async () => {
       (await this.initializePromise, await this._autoRefreshTokenTick());
     }, 0);
@@ -20126,8 +20125,8 @@ class aa {
       i && typeof i == "object" && typeof i.unref == "function"
         ? i.unref()
         : typeof Deno < "u" &&
-          typeof Deno.unrefTimer == "function" &&
-          Deno.unrefTimer(i));
+        typeof Deno.unrefTimer == "function" &&
+        Deno.unrefTimer(i));
   }
   async _stopAutoRefresh() {
     this._debug("#_stopAutoRefresh()");
@@ -20183,7 +20182,7 @@ class aa {
   async _handleVisibilityChange() {
     if (
       (this._debug("#_handleVisibilityChange()"),
-      !St() || !window?.addEventListener)
+        !St() || !window?.addEventListener)
     )
       return (this.autoRefreshToken && this.startAutoRefresh(), !1);
     try {
@@ -20209,7 +20208,7 @@ class aa {
       document.visibilityState === "visible"
         ? (this.autoRefreshToken && this._startAutoRefresh(),
           e ||
-            (await this.initializePromise,
+          (await this.initializePromise,
             await this._acquireLock(this.lockAcquireTimeout, async () => {
               if (document.visibilityState !== "visible") {
                 this._debug(
@@ -20221,16 +20220,16 @@ class aa {
               await this._recoverAndRefresh();
             })))
         : document.visibilityState === "hidden" &&
-          this.autoRefreshToken &&
-          this._stopAutoRefresh());
+        this.autoRefreshToken &&
+        this._stopAutoRefresh());
   }
   async _getUrlForProvider(e, i, a) {
     const l = [`provider=${encodeURIComponent(i)}`];
     if (
       (a?.redirectTo &&
         l.push(`redirect_to=${encodeURIComponent(a.redirectTo)}`),
-      a?.scopes && l.push(`scopes=${encodeURIComponent(a.scopes)}`),
-      this.flowType === "pkce")
+        a?.scopes && l.push(`scopes=${encodeURIComponent(a.scopes)}`),
+        this.flowType === "pkce")
     ) {
       const [c, d] = await Oi(this.storage, this.storageKey),
         f = new URLSearchParams({
@@ -20245,7 +20244,7 @@ class aa {
     }
     return (
       a?.skipBrowserRedirect &&
-        l.push(`skip_http_redirect=${a.skipBrowserRedirect}`),
+      l.push(`skip_http_redirect=${a.skipBrowserRedirect}`),
       `${e}?${l.join("&")}`
     );
   }
@@ -20257,17 +20256,17 @@ class aa {
         return c
           ? this._returnResult({ data: null, error: c })
           : await he(
-              this.fetch,
-              "DELETE",
-              `${this.url}/factors/${e.factorId}`,
-              {
-                headers: this.headers,
-                jwt:
-                  (a = l?.session) === null || a === void 0
-                    ? void 0
-                    : a.access_token,
-              },
-            );
+            this.fetch,
+            "DELETE",
+            `${this.url}/factors/${e.factorId}`,
+            {
+              headers: this.headers,
+              jwt:
+                (a = l?.session) === null || a === void 0
+                  ? void 0
+                  : a.access_token,
+            },
+          );
       });
     } catch (i) {
       if (te(i)) return this._returnResult({ data: null, error: i });
@@ -20281,13 +20280,13 @@ class aa {
         const { data: c, error: d } = i;
         if (d) return this._returnResult({ data: null, error: d });
         const f = Object.assign(
-            { friendly_name: e.friendlyName, factor_type: e.factorType },
-            e.factorType === "phone"
-              ? { phone: e.phone }
-              : e.factorType === "totp"
-                ? { issuer: e.issuer }
-                : {},
-          ),
+          { friendly_name: e.friendlyName, factor_type: e.factorType },
+          e.factorType === "phone"
+            ? { phone: e.phone }
+            : e.factorType === "totp"
+              ? { issuer: e.issuer }
+              : {},
+        ),
           { data: m, error: g } = await he(
             this.fetch,
             "POST",
@@ -20304,10 +20303,10 @@ class aa {
         return g
           ? this._returnResult({ data: null, error: g })
           : (e.factorType === "totp" &&
-              m.type === "totp" &&
-              !((l = m?.totp) === null || l === void 0) &&
-              l.qr_code &&
-              (m.totp.qr_code = `data:image/svg+xml;utf-8,${m.totp.qr_code}`),
+            m.type === "totp" &&
+            !((l = m?.totp) === null || l === void 0) &&
+            l.qr_code &&
+            (m.totp.qr_code = `data:image/svg+xml;utf-8,${m.totp.qr_code}`),
             this._returnResult({ data: m, error: null }));
       });
     } catch (i) {
@@ -20323,18 +20322,18 @@ class aa {
           const { data: l, error: c } = i;
           if (c) return this._returnResult({ data: null, error: c });
           const d = Object.assign(
-              { challenge_id: e.challengeId },
-              "webauthn" in e
-                ? {
-                    webauthn: Object.assign(Object.assign({}, e.webauthn), {
-                      credential_response:
-                        e.webauthn.type === "create"
-                          ? ww(e.webauthn.credential_response)
-                          : bw(e.webauthn.credential_response),
-                    }),
-                  }
-                : { code: e.code },
-            ),
+            { challenge_id: e.challengeId },
+            "webauthn" in e
+              ? {
+                webauthn: Object.assign(Object.assign({}, e.webauthn), {
+                  credential_response:
+                    e.webauthn.type === "create"
+                      ? ww(e.webauthn.credential_response)
+                      : bw(e.webauthn.credential_response),
+                }),
+              }
+              : { code: e.code },
+          ),
             { data: f, error: m } = await he(
               this.fetch,
               "POST",
@@ -20351,11 +20350,11 @@ class aa {
           return m
             ? this._returnResult({ data: null, error: m })
             : (await this._saveSession(
-                Object.assign(
-                  { expires_at: Math.round(Date.now() / 1e3) + f.expires_in },
-                  f,
-                ),
+              Object.assign(
+                { expires_at: Math.round(Date.now() / 1e3) + f.expires_in },
+                f,
               ),
+            ),
               await this._notifyAllSubscribers("MFA_CHALLENGE_VERIFIED", f),
               this._returnResult({ data: f, error: m }));
         });
@@ -20432,10 +20431,10 @@ class aa {
     return a
       ? this._returnResult({ data: null, error: a })
       : await this._verify({
-          factorId: e.factorId,
-          challengeId: i.id,
-          code: e.code,
-        });
+        factorId: e.factorId,
+        challengeId: i.id,
+        code: e.code,
+      });
   }
   async _listFactors() {
     var e;
@@ -20524,15 +20523,15 @@ class aa {
           ? this._returnResult({ data: null, error: l })
           : a
             ? await he(
-                this.fetch,
-                "GET",
-                `${this.url}/oauth/authorizations/${e}`,
-                {
-                  headers: this.headers,
-                  jwt: a.access_token,
-                  xform: (c) => ({ data: c, error: null }),
-                },
-              )
+              this.fetch,
+              "GET",
+              `${this.url}/oauth/authorizations/${e}`,
+              {
+                headers: this.headers,
+                jwt: a.access_token,
+                xform: (c) => ({ data: c, error: null }),
+              },
+            )
             : this._returnResult({ data: null, error: new Gt() });
       });
     } catch (i) {
@@ -20562,10 +20561,10 @@ class aa {
         );
         return (
           d.data &&
-            d.data.redirect_url &&
-            St() &&
-            !i?.skipBrowserRedirect &&
-            window.location.assign(d.data.redirect_url),
+          d.data.redirect_url &&
+          St() &&
+          !i?.skipBrowserRedirect &&
+          window.location.assign(d.data.redirect_url),
           d
         );
       });
@@ -20596,10 +20595,10 @@ class aa {
         );
         return (
           d.data &&
-            d.data.redirect_url &&
-            St() &&
-            !i?.skipBrowserRedirect &&
-            window.location.assign(d.data.redirect_url),
+          d.data.redirect_url &&
+          St() &&
+          !i?.skipBrowserRedirect &&
+          window.location.assign(d.data.redirect_url),
           d
         );
       });
@@ -20619,10 +20618,10 @@ class aa {
           ? this._returnResult({ data: null, error: a })
           : i
             ? await he(this.fetch, "GET", `${this.url}/user/oauth/grants`, {
-                headers: this.headers,
-                jwt: i.access_token,
-                xform: (l) => ({ data: l, error: null }),
-              })
+              headers: this.headers,
+              jwt: i.access_token,
+              xform: (l) => ({ data: l, error: null }),
+            })
             : this._returnResult({ data: null, error: new Gt() });
       });
     } catch (e) {
@@ -20641,11 +20640,11 @@ class aa {
           ? this._returnResult({ data: null, error: l })
           : a
             ? (await he(this.fetch, "DELETE", `${this.url}/user/oauth/grants`, {
-                headers: this.headers,
-                jwt: a.access_token,
-                query: { client_id: e.clientId },
-                noResolveJson: !0,
-              }),
+              headers: this.headers,
+              jwt: a.access_token,
+              query: { client_id: e.clientId },
+              noResolveJson: !0,
+            }),
               { data: {}, error: null })
             : this._returnResult({ data: null, error: new Gt() });
       });
@@ -20660,7 +20659,7 @@ class aa {
     const l = Date.now();
     if (
       ((a = this.jwks.keys.find((f) => f.kid === e)),
-      a && this.jwks_cached_at + N0 > l)
+        a && this.jwks_cached_at + N0 > l)
     )
       return a;
     const { data: c, error: d } = await he(
@@ -20673,9 +20672,9 @@ class aa {
     return !c.keys ||
       c.keys.length === 0 ||
       ((this.jwks = c),
-      (this.jwks_cached_at = l),
-      (a = c.keys.find((f) => f.kid === e)),
-      !a)
+        (this.jwks_cached_at = l),
+        (a = c.keys.find((f) => f.kid === e)),
+        !a)
       ? null
       : a;
   }
@@ -20697,9 +20696,9 @@ class aa {
       i?.allowExpired || Q0(c.exp);
       const g =
         !l.alg ||
-        l.alg.startsWith("HS") ||
-        !l.kid ||
-        !("crypto" in globalThis && "subtle" in globalThis.crypto)
+          l.alg.startsWith("HS") ||
+          !l.kid ||
+          !("crypto" in globalThis && "subtle" in globalThis.crypto)
           ? null
           : await this.fetchJwk(l.kid, i?.keys ? { keys: i.keys } : i?.jwks);
       if (!g) {
@@ -20745,16 +20744,16 @@ function oa(n) {
     (oa =
       typeof Symbol == "function" && typeof Symbol.iterator == "symbol"
         ? function (e) {
-            return typeof e;
-          }
+          return typeof e;
+        }
         : function (e) {
-            return e &&
-              typeof Symbol == "function" &&
-              e.constructor === Symbol &&
-              e !== Symbol.prototype
-              ? "symbol"
-              : typeof e;
-          }),
+          return e &&
+            typeof Symbol == "function" &&
+            e.constructor === Symbol &&
+            e !== Symbol.prototype
+            ? "symbol"
+            : typeof e;
+        }),
     oa(n)
   );
 }
@@ -20776,11 +20775,11 @@ function $w(n, e, i) {
   return (
     (e = zw(e)) in n
       ? Object.defineProperty(n, e, {
-          value: i,
-          enumerable: !0,
-          configurable: !0,
-          writable: !0,
-        })
+        value: i,
+        enumerable: !0,
+        configurable: !0,
+        writable: !0,
+      })
       : (n[e] = i),
     n
   );
@@ -20802,13 +20801,13 @@ function nt(n) {
     var i = arguments[e] != null ? arguments[e] : {};
     e % 2
       ? tp(Object(i), !0).forEach(function (a) {
-          $w(n, a, i[a]);
-        })
+        $w(n, a, i[a]);
+      })
       : Object.getOwnPropertyDescriptors
         ? Object.defineProperties(n, Object.getOwnPropertyDescriptors(i))
         : tp(Object(i)).forEach(function (a) {
-            Object.defineProperty(n, a, Object.getOwnPropertyDescriptor(i, a));
-          });
+          Object.defineProperty(n, a, Object.getOwnPropertyDescriptor(i, a));
+        });
   }
   return n;
 }
@@ -20869,10 +20868,10 @@ function Vw(n) {
   }
 }
 var qw = class extends Nw {
-    constructor(n) {
-      super(n);
-    }
-  },
+  constructor(n) {
+    super(n);
+  }
+},
   Gw = class {
     constructor(n, e, i) {
       var a, l;
@@ -20898,9 +20897,9 @@ var qw = class extends Nw {
       if (
         ((this.storageKey =
           (a = m.auth.storageKey) !== null && a !== void 0 ? a : ""),
-        (this.headers =
-          (l = m.global.headers) !== null && l !== void 0 ? l : {}),
-        m.accessToken)
+          (this.headers =
+            (l = m.global.headers) !== null && l !== void 0 ? l : {}),
+          m.accessToken)
       )
         ((this.accessToken = m.accessToken),
           (this.auth = new Proxy(
@@ -20932,11 +20931,11 @@ var qw = class extends Nw {
           ),
         )),
         this.accessToken &&
-          Promise.resolve(this.accessToken())
-            .then((y) => this.realtime.setAuth(y))
-            .catch((y) =>
-              console.warn("Failed to set initial Realtime auth token:", y),
-            ),
+        Promise.resolve(this.accessToken())
+          .then((y) => this.realtime.setAuth(y))
+          .catch((y) =>
+            console.warn("Failed to set initial Realtime auth token:", y),
+          ),
         (this.rest = new mx(new URL("rest/v1", c).href, {
           headers: this.headers,
           schema: m.db.schema,
@@ -21047,10 +21046,10 @@ var qw = class extends Nw {
     }
     _handleTokenChanged(n, e, i) {
       (n === "TOKEN_REFRESHED" || n === "SIGNED_IN") &&
-      this.changedAccessToken !== i
+        this.changedAccessToken !== i
         ? ((this.changedAccessToken = i), this.realtime.setAuth(i))
         : n === "SIGNED_OUT" &&
-          (this.realtime.setAuth(),
+        (this.realtime.setAuth(),
           e == "STORAGE" && this.auth.signOut(),
           (this.changedAccessToken = void 0));
     }
@@ -21095,12 +21094,12 @@ const Xw = "https://iqnvhznmrvcbnelnmdwa.supabase.co",
         (i(
           w
             ? {
-                id: w.user.id,
-                name: w.user.user_metadata?.name || w.user.email?.split("@")[0],
-                email: w.user.email,
-                role:
-                  w.user.email === "admin@virsoftech.com" ? "admin" : "author",
-              }
+              id: w.user.id,
+              name: w.user.user_metadata?.name || w.user.email?.split("@")[0],
+              email: w.user.email,
+              role:
+                w.user.email === "admin@virsoftech.com" ? "admin" : "author",
+            }
             : null,
         ),
           l(!1));
@@ -21110,13 +21109,13 @@ const Xw = "https://iqnvhznmrvcbnelnmdwa.supabase.co",
       };
     }, []);
     const c = k.useCallback(async (g, y) => {
-        const { data: x, error: w } = await De.auth.signInWithPassword({
-          email: g,
-          password: y,
-        });
-        if (w) throw (console.error("Login error:", w), w);
-        return x;
-      }, []),
+      const { data: x, error: w } = await De.auth.signInWithPassword({
+        email: g,
+        password: y,
+      });
+      if (w) throw (console.error("Login error:", w), w);
+      return x;
+    }, []),
       d = k.useCallback(async () => {
         (await De.auth.signOut(), i(null));
       }, []),
@@ -21304,59 +21303,59 @@ const Xw = "https://iqnvhznmrvcbnelnmdwa.supabase.co",
               children: "Request Demo",
             }),
             f &&
-              s.jsxs("div", {
-                className: "user-dropdown-wrapper",
-                children: [
-                  s.jsxs("div", {
-                    className: "user-pill",
-                    onClick: () => a((x) => !x),
-                    style: { cursor: "pointer" },
-                    children: [
-                      s.jsx("div", {
-                        className: "user-avatar",
-                        children: f.name?.[0]?.toUpperCase() || "A",
-                      }),
-                      s.jsx("span", {
-                        className: "user-name",
-                        children: f.name,
-                      }),
-                      s.jsx("i", {
-                        className: "fas fa-chevron-down user-arrow",
-                      }),
-                    ],
-                  }),
-                  s.jsxs("div", {
-                    className: "user-dropdown",
-                    style: { display: i ? "block" : "none" },
-                    children: [
-                      s.jsxs(ne, {
-                        to: "/admin",
-                        className: "user-dropdown-item",
-                        onClick: () => a(!1),
-                        children: [
-                          s.jsx("i", { className: "fas fa-gauge" }),
-                          " Dashboard",
-                        ],
-                      }),
-                      s.jsx("hr", {
-                        style: {
-                          margin: "4px 0",
-                          border: "none",
-                          borderTop: "1px solid var(--border)",
-                        },
-                      }),
-                      s.jsxs("button", {
-                        onClick: y,
-                        className: "user-dropdown-item logout-item",
-                        children: [
-                          s.jsx("i", { className: "fas fa-sign-out-alt" }),
-                          " Logout",
-                        ],
-                      }),
-                    ],
-                  }),
-                ],
-              }),
+            s.jsxs("div", {
+              className: "user-dropdown-wrapper",
+              children: [
+                s.jsxs("div", {
+                  className: "user-pill",
+                  onClick: () => a((x) => !x),
+                  style: { cursor: "pointer" },
+                  children: [
+                    s.jsx("div", {
+                      className: "user-avatar",
+                      children: f.name?.[0]?.toUpperCase() || "A",
+                    }),
+                    s.jsx("span", {
+                      className: "user-name",
+                      children: f.name,
+                    }),
+                    s.jsx("i", {
+                      className: "fas fa-chevron-down user-arrow",
+                    }),
+                  ],
+                }),
+                s.jsxs("div", {
+                  className: "user-dropdown",
+                  style: { display: i ? "block" : "none" },
+                  children: [
+                    s.jsxs(ne, {
+                      to: "/admin",
+                      className: "user-dropdown-item",
+                      onClick: () => a(!1),
+                      children: [
+                        s.jsx("i", { className: "fas fa-gauge" }),
+                        " Dashboard",
+                      ],
+                    }),
+                    s.jsx("hr", {
+                      style: {
+                        margin: "4px 0",
+                        border: "none",
+                        borderTop: "1px solid var(--border)",
+                      },
+                    }),
+                    s.jsxs("button", {
+                      onClick: y,
+                      className: "user-dropdown-item logout-item",
+                      children: [
+                        s.jsx("i", { className: "fas fa-sign-out-alt" }),
+                        " Logout",
+                      ],
+                    }),
+                  ],
+                }),
+              ],
+            }),
           ],
         }),
         s.jsxs("button", {
@@ -21371,158 +21370,158 @@ const Xw = "https://iqnvhznmrvcbnelnmdwa.supabase.co",
           ],
         }),
         n &&
-          s.jsxs("div", {
-            className: "mobile-menu",
-            children: [
-              s.jsx("div", {
-                className: "mobile-section-label",
-                children: "Solutions",
-              }),
-              np.map((x, w) =>
-                s.jsxs(
-                  ne,
-                  {
-                    to: x.to,
-                    className: "mobile-menu-link mobile-sub-link",
-                    onClick: g,
-                    children: [
-                      s.jsx("i", {
-                        className: `fas ${x.icon}`,
-                        style: { marginRight: "10px", color: "var(--primary)" },
-                      }),
-                      x.label,
-                    ],
-                  },
-                  w,
-                ),
+        s.jsxs("div", {
+          className: "mobile-menu",
+          children: [
+            s.jsx("div", {
+              className: "mobile-section-label",
+              children: "Solutions",
+            }),
+            np.map((x, w) =>
+              s.jsxs(
+                ne,
+                {
+                  to: x.to,
+                  className: "mobile-menu-link mobile-sub-link",
+                  onClick: g,
+                  children: [
+                    s.jsx("i", {
+                      className: `fas ${x.icon}`,
+                      style: { marginRight: "10px", color: "var(--primary)" },
+                    }),
+                    x.label,
+                  ],
+                },
+                w,
               ),
-              s.jsx(ne, {
-                to: "/case-studies",
-                className: "mobile-menu-link",
-                onClick: g,
-                children: "Case Studies",
-              }),
-              s.jsx(ne, {
-                to: "/about",
-                className: "mobile-menu-link",
-                onClick: g,
-                children: "About Us",
-              }),
-              s.jsx(ne, {
-                to: "/blog",
-                className: "mobile-menu-link",
-                onClick: g,
-                children: "Blog",
-              }),
-              s.jsx(ne, {
-                to: "/contact",
-                className: "mobile-menu-link",
-                onClick: g,
-                children: "Contact Us",
-              }),
-              s.jsx(ne, {
-                to: "/request-demo",
-                className: "btn-signin mobile-demo-btn",
-                onClick: g,
-                children: "Request Demo",
-              }),
-              f &&
+            ),
+            s.jsx(ne, {
+              to: "/case-studies",
+              className: "mobile-menu-link",
+              onClick: g,
+              children: "Case Studies",
+            }),
+            s.jsx(ne, {
+              to: "/about",
+              className: "mobile-menu-link",
+              onClick: g,
+              children: "About Us",
+            }),
+            s.jsx(ne, {
+              to: "/blog",
+              className: "mobile-menu-link",
+              onClick: g,
+              children: "Blog",
+            }),
+            s.jsx(ne, {
+              to: "/contact",
+              className: "mobile-menu-link",
+              onClick: g,
+              children: "Contact Us",
+            }),
+            s.jsx(ne, {
+              to: "/request-demo",
+              className: "btn-signin mobile-demo-btn",
+              onClick: g,
+              children: "Request Demo",
+            }),
+            f &&
+            s.jsxs("div", {
+              style: {
+                borderTop: "1px solid rgba(255,255,255,0.1)",
+                marginTop: "12px",
+                paddingTop: "12px",
+              },
+              children: [
                 s.jsxs("div", {
                   style: {
-                    borderTop: "1px solid rgba(255,255,255,0.1)",
-                    marginTop: "12px",
-                    paddingTop: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    padding: "10px 16px",
+                    marginBottom: "8px",
                   },
                   children: [
-                    s.jsxs("div", {
+                    s.jsx("div", {
                       style: {
+                        width: "34px",
+                        height: "34px",
+                        borderRadius: "50%",
+                        background: "var(--primary)",
+                        flexShrink: 0,
                         display: "flex",
                         alignItems: "center",
-                        gap: "10px",
-                        padding: "10px 16px",
-                        marginBottom: "8px",
+                        justifyContent: "center",
+                        fontSize: "14px",
+                        fontWeight: "700",
+                        color: "white",
                       },
+                      children: f.name?.[0]?.toUpperCase() || "A",
+                    }),
+                    s.jsxs("div", {
                       children: [
                         s.jsx("div", {
                           style: {
-                            width: "34px",
-                            height: "34px",
-                            borderRadius: "50%",
-                            background: "var(--primary)",
-                            flexShrink: 0,
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
                             fontSize: "14px",
                             fontWeight: "700",
-                            color: "white",
+                            color: "inherit",
                           },
-                          children: f.name?.[0]?.toUpperCase() || "A",
+                          children: f.name,
                         }),
-                        s.jsxs("div", {
-                          children: [
-                            s.jsx("div", {
-                              style: {
-                                fontSize: "14px",
-                                fontWeight: "700",
-                                color: "inherit",
-                              },
-                              children: f.name,
-                            }),
-                            s.jsx("div", {
-                              style: {
-                                fontSize: "11px",
-                                opacity: 0.6,
-                                color: "inherit",
-                              },
-                              children: f.role,
-                            }),
-                          ],
+                        s.jsx("div", {
+                          style: {
+                            fontSize: "11px",
+                            opacity: 0.6,
+                            color: "inherit",
+                          },
+                          children: f.role,
                         }),
-                      ],
-                    }),
-                    s.jsxs(ne, {
-                      to: "/admin",
-                      className: "mobile-menu-link",
-                      onClick: g,
-                      style: {
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "8px",
-                        color: "var(--primary)",
-                        textDecoration: "none",
-                        fontWeight: "700",
-                        marginBottom: "8px",
-                        padding: "10px 16px",
-                      },
-                      children: [
-                        s.jsx("i", { className: "fas fa-gauge" }),
-                        " Admin Dashboard",
-                      ],
-                    }),
-                    s.jsxs("button", {
-                      onClick: y,
-                      className: "mobile-menu-link",
-                      style: {
-                        width: "100%",
-                        textAlign: "left",
-                        background: "transparent",
-                        border: "none",
-                        cursor: "pointer",
-                        color: "#f87171",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "8px",
-                      },
-                      children: [
-                        s.jsx("i", { className: "fas fa-sign-out-alt" }),
-                        " Logout",
                       ],
                     }),
                   ],
                 }),
-            ],
-          }),
+                s.jsxs(ne, {
+                  to: "/admin",
+                  className: "mobile-menu-link",
+                  onClick: g,
+                  style: {
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    color: "var(--primary)",
+                    textDecoration: "none",
+                    fontWeight: "700",
+                    marginBottom: "8px",
+                    padding: "10px 16px",
+                  },
+                  children: [
+                    s.jsx("i", { className: "fas fa-gauge" }),
+                    " Admin Dashboard",
+                  ],
+                }),
+                s.jsxs("button", {
+                  onClick: y,
+                  className: "mobile-menu-link",
+                  style: {
+                    width: "100%",
+                    textAlign: "left",
+                    background: "transparent",
+                    border: "none",
+                    cursor: "pointer",
+                    color: "#f87171",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                  },
+                  children: [
+                    s.jsx("i", { className: "fas fa-sign-out-alt" }),
+                    " Logout",
+                  ],
+                }),
+              ],
+            }),
+          ],
+        }),
       ],
     });
   },
@@ -21932,60 +21931,60 @@ const rb = st("VITE_FORM_SUBMIT_BASE_URL", "https://formsubmit.co/ajax"),
       }
     }, []);
     const i = () => {
-        (localStorage.setItem("vsdox_cookie_consent", "accepted"), e(!1));
-      },
+      (localStorage.setItem("vsdox_cookie_consent", "accepted"), e(!1));
+    },
       a = () => {
         (localStorage.setItem("vsdox_cookie_consent", "declined"), e(!1));
       };
     return n
       ? s.jsx("div", {
-          className: "cookie-consent-overlay",
-          children: s.jsxs("div", {
-            className: "cookie-consent-card reveal-up",
-            children: [
-              s.jsxs("div", {
-                className: "cookie-content",
-                children: [
-                  s.jsx("div", {
-                    className: "cookie-icon",
-                    children: s.jsx("i", { className: "fas fa-cookie-bite" }),
-                  }),
-                  s.jsxs("div", {
-                    className: "cookie-text",
-                    children: [
-                      s.jsx("h4", { children: "We use cookies" }),
-                      s.jsxs("p", {
-                        children: [
-                          'We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. Read our ',
-                          s.jsx(ne, {
-                            to: "/privacy-policy",
-                            children: "Privacy Policy",
-                          }),
-                          ".",
-                        ],
-                      }),
-                    ],
-                  }),
-                ],
-              }),
-              s.jsxs("div", {
-                className: "cookie-actions",
-                children: [
-                  s.jsx("button", {
-                    className: "cookie-btn btn-secondary",
-                    onClick: a,
-                    children: "Decline",
-                  }),
-                  s.jsx("button", {
-                    className: "cookie-btn btn-primary",
-                    onClick: i,
-                    children: "Accept All",
-                  }),
-                ],
-              }),
-            ],
-          }),
-        })
+        className: "cookie-consent-overlay",
+        children: s.jsxs("div", {
+          className: "cookie-consent-card reveal-up",
+          children: [
+            s.jsxs("div", {
+              className: "cookie-content",
+              children: [
+                s.jsx("div", {
+                  className: "cookie-icon",
+                  children: s.jsx("i", { className: "fas fa-cookie-bite" }),
+                }),
+                s.jsxs("div", {
+                  className: "cookie-text",
+                  children: [
+                    s.jsx("h4", { children: "We use cookies" }),
+                    s.jsxs("p", {
+                      children: [
+                        'We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies. Read our ',
+                        s.jsx(ne, {
+                          to: "/privacy-policy",
+                          children: "Privacy Policy",
+                        }),
+                        ".",
+                      ],
+                    }),
+                  ],
+                }),
+              ],
+            }),
+            s.jsxs("div", {
+              className: "cookie-actions",
+              children: [
+                s.jsx("button", {
+                  className: "cookie-btn btn-secondary",
+                  onClick: a,
+                  children: "Decline",
+                }),
+                s.jsx("button", {
+                  className: "cookie-btn btn-primary",
+                  onClick: i,
+                  children: "Accept All",
+                }),
+              ],
+            }),
+          ],
+        }),
+      })
       : null;
   },
   ob = () =>
@@ -22099,18 +22098,18 @@ const rb = st("VITE_FORM_SUBMIT_BASE_URL", "https://formsubmit.co/ajax"),
                       children: [
                         typeof n.logo == "string" && n.logo.length < 5
                           ? s.jsx("span", {
-                              className: "client-emoji",
-                              children: n.logo,
-                            })
+                            className: "client-emoji",
+                            children: n.logo,
+                          })
                           : s.jsx("img", {
-                              src: n.logo,
-                              alt: n.name,
-                              onError: (i) => {
-                                ((i.target.style.display = "none"),
-                                  (i.target.nextSibling.style.display =
-                                    "block"));
-                              },
-                            }),
+                            src: n.logo,
+                            alt: n.name,
+                            onError: (i) => {
+                              ((i.target.style.display = "none"),
+                                (i.target.nextSibling.style.display =
+                                  "block"));
+                            },
+                          }),
                         s.jsx("div", {
                           className: "client-initials",
                           style: { display: "none" },
@@ -22139,8 +22138,8 @@ const rb = st("VITE_FORM_SUBMIT_BASE_URL", "https://formsubmit.co/ajax"),
         (!x &&
           g &&
           ((x = document.createElement("meta")),
-          y ? x.setAttribute("property", m) : (x.name = m),
-          document.head.appendChild(x)),
+            y ? x.setAttribute("property", m) : (x.name = m),
+            document.head.appendChild(x)),
           x && g && x.setAttribute("content", g));
       };
       (l('meta[name="description"]', "description", e),
@@ -23963,105 +23962,105 @@ const ir = (n, e) => {
   return ((i.displayName = rp(n)), i);
 };
 const eS = [
-    [
-      "path",
-      {
-        d: "m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526",
-        key: "1yiouv",
-      },
-    ],
-    ["circle", { cx: "12", cy: "8", r: "6", key: "1vp47v" }],
+  [
+    "path",
+    {
+      d: "m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526",
+      key: "1yiouv",
+    },
   ],
+  ["circle", { cx: "12", cy: "8", r: "6", key: "1vp47v" }],
+],
   tS = ir("award", eS);
 const nS = [
-    ["path", { d: "M12 7v14", key: "1akyts" }],
-    [
-      "path",
-      {
-        d: "M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z",
-        key: "ruj8y",
-      },
-    ],
+  ["path", { d: "M12 7v14", key: "1akyts" }],
+  [
+    "path",
+    {
+      d: "M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z",
+      key: "ruj8y",
+    },
   ],
+],
   rS = ir("book-open", nS);
 const iS = [
-    ["path", { d: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16", key: "jecpp" }],
-    [
-      "rect",
-      { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" },
-    ],
+  ["path", { d: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16", key: "jecpp" }],
+  [
+    "rect",
+    { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" },
   ],
+],
   sS = ir("briefcase", iS);
 const aS = [
-    [
-      "path",
-      {
-        d: "M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2",
-        key: "5owen",
-      },
-    ],
-    ["circle", { cx: "7", cy: "17", r: "2", key: "u2ysq9" }],
-    ["path", { d: "M9 17h6", key: "r8uit2" }],
-    ["circle", { cx: "17", cy: "17", r: "2", key: "axvx0g" }],
+  [
+    "path",
+    {
+      d: "M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2",
+      key: "5owen",
+    },
   ],
+  ["circle", { cx: "7", cy: "17", r: "2", key: "u2ysq9" }],
+  ["path", { d: "M9 17h6", key: "r8uit2" }],
+  ["circle", { cx: "17", cy: "17", r: "2", key: "axvx0g" }],
+],
   oS = ir("car", aS);
 const lS = [
-    ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-    [
-      "path",
-      { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" },
-    ],
-    ["path", { d: "M2 12h20", key: "9i4pu4" }],
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  [
+    "path",
+    { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" },
   ],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }],
+],
   cS = ir("globe", lS);
 const uS = [
-    ["path", { d: "M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5", key: "qeys4" }],
-    [
-      "path",
-      {
-        d: "M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09",
-        key: "u4xsad",
-      },
-    ],
-    [
-      "path",
-      {
-        d: "M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z",
-        key: "676m9",
-      },
-    ],
-    [
-      "path",
-      { d: "M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05", key: "92ym6u" },
-    ],
+  ["path", { d: "M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5", key: "qeys4" }],
+  [
+    "path",
+    {
+      d: "M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09",
+      key: "u4xsad",
+    },
   ],
+  [
+    "path",
+    {
+      d: "M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z",
+      key: "676m9",
+    },
+  ],
+  [
+    "path",
+    { d: "M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05", key: "92ym6u" },
+  ],
+],
   dS = ir("rocket", uS);
 const hS = [
-    [
-      "path",
-      {
-        d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
-        key: "oel41y",
-      },
-    ],
+  [
+    "path",
+    {
+      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+      key: "oel41y",
+    },
   ],
+],
   fS = ir("shield", hS);
 const pS = [
-    [
-      "path",
-      {
-        d: "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z",
-        key: "r04s7s",
-      },
-    ],
+  [
+    "path",
+    {
+      d: "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z",
+      key: "r04s7s",
+    },
   ],
+],
   mS = ir("star", pS);
 const gS = [
-    ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
-    ["path", { d: "M16 3.128a4 4 0 0 1 0 7.744", key: "16gr8j" }],
-    ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
-    ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
-  ],
+  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
+  ["path", { d: "M16 3.128a4 4 0 0 1 0 7.744", key: "16gr8j" }],
+  ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
+  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
+],
   yS = ir("users", gS),
   vS = [
     {
@@ -24072,8 +24071,8 @@ const gS = [
     },
     {
       year: "2016",
-      title: "Eval OMR Launch",
-      desc: "Our first product is live. We launch the Eval OMR solution for digital assessment.",
+      title: "eVAL OMR Launch",
+      desc: "Our first product is live. We launch the eVAL OMR solution for digital assessment.",
       color: "#f97316",
     },
     {
@@ -24110,7 +24109,7 @@ const gS = [
   xS = [
     {
       year: "2019",
-      desc: "Launched Eval CBT Platform for computer-based testing.",
+      desc: "Launched eVAL CBT Platform for computer-based testing.",
       icon: s.jsx(dS, { className: "w-5 h-5" }),
       color: "#be123c",
       pos: "bottom",
@@ -24323,33 +24322,33 @@ const gS = [
             s.jsx("h2", { children: n }),
             s.jsx("p", { children: i }),
             c &&
-              s.jsx("ul", {
-                className: "info-list",
-                children: c.map((d, f) =>
-                  s.jsxs(
-                    "li",
-                    {
-                      children: [
-                        s.jsx("svg", {
-                          width: "20",
-                          height: "20",
-                          viewBox: "0 0 20 20",
-                          fill: "none",
-                          children: s.jsx("path", {
-                            d: "M5 10L8 13L15 6",
-                            stroke: "currentColor",
-                            strokeWidth: "2",
-                            strokeLinecap: "round",
-                            strokeLinejoin: "round",
-                          }),
+            s.jsx("ul", {
+              className: "info-list",
+              children: c.map((d, f) =>
+                s.jsxs(
+                  "li",
+                  {
+                    children: [
+                      s.jsx("svg", {
+                        width: "20",
+                        height: "20",
+                        viewBox: "0 0 20 20",
+                        fill: "none",
+                        children: s.jsx("path", {
+                          d: "M5 10L8 13L15 6",
+                          stroke: "currentColor",
+                          strokeWidth: "2",
+                          strokeLinecap: "round",
+                          strokeLinejoin: "round",
                         }),
-                        d,
-                      ],
-                    },
-                    f,
-                  ),
+                      }),
+                      d,
+                    ],
+                  },
+                  f,
                 ),
-              }),
+              ),
+            }),
           ],
         }),
         s.jsx("div", {
@@ -24369,88 +24368,88 @@ const gS = [
           .forEach((l) => l.classList.add("fade-in")));
     }, []);
     const n = [
-        {
-          icon: "fa-folder-open",
-          title: "Document Management System (DMS)",
-          color: "#1d63ed",
-          features: [
-            "Hierarchical repository with department & folder-level access",
-            "Multi-format support: PDF, DOCX, XLSX, images, videos & more",
-            "Version control with full revision history",
-            "Bulk upload, drag-and-drop, and scanner integration",
-            "PDF/A compliant archival format",
-            "Dublin Core metadata indexing standard",
-          ],
-        },
-        {
-          icon: "fa-magnifying-glass",
-          title: "Intelligent Search & Retrieval",
-          color: "#7c3aed",
-          features: [
-            "Full-text search across all ingested documents",
-            "Phonetic, fuzzy & thesaurus-based search",
-            "Advanced faceted & nested-faceted filtering",
-            "Multilingual search with transliteration support",
-            "Voice-based search (Speech-to-Text)",
-            "RAG-Based Q&A for document-level contextual queries",
-          ],
-        },
-        {
-          icon: "fa-diagram-project",
-          title: "Workflow & Process Automation",
-          color: "#059669",
-          features: [
-            "Static multi-level approval workflows (1, 2, 3 levels)",
-            "Dynamic / ad-hoc workflow with real-time routing",
-            "Hierarchical verification for sensitive records",
-            "Role-based reviewer assignment & escalation",
-            "Mandatory comments at every approval stage",
-            "Full audit trail of every workflow action",
-          ],
-        },
-        {
-          icon: "fa-robot",
-          title: "AI-Powered Capabilities",
-          color: "#db2777",
-          features: [
-            "Automatic Document Type Association & Segregation",
-            "AI Metadata Extraction (case IDs, dates, names, IDs)",
-            "Document Summarization for long case files (50–500 pages)",
-            "On-premise RAG-Based Q&A Engine",
-            "AI Translation into multiple languages",
-            "AI Transliteration for multilingual search",
-            "Multilingual Speech-to-Text input",
-            "Full UI localization in Hindi, Malayalam & more",
-          ],
-        },
-        {
-          icon: "fa-camera",
-          title: "Capture & Digitization Solution",
-          color: "#d97706",
-          features: [
-            "Physical file inventory & batch creation",
-            "High-resolution scanning & automated image processing",
-            "Auto deskew, despeckle, punch-hole removal",
-            "Multilingual OCR for text recognition",
-            "Multi-level Quality Checks (Scanning QC, Indexing QC, Client QC)",
-            "Export as PDF/A with Dublin Core metadata ZIP",
-          ],
-        },
-        {
-          icon: "fa-shield-halved",
-          title: "Security & Compliance",
-          color: "#dc2626",
-          features: [
-            "AES-256 encryption at rest & TLS/SSL in transit",
-            "Multi-Factor Authentication (CAPTCHA, OTP, SMTP)",
-            "Role-Based Access Control (RBAC) at department & file level",
-            "LDAP / Active Directory SSO integration",
-            "Digitally signed JWT session tokens",
-            "OWASP compliance & VAPT/STQC validated",
-            "Time-bound access control & backup scheduler",
-          ],
-        },
-      ],
+      {
+        icon: "fa-folder-open",
+        title: "Document Management System (DMS)",
+        color: "#1d63ed",
+        features: [
+          "Hierarchical repository with department & folder-level access",
+          "Multi-format support: PDF, DOCX, XLSX, images, videos & more",
+          "Version control with full revision history",
+          "Bulk upload, drag-and-drop, and scanner integration",
+          "PDF/A compliant archival format",
+          "Dublin Core metadata indexing standard",
+        ],
+      },
+      {
+        icon: "fa-magnifying-glass",
+        title: "Intelligent Search & Retrieval",
+        color: "#7c3aed",
+        features: [
+          "Full-text search across all ingested documents",
+          "Phonetic, fuzzy & thesaurus-based search",
+          "Advanced faceted & nested-faceted filtering",
+          "Multilingual search with transliteration support",
+          "Voice-based search (Speech-to-Text)",
+          "RAG-Based Q&A for document-level contextual queries",
+        ],
+      },
+      {
+        icon: "fa-diagram-project",
+        title: "Workflow & Process Automation",
+        color: "#059669",
+        features: [
+          "Static multi-level approval workflows (1, 2, 3 levels)",
+          "Dynamic / ad-hoc workflow with real-time routing",
+          "Hierarchical verification for sensitive records",
+          "Role-based reviewer assignment & escalation",
+          "Mandatory comments at every approval stage",
+          "Full audit trail of every workflow action",
+        ],
+      },
+      {
+        icon: "fa-robot",
+        title: "AI-Powered Capabilities",
+        color: "#db2777",
+        features: [
+          "Automatic Document Type Association & Segregation",
+          "AI Metadata Extraction (case IDs, dates, names, IDs)",
+          "Document Summarization for long case files (50–500 pages)",
+          "On-premise RAG-Based Q&A Engine",
+          "AI Translation into multiple languages",
+          "AI Transliteration for multilingual search",
+          "Multilingual Speech-to-Text input",
+          "Full UI localization in Hindi, Malayalam & more",
+        ],
+      },
+      {
+        icon: "fa-camera",
+        title: "Capture & Digitization Solution",
+        color: "#d97706",
+        features: [
+          "Physical file inventory & batch creation",
+          "High-resolution scanning & automated image processing",
+          "Auto deskew, despeckle, punch-hole removal",
+          "Multilingual OCR for text recognition",
+          "Multi-level Quality Checks (Scanning QC, Indexing QC, Client QC)",
+          "Export as PDF/A with Dublin Core metadata ZIP",
+        ],
+      },
+      {
+        icon: "fa-shield-halved",
+        title: "Security & Compliance",
+        color: "#dc2626",
+        features: [
+          "AES-256 encryption at rest & TLS/SSL in transit",
+          "Multi-Factor Authentication (CAPTCHA, OTP, SMTP)",
+          "Role-Based Access Control (RBAC) at department & file level",
+          "LDAP / Active Directory SSO integration",
+          "Digitally signed JWT session tokens",
+          "OWASP compliance & VAPT/STQC validated",
+          "Time-bound access control & backup scheduler",
+        ],
+      },
+    ],
       e = [
         { icon: "fa-microchip", label: "Document Summarization" },
         { icon: "fa-comments", label: "RAG-Based Q&A" },
@@ -25136,11 +25135,11 @@ const gS = [
                       transition: "all 0.3s ease",
                     },
                     onMouseEnter: (l) =>
-                      (l.currentTarget.style.background =
-                        "rgba(255,255,255,0.25)"),
+                    (l.currentTarget.style.background =
+                      "rgba(255,255,255,0.25)"),
                     onMouseLeave: (l) =>
-                      (l.currentTarget.style.background =
-                        "rgba(255,255,255,0.15)"),
+                    (l.currentTarget.style.background =
+                      "rgba(255,255,255,0.15)"),
                     children: "Explore Solutions",
                   }),
                 ],
@@ -25517,11 +25516,11 @@ const gS = [
           .forEach((i) => i.classList.add("fade-in")));
     }, []);
     const n = [
-        "Showcase Start-up - India International Trade Fair 2016",
-        "Top 20 ECM Solution Providers 2018, 2019, 2021, 2023 (CIO India)",
-        "Most Promising Assessment Solution Provider 2021 (Ardorcomm Media)",
-        "Partner - World Education Summit 2018",
-      ],
+      "Showcase Start-up - India International Trade Fair 2016",
+      "Top 20 ECM Solution Providers 2018, 2019, 2021, 2023 (CIO India)",
+      "Most Promising Assessment Solution Provider 2021 (Ardorcomm Media)",
+      "Partner - World Education Summit 2018",
+    ],
       e = [
         {
           name: "Deepak Garg",
@@ -25659,7 +25658,7 @@ const gS = [
                               marginRight: "10px",
                             },
                           }),
-                          " EVAL - Educational Evaluation, Assessments & Learning",
+                          " eVAL - Educational Evaluation, Assessments & Learning",
                         ],
                       }),
                     ],
@@ -25919,21 +25918,21 @@ const gS = [
             className: "page-hero-content reveal",
             children: [
               i &&
-                s.jsx("span", {
-                  style: {
-                    display: "inline-block",
-                    background: "rgba(29,99,237,0.2)",
-                    color: "#60a5fa",
-                    fontSize: "12px",
-                    fontWeight: "700",
-                    letterSpacing: "0.12em",
-                    padding: "6px 14px",
-                    borderRadius: "100px",
-                    marginBottom: "20px",
-                    border: "1px solid rgba(96,165,250,0.3)",
-                  },
-                  children: i,
-                }),
+              s.jsx("span", {
+                style: {
+                  display: "inline-block",
+                  background: "rgba(29,99,237,0.2)",
+                  color: "#60a5fa",
+                  fontSize: "12px",
+                  fontWeight: "700",
+                  letterSpacing: "0.12em",
+                  padding: "6px 14px",
+                  borderRadius: "100px",
+                  marginBottom: "20px",
+                  border: "1px solid rgba(96,165,250,0.3)",
+                },
+                children: i,
+              }),
               s.jsx("h1", {
                 style: {
                   fontSize: "clamp(32px, 5vw, 60px)",
@@ -27162,21 +27161,21 @@ const gS = [
           className: "max-container reveal",
           children: [
             n &&
-              s.jsx("span", {
-                style: {
-                  display: "inline-block",
-                  background: "rgba(29,99,237,0.18)",
-                  color: "#60a5fa",
-                  fontSize: "12px",
-                  fontWeight: "700",
-                  letterSpacing: "0.12em",
-                  padding: "6px 14px",
-                  borderRadius: "100px",
-                  marginBottom: "20px",
-                  border: "1px solid rgba(96,165,250,0.3)",
-                },
-                children: n,
-              }),
+            s.jsx("span", {
+              style: {
+                display: "inline-block",
+                background: "rgba(29,99,237,0.18)",
+                color: "#60a5fa",
+                fontSize: "12px",
+                fontWeight: "700",
+                letterSpacing: "0.12em",
+                padding: "6px 14px",
+                borderRadius: "100px",
+                marginBottom: "20px",
+                border: "1px solid rgba(96,165,250,0.3)",
+              },
+              children: n,
+            }),
             s.jsx("h1", {
               style: {
                 fontSize: "clamp(30px, 4vw, 56px)",
@@ -27832,13 +27831,13 @@ const gS = [
           .forEach((y) => y.classList.add("fade-in")));
     }, []);
     const [n, e] = k.useState({
-        name: "",
-        email: "",
-        company: "",
-        phone: "",
-        subject: "",
-        message: "",
-      }),
+      name: "",
+      email: "",
+      company: "",
+      phone: "",
+      subject: "",
+      message: "",
+    }),
       [i, a] = k.useState(!1),
       [l, c] = k.useState(!1),
       [d, f] = k.useState(!1),
@@ -27889,296 +27888,296 @@ const gS = [
                   style: { padding: "48px", background: "white" },
                   children: i
                     ? s.jsxs("div", {
-                        style: { textAlign: "center", padding: "60px 0" },
-                        children: [
-                          s.jsx("div", {
-                            style: { fontSize: "64px", marginBottom: "24px" },
-                            children: "✅",
-                          }),
-                          s.jsx("h3", {
-                            style: {
-                              fontSize: "28px",
-                              fontWeight: "800",
-                              color: "var(--text-dark)",
-                              marginBottom: "16px",
-                            },
-                            children: "Message Sent!",
-                          }),
-                          s.jsx("p", {
-                            style: {
-                              color: "var(--text-muted)",
-                              fontSize: "17px",
-                            },
-                            children:
-                              "Thank you for reaching out. Our team will respond within 1 business day.",
-                          }),
-                          s.jsx("button", {
-                            onClick: () => a(!1),
-                            className: "btn-primary",
-                            style: { marginTop: "24px" },
-                            children: "Send Another Message",
-                          }),
-                        ],
-                      })
+                      style: { textAlign: "center", padding: "60px 0" },
+                      children: [
+                        s.jsx("div", {
+                          style: { fontSize: "64px", marginBottom: "24px" },
+                          children: "✅",
+                        }),
+                        s.jsx("h3", {
+                          style: {
+                            fontSize: "28px",
+                            fontWeight: "800",
+                            color: "var(--text-dark)",
+                            marginBottom: "16px",
+                          },
+                          children: "Message Sent!",
+                        }),
+                        s.jsx("p", {
+                          style: {
+                            color: "var(--text-muted)",
+                            fontSize: "17px",
+                          },
+                          children:
+                            "Thank you for reaching out. Our team will respond within 1 business day.",
+                        }),
+                        s.jsx("button", {
+                          onClick: () => a(!1),
+                          className: "btn-primary",
+                          style: { marginTop: "24px" },
+                          children: "Send Another Message",
+                        }),
+                      ],
+                    })
                     : s.jsxs(s.Fragment, {
-                        children: [
-                          s.jsx("h3", {
-                            style: {
-                              fontSize: "26px",
-                              fontWeight: "800",
-                              marginBottom: "8px",
-                            },
-                            children: "Send us a Message",
-                          }),
-                          s.jsx("p", {
-                            style: {
-                              color: "var(--text-muted)",
-                              marginBottom: "32px",
-                            },
-                            children:
-                              "Fill out the form and we'll get back to you within 24 hours.",
-                          }),
-                          d &&
+                      children: [
+                        s.jsx("h3", {
+                          style: {
+                            fontSize: "26px",
+                            fontWeight: "800",
+                            marginBottom: "8px",
+                          },
+                          children: "Send us a Message",
+                        }),
+                        s.jsx("p", {
+                          style: {
+                            color: "var(--text-muted)",
+                            marginBottom: "32px",
+                          },
+                          children:
+                            "Fill out the form and we'll get back to you within 24 hours.",
+                        }),
+                        d &&
+                        s.jsxs("div", {
+                          style: {
+                            background: "#fef2f2",
+                            border: "1px solid #fecaca",
+                            color: "#991b1b",
+                            padding: "12px 16px",
+                            borderRadius: "8px",
+                            marginBottom: "24px",
+                            fontSize: "14px",
+                          },
+                          children: [
+                            s.jsx("i", {
+                              className: "fas fa-exclamation-circle",
+                              style: { marginRight: "8px" },
+                            }),
+                            "Oops! Something went wrong. Please try again or email us directly at ",
+                            He.recipientEmail,
+                            ".",
+                          ],
+                        }),
+                        s.jsxs("form", {
+                          className: "contact-form",
+                          onSubmit: g,
+                          children: [
                             s.jsxs("div", {
-                              style: {
-                                background: "#fef2f2",
-                                border: "1px solid #fecaca",
-                                color: "#991b1b",
-                                padding: "12px 16px",
-                                borderRadius: "8px",
-                                marginBottom: "24px",
-                                fontSize: "14px",
-                              },
+                              className: "form-row",
                               children: [
-                                s.jsx("i", {
-                                  className: "fas fa-exclamation-circle",
-                                  style: { marginRight: "8px" },
+                                s.jsxs("div", {
+                                  children: [
+                                    s.jsx("label", {
+                                      style: {
+                                        fontSize: "13px",
+                                        fontWeight: "600",
+                                        color: "var(--text-muted)",
+                                        display: "block",
+                                        marginBottom: "6px",
+                                      },
+                                      children: "Full Name *",
+                                    }),
+                                    s.jsx("input", {
+                                      type: "text",
+                                      name: "name",
+                                      placeholder: "Your full name",
+                                      value: n.name,
+                                      onChange: m,
+                                      required: !0,
+                                    }),
+                                  ],
                                 }),
-                                "Oops! Something went wrong. Please try again or email us directly at ",
-                                He.recipientEmail,
-                                ".",
+                                s.jsxs("div", {
+                                  children: [
+                                    s.jsx("label", {
+                                      style: {
+                                        fontSize: "13px",
+                                        fontWeight: "600",
+                                        color: "var(--text-muted)",
+                                        display: "block",
+                                        marginBottom: "6px",
+                                      },
+                                      children: "Work Email *",
+                                    }),
+                                    s.jsx("input", {
+                                      type: "email",
+                                      name: "email",
+                                      placeholder: "you@company.com",
+                                      value: n.email,
+                                      onChange: m,
+                                      required: !0,
+                                    }),
+                                  ],
+                                }),
                               ],
                             }),
-                          s.jsxs("form", {
-                            className: "contact-form",
-                            onSubmit: g,
-                            children: [
-                              s.jsxs("div", {
-                                className: "form-row",
-                                children: [
-                                  s.jsxs("div", {
-                                    children: [
-                                      s.jsx("label", {
-                                        style: {
-                                          fontSize: "13px",
-                                          fontWeight: "600",
-                                          color: "var(--text-muted)",
-                                          display: "block",
-                                          marginBottom: "6px",
-                                        },
-                                        children: "Full Name *",
-                                      }),
-                                      s.jsx("input", {
-                                        type: "text",
-                                        name: "name",
-                                        placeholder: "Your full name",
-                                        value: n.name,
-                                        onChange: m,
-                                        required: !0,
-                                      }),
-                                    ],
+                            s.jsxs("div", {
+                              className: "form-row",
+                              children: [
+                                s.jsxs("div", {
+                                  children: [
+                                    s.jsx("label", {
+                                      style: {
+                                        fontSize: "13px",
+                                        fontWeight: "600",
+                                        color: "var(--text-muted)",
+                                        display: "block",
+                                        marginBottom: "6px",
+                                      },
+                                      children: "Company Name",
+                                    }),
+                                    s.jsx("input", {
+                                      type: "text",
+                                      name: "company",
+                                      placeholder: "Your organization",
+                                      value: n.company,
+                                      onChange: m,
+                                    }),
+                                  ],
+                                }),
+                                s.jsxs("div", {
+                                  children: [
+                                    s.jsx("label", {
+                                      style: {
+                                        fontSize: "13px",
+                                        fontWeight: "600",
+                                        color: "var(--text-muted)",
+                                        display: "block",
+                                        marginBottom: "6px",
+                                      },
+                                      children: "Phone Number",
+                                    }),
+                                    s.jsx("input", {
+                                      type: "tel",
+                                      name: "phone",
+                                      placeholder: "+91 XXXXX XXXXX",
+                                      value: n.phone,
+                                      onChange: m,
+                                    }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                            s.jsxs("div", {
+                              children: [
+                                s.jsx("label", {
+                                  style: {
+                                    fontSize: "13px",
+                                    fontWeight: "600",
+                                    color: "var(--text-muted)",
+                                    display: "block",
+                                    marginBottom: "6px",
+                                  },
+                                  children: "Subject *",
+                                }),
+                                s.jsxs("select", {
+                                  name: "subject",
+                                  value: n.subject,
+                                  onChange: m,
+                                  required: !0,
+                                  style: {
+                                    width: "100%",
+                                    padding: "16px",
+                                    borderRadius: "8px",
+                                    border: "1px solid var(--border)",
+                                    fontFamily: "inherit",
+                                    fontSize: "15px",
+                                    background: "white",
+                                    color: n.subject
+                                      ? "var(--text-dark)"
+                                      : "#94a3b8",
+                                  },
+                                  children: [
+                                    s.jsx("option", {
+                                      value: "",
+                                      disabled: !0,
+                                      children: "Select inquiry type",
+                                    }),
+                                    s.jsx("option", {
+                                      children: "Request a Product Demo",
+                                    }),
+                                    s.jsx("option", {
+                                      children: "Pricing & Licensing",
+                                    }),
+                                    s.jsx("option", {
+                                      children: "BFSI / Banking Solution",
+                                    }),
+                                    s.jsx("option", {
+                                      children: "Healthcare Solution",
+                                    }),
+                                    s.jsx("option", {
+                                      children: "Government / e-Governance",
+                                    }),
+                                    s.jsx("option", {
+                                      children: "Corporate Solution",
+                                    }),
+                                    s.jsx("option", {
+                                      children:
+                                        "Education / Research Repository",
+                                    }),
+                                    s.jsx("option", {
+                                      children: "Technical Support",
+                                    }),
+                                    s.jsx("option", {
+                                      children: "Partnership Inquiry",
+                                    }),
+                                    s.jsx("option", { children: "Other" }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                            s.jsxs("div", {
+                              children: [
+                                s.jsx("label", {
+                                  style: {
+                                    fontSize: "13px",
+                                    fontWeight: "600",
+                                    color: "var(--text-muted)",
+                                    display: "block",
+                                    marginBottom: "6px",
+                                  },
+                                  children: "Your Message *",
+                                }),
+                                s.jsx("textarea", {
+                                  name: "message",
+                                  placeholder:
+                                    "Tell us about your document management challenge...",
+                                  rows: "5",
+                                  value: n.message,
+                                  onChange: m,
+                                  required: !0,
+                                }),
+                              ],
+                            }),
+                            s.jsxs("button", {
+                              type: "submit",
+                              className: "btn-primary",
+                              disabled: l,
+                              style: {
+                                width: "100%",
+                                padding: "16px",
+                                fontSize: "16px",
+                                marginTop: "8px",
+                                opacity: l ? 0.7 : 1,
+                                cursor: l ? "wait" : "pointer",
+                              },
+                              children: [
+                                l
+                                  ? s.jsx("i", {
+                                    className: "fas fa-spinner fa-spin",
+                                    style: { marginRight: "10px" },
+                                  })
+                                  : s.jsx("i", {
+                                    className: "fas fa-paper-plane",
+                                    style: { marginRight: "10px" },
                                   }),
-                                  s.jsxs("div", {
-                                    children: [
-                                      s.jsx("label", {
-                                        style: {
-                                          fontSize: "13px",
-                                          fontWeight: "600",
-                                          color: "var(--text-muted)",
-                                          display: "block",
-                                          marginBottom: "6px",
-                                        },
-                                        children: "Work Email *",
-                                      }),
-                                      s.jsx("input", {
-                                        type: "email",
-                                        name: "email",
-                                        placeholder: "you@company.com",
-                                        value: n.email,
-                                        onChange: m,
-                                        required: !0,
-                                      }),
-                                    ],
-                                  }),
-                                ],
-                              }),
-                              s.jsxs("div", {
-                                className: "form-row",
-                                children: [
-                                  s.jsxs("div", {
-                                    children: [
-                                      s.jsx("label", {
-                                        style: {
-                                          fontSize: "13px",
-                                          fontWeight: "600",
-                                          color: "var(--text-muted)",
-                                          display: "block",
-                                          marginBottom: "6px",
-                                        },
-                                        children: "Company Name",
-                                      }),
-                                      s.jsx("input", {
-                                        type: "text",
-                                        name: "company",
-                                        placeholder: "Your organization",
-                                        value: n.company,
-                                        onChange: m,
-                                      }),
-                                    ],
-                                  }),
-                                  s.jsxs("div", {
-                                    children: [
-                                      s.jsx("label", {
-                                        style: {
-                                          fontSize: "13px",
-                                          fontWeight: "600",
-                                          color: "var(--text-muted)",
-                                          display: "block",
-                                          marginBottom: "6px",
-                                        },
-                                        children: "Phone Number",
-                                      }),
-                                      s.jsx("input", {
-                                        type: "tel",
-                                        name: "phone",
-                                        placeholder: "+91 XXXXX XXXXX",
-                                        value: n.phone,
-                                        onChange: m,
-                                      }),
-                                    ],
-                                  }),
-                                ],
-                              }),
-                              s.jsxs("div", {
-                                children: [
-                                  s.jsx("label", {
-                                    style: {
-                                      fontSize: "13px",
-                                      fontWeight: "600",
-                                      color: "var(--text-muted)",
-                                      display: "block",
-                                      marginBottom: "6px",
-                                    },
-                                    children: "Subject *",
-                                  }),
-                                  s.jsxs("select", {
-                                    name: "subject",
-                                    value: n.subject,
-                                    onChange: m,
-                                    required: !0,
-                                    style: {
-                                      width: "100%",
-                                      padding: "16px",
-                                      borderRadius: "8px",
-                                      border: "1px solid var(--border)",
-                                      fontFamily: "inherit",
-                                      fontSize: "15px",
-                                      background: "white",
-                                      color: n.subject
-                                        ? "var(--text-dark)"
-                                        : "#94a3b8",
-                                    },
-                                    children: [
-                                      s.jsx("option", {
-                                        value: "",
-                                        disabled: !0,
-                                        children: "Select inquiry type",
-                                      }),
-                                      s.jsx("option", {
-                                        children: "Request a Product Demo",
-                                      }),
-                                      s.jsx("option", {
-                                        children: "Pricing & Licensing",
-                                      }),
-                                      s.jsx("option", {
-                                        children: "BFSI / Banking Solution",
-                                      }),
-                                      s.jsx("option", {
-                                        children: "Healthcare Solution",
-                                      }),
-                                      s.jsx("option", {
-                                        children: "Government / e-Governance",
-                                      }),
-                                      s.jsx("option", {
-                                        children: "Corporate Solution",
-                                      }),
-                                      s.jsx("option", {
-                                        children:
-                                          "Education / Research Repository",
-                                      }),
-                                      s.jsx("option", {
-                                        children: "Technical Support",
-                                      }),
-                                      s.jsx("option", {
-                                        children: "Partnership Inquiry",
-                                      }),
-                                      s.jsx("option", { children: "Other" }),
-                                    ],
-                                  }),
-                                ],
-                              }),
-                              s.jsxs("div", {
-                                children: [
-                                  s.jsx("label", {
-                                    style: {
-                                      fontSize: "13px",
-                                      fontWeight: "600",
-                                      color: "var(--text-muted)",
-                                      display: "block",
-                                      marginBottom: "6px",
-                                    },
-                                    children: "Your Message *",
-                                  }),
-                                  s.jsx("textarea", {
-                                    name: "message",
-                                    placeholder:
-                                      "Tell us about your document management challenge...",
-                                    rows: "5",
-                                    value: n.message,
-                                    onChange: m,
-                                    required: !0,
-                                  }),
-                                ],
-                              }),
-                              s.jsxs("button", {
-                                type: "submit",
-                                className: "btn-primary",
-                                disabled: l,
-                                style: {
-                                  width: "100%",
-                                  padding: "16px",
-                                  fontSize: "16px",
-                                  marginTop: "8px",
-                                  opacity: l ? 0.7 : 1,
-                                  cursor: l ? "wait" : "pointer",
-                                },
-                                children: [
-                                  l
-                                    ? s.jsx("i", {
-                                        className: "fas fa-spinner fa-spin",
-                                        style: { marginRight: "10px" },
-                                      })
-                                    : s.jsx("i", {
-                                        className: "fas fa-paper-plane",
-                                        style: { marginRight: "10px" },
-                                      }),
-                                  l ? "Sending..." : "Send Message",
-                                ],
-                              }),
-                            ],
-                          }),
-                        ],
-                      }),
+                                l ? "Sending..." : "Send Message",
+                              ],
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
                 }),
                 s.jsxs("div", {
                   className: "reveal",
@@ -28809,17 +28808,17 @@ const gS = [
       window.scrollTo(0, 0);
     }, []);
     const [n, e] = k.useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        organization: "",
-        designation: "",
-        industry: "",
-        employees: "",
-        interest: "",
-        message: "",
-      }),
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      organization: "",
+      designation: "",
+      industry: "",
+      employees: "",
+      interest: "",
+      message: "",
+    }),
       [i, a] = k.useState(!1),
       [l, c] = k.useState(!1),
       [d, f] = k.useState(!1),
@@ -29272,464 +29271,464 @@ const gS = [
                 s.jsx("div", {
                   children: i
                     ? s.jsxs("div", {
-                        style: {
-                          background: "white",
-                          borderRadius: "24px",
-                          padding: "64px 48px",
-                          boxShadow: "0 20px 60px rgba(0,0,0,0.08)",
-                          border: "1px solid #e2e8f0",
-                          textAlign: "center",
-                        },
-                        children: [
-                          s.jsx("div", {
-                            style: {
-                              width: "80px",
-                              height: "80px",
-                              borderRadius: "50%",
-                              background:
-                                "linear-gradient(135deg, #1d63ed, #7c3aed)",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              fontSize: "34px",
-                              color: "white",
-                              margin: "0 auto 28px",
-                            },
-                            children: s.jsx("i", { className: "fas fa-check" }),
-                          }),
-                          s.jsx("h3", {
-                            style: {
-                              fontSize: "32px",
-                              fontWeight: "900",
-                              color: "#0f172a",
-                              marginBottom: "16px",
-                            },
-                            children: "Demo Request Sent!",
-                          }),
-                          s.jsxs("p", {
-                            style: {
-                              fontSize: "17px",
-                              color: "#64748b",
-                              lineHeight: "1.7",
-                              marginBottom: "12px",
-                            },
-                            children: [
-                              "Thank you, ",
-                              s.jsx("strong", {
-                                style: { color: "#0f172a" },
-                                children: n.firstName,
-                              }),
-                              "! Our team will reach out to ",
-                              s.jsx("strong", {
-                                style: { color: "#1d63ed" },
-                                children: n.email,
-                              }),
-                              " within 24 hours to schedule your personalized VSDOX demo.",
-                            ],
-                          }),
-                          s.jsx("p", {
-                            style: {
-                              fontSize: "15px",
-                              color: "#94a3b8",
-                              marginBottom: "40px",
-                            },
-                            children:
-                              "In the meantime, explore our case studies and solution pages.",
-                          }),
-                          s.jsxs("div", {
-                            style: {
-                              display: "flex",
-                              gap: "16px",
-                              justifyContent: "center",
-                              flexWrap: "wrap",
-                            },
-                            children: [
-                              s.jsx(ne, {
-                                to: "/case-studies",
-                                style: {
-                                  background: "#1d63ed",
-                                  color: "white",
-                                  padding: "14px 28px",
-                                  borderRadius: "10px",
-                                  textDecoration: "none",
-                                  fontWeight: "700",
-                                  fontSize: "15px",
-                                },
-                                children: "View Case Studies",
-                              }),
-                              s.jsx(ne, {
-                                to: "#",
-                                style: {
-                                  background: "#f1f5f9",
-                                  color: "#0f172a",
-                                  padding: "14px 28px",
-                                  borderRadius: "10px",
-                                  textDecoration: "none",
-                                  fontWeight: "700",
-                                  fontSize: "15px",
-                                },
-                                children: "Explore VSDOX",
-                              }),
-                            ],
-                          }),
-                        ],
-                      })
+                      style: {
+                        background: "white",
+                        borderRadius: "24px",
+                        padding: "64px 48px",
+                        boxShadow: "0 20px 60px rgba(0,0,0,0.08)",
+                        border: "1px solid #e2e8f0",
+                        textAlign: "center",
+                      },
+                      children: [
+                        s.jsx("div", {
+                          style: {
+                            width: "80px",
+                            height: "80px",
+                            borderRadius: "50%",
+                            background:
+                              "linear-gradient(135deg, #1d63ed, #7c3aed)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            fontSize: "34px",
+                            color: "white",
+                            margin: "0 auto 28px",
+                          },
+                          children: s.jsx("i", { className: "fas fa-check" }),
+                        }),
+                        s.jsx("h3", {
+                          style: {
+                            fontSize: "32px",
+                            fontWeight: "900",
+                            color: "#0f172a",
+                            marginBottom: "16px",
+                          },
+                          children: "Demo Request Sent!",
+                        }),
+                        s.jsxs("p", {
+                          style: {
+                            fontSize: "17px",
+                            color: "#64748b",
+                            lineHeight: "1.7",
+                            marginBottom: "12px",
+                          },
+                          children: [
+                            "Thank you, ",
+                            s.jsx("strong", {
+                              style: { color: "#0f172a" },
+                              children: n.firstName,
+                            }),
+                            "! Our team will reach out to ",
+                            s.jsx("strong", {
+                              style: { color: "#1d63ed" },
+                              children: n.email,
+                            }),
+                            " within 24 hours to schedule your personalized VSDOX demo.",
+                          ],
+                        }),
+                        s.jsx("p", {
+                          style: {
+                            fontSize: "15px",
+                            color: "#94a3b8",
+                            marginBottom: "40px",
+                          },
+                          children:
+                            "In the meantime, explore our case studies and solution pages.",
+                        }),
+                        s.jsxs("div", {
+                          style: {
+                            display: "flex",
+                            gap: "16px",
+                            justifyContent: "center",
+                            flexWrap: "wrap",
+                          },
+                          children: [
+                            s.jsx(ne, {
+                              to: "/case-studies",
+                              style: {
+                                background: "#1d63ed",
+                                color: "white",
+                                padding: "14px 28px",
+                                borderRadius: "10px",
+                                textDecoration: "none",
+                                fontWeight: "700",
+                                fontSize: "15px",
+                              },
+                              children: "View Case Studies",
+                            }),
+                            s.jsx(ne, {
+                              to: "#",
+                              style: {
+                                background: "#f1f5f9",
+                                color: "#0f172a",
+                                padding: "14px 28px",
+                                borderRadius: "10px",
+                                textDecoration: "none",
+                                fontWeight: "700",
+                                fontSize: "15px",
+                              },
+                              children: "Explore VSDOX",
+                            }),
+                          ],
+                        }),
+                      ],
+                    })
                     : s.jsxs("div", {
-                        style: {
-                          background: "white",
-                          borderRadius: "24px",
-                          padding: "48px",
-                          boxShadow: "0 20px 60px rgba(0,0,0,0.08)",
-                          border: "1px solid #e2e8f0",
-                        },
-                        children: [
-                          s.jsx("h3", {
-                            style: {
-                              fontSize: "28px",
-                              fontWeight: "900",
-                              color: "#0f172a",
-                              marginBottom: "8px",
-                            },
-                            children: "Book Your Free Demo",
-                          }),
-                          s.jsx("p", {
-                            style: {
-                              fontSize: "15px",
-                              color: "#94a3b8",
-                              marginBottom: "32px",
-                            },
-                            children:
-                              "Fill in your details and our team will reach out within 24 hours.",
-                          }),
-                          d &&
+                      style: {
+                        background: "white",
+                        borderRadius: "24px",
+                        padding: "48px",
+                        boxShadow: "0 20px 60px rgba(0,0,0,0.08)",
+                        border: "1px solid #e2e8f0",
+                      },
+                      children: [
+                        s.jsx("h3", {
+                          style: {
+                            fontSize: "28px",
+                            fontWeight: "900",
+                            color: "#0f172a",
+                            marginBottom: "8px",
+                          },
+                          children: "Book Your Free Demo",
+                        }),
+                        s.jsx("p", {
+                          style: {
+                            fontSize: "15px",
+                            color: "#94a3b8",
+                            marginBottom: "32px",
+                          },
+                          children:
+                            "Fill in your details and our team will reach out within 24 hours.",
+                        }),
+                        d &&
+                        s.jsxs("div", {
+                          style: {
+                            background: "#fef2f2",
+                            border: "1px solid #fecaca",
+                            color: "#991b1b",
+                            padding: "12px 16px",
+                            borderRadius: "8px",
+                            marginBottom: "24px",
+                            fontSize: "14px",
+                          },
+                          children: [
+                            s.jsx("i", {
+                              className: "fas fa-exclamation-circle",
+                              style: { marginRight: "8px" },
+                            }),
+                            "Oops! Something went wrong. Please try again or email us directly at ",
+                            He.recipientEmail,
+                            ".",
+                          ],
+                        }),
+                        s.jsxs("form", {
+                          onSubmit: g,
+                          style: {
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "20px",
+                          },
+                          children: [
                             s.jsxs("div", {
                               style: {
-                                background: "#fef2f2",
-                                border: "1px solid #fecaca",
-                                color: "#991b1b",
-                                padding: "12px 16px",
-                                borderRadius: "8px",
-                                marginBottom: "24px",
-                                fontSize: "14px",
+                                display: "grid",
+                                gridTemplateColumns: "1fr 1fr",
+                                gap: "16px",
+                              },
+                              children: [
+                                s.jsxs("div", {
+                                  children: [
+                                    s.jsx("label", {
+                                      style: Rn,
+                                      children: "First Name *",
+                                    }),
+                                    s.jsx("input", {
+                                      name: "firstName",
+                                      value: n.firstName,
+                                      onChange: m,
+                                      required: !0,
+                                      style: Pn,
+                                      placeholder: "Rajesh",
+                                    }),
+                                  ],
+                                }),
+                                s.jsxs("div", {
+                                  children: [
+                                    s.jsx("label", {
+                                      style: Rn,
+                                      children: "Last Name *",
+                                    }),
+                                    s.jsx("input", {
+                                      name: "lastName",
+                                      value: n.lastName,
+                                      onChange: m,
+                                      required: !0,
+                                      style: Pn,
+                                      placeholder: "Kumar",
+                                    }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                            s.jsxs("div", {
+                              style: {
+                                display: "grid",
+                                gridTemplateColumns: "1fr 1fr",
+                                gap: "16px",
+                              },
+                              children: [
+                                s.jsxs("div", {
+                                  children: [
+                                    s.jsx("label", {
+                                      style: Rn,
+                                      children: "Work Email *",
+                                    }),
+                                    s.jsx("input", {
+                                      name: "email",
+                                      type: "email",
+                                      value: n.email,
+                                      onChange: m,
+                                      required: !0,
+                                      style: Pn,
+                                      placeholder: "rajesh@company.com",
+                                    }),
+                                  ],
+                                }),
+                                s.jsxs("div", {
+                                  children: [
+                                    s.jsx("label", {
+                                      style: Rn,
+                                      children: "Phone Number *",
+                                    }),
+                                    s.jsx("input", {
+                                      name: "phone",
+                                      type: "tel",
+                                      value: n.phone,
+                                      onChange: m,
+                                      required: !0,
+                                      style: Pn,
+                                      placeholder: "+91 98765 43210",
+                                    }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                            s.jsxs("div", {
+                              style: {
+                                display: "grid",
+                                gridTemplateColumns: "1fr 1fr",
+                                gap: "16px",
+                              },
+                              children: [
+                                s.jsxs("div", {
+                                  children: [
+                                    s.jsx("label", {
+                                      style: Rn,
+                                      children: "Organization *",
+                                    }),
+                                    s.jsx("input", {
+                                      name: "organization",
+                                      value: n.organization,
+                                      onChange: m,
+                                      required: !0,
+                                      style: Pn,
+                                      placeholder: "Organization name",
+                                    }),
+                                  ],
+                                }),
+                                s.jsxs("div", {
+                                  children: [
+                                    s.jsx("label", {
+                                      style: Rn,
+                                      children: "Your Designation",
+                                    }),
+                                    s.jsx("input", {
+                                      name: "designation",
+                                      value: n.designation,
+                                      onChange: m,
+                                      style: Pn,
+                                      placeholder: "e.g. IT Manager",
+                                    }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                            s.jsxs("div", {
+                              style: {
+                                display: "grid",
+                                gridTemplateColumns: "1fr 1fr",
+                                gap: "16px",
+                              },
+                              children: [
+                                s.jsxs("div", {
+                                  children: [
+                                    s.jsx("label", {
+                                      style: Rn,
+                                      children: "Industry *",
+                                    }),
+                                    s.jsxs("select", {
+                                      name: "industry",
+                                      value: n.industry,
+                                      onChange: m,
+                                      required: !0,
+                                      style: Pn,
+                                      children: [
+                                        s.jsx("option", {
+                                          value: "",
+                                          children: "Select industry",
+                                        }),
+                                        x.map((b, _) =>
+                                          s.jsx(
+                                            "option",
+                                            { value: b, children: b },
+                                            _,
+                                          ),
+                                        ),
+                                      ],
+                                    }),
+                                  ],
+                                }),
+                                s.jsxs("div", {
+                                  children: [
+                                    s.jsx("label", {
+                                      style: Rn,
+                                      children: "No. of Employees",
+                                    }),
+                                    s.jsxs("select", {
+                                      name: "employees",
+                                      value: n.employees,
+                                      onChange: m,
+                                      style: Pn,
+                                      children: [
+                                        s.jsx("option", {
+                                          value: "",
+                                          children: "Select range",
+                                        }),
+                                        w.map((b, _) =>
+                                          s.jsx(
+                                            "option",
+                                            { value: b, children: b },
+                                            _,
+                                          ),
+                                        ),
+                                      ],
+                                    }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                            s.jsxs("div", {
+                              children: [
+                                s.jsx("label", {
+                                  style: Rn,
+                                  children: "Area of Interest *",
+                                }),
+                                s.jsxs("select", {
+                                  name: "interest",
+                                  value: n.interest,
+                                  onChange: m,
+                                  required: !0,
+                                  style: Pn,
+                                  children: [
+                                    s.jsx("option", {
+                                      value: "",
+                                      children:
+                                        "Select what you'd like to see",
+                                    }),
+                                    S.map((b, _) =>
+                                      s.jsx(
+                                        "option",
+                                        { value: b, children: b },
+                                        _,
+                                      ),
+                                    ),
+                                  ],
+                                }),
+                              ],
+                            }),
+                            s.jsxs("div", {
+                              children: [
+                                s.jsx("label", {
+                                  style: Rn,
+                                  children: "Additional Requirements",
+                                }),
+                                s.jsx("textarea", {
+                                  name: "message",
+                                  value: n.message,
+                                  onChange: m,
+                                  rows: 4,
+                                  style: {
+                                    ...Pn,
+                                    resize: "vertical",
+                                    minHeight: "100px",
+                                  },
+                                  placeholder:
+                                    "Tell us about your current document management challenges or specific requirements...",
+                                }),
+                              ],
+                            }),
+                            s.jsxs("button", {
+                              type: "submit",
+                              disabled: l,
+                              style: {
+                                background:
+                                  "linear-gradient(135deg, #1d63ed 0%, #7c3aed 100%)",
+                                color: "white",
+                                padding: "18px 32px",
+                                border: "none",
+                                borderRadius: "12px",
+                                fontSize: "16px",
+                                fontWeight: "800",
+                                cursor: l ? "wait" : "pointer",
+                                transition: "all 0.3s ease",
+                                letterSpacing: "0.3px",
+                                opacity: l ? 0.7 : 1,
+                              },
+                              onMouseEnter: (b) => {
+                                l ||
+                                  ((b.currentTarget.style.transform =
+                                    "translateY(-2px)"),
+                                    (b.currentTarget.style.boxShadow =
+                                      "0 12px 30px rgba(29,99,237,0.4)"));
+                              },
+                              onMouseLeave: (b) => {
+                                l ||
+                                  ((b.currentTarget.style.transform =
+                                    "translateY(0)"),
+                                    (b.currentTarget.style.boxShadow = "none"));
+                              },
+                              children: [
+                                l
+                                  ? s.jsx("i", {
+                                    className: "fas fa-spinner fa-spin",
+                                    style: { marginRight: "10px" },
+                                  })
+                                  : s.jsx("i", {
+                                    className: "fas fa-calendar-check",
+                                    style: { marginRight: "10px" },
+                                  }),
+                                l ? "Sending..." : "Request My Free Demo",
+                              ],
+                            }),
+                            s.jsxs("p", {
+                              style: {
+                                fontSize: "13px",
+                                color: "#94a3b8",
+                                textAlign: "center",
+                                margin: 0,
                               },
                               children: [
                                 s.jsx("i", {
-                                  className: "fas fa-exclamation-circle",
-                                  style: { marginRight: "8px" },
+                                  className: "fas fa-lock",
+                                  style: { marginRight: "6px" },
                                 }),
-                                "Oops! Something went wrong. Please try again or email us directly at ",
-                                He.recipientEmail,
-                                ".",
+                                "Your data is secure and will never be shared with third parties.",
                               ],
                             }),
-                          s.jsxs("form", {
-                            onSubmit: g,
-                            style: {
-                              display: "flex",
-                              flexDirection: "column",
-                              gap: "20px",
-                            },
-                            children: [
-                              s.jsxs("div", {
-                                style: {
-                                  display: "grid",
-                                  gridTemplateColumns: "1fr 1fr",
-                                  gap: "16px",
-                                },
-                                children: [
-                                  s.jsxs("div", {
-                                    children: [
-                                      s.jsx("label", {
-                                        style: Rn,
-                                        children: "First Name *",
-                                      }),
-                                      s.jsx("input", {
-                                        name: "firstName",
-                                        value: n.firstName,
-                                        onChange: m,
-                                        required: !0,
-                                        style: Pn,
-                                        placeholder: "Rajesh",
-                                      }),
-                                    ],
-                                  }),
-                                  s.jsxs("div", {
-                                    children: [
-                                      s.jsx("label", {
-                                        style: Rn,
-                                        children: "Last Name *",
-                                      }),
-                                      s.jsx("input", {
-                                        name: "lastName",
-                                        value: n.lastName,
-                                        onChange: m,
-                                        required: !0,
-                                        style: Pn,
-                                        placeholder: "Kumar",
-                                      }),
-                                    ],
-                                  }),
-                                ],
-                              }),
-                              s.jsxs("div", {
-                                style: {
-                                  display: "grid",
-                                  gridTemplateColumns: "1fr 1fr",
-                                  gap: "16px",
-                                },
-                                children: [
-                                  s.jsxs("div", {
-                                    children: [
-                                      s.jsx("label", {
-                                        style: Rn,
-                                        children: "Work Email *",
-                                      }),
-                                      s.jsx("input", {
-                                        name: "email",
-                                        type: "email",
-                                        value: n.email,
-                                        onChange: m,
-                                        required: !0,
-                                        style: Pn,
-                                        placeholder: "rajesh@company.com",
-                                      }),
-                                    ],
-                                  }),
-                                  s.jsxs("div", {
-                                    children: [
-                                      s.jsx("label", {
-                                        style: Rn,
-                                        children: "Phone Number *",
-                                      }),
-                                      s.jsx("input", {
-                                        name: "phone",
-                                        type: "tel",
-                                        value: n.phone,
-                                        onChange: m,
-                                        required: !0,
-                                        style: Pn,
-                                        placeholder: "+91 98765 43210",
-                                      }),
-                                    ],
-                                  }),
-                                ],
-                              }),
-                              s.jsxs("div", {
-                                style: {
-                                  display: "grid",
-                                  gridTemplateColumns: "1fr 1fr",
-                                  gap: "16px",
-                                },
-                                children: [
-                                  s.jsxs("div", {
-                                    children: [
-                                      s.jsx("label", {
-                                        style: Rn,
-                                        children: "Organization *",
-                                      }),
-                                      s.jsx("input", {
-                                        name: "organization",
-                                        value: n.organization,
-                                        onChange: m,
-                                        required: !0,
-                                        style: Pn,
-                                        placeholder: "Organization name",
-                                      }),
-                                    ],
-                                  }),
-                                  s.jsxs("div", {
-                                    children: [
-                                      s.jsx("label", {
-                                        style: Rn,
-                                        children: "Your Designation",
-                                      }),
-                                      s.jsx("input", {
-                                        name: "designation",
-                                        value: n.designation,
-                                        onChange: m,
-                                        style: Pn,
-                                        placeholder: "e.g. IT Manager",
-                                      }),
-                                    ],
-                                  }),
-                                ],
-                              }),
-                              s.jsxs("div", {
-                                style: {
-                                  display: "grid",
-                                  gridTemplateColumns: "1fr 1fr",
-                                  gap: "16px",
-                                },
-                                children: [
-                                  s.jsxs("div", {
-                                    children: [
-                                      s.jsx("label", {
-                                        style: Rn,
-                                        children: "Industry *",
-                                      }),
-                                      s.jsxs("select", {
-                                        name: "industry",
-                                        value: n.industry,
-                                        onChange: m,
-                                        required: !0,
-                                        style: Pn,
-                                        children: [
-                                          s.jsx("option", {
-                                            value: "",
-                                            children: "Select industry",
-                                          }),
-                                          x.map((b, _) =>
-                                            s.jsx(
-                                              "option",
-                                              { value: b, children: b },
-                                              _,
-                                            ),
-                                          ),
-                                        ],
-                                      }),
-                                    ],
-                                  }),
-                                  s.jsxs("div", {
-                                    children: [
-                                      s.jsx("label", {
-                                        style: Rn,
-                                        children: "No. of Employees",
-                                      }),
-                                      s.jsxs("select", {
-                                        name: "employees",
-                                        value: n.employees,
-                                        onChange: m,
-                                        style: Pn,
-                                        children: [
-                                          s.jsx("option", {
-                                            value: "",
-                                            children: "Select range",
-                                          }),
-                                          w.map((b, _) =>
-                                            s.jsx(
-                                              "option",
-                                              { value: b, children: b },
-                                              _,
-                                            ),
-                                          ),
-                                        ],
-                                      }),
-                                    ],
-                                  }),
-                                ],
-                              }),
-                              s.jsxs("div", {
-                                children: [
-                                  s.jsx("label", {
-                                    style: Rn,
-                                    children: "Area of Interest *",
-                                  }),
-                                  s.jsxs("select", {
-                                    name: "interest",
-                                    value: n.interest,
-                                    onChange: m,
-                                    required: !0,
-                                    style: Pn,
-                                    children: [
-                                      s.jsx("option", {
-                                        value: "",
-                                        children:
-                                          "Select what you'd like to see",
-                                      }),
-                                      S.map((b, _) =>
-                                        s.jsx(
-                                          "option",
-                                          { value: b, children: b },
-                                          _,
-                                        ),
-                                      ),
-                                    ],
-                                  }),
-                                ],
-                              }),
-                              s.jsxs("div", {
-                                children: [
-                                  s.jsx("label", {
-                                    style: Rn,
-                                    children: "Additional Requirements",
-                                  }),
-                                  s.jsx("textarea", {
-                                    name: "message",
-                                    value: n.message,
-                                    onChange: m,
-                                    rows: 4,
-                                    style: {
-                                      ...Pn,
-                                      resize: "vertical",
-                                      minHeight: "100px",
-                                    },
-                                    placeholder:
-                                      "Tell us about your current document management challenges or specific requirements...",
-                                  }),
-                                ],
-                              }),
-                              s.jsxs("button", {
-                                type: "submit",
-                                disabled: l,
-                                style: {
-                                  background:
-                                    "linear-gradient(135deg, #1d63ed 0%, #7c3aed 100%)",
-                                  color: "white",
-                                  padding: "18px 32px",
-                                  border: "none",
-                                  borderRadius: "12px",
-                                  fontSize: "16px",
-                                  fontWeight: "800",
-                                  cursor: l ? "wait" : "pointer",
-                                  transition: "all 0.3s ease",
-                                  letterSpacing: "0.3px",
-                                  opacity: l ? 0.7 : 1,
-                                },
-                                onMouseEnter: (b) => {
-                                  l ||
-                                    ((b.currentTarget.style.transform =
-                                      "translateY(-2px)"),
-                                    (b.currentTarget.style.boxShadow =
-                                      "0 12px 30px rgba(29,99,237,0.4)"));
-                                },
-                                onMouseLeave: (b) => {
-                                  l ||
-                                    ((b.currentTarget.style.transform =
-                                      "translateY(0)"),
-                                    (b.currentTarget.style.boxShadow = "none"));
-                                },
-                                children: [
-                                  l
-                                    ? s.jsx("i", {
-                                        className: "fas fa-spinner fa-spin",
-                                        style: { marginRight: "10px" },
-                                      })
-                                    : s.jsx("i", {
-                                        className: "fas fa-calendar-check",
-                                        style: { marginRight: "10px" },
-                                      }),
-                                  l ? "Sending..." : "Request My Free Demo",
-                                ],
-                              }),
-                              s.jsxs("p", {
-                                style: {
-                                  fontSize: "13px",
-                                  color: "#94a3b8",
-                                  textAlign: "center",
-                                  margin: 0,
-                                },
-                                children: [
-                                  s.jsx("i", {
-                                    className: "fas fa-lock",
-                                    style: { marginRight: "6px" },
-                                  }),
-                                  "Your data is secure and will never be shared with third parties.",
-                                ],
-                              }),
-                            ],
-                          }),
-                        ],
-                      }),
+                          ],
+                        }),
+                      ],
+                    }),
                 }),
               ],
             }),
@@ -30060,21 +30059,21 @@ const gS = [
           className: "max-container reveal",
           children: [
             n &&
-              s.jsx("span", {
-                style: {
-                  display: "inline-block",
-                  background: "rgba(29,99,237,0.18)",
-                  color: "#60a5fa",
-                  fontSize: "12px",
-                  fontWeight: "700",
-                  letterSpacing: "0.12em",
-                  padding: "6px 14px",
-                  borderRadius: "100px",
-                  marginBottom: "20px",
-                  border: "1px solid rgba(96,165,250,0.3)",
-                },
-                children: n,
-              }),
+            s.jsx("span", {
+              style: {
+                display: "inline-block",
+                background: "rgba(29,99,237,0.18)",
+                color: "#60a5fa",
+                fontSize: "12px",
+                fontWeight: "700",
+                letterSpacing: "0.12em",
+                padding: "6px 14px",
+                borderRadius: "100px",
+                marginBottom: "20px",
+                border: "1px solid rgba(96,165,250,0.3)",
+              },
+              children: n,
+            }),
             s.jsx("h1", {
               style: {
                 fontSize: "clamp(30px, 4vw, 56px)",
@@ -30303,7 +30302,7 @@ const gS = [
           (console.error("Login attempt failed:", me),
             f(
               me.message ||
-                "Login failed. Check your credentials and environment variables.",
+              "Login failed. Check your credentials and environment variables.",
             ));
         } finally {
           g(!1);
@@ -30383,203 +30382,203 @@ const gS = [
               ],
             }),
             y === "login" &&
-              s.jsxs("div", {
-                className: "admin-login-header",
+            s.jsxs("div", {
+              className: "admin-login-header",
+              children: [
+                s.jsx("img", {
+                  src: sl,
+                  alt: "VSDOX – Admin Portal | Enterprise Content Management",
+                  className: "admin-login-logo",
+                }),
+                s.jsx("h1", { children: "Admin Portal Login" }),
+                s.jsx("p", {
+                  children:
+                    "Secure access to your VSDOX administration services",
+                }),
+              ],
+            }),
+            y === "login"
+              ? s.jsxs(s.Fragment, {
                 children: [
-                  s.jsx("img", {
-                    src: sl,
-                    alt: "VSDOX – Admin Portal | Enterprise Content Management",
-                    className: "admin-login-logo",
+                  d &&
+                  s.jsxs("div", {
+                    className: "admin-login-error",
+                    children: [s.jsx("span", { children: "!" }), d],
                   }),
-                  s.jsx("h1", { children: "Admin Portal Login" }),
+                  s.jsxs("form", {
+                    onSubmit: Ne,
+                    className: "admin-login-form",
+                    children: [
+                      s.jsxs("div", {
+                        children: [
+                          s.jsx("label", { children: "Email" }),
+                          s.jsx("input", {
+                            type: "email",
+                            placeholder: be,
+                            value: n,
+                            onChange: (ae) => e(ae.target.value),
+                            required: !0,
+                          }),
+                        ],
+                      }),
+                      s.jsxs("div", {
+                        children: [
+                          s.jsx("label", { children: "Password" }),
+                          s.jsxs("div", {
+                            className: "admin-login-password-wrap",
+                            children: [
+                              s.jsx("input", {
+                                type: l ? "text" : "password",
+                                placeholder: "........",
+                                value: i,
+                                onChange: (ae) => a(ae.target.value),
+                                required: !0,
+                              }),
+                              s.jsx("button", {
+                                type: "button",
+                                onClick: () => c((ae) => !ae),
+                                className: "admin-login-password-toggle",
+                                children: s.jsx("i", {
+                                  className: `fas ${l ? "fa-eye-slash" : "fa-eye"}`,
+                                  "aria-hidden": "true",
+                                }),
+                              }),
+                            ],
+                          }),
+                        ],
+                      }),
+                      s.jsx("button", {
+                        type: "submit",
+                        disabled: m,
+                        className: "admin-login-submit",
+                        children: m ? "Signing in..." : "Sign In",
+                      }),
+                    ],
+                  }),
                   s.jsx("p", {
+                    className: "admin-login-helper",
+                    children: s.jsx("button", {
+                      type: "button",
+                      className: "admin-login-link",
+                      onClick: () => {
+                        (x("forgot"), f(""), X(""));
+                      },
+                      children: "Forgot password?",
+                    }),
+                  }),
+                ],
+              })
+              : s.jsxs("div", {
+                className: "admin-login-forgot",
+                children: [
+                  s.jsx("p", {
+                    className: "admin-login-forgot-title",
+                    children: "Reset your password",
+                  }),
+                  s.jsx("p", {
+                    className: "admin-login-forgot-text",
                     children:
-                      "Secure access to your VSDOX administration services",
+                      "Enter the admin email to receive a temporary reset token, then update your password below.",
+                  }),
+                  B &&
+                  s.jsx("div", {
+                    className: "admin-login-info",
+                    children: B,
+                  }),
+                  s.jsxs("div", {
+                    className: "admin-login-forgot-grid",
+                    children: [
+                      s.jsxs("div", {
+                        children: [
+                          s.jsx("label", { children: "Email" }),
+                          s.jsx("input", {
+                            type: "email",
+                            value: w,
+                            onChange: (ae) => S(ae.target.value),
+                            placeholder: be,
+                            autoComplete: "off",
+                          }),
+                        ],
+                      }),
+                      s.jsxs("div", {
+                        children: [
+                          s.jsx("label", { children: "Reset token" }),
+                          s.jsx("input", {
+                            type: "text",
+                            value: N,
+                            onChange: (ae) => b(ae.target.value),
+                            placeholder: "Copy the token from email",
+                            autoComplete: "off",
+                          }),
+                        ],
+                      }),
+                    ],
+                  }),
+                  s.jsx("div", {
+                    className: "admin-login-forgot-row",
+                    children: s.jsx("button", {
+                      type: "button",
+                      className:
+                        "admin-login-submit admin-login-submit-ghost",
+                      onClick: Z,
+                      disabled: K,
+                      children: K
+                        ? "Requesting token..."
+                        : "Send reset token",
+                    }),
+                  }),
+                  s.jsxs("div", {
+                    className: "admin-login-forgot-grid",
+                    children: [
+                      s.jsxs("div", {
+                        children: [
+                          s.jsx("label", { children: "New password" }),
+                          s.jsx("input", {
+                            type: "password",
+                            value: _,
+                            onChange: (ae) => O(ae.target.value),
+                            placeholder: "At least 8 characters",
+                            autoComplete: "off",
+                          }),
+                        ],
+                      }),
+                      s.jsxs("div", {
+                        children: [
+                          s.jsx("label", { children: "Confirm password" }),
+                          s.jsx("input", {
+                            type: "password",
+                            value: D,
+                            onChange: (ae) => L(ae.target.value),
+                            placeholder: "Repeat new password",
+                            autoComplete: "off",
+                          }),
+                        ],
+                      }),
+                    ],
+                  }),
+                  s.jsx("div", {
+                    className: "admin-login-forgot-row",
+                    children: s.jsx("button", {
+                      type: "button",
+                      className: "admin-login-submit",
+                      onClick: Ae,
+                      disabled: xe,
+                      children: xe ? "Resetting..." : "Reset password",
+                    }),
+                  }),
+                  s.jsx("p", {
+                    className: "admin-login-helper",
+                    children: s.jsx("button", {
+                      type: "button",
+                      className: "admin-login-link",
+                      onClick: () => {
+                        (x("login"), X(""));
+                      },
+                      children: "Back to sign in",
+                    }),
                   }),
                 ],
               }),
-            y === "login"
-              ? s.jsxs(s.Fragment, {
-                  children: [
-                    d &&
-                      s.jsxs("div", {
-                        className: "admin-login-error",
-                        children: [s.jsx("span", { children: "!" }), d],
-                      }),
-                    s.jsxs("form", {
-                      onSubmit: Ne,
-                      className: "admin-login-form",
-                      children: [
-                        s.jsxs("div", {
-                          children: [
-                            s.jsx("label", { children: "Email" }),
-                            s.jsx("input", {
-                              type: "email",
-                              placeholder: be,
-                              value: n,
-                              onChange: (ae) => e(ae.target.value),
-                              required: !0,
-                            }),
-                          ],
-                        }),
-                        s.jsxs("div", {
-                          children: [
-                            s.jsx("label", { children: "Password" }),
-                            s.jsxs("div", {
-                              className: "admin-login-password-wrap",
-                              children: [
-                                s.jsx("input", {
-                                  type: l ? "text" : "password",
-                                  placeholder: "........",
-                                  value: i,
-                                  onChange: (ae) => a(ae.target.value),
-                                  required: !0,
-                                }),
-                                s.jsx("button", {
-                                  type: "button",
-                                  onClick: () => c((ae) => !ae),
-                                  className: "admin-login-password-toggle",
-                                  children: s.jsx("i", {
-                                    className: `fas ${l ? "fa-eye-slash" : "fa-eye"}`,
-                                    "aria-hidden": "true",
-                                  }),
-                                }),
-                              ],
-                            }),
-                          ],
-                        }),
-                        s.jsx("button", {
-                          type: "submit",
-                          disabled: m,
-                          className: "admin-login-submit",
-                          children: m ? "Signing in..." : "Sign In",
-                        }),
-                      ],
-                    }),
-                    s.jsx("p", {
-                      className: "admin-login-helper",
-                      children: s.jsx("button", {
-                        type: "button",
-                        className: "admin-login-link",
-                        onClick: () => {
-                          (x("forgot"), f(""), X(""));
-                        },
-                        children: "Forgot password?",
-                      }),
-                    }),
-                  ],
-                })
-              : s.jsxs("div", {
-                  className: "admin-login-forgot",
-                  children: [
-                    s.jsx("p", {
-                      className: "admin-login-forgot-title",
-                      children: "Reset your password",
-                    }),
-                    s.jsx("p", {
-                      className: "admin-login-forgot-text",
-                      children:
-                        "Enter the admin email to receive a temporary reset token, then update your password below.",
-                    }),
-                    B &&
-                      s.jsx("div", {
-                        className: "admin-login-info",
-                        children: B,
-                      }),
-                    s.jsxs("div", {
-                      className: "admin-login-forgot-grid",
-                      children: [
-                        s.jsxs("div", {
-                          children: [
-                            s.jsx("label", { children: "Email" }),
-                            s.jsx("input", {
-                              type: "email",
-                              value: w,
-                              onChange: (ae) => S(ae.target.value),
-                              placeholder: be,
-                              autoComplete: "off",
-                            }),
-                          ],
-                        }),
-                        s.jsxs("div", {
-                          children: [
-                            s.jsx("label", { children: "Reset token" }),
-                            s.jsx("input", {
-                              type: "text",
-                              value: N,
-                              onChange: (ae) => b(ae.target.value),
-                              placeholder: "Copy the token from email",
-                              autoComplete: "off",
-                            }),
-                          ],
-                        }),
-                      ],
-                    }),
-                    s.jsx("div", {
-                      className: "admin-login-forgot-row",
-                      children: s.jsx("button", {
-                        type: "button",
-                        className:
-                          "admin-login-submit admin-login-submit-ghost",
-                        onClick: Z,
-                        disabled: K,
-                        children: K
-                          ? "Requesting token..."
-                          : "Send reset token",
-                      }),
-                    }),
-                    s.jsxs("div", {
-                      className: "admin-login-forgot-grid",
-                      children: [
-                        s.jsxs("div", {
-                          children: [
-                            s.jsx("label", { children: "New password" }),
-                            s.jsx("input", {
-                              type: "password",
-                              value: _,
-                              onChange: (ae) => O(ae.target.value),
-                              placeholder: "At least 8 characters",
-                              autoComplete: "off",
-                            }),
-                          ],
-                        }),
-                        s.jsxs("div", {
-                          children: [
-                            s.jsx("label", { children: "Confirm password" }),
-                            s.jsx("input", {
-                              type: "password",
-                              value: D,
-                              onChange: (ae) => L(ae.target.value),
-                              placeholder: "Repeat new password",
-                              autoComplete: "off",
-                            }),
-                          ],
-                        }),
-                      ],
-                    }),
-                    s.jsx("div", {
-                      className: "admin-login-forgot-row",
-                      children: s.jsx("button", {
-                        type: "button",
-                        className: "admin-login-submit",
-                        onClick: Ae,
-                        disabled: xe,
-                        children: xe ? "Resetting..." : "Reset password",
-                      }),
-                    }),
-                    s.jsx("p", {
-                      className: "admin-login-helper",
-                      children: s.jsx("button", {
-                        type: "button",
-                        className: "admin-login-link",
-                        onClick: () => {
-                          (x("login"), X(""));
-                        },
-                        children: "Back to sign in",
-                      }),
-                    }),
-                  ],
-                }),
             s.jsx("p", {
               className: "admin-login-footer",
               children: "VSDox Admin | Authorised access only",
@@ -30663,7 +30662,7 @@ function Te(n, e) {
   let i = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : Go;
   hp && hp(n, null);
   let a = e.length;
-  for (; a--; ) {
+  for (; a--;) {
     let l = e[a];
     if (typeof l == "string") {
       const c = i(l);
@@ -30689,7 +30688,7 @@ function In(n) {
   return e;
 }
 function Ws(n, e) {
-  for (; n !== null; ) {
+  for (; n !== null;) {
     const a = $S(n, e);
     if (a) {
       if (a.get) return It(a.get);
@@ -30703,126 +30702,126 @@ function Ws(n, e) {
   return i;
 }
 const pp = Pt([
-    "a",
-    "abbr",
-    "acronym",
-    "address",
-    "area",
-    "article",
-    "aside",
-    "audio",
-    "b",
-    "bdi",
-    "bdo",
-    "big",
-    "blink",
-    "blockquote",
-    "body",
-    "br",
-    "button",
-    "canvas",
-    "caption",
-    "center",
-    "cite",
-    "code",
-    "col",
-    "colgroup",
-    "content",
-    "data",
-    "datalist",
-    "dd",
-    "decorator",
-    "del",
-    "details",
-    "dfn",
-    "dialog",
-    "dir",
-    "div",
-    "dl",
-    "dt",
-    "element",
-    "em",
-    "fieldset",
-    "figcaption",
-    "figure",
-    "font",
-    "footer",
-    "form",
-    "h1",
-    "h2",
-    "h3",
-    "h4",
-    "h5",
-    "h6",
-    "head",
-    "header",
-    "hgroup",
-    "hr",
-    "html",
-    "i",
-    "img",
-    "input",
-    "ins",
-    "kbd",
-    "label",
-    "legend",
-    "li",
-    "main",
-    "map",
-    "mark",
-    "marquee",
-    "menu",
-    "menuitem",
-    "meter",
-    "nav",
-    "nobr",
-    "ol",
-    "optgroup",
-    "option",
-    "output",
-    "p",
-    "picture",
-    "pre",
-    "progress",
-    "q",
-    "rp",
-    "rt",
-    "ruby",
-    "s",
-    "samp",
-    "search",
-    "section",
-    "select",
-    "shadow",
-    "slot",
-    "small",
-    "source",
-    "spacer",
-    "span",
-    "strike",
-    "strong",
-    "style",
-    "sub",
-    "summary",
-    "sup",
-    "table",
-    "tbody",
-    "td",
-    "template",
-    "textarea",
-    "tfoot",
-    "th",
-    "thead",
-    "time",
-    "tr",
-    "track",
-    "tt",
-    "u",
-    "ul",
-    "var",
-    "video",
-    "wbr",
-  ]),
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "bdi",
+  "bdo",
+  "big",
+  "blink",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "content",
+  "data",
+  "datalist",
+  "dd",
+  "decorator",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "dir",
+  "div",
+  "dl",
+  "dt",
+  "element",
+  "em",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "head",
+  "header",
+  "hgroup",
+  "hr",
+  "html",
+  "i",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "main",
+  "map",
+  "mark",
+  "marquee",
+  "menu",
+  "menuitem",
+  "meter",
+  "nav",
+  "nobr",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "picture",
+  "pre",
+  "progress",
+  "q",
+  "rp",
+  "rt",
+  "ruby",
+  "s",
+  "samp",
+  "search",
+  "section",
+  "select",
+  "shadow",
+  "slot",
+  "small",
+  "source",
+  "spacer",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "tr",
+  "track",
+  "tt",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+]),
   lu = Pt([
     "svg",
     "a",
@@ -31364,12 +31363,12 @@ var vp = Object.freeze({
   TMPLIT_EXPR: XS,
 });
 const Vs = {
-    element: 1,
-    text: 3,
-    progressingInstruction: 7,
-    comment: 8,
-    document: 9,
-  },
+  element: 1,
+  text: 3,
+  progressingInstruction: 7,
+  comment: 8,
+  document: 9,
+},
   nk = function () {
     return typeof window > "u" ? null : window;
   },
@@ -31414,8 +31413,8 @@ function gm() {
   const e = (ue) => gm(ue);
   if (
     ((e.version = "3.3.2"),
-    (e.removed = []),
-    !n || !n.document || n.document.nodeType !== Vs.document || !n.Element)
+      (e.removed = []),
+      !n || !n.document || n.document.nodeType !== Vs.document || !n.Element)
   )
     return ((e.isSupported = !1), e);
   let { document: i } = n;
@@ -31445,11 +31444,11 @@ function gm() {
   let B,
     X = "";
   const {
-      implementation: K,
-      createNodeIterator: ce,
-      createDocumentFragment: xe,
-      getElementsByTagName: ye,
-    } = i,
+    implementation: K,
+    createNodeIterator: ce,
+    createDocumentFragment: xe,
+    getElementsByTagName: ye,
+  } = i,
     { importNode: G } = a;
   let ie = xp();
   e.isSupported =
@@ -31473,27 +31472,27 @@ function gm() {
   let le = null;
   const Se = Te({}, [...gp, ...du, ...yp, ...$o]);
   let de = Object.seal(
-      qo(null, {
-        tagNameCheck: {
-          writable: !0,
-          configurable: !1,
-          enumerable: !0,
-          value: null,
-        },
-        attributeNameCheck: {
-          writable: !0,
-          configurable: !1,
-          enumerable: !0,
-          value: null,
-        },
-        allowCustomizedBuiltInElements: {
-          writable: !0,
-          configurable: !1,
-          enumerable: !0,
-          value: !1,
-        },
-      }),
-    ),
+    qo(null, {
+      tagNameCheck: {
+        writable: !0,
+        configurable: !1,
+        enumerable: !0,
+        value: null,
+      },
+      attributeNameCheck: {
+        writable: !0,
+        configurable: !1,
+        enumerable: !0,
+        value: null,
+      },
+      allowCustomizedBuiltInElements: {
+        writable: !0,
+        configurable: !1,
+        enumerable: !0,
+        value: !1,
+      },
+    }),
+  ),
     ke = null,
     Re = null;
   const we = Object.seal(
@@ -31557,21 +31556,21 @@ function gm() {
   const lr = Te({}, ["audio", "video", "img", "source", "image", "track"]);
   let Bn = null;
   const xa = Te({}, [
-      "alt",
-      "class",
-      "for",
-      "id",
-      "label",
-      "name",
-      "pattern",
-      "placeholder",
-      "role",
-      "summary",
-      "title",
-      "value",
-      "style",
-      "xmlns",
-    ]),
+    "alt",
+    "class",
+    "for",
+    "id",
+    "label",
+    "name",
+    "pattern",
+    "placeholder",
+    "role",
+    "summary",
+    "title",
+    "value",
+    "style",
+    "xmlns",
+  ]),
     Dr = "http://www.w3.org/1998/Math/MathML",
     Lr = "http://www.w3.org/2000/svg",
     un = "http://www.w3.org/1999/xhtml";
@@ -31597,85 +31596,85 @@ function gm() {
       if (!(Un && Un === C)) {
         if (
           ((!C || typeof C != "object") && (C = {}),
-          (C = In(C)),
-          (dr =
-            wa.indexOf(C.PARSER_MEDIA_TYPE) === -1 ? ba : C.PARSER_MEDIA_TYPE),
-          (Ze = dr === "application/xhtml+xml" ? au : Go),
-          (T = Kt(C, "ALLOWED_TAGS") ? Te({}, C.ALLOWED_TAGS, Ze) : z),
-          (le = Kt(C, "ALLOWED_ATTR") ? Te({}, C.ALLOWED_ATTR, Ze) : Se),
-          (zr = Kt(C, "ALLOWED_NAMESPACES")
-            ? Te({}, C.ALLOWED_NAMESPACES, au)
-            : Yi),
-          (Bn = Kt(C, "ADD_URI_SAFE_ATTR")
-            ? Te(In(xa), C.ADD_URI_SAFE_ATTR, Ze)
-            : xa),
-          (Xi = Kt(C, "ADD_DATA_URI_TAGS")
-            ? Te(In(lr), C.ADD_DATA_URI_TAGS, Ze)
-            : lr),
-          (Ot = Kt(C, "FORBID_CONTENTS") ? Te({}, C.FORBID_CONTENTS, Ze) : or),
-          (ke = Kt(C, "FORBID_TAGS") ? Te({}, C.FORBID_TAGS, Ze) : In({})),
-          (Re = Kt(C, "FORBID_ATTR") ? Te({}, C.FORBID_ATTR, Ze) : In({})),
-          ($n = Kt(C, "USE_PROFILES") ? C.USE_PROFILES : !1),
-          (Le = C.ALLOW_ARIA_ATTR !== !1),
-          (ct = C.ALLOW_DATA_ATTR !== !1),
-          (W = C.ALLOW_UNKNOWN_PROTOCOLS || !1),
-          (je = C.ALLOW_SELF_CLOSE_IN_ATTR !== !1),
-          (_e = C.SAFE_FOR_TEMPLATES || !1),
-          (rt = C.SAFE_FOR_XML !== !1),
-          (qe = C.WHOLE_DOCUMENT || !1),
-          (ft = C.RETURN_DOM || !1),
-          (Yt = C.RETURN_DOM_FRAGMENT || !1),
-          (vt = C.RETURN_TRUSTED_TYPE || !1),
-          (Je = C.FORCE_BODY || !1),
-          (Qt = C.SANITIZE_DOM !== !1),
-          (sr = C.SANITIZE_NAMED_PROPS || !1),
-          (ai = C.KEEP_CONTENT !== !1),
-          (ar = C.IN_PLACE || !1),
-          (F = C.ALLOWED_URI_REGEXP || pm),
-          (jn = C.NAMESPACE || un),
-          (cr = C.MATHML_TEXT_INTEGRATION_POINTS || cr),
-          (dn = C.HTML_INTEGRATION_POINTS || dn),
-          (de = C.CUSTOM_ELEMENT_HANDLING || {}),
-          C.CUSTOM_ELEMENT_HANDLING &&
+            (C = In(C)),
+            (dr =
+              wa.indexOf(C.PARSER_MEDIA_TYPE) === -1 ? ba : C.PARSER_MEDIA_TYPE),
+            (Ze = dr === "application/xhtml+xml" ? au : Go),
+            (T = Kt(C, "ALLOWED_TAGS") ? Te({}, C.ALLOWED_TAGS, Ze) : z),
+            (le = Kt(C, "ALLOWED_ATTR") ? Te({}, C.ALLOWED_ATTR, Ze) : Se),
+            (zr = Kt(C, "ALLOWED_NAMESPACES")
+              ? Te({}, C.ALLOWED_NAMESPACES, au)
+              : Yi),
+            (Bn = Kt(C, "ADD_URI_SAFE_ATTR")
+              ? Te(In(xa), C.ADD_URI_SAFE_ATTR, Ze)
+              : xa),
+            (Xi = Kt(C, "ADD_DATA_URI_TAGS")
+              ? Te(In(lr), C.ADD_DATA_URI_TAGS, Ze)
+              : lr),
+            (Ot = Kt(C, "FORBID_CONTENTS") ? Te({}, C.FORBID_CONTENTS, Ze) : or),
+            (ke = Kt(C, "FORBID_TAGS") ? Te({}, C.FORBID_TAGS, Ze) : In({})),
+            (Re = Kt(C, "FORBID_ATTR") ? Te({}, C.FORBID_ATTR, Ze) : In({})),
+            ($n = Kt(C, "USE_PROFILES") ? C.USE_PROFILES : !1),
+            (Le = C.ALLOW_ARIA_ATTR !== !1),
+            (ct = C.ALLOW_DATA_ATTR !== !1),
+            (W = C.ALLOW_UNKNOWN_PROTOCOLS || !1),
+            (je = C.ALLOW_SELF_CLOSE_IN_ATTR !== !1),
+            (_e = C.SAFE_FOR_TEMPLATES || !1),
+            (rt = C.SAFE_FOR_XML !== !1),
+            (qe = C.WHOLE_DOCUMENT || !1),
+            (ft = C.RETURN_DOM || !1),
+            (Yt = C.RETURN_DOM_FRAGMENT || !1),
+            (vt = C.RETURN_TRUSTED_TYPE || !1),
+            (Je = C.FORCE_BODY || !1),
+            (Qt = C.SANITIZE_DOM !== !1),
+            (sr = C.SANITIZE_NAMED_PROPS || !1),
+            (ai = C.KEEP_CONTENT !== !1),
+            (ar = C.IN_PLACE || !1),
+            (F = C.ALLOWED_URI_REGEXP || pm),
+            (jn = C.NAMESPACE || un),
+            (cr = C.MATHML_TEXT_INTEGRATION_POINTS || cr),
+            (dn = C.HTML_INTEGRATION_POINTS || dn),
+            (de = C.CUSTOM_ELEMENT_HANDLING || {}),
+            C.CUSTOM_ELEMENT_HANDLING &&
             Zi(C.CUSTOM_ELEMENT_HANDLING.tagNameCheck) &&
             (de.tagNameCheck = C.CUSTOM_ELEMENT_HANDLING.tagNameCheck),
-          C.CUSTOM_ELEMENT_HANDLING &&
+            C.CUSTOM_ELEMENT_HANDLING &&
             Zi(C.CUSTOM_ELEMENT_HANDLING.attributeNameCheck) &&
             (de.attributeNameCheck =
               C.CUSTOM_ELEMENT_HANDLING.attributeNameCheck),
-          C.CUSTOM_ELEMENT_HANDLING &&
+            C.CUSTOM_ELEMENT_HANDLING &&
             typeof C.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements ==
-              "boolean" &&
+            "boolean" &&
             (de.allowCustomizedBuiltInElements =
               C.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements),
-          _e && (ct = !1),
-          Yt && (ft = !0),
-          $n &&
+            _e && (ct = !1),
+            Yt && (ft = !0),
+            $n &&
             ((T = Te({}, mp)),
-            (le = qo(null)),
-            $n.html === !0 && (Te(T, pp), Te(le, gp)),
-            $n.svg === !0 && (Te(T, lu), Te(le, du), Te(le, $o)),
-            $n.svgFilters === !0 && (Te(T, cu), Te(le, du), Te(le, $o)),
-            $n.mathMl === !0 && (Te(T, uu), Te(le, yp), Te(le, $o))),
-          Kt(C, "ADD_TAGS") || (we.tagCheck = null),
-          Kt(C, "ADD_ATTR") || (we.attributeCheck = null),
-          C.ADD_TAGS &&
+              (le = qo(null)),
+              $n.html === !0 && (Te(T, pp), Te(le, gp)),
+              $n.svg === !0 && (Te(T, lu), Te(le, du), Te(le, $o)),
+              $n.svgFilters === !0 && (Te(T, cu), Te(le, du), Te(le, $o)),
+              $n.mathMl === !0 && (Te(T, uu), Te(le, yp), Te(le, $o))),
+            Kt(C, "ADD_TAGS") || (we.tagCheck = null),
+            Kt(C, "ADD_ATTR") || (we.attributeCheck = null),
+            C.ADD_TAGS &&
             (typeof C.ADD_TAGS == "function"
               ? (we.tagCheck = C.ADD_TAGS)
               : (T === z && (T = In(T)), Te(T, C.ADD_TAGS, Ze))),
-          C.ADD_ATTR &&
+            C.ADD_ATTR &&
             (typeof C.ADD_ATTR == "function"
               ? (we.attributeCheck = C.ADD_ATTR)
               : (le === Se && (le = In(le)), Te(le, C.ADD_ATTR, Ze))),
-          C.ADD_URI_SAFE_ATTR && Te(Bn, C.ADD_URI_SAFE_ATTR, Ze),
-          C.FORBID_CONTENTS &&
+            C.ADD_URI_SAFE_ATTR && Te(Bn, C.ADD_URI_SAFE_ATTR, Ze),
+            C.FORBID_CONTENTS &&
             (Ot === or && (Ot = In(Ot)), Te(Ot, C.FORBID_CONTENTS, Ze)),
-          C.ADD_FORBID_CONTENTS &&
+            C.ADD_FORBID_CONTENTS &&
             (Ot === or && (Ot = In(Ot)), Te(Ot, C.ADD_FORBID_CONTENTS, Ze)),
-          ai && (T["#text"] = !0),
-          qe && Te(T, ["html", "head", "body"]),
-          T.table && (Te(T, ["tbody"]), delete ke.tbody),
-          C.TRUSTED_TYPES_POLICY)
+            ai && (T["#text"] = !0),
+            qe && Te(T, ["html", "head", "body"]),
+            T.table && (Te(T, ["tbody"]), delete ke.tbody),
+            C.TRUSTED_TYPES_POLICY)
         ) {
           if (typeof C.TRUSTED_TYPES_POLICY.createHTML != "function")
             throw Hs(
@@ -31738,11 +31737,11 @@ function gm() {
         if (ft || Yt)
           try {
             kt(V);
-          } catch {}
+          } catch { }
         else
           try {
             V.setAttribute(C, "");
-          } catch {}
+          } catch { }
     },
     $r = function (C) {
       let V = null,
@@ -31762,18 +31761,18 @@ function gm() {
       if (jn === un)
         try {
           V = new w().parseFromString(Be, dr);
-        } catch {}
+        } catch { }
       if (!V || !V.documentElement) {
         V = K.createDocument(jn, "template", null);
         try {
           V.documentElement.innerHTML = Mr ? X : Be;
-        } catch {}
+        } catch { }
       }
       const Ee = V.body || V.documentElement;
       return (
         C &&
-          re &&
-          Ee.insertBefore(i.createTextNode(re), Ee.childNodes[0] || null),
+        re &&
+        Ee.insertBefore(i.createTextNode(re), Ee.childNodes[0] || null),
         jn === un
           ? ye.call(V, qe ? "html" : "body")[0]
           : qe
@@ -31786,10 +31785,10 @@ function gm() {
         C.ownerDocument || C,
         C,
         g.SHOW_ELEMENT |
-          g.SHOW_COMMENT |
-          g.SHOW_TEXT |
-          g.SHOW_PROCESSING_INSTRUCTION |
-          g.SHOW_CDATA_SECTION,
+        g.SHOW_COMMENT |
+        g.SHOW_TEXT |
+        g.SHOW_PROCESSING_INSTRUCTION |
+        g.SHOW_CDATA_SECTION,
         null,
       );
     },
@@ -31816,60 +31815,60 @@ function gm() {
     });
   }
   const _n = function (C) {
-      let V = null;
-      if ((hn(ie.beforeSanitizeElements, C, null), es(C))) return (kt(C), !0);
-      const re = Ze(C.nodeName);
-      if (
-        (hn(ie.uponSanitizeElement, C, { tagName: re, allowedTags: T }),
+    let V = null;
+    if ((hn(ie.beforeSanitizeElements, C, null), es(C))) return (kt(C), !0);
+    const re = Ze(C.nodeName);
+    if (
+      (hn(ie.uponSanitizeElement, C, { tagName: re, allowedTags: T }),
         (rt &&
           C.hasChildNodes() &&
           !Sa(C.firstElementChild) &&
           Nt(/<[/\w!]/g, C.innerHTML) &&
           Nt(/<[/\w!]/g, C.textContent)) ||
-          C.nodeType === Vs.progressingInstruction ||
-          (rt && C.nodeType === Vs.comment && Nt(/<[/\w]/g, C.data)))
-      )
-        return (kt(C), !0);
+        C.nodeType === Vs.progressingInstruction ||
+        (rt && C.nodeType === Vs.comment && Nt(/<[/\w]/g, C.data)))
+    )
+      return (kt(C), !0);
+    if (
+      !(we.tagCheck instanceof Function && we.tagCheck(re)) &&
+      (!T[re] || ke[re])
+    ) {
       if (
-        !(we.tagCheck instanceof Function && we.tagCheck(re)) &&
-        (!T[re] || ke[re])
-      ) {
-        if (
-          !ke[re] &&
-          ns(re) &&
-          ((de.tagNameCheck instanceof RegExp && Nt(de.tagNameCheck, re)) ||
-            (de.tagNameCheck instanceof Function && de.tagNameCheck(re)))
-        )
-          return !1;
-        if (ai && !Ot[re]) {
-          const Be = L(C) || C.parentNode,
-            Ee = D(C) || C.childNodes;
-          if (Ee && Be) {
-            const et = Ee.length;
-            for (let pt = et - 1; pt >= 0; --pt) {
-              const en = b(Ee[pt], !0);
-              ((en.__removalCount = (C.__removalCount || 0) + 1),
-                Be.insertBefore(en, O(C)));
-            }
+        !ke[re] &&
+        ns(re) &&
+        ((de.tagNameCheck instanceof RegExp && Nt(de.tagNameCheck, re)) ||
+          (de.tagNameCheck instanceof Function && de.tagNameCheck(re)))
+      )
+        return !1;
+      if (ai && !Ot[re]) {
+        const Be = L(C) || C.parentNode,
+          Ee = D(C) || C.childNodes;
+        if (Ee && Be) {
+          const et = Ee.length;
+          for (let pt = et - 1; pt >= 0; --pt) {
+            const en = b(Ee[pt], !0);
+            ((en.__removalCount = (C.__removalCount || 0) + 1),
+              Be.insertBefore(en, O(C)));
           }
         }
-        return (kt(C), !0);
       }
-      return (C instanceof m && !dl(C)) ||
-        ((re === "noscript" || re === "noembed" || re === "noframes") &&
-          Nt(/<\/no(script|embed|frames)/i, C.innerHTML))
-        ? (kt(C), !0)
-        : (_e &&
-            C.nodeType === Vs.text &&
-            ((V = C.textContent),
-            zo([be, Ne, Z], (Be) => {
-              V = Fs(V, Be, " ");
-            }),
-            C.textContent !== V &&
-              (Us(e.removed, { element: C.cloneNode() }), (C.textContent = V))),
-          hn(ie.afterSanitizeElements, C, null),
-          !1);
-    },
+      return (kt(C), !0);
+    }
+    return (C instanceof m && !dl(C)) ||
+      ((re === "noscript" || re === "noembed" || re === "noframes") &&
+        Nt(/<\/no(script|embed|frames)/i, C.innerHTML))
+      ? (kt(C), !0)
+      : (_e &&
+        C.nodeType === Vs.text &&
+        ((V = C.textContent),
+          zo([be, Ne, Z], (Be) => {
+            V = Fs(V, Be, " ");
+          }),
+          C.textContent !== V &&
+          (Us(e.removed, { element: C.cloneNode() }), (C.textContent = V))),
+        hn(ie.afterSanitizeElements, C, null),
+        !1);
+  },
     ts = function (C, V, re) {
       if (
         Re[V] ||
@@ -31938,7 +31937,7 @@ function gm() {
         forceKeepAttr: void 0,
       };
       let Be = V.length;
-      for (; Be--; ) {
+      for (; Be--;) {
         const Ee = V[Be],
           { name: et, namespaceURI: pt, value: en } = Ee,
           fn = Ze(et),
@@ -31946,13 +31945,13 @@ function gm() {
         let at = et === "value" ? rs : HS(rs);
         if (
           ((re.attrName = fn),
-          (re.attrValue = at),
-          (re.keepAttr = !0),
-          (re.forceKeepAttr = void 0),
-          hn(ie.uponSanitizeAttribute, C, re),
-          (at = re.attrValue),
-          sr && (fn === "id" || fn === "name") && (Zt(et, C), (at = va + at)),
-          rt &&
+            (re.attrValue = at),
+            (re.keepAttr = !0),
+            (re.forceKeepAttr = void 0),
+            hn(ie.uponSanitizeAttribute, C, re),
+            (at = re.attrValue),
+            sr && (fn === "id" || fn === "name") && (Zt(et, C), (at = va + at)),
+            rt &&
             Nt(
               /((--!?|])>)|<\/(style|script|title|xmp|textarea|noscript|iframe|noembed|noframes)/i,
               at,
@@ -32012,7 +32011,7 @@ function gm() {
     ja = function ue(C) {
       let V = null;
       const re = li(C);
-      for (hn(ie.beforeSanitizeShadowDOM, C, null); (V = re.nextNode()); )
+      for (hn(ie.beforeSanitizeShadowDOM, C, null); (V = re.nextNode());)
         (hn(ie.uponSanitizeShadowNode, V, null),
           _n(V),
           ka(V),
@@ -32022,7 +32021,7 @@ function gm() {
   return (
     (e.sanitize = function (ue) {
       let C =
-          arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {},
+        arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {},
         V = null,
         re = null,
         Be = null,
@@ -32045,7 +32044,7 @@ function gm() {
         ((V = $r("<!---->")),
           (re = V.ownerDocument.importNode(ue, !0)),
           (re.nodeType === Vs.element && re.nodeName === "BODY") ||
-          re.nodeName === "HTML"
+            re.nodeName === "HTML"
             ? (V = re)
             : V.appendChild(re));
       else {
@@ -32055,12 +32054,12 @@ function gm() {
       }
       V && Je && kt(V.firstChild);
       const et = li(ar ? ue : V);
-      for (; (Be = et.nextNode()); )
+      for (; (Be = et.nextNode());)
         (_n(Be), ka(Be), Be.content instanceof c && ja(Be.content));
       if (ar) return ue;
       if (ft) {
         if (Yt)
-          for (Ee = xe.call(V.ownerDocument); V.firstChild; )
+          for (Ee = xe.call(V.ownerDocument); V.firstChild;)
             Ee.appendChild(V.firstChild);
         else Ee = V;
         return (
@@ -32071,21 +32070,21 @@ function gm() {
       let pt = qe ? V.outerHTML : V.innerHTML;
       return (
         qe &&
-          T["!doctype"] &&
-          V.ownerDocument &&
-          V.ownerDocument.doctype &&
-          V.ownerDocument.doctype.name &&
-          Nt(mm, V.ownerDocument.doctype.name) &&
-          (pt =
-            "<!DOCTYPE " +
-            V.ownerDocument.doctype.name +
-            `>
+        T["!doctype"] &&
+        V.ownerDocument &&
+        V.ownerDocument.doctype &&
+        V.ownerDocument.doctype.name &&
+        Nt(mm, V.ownerDocument.doctype.name) &&
+        (pt =
+          "<!DOCTYPE " +
+          V.ownerDocument.doctype.name +
+          `>
 ` +
-            pt),
+          pt),
         _e &&
-          zo([be, Ne, Z], (en) => {
-            pt = Fs(pt, en, " ");
-          }),
+        zo([be, Ne, Z], (en) => {
+          pt = Fs(pt, en, " ");
+        }),
         B && vt ? B.createHTML(pt) : pt
       );
     }),
@@ -32124,9 +32123,9 @@ function gm() {
 }
 var ik = gm();
 const Au = (n = "") =>
-    typeof window > "u"
-      ? n || ""
-      : ik.sanitize(n || "", { USE_PROFILES: { html: !0 } }),
+  typeof window > "u"
+    ? n || ""
+    : ik.sanitize(n || "", { USE_PROFILES: { html: !0 } }),
   sk = () => {
     const { slug: n } = lv(),
       { canManageContent: e } = fa(),
@@ -32158,10 +32157,10 @@ const Au = (n = "") =>
               category: O.categories?.[0]?.name || "General",
               date: O.published_at
                 ? new Date(O.published_at).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })
                 : "Draft",
             });
           } catch (_) {
@@ -32172,20 +32171,20 @@ const Au = (n = "") =>
         })());
     }, [n, e]);
     const w = async () => {
-        if (e && window.confirm("Withdraw this post back to draft?")) {
-          y(!0);
-          try {
-            const { error: N } = await De.from("posts")
-              .update({ status: "draft" })
-              .eq("id", a.id);
-            if (N) throw N;
-            i("/blog");
-          } catch (N) {
-            alert(N.message);
-          }
-          y(!1);
+      if (e && window.confirm("Withdraw this post back to draft?")) {
+        y(!0);
+        try {
+          const { error: N } = await De.from("posts")
+            .update({ status: "draft" })
+            .eq("id", a.id);
+          if (N) throw N;
+          i("/blog");
+        } catch (N) {
+          alert(N.message);
         }
-      },
+        y(!1);
+      }
+    },
       S = async () => {
         if (
           e &&
@@ -32204,337 +32203,337 @@ const Au = (n = "") =>
       };
     return c
       ? s.jsx("main", {
+        children: s.jsx("div", {
+          className: "blog-post-state-wrap",
+          children: s.jsxs("div", {
+            className: "blog-post-state-box",
+            children: [
+              s.jsx("div", {
+                className: "blog-post-state-icon",
+                children: "...",
+              }),
+              s.jsx("p", { children: "Loading article..." }),
+            ],
+          }),
+        }),
+      })
+      : f
+        ? s.jsx("main", {
           children: s.jsx("div", {
             className: "blog-post-state-wrap",
             children: s.jsxs("div", {
-              className: "blog-post-state-box",
+              className: "blog-post-not-found",
               children: [
                 s.jsx("div", {
                   className: "blog-post-state-icon",
-                  children: "...",
+                  children: "File",
                 }),
-                s.jsx("p", { children: "Loading article..." }),
+                s.jsx("h2", { children: "Article Not Found" }),
+                s.jsx("p", {
+                  children:
+                    "This post may have been removed or the URL is incorrect.",
+                }),
+                s.jsxs(ne, {
+                  to: "/blog",
+                  className: "btn-primary blog-post-back-btn",
+                  children: [
+                    s.jsx("i", {
+                      className: "fas fa-arrow-left",
+                      "aria-hidden": "true",
+                    }),
+                    " Back to Blog",
+                  ],
+                }),
               ],
             }),
           }),
         })
-      : f
-        ? s.jsx("main", {
-            children: s.jsx("div", {
-              className: "blog-post-state-wrap",
-              children: s.jsxs("div", {
-                className: "blog-post-not-found",
-                children: [
-                  s.jsx("div", {
-                    className: "blog-post-state-icon",
-                    children: "File",
-                  }),
-                  s.jsx("h2", { children: "Article Not Found" }),
-                  s.jsx("p", {
-                    children:
-                      "This post may have been removed or the URL is incorrect.",
-                  }),
-                  s.jsxs(ne, {
-                    to: "/blog",
-                    className: "btn-primary blog-post-back-btn",
-                    children: [
-                      s.jsx("i", {
-                        className: "fas fa-arrow-left",
-                        "aria-hidden": "true",
-                      }),
-                      " Back to Blog",
-                    ],
-                  }),
-                ],
-              }),
-            }),
-          })
         : s.jsxs("main", {
-            children: [
-              s.jsx(ht, {
-                title: `${a.title} | VSDOX Blog`,
-                description:
-                  a.excerpt ||
-                  `Read about ${a.title} on the VSDOX blog — insights on enterprise content management and document technology.`,
-                keywords: [
-                  a.category,
-                  ...(a.tags || []).map((N) => N.name),
-                  "VSDOX blog",
-                  "ECM insights",
-                  "document management",
-                ]
-                  .filter(Boolean)
-                  .join(", "),
-              }),
-              s.jsxs("section", {
-                className: "page-hero-container",
-                children: [
-                  s.jsx("div", {
-                    className: "page-hero-bg",
-                    style: {
-                      backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('${a.image}')`,
-                    },
-                  }),
-                  s.jsx("div", {
-                    className: "max-container",
-                    children: s.jsxs("div", {
-                      className: "page-hero-content reveal",
-                      children: [
-                        s.jsx("div", {
-                          className: "blog-post-hero-category-wrap",
-                          children: s.jsx("span", {
-                            className: "blog-post-hero-category",
-                            children: a.category,
-                          }),
-                        }),
-                        s.jsx("h1", {
-                          className: "blog-post-hero-title",
-                          children: a.title,
-                        }),
-                        s.jsxs("div", {
-                          className: "blog-post-meta-row",
-                          children: [
-                            s.jsxs("div", {
-                              className: "blog-post-author-wrap",
-                              children: [
-                                s.jsx("img", {
-                                  src: `https://ui-avatars.com/api/?name=${encodeURIComponent(a.author)}&background=random`,
-                                  alt: a.author,
-                                  className: "blog-post-author-avatar",
-                                }),
-                                s.jsxs("div", {
-                                  children: [
-                                    s.jsx("div", {
-                                      className: "blog-post-author-name",
-                                      children: a.author,
-                                    }),
-                                    s.jsx("div", {
-                                      className: "blog-post-author-role",
-                                      children: a.author_role,
-                                    }),
-                                  ],
-                                }),
-                              ],
-                            }),
-                            s.jsxs("span", {
-                              className: "blog-post-meta-item",
-                              children: [
-                                s.jsx("i", {
-                                  className: "fas fa-calendar",
-                                  "aria-hidden": "true",
-                                }),
-                                " ",
-                                a.date,
-                              ],
-                            }),
-                            s.jsxs("span", {
-                              className: "blog-post-meta-item",
-                              children: [
-                                s.jsx("i", {
-                                  className: "fas fa-stopwatch",
-                                  "aria-hidden": "true",
-                                }),
-                                " ",
-                                a.reading_time > 0
-                                  ? `${a.reading_time} min read`
-                                  : "Quick read",
-                              ],
-                            }),
-                            s.jsxs("span", {
-                              className: "blog-post-meta-item",
-                              children: [
-                                s.jsx("i", {
-                                  className: "fas fa-eye",
-                                  "aria-hidden": "true",
-                                }),
-                                " ",
-                                a.views > 0 ? a.views : 0,
-                              ],
-                            }),
-                          ],
-                        }),
-                        s.jsxs("div", {
-                          className: "breadcrumb blog-post-breadcrumb",
-                          children: [
-                            s.jsx(ne, { to: "/", children: "Home" }),
-                            s.jsx("span", { children: "/" }),
-                            s.jsx(ne, { to: "/blog", children: "Blog" }),
-                            s.jsx("span", { children: "/" }),
-                            s.jsx("span", { children: a.title }),
-                          ],
-                        }),
-                      ],
-                    }),
-                  }),
-                ],
-              }),
-              e &&
-                a.status !== "published" &&
+          children: [
+            s.jsx(ht, {
+              title: `${a.title} | VSDOX Blog`,
+              description:
+                a.excerpt ||
+                `Read about ${a.title} on the VSDOX blog — insights on enterprise content management and document technology.`,
+              keywords: [
+                a.category,
+                ...(a.tags || []).map((N) => N.name),
+                "VSDOX blog",
+                "ECM insights",
+                "document management",
+              ]
+                .filter(Boolean)
+                .join(", "),
+            }),
+            s.jsxs("section", {
+              className: "page-hero-container",
+              children: [
                 s.jsx("div", {
-                  className: "blog-post-draft-banner",
-                  children: s.jsxs("div", {
-                    className: "max-container blog-post-draft-inner",
-                    children: [
-                      s.jsx("span", {
-                        className: "blog-post-draft-title",
-                        children: "Draft Preview",
-                      }),
-                      s.jsx("span", {
-                        className: "blog-post-draft-text",
-                        children:
-                          "This post is not yet published. Only admins can see this.",
-                      }),
-                    ],
-                  }),
+                  className: "page-hero-bg",
+                  style: {
+                    backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('${a.image}')`,
+                  },
                 }),
-              e &&
                 s.jsx("div", {
-                  className: "blog-post-admin-bar",
-                  children: s.jsxs("div", {
-                    className: "max-container blog-post-admin-inner",
-                    children: [
-                      s.jsx("span", {
-                        className: "blog-post-admin-label",
-                        children: "Admin View",
-                      }),
-                      s.jsx("span", {
-                        className: `blog-post-admin-status ${a.status === "published" ? "published" : "draft"}`,
-                        children: a.status?.toUpperCase(),
-                      }),
-                      s.jsxs("div", {
-                        className: "blog-post-admin-actions",
-                        children: [
-                          a.status === "published" &&
-                            s.jsx("button", {
-                              onClick: w,
-                              disabled: g,
-                              className:
-                                "blog-post-action-btn blog-post-action-withdraw",
-                              children: g
-                                ? "..."
-                                : s.jsxs(s.Fragment, {
-                                    children: [
-                                      s.jsx("i", {
-                                        className: "fas fa-pause",
-                                        "aria-hidden": "true",
-                                      }),
-                                      " Withdraw",
-                                    ],
-                                  }),
-                            }),
-                          s.jsx("button", {
-                            onClick: S,
-                            disabled: g,
-                            className:
-                              "blog-post-action-btn blog-post-action-delete",
-                            children: g
-                              ? "..."
-                              : s.jsxs(s.Fragment, {
-                                  children: [
-                                    s.jsx("i", {
-                                      className: "fas fa-trash",
-                                      "aria-hidden": "true",
-                                    }),
-                                    " Delete",
-                                  ],
-                                }),
-                          }),
-                        ],
-                      }),
-                    ],
-                  }),
-                }),
-              s.jsx("section", {
-                className: "blog-post-body-section",
-                children: s.jsx("div", {
                   className: "max-container",
                   children: s.jsxs("div", {
-                    className: "blog-post-grid-shell",
+                    className: "page-hero-content reveal",
                     children: [
-                      s.jsx("div", {}),
-                      s.jsxs("article", {
+                      s.jsx("div", {
+                        className: "blog-post-hero-category-wrap",
+                        children: s.jsx("span", {
+                          className: "blog-post-hero-category",
+                          children: a.category,
+                        }),
+                      }),
+                      s.jsx("h1", {
+                        className: "blog-post-hero-title",
+                        children: a.title,
+                      }),
+                      s.jsxs("div", {
+                        className: "blog-post-meta-row",
                         children: [
-                          a.excerpt &&
-                            s.jsx("p", {
-                              className: "blog-post-excerpt",
-                              children: a.excerpt,
-                            }),
-                          s.jsx("div", {
-                            className: "blog-body",
-                            dangerouslySetInnerHTML: {
-                              __html: Au(a.body_html),
-                            },
-                          }),
-                          a.tags?.length > 0 &&
-                            s.jsxs("div", {
-                              className: "blog-post-tags-wrap",
-                              children: [
-                                s.jsx("span", {
-                                  className: "blog-post-tags-label",
-                                  children: "Tags:",
-                                }),
-                                a.tags.map((N) =>
-                                  s.jsx(
-                                    "span",
-                                    {
-                                      className: "blog-post-tag",
-                                      children: N.name,
-                                    },
-                                    N.id,
-                                  ),
-                                ),
-                              ],
-                            }),
                           s.jsxs("div", {
-                            className: "blog-post-author-card",
+                            className: "blog-post-author-wrap",
                             children: [
                               s.jsx("img", {
-                                src: `https://ui-avatars.com/api/?name=${encodeURIComponent(a.author)}&background=random&size=80`,
+                                src: `https://ui-avatars.com/api/?name=${encodeURIComponent(a.author)}&background=random`,
                                 alt: a.author,
-                                className: "blog-post-author-card-avatar",
+                                className: "blog-post-author-avatar",
                               }),
                               s.jsxs("div", {
                                 children: [
                                   s.jsx("div", {
-                                    className: "blog-post-author-card-name",
+                                    className: "blog-post-author-name",
                                     children: a.author,
                                   }),
                                   s.jsx("div", {
-                                    className: "blog-post-author-card-role",
+                                    className: "blog-post-author-role",
                                     children: a.author_role,
-                                  }),
-                                  s.jsx("p", {
-                                    className: "blog-post-author-card-text",
-                                    children:
-                                      "Expert at VSDox in enterprise document management and digital transformation.",
                                   }),
                                 ],
                               }),
                             ],
                           }),
-                          s.jsx("div", {
-                            className: "blog-post-back-wrap",
-                            children: s.jsxs(ne, {
-                              to: "/blog",
-                              className: "btn-outline blog-post-back-btn",
-                              children: [
-                                s.jsx("i", {
-                                  className: "fas fa-arrow-left",
-                                  "aria-hidden": "true",
-                                }),
-                                " Back to Blog",
-                              ],
-                            }),
+                          s.jsxs("span", {
+                            className: "blog-post-meta-item",
+                            children: [
+                              s.jsx("i", {
+                                className: "fas fa-calendar",
+                                "aria-hidden": "true",
+                              }),
+                              " ",
+                              a.date,
+                            ],
+                          }),
+                          s.jsxs("span", {
+                            className: "blog-post-meta-item",
+                            children: [
+                              s.jsx("i", {
+                                className: "fas fa-stopwatch",
+                                "aria-hidden": "true",
+                              }),
+                              " ",
+                              a.reading_time > 0
+                                ? `${a.reading_time} min read`
+                                : "Quick read",
+                            ],
+                          }),
+                          s.jsxs("span", {
+                            className: "blog-post-meta-item",
+                            children: [
+                              s.jsx("i", {
+                                className: "fas fa-eye",
+                                "aria-hidden": "true",
+                              }),
+                              " ",
+                              a.views > 0 ? a.views : 0,
+                            ],
                           }),
                         ],
                       }),
-                      s.jsx("div", {}),
+                      s.jsxs("div", {
+                        className: "breadcrumb blog-post-breadcrumb",
+                        children: [
+                          s.jsx(ne, { to: "/", children: "Home" }),
+                          s.jsx("span", { children: "/" }),
+                          s.jsx(ne, { to: "/blog", children: "Blog" }),
+                          s.jsx("span", { children: "/" }),
+                          s.jsx("span", { children: a.title }),
+                        ],
+                      }),
                     ],
                   }),
                 }),
+              ],
+            }),
+            e &&
+            a.status !== "published" &&
+            s.jsx("div", {
+              className: "blog-post-draft-banner",
+              children: s.jsxs("div", {
+                className: "max-container blog-post-draft-inner",
+                children: [
+                  s.jsx("span", {
+                    className: "blog-post-draft-title",
+                    children: "Draft Preview",
+                  }),
+                  s.jsx("span", {
+                    className: "blog-post-draft-text",
+                    children:
+                      "This post is not yet published. Only admins can see this.",
+                  }),
+                ],
               }),
-            ],
-          });
+            }),
+            e &&
+            s.jsx("div", {
+              className: "blog-post-admin-bar",
+              children: s.jsxs("div", {
+                className: "max-container blog-post-admin-inner",
+                children: [
+                  s.jsx("span", {
+                    className: "blog-post-admin-label",
+                    children: "Admin View",
+                  }),
+                  s.jsx("span", {
+                    className: `blog-post-admin-status ${a.status === "published" ? "published" : "draft"}`,
+                    children: a.status?.toUpperCase(),
+                  }),
+                  s.jsxs("div", {
+                    className: "blog-post-admin-actions",
+                    children: [
+                      a.status === "published" &&
+                      s.jsx("button", {
+                        onClick: w,
+                        disabled: g,
+                        className:
+                          "blog-post-action-btn blog-post-action-withdraw",
+                        children: g
+                          ? "..."
+                          : s.jsxs(s.Fragment, {
+                            children: [
+                              s.jsx("i", {
+                                className: "fas fa-pause",
+                                "aria-hidden": "true",
+                              }),
+                              " Withdraw",
+                            ],
+                          }),
+                      }),
+                      s.jsx("button", {
+                        onClick: S,
+                        disabled: g,
+                        className:
+                          "blog-post-action-btn blog-post-action-delete",
+                        children: g
+                          ? "..."
+                          : s.jsxs(s.Fragment, {
+                            children: [
+                              s.jsx("i", {
+                                className: "fas fa-trash",
+                                "aria-hidden": "true",
+                              }),
+                              " Delete",
+                            ],
+                          }),
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+            }),
+            s.jsx("section", {
+              className: "blog-post-body-section",
+              children: s.jsx("div", {
+                className: "max-container",
+                children: s.jsxs("div", {
+                  className: "blog-post-grid-shell",
+                  children: [
+                    s.jsx("div", {}),
+                    s.jsxs("article", {
+                      children: [
+                        a.excerpt &&
+                        s.jsx("p", {
+                          className: "blog-post-excerpt",
+                          children: a.excerpt,
+                        }),
+                        s.jsx("div", {
+                          className: "blog-body",
+                          dangerouslySetInnerHTML: {
+                            __html: Au(a.body_html),
+                          },
+                        }),
+                        a.tags?.length > 0 &&
+                        s.jsxs("div", {
+                          className: "blog-post-tags-wrap",
+                          children: [
+                            s.jsx("span", {
+                              className: "blog-post-tags-label",
+                              children: "Tags:",
+                            }),
+                            a.tags.map((N) =>
+                              s.jsx(
+                                "span",
+                                {
+                                  className: "blog-post-tag",
+                                  children: N.name,
+                                },
+                                N.id,
+                              ),
+                            ),
+                          ],
+                        }),
+                        s.jsxs("div", {
+                          className: "blog-post-author-card",
+                          children: [
+                            s.jsx("img", {
+                              src: `https://ui-avatars.com/api/?name=${encodeURIComponent(a.author)}&background=random&size=80`,
+                              alt: a.author,
+                              className: "blog-post-author-card-avatar",
+                            }),
+                            s.jsxs("div", {
+                              children: [
+                                s.jsx("div", {
+                                  className: "blog-post-author-card-name",
+                                  children: a.author,
+                                }),
+                                s.jsx("div", {
+                                  className: "blog-post-author-card-role",
+                                  children: a.author_role,
+                                }),
+                                s.jsx("p", {
+                                  className: "blog-post-author-card-text",
+                                  children:
+                                    "Expert at VSDox in enterprise document management and digital transformation.",
+                                }),
+                              ],
+                            }),
+                          ],
+                        }),
+                        s.jsx("div", {
+                          className: "blog-post-back-wrap",
+                          children: s.jsxs(ne, {
+                            to: "/blog",
+                            className: "btn-outline blog-post-back-btn",
+                            children: [
+                              s.jsx("i", {
+                                className: "fas fa-arrow-left",
+                                "aria-hidden": "true",
+                              }),
+                              " Back to Blog",
+                            ],
+                          }),
+                        }),
+                      ],
+                    }),
+                    s.jsx("div", {}),
+                  ],
+                }),
+              }),
+            }),
+          ],
+        });
   },
   Rt = {
     listPosts: async (n = 100) => {
@@ -32637,8 +32636,8 @@ const Au = (n = "") =>
         { data: a, error: l } = await De.storage.from("media").upload(i, n);
       if (l) throw l;
       const {
-          data: { publicUrl: c },
-        } = De.storage.from("media").getPublicUrl(i),
+        data: { publicUrl: c },
+      } = De.storage.from("media").getPublicUrl(i),
         { data: d, error: f } = await De.from("media")
           .insert([
             {
@@ -32699,18 +32698,18 @@ const Au = (n = "") =>
       X();
     }, []);
     const K = (G) => {
-        if (G) {
-          if (!ak.includes(G.type)) {
-            S("Only images are supported");
-            return;
-          }
-          if (G.size > ok) {
-            S("Max file size is 10 MB");
-            return;
-          }
-          (S(""), x(G));
+      if (G) {
+        if (!ak.includes(G.type)) {
+          S("Only images are supported");
+          return;
         }
-      },
+        if (G.size > ok) {
+          S("Max file size is 10 MB");
+          return;
+        }
+        (S(""), x(G));
+      }
+    },
       ce = (G) => {
         (G.preventDefault(), b(!1));
         const ie = G.dataTransfer.files?.[0];
@@ -32737,7 +32736,7 @@ const Au = (n = "") =>
       ye = async (G, ie) => {
         if (
           (ie.stopPropagation(),
-          !!window.confirm("Delete this image permanently?"))
+            !!window.confirm("Delete this image permanently?"))
         )
           try {
             (await Rt.deleteMedia(G.id),
@@ -32768,33 +32767,33 @@ const Au = (n = "") =>
                     disabled: m,
                     children: m
                       ? s.jsxs(s.Fragment, {
-                          children: [
-                            s.jsx("i", {
-                              className: "fas fa-spinner fa-spin",
-                              "aria-hidden": "true",
-                            }),
-                            " Uploading...",
-                          ],
-                        })
+                        children: [
+                          s.jsx("i", {
+                            className: "fas fa-spinner fa-spin",
+                            "aria-hidden": "true",
+                          }),
+                          " Uploading...",
+                        ],
+                      })
                       : y
                         ? s.jsxs(s.Fragment, {
-                            children: [
-                              s.jsx("i", {
-                                className: "fas fa-upload",
-                                "aria-hidden": "true",
-                              }),
-                              " Upload Image",
-                            ],
-                          })
+                          children: [
+                            s.jsx("i", {
+                              className: "fas fa-upload",
+                              "aria-hidden": "true",
+                            }),
+                            " Upload Image",
+                          ],
+                        })
                         : s.jsxs(s.Fragment, {
-                            children: [
-                              s.jsx("i", {
-                                className: "fas fa-image",
-                                "aria-hidden": "true",
-                              }),
-                              " Choose Image",
-                            ],
-                          }),
+                          children: [
+                            s.jsx("i", {
+                              className: "fas fa-image",
+                              "aria-hidden": "true",
+                            }),
+                            " Choose Image",
+                          ],
+                        }),
                   }),
                   s.jsx("button", {
                     type: "button",
@@ -32829,120 +32828,120 @@ const Au = (n = "") =>
             children: [
               y
                 ? s.jsxs("div", {
-                    className: "admin-media-staged-preview",
-                    children: [
-                      s.jsxs("p", {
-                        children: [
-                          s.jsx("strong", { children: y.name }),
-                          " ready to upload",
-                        ],
-                      }),
-                      s.jsx("img", {
-                        src: URL.createObjectURL(y),
-                        alt: y.name,
-                        style: {
-                          maxHeight: "140px",
-                          marginTop: "8px",
-                          borderRadius: "6px",
-                        },
-                      }),
-                    ],
-                  })
-                : s.jsx("p", {
-                    children: "Drag & drop an image here, or click to browse",
-                  }),
-              y &&
-                s.jsxs("button", {
-                  type: "button",
-                  className: "admin-btn admin-btn-ghost admin-btn-danger",
-                  onClick: (G) => {
-                    (G.stopPropagation(),
-                      x(null),
-                      B.current && (B.current.value = ""));
-                  },
+                  className: "admin-media-staged-preview",
                   children: [
-                    s.jsx("i", {
-                      className: "fas fa-xmark",
-                      "aria-hidden": "true",
+                    s.jsxs("p", {
+                      children: [
+                        s.jsx("strong", { children: y.name }),
+                        " ready to upload",
+                      ],
                     }),
-                    " Clear",
+                    s.jsx("img", {
+                      src: URL.createObjectURL(y),
+                      alt: y.name,
+                      style: {
+                        maxHeight: "140px",
+                        marginTop: "8px",
+                        borderRadius: "6px",
+                      },
+                    }),
                   ],
+                })
+                : s.jsx("p", {
+                  children: "Drag & drop an image here, or click to browse",
                 }),
+              y &&
+              s.jsxs("button", {
+                type: "button",
+                className: "admin-btn admin-btn-ghost admin-btn-danger",
+                onClick: (G) => {
+                  (G.stopPropagation(),
+                    x(null),
+                    B.current && (B.current.value = ""));
+                },
+                children: [
+                  s.jsx("i", {
+                    className: "fas fa-xmark",
+                    "aria-hidden": "true",
+                  }),
+                  " Clear",
+                ],
+              }),
             ],
           }),
           d
             ? s.jsx("div", {
-                className: "admin-empty-state",
-                children: "Loading media...",
-              })
+              className: "admin-empty-state",
+              children: "Loading media...",
+            })
             : i.length === 0
               ? s.jsx("div", {
-                  className: "admin-empty-state",
-                  children: "No media uploaded yet",
-                })
+                className: "admin-empty-state",
+                children: "No media uploaded yet",
+              })
               : s.jsx("div", {
-                  className: "admin-media-grid",
-                  children: i.map((G) => {
-                    const ie = l[G.id]?.length || 0;
-                    return s.jsxs(
-                      "div",
-                      {
-                        className: `admin-media-card ${_?.id === G.id ? "selected" : ""}`,
-                        onClick: () => {
-                          (O(G), L(!0));
-                        },
-                        onDoubleClick: () =>
-                          n(G.url, G.original_name || G.filename),
-                        onKeyDown: (be) => {
-                          ((be.key === "Enter" || be.key === " ") && O(G),
-                            be.key === "Enter" &&
-                              be.shiftKey &&
-                              n(G.url, G.original_name || G.filename));
-                        },
-                        role: "button",
-                        tabIndex: 0,
-                        children: [
-                          s.jsx("img", {
-                            src: G.url,
-                            alt: G.original_name || G.filename,
-                          }),
-                          s.jsxs("div", {
-                            className: "admin-media-meta",
-                            children: [
-                              s.jsx("span", {
-                                className: "admin-media-name",
-                                children: G.original_name || G.filename,
-                              }),
-                              s.jsx("span", {
-                                className: "admin-media-size",
-                                children: wp(G.size),
-                              }),
-                              ie > 0 &&
-                                s.jsxs("span", {
-                                  className: "admin-media-used",
-                                  children: ["Used in ", ie, " post(s)"],
-                                }),
-                            ],
-                          }),
-                          s.jsxs("button", {
-                            type: "button",
-                            className: "admin-media-delete",
-                            onClick: (be) => ye(G, be),
-                            title: "Delete image",
-                            children: [
-                              s.jsx("i", {
-                                className: "fas fa-trash",
-                                "aria-hidden": "true",
-                              }),
-                              " Delete",
-                            ],
-                          }),
-                        ],
+                className: "admin-media-grid",
+                children: i.map((G) => {
+                  const ie = l[G.id]?.length || 0;
+                  return s.jsxs(
+                    "div",
+                    {
+                      className: `admin-media-card ${_?.id === G.id ? "selected" : ""}`,
+                      onClick: () => {
+                        (O(G), L(!0));
                       },
-                      G.id,
-                    );
-                  }),
+                      onDoubleClick: () =>
+                        n(G.url, G.original_name || G.filename),
+                      onKeyDown: (be) => {
+                        ((be.key === "Enter" || be.key === " ") && O(G),
+                          be.key === "Enter" &&
+                          be.shiftKey &&
+                          n(G.url, G.original_name || G.filename));
+                      },
+                      role: "button",
+                      tabIndex: 0,
+                      children: [
+                        s.jsx("img", {
+                          src: G.url,
+                          alt: G.original_name || G.filename,
+                        }),
+                        s.jsxs("div", {
+                          className: "admin-media-meta",
+                          children: [
+                            s.jsx("span", {
+                              className: "admin-media-name",
+                              children: G.original_name || G.filename,
+                            }),
+                            s.jsx("span", {
+                              className: "admin-media-size",
+                              children: wp(G.size),
+                            }),
+                            ie > 0 &&
+                            s.jsxs("span", {
+                              className: "admin-media-used",
+                              children: ["Used in ", ie, " post(s)"],
+                            }),
+                          ],
+                        }),
+                        s.jsxs("button", {
+                          type: "button",
+                          className: "admin-media-delete",
+                          onClick: (be) => ye(G, be),
+                          title: "Delete image",
+                          children: [
+                            s.jsx("i", {
+                              className: "fas fa-trash",
+                              "aria-hidden": "true",
+                            }),
+                            " Delete",
+                          ],
+                        }),
+                      ],
+                    },
+                    G.id,
+                  );
                 }),
+              }),
           s.jsx("div", {
             className: "admin-media-preview-panel",
             style: {
@@ -32953,105 +32952,105 @@ const Au = (n = "") =>
             children:
               _ && D
                 ? s.jsxs(s.Fragment, {
-                    children: [
-                      s.jsxs("div", {
-                        className: "admin-media-preview-header",
-                        style: {
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "center",
-                          marginBottom: "12px",
-                        },
-                        children: [
-                          s.jsx("strong", { children: "Selected Preview" }),
-                          s.jsxs("div", {
-                            style: { display: "flex", gap: "8px" },
-                            children: [
-                              s.jsxs("button", {
-                                type: "button",
-                                className: "admin-btn admin-btn-secondary",
-                                onClick: () => L(!1),
-                                children: [
-                                  s.jsx("i", {
-                                    className: "fas fa-eye-slash",
-                                    "aria-hidden": "true",
-                                  }),
-                                  " Hide Preview",
-                                ],
-                              }),
-                              s.jsxs("button", {
-                                type: "button",
-                                className: "admin-btn admin-btn-primary",
-                                onClick: () =>
-                                  n(_.url, _.original_name || _.filename),
-                                children: [
-                                  s.jsx("i", {
-                                    className: "fas fa-check",
-                                    "aria-hidden": "true",
-                                  }),
-                                  " Use Image",
-                                ],
-                              }),
-                            ],
-                          }),
-                        ],
-                      }),
-                      s.jsxs("div", {
-                        className: "admin-media-preview-body",
-                        style: {
-                          display: "flex",
-                          gap: "16px",
-                          flexWrap: "wrap",
-                        },
-                        children: [
-                          s.jsx("img", {
-                            src: _.url,
-                            alt: _.original_name || _.filename,
-                            style: {
-                              maxWidth: "240px",
-                              borderRadius: "8px",
-                              border: "1px solid #e2e8f0",
-                            },
-                          }),
-                          s.jsxs("div", {
-                            className: "admin-media-preview-meta",
-                            style: { minWidth: "200px" },
-                            children: [
-                              s.jsx("p", {
-                                children: s.jsx("strong", {
-                                  children: _.original_name || _.filename,
+                  children: [
+                    s.jsxs("div", {
+                      className: "admin-media-preview-header",
+                      style: {
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        marginBottom: "12px",
+                      },
+                      children: [
+                        s.jsx("strong", { children: "Selected Preview" }),
+                        s.jsxs("div", {
+                          style: { display: "flex", gap: "8px" },
+                          children: [
+                            s.jsxs("button", {
+                              type: "button",
+                              className: "admin-btn admin-btn-secondary",
+                              onClick: () => L(!1),
+                              children: [
+                                s.jsx("i", {
+                                  className: "fas fa-eye-slash",
+                                  "aria-hidden": "true",
                                 }),
+                                " Hide Preview",
+                              ],
+                            }),
+                            s.jsxs("button", {
+                              type: "button",
+                              className: "admin-btn admin-btn-primary",
+                              onClick: () =>
+                                n(_.url, _.original_name || _.filename),
+                              children: [
+                                s.jsx("i", {
+                                  className: "fas fa-check",
+                                  "aria-hidden": "true",
+                                }),
+                                " Use Image",
+                              ],
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                    s.jsxs("div", {
+                      className: "admin-media-preview-body",
+                      style: {
+                        display: "flex",
+                        gap: "16px",
+                        flexWrap: "wrap",
+                      },
+                      children: [
+                        s.jsx("img", {
+                          src: _.url,
+                          alt: _.original_name || _.filename,
+                          style: {
+                            maxWidth: "240px",
+                            borderRadius: "8px",
+                            border: "1px solid #e2e8f0",
+                          },
+                        }),
+                        s.jsxs("div", {
+                          className: "admin-media-preview-meta",
+                          style: { minWidth: "200px" },
+                          children: [
+                            s.jsx("p", {
+                              children: s.jsx("strong", {
+                                children: _.original_name || _.filename,
                               }),
-                              s.jsx("p", { children: wp(_.size) }),
-                              _.uploaded_at &&
-                                s.jsxs("p", {
-                                  children: [
-                                    "Uploaded: ",
-                                    new Date(_.uploaded_at).toLocaleString(),
-                                  ],
-                                }),
-                              l[_.id]?.length > 0 &&
-                                s.jsxs("p", {
-                                  className: "admin-media-usage",
-                                  children: [
-                                    "In use by ",
-                                    l[_.id].length,
-                                    " post(s)",
-                                  ],
-                                }),
-                            ],
-                          }),
-                        ],
-                      }),
-                    ],
-                  })
+                            }),
+                            s.jsx("p", { children: wp(_.size) }),
+                            _.uploaded_at &&
+                            s.jsxs("p", {
+                              children: [
+                                "Uploaded: ",
+                                new Date(_.uploaded_at).toLocaleString(),
+                              ],
+                            }),
+                            l[_.id]?.length > 0 &&
+                            s.jsxs("p", {
+                              className: "admin-media-usage",
+                              children: [
+                                "In use by ",
+                                l[_.id].length,
+                                " post(s)",
+                              ],
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                  ],
+                })
                 : s.jsx("div", {
-                    className: "admin-media-preview-empty",
-                    style: { color: "#64748b" },
-                    children: _
-                      ? "Preview hidden. Click another image to show it again."
-                      : "Select an image to preview here. Double-click an image to insert it.",
-                  }),
+                  className: "admin-media-preview-empty",
+                  style: { color: "#64748b" },
+                  children: _
+                    ? "Preview hidden. Click another image to show it again."
+                    : "Select an image to preview here. Double-click an image to insert it.",
+                }),
           }),
         ],
       }),
@@ -33127,20 +33126,20 @@ function Sp(n) {
 const Zs = { exec: () => null };
 function kp(n, e) {
   const i = n.replace(/\|/g, (c, d, f) => {
-      let m = !1,
-        g = d;
-      for (; --g >= 0 && f[g] === "\\"; ) m = !m;
-      return m ? "|" : " |";
-    }),
+    let m = !1,
+      g = d;
+    for (; --g >= 0 && f[g] === "\\";) m = !m;
+    return m ? "|" : " |";
+  }),
     a = i.split(/ \|/);
   let l = 0;
   if (
     (a[0].trim() || a.shift(),
-    a.length > 0 && !a[a.length - 1].trim() && a.pop(),
-    e)
+      a.length > 0 && !a[a.length - 1].trim() && a.pop(),
+      e)
   )
     if (a.length > e) a.splice(e);
-    else for (; a.length < e; ) a.push("");
+    else for (; a.length < e;) a.push("");
   for (; l < a.length; l++) a[l] = a[l].trim().replace(/\\\|/g, "|");
   return a;
 }
@@ -33148,7 +33147,7 @@ function Bo(n, e, i) {
   const a = n.length;
   if (a === 0) return "";
   let l = 0;
-  for (; l < a && n.charAt(a - l - 1) === e; ) l++;
+  for (; l < a && n.charAt(a - l - 1) === e;) l++;
   return n.slice(0, a - l);
 }
 function mk(n, e) {
@@ -33217,10 +33216,10 @@ class el {
         text: this.options.pedantic
           ? a
           : Bo(
-              a,
-              `
+            a,
+            `
 `,
-            ),
+          ),
       };
     }
   }
@@ -33301,17 +33300,17 @@ class el {
       let f = "",
         m = "",
         g = !1;
-      for (; e; ) {
+      for (; e;) {
         let y = !1;
         if (!(i = d.exec(e)) || this.rules.block.hr.test(e)) break;
         ((f = i[0]), (e = e.substring(f.length)));
         let x = i[2]
-            .split(
-              `
+          .split(
+            `
 `,
-              1,
-            )[0]
-            .replace(/^\t+/, (O) => " ".repeat(3 * O.length)),
+            1,
+          )[0]
+          .replace(/^\t+/, (O) => " ".repeat(3 * O.length)),
           w = e.split(
             `
 `,
@@ -33332,19 +33331,19 @@ class el {
               w +
               `
 `),
-            (e = e.substring(w.length + 1)),
-            (y = !0)),
-          !y)
+              (e = e.substring(w.length + 1)),
+              (y = !0)),
+            !y)
         ) {
           const O = new RegExp(
-              `^ {0,${Math.min(3, S - 1)}}(?:[*+-]|\\d{1,9}[.)])((?:[ 	][^\\n]*)?(?:\\n|$))`,
-            ),
+            `^ {0,${Math.min(3, S - 1)}}(?:[*+-]|\\d{1,9}[.)])((?:[ 	][^\\n]*)?(?:\\n|$))`,
+          ),
             D = new RegExp(
               `^ {0,${Math.min(3, S - 1)}}((?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$)`,
             ),
             L = new RegExp(`^ {0,${Math.min(3, S - 1)}}(?:\`\`\`|~~~)`),
             B = new RegExp(`^ {0,${Math.min(3, S - 1)}}#`);
-          for (; e; ) {
+          for (; e;) {
             const X = e.split(
               `
 `,
@@ -33352,9 +33351,9 @@ class el {
             )[0];
             if (
               ((w = X),
-              this.options.pedantic &&
+                this.options.pedantic &&
                 (w = w.replace(/^ {1,4}(?=( {4})*[^ ])/g, "  ")),
-              L.test(w) || B.test(w) || O.test(w) || D.test(e))
+                L.test(w) || B.test(w) || O.test(w) || D.test(e))
             )
               break;
             if (w.search(/[^ ]/) >= S || !w.trim())
@@ -33388,7 +33387,7 @@ class el {
           _;
         (this.options.gfm &&
           ((b = /^\[[ xX]\] /.exec(m)),
-          b && ((_ = b[0] !== "[ ] "), (m = m.replace(/^\[[ xX]\] +/, "")))),
+            b && ((_ = b[0] !== "[ ] "), (m = m.replace(/^\[[ xX]\] +/, "")))),
           c.items.push({
             type: "list_item",
             raw: f,
@@ -33406,8 +33405,8 @@ class el {
       for (let y = 0; y < c.items.length; y++)
         if (
           ((this.lexer.state.top = !1),
-          (c.items[y].tokens = this.lexer.blockTokens(c.items[y].text, [])),
-          !c.loose)
+            (c.items[y].tokens = this.lexer.blockTokens(c.items[y].text, [])),
+            !c.loose)
         ) {
           const x = c.items[y].tokens.filter((S) => S.type === "space"),
             w = x.length > 0 && x.some((S) => /\n.*\n/.test(S.raw));
@@ -33435,13 +33434,13 @@ class el {
       const a = i[1].toLowerCase().replace(/\s+/g, " "),
         l = i[2]
           ? i[2]
-              .replace(/^<(.*)>$/, "$1")
-              .replace(this.rules.inline.anyPunctuation, "$1")
+            .replace(/^<(.*)>$/, "$1")
+            .replace(this.rules.inline.anyPunctuation, "$1")
           : "",
         c = i[3]
           ? i[3]
-              .substring(1, i[3].length - 1)
-              .replace(this.rules.inline.anyPunctuation, "$1")
+            .substring(1, i[3].length - 1)
+            .replace(this.rules.inline.anyPunctuation, "$1")
           : i[3];
       return { type: "def", tag: a, raw: i[0], href: l, title: c };
     }
@@ -33494,7 +33493,7 @@ class el {
     if (i) {
       const a =
         i[1].charAt(i[1].length - 1) ===
-        `
+          `
 `
           ? i[1].slice(0, -1)
           : i[1];
@@ -33527,14 +33526,14 @@ class el {
         !this.lexer.state.inLink && /^<a /i.test(i[0])
           ? (this.lexer.state.inLink = !0)
           : this.lexer.state.inLink &&
-            /^<\/a>/i.test(i[0]) &&
-            (this.lexer.state.inLink = !1),
+          /^<\/a>/i.test(i[0]) &&
+          (this.lexer.state.inLink = !1),
         !this.lexer.state.inRawBlock &&
-        /^<(pre|code|kbd|script)(\s|>)/i.test(i[0])
+          /^<(pre|code|kbd|script)(\s|>)/i.test(i[0])
           ? (this.lexer.state.inRawBlock = !0)
           : this.lexer.state.inRawBlock &&
-            /^<\/(pre|code|kbd|script)(\s|>)/i.test(i[0]) &&
-            (this.lexer.state.inRawBlock = !1),
+          /^<\/(pre|code|kbd|script)(\s|>)/i.test(i[0]) &&
+          (this.lexer.state.inRawBlock = !1),
         {
           type: "html",
           raw: i[0],
@@ -33571,9 +33570,9 @@ class el {
       return (
         (l = l.trim()),
         /^</.test(l) &&
-          (this.options.pedantic && !/>$/.test(a)
-            ? (l = l.slice(1))
-            : (l = l.slice(1, -1))),
+        (this.options.pedantic && !/>$/.test(a)
+          ? (l = l.slice(1))
+          : (l = l.slice(1, -1))),
         jp(
           i,
           {
@@ -34015,7 +34014,7 @@ class Ln {
     (this.options.pedantic
       ? ((i.block = Uo.pedantic), (i.inline = qs.pedantic))
       : this.options.gfm &&
-        ((i.block = Uo.gfm),
+      ((i.block = Uo.gfm),
         this.options.breaks ? (i.inline = qs.breaks) : (i.inline = qs.gfm)),
       (this.tokenizer.rules = i));
   }
@@ -34045,11 +34044,11 @@ class Ln {
     this.options.pedantic
       ? (e = e.replace(/\t/g, "    ").replace(/^ +$/gm, ""))
       : (e = e.replace(
-          /^( *)(\t+)/gm,
-          (f, m, g) => m + "    ".repeat(g.length),
-        ));
+        /^( *)(\t+)/gm,
+        (f, m, g) => m + "    ".repeat(g.length),
+      ));
     let a, l, c, d;
-    for (; e; )
+    for (; e;)
       if (
         !(
           this.options.extensions &&
@@ -34074,7 +34073,7 @@ class Ln {
             (l = i[i.length - 1]),
             l && (l.type === "paragraph" || l.type === "text")
               ? ((l.raw +=
-                  `
+                `
 ` + a.raw),
                 (l.text +=
                   `
@@ -34112,14 +34111,14 @@ class Ln {
             (l = i[i.length - 1]),
             l && (l.type === "paragraph" || l.type === "text")
               ? ((l.raw +=
-                  `
+                `
 ` + a.raw),
                 (l.text +=
                   `
 ` + a.raw),
                 (this.inlineQueue[this.inlineQueue.length - 1].src = l.text))
               : this.tokens.links[a.tag] ||
-                (this.tokens.links[a.tag] = { href: a.href, title: a.title }));
+              (this.tokens.links[a.tag] = { href: a.href, title: a.title }));
           continue;
         }
         if ((a = this.tokenizer.table(e))) {
@@ -34132,7 +34131,7 @@ class Ln {
         }
         if (
           ((c = e),
-          this.options.extensions && this.options.extensions.startBlock)
+            this.options.extensions && this.options.extensions.startBlock)
         ) {
           let f = 1 / 0;
           const m = e.slice(1);
@@ -34147,7 +34146,7 @@ class Ln {
           ((l = i[i.length - 1]),
             d && l.type === "paragraph"
               ? ((l.raw +=
-                  `
+                `
 ` + a.raw),
                 (l.text +=
                   `
@@ -34164,7 +34163,7 @@ class Ln {
             (l = i[i.length - 1]),
             l && l.type === "text"
               ? ((l.raw +=
-                  `
+                `
 ` + a.raw),
                 (l.text +=
                   `
@@ -34210,31 +34209,31 @@ class Ln {
               "]" +
               d.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex));
     }
-    for (; (f = this.tokenizer.rules.inline.blockSkip.exec(d)) != null; )
+    for (; (f = this.tokenizer.rules.inline.blockSkip.exec(d)) != null;)
       d =
         d.slice(0, f.index) +
         "[" +
         "a".repeat(f[0].length - 2) +
         "]" +
         d.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
-    for (; (f = this.tokenizer.rules.inline.anyPunctuation.exec(d)) != null; )
+    for (; (f = this.tokenizer.rules.inline.anyPunctuation.exec(d)) != null;)
       d =
         d.slice(0, f.index) +
         "++" +
         d.slice(this.tokenizer.rules.inline.anyPunctuation.lastIndex);
-    for (; e; )
+    for (; e;)
       if (
         (m || (g = ""),
-        (m = !1),
-        !(
-          this.options.extensions &&
-          this.options.extensions.inline &&
-          this.options.extensions.inline.some((y) =>
-            (a = y.call({ lexer: this }, e, i))
-              ? ((e = e.substring(a.raw.length)), i.push(a), !0)
-              : !1,
-          )
-        ))
+          (m = !1),
+          !(
+            this.options.extensions &&
+            this.options.extensions.inline &&
+            this.options.extensions.inline.some((y) =>
+              (a = y.call({ lexer: this }, e, i))
+                ? ((e = e.substring(a.raw.length)), i.push(a), !0)
+                : !1,
+            )
+          ))
       ) {
         if ((a = this.tokenizer.escape(e))) {
           ((e = e.substring(a.raw.length)), i.push(a));
@@ -34286,7 +34285,7 @@ class Ln {
         }
         if (
           ((c = e),
-          this.options.extensions && this.options.extensions.startInline)
+            this.options.extensions && this.options.extensions.startInline)
         ) {
           let y = 1 / 0;
           const x = e.slice(1);
@@ -34332,14 +34331,14 @@ class nl {
 `),
       l
         ? '<pre><code class="language-' +
-          Jt(l) +
-          '">' +
-          (a ? e : Jt(e, !0)) +
-          `</code></pre>
+        Jt(l) +
+        '">' +
+        (a ? e : Jt(e, !0)) +
+        `</code></pre>
 `
         : "<pre><code>" +
-          (a ? e : Jt(e, !0)) +
-          `</code></pre>
+        (a ? e : Jt(e, !0)) +
+        `</code></pre>
 `
     );
   }
@@ -34394,11 +34393,11 @@ ${e}</blockquote>
       `<table>
 <thead>
 ` +
-        e +
-        `</thead>
+      e +
+      `</thead>
 ` +
-        i +
-        `</table>
+      i +
+      `</table>
 `
     );
   }
@@ -34596,10 +34595,10 @@ class Mn {
                 ? w.tokens.length > 0 && w.tokens[0].type === "paragraph"
                   ? ((w.tokens[0].text = _ + " " + w.tokens[0].text),
                     w.tokens[0].tokens &&
-                      w.tokens[0].tokens.length > 0 &&
-                      w.tokens[0].tokens[0].type === "text" &&
-                      (w.tokens[0].tokens[0].text =
-                        _ + " " + w.tokens[0].tokens[0].text))
+                    w.tokens[0].tokens.length > 0 &&
+                    w.tokens[0].tokens[0].type === "text" &&
+                    (w.tokens[0].tokens[0].text =
+                      _ + " " + w.tokens[0].tokens[0].text))
                   : w.tokens.unshift({ type: "text", text: _ + " " })
                 : (b += _ + " ");
             }
@@ -34622,7 +34621,7 @@ class Mn {
         case "text": {
           let d = c,
             f = d.tokens ? this.parseInline(d.tokens) : d.text;
-          for (; l + 1 < e.length && e[l + 1].type === "text"; )
+          for (; l + 1 < e.length && e[l + 1].type === "text";)
             ((d = e[++l]),
               (f +=
                 `
@@ -34786,9 +34785,9 @@ class Hk {
           const c = l;
           this.defaults.extensions?.childTokens?.[c.type]
             ? this.defaults.extensions.childTokens[c.type].forEach((d) => {
-                const f = c[d].flat(1 / 0);
-                a = a.concat(this.walkTokens(f, i));
-              })
+              const f = c[d].flat(1 / 0);
+              a = a.concat(this.walkTokens(f, i));
+            })
             : c.tokens && (a = a.concat(this.walkTokens(c.tokens, i)));
         }
       }
@@ -34801,16 +34800,16 @@ class Hk {
         const l = { ...a };
         if (
           ((l.async = this.defaults.async || l.async || !1),
-          a.extensions &&
+            a.extensions &&
             (a.extensions.forEach((c) => {
               if (!c.name) throw new Error("extension name required");
               if ("renderer" in c) {
                 const d = i.renderers[c.name];
                 d
                   ? (i.renderers[c.name] = function (...f) {
-                      let m = c.renderer.apply(this, f);
-                      return (m === !1 && (m = d.apply(this, f)), m);
-                    })
+                    let m = c.renderer.apply(this, f);
+                    return (m === !1 && (m = d.apply(this, f)), m);
+                  })
                   : (i.renderers[c.name] = c.renderer);
               }
               if ("tokenizer" in c) {
@@ -34821,21 +34820,21 @@ class Hk {
                 const d = i[c.level];
                 (d ? d.unshift(c.tokenizer) : (i[c.level] = [c.tokenizer]),
                   c.start &&
-                    (c.level === "block"
-                      ? i.startBlock
-                        ? i.startBlock.push(c.start)
-                        : (i.startBlock = [c.start])
-                      : c.level === "inline" &&
-                        (i.startInline
-                          ? i.startInline.push(c.start)
-                          : (i.startInline = [c.start]))));
+                  (c.level === "block"
+                    ? i.startBlock
+                      ? i.startBlock.push(c.start)
+                      : (i.startBlock = [c.start])
+                    : c.level === "inline" &&
+                    (i.startInline
+                      ? i.startInline.push(c.start)
+                      : (i.startInline = [c.start]))));
               }
               "childTokens" in c &&
                 c.childTokens &&
                 (i.childTokens[c.name] = c.childTokens);
             }),
-            (l.extensions = i)),
-          a.renderer)
+              (l.extensions = i)),
+            a.renderer)
         ) {
           const c = this.defaults.renderer || new nl(this.defaults);
           for (const d in a.renderer) {
@@ -34876,17 +34875,17 @@ class Hk {
               g = c[f];
             Ko.passThroughHooks.has(d)
               ? (c[f] = (y) => {
-                  if (this.defaults.async)
-                    return Promise.resolve(m.call(c, y)).then((w) =>
-                      g.call(c, w),
-                    );
-                  const x = m.call(c, y);
-                  return g.call(c, x);
-                })
+                if (this.defaults.async)
+                  return Promise.resolve(m.call(c, y)).then((w) =>
+                    g.call(c, w),
+                  );
+                const x = m.call(c, y);
+                return g.call(c, x);
+              })
               : (c[f] = (...y) => {
-                  let x = m.apply(c, y);
-                  return (x === !1 && (x = g.apply(c, y)), x);
-                });
+                let x = m.apply(c, y);
+                return (x === !1 && (x = g.apply(c, y)), x);
+              });
           }
           l.hooks = c;
         }
@@ -34926,7 +34925,7 @@ class Hk {
           console.warn(
             "marked(): The async option was set to true by an extension. The async: false option sent to parse will be ignored.",
           ),
-        (d.async = !0));
+          (d.async = !0));
       const f = this.#t(!!d.silent, !!d.async);
       if (typeof a > "u" || a === null)
         return f(new Error("marked(): input parameter is undefined or null"));
@@ -34934,8 +34933,8 @@ class Hk {
         return f(
           new Error(
             "marked(): input parameter is of type " +
-              Object.prototype.toString.call(a) +
-              ", string expected",
+            Object.prototype.toString.call(a) +
+            ", string expected",
           ),
         );
       if ((d.hooks && (d.hooks.options = d), d.async))
@@ -34967,7 +34966,7 @@ class Hk {
       if (
         ((a.message += `
 Please report this to https://github.com/markedjs/marked.`),
-        e)
+          e)
       ) {
         const l =
           "<p>An error occurred:</p><pre>" + Jt(a.message + "", !0) + "</pre>";
@@ -35040,10 +35039,10 @@ const Wk = (n = []) => n.map((e) => String(e)),
                 onClick: () => a(c),
                 children: [
                   d &&
-                    s.jsx("i", {
-                      className: "fas fa-check",
-                      "aria-hidden": "true",
-                    }),
+                  s.jsx("i", {
+                    className: "fas fa-check",
+                    "aria-hidden": "true",
+                  }),
                   l.name,
                 ],
               },
@@ -35090,14 +35089,14 @@ const Wk = (n = []) => n.map((e) => String(e)),
           children: l
             ? "Adding..."
             : s.jsxs(s.Fragment, {
-                children: [
-                  s.jsx("i", {
-                    className: "fas fa-plus",
-                    "aria-hidden": "true",
-                  }),
-                  " Add",
-                ],
-              }),
+              children: [
+                s.jsx("i", {
+                  className: "fas fa-plus",
+                  "aria-hidden": "true",
+                }),
+                " Add",
+              ],
+            }),
         }),
         d && s.jsx("p", { className: "admin-error-text", children: d }),
       ],
@@ -35118,10 +35117,10 @@ const Wk = (n = []) => n.map((e) => String(e)),
       N =
         n?.status === "scheduled"
           ? n?.scheduled_at_local ||
-            n?.scheduled_at ||
-            n?.scheduledAt ||
-            n?.date ||
-            n?.created_at
+          n?.scheduled_at ||
+          n?.scheduledAt ||
+          n?.date ||
+          n?.created_at
           : "",
       [b, _] = k.useState(hu(N)),
       [O, D] = k.useState(n?.image || ""),
@@ -35139,11 +35138,11 @@ const Wk = (n = []) => n.map((e) => String(e)),
           f.trim()
             ? f
             : c
-                .toLowerCase()
-                .replace(/[^a-z0-9\s-]/g, "")
-                .trim()
-                .replace(/\s+/g, "-")
-                .slice(0, 120),
+              .toLowerCase()
+              .replace(/[^a-z0-9\s-]/g, "")
+              .trim()
+              .replace(/\s+/g, "-")
+              .slice(0, 120),
         [f, c],
       ),
       J = k.useMemo(() => {
@@ -35359,8 +35358,8 @@ const Wk = (n = []) => n.map((e) => String(e)),
         }
       }, [w, b, n?.status, n?.scheduled_at, n?.scheduled_at_local]));
     const Le = async (W) => {
-        (W.preventDefault(), await we(w));
-      },
+      (W.preventDefault(), await we(w));
+    },
       ct = (W) => {
         const je = `
 ![image](${W})
@@ -35517,56 +35516,56 @@ const Wk = (n = []) => n.map((e) => String(e)),
                   },
                   children: [
                     Ne !== "preview" &&
-                      s.jsx("textarea", {
-                        ref: Ae,
-                        value: y,
-                        onChange: (W) => {
-                          const je = W.target.value;
-                          (x(je), F(je));
-                        },
-                        rows: 14,
-                        className: "admin-mono admin-editor-textarea",
-                        placeholder:
-                          "Write markdown content here. Use toolbar buttons for quick formatting.",
-                        required: !0,
-                        style: {
-                          width: "100%",
-                          minHeight: "320px",
-                          borderRadius: "8px",
-                          border: "1px solid #cbd5f5",
-                          padding: "12px",
-                        },
-                      }),
+                    s.jsx("textarea", {
+                      ref: Ae,
+                      value: y,
+                      onChange: (W) => {
+                        const je = W.target.value;
+                        (x(je), F(je));
+                      },
+                      rows: 14,
+                      className: "admin-mono admin-editor-textarea",
+                      placeholder:
+                        "Write markdown content here. Use toolbar buttons for quick formatting.",
+                      required: !0,
+                      style: {
+                        width: "100%",
+                        minHeight: "320px",
+                        borderRadius: "8px",
+                        border: "1px solid #cbd5f5",
+                        padding: "12px",
+                      },
+                    }),
                     (Ne === "split" || Ne === "preview") &&
-                      s.jsxs("div", {
-                        className: "admin-editor-preview",
-                        style: {
-                          border: "1px solid var(--border-color, #e2e8f0)",
-                          borderRadius: "8px",
-                          padding: "12px",
-                          background: "#0f172a0a",
-                          minHeight: "320px",
-                          overflowY: "auto",
-                        },
-                        children: [
-                          s.jsx("div", {
-                            className: "admin-editor-preview-label",
-                            style: {
-                              fontSize: "0.85rem",
-                              fontWeight: 600,
-                              marginBottom: "8px",
-                              textTransform: "uppercase",
-                              color: "#475569",
-                            },
-                            children: "Live Preview",
-                          }),
-                          s.jsx("div", {
-                            className: "admin-editor-preview-content",
-                            style: { lineHeight: 1.6 },
-                            dangerouslySetInnerHTML: { __html: J },
-                          }),
-                        ],
-                      }),
+                    s.jsxs("div", {
+                      className: "admin-editor-preview",
+                      style: {
+                        border: "1px solid var(--border-color, #e2e8f0)",
+                        borderRadius: "8px",
+                        padding: "12px",
+                        background: "#0f172a0a",
+                        minHeight: "320px",
+                        overflowY: "auto",
+                      },
+                      children: [
+                        s.jsx("div", {
+                          className: "admin-editor-preview-label",
+                          style: {
+                            fontSize: "0.85rem",
+                            fontWeight: 600,
+                            marginBottom: "8px",
+                            textTransform: "uppercase",
+                            color: "#475569",
+                          },
+                          children: "Live Preview",
+                        }),
+                        s.jsx("div", {
+                          className: "admin-editor-preview-content",
+                          style: { lineHeight: 1.6 },
+                          dangerouslySetInnerHTML: { __html: J },
+                        }),
+                      ],
+                    }),
                   ],
                 }),
               ],
@@ -35592,20 +35591,20 @@ const Wk = (n = []) => n.map((e) => String(e)),
                             onClick: () => S(W),
                             children: [
                               W === "draft" &&
-                                s.jsx("i", {
-                                  className: "fas fa-save",
-                                  "aria-hidden": "true",
-                                }),
+                              s.jsx("i", {
+                                className: "fas fa-save",
+                                "aria-hidden": "true",
+                              }),
                               W === "published" &&
-                                s.jsx("i", {
-                                  className: "fas fa-upload",
-                                  "aria-hidden": "true",
-                                }),
+                              s.jsx("i", {
+                                className: "fas fa-upload",
+                                "aria-hidden": "true",
+                              }),
                               W === "scheduled" &&
-                                s.jsx("i", {
-                                  className: "fas fa-calendar",
-                                  "aria-hidden": "true",
-                                }),
+                              s.jsx("i", {
+                                className: "fas fa-calendar",
+                                "aria-hidden": "true",
+                              }),
                               W.charAt(0).toUpperCase() + W.slice(1),
                             ],
                           },
@@ -35657,24 +35656,24 @@ const Wk = (n = []) => n.map((e) => String(e)),
                   ],
                 }),
                 O &&
-                  s.jsxs("div", {
-                    className: "admin-selected-image",
-                    children: [
-                      s.jsx("img", { src: O, alt: "Selected featured" }),
-                      s.jsxs("button", {
-                        type: "button",
-                        className: "admin-btn admin-btn-ghost admin-btn-danger",
-                        onClick: () => D(""),
-                        children: [
-                          s.jsx("i", {
-                            className: "fas fa-xmark",
-                            "aria-hidden": "true",
-                          }),
-                          " Remove",
-                        ],
-                      }),
-                    ],
-                  }),
+                s.jsxs("div", {
+                  className: "admin-selected-image",
+                  children: [
+                    s.jsx("img", { src: O, alt: "Selected featured" }),
+                    s.jsxs("button", {
+                      type: "button",
+                      className: "admin-btn admin-btn-ghost admin-btn-danger",
+                      onClick: () => D(""),
+                      children: [
+                        s.jsx("i", {
+                          className: "fas fa-xmark",
+                          "aria-hidden": "true",
+                        }),
+                        " Remove",
+                      ],
+                    }),
+                  ],
+                }),
               ],
             }),
             s.jsx(Vk, {
@@ -35726,30 +35725,30 @@ const Wk = (n = []) => n.map((e) => String(e)),
                   ],
                 }),
                 w === "scheduled" &&
-                  s.jsxs("button", {
-                    type: "button",
-                    className: "admin-btn admin-btn-primary",
-                    disabled: ye || !b,
-                    onClick: () => we("scheduled"),
-                    children: [
-                      s.jsx("i", {
-                        className: "fas fa-calendar",
-                        "aria-hidden": "true",
-                      }),
-                      ye ? "Scheduling..." : "Schedule",
-                    ],
-                  }),
+                s.jsxs("button", {
+                  type: "button",
+                  className: "admin-btn admin-btn-primary",
+                  disabled: ye || !b,
+                  onClick: () => we("scheduled"),
+                  children: [
+                    s.jsx("i", {
+                      className: "fas fa-calendar",
+                      "aria-hidden": "true",
+                    }),
+                    ye ? "Scheduling..." : "Schedule",
+                  ],
+                }),
               ],
             }),
           ],
         }),
         L &&
-          s.jsx(lk, {
-            onSelect: (W) => {
-              (X === "body" ? ct(W) : D(W), B(!1));
-            },
-            onClose: () => B(!1),
-          }),
+        s.jsx(lk, {
+          onSelect: (W) => {
+            (X === "body" ? ct(W) : D(W), B(!1));
+          },
+          onClose: () => B(!1),
+        }),
       ],
     });
   },
@@ -35798,10 +35797,10 @@ const Wk = (n = []) => n.map((e) => String(e)),
         return Number.isNaN(O.getTime())
           ? _
           : O.toLocaleDateString(void 0, {
-              month: "short",
-              day: "numeric",
-              year: "numeric",
-            });
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          });
       };
     return s.jsxs(s.Fragment, {
       children: [
@@ -35875,159 +35874,159 @@ const Wk = (n = []) => n.map((e) => String(e)),
           className: "admin-table-card",
           children: i
             ? s.jsx("div", {
-                className: "admin-empty-state",
-                children: "Loading posts...",
-              })
+              className: "admin-empty-state",
+              children: "Loading posts...",
+            })
             : e.length === 0
               ? s.jsxs("div", {
-                  className: "admin-empty-state",
-                  children: [
-                    s.jsx("p", { children: "No posts found" }),
-                    s.jsx("button", {
-                      type: "button",
-                      className: "admin-btn admin-btn-primary",
-                      onClick: m,
-                      children: "Create your first post",
-                    }),
-                  ],
-                })
+                className: "admin-empty-state",
+                children: [
+                  s.jsx("p", { children: "No posts found" }),
+                  s.jsx("button", {
+                    type: "button",
+                    className: "admin-btn admin-btn-primary",
+                    onClick: m,
+                    children: "Create your first post",
+                  }),
+                ],
+              })
               : s.jsxs("table", {
-                  className: "admin-posts-table",
-                  children: [
-                    s.jsx("thead", {
-                      children: s.jsxs("tr", {
-                        children: [
-                          s.jsx("th", { children: "Post" }),
-                          s.jsx("th", { children: "Category" }),
-                          s.jsx("th", { children: "Status" }),
-                          s.jsx("th", { children: "Date" }),
-                          s.jsx("th", { children: "Actions" }),
-                        ],
-                      }),
+                className: "admin-posts-table",
+                children: [
+                  s.jsx("thead", {
+                    children: s.jsxs("tr", {
+                      children: [
+                        s.jsx("th", { children: "Post" }),
+                        s.jsx("th", { children: "Category" }),
+                        s.jsx("th", { children: "Status" }),
+                        s.jsx("th", { children: "Date" }),
+                        s.jsx("th", { children: "Actions" }),
+                      ],
                     }),
-                    s.jsx("tbody", {
-                      children: e.map((b) =>
-                        s.jsxs(
-                          "tr",
-                          {
-                            children: [
-                              s.jsx("td", {
-                                children: s.jsxs("div", {
-                                  className: "admin-post-title-wrap",
-                                  title: b.title,
-                                  children: [
-                                    s.jsx("div", {
-                                      className: "admin-post-title",
-                                      children: b.title,
+                  }),
+                  s.jsx("tbody", {
+                    children: e.map((b) =>
+                      s.jsxs(
+                        "tr",
+                        {
+                          children: [
+                            s.jsx("td", {
+                              children: s.jsxs("div", {
+                                className: "admin-post-title-wrap",
+                                title: b.title,
+                                children: [
+                                  s.jsx("div", {
+                                    className: "admin-post-title",
+                                    children: b.title,
+                                  }),
+                                  b.excerpt &&
+                                  s.jsx("div", {
+                                    className: "admin-post-excerpt",
+                                    title: b.excerpt,
+                                    children: b.excerpt,
+                                  }),
+                                ],
+                              }),
+                            }),
+                            s.jsx("td", {
+                              children:
+                                b.categories && b.categories.length > 0
+                                  ? s.jsx("div", {
+                                    className: "admin-post-category-list",
+                                    children: b.categories.map((_) =>
+                                      s.jsx(
+                                        "span",
+                                        {
+                                          className:
+                                            "admin-post-category-pill",
+                                          children: _.name,
+                                        },
+                                        _.id || _.name,
+                                      ),
+                                    ),
+                                  })
+                                  : s.jsx("span", {
+                                    className: "admin-post-category",
+                                    children: "GENERAL",
+                                  }),
+                            }),
+                            s.jsx("td", {
+                              children: s.jsx(Jk, { status: b.status }),
+                            }),
+                            s.jsx("td", {
+                              className: "admin-post-date",
+                              children: N(b),
+                            }),
+                            s.jsx("td", {
+                              children: s.jsxs("div", {
+                                className: "admin-row-actions",
+                                children: [
+                                  s.jsx("button", {
+                                    type: "button",
+                                    className: "admin-icon-btn",
+                                    onClick: () => g(b),
+                                    title: "Edit",
+                                    "aria-label": "Edit post",
+                                    children: s.jsx("i", {
+                                      className: "fas fa-pen",
+                                      "aria-hidden": "true",
                                     }),
-                                    b.excerpt &&
-                                      s.jsx("div", {
-                                        className: "admin-post-excerpt",
-                                        title: b.excerpt,
-                                        children: b.excerpt,
-                                      }),
-                                  ],
-                                }),
-                              }),
-                              s.jsx("td", {
-                                children:
-                                  b.categories && b.categories.length > 0
-                                    ? s.jsx("div", {
-                                        className: "admin-post-category-list",
-                                        children: b.categories.map((_) =>
-                                          s.jsx(
-                                            "span",
-                                            {
-                                              className:
-                                                "admin-post-category-pill",
-                                              children: _.name,
-                                            },
-                                            _.id || _.name,
-                                          ),
-                                        ),
-                                      })
-                                    : s.jsx("span", {
-                                        className: "admin-post-category",
-                                        children: "GENERAL",
-                                      }),
-                              }),
-                              s.jsx("td", {
-                                children: s.jsx(Jk, { status: b.status }),
-                              }),
-                              s.jsx("td", {
-                                className: "admin-post-date",
-                                children: N(b),
-                              }),
-                              s.jsx("td", {
-                                children: s.jsxs("div", {
-                                  className: "admin-row-actions",
-                                  children: [
-                                    s.jsx("button", {
-                                      type: "button",
-                                      className: "admin-icon-btn",
-                                      onClick: () => g(b),
-                                      title: "Edit",
-                                      "aria-label": "Edit post",
-                                      children: s.jsx("i", {
-                                        className: "fas fa-pen",
+                                  }),
+                                  b.status !== "published" &&
+                                  s.jsx("button", {
+                                    type: "button",
+                                    className: "admin-icon-btn success",
+                                    disabled: !!f,
+                                    onClick: () => y(b),
+                                    title: "Publish",
+                                    "aria-label": "Publish post",
+                                    children: S(b.id, "publish")
+                                      ? "..."
+                                      : s.jsx("i", {
+                                        className: "fas fa-arrow-up",
                                         "aria-hidden": "true",
                                       }),
-                                    }),
-                                    b.status !== "published" &&
-                                      s.jsx("button", {
-                                        type: "button",
-                                        className: "admin-icon-btn success",
-                                        disabled: !!f,
-                                        onClick: () => y(b),
-                                        title: "Publish",
-                                        "aria-label": "Publish post",
-                                        children: S(b.id, "publish")
-                                          ? "..."
-                                          : s.jsx("i", {
-                                              className: "fas fa-arrow-up",
-                                              "aria-hidden": "true",
-                                            }),
+                                  }),
+                                  b.status === "published" &&
+                                  s.jsx("button", {
+                                    type: "button",
+                                    className: "admin-icon-btn warn",
+                                    disabled: !!f,
+                                    onClick: () => x(b),
+                                    title: "Withdraw",
+                                    "aria-label": "Withdraw post",
+                                    children: S(b.id, "withdraw")
+                                      ? "..."
+                                      : s.jsx("i", {
+                                        className: "fas fa-pause",
+                                        "aria-hidden": "true",
                                       }),
-                                    b.status === "published" &&
-                                      s.jsx("button", {
-                                        type: "button",
-                                        className: "admin-icon-btn warn",
-                                        disabled: !!f,
-                                        onClick: () => x(b),
-                                        title: "Withdraw",
-                                        "aria-label": "Withdraw post",
-                                        children: S(b.id, "withdraw")
-                                          ? "..."
-                                          : s.jsx("i", {
-                                              className: "fas fa-pause",
-                                              "aria-hidden": "true",
-                                            }),
+                                  }),
+                                  s.jsx("button", {
+                                    type: "button",
+                                    className: "admin-icon-btn danger",
+                                    disabled: !!f,
+                                    onClick: () => w(b),
+                                    title: "Delete",
+                                    "aria-label": "Delete post",
+                                    children: S(b.id, "delete")
+                                      ? "..."
+                                      : s.jsx("i", {
+                                        className: "fas fa-trash",
+                                        "aria-hidden": "true",
                                       }),
-                                    s.jsx("button", {
-                                      type: "button",
-                                      className: "admin-icon-btn danger",
-                                      disabled: !!f,
-                                      onClick: () => w(b),
-                                      title: "Delete",
-                                      "aria-label": "Delete post",
-                                      children: S(b.id, "delete")
-                                        ? "..."
-                                        : s.jsx("i", {
-                                            className: "fas fa-trash",
-                                            "aria-hidden": "true",
-                                          }),
-                                    }),
-                                  ],
-                                }),
+                                  }),
+                                ],
                               }),
-                            ],
-                          },
-                          b.id,
-                        ),
+                            }),
+                          ],
+                        },
+                        b.id,
                       ),
-                    }),
-                  ],
-                }),
+                    ),
+                  }),
+                ],
+              }),
         }),
       ],
     });
@@ -36100,14 +36099,14 @@ const Wk = (n = []) => n.map((e) => String(e)),
       i && a && ye();
     }, [i, a, ye]);
     const G = k.useMemo(
-        () =>
-          y.filter((M) => {
-            const J = D === "all" || M.status === D,
-              F = !_ || M.title?.toLowerCase().includes(_.toLowerCase());
-            return J && F;
-          }),
-        [y, _, D],
-      ),
+      () =>
+        y.filter((M) => {
+          const J = D === "all" || M.status === D,
+            F = !_ || M.title?.toLowerCase().includes(_.toLowerCase());
+          return J && F;
+        }),
+      [y, _, D],
+    ),
       ie = k.useMemo(
         () => ({
           all: y.length,
@@ -36169,141 +36168,141 @@ const Wk = (n = []) => n.map((e) => String(e)),
       };
     return !i || !a
       ? s.jsxs("div", {
-          className: "admin-dashboard-auth-empty",
-          children: [
-            s.jsx("p", {
-              children: i
-                ? "You do not have permission to access the dashboard."
-                : "Please log in to access the dashboard",
-            }),
-            !i &&
-              s.jsx("button", {
-                type: "button",
-                className: "btn-primary",
-                onClick: () => c("/admin/login"),
-                children: "Go to Login",
-              }),
-          ],
-        })
+        className: "admin-dashboard-auth-empty",
+        children: [
+          s.jsx("p", {
+            children: i
+              ? "You do not have permission to access the dashboard."
+              : "Please log in to access the dashboard",
+          }),
+          !i &&
+          s.jsx("button", {
+            type: "button",
+            className: "btn-primary",
+            onClick: () => c("/admin/login"),
+            children: "Go to Login",
+          }),
+        ],
+      })
       : s.jsxs("div", {
-          className: "admin-dashboard-shell",
-          children: [
-            K &&
-              s.jsxs("div", {
-                className: `admin-toast admin-toast-${K.type}`,
+        className: "admin-dashboard-shell",
+        children: [
+          K &&
+          s.jsxs("div", {
+            className: `admin-toast admin-toast-${K.type}`,
+            children: [
+              s.jsxs("span", {
+                className: "admin-toast-icon",
+                "aria-hidden": "true",
                 children: [
-                  s.jsxs("span", {
-                    className: "admin-toast-icon",
-                    "aria-hidden": "true",
-                    children: [
-                      K.type === "success" &&
-                        s.jsx("i", { className: "fas fa-circle-check" }),
-                      K.type === "error" &&
-                        s.jsx("i", { className: "fas fa-circle-xmark" }),
-                      K.type === "warning" &&
-                        s.jsx("i", {
-                          className: "fas fa-triangle-exclamation",
-                        }),
-                      K.type === "info" &&
-                        s.jsx("i", { className: "fas fa-circle-info" }),
-                    ],
+                  K.type === "success" &&
+                  s.jsx("i", { className: "fas fa-circle-check" }),
+                  K.type === "error" &&
+                  s.jsx("i", { className: "fas fa-circle-xmark" }),
+                  K.type === "warning" &&
+                  s.jsx("i", {
+                    className: "fas fa-triangle-exclamation",
                   }),
-                  s.jsx("span", { children: K.message }),
+                  K.type === "info" &&
+                  s.jsx("i", { className: "fas fa-circle-info" }),
                 ],
               }),
-            s.jsxs("header", {
-              className: "admin-dashboard-header",
-              children: [
-                s.jsx("img", {
-                  src: sl,
-                  alt: "VSDOX – AI-Powered Enterprise Content Management Admin Dashboard",
-                  className: "admin-dashboard-logo",
-                }),
-                s.jsx("strong", { children: "Blog Admin" }),
-                s.jsxs("div", {
-                  style: {
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "12px",
-                    marginLeft: "auto",
-                  },
-                  children: [
-                    s.jsxs("span", {
-                      className: "admin-dashboard-user",
-                      children: [
-                        s.jsx("i", {
-                          className: "fas fa-user",
-                          "aria-hidden": "true",
-                        }),
-                        " ",
-                        i.email || i.name,
-                      ],
-                    }),
-                    s.jsxs("button", {
-                      type: "button",
-                      className: "admin-btn admin-btn-ghost admin-btn-danger",
-                      onClick: async () => {
-                        (await l(), n && n(), c("/blog"));
-                      },
-                      title: "Log Out",
-                      children: [
-                        s.jsx("i", {
-                          className: "fas fa-right-from-bracket",
-                          "aria-hidden": "true",
-                        }),
-                        " Logout",
-                      ],
-                    }),
-                    n &&
-                      s.jsx("button", {
-                        type: "button",
-                        className: "admin-btn admin-btn-ghost admin-btn-close",
-                        onClick: n,
-                        title: "Close",
-                        children: s.jsx("i", {
-                          className: "fas fa-xmark",
-                          "aria-hidden": "true",
-                        }),
+              s.jsx("span", { children: K.message }),
+            ],
+          }),
+          s.jsxs("header", {
+            className: "admin-dashboard-header",
+            children: [
+              s.jsx("img", {
+                src: sl,
+                alt: "VSDOX – AI-Powered Enterprise Content Management Admin Dashboard",
+                className: "admin-dashboard-logo",
+              }),
+              s.jsx("strong", { children: "Blog Admin" }),
+              s.jsxs("div", {
+                style: {
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "12px",
+                  marginLeft: "auto",
+                },
+                children: [
+                  s.jsxs("span", {
+                    className: "admin-dashboard-user",
+                    children: [
+                      s.jsx("i", {
+                        className: "fas fa-user",
+                        "aria-hidden": "true",
                       }),
-                  ],
-                }),
-              ],
-            }),
-            s.jsx("main", {
-              className: "admin-dashboard-content",
-              children:
-                d === "form"
-                  ? s.jsx(Gk, {
-                      post: N,
-                      categories: w,
-                      setCategories: S,
-                      onSave: me,
-                      onCancel: () => {
-                        (f("list"), b(null));
-                      },
-                    })
-                  : s.jsx(Yk, {
-                      counts: ie,
-                      posts: G,
-                      loading: m,
-                      search: _,
-                      setSearch: O,
-                      statusFilter: D,
-                      setStatusFilter: L,
-                      actionLoading: B,
-                      onNew: () => {
-                        (b(null), f("form"));
-                      },
-                      onEdit: (M) => {
-                        (b(M), f("form"));
-                      },
-                      onPublish: Z,
-                      onWithdraw: Ae,
-                      onDelete: ae,
+                      " ",
+                      i.email || i.name,
+                    ],
+                  }),
+                  s.jsxs("button", {
+                    type: "button",
+                    className: "admin-btn admin-btn-ghost admin-btn-danger",
+                    onClick: async () => {
+                      (await l(), n && n(), c("/blog"));
+                    },
+                    title: "Log Out",
+                    children: [
+                      s.jsx("i", {
+                        className: "fas fa-right-from-bracket",
+                        "aria-hidden": "true",
+                      }),
+                      " Logout",
+                    ],
+                  }),
+                  n &&
+                  s.jsx("button", {
+                    type: "button",
+                    className: "admin-btn admin-btn-ghost admin-btn-close",
+                    onClick: n,
+                    title: "Close",
+                    children: s.jsx("i", {
+                      className: "fas fa-xmark",
+                      "aria-hidden": "true",
                     }),
-            }),
-          ],
-        });
+                  }),
+                ],
+              }),
+            ],
+          }),
+          s.jsx("main", {
+            className: "admin-dashboard-content",
+            children:
+              d === "form"
+                ? s.jsx(Gk, {
+                  post: N,
+                  categories: w,
+                  setCategories: S,
+                  onSave: me,
+                  onCancel: () => {
+                    (f("list"), b(null));
+                  },
+                })
+                : s.jsx(Yk, {
+                  counts: ie,
+                  posts: G,
+                  loading: m,
+                  search: _,
+                  setSearch: O,
+                  statusFilter: D,
+                  setStatusFilter: L,
+                  actionLoading: B,
+                  onNew: () => {
+                    (b(null), f("form"));
+                  },
+                  onEdit: (M) => {
+                    (b(M), f("form"));
+                  },
+                  onPublish: Z,
+                  onWithdraw: Ae,
+                  onDelete: ae,
+                }),
+          }),
+        ],
+      });
   },
   Zk = ({
     id: n,
@@ -36355,12 +36354,12 @@ const Wk = (n = []) => n.map((e) => String(e)),
       },
       K = Array.isArray(x)
         ? [
-            ...new Set(
-              x
-                .map((ie) => (typeof ie == "string" ? ie : ie?.name || ""))
-                .filter(Boolean),
-            ),
-          ]
+          ...new Set(
+            x
+              .map((ie) => (typeof ie == "string" ? ie : ie?.name || ""))
+              .filter(Boolean),
+          ),
+        ]
         : [],
       ce = w && w !== "All" && K.includes(w) ? w : null,
       xe = ce || K[0] || "General",
@@ -36374,10 +36373,10 @@ const Wk = (n = []) => n.map((e) => String(e)),
         className: "glass-card blog-card-v2 reveal",
         children: [
           y &&
-            s.jsx("div", {
-              className: `blog-status-badge blog-status-${f || "draft"}`,
-              children: f,
-            }),
+          s.jsx("div", {
+            className: `blog-status-badge blog-status-${f || "draft"}`,
+            children: f,
+          }),
           s.jsxs("div", {
             className: "blog-card-media",
             children: [
@@ -36394,26 +36393,26 @@ const Wk = (n = []) => n.map((e) => String(e)),
                     children: xe,
                   }),
                   G > 0 &&
-                    s.jsxs("div", {
-                      className: "blog-card-category-more-wrapper",
-                      children: [
-                        s.jsxs("button", {
-                          type: "button",
-                          className: "blog-card-category-more-pill",
-                          onClick: (ie) => {
-                            (ie.stopPropagation(), D((be) => !be));
-                          },
-                          children: ["+", G],
-                        }),
-                        O &&
-                          s.jsx("div", {
-                            className: "blog-card-category-extra-panel",
-                            children: ye.map((ie) =>
-                              s.jsx("span", { children: ie }, ie),
-                            ),
-                          }),
-                      ],
-                    }),
+                  s.jsxs("div", {
+                    className: "blog-card-category-more-wrapper",
+                    children: [
+                      s.jsxs("button", {
+                        type: "button",
+                        className: "blog-card-category-more-pill",
+                        onClick: (ie) => {
+                          (ie.stopPropagation(), D((be) => !be));
+                        },
+                        children: ["+", G],
+                      }),
+                      O &&
+                      s.jsx("div", {
+                        className: "blog-card-category-extra-panel",
+                        children: ye.map((ie) =>
+                          s.jsx("span", { children: ie }, ie),
+                        ),
+                      }),
+                    ],
+                  }),
                 ],
               }),
             ],
@@ -36480,61 +36479,61 @@ const Wk = (n = []) => n.map((e) => String(e)),
                 ],
               }),
               y &&
-                s.jsxs("div", {
-                  className: "blog-card-admin-actions",
-                  children: [
-                    f !== "published" &&
-                      s.jsx("button", {
-                        onClick: L,
-                        disabled: b,
-                        className: "blog-admin-btn blog-admin-btn-publish",
-                        children: b
-                          ? "..."
-                          : s.jsxs(s.Fragment, {
-                              children: [
-                                s.jsx("i", {
-                                  className: "fas fa-upload",
-                                  "aria-hidden": "true",
-                                }),
-                                " Publish",
-                              ],
-                            }),
-                      }),
-                    f === "published" &&
-                      s.jsx("button", {
-                        onClick: B,
-                        disabled: b,
-                        className: "blog-admin-btn blog-admin-btn-withdraw",
-                        children: b
-                          ? "..."
-                          : s.jsxs(s.Fragment, {
-                              children: [
-                                s.jsx("i", {
-                                  className: "fas fa-pause",
-                                  "aria-hidden": "true",
-                                }),
-                                " Withdraw",
-                              ],
-                            }),
-                      }),
-                    s.jsx("button", {
-                      onClick: X,
-                      disabled: b,
-                      className: "blog-admin-btn blog-admin-btn-delete",
-                      children: b
-                        ? "..."
-                        : s.jsxs(s.Fragment, {
-                            children: [
-                              s.jsx("i", {
-                                className: "fas fa-trash",
-                                "aria-hidden": "true",
-                              }),
-                              " Delete",
-                            ],
+              s.jsxs("div", {
+                className: "blog-card-admin-actions",
+                children: [
+                  f !== "published" &&
+                  s.jsx("button", {
+                    onClick: L,
+                    disabled: b,
+                    className: "blog-admin-btn blog-admin-btn-publish",
+                    children: b
+                      ? "..."
+                      : s.jsxs(s.Fragment, {
+                        children: [
+                          s.jsx("i", {
+                            className: "fas fa-upload",
+                            "aria-hidden": "true",
                           }),
-                    }),
-                  ],
-                }),
+                          " Publish",
+                        ],
+                      }),
+                  }),
+                  f === "published" &&
+                  s.jsx("button", {
+                    onClick: B,
+                    disabled: b,
+                    className: "blog-admin-btn blog-admin-btn-withdraw",
+                    children: b
+                      ? "..."
+                      : s.jsxs(s.Fragment, {
+                        children: [
+                          s.jsx("i", {
+                            className: "fas fa-pause",
+                            "aria-hidden": "true",
+                          }),
+                          " Withdraw",
+                        ],
+                      }),
+                  }),
+                  s.jsx("button", {
+                    onClick: X,
+                    disabled: b,
+                    className: "blog-admin-btn blog-admin-btn-delete",
+                    children: b
+                      ? "..."
+                      : s.jsxs(s.Fragment, {
+                        children: [
+                          s.jsx("i", {
+                            className: "fas fa-trash",
+                            "aria-hidden": "true",
+                          }),
+                          " Delete",
+                        ],
+                      }),
+                  }),
+                ],
+              }),
             ],
           }),
         ],
@@ -36567,30 +36566,30 @@ const Wk = (n = []) => n.map((e) => String(e)),
         D || K();
       }, [D]));
     const K = async (Z = 1, Ae = !1) => {
-        f(!0);
-        try {
-          const { data: ae, error: me } = await De.from("posts")
-            .select("*, categories(*)")
-            .eq("status", "published")
-            .order("published_at", { ascending: !1 })
-            .range((Z - 1) * 6, Z * 6 - 1);
-          if (me) throw me;
-          const M = ae || [];
-          (a((F) => (Ae ? [...F, ...M] : M)), b(M.length === 6));
-          const J = [
-            "All",
-            ...new Set(
-              M.flatMap((F) =>
-                (F.categories || []).map((T) => T?.name).filter(Boolean),
-              ),
+      f(!0);
+      try {
+        const { data: ae, error: me } = await De.from("posts")
+          .select("*, categories(*)")
+          .eq("status", "published")
+          .order("published_at", { ascending: !1 })
+          .range((Z - 1) * 6, Z * 6 - 1);
+        if (me) throw me;
+        const M = ae || [];
+        (a((F) => (Ae ? [...F, ...M] : M)), b(M.length === 6));
+        const J = [
+          "All",
+          ...new Set(
+            M.flatMap((F) =>
+              (F.categories || []).map((T) => T?.name).filter(Boolean),
             ),
-          ];
-          x((F) => [...new Set([...F, ...J])]);
-        } catch (ae) {
-          console.error("Failed to load posts:", ae);
-        }
-        f(!1);
-      },
+          ),
+        ];
+        x((F) => [...new Set([...F, ...J])]);
+      } catch (ae) {
+        console.error("Failed to load posts:", ae);
+      }
+      f(!1);
+    },
       ce = async () => {
         try {
           const { data: Z, error: Ae } = await De.from("posts")
@@ -36632,10 +36631,10 @@ const Wk = (n = []) => n.map((e) => String(e)),
         category: Z.categories?.[0]?.name || "General",
         date: Z.date
           ? new Date(Z.date).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
           : "Draft",
         title: Z.title,
         excerpt: Z.excerpt || "",
@@ -36659,23 +36658,23 @@ const Wk = (n = []) => n.map((e) => String(e)),
             "ECM blog, document management articles, AI DMS insights, enterprise content management trends, VSDOX blog, Vir Softech insights",
         }),
         D &&
-          e &&
-          s.jsxs(s.Fragment, {
-            children: [
-              s.jsx("div", {
-                onClick: () => L(!1),
-                className: "blog-dashboard-backdrop",
-              }),
-              s.jsx("div", {
-                className: "blog-dashboard-panel",
-                children: s.jsx(
-                  Cm,
-                  { onClose: () => L(!1), initialView: B },
-                  B,
-                ),
-              }),
-            ],
-          }),
+        e &&
+        s.jsxs(s.Fragment, {
+          children: [
+            s.jsx("div", {
+              onClick: () => L(!1),
+              className: "blog-dashboard-backdrop",
+            }),
+            s.jsx("div", {
+              className: "blog-dashboard-panel",
+              children: s.jsx(
+                Cm,
+                { onClose: () => L(!1), initialView: B },
+                B,
+              ),
+            }),
+          ],
+        }),
         s.jsx(ma, {
           tag: "INSIGHTS & TRENDS",
           title: "Insights & Blog",
@@ -36689,68 +36688,68 @@ const Wk = (n = []) => n.map((e) => String(e)),
             className: "max-container",
             children: [
               e &&
-                s.jsx("div", {
-                  className: "blog-admin-top-row",
-                  children: s.jsxs("div", {
-                    className: "blog-admin-controls",
-                    children: [
-                      s.jsxs("span", {
-                        className: "blog-admin-user",
-                        children: [
-                          s.jsx("i", {
-                            className: "fas fa-user",
+              s.jsx("div", {
+                className: "blog-admin-top-row",
+                children: s.jsxs("div", {
+                  className: "blog-admin-controls",
+                  children: [
+                    s.jsxs("span", {
+                      className: "blog-admin-user",
+                      children: [
+                        s.jsx("i", {
+                          className: "fas fa-user",
+                          "aria-hidden": "true",
+                        }),
+                        " ",
+                        n.name,
+                      ],
+                    }),
+                    s.jsxs("button", {
+                      onClick: xe,
+                      className: `blog-control-btn ${_ ? "active" : ""}`,
+                      children: [
+                        _ && _
+                          ? s.jsx("i", {
+                            className: "fas fa-toggle-on",
+                            "aria-hidden": "true",
+                          })
+                          : s.jsx("i", {
+                            className: "fas fa-toggle-off",
                             "aria-hidden": "true",
                           }),
-                          " ",
-                          n.name,
-                        ],
-                      }),
-                      s.jsxs("button", {
-                        onClick: xe,
-                        className: `blog-control-btn ${_ ? "active" : ""}`,
-                        children: [
-                          _ && _
-                            ? s.jsx("i", {
-                                className: "fas fa-toggle-on",
-                                "aria-hidden": "true",
-                              })
-                            : s.jsx("i", {
-                                className: "fas fa-toggle-off",
-                                "aria-hidden": "true",
-                              }),
-                          _ ? "Admin Mode ON" : "Admin Mode",
-                        ],
-                      }),
-                      s.jsxs("button", {
-                        onClick: () => {
-                          (X("list"), L(!0));
-                        },
-                        className: "blog-control-btn",
-                        children: [
-                          s.jsx("i", {
-                            className: "fas fa-tasks",
-                            "aria-hidden": "true",
-                          }),
-                          " Manage Post",
-                        ],
-                      }),
-                      s.jsxs("button", {
-                        onClick: () => {
-                          (X("form"), L(!0));
-                        },
-                        className: "blog-control-btn blog-control-btn-primary",
-                        style: { background: "var(--primary)", color: "white" },
-                        children: [
-                          s.jsx("i", {
-                            className: "fas fa-plus",
-                            "aria-hidden": "true",
-                          }),
-                          " New Post",
-                        ],
-                      }),
-                    ],
-                  }),
+                        _ ? "Admin Mode ON" : "Admin Mode",
+                      ],
+                    }),
+                    s.jsxs("button", {
+                      onClick: () => {
+                        (X("list"), L(!0));
+                      },
+                      className: "blog-control-btn",
+                      children: [
+                        s.jsx("i", {
+                          className: "fas fa-tasks",
+                          "aria-hidden": "true",
+                        }),
+                        " Manage Post",
+                      ],
+                    }),
+                    s.jsxs("button", {
+                      onClick: () => {
+                        (X("form"), L(!0));
+                      },
+                      className: "blog-control-btn blog-control-btn-primary",
+                      style: { background: "var(--primary)", color: "white" },
+                      children: [
+                        s.jsx("i", {
+                          className: "fas fa-plus",
+                          "aria-hidden": "true",
+                        }),
+                        " New Post",
+                      ],
+                    }),
+                  ],
                 }),
+              }),
               s.jsx("div", {
                 className: "blog-filter-row",
                 children: y.map((Z) =>
@@ -36766,62 +36765,62 @@ const Wk = (n = []) => n.map((e) => String(e)),
                 ),
               }),
               _ &&
-                e &&
-                s.jsxs("div", {
-                  className: "blog-admin-banner",
-                  children: [
-                    s.jsx("strong", { children: "Admin Mode:" }),
-                    " Showing all posts including drafts.",
-                  ],
-                }),
+              e &&
+              s.jsxs("div", {
+                className: "blog-admin-banner",
+                children: [
+                  s.jsx("strong", { children: "Admin Mode:" }),
+                  " Showing all posts including drafts.",
+                ],
+              }),
               d
                 ? s.jsx("div", {
-                    className: "blog-empty-state",
-                    children: "Loading posts...",
-                  })
+                  className: "blog-empty-state",
+                  children: "Loading posts...",
+                })
                 : be.length === 0
                   ? s.jsxs("div", {
-                      className: "blog-empty-state",
-                      children: [
-                        s.jsx("p", { children: "No posts found" }),
-                        e &&
-                          s.jsx("button", {
-                            onClick: () => L(!0),
-                            className: "blog-empty-action",
-                            children: "Create your first post",
-                          }),
-                      ],
-                    })
+                    className: "blog-empty-state",
+                    children: [
+                      s.jsx("p", { children: "No posts found" }),
+                      e &&
+                      s.jsx("button", {
+                        onClick: () => L(!0),
+                        className: "blog-empty-action",
+                        children: "Create your first post",
+                      }),
+                    ],
+                  })
                   : s.jsx("div", {
-                      className: "industry-grid-detailed blog-grid",
-                      children: be.map((Z) =>
-                        s.jsx(
-                          Zk,
-                          {
-                            ...Ne(Z),
-                            categories: Z.categories || [],
-                            activeFilter: m,
-                            isAdmin: e,
-                            onStatusChange: ye,
-                            onDelete: G,
-                          },
-                          Z.id,
-                        ),
+                    className: "industry-grid-detailed blog-grid",
+                    children: be.map((Z) =>
+                      s.jsx(
+                        Zk,
+                        {
+                          ...Ne(Z),
+                          categories: Z.categories || [],
+                          activeFilter: m,
+                          isAdmin: e,
+                          onStatusChange: ye,
+                          onDelete: G,
+                        },
+                        Z.id,
                       ),
-                    }),
-              N &&
-                (!_ || !e) &&
-                s.jsx("div", {
-                  className: "blog-load-more-wrap",
-                  children: s.jsx("button", {
-                    className: "btn-outline blog-load-more-btn",
-                    onClick: () => {
-                      const Z = w + 1;
-                      (S(Z), K(Z, !0));
-                    },
-                    children: "Load More Articles",
+                    ),
                   }),
+              N &&
+              (!_ || !e) &&
+              s.jsx("div", {
+                className: "blog-load-more-wrap",
+                children: s.jsx("button", {
+                  className: "btn-outline blog-load-more-btn",
+                  onClick: () => {
+                    const Z = w + 1;
+                    (S(Z), K(Z, !0));
+                  },
+                  children: "Load More Articles",
                 }),
+              }),
             ],
           }),
         }),

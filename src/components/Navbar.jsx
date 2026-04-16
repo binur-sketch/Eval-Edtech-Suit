@@ -6,25 +6,26 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  const solutions = [
+  const productLinks = [
     { title: 'OMR Software', path: '/omr', desc: 'High-speed sheet processing' },
+    { title: 'On-Screen Marking', path: '/osm', desc: 'Digital answer evaluation' },
+    { title: 'Question Paper Management', path: '/qpms', desc: 'Secure paper creation' },
+    { title: 'AI Proctoring', path: '/ai-proctoring', desc: 'AI-based exam integrity' },
     { title: 'CBT Platform', path: '/cbt', desc: 'Secure online examinations' },
     { title: 'LMS Portal', path: '/lms', desc: 'Learning management system' },
-    { title: 'Question Bank', path: '/qtb', desc: 'Intelligent question management' },
-    { title: 'On-Screen Marking', path: '/osm', desc: 'Digital answer evaluation' },
-    { title: 'Hardware Products', path: '/products', desc: 'Advanced scanners & printers' },
+  ];
+
+  const serviceLinks = [
+    { title: 'OMR Printing', path: '/omr-printing', desc: 'High precision OMR sheets' },
+    { title: 'OMR Scanning', path: '/omr-scanning', desc: 'Bulk data processing' },
+    { title: 'Custom Development', path: '/custom-software', desc: 'Tailored exam solutions' },
   ];
 
   const companyLinks = [
-    { title: 'About EVAL', path: '/about', desc: 'Our story & mission' },
-    { title: 'Our Clients', path: '/clients', desc: 'Success stories & case studies' },
-    { title: 'Partners', path: '/partners', desc: 'Integration ecosystem' },
-    { title: 'Careers', path: '/careers', desc: 'Join our team' },
-  ];
-
-  const resourceLinks = [
-    { title: 'Insights & Blog', path: '/resources', desc: 'Articles & research' },
-    { title: 'Pricing', path: '/pricing', desc: 'Plans & comparison' },
+    { title: 'About Us', path: '/about', desc: 'Our story & leadership' },
+    { title: 'Our Clients', path: '/clients', desc: 'Institutions we serve' },
+    { title: 'Blog', path: '/blog', desc: 'Latest articles & trends' },
+    { title: 'Careers', path: '/careers', desc: 'Join our mission' },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -42,7 +43,7 @@ const Navbar = () => {
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '2rem' }}>
           <div className="md-flex" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.6875rem', color: 'rgba(255,255,255,0.5)' }}>
             <Icons.MapPin size={12} style={{ color: 'var(--primary)' }} />
-            <span>Noida, India</span>
+            <span>New Delhi, India (HQ) | Tokyo, Japan</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
             <div className="md-flex" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -76,14 +77,15 @@ const Navbar = () => {
         alignItems: 'center'
       }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100%', width: '100%' }}>
-          <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', padding: '5px 0' }}>
             <img
-              src="public/assets/images/logo.png"
-              alt="EVAL Logo"
+              src="/assets/images/logo.png"
+              alt="eVAL Logo"
               style={{
-                height: '42px',
+                height: '80px',
+                width: 'auto',
                 objectFit: 'contain',
-                transform: 'scale(1.1)' // adjust if needed
+                display: 'block'
               }}
             />
           </Link>
@@ -91,12 +93,11 @@ const Navbar = () => {
           {/* Nav Items Container */}
           <div className="md-flex" style={{ alignItems: 'center', height: '100%' }}>
             <Link to="/" style={{
-              padding: '0 1.75rem',
+              padding: '0 1.25rem',
               height: '100%',
               display: 'flex',
               alignItems: 'center',
-              background: isActive('/') ? 'var(--primary)' : 'transparent',
-              color: isActive('/') ? 'white' : 'var(--secondary)',
+              color: isActive('/') ? 'var(--primary)' : 'var(--secondary)',
               fontWeight: '800',
               fontSize: '0.8125rem',
               textTransform: 'uppercase',
@@ -105,7 +106,7 @@ const Navbar = () => {
               Home
             </Link>
 
-            {/* Solutions Dropdown */}
+            {/* Products Dropdown */}
             <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
               <button style={{
                 padding: '0 1.25rem', height: '100%', background: 'none', border: 'none',
@@ -113,10 +114,30 @@ const Navbar = () => {
                 textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
               }}>
-                Solutions <Icons.ChevronDown size={14} />
+                Products <Icons.ChevronDown size={14} />
+              </button>
+              <div className="dropdown" style={{ top: '100%', left: '0', width: '320px' }}>
+                {productLinks.map((s, i) => (
+                  <Link key={i} to={s.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                    <span style={{ fontWeight: '700', color: 'var(--foreground)', fontSize: '0.875rem' }}>{s.title}</span>
+                    <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: '500' }}>{s.desc}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Services Dropdown */}
+            <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
+              <button style={{
+                padding: '0 1.25rem', height: '100%', background: 'none', border: 'none',
+                color: 'var(--secondary)', fontWeight: '800', fontSize: '0.8125rem',
+                textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', gap: '4px'
+              }}>
+                Services <Icons.ChevronDown size={14} />
               </button>
               <div className="dropdown" style={{ top: '100%', left: '0', width: '300px' }}>
-                {solutions.map((s, i) => (
+                {serviceLinks.map((s, i) => (
                   <Link key={i} to={s.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
                     <span style={{ fontWeight: '700', color: 'var(--foreground)', fontSize: '0.875rem' }}>{s.title}</span>
                     <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: '500' }}>{s.desc}</span>
@@ -129,52 +150,33 @@ const Navbar = () => {
             <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
               <button style={{
                 padding: '0 1.25rem', height: '100%', background: 'none', border: 'none',
-                color: 'var(--secondary)', fontWeight: '800', fontSize: '0.8125rem',
+                color: ['/about', '/clients', '/blog', '/careers'].includes(location.pathname) ? 'var(--primary)' : 'var(--secondary)',
+                fontWeight: '800', fontSize: '0.8125rem',
                 textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
               }}>
                 Company <Icons.ChevronDown size={14} />
               </button>
               <div className="dropdown" style={{ top: '100%', left: '0', width: '280px' }}>
-                {companyLinks.map((c, i) => (
-                  <Link key={i} to={c.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                    <span style={{ fontWeight: '700', color: 'var(--foreground)', fontSize: '0.875rem' }}>{c.title}</span>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: '500' }}>{c.desc}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Resources Dropdown */}
-            <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
-              <button style={{
-                padding: '0 1.25rem', height: '100%', background: 'none', border: 'none',
-                color: 'var(--secondary)', fontWeight: '800', fontSize: '0.8125rem',
-                textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer',
-                display: 'flex', alignItems: 'center', gap: '4px'
-              }}>
-                Resources <Icons.ChevronDown size={14} />
-              </button>
-              <div className="dropdown" style={{ top: '100%', left: '0' }}>
-                {resourceLinks.map((r, i) => (
-                  <Link key={i} to={r.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                    <span style={{ fontWeight: '700', color: 'var(--foreground)', fontSize: '0.875rem' }}>{r.title}</span>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: '500' }}>{r.desc}</span>
+                {companyLinks.map((s, i) => (
+                  <Link key={i} to={s.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                    <span style={{ fontWeight: '700', color: 'var(--foreground)', fontSize: '0.875rem' }}>{s.title}</span>
+                    <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: '500' }}>{s.desc}</span>
                   </Link>
                 ))}
               </div>
             </div>
 
             <Link to="/contact" style={{
-              padding: '0 1.25rem', color: 'var(--secondary)', fontWeight: '800',
-              fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '1px',
-              height: '100%', display: 'flex', alignItems: 'center'
+              padding: '0 1.25rem', color: isActive('/contact') ? 'var(--primary)' : 'var(--secondary)',
+              fontWeight: '800', fontSize: '0.8125rem', textTransform: 'uppercase',
+              letterSpacing: '1px', height: '100%', display: 'flex', alignItems: 'center'
             }}>
               Contact
             </Link>
 
-            <Link to="/book-demo" className="btn btn-primary" style={{ padding: '0.8rem 2rem', marginLeft: '1rem', fontSize: '0.8125rem', borderRadius: '4px', fontWeight: '800' }}>
-              Book a Demo
+            <Link to="/book-demo" className="btn btn-primary" style={{ padding: '0.6rem 1.5rem', marginLeft: '1rem', fontSize: '0.75rem', borderRadius: '4px', fontWeight: '800' }}>
+              Request a Demo
             </Link>
           </div>
 
@@ -198,16 +200,24 @@ const Navbar = () => {
           }}>
             <Link to="/" onClick={() => setIsOpen(false)} style={{
               fontWeight: '900', textTransform: 'uppercase', fontSize: '1.25rem',
-              color: isActive('/') ? 'var(--primary)' : 'var(--secondary)',
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between'
+              color: isActive('/') ? 'var(--primary)' : 'var(--secondary)'
             }}>
-              Home {isActive('/') && <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%' }}></div>}
+              Home
             </Link>
 
             <div>
-              <div style={{ fontWeight: '900', marginBottom: '1.25rem', color: 'var(--primary)', fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Solutions</div>
+              <div style={{ fontWeight: '900', marginBottom: '1.25rem', color: 'var(--primary)', fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Products</div>
               <div style={{ display: 'grid', gap: '1rem', paddingLeft: '0.5rem' }}>
-                {solutions.map((s, i) => (
+                {productLinks.map((s, i) => (
+                  <Link key={i} to={s.path} onClick={() => setIsOpen(false)} style={{ fontSize: '1rem', fontWeight: '700', color: 'var(--secondary)' }}>{s.title}</Link>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontWeight: '900', marginBottom: '1.25rem', color: 'var(--primary)', fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Services</div>
+              <div style={{ display: 'grid', gap: '1rem', paddingLeft: '0.5rem' }}>
+                {serviceLinks.map((s, i) => (
                   <Link key={i} to={s.path} onClick={() => setIsOpen(false)} style={{ fontSize: '1rem', fontWeight: '700', color: 'var(--secondary)' }}>{s.title}</Link>
                 ))}
               </div>
@@ -216,24 +226,21 @@ const Navbar = () => {
             <div>
               <div style={{ fontWeight: '900', marginBottom: '1.25rem', color: 'var(--primary)', fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Company</div>
               <div style={{ display: 'grid', gap: '1rem', paddingLeft: '0.5rem' }}>
-                {companyLinks.map((c, i) => (
-                  <Link key={i} to={c.path} onClick={() => setIsOpen(false)} style={{ fontSize: '1rem', fontWeight: '700', color: 'var(--secondary)' }}>{c.title}</Link>
+                {companyLinks.map((s, i) => (
+                  <Link key={i} to={s.path} onClick={() => setIsOpen(false)} style={{ fontSize: '1rem', fontWeight: '700', color: 'var(--secondary)' }}>{s.title}</Link>
                 ))}
               </div>
             </div>
 
-            <div>
-              <div style={{ fontWeight: '900', marginBottom: '1.25rem', color: 'var(--primary)', fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Resources</div>
-              <div style={{ display: 'grid', gap: '1rem', paddingLeft: '0.5rem' }}>
-                {resourceLinks.map((r, i) => (
-                  <Link key={i} to={r.path} onClick={() => setIsOpen(false)} style={{ fontSize: '1rem', fontWeight: '700', color: 'var(--secondary)' }}>{r.title}</Link>
-                ))}
-              </div>
-            </div>
+            <Link to="/contact" onClick={() => setIsOpen(false)} style={{
+              fontWeight: '900', textTransform: 'uppercase', fontSize: '1.25rem',
+              color: isActive('/contact') ? 'var(--primary)' : 'var(--secondary)'
+            }}>
+              Contact Us
+            </Link>
 
             <div style={{ marginTop: 'auto', display: 'grid', gap: '1rem' }}>
-              <Link to="/contact" onClick={() => setIsOpen(false)} className="btn btn-outline" style={{ width: '100%' }}>Contact Sales</Link>
-              <Link to="/book-demo" className="btn btn-primary" onClick={() => setIsOpen(false)} style={{ width: '100%' }}>Book Free Demo</Link>
+              <Link to="/book-demo" className="btn btn-primary" onClick={() => setIsOpen(false)} style={{ width: '100%', textAlign: 'center' }}>Request a Demo</Link>
             </div>
           </div>
         )}
@@ -243,3 +250,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

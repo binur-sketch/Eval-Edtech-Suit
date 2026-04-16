@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 
 const TermsOfService = () => {
@@ -8,14 +8,14 @@ const TermsOfService = () => {
     {
       title: '1. Acceptance of Terms',
       content: [
-        'By accessing or using any EVAL product or service ("Services"), you agree to be bound by these Terms of Service. If you are using the Services on behalf of an institution, you represent that you have the authority to bind that institution to these terms.',
+        'By accessing or using any eVAL product or service ("Services"), you agree to be bound by these Terms of Service. If you are using the Services on behalf of an institution, you represent that you have the authority to bind that institution to these terms.',
         'If you do not agree with these terms, do not use our Services.'
       ]
     },
     {
       title: '2. Description of Services',
       content: [
-        'EVAL provides a suite of examination and evaluation technology solutions including but not limited to OMR processing, Computer-Based Testing (CBT), Learning Management System (LMS), Question Test Bank (QTB), and On-Screen Marking (OSM).',
+        'eVAL provides a suite of examination and evaluation technology solutions including but not limited to OMR processing, Computer-Based Testing (CBT), Learning Management System (LMS), Question Test Bank (QTB), and On-Screen Marking (OSM).',
         'Services are provided on a subscription basis as outlined in the applicable pricing plan or enterprise agreement.'
       ]
     },
@@ -52,7 +52,7 @@ const TermsOfService = () => {
     {
       title: '6. Service Level Agreement (SLA)',
       content: [
-        'EVAL commits to the uptime guarantees specified in your subscription tier:',
+        'eVAL commits to the uptime guarantees specified in your subscription tier:',
         '• Starter: 99.5% monthly uptime',
         '• Professional: 99.9% monthly uptime  ',
         '• Enterprise: 99.99% monthly uptime with dedicated SLA terms',
@@ -69,9 +69,9 @@ const TermsOfService = () => {
     {
       title: '8. Limitation of Liability',
       content: [
-        'TO THE MAXIMUM EXTENT PERMITTED BY LAW, EVAL\'S TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT PAID BY YOU IN THE 12 MONTHS PRECEDING THE CLAIM.',
+        'TO THE MAXIMUM EXTENT PERMITTED BY LAW, eVAL\'S TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT PAID BY YOU IN THE 12 MONTHS PRECEDING THE CLAIM.',
         'WE SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SERVICES.',
-        'This limitation applies even if EVAL has been advised of the possibility of such damages.'
+        'This limitation applies even if eVAL has been advised of the possibility of such damages.'
       ]
     },
     {
@@ -101,7 +101,7 @@ const TermsOfService = () => {
           <span className="badge">Legal</span>
           <h1>Terms of <span className="gradient-text">Service</span></h1>
           <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
-            Please read these terms carefully before using the EVAL Suite of products and services.
+            Please read these terms carefully before using the eVAL Suite of products and services.
           </p>
           <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', fontWeight: '700' }}>Effective date: {lastUpdated}</p>
         </div>
@@ -114,10 +114,10 @@ const TermsOfService = () => {
             <div key={i} style={{ marginBottom: '3.5rem' }}>
               <h3 style={{ fontSize: '1.375rem', marginBottom: '1.5rem', color: 'var(--foreground)' }}>{section.title}</h3>
               {section.content.map((paragraph, j) => (
-                <p key={j} style={{ 
-                  fontSize: '1rem', 
-                  lineHeight: '1.8', 
-                  color: 'var(--muted-foreground)', 
+                <p key={j} style={{
+                  fontSize: '1rem',
+                  lineHeight: '1.8',
+                  color: 'var(--muted-foreground)',
                   marginBottom: '0.75rem',
                   paddingLeft: paragraph.startsWith('•') ? '1rem' : '0'
                 }}>{paragraph}</p>
@@ -125,12 +125,12 @@ const TermsOfService = () => {
             </div>
           ))}
 
-          <div className="card" style={{ 
-            padding: '3rem', 
-            background: 'var(--muted)', 
-            borderRadius: '2rem', 
+          <div className="card" style={{
+            padding: '3rem',
+            background: 'var(--muted)',
+            borderRadius: '2rem',
             marginTop: '4rem',
-            textAlign: 'center' 
+            textAlign: 'center'
           }}>
             <h4 style={{ marginBottom: '1rem' }}>Need a Custom Enterprise Agreement?</h4>
             <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', marginBottom: '2rem' }}>

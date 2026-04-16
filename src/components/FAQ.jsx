@@ -5,11 +5,11 @@ const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div style={{ 
-      borderBottom: '1px solid var(--border)', 
+    <div style={{
+      borderBottom: '1px solid var(--border)',
       padding: '1.5rem 0'
     }}>
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         style={{
           width: '100%',
@@ -24,14 +24,14 @@ const FAQItem = ({ question, answer }) => {
         }}
       >
         <span style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--foreground)' }}>{question}</span>
-        <span style={{ 
+        <span style={{
           transition: 'transform 0.3s ease',
           transform: isOpen ? 'rotate(180deg)' : 'rotate(0)'
         }}>
           {isOpen ? '-' : '+'}
         </span>
       </button>
-      <div style={{ 
+      <div style={{
         maxHeight: isOpen ? '500px' : '0',
         overflow: 'hidden',
         transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -48,7 +48,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Do I need special scanners for OMR processing?",
-      answer: "No. EVAL OMR works with any standard image scanner, including basic flatbed or ADF scanners. You don't need specialized high-cost OMR hardware."
+      answer: "No. eVAL OMR works with any standard image scanner, including basic flatbed or ADF scanners. You don't need specialized high-cost OMR hardware."
     },
     {
       question: "Is the CBT platform secure against cheating?",
@@ -56,10 +56,10 @@ const FAQ = () => {
     },
     {
       question: "Can I use plain paper for OMR sheets?",
-      answer: "Absolutely. EVAL is designed to work with standard 70-80 GSM photocopying paper, significantly reducing your stationery costs."
+      answer: "Absolutely. eVAL is designed to work with standard 70-80 GSM photocopying paper, significantly reducing your stationery costs."
     },
     {
-      question: "Scale of students EVAL can handle?",
+      question: "Scale of students eVAL can handle?",
       answer: "Our cloud-native infrastructure is built for global scale, currently handling millions of students across national and state-level examination boards."
     }
   ];

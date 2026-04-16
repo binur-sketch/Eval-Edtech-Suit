@@ -3,107 +3,119 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CBTPage = () => {
-  const highlights = [
-    { title: 'Anti-Cheating Engine', icon: <Icons.ShieldCheck size={32} />, desc: 'AI-powered proctoring with facial recognition and browser lockdown.' },
-    { title: 'AI Proctoring', icon: <Icons.ScanFace size={32} />, desc: 'Real-time monitoring and anomaly detection for 100% integrity.' },
-    { title: 'High-Speed Processing', icon: <Icons.Activity size={32} />, desc: 'Instant evaluation and result generation for massive volumes.' },
-    { title: 'Real-time Analytics', icon: <Icons.BarChart3 size={32} />, desc: 'Deep student performance insights and institutional reporting.' }
+  const steps = [
+    { title: 'Candidate Registration', desc: 'Candidates register online by entering their personal, academic, and contact details along with uploading photograph and signature.' },
+    { title: 'Center Setup', desc: 'Exam centers are added in the system with detailed information such as location and seating capacity.' },
+    { title: 'Center Allocation', desc: 'System allocates candidates to centers automatically based on capacity and session availability.' },
+    { title: 'Admit Card Generation', desc: 'Admit cards are generated with candidate details, exam center, date, and reporting instructions.' },
+    { title: 'Exam Conduct', desc: 'Center administrator verifies candidate identity and allows access. Candidates login and begin the computer-based test in a secure environment.' },
+    { title: 'Evaluation & Result', desc: 'Responses are evaluated automatically according to the defined marking scheme. Detailed reports are published for administrators and candidates.' },
   ];
 
   const features = [
-    { t: 'Remote & Center-based', d: 'Deploy exams on school labs or allow students to take it from home with AI proctoring.' },
-    { t: 'Mathematical Expression Editor', d: 'Full support for complex LaTeX equations and scientific symbols.' },
-    { t: 'Biometric Integration', d: 'Multi-factor authentication including facial recognition for secure candidate entry.' }
+    { 
+      title: 'Candidate Registration & Management', 
+      icon: <Icons.Users />, 
+      items: ['Online candidate registration portal', 'Bulk candidate upload', 'Candidate profile management', 'Photo & signature upload', 'Document verification support', 'Application status tracking'] 
+    },
+    { 
+      title: 'Exam Center Management', 
+      icon: <Icons.MapPin />, 
+      items: ['Multiple exam center creation', 'Center capacity configuration', 'Location-wise center mapping', 'Center admin login & infrastructure allocation', 'Center availability tracking'] 
+    },
+    { 
+      title: 'Computer Based Test Engine', 
+      icon: <Icons.Zap />, 
+      items: ['Multiple question types (MCQ, descriptive, etc.)', 'Section-wise exam structure', 'Timer-based exam control with auto-save functionality', 'Question randomization', 'Negative marking support', 'Multi-language support'] 
+    },
+    { 
+      title: 'Security Features', 
+      icon: <Icons.Lock />, 
+      items: ['Secure login authentication with role-based access control', 'Browser lockdown mode', 'Question encryption', 'Auto logout on inactivity', 'IP-based restriction and audit trail logs'] 
+    },
+    { 
+      title: 'Result Processing', 
+      icon: <Icons.CheckCircle2 />, 
+      items: ['Automatic evaluation with instant result generation', 'Score calculation and rank generation', 'Cut-off management and merit list creation'] 
+    },
+    { 
+      title: 'Reports & Analytics', 
+      icon: <Icons.BarChart2 />, 
+      items: ['Candidate performance report', 'Center-wise and session-wise performance reports', 'Attendance report and question analysis report', 'Export in Excel/PDF format'] 
+    },
   ];
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
-      {/* Hero */}
-      <section className="section-padding" style={{ background: 'linear-gradient(rgba(229,57,53,0.03) 0%, white 100%)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-            <span className="badge">Next-Gen Assessment</span>
-            <h1 style={{ fontSize: '3.5rem' }}>Highly Secure <br/><span className="gradient-text">CBT Platform</span></h1>
-            <p style={{ fontSize: '1.25rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>The most secure, anti-corruption, and scalable online examination platform for large-scale entrance and recruitment tests.</p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '3rem' }}>
-              <Link to="/book-demo" className="btn btn-primary">Book Consultation</Link>
-              <Link to="/contact" className="btn btn-outline" style={{ color: 'var(--primary)', borderColor: 'var(--primary)' }}>Technical Specs</Link>
-            </div>
+      {/* Hero / Overview */}
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
+        <div className="container" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
+          <span className="badge">Overview</span>
+          <h1 style={{ fontSize: '3.5rem' }}>Center Based <span className="gradient-text">Examination Solution</span></h1>
+          <p style={{ fontSize: '1.25rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+            A comprehensive platform designed to conduct secure, scalable, and controlled computer-based tests at designated examination centers. This solution ensures a standardized testing environment, minimizes malpractice, and allows organizations to conduct large-scale examinations efficiently.
+          </p>
+          <div style={{ background: 'white', padding: '2rem', borderRadius: '1rem', border: '1px solid var(--border)', display: 'inline-block', marginTop: '2rem' }}>
+            <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)' }}>
+               It is suitable for universities, recruitment boards, certification bodies, government organizations, and corporates that require reliable exam execution across multiple locations.
+            </p>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '3rem' }}>
+            <Link to="/contact" className="btn btn-primary">Institutional Inquiry</Link>
+            <Link to="/book-demo" className="btn btn-outline">Request Demo</Link>
           </div>
         </div>
       </section>
 
-      {/* Highlights */}
-      <section className="section-padding">
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2.5rem' }}>
-            {highlights.map((h, i) => (
-              <div key={i} className="card" style={{ textAlign: 'center' }}>
-                <div style={{ color: 'var(--primary)', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
-                  <div style={{ padding: '1.25rem', background: 'var(--primary-light)', borderRadius: '1.5rem' }}>{h.icon}</div>
-                </div>
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{h.title}</h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)' }}>{h.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Detailed Features */}
+      {/* Process Flow */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '6rem', alignItems: 'center' }}>
-              <div>
-                 <span className="badge">Why EVAL?</span>
-                 <h2 style={{ marginBottom: '2rem' }}>Why institutional leaders trust <br/><span className="gradient-text">EVAL CBT Platform</span>?</h2>
-                 <p style={{ marginBottom: '3rem', fontSize: '1.125rem' }}>Our platform is built to withstand massive traffic spikes and sophisticated cheating attempts, making it the choice for national-level entrance exams.</p>
-                 <div style={{ display: 'grid', gap: '2rem' }}>
-                    {features.map((f, i) => (
-                       <div key={i} style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                          <div style={{ color: 'var(--primary)', marginTop: '4px' }}>
-                            <Icons.CheckCircle2 size={24} />
-                          </div>
-                          <div>
-                             <div style={{ fontWeight: '800', fontSize: '1.125rem', marginBottom: '0.5rem' }}>{f.t}</div>
-                             <div style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6' }}>{f.d}</div>
-                          </div>
-                       </div>
-                    ))}
-                 </div>
-              </div>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+             <h2>The CBT <span className="gradient-text">Process Flow</span></h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+             {steps.map((s, i) => (
+               <div key={i} className="card" style={{ padding: '2.5rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '1rem', right: '1.5rem', fontSize: '3.5rem', fontWeight: '900', color: 'var(--primary)', opacity: 0.05 }}>0{i+1}</div>
+                  <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{s.title}</h3>
+                  <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{s.desc}</p>
+               </div>
+             ))}
+          </div>
+        </div>
+      </section>
 
-              <div style={{ background: 'var(--secondary)', color: 'white', padding: '4rem', borderRadius: '4rem', position: 'relative', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
-                 <div style={{ position: 'relative', zIndex: 1 }}>
-                    <h3 style={{ color: 'white', marginBottom: '1rem' }}>Live Monitoring Dashboard</h3>
-                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9375rem', marginBottom: '3rem' }}>Get a birds-eye view of all exam centers in real-time.</p>
-                    <div style={{ display: 'grid', gap: '1.5rem' }}>
-                       {[
-                         { l: 'Active Candidates', v: '154,320', c: 'var(--primary)' },
-                         { l: 'Alerts Flagged', v: '12', c: '#FF5252' },
-                         { l: 'Avg. Load Time', v: '0.8s', c: 'white' }
-                       ].map((stat, i) => (
-                          <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '1.5rem', alignItems: 'center' }}>
-                             <span style={{ fontSize: '0.875rem', fontWeight: '600', color: 'rgba(255,255,255,0.7)' }}>{stat.l}</span>
-                             <span style={{ fontWeight: '900', color: stat.c, fontSize: '1.125rem' }}>{stat.v}</span>
-                          </div>
-                       ))}
-                    </div>
-                 </div>
-                 <div style={{ position: 'absolute', top: '-50%', right: '-20%', width: '100%', height: '200%', background: 'radial-gradient(circle, rgba(229, 57, 53, 0.1) 0%, transparent 70%)', zIndex: 0 }}></div>
-              </div>
-           </div>
+      {/* Key Features */}
+      <section className="section-padding">
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+             <h2>Key <span className="gradient-text">Features</span></h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
+             {features.map((f, i) => (
+               <div key={i} className="card" style={{ padding: '3rem' }}>
+                  <div style={{ color: 'var(--primary)', marginBottom: '1.5rem' }}>{f.icon}</div>
+                  <h3 style={{ fontSize: '1.25rem', marginBottom: '1.5rem' }}>{f.title}</h3>
+                  <ul style={{ display: 'grid', gap: '0.875rem', padding: 0, listStyle: 'none' }}>
+                     {f.items.map((item, idx) => (
+                       <li key={idx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '0.9375rem', color: 'var(--muted-foreground)' }}>
+                          <Icons.ChevronRight size={16} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: '4px' }} />
+                          <span style={{ lineHeight: '1.5' }}>{item}</span>
+                       </li>
+                     ))}
+                  </ul>
+               </div>
+             ))}
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: '#1F1F1F', color: 'white' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-           <h2 style={{ fontSize: '3rem' }}>Digitizing <span className="gradient-text">Entrance Excellence</span></h2>
-           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', fontSize: '1.125rem', color: 'var(--muted-foreground)' }}>Configure your first secure online test in under 30 minutes. Experience the most intuitive CBT platform ever built.</p>
-           <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
-              <Link to="/book-demo" className="btn btn-primary" style={{ padding: '1.25rem 3rem' }}>Book a Free Demo</Link>
-           </div>
+           <h2 style={{ fontSize: '2.5rem', color: 'white' }}>Build a Standardized Testing Environment</h2>
+           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', fontSize: '1.125rem', color: 'rgba(255,255,255,0.7)' }}>The choice for universities, recruitment boards, and government organizations looking to execute reliable exams across multiple locations.</p>
+           <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 4rem' }}>Enquire for Partnerships</Link>
         </div>
       </section>
     </div>
@@ -111,3 +123,5 @@ const CBTPage = () => {
 };
 
 export default CBTPage;
+
+
