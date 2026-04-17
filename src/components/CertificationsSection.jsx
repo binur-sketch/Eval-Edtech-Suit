@@ -11,7 +11,7 @@ const CertificationsSection = () => {
   ];
 
   return (
-    <section style={{ 
+    <section style={{
       background: 'var(--secondary)',
       padding: '5rem 0',
       color: 'white'
@@ -24,7 +24,7 @@ const CertificationsSection = () => {
 
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem' }}>
           {certs.map((cert, i) => (
-            <div key={i} className="hover-lift" style={{ 
+            <div key={i} className="hover-lift" style={{
               display: 'flex', alignItems: 'center', gap: '14px',
               padding: '1.25rem 2rem', borderRadius: '1.5rem',
               background: 'rgba(255,255,255,0.05)',
