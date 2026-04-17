@@ -66,7 +66,7 @@ const TrustSection = () => {
 
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <p style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--muted-foreground)', marginBottom: 0 }}>
-          Powered by Government Bodies & Segment Leaders
+          Trusted by Government Bodies & Segment Leaders
         </p>
       </div>
 
