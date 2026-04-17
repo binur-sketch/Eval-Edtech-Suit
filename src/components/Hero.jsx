@@ -18,7 +18,7 @@ const Hero = () => {
             <h1 style={{ marginBottom: '1.5rem', lineHeight: '1.1' }} className="reveal delay-1">
               Advanced <span className="gradient-text">Examination & Evaluation</span> Ecosystem
             </h1>
-            <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', marginBottom: '2.5rem', maxWidth: '540px', color: 'var(--muted-foreground)' }} className="reveal delay-2">
+            <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', marginBottom: '1.5rem', maxWidth: '540px', color: 'var(--muted-foreground)' }} className="reveal delay-2">
               AI-powered OMR, CBT & Evaluation platform trusted by universities,
               coaching institutes, and government bodies.
             </p>
@@ -31,7 +31,7 @@ const Hero = () => {
                 See How It Works
               </Link>
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2.5rem' }} className="reveal delay-3">
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2.5rem', marginTop: '1rem' }} className="reveal delay-3">
               {[
                 { val: '5000+', label: 'Institutions' },
                 { val: '50M+', label: 'Sheets Processed' },
