@@ -12,23 +12,25 @@ const Hero = () => {
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(2rem, 5vw, 6rem)', alignItems: 'center' }}>
           <div className="reveal">
-            <span className="badge">Award Winning Examination Suite</span>
+            <span className="badge">
+              Trusted by 5000+ Institutions
+            </span>
             <h1 style={{ marginBottom: '1.5rem', lineHeight: '1.1' }} className="reveal delay-1">
               Advanced <span className="gradient-text">Examination & Evaluation</span> Ecosystem
             </h1>
             <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', marginBottom: '2.5rem', maxWidth: '540px', color: 'var(--muted-foreground)' }} className="reveal delay-2">
-              The trusted choice for 5000+ top educational institutions globally. Precision-engineered solutions for high-stakes assessments, automation, and institutional learning.
+              AI-powered OMR, CBT & Evaluation platform trusted by universities,
+              coaching institutes, and government bodies.
             </p>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '3rem' }} className="reveal delay-3">
-              <Link to="/book-demo" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>
-                Book a Free Demo →
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <Link to="/book-demo" className="btn btn-primary">
+                Book Free Demo
               </Link>
-              <Link to="/omr" className="btn btn-outline" style={{ padding: '1rem 2.5rem' }}>
-                Explore Suite
+              <Link to="/omr" className="btn btn-outline">
+                See How It Works
               </Link>
             </div>
-
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2.5rem' }} className="reveal delay-3">
               {[
                 { val: '5000+', label: 'Institutions' },
