@@ -10,9 +10,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Clients = lazy(() => import('./pages/Clients'));
 const Blog = lazy(() => import('./pages/Resources')); // Using Resources as Blog for now
 const BookDemo = lazy(() => import('./pages/BookDemo'));
-const Pricing = lazy(() => import('./pages/Pricing'));
 const Careers = lazy(() => import('./pages/Careers'));
-const Partners = lazy(() => import('./pages/Partners'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const Products = lazy(() => import('./pages/Products'));
@@ -53,13 +51,11 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/resources" element={<Blog />} />
           <Route path="/book-demo" element={<BookDemo />} />
-          <Route path="/pricing" element={<Pricing />} />
           <Route path="/careers" element={<Careers />} />
-          <Route path="/partners" element={<Partners />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/products" element={<Products />} />
-          
+
           {/* Solution-Specific Routes */}
           <Route path="/omr" element={<OMRPage />} />
           <Route path="/osm" element={<OSMPage />} />
@@ -67,7 +63,7 @@ function App() {
           <Route path="/ai-proctoring" element={<AIPage />} />
           <Route path="/cbt" element={<CBTPage />} />
           <Route path="/lms" element={<LMSPage />} />
-          
+
           {/* Service Routes */}
           <Route path="/omr-printing" element={<OMRPrinting />} />
           <Route path="/omr-scanning" element={<OMRScanning />} />

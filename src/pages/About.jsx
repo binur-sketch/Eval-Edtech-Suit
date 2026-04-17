@@ -235,7 +235,7 @@ const About = () => {
           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)', fontSize: '1.125rem' }}>Headquartered in New Delhi, India, and supported by our international office in Tokyo, Japan.</p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
             <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Contact HQ</Link>
-            <Link to="/partners" className="btn btn-outline" style={{ padding: '1.25rem 3.5rem' }}>Global Partners</Link>
+            <Link to="/contact" className="btn btn-outline" style={{ padding: '1.25rem 3.5rem' }}>Global Partners</Link>
           </div>
         </div>
       </section>
