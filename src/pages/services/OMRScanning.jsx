@@ -43,7 +43,7 @@ const OMRScanning = () => {
               </div>
             </div>
             <div style={{ position: 'relative' }}>
-               <img src="/assets/images/omr_scanning.png" alt="OMR Scanning" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+              <img src="/assets/images/omr_scanning.png" alt="OMR Scanning" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
             </div>
           </div>
         </div>
@@ -53,15 +53,15 @@ const OMRScanning = () => {
       <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2>Our <span className="gradient-text">Capabilities</span></h2>
+            <h2>Our <span className="gradient-text">Capabilities</span></h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
-             {features.map((f, i) => (
-               <div key={i} className="card" style={{ padding: '2.5rem', textAlign: 'center' }}>
-                  <div style={{ color: 'var(--primary)', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>{f.icon}</div>
-                  <h4 style={{ fontSize: '1.125rem' }}>{f.title}</h4>
-               </div>
-             ))}
+            {features.map((f, i) => (
+              <div key={i} className="card" style={{ padding: '2.5rem', textAlign: 'center' }}>
+                <div style={{ color: 'var(--primary)', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>{f.icon}</div>
+                <h4 style={{ fontSize: '1.125rem' }}>{f.title}</h4>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -85,11 +85,11 @@ const OMRScanning = () => {
               </ul>
             </div>
             <div className="card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', padding: '4rem' }}>
-               <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: '4rem', fontWeight: '900', color: 'var(--primary)', marginBottom: '1rem' }}>100%</div>
-                  <div style={{ fontSize: '1.25rem', fontWeight: '700' }}>Accuracy Guaranteed</div>
-                  <p style={{ marginTop: '2rem', color: 'rgba(255,255,255,0.6)' }}>Our multi-level verification process ensures that every bubble is read correctly and every result is valid.</p>
-               </div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '4rem', fontWeight: '900', color: 'var(--primary)', marginBottom: '1rem' }}>100%</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: '700' }}>Accuracy Guaranteed</div>
+                <p style={{ marginTop: '2rem', color: 'rgba(255,255,255,0.6)' }}>Our multi-level verification process ensures that every bubble is read correctly and every result is valid.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -98,9 +98,9 @@ const OMRScanning = () => {
       {/* CTA */}
       <section className="section-padding">
         <div className="container" style={{ textAlign: 'center' }}>
-           <h2>Need high-volume scanning?</h2>
-           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)' }}>We offer both onsite and offsite processing models tailored to your security requirements.</p>
-           <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Connect with Us</Link>
+          <h2>Need high-volume scanning?</h2>
+          <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)' }}>We offer both onsite and offsite processing models tailored to your security requirements.</p>
+          <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Connect with Us</Link>
         </div>
       </section>
     </div>

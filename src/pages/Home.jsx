@@ -22,41 +22,40 @@ const Home = () => {
   const solutions = [
     {
       title: 'OMR Software',
-      desc: 'Evaluate 300–500 sheets/min with 100% accuracy using plain paper.',
+      desc: 'Process 300–500 sheets/min with 100% accuracy using plain paper.',
       path: '/omr',
-      symbol: '⚡',
+      icon: <Icons.Zap size={28} />,
       color: '#E53935'
     },
     {
       title: 'CBT Platform',
-      desc: 'Secure online examination system with anti-cheating & analytics.',
+      desc: 'Secure online exam system with anti-cheating & analytics.',
       path: '/cbt',
-      symbol: '🛡',
+      icon: <Icons.ShieldCheck size={28} />,
       color: '#1F1F1F'
     },
     {
       title: 'LMS Portal',
       desc: 'Scalable learning management system for institutions.',
       path: '/lms',
-      symbol: '🌐',
+      icon: <Icons.Globe size={28} />,
       color: '#E53935'
     },
     {
       title: 'QTB System',
       desc: 'Advanced question bank with tagging & workflows.',
       path: '/qtb',
-      symbol: '🏆',
+      icon: <Icons.Database size={28} />,
       color: '#1F1F1F'
     },
     {
       title: 'OSM Marking',
       desc: 'On-screen evaluation for descriptive answer sheets.',
       path: '/osm',
-      symbol: '👥',
+      icon: <Icons.Users size={28} />,
       color: '#E53935'
     }
   ];
-
   return (
     <div className="home-page">
 
@@ -73,54 +72,55 @@ const Home = () => {
 
 
       {/* SOLUTIONS */}
-      <section className="section-padding">
+      <section className="section-padding solutions-section">
         <div className="container">
-          <SectionHeader
-            badge="Our Solutions"
-            title="Complete Examination Ecosystem"
-            text="From offline OMR to online CBT, manage your entire assessment lifecycle."
-          />
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '2rem'
-          }}>
+          <div className="section-header">
+            <span className="badge">Our Solutions</span>
+            <h2>
+              One Platform. <span className="gradient-text">Complete Examination Ecosystem</span>
+            </h2>
+            <p>
+              Digitize, automate, and scale your entire assessment lifecycle — from OMR to AI-powered evaluation.
+            </p>
+          </div>
+
+          <div className="solutions-grid">
             {solutions.map((s, i) => (
-              <div key={i} className="card hover-card" style={{
-                borderTop: `4px solid ${s.color}`,
-                position: 'relative',
-                overflow: 'hidden'
-              }}>
+              <Link to={s.path} key={i} className={`solution-card ${i === 0 ? 'featured' : ''}`}>
 
-                <div style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: `radial-gradient(circle at top right, ${s.color}15, transparent 60%)`
-                }} />
+                {/* Badge */}
+                {i === 0 && <div className="badge-top">Most Popular</div>}
 
-                <div style={{ position: 'relative' }}>
-                  <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
-                    {s.symbol}
+                {/* Glow */}
+                <div className="card-glow" style={{ background: `${s.color}20` }} />
+
+                <div className="card-content">
+
+                  {/* ICON */}
+                  <div className="icon-wrapper" style={{ background: `${s.color}15` }}>
+                    {s.icon}
                   </div>
 
+                  {/* TITLE */}
                   <h3>{s.title}</h3>
 
-                  <p style={{ color: 'var(--muted-foreground)', marginBottom: '1.5rem' }}>
-                    {s.desc}
-                  </p>
+                  {/* DESCRIPTION */}
+                  <p>{s.desc}</p>
 
-                  <Link to={s.path} className="link-primary">
+                  {/* CTA */}
+                  <div className="card-cta">
                     Explore Solution <Icons.ArrowRight size={16} />
-                  </Link>
+                  </div>
+
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
+
         </div>
       </section>
-
-      {/* WHY OMR */}
+      {/* WHY OMR
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <SectionHeader
@@ -142,32 +142,56 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* WORKFLOW */}
-      <section className="section-padding">
+      <section className="section-padding workflow-section">
         <div className="container">
-          <SectionHeader
-            badge="Workflow"
-            title="From Sheet to Result in Minutes"
-          />
 
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '2rem' }}>
-            {['Design', 'Scan', 'Evaluate', 'Report'].map((step, i) => (
-              <div key={i} className="card" style={{ width: '220px', textAlign: 'center' }}>
-                <h2 style={{ color: 'var(--primary)' }}>0{i + 1}</h2>
-                <p>{step}</p>
+          <div className="section-header">
+            <span className="badge">Workflow</span>
+            <h2>
+              From Sheet to <span className="gradient-text">Result</span> in Minutes
+            </h2>
+          </div>
+
+          <div className="workflow-wrapper">
+            {[
+              { title: 'Design', icon: <Icons.Edit3 size={20} /> },
+              { title: 'Scan', icon: <Icons.ScanLine size={20} /> },
+              { title: 'Evaluate', icon: <Icons.CheckCircle size={20} /> },
+              { title: 'Report', icon: <Icons.BarChart3 size={20} /> }
+            ].map((step, i) => (
+              <div key={i} className="workflow-step">
+
+                {/* Connector Line */}
+                {i !== 3 && <div className="connector" />}
+
+                <div className="step-card">
+
+                  <div className="step-number">
+                    0{i + 1}
+                  </div>
+
+                  <div className="step-icon">
+                    {step.icon}
+                  </div>
+
+                  <h4>{step.title}</h4>
+
+                </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
       {/* SERVICES */}
       <ServicesSection />
 
-      {/* PRODUCTS */}
-      <ProductsSection />
+      {/* PRODUCTS
+      <ProductsSection /> */}
 
       {/* INDUSTRIES */}
       <IndustryVerticals />
@@ -181,35 +205,166 @@ const Home = () => {
 
       {/* WHY eVAL */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+        <div className="container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '4rem',
+            alignItems: 'center'
+          }}>
 
-          <div>
-            <span className="badge">Why eVAL?</span>
-            <h2>Precision Engineered for Institutional Trust</h2>
-            <p>Bridge traditional evaluation with modern digital systems.</p>
+            {/* LEFT CONTENT */}
+            <div>
+              <span className="badge">Why EVAL?</span>
 
-            <div style={{ marginTop: '2rem', display: 'grid', gap: '1.5rem' }}>
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <Icons.Server /> <p>Cloud-ready scalable system</p>
-              </div>
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <Icons.Lock /> <p>Secure encrypted data</p>
-              </div>
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <Icons.Globe /> <p>Used nationwide</p>
+              <h2 style={{
+                fontSize: '2.5rem',
+                marginBottom: '1rem',
+                lineHeight: '1.2'
+              }}>
+                Built for <span className="gradient-text">Accuracy, Scale & Trust</span>
+              </h2>
+
+              <p style={{
+                fontSize: '1.1rem',
+                color: 'var(--muted-foreground)',
+                maxWidth: '500px'
+              }}>
+                Transform your evaluation ecosystem with automation, security, and unmatched precision.
+              </p>
+
+              {/* FEATURES */}
+              <div style={{
+                marginTop: '2.5rem',
+                display: 'grid',
+                gap: '1.5rem'
+              }}>
+                {[
+                  {
+                    icon: <Icons.Server size={20} />,
+                    title: "Cloud Scalable",
+                    text: "Handle lakhs of sheets with auto-scaling infrastructure"
+                  },
+                  {
+                    icon: <Icons.Lock size={20} />,
+                    title: "Enterprise Security",
+                    text: "End-to-end encryption with secure data handling"
+                  },
+                  {
+                    icon: <Icons.Globe size={20} />,
+                    title: "Nationwide Adoption",
+                    text: "Trusted by universities & institutions across India"
+                  }
+                ].map((item, i) => (
+                  <div key={i} style={{
+                    display: 'flex',
+                    gap: '1rem',
+                    alignItems: 'flex-start'
+                  }}>
+                    <div style={{
+                      background: 'white',
+                      padding: '0.75rem',
+                      borderRadius: '12px',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+                      color: 'var(--primary)'
+                    }}>
+                      {item.icon}
+                    </div>
+
+                    <div>
+                      <h4 style={{ marginBottom: '0.3rem' }}>{item.title}</h4>
+                      <p style={{
+                        fontSize: '0.9rem',
+                        color: 'var(--muted-foreground)',
+                        margin: 0
+                      }}>
+                        {item.text}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
 
-          <div className="card" style={{ padding: '2rem' }}>
-            <h3>Impact</h3>
-            <ul>
-              <li>🚀 4x Faster Evaluation</li>
-              <li>💰 65% Cost Reduction</li>
-              <li>😊 98% Satisfaction</li>
-            </ul>
-          </div>
+            {/* RIGHT IMPACT CARD */}
+            <div style={{
+              position: 'relative'
+            }}>
 
+              {/* Glow Background */}
+              <div style={{
+                position: 'absolute',
+                top: '-20%',
+                left: '-10%',
+                width: '120%',
+                height: '140%',
+                background: 'radial-gradient(circle, rgba(229,57,53,0.15), transparent 70%)',
+                zIndex: 0
+              }} />
+
+              <div style={{
+                position: 'relative',
+                background: 'rgba(255,255,255,0.7)',
+                backdropFilter: 'blur(20px)',
+                borderRadius: '2rem',
+                padding: '2.5rem',
+                boxShadow: '0 20px 50px rgba(0,0,0,0.1)',
+                border: '1px solid rgba(255,255,255,0.3)'
+              }}>
+                <h3 style={{
+                  textAlign: 'center',
+                  marginBottom: '2rem'
+                }}>
+                  Measurable Impact
+                </h3>
+
+                <div style={{ display: 'grid', gap: '1.5rem' }}>
+                  {[
+                    { label: 'Evaluation Speed', value: '4x Faster' },
+                    { label: 'Operational Cost', value: '↓ 65%' },
+                    { label: 'Accuracy Rate', value: '100%' }
+                  ].map((item, i) => (
+                    <div key={i}>
+                      <div style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        fontWeight: '700',
+                        marginBottom: '0.4rem'
+                      }}>
+                        <span style={{ color: 'var(--muted-foreground)' }}>
+                          {item.label}
+                        </span>
+                        <span style={{ color: 'var(--primary)' }}>
+                          {item.value}
+                        </span>
+                      </div>
+
+                      <div style={{
+                        height: '6px',
+                        background: 'var(--muted)',
+                        borderRadius: '4px',
+                        overflow: 'hidden'
+                      }}>
+                        <div style={{
+                          width: i === 0 ? '90%' : i === 1 ? '65%' : '95%',
+                          height: '100%',
+                          background: 'var(--primary)'
+                        }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <div style={{ marginTop: '2rem' }}>
+                  <a href="/book-demo" className="btn btn-primary" style={{ width: '100%' }}>
+                    Get Free Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
       {/* CERTIFICATIONS */}
@@ -437,9 +592,6 @@ const Home = () => {
 
       {/* TESTIMONIALS */}
       < TestimonialsSection />
-
-      {/* TEAM */}
-      < TeamSection />
 
       {/* FAQ */}
       < FAQ />

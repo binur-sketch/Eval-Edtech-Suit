@@ -7,25 +7,25 @@ const Navbar = () => {
   const location = useLocation();
 
   const productLinks = [
-    { title: 'OMR Software', path: '/omr', desc: 'High-speed sheet processing' },
-    { title: 'On-Screen Marking', path: '/osm', desc: 'Digital answer evaluation' },
-    { title: 'Question Paper Management', path: '/qpms', desc: 'Secure paper creation' },
-    { title: 'AI Proctoring', path: '/ai-proctoring', desc: 'AI-based exam integrity' },
-    { title: 'CBT Platform', path: '/cbt', desc: 'Secure online examinations' },
-    { title: 'LMS Portal', path: '/lms', desc: 'Learning management system' },
+    { title: 'OMR Software', path: '/omr' },
+    { title: 'On-Screen Marking', path: '/osm' },
+    { title: 'Question Paper Management', path: '/qpms' },
+    { title: 'AI Proctoring', path: '/ai-proctoring' },
+    { title: 'CBT Platform', path: '/cbt' },
+    { title: 'LMS Portal', path: '/lms' },
   ];
 
   const serviceLinks = [
-    { title: 'OMR Printing', path: '/omr-printing', desc: 'High precision OMR sheets' },
-    { title: 'OMR Scanning', path: '/omr-scanning', desc: 'Bulk data processing' },
-    { title: 'Custom Development', path: '/custom-software', desc: 'Tailored exam solutions' },
+    { title: 'OMR Printing', path: '/omr-printing' },
+    { title: 'OMR Scanning & Result Generation', path: '/omr-scanning' },
+    { title: 'Custom Software Development', path: '/custom-software' },
   ];
 
   const companyLinks = [
-    { title: 'About Us', path: '/about', desc: 'Our story & leadership' },
-    { title: 'Our Clients', path: '/clients', desc: 'Institutions we serve' },
-    { title: 'Blog', path: '/blog', desc: 'Latest articles & trends' },
-    { title: 'Careers', path: '/careers', desc: 'Join our mission' },
+    { title: 'About Us', path: '/about' },
+    { title: 'Our Clients', path: '/clients' },
+    { title: 'Blog', path: '/blog' },
+    { title: 'Careers', path: '/careers' },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -98,7 +98,7 @@ const Navbar = () => {
               display: 'flex',
               alignItems: 'center',
               color: isActive('/') ? 'var(--primary)' : 'var(--secondary)',
-              fontWeight: '800',
+              fontWeight: '700',
               fontSize: '0.8125rem',
               textTransform: 'uppercase',
               letterSpacing: '1px'
@@ -110,7 +110,7 @@ const Navbar = () => {
             <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
               <button style={{
                 padding: '0 1.25rem', height: '100%', background: 'none', border: 'none',
-                color: 'var(--secondary)', fontWeight: '800', fontSize: '0.8125rem',
+                color: 'var(--secondary)', fontWeight: '700', fontSize: '0.8125rem',
                 textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
               }}>
@@ -118,9 +118,9 @@ const Navbar = () => {
               </button>
               <div className="dropdown" style={{ top: '100%', left: '0', width: '320px' }}>
                 {productLinks.map((s, i) => (
-                  <Link key={i} to={s.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                    <span style={{ fontWeight: '700', color: 'var(--foreground)', fontSize: '0.875rem' }}>{s.title}</span>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: '500' }}>{s.desc}</span>
+                  <Link key={i} to={s.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
+                    <span style={{ fontWeight: '500', color: 'var(--foreground)', fontSize: '1rem' }}>{s.title}</span>
+
                   </Link>
                 ))}
               </div>
@@ -130,7 +130,7 @@ const Navbar = () => {
             <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
               <button style={{
                 padding: '0 1.25rem', height: '100%', background: 'none', border: 'none',
-                color: 'var(--secondary)', fontWeight: '800', fontSize: '0.8125rem',
+                color: 'var(--secondary)', fontWeight: '700', fontSize: '0.8125rem',
                 textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
               }}>
@@ -138,9 +138,9 @@ const Navbar = () => {
               </button>
               <div className="dropdown" style={{ top: '100%', left: '0', width: '300px' }}>
                 {serviceLinks.map((s, i) => (
-                  <Link key={i} to={s.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                    <span style={{ fontWeight: '700', color: 'var(--foreground)', fontSize: '0.875rem' }}>{s.title}</span>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: '500' }}>{s.desc}</span>
+                  <Link key={i} to={s.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
+                    <span style={{ fontWeight: '500', color: 'var(--foreground)', fontSize: '1rem' }}>{s.title}</span>
+
                   </Link>
                 ))}
               </div>
@@ -151,7 +151,7 @@ const Navbar = () => {
               <button style={{
                 padding: '0 1.25rem', height: '100%', background: 'none', border: 'none',
                 color: ['/about', '/clients', '/blog', '/careers'].includes(location.pathname) ? 'var(--primary)' : 'var(--secondary)',
-                fontWeight: '800', fontSize: '0.8125rem',
+                fontWeight: '700', fontSize: '0.8125rem',
                 textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
               }}>
@@ -159,9 +159,9 @@ const Navbar = () => {
               </button>
               <div className="dropdown" style={{ top: '100%', left: '0', width: '280px' }}>
                 {companyLinks.map((s, i) => (
-                  <Link key={i} to={s.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                    <span style={{ fontWeight: '700', color: 'var(--foreground)', fontSize: '0.875rem' }}>{s.title}</span>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', fontWeight: '500' }}>{s.desc}</span>
+                  <Link key={i} to={s.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
+                    <span style={{ fontWeight: '500', color: 'var(--foreground)', fontSize: '1rem' }}>{s.title}</span>
+
                   </Link>
                 ))}
               </div>
@@ -169,13 +169,13 @@ const Navbar = () => {
 
             <Link to="/contact" style={{
               padding: '0 1.25rem', color: isActive('/contact') ? 'var(--primary)' : 'var(--secondary)',
-              fontWeight: '800', fontSize: '0.8125rem', textTransform: 'uppercase',
+              fontWeight: '700', fontSize: '0.8125rem', textTransform: 'uppercase',
               letterSpacing: '1px', height: '100%', display: 'flex', alignItems: 'center'
             }}>
               Contact
             </Link>
 
-            <Link to="/book-demo" className="btn btn-primary" style={{ padding: '0.6rem 1.5rem', marginLeft: '1rem', fontSize: '0.75rem', borderRadius: '4px', fontWeight: '800' }}>
+            <Link to="/book-demo" className="btn btn-primary" style={{ padding: '0.6rem 1.5rem', marginLeft: '1rem', fontSize: '0.75rem', borderRadius: '4px', fontWeight: '700' }}>
               Request a Demo
             </Link>
           </div>

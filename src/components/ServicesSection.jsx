@@ -3,6 +3,12 @@ import React from 'react';
 
 const services = [
   {
+    title: 'OMR Sheets Designing',
+    desc: 'Optimized form architecture designed for maximum scannability. We account for every data point, ensuring your institutional layouts are perfectly aligned for digital evaluation systems.',
+    img: '/assets/images/omr_design.png',
+    tag: 'Custom Design'
+  },
+  {
     title: 'OMR Sheets Printing',
     desc: 'Institutional-grade OMR/ICR sheets printing, customised to precision. Ideal for high-stakes examinations, surveys, and large-scale feedback collection for Govt. and Private organisations.',
     img: '/assets/images/omr_printing.png',
@@ -13,19 +19,13 @@ const services = [
     desc: 'End-to-end Pre and Post-examination result processing. We leverage advanced OMR/ICR/OCR tools for rapid and accurate data capture from Medical, Engineering, and General entrance exams.',
     img: '/assets/images/omr_scanning.png',
     tag: 'High Speed'
-  },
-  {
-    title: 'OMR Sheets Designing',
-    desc: 'Optimized form architecture designed for maximum scannability. We account for every data point, ensuring your institutional layouts are perfectly aligned for digital evaluation systems.',
-    img: '/assets/images/omr_design.png',
-    tag: 'Custom Design'
-  },
-  {
-    title: 'Scanner Services & AMC',
-    desc: 'Comprehensive maintenance and technical support for all OMR hardware. From consumable supplies and spare parts to regular servicing, we ensure your scanning infrastructure never fails.',
-    img: null,
-    tag: 'Support'
   }
+  // {
+  //   title: 'Scanner Services & AMC',
+  //   desc: 'Comprehensive maintenance and technical support for all OMR hardware. From consumable supplies and spare parts to regular servicing, we ensure your scanning infrastructure never fails.',
+  //   img: null,
+  //   tag: 'Support'
+  // }
 ];
 
 const ServicesSection = () => {
@@ -79,17 +79,17 @@ const ServicesSection = () => {
               display: 'flex',
               flexDirection: 'column'
             }}
-            className="card-hover"
-            onMouseEnter={e => {
-              e.currentTarget.style.transform = 'translateY(-8px)';
-              e.currentTarget.style.boxShadow = '0 30px 60px -15px rgba(0,0,0,0.12)';
-              e.currentTarget.style.borderColor = 'var(--primary)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
-              e.currentTarget.style.borderColor = '#EEEEEE';
-            }}
+              className="card-hover"
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.boxShadow = '0 30px 60px -15px rgba(0,0,0,0.12)';
+                e.currentTarget.style.borderColor = 'var(--primary)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.borderColor = '#EEEEEE';
+              }}
             >
               {/* Image Area */}
               <div style={{

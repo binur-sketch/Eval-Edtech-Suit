@@ -112,8 +112,8 @@ const SiteFooter = () => {
             <h4 style={{ color: 'white', fontSize: '0.875rem', fontWeight: '800', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Services</h4>
             <div style={{ display: 'grid', gap: '0.875rem' }}>
               <Link to="/omr-printing" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>OMR Printing</Link>
-              <Link to="/omr-scanning" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>OMR Scanning</Link>
-              <Link to="/custom-software" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Custom Software</Link>
+              <Link to="/omr-scanning" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>OMR Scanning & Result Generation</Link>
+              <Link to="/custom-software" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Custom Software Development</Link>
             </div>
           </div>
 

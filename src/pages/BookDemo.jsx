@@ -28,12 +28,6 @@ const BookDemo = () => {
                 </div>
               ))}
             </div>
-
-            <div style={{ marginTop: '5rem', padding: '3rem', background: 'white', borderRadius: '3rem', border: '1px solid var(--border)', position: 'relative' }}>
-              <Icons.Quote size={48} style={{ color: 'var(--primary)', opacity: '0.1', position: 'absolute', top: '2rem', left: '2rem' }} />
-              <p style={{ fontStyle: 'italic', fontSize: '1.125rem', marginBottom: '2rem', lineHeight: '1.7', position: 'relative', zIndex: 1 }}>"The demonstration convinced us immediately. eVAL's ability to handle OMR on plain paper without specialized hardware is its biggest innovation."</p>
-              <div style={{ fontWeight: '800', fontSize: '1rem', color: 'var(--foreground)' }}>Director of Admissions, NCERT</div>
-            </div>
           </div>
 
           <div className="card" style={{ background: 'var(--card)', padding: '4rem', borderRadius: '4rem', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--border)' }}>
