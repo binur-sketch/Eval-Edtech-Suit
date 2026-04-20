@@ -143,50 +143,6 @@ const Home = () => {
           </div>
         </div>
       </section> */}
-
-      {/* WORKFLOW */}
-      <section className="section-padding workflow-section">
-        <div className="container">
-
-          <div className="section-header">
-            <span className="badge">Workflow</span>
-            <h2>
-              From Sheet to <span className="gradient-text">Result</span> in Minutes
-            </h2>
-          </div>
-
-          <div className="workflow-wrapper">
-            {[
-              { title: 'Design', icon: <Icons.Edit3 size={20} /> },
-              { title: 'Scan', icon: <Icons.ScanLine size={20} /> },
-              { title: 'Evaluate', icon: <Icons.CheckCircle size={20} /> },
-              { title: 'Report', icon: <Icons.BarChart3 size={20} /> }
-            ].map((step, i) => (
-              <div key={i} className="workflow-step">
-
-                {/* Connector Line */}
-                {i !== 3 && <div className="connector" />}
-
-                <div className="step-card">
-
-                  <div className="step-number">
-                    0{i + 1}
-                  </div>
-
-                  <div className="step-icon">
-                    {step.icon}
-                  </div>
-
-                  <h4>{step.title}</h4>
-
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
       {/* SERVICES */}
       <ServicesSection />
 
@@ -198,10 +154,6 @@ const Home = () => {
 
       {/* EXISTING VISUAL WORKFLOW */}
       <WorkflowSection />
-
-
-
-
 
       {/* WHY eVAL */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
