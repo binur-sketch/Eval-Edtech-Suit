@@ -19,7 +19,6 @@ const Products = lazy(() => import('./pages/Products'));
 const OMRPage = lazy(() => import('./pages/solutions/OMRPage'));
 const CBTPage = lazy(() => import('./pages/solutions/CBTPage'));
 const LMSPage = lazy(() => import('./pages/solutions/LMSPage'));
-const QTBPage = lazy(() => import('./pages/solutions/QTBPage')); // Old QTB
 const OSMPage = lazy(() => import('./pages/solutions/OSMPage'));
 const AIPage = lazy(() => import('./pages/solutions/AIPage')); // New AI Proctoring
 const QPMSPage = lazy(() => import('./pages/solutions/QPMSPage')); // New QPMS
@@ -70,7 +69,7 @@ function App() {
           <Route path="/custom-software" element={<CustomSoftware />} />
 
           {/* Fallbacks */}
-          <Route path="/qtb" element={<QPMSPage />} />
+          <Route path="/qpms" element={<QPMSPage />} />
           <Route path="/solutions/omr" element={<OMRPage />} />
           <Route path="/solutions/cbt" element={<CBTPage />} />
           <Route path="/solutions/lms" element={<LMSPage />} />

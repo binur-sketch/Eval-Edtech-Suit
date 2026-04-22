@@ -30,7 +30,7 @@ const CustomSoftware = () => {
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       {/* Hero */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
@@ -45,7 +45,7 @@ const CustomSoftware = () => {
               </div>
             </div>
             <div style={{ position: 'relative' }}>
-               <img src="/assets/images/service_custom.png" alt="Custom Software" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+              <img src="/assets/images/service_custom.png" alt="Custom Software" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
             </div>
           </div>
         </div>
@@ -55,16 +55,16 @@ const CustomSoftware = () => {
       <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2>Our <span className="gradient-text">Expertise</span></h2>
-             <p style={{ maxWidth: '700px', margin: '1.5rem auto 0', color: 'var(--muted-foreground)' }}>From candidate registration to final result processing, we build end-to-end systems for every examination need.</p>
+            <h2>Our <span className="gradient-text">Expertise</span></h2>
+            <p style={{ maxWidth: '700px', margin: '1.5rem auto 0', color: 'var(--muted-foreground)' }}>From candidate registration to final result processing, we build end-to-end systems for every examination need.</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
-             {expertise.map((e, i) => (
-               <div key={i} className="card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.5rem' }}>
-                  <div style={{ color: 'var(--primary)', flexShrink: 0 }}><Icons.CheckCircle size={20} /></div>
-                  <div style={{ fontWeight: '700', fontSize: '0.9375rem' }}>{e}</div>
-               </div>
-             ))}
+            {expertise.map((e, i) => (
+              <div key={i} className="card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.5rem', background: 'var(--muted)' }}>
+                <div style={{ color: 'var(--primary)', flexShrink: 0 }}><Icons.CheckCircle size={20} /></div>
+                <div style={{ fontWeight: '700', fontSize: '0.9375rem' }}>{e}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -73,15 +73,15 @@ const CustomSoftware = () => {
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2>Key <span className="gradient-text">Features</span></h2>
+            <h2>Key <span className="gradient-text">Features</span></h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
-             {features.map((f, i) => (
-               <div key={i} className="card" style={{ padding: '3rem' }}>
-                  <h3 style={{ fontSize: '1.25rem', marginBottom: '1.25rem', color: 'var(--primary)' }}>{f.title}</h3>
-                  <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{f.desc}</p>
-               </div>
-             ))}
+            {features.map((f, i) => (
+              <div key={i} className="card" style={{ padding: '3rem', background: 'var(--muted)' }}>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '1.25rem', color: 'var(--primary)' }}>{f.title}</h3>
+                <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{f.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -89,31 +89,31 @@ const CustomSoftware = () => {
       {/* Reasons */}
       <section className="section-padding">
         <div className="container">
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
-              <div>
-                <h2>Why Choose Our <span className="gradient-text">Custom Development</span></h2>
-                <ul style={{ display: 'grid', gap: '1.5rem', marginTop: '3rem', padding: 0, listStyle: 'none' }}>
-                  {[
-                    'Built specifically for your examination workflow',
-                    'No dependency on pre-built products',
-                    'Scalable for large volume exams',
-                    'Secure and reliable architecture',
-                    'Flexible future enhancements',
-                    'Complete automation of exam lifecycle'
-                  ].map((r, i) => (
-                    <li key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'center', fontWeight: '700' }}>
-                      <Icons.Check size={24} style={{ color: 'var(--primary)' }} />
-                      {r}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div style={{ background: 'var(--secondary)', color: 'white', padding: '4rem', borderRadius: '3rem' }}>
-                 <h3 style={{ color: 'white', marginBottom: '1.5rem' }}>Let's Build Something Great</h3>
-                 <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '3rem' }}>Contact us today to discuss your unique requirements and get a technical proposal.</p>
-                 <Link to="/contact" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>Connect with Us</Link>
-              </div>
-           </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+            <div>
+              <h2>Why Choose Our <span className="gradient-text">Custom Development</span></h2>
+              <ul style={{ display: 'grid', gap: '1.5rem', marginTop: '3rem', padding: 0, listStyle: 'none' }}>
+                {[
+                  'Built specifically for your examination workflow',
+                  'No dependency on pre-built products',
+                  'Scalable for large volume exams',
+                  'Secure and reliable architecture',
+                  'Flexible future enhancements',
+                  'Complete automation of exam lifecycle'
+                ].map((r, i) => (
+                  <li key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'center', fontWeight: '700' }}>
+                    <Icons.Check size={24} style={{ color: 'var(--primary)' }} />
+                    {r}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div style={{ background: 'var(--secondary)', color: 'white', padding: '4rem', borderRadius: '3rem' }}>
+              <h3 style={{ color: 'white', marginBottom: '1.5rem' }}>Let's Build Something Great</h3>
+              <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '3rem' }}>Contact us today to discuss your unique requirements and get a technical proposal.</p>
+              <Link to="/contact" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>Connect with Us</Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

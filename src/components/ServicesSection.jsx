@@ -40,13 +40,13 @@ const ServicesSection = () => {
       <div style={{
         position: 'absolute', top: '5%', left: '-5%',
         width: '300px', height: '300px',
-        background: 'radial-gradient(circle, rgba(229,57,53,0.06) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(14, 165, 164, 0.06) 0%, transparent 70%)',
         borderRadius: '50%', zIndex: 0
       }} />
       <div style={{
         position: 'absolute', bottom: '10%', right: '-3%',
         width: '400px', height: '400px',
-        background: 'radial-gradient(circle, rgba(229,57,53,0.04) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(14, 165, 164, 0.04) 0%, transparent 70%)',
         borderRadius: '50%', zIndex: 0
       }} />
 
@@ -135,7 +135,7 @@ const ServicesSection = () => {
                   color: 'var(--primary)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
-                  border: '1px solid rgba(229,57,53,0.15)'
+                  border: '1px solid rgba(14, 165, 164, 0.15)'
                 }}>
                   {s.tag}
                 </div>
@@ -165,17 +165,7 @@ const ServicesSection = () => {
                 }}>
                   {s.desc}
                 </p>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  color: 'var(--primary)',
-                  fontSize: '0.8125rem',
-                  fontWeight: '800'
-                }}>
-                  <Icons.ArrowRight size={16} />
-                  Learn More
-                </div>
+
               </div>
             </div>
           ))}

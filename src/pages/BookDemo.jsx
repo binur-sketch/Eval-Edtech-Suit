@@ -1,4 +1,4 @@
-﻿import * as Icons from '@/components/LucideFix';
+import * as Icons from '@/components/LucideFix';
 import React from 'react';
 
 const BookDemo = () => {
@@ -30,16 +30,56 @@ const BookDemo = () => {
             </div>
           </div>
 
-          <div className="card" style={{ background: 'var(--card)', padding: '4rem', borderRadius: '4rem', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--border)' }}>
-            <h3 style={{ marginBottom: '3rem', textAlign: 'center' }}>Secure Your Slot</h3>
-            <form style={{ display: 'grid', gap: '2rem' }}>
-              <div style={{ display: 'grid', gap: '0.75rem' }}>
-                <label style={{ fontSize: '0.875rem', fontWeight: '800', color: 'var(--foreground)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Work Email</label>
-                <input type="email" placeholder="principal@institute.org" style={{ width: '100%', padding: '1.25rem', borderRadius: '1.25rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '1rem' }} />
+          <div className="card" style={{ background: 'white', padding: '3.5rem', borderRadius: '3rem', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--border)' }}>
+            <h3 style={{ marginBottom: '2.5rem', textAlign: 'center' }}>Secure Your Slot</h3>
+            <form style={{ display: 'grid', gap: '1.25rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div style={{ display: 'grid', gap: '0.4rem' }}>
+                  <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Full Name</label>
+                  <input type="text" placeholder="John Doe" style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
+                </div>
+                <div style={{ display: 'grid', gap: '0.4rem' }}>
+                  <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Mobile No</label>
+                  <input type="tel" placeholder="+91 99xx" style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
+                </div>
               </div>
-              <div style={{ display: 'grid', gap: '0.75rem' }}>
-                <label style={{ fontSize: '0.875rem', fontWeight: '800', color: 'var(--foreground)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Focus Solution</label>
-                <select style={{ width: '100%', padding: '1.25rem', borderRadius: '1.25rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '1rem' }}>
+
+              <div style={{ display: 'grid', gap: '0.4rem' }}>
+                <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Work Email</label>
+                <input type="email" placeholder="principal@institute.org" style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div style={{ display: 'grid', gap: '0.4rem' }}>
+                  <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Company / Organisation</label>
+                  <input type="text" placeholder="Institution Name" style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
+                </div>
+                <div style={{ display: 'grid', gap: '0.4rem' }}>
+                  <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Country</label>
+                  <select style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem', height: '48px' }}>
+                    <option>India</option>
+                    <option>Nigeria</option>
+                    <option>Kenya</option>
+                    <option>United Arab Emirates</option>
+                    <option>United States</option>
+                    <option>United Kingdom</option>
+                    <option>Singapore</option>
+                    <option>Saudi Arabia</option>
+                    <option>Oman</option>
+                    <option>Qatar</option>
+                    <option>Kuwait</option>
+                    <option>Bangladesh</option>
+                    <option>Nepal</option>
+                    <option>Sri Lanka</option>
+                    <option>Bhutan</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style={{ display: 'grid', gap: '0.4rem' }}>
+                <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Focus Solution</label>
+                <select style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem', height: '48px' }}>
                   <option>Complete eVAL Suite (Recommended)</option>
                   <option>OMR Software Only</option>
                   <option>CBT & Proctoring Platform</option>
@@ -47,21 +87,14 @@ const BookDemo = () => {
                   <option>LMS & Content Delivery</option>
                 </select>
               </div>
-              <div style={{ display: 'grid', gap: '0.75rem' }}>
-                <label style={{ fontSize: '0.875rem', fontWeight: '800', color: 'var(--foreground)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Exam Volume</label>
-                <select style={{ width: '100%', padding: '1.25rem', borderRadius: '1.25rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '1rem' }}>
-                  <option>Under 1,000 students</option>
-                  <option>1,000 - 10,000 students</option>
-                  <option>10,000 - 100,000 students</option>
-                  <option>National/State Board (100k+)</option>
-                </select>
+
+              <div style={{ display: 'grid', gap: '0.4rem' }}>
+                <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Request Message</label>
+                <textarea rows="3" placeholder="Tell us about your institutional needs..." style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem', resize: 'none' }}></textarea>
               </div>
-              <div style={{ display: 'grid', gap: '0.75rem' }}>
-                <label style={{ fontSize: '0.875rem', fontWeight: '800', color: 'var(--foreground)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Preferred Date</label>
-                <input type="date" style={{ width: '100%', padding: '1.25rem', borderRadius: '1.25rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '1rem' }} />
-              </div>
-              <button type="submit" className="btn btn-primary" style={{ padding: '1.5rem', marginTop: '1rem', width: '100%', fontSize: '1.125rem' }}>Confirm Demo Request →</button>
-              <p style={{ textAlign: 'center', fontSize: '0.8125rem', color: 'var(--muted-foreground)', marginTop: '1rem', lineHeight: '1.5' }}>By confirming, you agree to our <span style={{ color: 'var(--primary)', fontWeight: '700' }}>institutional trial terms</span> and privacy policy.</p>
+
+              <button type="submit" className="btn btn-primary" style={{ padding: '1.25rem', marginTop: '0.5rem', width: '100%', fontSize: '1.125rem' }}>Confirm Demo Request →</button>
+              <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--muted-foreground)', marginTop: '0.5rem', lineHeight: '1.5' }}>By confirming, you agree to our <span style={{ color: 'var(--primary)', fontWeight: '700' }}>institutional trial terms</span> and privacy policy.</p>
             </form>
           </div>
         </div>

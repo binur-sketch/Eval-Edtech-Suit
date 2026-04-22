@@ -62,39 +62,91 @@ const About = () => {
       img: 'https://www.virsoftech.com/sameer_manuja.jpg',
       linkedin: 'https://www.linkedin.com/in/sameermanuja/',
       mail: 'sameer.manuja@virsoftech.com'
+    },
+    {
+      name: 'Akihide Sugino',
+      role: 'Country Head, Japan',
+      desc: 'Seasoned industry veteran with 35+ years of experience in sales, marketing, and license compliance. Previously worked with Epson & Adobe.',
+      img: 'https://www.virsoftech.com/img/sugino.jpg', // update if needed
+      linkedin: 'https://jp.linkedin.com/in/akihide-sugino-938526154',
+      mail: 'sugino@virsoftech.com'
+    },
+    {
+      name: 'Manu Paliwal',
+      role: 'Vice President – Sales',
+      desc: '25+ years of experience in sales, alliances, and operations. Drives growth strategy and business expansion.',
+      img: 'https://www.virsoftech.com/img/manu-photo.jpg', // update if needed
+      linkedin: 'https://in.linkedin.com/in/manu-paliwal-a549a144',
+      mail: 'manu@virsoftech.com'
     }
   ];
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       {/* Hero */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
           <span className="badge">Corporate Overview</span>
-          <h1 style={{ fontSize: '3.5rem' }}>Digitizing Evaluation, <br /><span className="gradient-text">Empowering Learning</span></h1>
-          <p style={{ fontSize: '1.25rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+          <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>Digitizing Evaluation, <br /><span className="gradient-text">Empowering Learning</span></h1>
+          <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', lineHeight: '1.7', color: 'var(--muted-foreground)', maxWidth: '800px', margin: '0 auto' }}>
             Part of Vir Softech Pvt. Ltd., eVAL is dedicated to bridging the gap between traditional manual evaluation and modern digital requirements with 100% accuracy and institutional trust.
           </p>
         </div>
       </section>
 
-      {/* Identity Section */}
-      <section className="section-padding">
+      {/* Who We Are */}
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'flex-start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '5rem', alignItems: 'center' }}>
             <div>
+              <span className="badge">Our Identity</span>
               <h2 style={{ marginBottom: '2rem' }}>Who We <span className="gradient-text">Are</span></h2>
-              <p style={{ fontSize: '1.125rem', lineHeight: '1.8', marginBottom: '1.5rem', color: 'var(--muted-foreground)' }}>
-                At VIR SOFTECH, we drive the next generation of business-focused IT transformation. Our mission is to empower organizations to turn their vision into measurable growth by reimagining workflows, optimizing operations, and delivering faster, smarter, and more cost-efficient outcomes.
-              </p>
-              <p style={{ fontSize: '1.125rem', lineHeight: '1.8', marginBottom: '1.5rem', color: 'var(--muted-foreground)' }}>
-                We specialize across four core technology areas: Enterprise Content Management & Digital Imaging, Print Technology Solutions & Services, Design and Artwork Automation, and eVAL — our advanced platform for educational assessment, evaluation, and learning management.
-              </p>
-              <p style={{ fontSize: '1.125rem', lineHeight: '1.8', color: 'var(--muted-foreground)' }}>
-                With deep expertise and innovation at our core, VIR Softech has developed breakthrough solutions for a wide spectrum of clients — from Fortune 500 enterprises and financial institutions to government bodies, creative agencies, and educational organizations including schools, universities, and coaching centers.
-              </p>
+              <div style={{ fontSize: '1.125rem', lineHeight: '1.8', color: 'var(--muted-foreground)' }}>
+                <p style={{ marginBottom: '1.5rem' }}>
+                  At VIR SOFTECH, we drive the next generation of business-focused IT transformation. Our mission is to empower organizations to turn their vision into measurable growth by reimagining workflows, optimizing operations, and delivering faster, smarter, and more cost-efficient outcomes.
+                </p>
+                <p style={{ marginBottom: '1.5rem' }}>
+                  We specialize across four core technology areas: Enterprise Content Management & Digital Imaging, Print Technology Solutions & Services, Design and Artwork Automation, and eVAL — our advanced platform for educational assessment, evaluation, and learning management.
+                </p>
+                <p>
+                  With deep expertise and innovation at our core, VIR Softech has developed breakthrough solutions for a wide spectrum of clients — from Fortune 500 enterprises and financial institutions to government bodies, creative agencies, and educational organizations including schools, universities, and coaching centers.
+                </p>
+              </div>
             </div>
-            <div style={{ background: 'var(--muted)', padding: '4rem', borderRadius: '3rem' }}>
+            <div style={{ position: 'relative' }}>
+              <div style={{
+                position: 'absolute',
+                top: '-20px',
+                right: '-20px',
+                width: '100px',
+                height: '100px',
+                background: 'var(--primary-light)',
+                borderRadius: '2rem',
+                zIndex: 0
+              }}></div>
+              <img 
+                src="/assets/images/whoweare.jpeg" 
+                alt="Who We Are" 
+                style={{ 
+                  width: '100%', 
+                  borderRadius: '2.5rem', 
+                  boxShadow: 'var(--shadow-lg)',
+                  position: 'relative',
+                  zIndex: 1,
+                  display: 'block'
+                }} 
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industry & Growth */}
+      <section className="section-padding" style={{ background: 'white' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+            <div>
+              <span className="badge">Market Presence</span>
               <h2 style={{ marginBottom: '2rem' }}>Industry & <span className="gradient-text">Growth</span></h2>
               <p style={{ fontSize: '1.0625rem', lineHeight: '1.8', marginBottom: '1.5rem', color: 'var(--muted-foreground)' }}>
                 Our suite of products and services addresses pressing challenges faced by organizations across diverse industries — including Education, Government, Corporate Enterprises, Automotive, BFSI, Healthcare, and Print & Publishing.
@@ -102,14 +154,17 @@ const About = () => {
               <p style={{ fontSize: '1.0625rem', lineHeight: '1.8', marginBottom: '1.5rem', color: 'var(--muted-foreground)' }}>
                 With a consistent annual growth rate of over 40%, VIR Softech continues to expand its global footprint, delivering value-driven technology solutions to clients across continents including the United States, United Kingdom, Japan, Asia, Australia, the Middle East, and India.
               </p>
-              <p style={{ fontSize: '1.0625rem', lineHeight: '1.8', marginBottom: '3rem', color: 'var(--muted-foreground)' }}>
+              <p style={{ fontSize: '1.0625rem', lineHeight: '1.8', color: 'var(--muted-foreground)' }}>
                 Headquartered in New Delhi, India, and supported by our international office in Tokyo, Japan, VIR Softech operates as a truly global technology partner, bridging innovation and impact across markets.
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', paddingTop: '2rem', borderTop: '1px solid var(--border)' }}>
+            </div>
+
+            <div className="card" style={{ padding: '3rem', background: 'var(--muted)', borderRadius: '2rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                 {stats.map((s, i) => (
                   <div key={i}>
-                    <div style={{ fontSize: '2.5rem', fontWeight: '900', color: 'var(--primary)' }}>{s.value}</div>
-                    <div style={{ fontSize: '0.8125rem', fontWeight: '800', color: 'var(--muted-foreground)', textTransform: 'uppercase' }}>{s.label}</div>
+                    <div style={{ fontSize: '2.5rem', fontWeight: '900', color: 'var(--primary)', lineHeight: '1.2' }}>{s.value}</div>
+                    <div style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--muted-foreground)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{s.label}</div>
                   </div>
                 ))}
               </div>
@@ -119,26 +174,49 @@ const About = () => {
       </section>
 
       {/* Certifications Bar */}
-      <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'white' }}>
-        <div className="container" style={{ padding: '3rem 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '4rem', alignItems: 'center' }}>
+      <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'white', overflow: 'hidden' }}>
+        <div className="container" style={{ padding: '4.5rem 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '5rem', alignItems: 'center' }}>
           {[
-            'CMMI LEVEL 3', 'ISO 9001:2015', 'ISO 14001:2015', 'MSME CERTIFIED', 'GeM REGISTERED'
+            { src: '/assets/images/cmmi logo.png', alt: 'CMMI Level 3' },
+            { src: '/assets/images/iso9001.png', alt: 'ISO 9001' },
+            { src: '/assets/images/iso14001.png', alt: 'ISO 14001' },
+            { src: '/assets/images/msme.png', alt: 'MSME' },
+            { src: '/assets/images/gem.png', alt: 'GeM India' }
           ].map((cert, i) => (
-            <div key={i} style={{ fontSize: '0.875rem', fontWeight: '900', color: '#94a3b8', letterSpacing: '0.1em' }}>{cert}</div>
+            <div key={i} style={{
+              height: '90px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              opacity: 0.9,
+              transition: 'all 0.3s ease',
+            }} onMouseEnter={e => {
+              e.currentTarget.style.opacity = 1;
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }} onMouseLeave={e => {
+              e.currentTarget.style.opacity = 0.9;
+              e.currentTarget.style.transform = 'scale(1)';
+            }}>
+              <img
+                src={cert.src}
+                alt={cert.alt}
+                style={{ maxHeight: '100%', maxWidth: '200px', objectFit: 'contain' }}
+              />
+            </div>
           ))}
         </div>
       </section>
 
       {/* Core Values */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span className="badge">Our Ethos</span>
             <h2>Institutional <span className="gradient-text">Priorities</span></h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {values.map((v, i) => (
-              <div key={i} className="card" style={{ padding: '3.5rem', textAlign: 'center' }}>
+              <div key={i} className="card" style={{ padding: 'clamp(1.5rem, 5vw, 3.5rem)', textAlign: 'center', background: 'white' }}>
                 <div style={{ color: 'var(--primary)', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>{v.icon}</div>
                 <h3 style={{ marginBottom: '1.5rem' }}>{v.title}</h3>
                 <p style={{ color: 'var(--muted-foreground)' }}>{v.desc}</p>
@@ -148,45 +226,171 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
+      {/* Snake Timeline Redesign */}
+      <section className="section-padding" style={{ background: '#f8fafc', overflow: 'hidden' }}>
+        <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <span className="badge">Our Journey</span>
-            <h2>A Decade of <span className="gradient-text">Innovation</span></h2>
+            <div style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              background: 'var(--primary)', 
+              color: 'white', 
+              padding: '0.75rem 2rem', 
+              borderRadius: '2rem', 
+              fontSize: '1.25rem', 
+              fontWeight: '800',
+              boxShadow: '0 10px 25px rgba(14, 165, 164, 0.3)',
+              marginBottom: '4rem'
+            }}>
+              Our Growth Journey
+            </div>
           </div>
 
-          <div style={{ position: 'relative' }}>
-            <div style={{ position: 'absolute', left: '30px', top: 0, bottom: 0, width: '2px', background: 'var(--border)' }}></div>
-            <div style={{ display: 'grid', gap: '2rem' }}>
-              {milestones.map((m, i) => (
-                <div key={i} style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', position: 'relative' }}>
+          <div className="snake-timeline" style={{ position: 'relative' }}>
+            {/* Split milestones into groups of 4 for rows */}
+            {[
+              milestones.slice(0, 4),
+              milestones.slice(4, 8),
+              milestones.slice(8, 11)
+            ].map((group, groupIndex) => {
+              const isEvenRow = groupIndex % 2 !== 0;
+              return (
+                <div key={groupIndex} 
+                  className={`snake-row ${isEvenRow ? 'row-reverse' : 'row-normal'}`}
+                  style={{ 
+                    display: 'flex', 
+                    flexDirection: isEvenRow ? 'row-reverse' : 'row',
+                    justifyContent: 'flex-start',
+                    gap: '2rem',
+                    marginBottom: '120px',
+                    position: 'relative'
+                  }}
+                >
+                  {/* Row Connector Line */}
                   <div style={{
-                    width: '60px', height: '60px', borderRadius: '50%', flexShrink: 0,
-                    background: 'white', border: '3px solid var(--primary)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: 'var(--primary)', zIndex: 1
-                  }}>{m.icon}</div>
+                    position: 'absolute',
+                    top: '25px',
+                    left: '12.5%',
+                    right: '12.5%',
+                    height: '2px',
+                    background: '#cbd5e1',
+                    zIndex: 0
+                  }}></div>
 
-                  <div className="card" style={{ padding: '2rem 2.5rem', flex: 1 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.75rem' }}>
-                      <span style={{
-                        padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.75rem',
-                        fontWeight: '800', background: 'var(--primary)', color: 'white'
-                      }}>{m.year}</span>
-                      <h4 style={{ marginBottom: 0, fontSize: '1.0625rem' }}>{m.title}</h4>
-                    </div>
-                    <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', marginBottom: 0, lineHeight: '1.6' }}>{m.desc}</p>
-                  </div>
+                  {group.map((m, i) => {
+                    const colors = ['#84cc16', '#0ea5a9', '#f59e0b', '#ec4899', '#3b82f6', '#8b5cf6'];
+                    const color = colors[(groupIndex * 4 + i) % colors.length];
+                    
+                    return (
+                      <div key={i} style={{ 
+                        flex: '1', 
+                        maxWidth: '280px', 
+                        position: 'relative', 
+                        zIndex: 1,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center'
+                      }}>
+                        {/* Circle Node */}
+                        <div style={{
+                          width: '50px',
+                          height: '50px',
+                          borderRadius: '50%',
+                          background: color,
+                          color: 'white',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontWeight: '800',
+                          fontSize: '0.875rem',
+                          boxShadow: `0 4px 15px ${color}40`,
+                          marginBottom: '1.5rem',
+                          position: 'relative',
+                          zIndex: 2
+                        }}>
+                          {m.year.slice(-2)}
+                        </div>
+
+                        {/* Card */}
+                        <div style={{
+                          background: 'white',
+                          borderRadius: '1rem',
+                          padding: '1.25rem',
+                          boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+                          border: '1px solid rgba(0,0,0,0.02)',
+                          width: '100%',
+                          borderTop: `4px solid ${color}`
+                        }}>
+                          <div style={{ 
+                            fontSize: '0.6875rem', 
+                            fontWeight: '900', 
+                            color: color, 
+                            textTransform: 'uppercase', 
+                            letterSpacing: '0.1em',
+                            marginBottom: '0.5rem'
+                          }}>
+                            {m.year}
+                          </div>
+                          <h4 style={{ fontSize: '0.9375rem', marginBottom: '0.5rem', lineHeight: '1.4' }}>{m.title}</h4>
+                          <p style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', lineHeight: '1.5', margin: 0 }}>
+                            {m.desc}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (min-width: 992px) {
+          .snake-row.row-normal::after {
+            content: '';
+            position: absolute;
+            right: calc(12.5% - 60px);
+            top: 25px;
+            width: 120px;
+            height: 122px;
+            border: 2px solid #cbd5e1;
+            border-left: none;
+            border-radius: 0 60px 60px 0;
+            z-index: 0;
+          }
+          .snake-row.row-reverse::after {
+            content: '';
+            position: absolute;
+            left: calc(12.5% - 60px);
+            top: 25px;
+            width: 120px;
+            height: 122px;
+            border: 2px solid #cbd5e1;
+            border-right: none;
+            border-radius: 60px 0 0 60px;
+            z-index: 0;
+          }
+          /* Hide curve for the last row */
+          .snake-row:last-child::after {
+            display: none;
+          }
+        }
+        @media (max-width: 991px) {
+          .snake-timeline > div { 
+            flex-direction: column !important; 
+            align-items: center; 
+            margin-bottom: 3rem !important; 
+            gap: 3rem !important;
+          }
+          .snake-timeline > div > div { max-width: 100% !important; }
+          .snake-timeline > div [style*="height: 2px"] { display: none; }
+        }
+      `}} />
+
       {/* Leadership */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span className="badge">Leadership</span>
@@ -194,18 +398,45 @@ const About = () => {
             <p style={{ maxWidth: '600px', margin: '0 auto' }}>A team of technologists, educators, and business leaders committed to transforming examination technology.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2.5rem' }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+            gap: '2.5rem',
+            // On large screens, we force it to exactly 3 columns if feasible
+          }} className="leadership-grid">
             {leadership.map((leader, i) => (
-              <div key={i} className="card" style={{ padding: '3rem', textAlign: 'center' }}>
-                <img
-                  src={leader.img}
-                  alt={leader.name}
-                  loading="lazy"
-                  style={{
-                    width: '100px', height: '100px', borderRadius: '50%',
-                    marginBottom: '1.25rem', border: '4px solid var(--primary-light)', objectFit: 'cover'
-                  }}
-                />
+              <div key={i} className="card hover-lift" style={{ 
+                padding: 'clamp(1.5rem, 5vw, 3rem)', 
+                textAlign: 'center', 
+                background: 'white',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%'
+              }}>
+                <div style={{ position: 'relative', width: 'fit-content', margin: '0 auto 1.5rem' }}>
+                  <div style={{ 
+                    position: 'absolute', 
+                    top: '-5px', 
+                    left: '-5px', 
+                    right: '-5px', 
+                    bottom: '-5px', 
+                    borderRadius: '50%', 
+                    border: '2px solid var(--primary)', 
+                    opacity: 0.2 
+                  }}></div>
+                  <img
+                    src={leader.img}
+                    alt={leader.name}
+                    style={{ 
+                      width: '120px', 
+                      height: '120px', 
+                      borderRadius: '50%', 
+                      objectFit: 'cover',
+                      border: '4px solid white',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                    }}
+                  />
+                </div>
                 <h4 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>{leader.name}</h4>
                 <div style={{ fontSize: '0.8125rem', fontWeight: '700', color: 'var(--primary)', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{leader.role}</div>
                 <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{leader.desc}</p>
@@ -231,7 +462,7 @@ const About = () => {
       {/* CTA */}
       <section className="section-padding">
         <div className="container" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: '3rem' }}>Partner with a <span className="gradient-text">Global Leader</span></h2>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 8vw, 3rem)' }}>Partner with a <span className="gradient-text">Global Leader</span></h2>
           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)', fontSize: '1.125rem' }}>Headquartered in New Delhi, India, and supported by our international office in Tokyo, Japan.</p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
             <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Contact HQ</Link>

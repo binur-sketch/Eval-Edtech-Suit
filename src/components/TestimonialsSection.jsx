@@ -1,4 +1,4 @@
-﻿import * as Icons from '@/components/LucideFix';
+import * as Icons from '@/components/LucideFix';
 import React from 'react';
 
 const TestimonialsSection = () => {

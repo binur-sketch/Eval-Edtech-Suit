@@ -1,6 +1,7 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FAQ from '@/components/FAQ';
 
 const OSMPage = () => {
   const steps = [
@@ -43,7 +44,7 @@ const OSMPage = () => {
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       {/* Hero / Overview */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
@@ -54,7 +55,7 @@ const OSMPage = () => {
               </p>
               <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
                 <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem', lineHeight: '1.6' }}>
-                   A key strength of the eVAL On-Screen Marking Solution is its ability to support both Objective and Subjective answer sheets on a single platform. OSM transforms the marking and scoring of descriptive answer scripts into a precise, simple, secure, and efficient process — eliminating logistical, administrative, and accuracy challenges of traditional paper-based evaluation.
+                  A key strength of the eVAL On-Screen Marking Solution is its ability to support both Objective and Subjective answer sheets on a single platform. OSM transforms the marking and scoring of descriptive answer scripts into a precise, simple, secure, and efficient process — eliminating logistical, administrative, and accuracy challenges of traditional paper-based evaluation.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
@@ -63,7 +64,7 @@ const OSMPage = () => {
               </div>
             </div>
             <div style={{ position: 'relative' }}>
-               <img src="/assets/images/osm_hero.png" alt="On-Screen Marking" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+              <img src="/assets/images/osm_hero.png" alt="On-Screen Marking" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
             </div>
           </div>
         </div>
@@ -73,19 +74,19 @@ const OSMPage = () => {
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2>The <span className="gradient-text">8-Step</span> OSM Workflow</h2>
+            <h2>The <span className="gradient-text">8-Step</span> OSM Workflow</h2>
           </div>
           <div style={{ position: 'relative' }}>
-             <div style={{ position: 'absolute', top: '24px', left: '0', right: '0', height: '2px', background: 'var(--border)', zIndex: 0 }} className="md-block"></div>
-             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '3rem', position: 'relative', zIndex: 1 }}>
-                {steps.map((s, i) => (
-                  <div key={i} style={{ textAlign: 'center', background: 'white', border: '1px solid var(--border)', borderRadius: '1rem', padding: '2rem' }}>
-                     <div style={{ width: '48px', height: '48px', background: 'var(--primary)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontWeight: '900', boxShadow: '0 4px 10px rgba(229,57,53,0.3)' }}>{i+1}</div>
-                     <h4 style={{ fontSize: '1.125rem', marginBottom: '0.75rem' }}>{s.title}</h4>
-                     <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6', margin: 0 }}>{s.desc}</p>
-                  </div>
-                ))}
-             </div>
+            <div style={{ position: 'absolute', top: '24px', left: '0', right: '0', height: '2px', background: 'var(--border)', zIndex: 0 }} className="md-block"></div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '3rem', position: 'relative', zIndex: 1 }}>
+              {steps.map((s, i) => (
+                <div key={i} style={{ textAlign: 'center', background: 'white', border: '1px solid var(--border)', borderRadius: '1rem', padding: '2rem' }}>
+                  <div style={{ width: '48px', height: '48px', background: 'var(--primary)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontWeight: '900', boxShadow: '0 4px 10px rgba(14, 165, 164, 0.3)' }}>{i + 1}</div>
+                  <h4 style={{ fontSize: '1.125rem', marginBottom: '0.75rem' }}>{s.title}</h4>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6', margin: 0 }}>{s.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -93,73 +94,76 @@ const OSMPage = () => {
       {/* Key Features */}
       <section className="section-padding">
         <div className="container">
-           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2>Power <span className="gradient-text">Features</span></h2>
-           </div>
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
-              {features.map((f, i) => (
-                <div key={i} className="card hover-lift" style={{ padding: '2.5rem', borderTop: '4px solid var(--primary)' }}>
-                   <h3 style={{ fontSize: '1.25rem', marginBottom: '1.25rem', color: 'var(--foreground)' }}>{f.title}</h3>
-                   <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{f.desc}</p>
-                </div>
-              ))}
-           </div>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <h2>Power <span className="gradient-text">Features</span></h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
+            {features.map((f, i) => (
+              <div key={i} className="card hover-lift" style={{ padding: '2.5rem', borderTop: '4px solid var(--primary)', background: 'var(--muted)' }}>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '1.25rem', color: 'var(--foreground)' }}>{f.title}</h3>
+                <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{f.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Key Benefits */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
-           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2>Key <span className="gradient-text">Benefits</span></h2>
-           </div>
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
-              {benefits.map((b, i) => (
-                 <div key={i} style={{ display: 'flex', gap: '1.5rem' }}>
-                    <div style={{ width: '48px', height: '48px', background: 'white', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--border)', color: 'var(--primary)', flexShrink: 0 }}>
-                       <Icons.CheckCircle2 size={24} />
-                    </div>
-                    <div>
-                       <h4 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>{b.title}</h4>
-                       <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6' }}>{b.desc}</p>
-                    </div>
-                 </div>
-              ))}
-           </div>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <h2>Key <span className="gradient-text">Benefits</span></h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+            {benefits.map((b, i) => (
+              <div key={i} style={{ display: 'flex', gap: '1.5rem' }}>
+                <div style={{ width: '48px', height: '48px', background: 'white', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--border)', color: 'var(--primary)', flexShrink: 0 }}>
+                  <Icons.CheckCircle2 size={24} />
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>{b.title}</h4>
+                  <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6' }}>{b.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Role-Based Access */}
-      <section className="section-padding" style={{ background: '#1F1F1F', color: 'white' }}>
+      <section className="section-padding" style={{ background: 'white', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
         <div className="container">
-           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2 style={{ color: 'white' }}>Role-Based <span className="gradient-text">Access</span></h2>
-           </div>
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-              {roles.map((r, i) => (
-                <div key={i} style={{ background: 'rgba(255,255,255,0.05)', padding: '2.5rem', borderRadius: '1.5rem', border: '1px solid rgba(255,255,255,0.1)' }}>
-                   <div style={{ fontSize: '0.875rem', fontWeight: '800', color: 'var(--primary)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{r.role}</div>
-                   <ul style={{ padding: 0, margin: 0, listStyle: 'none', color: 'rgba(255,255,255,0.7)', fontSize: '0.9375rem', lineHeight: '1.8' }}>
-                      {r.access.split(' • ').map((item, idx) => (
-                         <li key={idx} style={{ display: 'flex', gap: '8px' }}>
-                            <span style={{ color: 'var(--primary)' }}>&bull;</span> {item}
-                         </li>
-                      ))}
-                   </ul>
-                </div>
-              ))}
-           </div>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <h2>Role-Based <span className="gradient-text">Access</span></h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            {roles.map((r, i) => (
+              <div key={i} style={{ background: 'var(--muted)', padding: '2.5rem', borderRadius: '1.5rem', border: '1px solid var(--border)' }}>
+                <div style={{ fontSize: '0.875rem', fontWeight: '800', color: 'var(--primary)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{r.role}</div>
+                <ul style={{ padding: 0, margin: 0, listStyle: 'none', color: 'var(--muted-foreground)', fontSize: '0.9375rem', lineHeight: '1.8' }}>
+                  {r.access.split(' • ').map((item, idx) => (
+                    <li key={idx} style={{ display: 'flex', gap: '8px' }}>
+                      <span style={{ color: 'var(--primary)' }}>&bull;</span> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-           <h2>Eliminate the logistical nightmare</h2>
-           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)' }}>The most secure and transparent on-screen marking system for descriptive exams.</p>
-           <Link to="/book-demo" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Request Demo</Link>
+          <h2>Eliminate the logistical nightmare</h2>
+          <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)' }}>The most secure and transparent on-screen marking system for descriptive exams.</p>
+          <Link to="/book-demo" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Request Demo</Link>
         </div>
       </section>
+      {/* FAQ */}
+      < FAQ />
+
     </div>
   );
 };

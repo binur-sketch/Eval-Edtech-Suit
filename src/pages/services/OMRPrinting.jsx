@@ -26,7 +26,7 @@ const OMRPrinting = () => {
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       {/* Hero */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
@@ -62,7 +62,7 @@ const OMRPrinting = () => {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {features.map((f, i) => (
-              <div key={i} className="card" style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', padding: '1.5rem' }}>
+              <div key={i} className="card" style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', padding: '1.5rem', background: 'var(--muted)' }}>
                 <div style={{ color: 'var(--primary)' }}>{f.icon}</div>
                 <div style={{ fontWeight: '700' }}>{f.title}</div>
               </div>
@@ -79,7 +79,7 @@ const OMRPrinting = () => {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
             {benefits.map((b, i) => (
-              <div key={i} className="card" style={{ padding: '3rem' }}>
+              <div key={i} className="card" style={{ padding: '3rem', background: 'var(--muted)' }}>
                 <div style={{ color: 'var(--primary)', marginBottom: '1.5rem' }}>{b.icon}</div>
                 <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{b.title}</h3>
                 <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6' }}>{b.desc}</p>

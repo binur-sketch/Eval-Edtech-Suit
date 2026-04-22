@@ -1,6 +1,7 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FAQ from '@/components/FAQ';
 
 const LMSPage = () => {
   const roles = [
@@ -46,7 +47,7 @@ const LMSPage = () => {
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       {/* Overview */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
           <span className="badge">LMS Central</span>
           <h1 style={{ fontSize: '3.5rem' }}>Learning <span className="gradient-text">Management System</span></h1>
@@ -55,7 +56,7 @@ const LMSPage = () => {
           </p>
           <div style={{ background: 'white', padding: '2rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem', display: 'inline-block' }}>
             <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem' }}>
-               Whether your institution is a school, university, government cell, recruitment unit, coaching institute, or education and training centre, the eVAL LMS is designed to be flexible, scalable, and future-ready. It supports online classrooms, self-paced courses, training programmes, and a full management portal.
+              Whether your institution is a school, university, government cell, recruitment unit, coaching institute, or education and training centre, the eVAL LMS is designed to be flexible, scalable, and future-ready. It supports online classrooms, self-paced courses, training programmes, and a full management portal.
             </p>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '3rem' }}>
@@ -69,19 +70,19 @@ const LMSPage = () => {
       <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2>Comprehensive <span className="gradient-text">Role Management</span></h2>
-             <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--muted-foreground)' }}>The LMS supports a comprehensive hierarchy of roles, each with defined access and responsibilities.</p>
+            <h2>Comprehensive <span className="gradient-text">Role Management</span></h2>
+            <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--muted-foreground)' }}>The LMS supports a comprehensive hierarchy of roles, each with defined access and responsibilities.</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
-             {roles.map((r, i) => (
-               <div key={i} className="card hover-lift" style={{ padding: '2rem', border: '1px solid var(--border)' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                     <div style={{ color: 'var(--primary)', padding: '0.75rem', background: 'var(--primary-light)', borderRadius: '0.75rem' }}>{r.icon}</div>
-                     <h3 style={{ fontSize: '1.125rem', margin: 0 }}>{r.title}</h3>
-                  </div>
-                  <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{r.desc}</p>
-               </div>
-             ))}
+            {roles.map((r, i) => (
+              <div key={i} className="card hover-lift" style={{ padding: '2rem', border: '1px solid var(--border)', background: 'var(--muted)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                  <div style={{ color: 'white', padding: '12px', background: 'var(--primary-dark)', borderRadius: '12px', display: 'inline-block', marginBottom: '1.5rem' }}>{r.icon}</div>
+                  <h3 style={{ fontSize: '1.125rem', margin: 0 }}>{r.title}</h3>
+                </div>
+                <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{r.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -90,20 +91,20 @@ const LMSPage = () => {
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2>Course & Batch <span className="gradient-text">Management</span></h2>
+            <h2>Course & Batch <span className="gradient-text">Management</span></h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
-             {courseBatchFeatures.map((f, i) => (
-                <div key={i} style={{ display: 'flex', gap: '1.5rem' }}>
-                   <div style={{ width: '50px', height: '50px', background: 'white', color: 'var(--primary)', borderRadius: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid var(--border)' }}>
-                      {f.icon}
-                   </div>
-                   <div>
-                      <h4 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>{f.title}</h4>
-                      <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6' }}>{f.desc}</p>
-                   </div>
+            {courseBatchFeatures.map((f, i) => (
+              <div key={i} style={{ display: 'flex', gap: '1.5rem' }}>
+                <div style={{ width: '50px', height: '50px', background: 'white', color: 'var(--primary)', borderRadius: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid var(--border)' }}>
+                  {f.icon}
                 </div>
-             ))}
+                <div>
+                  <h4 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>{f.title}</h4>
+                  <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6' }}>{f.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -112,17 +113,17 @@ const LMSPage = () => {
       <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2>Evaluation & <span className="gradient-text">Reports Management</span></h2>
+            <h2>Evaluation & <span className="gradient-text">Reports Management</span></h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
-             {evalReportFeatures.map((f, i) => (
-                <div key={i} className="card" style={{ padding: '3rem', borderLeft: '4px solid var(--primary)' }}>
-                   <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <span style={{ color: 'var(--primary)' }}>{f.icon}</span> {f.title}
-                   </h3>
-                   <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{f.desc}</p>
-                </div>
-             ))}
+            {evalReportFeatures.map((f, i) => (
+              <div key={i} className="card" style={{ padding: '3rem', borderLeft: '4px solid var(--primary)', background: 'var(--muted)' }}>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span style={{ color: 'var(--primary)' }}>{f.icon}</span> {f.title}
+                </h3>
+                <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{f.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -130,29 +131,32 @@ const LMSPage = () => {
       {/* Additional Modules */}
       <section className="section-padding" style={{ background: '#1F1F1F', color: 'white' }}>
         <div className="container">
-           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-              <h2 style={{ color: 'white' }}>Powerful <span style={{ color: 'var(--primary)' }}>Additional Modules</span></h2>
-           </div>
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
-              {additionalModules.map((m, i) => (
-                <div key={i} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', padding: '2rem' }}>
-                   <div style={{ color: 'var(--primary)', marginBottom: '1rem' }}>{m.icon}</div>
-                   <h4 style={{ color: 'white', fontSize: '1.125rem', marginBottom: '0.75rem' }}>{m.title}</h4>
-                   <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', lineHeight: '1.6', margin: 0 }}>{m.desc}</p>
-                </div>
-              ))}
-           </div>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <h2 style={{ color: 'white' }}>Powerful <span style={{ color: 'var(--primary)' }}>Additional Modules</span></h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
+            {additionalModules.map((m, i) => (
+              <div key={i} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', padding: '2rem' }}>
+                <div style={{ color: 'var(--primary)', marginBottom: '1rem' }}>{m.icon}</div>
+                <h4 style={{ color: 'white', fontSize: '1.125rem', marginBottom: '0.75rem' }}>{m.title}</h4>
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', lineHeight: '1.6', margin: 0 }}>{m.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="section-padding">
         <div className="container" style={{ textAlign: 'center' }}>
-           <h2>Ready to empower your educators and learners?</h2>
-           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', fontSize: '1.125rem', color: 'var(--muted-foreground)' }}>Build a future-ready educational ecosystem with the eVAL Learning Management System.</p>
-           <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 4rem' }}>Request Implementation</Link>
+          <h2>Ready to empower your educators and learners?</h2>
+          <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', fontSize: '1.125rem', color: 'var(--muted-foreground)' }}>Build a future-ready educational ecosystem with the eVAL Learning Management System.</p>
+          <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 4rem' }}>Request Implementation</Link>
         </div>
       </section>
+      {/* FAQ */}
+      < FAQ />
+
     </div>
   );
 };

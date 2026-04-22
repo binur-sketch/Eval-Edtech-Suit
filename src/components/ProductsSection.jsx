@@ -80,7 +80,7 @@ const ProductsSection = ({ isPage = false }) => {
                   <div style={{
                     display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                     gap: '1rem', width: '100%', height: '100%',
-                    background: 'linear-gradient(135deg, rgba(229,57,53,0.04) 0%, rgba(31,31,31,0.03) 100%)',
+                    background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.04) 0%, rgba(31,31,31,0.03) 100%)',
                     borderRadius: '1rem'
                   }}>
                     <div style={{ fontSize: '4rem', lineHeight: 1 }}>{product.icon}</div>

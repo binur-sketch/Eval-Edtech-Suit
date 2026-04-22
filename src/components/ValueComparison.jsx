@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import * as Icons from './LucideFix';
 
 const ValueComparison = () => {
@@ -20,9 +20,9 @@ const ValueComparison = () => {
           <h2>Traditional vs <span className="gradient-text">eVAL Ecosystem</span></h2>
         </div>
 
-        <div style={{ 
+        <div style={{
           overflowX: 'auto',
-          background: 'var(--card)',
+          background: 'var(--muted)',
           borderRadius: '2rem',
           border: '1px solid var(--border)',
           boxShadow: 'var(--shadow)'
@@ -40,12 +40,12 @@ const ValueComparison = () => {
                 <tr key={i} style={{ borderBottom: '1px solid var(--border)' }}>
                   <td style={{ padding: '1.5rem 2rem', fontWeight: '700' }}>{row.feature}</td>
                   <td style={{ padding: '1.5rem 2rem', color: 'var(--muted-foreground)' }}>{row.trad}</td>
-                  <td style={{ 
-                    padding: '1.5rem 2rem', 
-                    fontWeight: '800', 
-                    color: 'var(--primary)', 
+                  <td style={{
+                    padding: '1.5rem 2rem',
+                    fontWeight: '800',
+                    color: 'var(--primary)',
                     textAlign: 'center',
-                    background: 'rgba(229, 57, 53, 0.02)'
+                    background: 'rgba(14, 165, 164, 0.02)'
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
                       <Icons.CheckCircle2 size={18} /> {row.eval}

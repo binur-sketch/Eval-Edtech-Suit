@@ -28,7 +28,7 @@ const OMRScanning = () => {
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       {/* Hero */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
@@ -57,7 +57,7 @@ const OMRScanning = () => {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
             {features.map((f, i) => (
-              <div key={i} className="card" style={{ padding: '2.5rem', textAlign: 'center' }}>
+              <div key={i} className="card" style={{ padding: '2.5rem', textAlign: 'center', background: 'var(--muted)' }}>
                 <div style={{ color: 'var(--primary)', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>{f.icon}</div>
                 <h4 style={{ fontSize: '1.125rem' }}>{f.title}</h4>
               </div>

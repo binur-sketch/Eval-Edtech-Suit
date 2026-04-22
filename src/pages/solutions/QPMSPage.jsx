@@ -1,6 +1,7 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FAQ from '@/components/FAQ';
 
 const QPMSPage = () => {
   const features = [
@@ -40,7 +41,7 @@ const QPMSPage = () => {
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       {/* Hero / Overview */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
@@ -51,7 +52,7 @@ const QPMSPage = () => {
               </p>
               <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
                 <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem', lineHeight: '1.6' }}>
-                   The system enables universities and examination bodies to engage internal and external faculty members to create multiple question papers in the institution's prescribed format, all within a secure, role-based platform. This structured digital approach eliminates risks associated with manual paper preparation, improves coordination between contributors, and ensures that question papers are created, reviewed, and finalized with complete confidentiality.
+                  The system enables universities and examination bodies to engage internal and external faculty members to create multiple question papers in the institution's prescribed format, all within a secure, role-based platform. This structured digital approach eliminates risks associated with manual paper preparation, improves coordination between contributors, and ensures that question papers are created, reviewed, and finalized with complete confidentiality.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
@@ -60,7 +61,7 @@ const QPMSPage = () => {
               </div>
             </div>
             <div style={{ position: 'relative' }}>
-               <img src="/assets/images/qpms_dashboard.png" alt="QPMS Dashboard" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+              <img src="/assets/images/qpms_dashboard.png" alt="QPMS Dashboard" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
             </div>
           </div>
         </div>
@@ -70,16 +71,16 @@ const QPMSPage = () => {
       <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2>System <span className="gradient-text">Key Features</span></h2>
+            <h2>System <span className="gradient-text">Key Features</span></h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
-             {features.map((f, i) => (
-               <div key={i} className="card hover-lift" style={{ padding: '2.5rem' }}>
-                  <div style={{ color: 'var(--primary)', padding: '12px', background: 'var(--primary-light)', borderRadius: '12px', display: 'inline-block', marginBottom: '1.5rem' }}>{f.icon}</div>
-                  <h3 style={{ fontSize: '1.125rem', marginBottom: '1rem' }}>{i+1}. {f.title}</h3>
-                  <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', margin: 0 }}>{f.desc}</p>
-               </div>
-             ))}
+            {features.map((f, i) => (
+              <div key={i} className="card hover-lift" style={{ padding: '2.5rem', background: 'var(--muted)' }}>
+                <div style={{ color: 'white', padding: '12px', background: 'var(--primary-dark)', borderRadius: '12px', display: 'inline-block', marginBottom: '1.5rem' }}>{f.icon}</div>
+                <h3 style={{ fontSize: '1.125rem', marginBottom: '1rem' }}>{i + 1}. {f.title}</h3>
+                <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', margin: 0 }}>{f.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -88,19 +89,19 @@ const QPMSPage = () => {
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2>Structured Secure <span className="gradient-text">Workflow</span></h2>
-             <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--muted-foreground)' }}>The system follows a structured and secure workflow to ensure smooth paper creation:</p>
+            <h2>Structured Secure <span className="gradient-text">Workflow</span></h2>
+            <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--muted-foreground)' }}>The system follows a structured and secure workflow to ensure smooth paper creation:</p>
           </div>
           <div style={{ position: 'relative', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
-             {workflow.map((w, i) => (
-               <div key={i} style={{ textAlign: 'center', position: 'relative', background: 'white', padding: '2rem', borderRadius: '1rem', border: '1px solid var(--border)' }}>
-                  <div style={{ fontSize: '4rem', fontWeight: '900', color: 'var(--primary)', opacity: '0.05', position: 'absolute', top: '10px', left: '50%', transform: 'translateX(-50%)', zIndex: 0 }}>{w.step}</div>
-                  <div style={{ position: 'relative', zIndex: 1 }}>
-                    <h4 style={{ marginBottom: '1rem' }}>{w.step}. {w.title}</h4>
-                    <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6' }}>{w.desc}</p>
-                  </div>
-               </div>
-             ))}
+            {workflow.map((w, i) => (
+              <div key={i} style={{ textAlign: 'center', position: 'relative', background: 'white', padding: '2rem', borderRadius: '1rem', border: '1px solid var(--border)' }}>
+                <div style={{ fontSize: '4rem', fontWeight: '900', color: 'var(--primary)', opacity: '0.05', position: 'absolute', top: '10px', left: '50%', transform: 'translateX(-50%)', zIndex: 0 }}>{w.step}</div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <h4 style={{ marginBottom: '1rem' }}>{w.step}. {w.title}</h4>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6' }}>{w.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -108,33 +109,36 @@ const QPMSPage = () => {
       {/* Benefits */}
       <section className="section-padding">
         <div className="container">
-           <div style={{ background: 'var(--secondary)', color: 'white', padding: '5rem', borderRadius: '3rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
-                 <div>
-                    <h2 style={{ color: 'white' }}>Institutional <span style={{ color: 'var(--primary)' }}>Benefits</span></h2>
-                    <p style={{ color: 'rgba(255,255,255,0.7)', marginTop: '2rem', fontSize: '1.125rem' }}>Eliminate risks, improve coordination, and ensure absolute confidentiality for your most sensitive examination content.</p>
-                 </div>
-                 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }}>
-                    {benefits.map((b, i) => (
-                      <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'center', fontSize: '1rem', fontWeight: '500' }}>
-                         <Icons.CheckCircle2 size={20} style={{ color: 'var(--primary)', flexShrink: 0 }} />
-                         <span>{b}</span>
-                      </div>
-                    ))}
-                 </div>
+          <div style={{ background: 'var(--secondary)', color: 'white', padding: '5rem', borderRadius: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+              <div>
+                <h2 style={{ color: 'white' }}>Institutional <span style={{ color: 'var(--primary)' }}>Benefits</span></h2>
+                <p style={{ color: 'rgba(255,255,255,0.7)', marginTop: '2rem', fontSize: '1.125rem' }}>Eliminate risks, improve coordination, and ensure absolute confidentiality for your most sensitive examination content.</p>
               </div>
-           </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }}>
+                {benefits.map((b, i) => (
+                  <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'center', fontSize: '1rem', fontWeight: '500' }}>
+                    <Icons.CheckCircle2 size={20} style={{ color: 'var(--primary)', flexShrink: 0 }} />
+                    <span>{b}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="section-padding">
         <div className="container" style={{ textAlign: 'center' }}>
-           <h2>Secure your question papers today</h2>
-           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)', fontSize: '1.125rem' }}>Empower your faculty with a secure and structured paper creation environment.</p>
-           <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Request Implementation</Link>
+          <h2>Secure your question papers today</h2>
+          <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)', fontSize: '1.125rem' }}>Empower your faculty with a secure and structured paper creation environment.</p>
+          <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Request Implementation</Link>
         </div>
       </section>
+      {/* FAQ */}
+      < FAQ />
+
     </div>
   );
 };

@@ -23,22 +23,28 @@ const FAQItem = ({ question, answer }) => {
           textAlign: 'left'
         }}
       >
-        <span style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--foreground)' }}>{question}</span>
-        <span style={{
-          transition: 'transform 0.3s ease',
-          transform: isOpen ? 'rotate(180deg)' : 'rotate(0)'
+        <span className="gradient-text" style={{ fontSize: '1.25rem', fontWeight: '800' }}>{question}</span>
+        <div style={{
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          transform: isOpen ? 'rotate(180deg)' : 'rotate(0)',
+          color: 'var(--primary)',
+          background: 'var(--primary-light)',
+          padding: '8px',
+          borderRadius: '50%',
+          display: 'flex'
         }}>
-          {isOpen ? '-' : '+'}
-        </span>
+          <Icons.ChevronDown size={20} />
+        </div>
       </button>
       <div style={{
         maxHeight: isOpen ? '500px' : '0',
         overflow: 'hidden',
         transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-        paddingTop: isOpen ? '1rem' : '0',
         opacity: isOpen ? 1 : 0
       }}>
-        <p style={{ marginBottom: 0, fontSize: '1rem' }}>{answer}</p>
+        <div style={{ padding: '1rem 0 0.5rem' }}>
+          <p style={{ marginBottom: 0, fontSize: '1rem', color: 'var(--muted-foreground)', lineHeight: '1.7' }}>{answer}</p>
+        </div>
       </div>
     </div>
   );
@@ -66,12 +72,12 @@ const FAQ = () => {
 
   return (
     <section className="section-padding">
-      <div className="container" style={{ maxWidth: '800px' }}>
+      <div className="container" style={{ maxWidth: '1200px' }}>
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <span className="badge">Support</span>
           <h2>Frequently Asked <span className="gradient-text">Questions</span></h2>
         </div>
-        <div style={{ background: 'var(--card)', padding: '2rem', borderRadius: '2rem', border: '1px solid var(--border)' }}>
+        <div style={{ background: 'white', padding: '1.5rem clamp(1.5rem, 5vw, 4rem)', borderRadius: '2.5rem', border: '1px solid var(--border)', boxShadow: 'var(--shadow-sm)' }}>
           {faqs.map((faq, index) => (
             <FAQItem key={index} {...faq} />
           ))}

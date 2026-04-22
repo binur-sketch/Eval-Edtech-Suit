@@ -48,21 +48,21 @@ const Navbar = () => {
           <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
             <div className="md-flex" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Icons.Phone size={14} style={{ color: 'var(--primary)' }} />
-              <span>+91-1800-3010-3232</span>
+              <a href="tel:+919319275051"> <span>+91 9319275051</span></a>
             </div>
             <div className="md-flex" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Icons.Mail size={14} style={{ color: 'var(--primary)' }} />
-              <span>corp@virsoftech.com</span>
+              <a href="mailto:corp@virsoftech.com"><span>corp@virsoftech.com</span></a>
             </div>
-            <a href="https://wa.me/919319123429" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'inherit' }}>
+            <a href="https://wa.me/919319275051" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'inherit' }}>
               <div style={{ color: '#25D366' }}><Icons.MessageCircle size={14} /></div>
               <span>WhatsApp</span>
             </a>
             <div style={{ display: 'flex', gap: '15px', marginLeft: '1rem', paddingLeft: '1.5rem', borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
-              <a href="#" style={{ color: 'inherit' }}><Icons.Facebook size={14} /></a>
-              <a href="#" style={{ color: 'inherit' }}><Icons.Twitter size={14} /></a>
-              <a href="#" style={{ color: 'inherit' }}><Icons.Linkedin size={14} /></a>
-              <a href='#' style={{ color: 'inherit' }}><Icons.Youtube size={14} /></a>
+              <a href="https://www.facebook.com/virsoftech.official/" style={{ color: 'inherit' }}><Icons.Facebook size={14} /></a>
+              <a href="https://x.com/virsoftech" style={{ color: 'inherit' }}><Icons.Twitter size={14} /></a>
+              <a href='https://in.linkedin.com/company/virsoftech' style={{ color: 'inherit' }}><Icons.Linkedin size={14} /></a>
+              <a href='https://www.youtube.com/c/VirSoftech' style={{ color: 'inherit' }}><Icons.Youtube size={14} /></a>
             </div>
           </div>
         </div>
@@ -116,11 +116,10 @@ const Navbar = () => {
               }}>
                 Products <Icons.ChevronDown size={14} />
               </button>
-              <div className="dropdown" style={{ top: '100%', left: '0', width: '320px' }}>
+              <div className="dropdown" style={{ top: '100%', left: '0', width: '320px', background: 'white', borderRadius: '1rem', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--border)', padding: '1rem' }}>
                 {productLinks.map((s, i) => (
-                  <Link key={i} to={s.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
-                    <span style={{ fontWeight: '500', color: 'var(--foreground)', fontSize: '1rem' }}>{s.title}</span>
-
+                  <Link key={i} to={s.path} className="dropdown-item" style={{ padding: '0.75rem 1rem', borderRadius: '0.75rem', transition: 'all 0.2s ease', display: 'block' }}>
+                    <span style={{ fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem' }}>{s.title}</span>
                   </Link>
                 ))}
               </div>
@@ -136,11 +135,10 @@ const Navbar = () => {
               }}>
                 Services <Icons.ChevronDown size={14} />
               </button>
-              <div className="dropdown" style={{ top: '100%', left: '0', width: '300px' }}>
+              <div className="dropdown" style={{ top: '100%', left: '0', width: '300px', background: 'white', borderRadius: '1rem', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--border)', padding: '1rem' }}>
                 {serviceLinks.map((s, i) => (
-                  <Link key={i} to={s.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
-                    <span style={{ fontWeight: '500', color: 'var(--foreground)', fontSize: '1rem' }}>{s.title}</span>
-
+                  <Link key={i} to={s.path} className="dropdown-item" style={{ padding: '0.75rem 1rem', borderRadius: '0.75rem', transition: 'all 0.2s ease', display: 'block' }}>
+                    <span style={{ fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem' }}>{s.title}</span>
                   </Link>
                 ))}
               </div>
@@ -157,11 +155,10 @@ const Navbar = () => {
               }}>
                 Company <Icons.ChevronDown size={14} />
               </button>
-              <div className="dropdown" style={{ top: '100%', left: '0', width: '280px' }}>
+              <div className="dropdown" style={{ top: '100%', left: '0', width: '280px', background: 'white', borderRadius: '1rem', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--border)', padding: '1rem' }}>
                 {companyLinks.map((s, i) => (
-                  <Link key={i} to={s.path} className="dropdown-item" style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
-                    <span style={{ fontWeight: '500', color: 'var(--foreground)', fontSize: '1rem' }}>{s.title}</span>
-
+                  <Link key={i} to={s.path} className="dropdown-item" style={{ padding: '0.75rem 1rem', borderRadius: '0.75rem', transition: 'all 0.2s ease', display: 'block' }}>
+                    <span style={{ fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem' }}>{s.title}</span>
                   </Link>
                 ))}
               </div>
@@ -175,7 +172,7 @@ const Navbar = () => {
               Contact
             </Link>
 
-            <Link to="/book-demo" className="btn btn-primary" style={{ padding: '0.6rem 1.5rem', marginLeft: '1rem', fontSize: '0.75rem', borderRadius: '4px', fontWeight: '700' }}>
+            <Link to="/book-demo" className="btn btn-primary" style={{ padding: '0.7rem 1.75rem', marginLeft: '1rem' }}>
               Request a Demo
             </Link>
           </div>

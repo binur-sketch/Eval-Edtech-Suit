@@ -36,10 +36,10 @@ const Careers = () => {
   return (
     <div style={{ paddingTop: '5rem' }}>
       {/* Hero */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
           <span className="badge">We're Hiring</span>
-          <h1 style={{ fontSize: '3.5rem' }}>Build the Future of <br/><span className="gradient-text">Education Technology</span></h1>
+          <h1 style={{ fontSize: '3.5rem' }}>Build the Future of <br /><span className="gradient-text">Education Technology</span></h1>
           <p style={{ fontSize: '1.25rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
             Join a team of engineers, designers, and educators shaping how the world evaluates, learns, and grows. We're solving problems that impact millions.
           </p>
@@ -55,8 +55,7 @@ const Careers = () => {
         <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', padding: '4rem 0', gap: '3rem' }}>
           {[
             { label: 'Team Members', value: '120+' },
-            { label: 'Countries', value: '8' },
-            { label: 'Avg. Tenure', value: '3.2yr' },
+            { label: 'Avg. Tenure', value: '10.5yr' },
             { label: 'Employee Rating', value: '4.6★' }
           ].map((s, i) => (
             <div key={i} style={{ textAlign: 'center' }}>
@@ -76,9 +75,9 @@ const Careers = () => {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2.5rem' }}>
             {values.map((v, i) => (
-              <div key={i} className="card" style={{ padding: '3rem', textAlign: 'center' }}>
-                <div style={{ color: 'var(--primary)', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
-                  <div style={{ padding: '1.25rem', background: 'var(--primary-light)', borderRadius: '1.5rem' }}>{v.icon}</div>
+              <div key={i} className="card" style={{ padding: '3rem', textAlign: 'center', background: 'var(--muted)' }}>
+                <div style={{ color: 'white', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
+                  <div style={{ padding: '1.25rem', background: 'var(--primary-dark)', borderRadius: '1.5rem' }}>{v.icon}</div>
                 </div>
                 <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{v.title}</h3>
                 <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', marginBottom: 0 }}>{v.desc}</p>
@@ -97,9 +96,9 @@ const Careers = () => {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2.5rem' }}>
             {benefits.map((b, i) => (
-              <div key={i} className="card" style={{ padding: '3rem' }}>
+              <div key={i} className="card" style={{ padding: '3rem', background: 'var(--muted)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '2rem' }}>
-                  <div style={{ color: 'var(--primary)', background: 'var(--primary-light)', padding: '0.75rem', borderRadius: '1rem' }}>{b.icon}</div>
+                  <div style={{ color: 'white', background: 'var(--primary-dark)', padding: '0.75rem', borderRadius: '1rem' }}>{b.icon}</div>
                   <h4 style={{ fontSize: '1.125rem', marginBottom: 0 }}>{b.title}</h4>
                 </div>
                 <div style={{ display: 'grid', gap: '0.75rem' }}>
@@ -143,7 +142,8 @@ const Careers = () => {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 flexWrap: 'wrap',
-                gap: '1.5rem'
+                gap: '1.5rem',
+                background: 'var(--muted)'
               }}>
                 <div>
                   <h4 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>{job.title}</h4>
@@ -188,7 +188,7 @@ const Careers = () => {
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontWeight: '900', fontSize: '1.25rem', flexShrink: 0
                 }}>{s.step}</div>
-                <div className="card" style={{ padding: '2rem 2.5rem', flex: 1 }}>
+                <div className="card" style={{ padding: '2rem 2.5rem', flex: 1, background: 'var(--muted)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '0.75rem' }}>
                     <div style={{ color: 'var(--primary)' }}>{s.icon}</div>
                     <h4 style={{ marginBottom: 0, fontSize: '1.125rem' }}>{s.title}</h4>
@@ -208,7 +208,7 @@ const Careers = () => {
             background: 'var(--secondary)', borderRadius: '3rem', padding: '6rem 3rem',
             color: 'white', textAlign: 'center', position: 'relative', overflow: 'hidden'
           }}>
-            <div style={{ position: 'absolute', top: '-50%', left: '-20%', width: '100%', height: '200%', background: 'radial-gradient(circle, rgba(229, 57, 53, 0.15) 0%, transparent 70%)', zIndex: 0 }}></div>
+            <div style={{ position: 'absolute', top: '-50%', left: '-20%', width: '100%', height: '200%', background: 'radial-gradient(circle, rgba(14, 165, 164, 0.15) 0%, transparent 70%)', zIndex: 0 }}></div>
             <div style={{ position: 'relative', zIndex: 1 }}>
               <h2 style={{ color: 'white', fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1.5rem' }}>Don't See Your <span className="gradient-text">Dream Role?</span></h2>
               <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto 3rem', fontSize: '1.125rem' }}>

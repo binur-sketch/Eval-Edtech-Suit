@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
@@ -112,7 +112,7 @@ const PrivacyPolicy = () => {
   return (
     <div style={{ paddingTop: '5rem' }}>
       {/* Hero */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)', paddingBottom: '4rem' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)', paddingBottom: '4rem' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
           <span className="badge">Legal</span>
           <h1>Privacy <span className="gradient-text">Policy</span></h1>

@@ -3,39 +3,84 @@ import * as Icons from '@/components/LucideFix';
 
 const StatsSection = () => {
   const stats = [
-    { label: 'Academic Institutions', val: '5000+', sub: 'Global Partners', icon: <Icons.School size={32} /> },
-    { label: 'Evaluation Speed', val: '1000K+', sub: 'Sheets / Day', icon: <Icons.Zap size={32} /> },
-    { label: 'System Accuracy', val: '100%', sub: 'Zero-Error Logic', icon: <Icons.CheckCircle size={32} /> },
-    { label: 'Student Impact', val: '10M+', sub: 'Annual Candidates', icon: <Icons.Users size={32} /> }
+    {
+      label: 'Academic Institutions',
+      val: '5000+',
+      sub: 'Global Partners',
+      icon: <Icons.School size={26} />
+    },
+    {
+      label: 'Evaluation Speed',
+      val: '1000K+',
+      sub: 'Sheets / Day',
+      icon: <Icons.Zap size={26} />
+    },
+    {
+      label: 'System Accuracy',
+      val: '100%',
+      sub: 'Zero-Error Logic',
+      icon: <Icons.CheckCircle size={26} />
+    },
+    {
+      label: 'Student Impact',
+      val: '10M+',
+      sub: 'Annual Candidates',
+      icon: <Icons.Users size={26} />
+    }
   ];
 
   return (
-    <section style={{ 
-      background: 'white', 
-      padding: '4rem 0',
-      borderBottom: '1px solid var(--border)'
-    }}>
+    <section className="section-padding" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)' }}>
       <div className="container">
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', 
-          gap: '2rem' 
+
+        {/* Section Heading */}
+        <div style={{
+          textAlign: 'center',
+          marginBottom: '3.5rem'
+        }}>
+          <h2>
+            Trusted by <span className="gradient-text">Institutions Worldwide</span>
+          </h2>
+          <p style={{
+            color: 'var(--muted-foreground)',
+            maxWidth: '600px',
+            margin: '1rem auto 0'
+          }}>
+            Powering large-scale examinations with unmatched speed, accuracy, and reliability.
+          </p>
+        </div>
+        
+        {/* Stats Row */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: '1.5rem'
         }}>
           {stats.map((item, idx) => (
-            <div key={idx} className="reveal" style={{ 
-              textAlign: 'center', 
-              padding: '2.5rem',
-              borderRadius: '2rem',
-              background: idx % 2 === 0 ? 'var(--muted)' : 'white',
-              border: '1px solid var(--border)',
-              transition: 'var(--transition)'
-            }}>
-              <div style={{ color: 'var(--primary)', marginBottom: '1.25rem', display: 'flex', justifyContent: 'center' }}>
+            <div key={idx} className="card hover-lift" style={{ textAlign: 'center', padding: '2.5rem' }}>
+              {/* Icon */}
+              <div style={{ 
+                width: '56px', height: '56px', background: 'var(--primary-light)', 
+                color: 'var(--primary)', borderRadius: '1rem', display: 'flex', 
+                alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem' 
+              }}>
                 {item.icon}
               </div>
-              <div style={{ fontSize: '2.5rem', fontWeight: '900', color: 'var(--secondary)', marginBottom: '0.25rem' }}>{item.val}</div>
-              <div style={{ fontSize: '0.875rem', fontWeight: '800', color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '0.5rem' }}>{item.label}</div>
-              <div style={{ fontSize: '0.8125rem', color: 'var(--muted-foreground)' }}>{item.sub}</div>
+
+              {/* Value */}
+              <div style={{ fontSize: '2.5rem', fontWeight: '900', color: 'var(--secondary)', marginBottom: '0.25rem' }}>
+                {item.val}
+              </div>
+
+              {/* Label */}
+              <div style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>
+                {item.label}
+              </div>
+
+              {/* Subtext */}
+              <div style={{ fontSize: '0.8125rem', color: 'var(--muted-foreground)' }}>
+                {item.sub}
+              </div>
             </div>
           ))}
         </div>

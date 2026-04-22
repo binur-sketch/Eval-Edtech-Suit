@@ -1,7 +1,7 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import FAQ from '@/components/FAQ';
 const OMRPage = () => {
   const steps = [
     { title: 'Step 1 — Design', icon: <Icons.FileEdit size={32} />, desc: 'Design your own OMR sheet using the MS Excel-based Form Designer. Modify from existing templates or create new OMR designs with variable fields like barcode, name, and roll numbers.' },
@@ -40,18 +40,18 @@ const OMRPage = () => {
     '/assets/images/school/dps.webp',
     '/assets/images/university/BANARAS HINDU UNIVERSITY.png',
     '/assets/images/coaching/physics wallah.webp',
-    '/assets/images/school/RPS International School.jpg',
-    '/assets/images/university/Parul University.jpg',
+    '/assets/images/school/RPS International School.png',
+    '/assets/images/university/Parul University.png',
     '/assets/images/coaching/aakash logo.png',
-    '/assets/images/school/OASIS International School.jpg',
-    '/assets/images/university/Jamia Millia Islamia.jpg',
-    '/assets/images/coaching/career launcher.jpg',
+    '/assets/images/school/OASIS International School.png',
+    '/assets/images/university/Jamia Millia Islamia.png',
+    '/assets/images/coaching/career launcher.png',
     '/assets/images/university/Silver Oak University.png'
   ];
 
   const govLogos = [
     '/assets/images/government/National Cadet Corps.png',
-    '/assets/images/government/Union Public Service Commission.jpg',
+    '/assets/images/government/Union Public Service Commission.png',
     '/assets/images/government/AIIMS.svg',
     '/assets/images/government/IIT Goa.png',
     '/assets/images/government/NIT Goa.png',
@@ -64,7 +64,7 @@ const OMRPage = () => {
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       {/* Hero Section */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
@@ -78,8 +78,11 @@ const OMRPage = () => {
                 <Link to="/contact" className="btn btn-outline">Consult Our Team</Link>
               </div>
             </div>
+            <div style={{ position: 'relative' }}>
+              <img src="/assets/images/omr_hero.png" alt="On-Screen Marking" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+            </div>
 
-            <div className="card" style={{ padding: '3.5rem', background: 'white', borderRadius: '3rem', border: '1px solid var(--border)', boxShadow: 'var(--shadow-lg)' }}>
+            {/* <div className="card" style={{ padding: '3.5rem', background: 'white', borderRadius: '3rem', border: '1px solid var(--border)', boxShadow: 'var(--shadow-lg)' }}>
               <div style={{ fontSize: '1rem', fontWeight: '800', marginBottom: '2.5rem', display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <div style={{ padding: '10px', background: 'var(--primary-light)', borderRadius: '12px', color: 'var(--primary)' }}><Icons.Activity size={24} /></div>
                 Performance Benchmarks
@@ -101,13 +104,13 @@ const OMRPage = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
       {/* Overview */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }} className="reveal">
             <span className="badge">Software Overview</span>
@@ -125,7 +128,7 @@ const OMRPage = () => {
       </section>
 
       {/* The 5-Step Process */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section className="section-padding" style={{ background: 'white' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <span className="badge">Process Workflow</span>
@@ -133,7 +136,7 @@ const OMRPage = () => {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '2.5rem' }}>
             {steps.map((s, i) => (
-              <div key={i} className="card hover-lift" style={{ textAlign: 'center', background: 'white', borderTop: `4px solid var(--primary)` }}>
+              <div key={i} className="card hover-lift" style={{ textAlign: 'center', background: 'var(--muted)', borderTop: `4px solid var(--primary)` }}>
                 <div style={{ color: 'var(--primary)', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
                   <div style={{ padding: '1rem', background: 'var(--primary-light)', borderRadius: '1rem' }}>{s.icon}</div>
                 </div>
@@ -146,7 +149,7 @@ const OMRPage = () => {
       </section>
 
       {/* Key Features */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span className="badge">Capabilities</span>
@@ -167,7 +170,7 @@ const OMRPage = () => {
       </section>
 
       {/* Comparison Table */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section className="section-padding" style={{ background: 'white' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span className="badge">Competitive Advantage</span>
@@ -175,7 +178,7 @@ const OMRPage = () => {
             <p style={{ marginTop: '1.5rem', color: 'var(--muted-foreground)' }}>How we outperform traditional OMR solutions</p>
           </div>
 
-          <div className="card" style={{ padding: 0, overflow: 'hidden', background: 'white' }}>
+          <div className="card" style={{ padding: 0, overflow: 'hidden', background: 'var(--muted)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
               <thead>
                 <tr style={{ background: 'var(--foreground)', color: 'white' }}>
@@ -186,7 +189,7 @@ const OMRPage = () => {
               <tbody>
                 {comparisonData.map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid var(--border)' }}>
-                    <td style={{ padding: '1.5rem 2rem', color: 'var(--primary)', fontWeight: '600', background: 'rgba(229,57,53,0.02)' }}>{row.e}</td>
+                    <td style={{ padding: '1.5rem 2rem', color: 'var(--primary)', fontWeight: '600', background: 'rgba(14, 165, 164, 0.02)' }}>{row.e}</td>
                     <td style={{ padding: '1.5rem 2rem', color: 'var(--muted-foreground)' }}>{row.o}</td>
                   </tr>
                 ))}
@@ -197,7 +200,7 @@ const OMRPage = () => {
       </section>
 
       {/* Institutional CTA Section */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <div style={{ background: 'var(--secondary)', color: 'white', padding: '6rem 4rem', borderRadius: '4rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'relative', zIndex: 1 }}>
@@ -209,10 +212,13 @@ const OMRPage = () => {
                 <Link to="/contact" className="btn btn-outline" style={{ color: 'white', borderColor: 'white', padding: '1.25rem 3.5rem' }}>Request Demo</Link>
               </div>
             </div>
-            <div style={{ position: 'absolute', top: '-50%', right: '-20%', width: '100%', height: '200%', background: 'radial-gradient(circle, rgba(229, 57, 53, 0.1) 0%, transparent 70%)', zIndex: 0 }}></div>
+            <div style={{ position: 'absolute', top: '-50%', right: '-20%', width: '100%', height: '200%', background: 'radial-gradient(circle, rgba(14, 165, 164, 0.1) 0%, transparent 70%)', zIndex: 0 }}></div>
           </div>
         </div>
       </section>
+      {/* FAQ */}
+      < FAQ />
+
     </div>
   );
 };

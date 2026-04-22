@@ -3,17 +3,17 @@ import * as Icons from '@/components/LucideFix';
 
 const NewsletterSection = () => {
   return (
-    <section className="section-padding" style={{ background: 'var(--muted)', borderTop: '1px solid var(--border)' }}>
+    <section className="section-padding" style={{ background: 'white', borderTop: '1px solid var(--border)' }}>
       <div className="container">
         <div style={{ 
-          background: 'white', 
+          background: 'var(--muted)', 
           borderRadius: 'clamp(1.5rem, 3vw, 3rem)', 
           padding: 'clamp(2rem, 5vw, 5rem)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
           gap: 'clamp(2rem, 4vw, 4rem)',
           alignItems: 'center',
-          boxShadow: 'var(--shadow-lg)',
+          boxShadow: 'none',
           border: '1px solid var(--border)'
         }} className="reveal">
           <div>
@@ -31,7 +31,7 @@ const NewsletterSection = () => {
                 padding: '1rem 1.5rem', 
                 borderRadius: '1rem', 
                 border: '1px solid var(--border)',
-                background: 'var(--muted)',
+                background: 'white',
                 fontSize: '0.9375rem',
                 width: '100%'
               }} 

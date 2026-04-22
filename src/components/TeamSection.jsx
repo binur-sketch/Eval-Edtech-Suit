@@ -33,6 +33,22 @@ const team = [
     img: 'https://www.virsoftech.com/sameer_manuja.jpg',
     linkedin: 'https://www.linkedin.com/in/sameermanuja/',
     mail: 'sameer.manuja@virsoftech.com'
+  },
+  {
+    name: 'Akihide Sugino',
+    role: 'Country Head, Japan',
+    bio: 'Seasoned industry veteran with 35+ years of experience in Sales, Marketing, and License Compliance. Has worked with global firms like Epson and Adobe, managing partnerships, vendors, and enterprise sales across print and publishing. Currently leads corporate management and sales at Vir Softech.',
+    img: 'https://www.virsoftech.com/img/akihide_sugino.jpg', // update if exact path differs
+    linkedin: 'https://jp.linkedin.com/in/akihide-sugino-938526154', // add if available
+    mail: 'sugino@virsoftech.com' // add if available
+  },
+  {
+    name: 'Manu Paliwal',
+    role: 'Vice President – Sales',
+    bio: 'Drives business growth strategy, customer value delivery, and expansion through digital solutions. Brings 25+ years of experience in sales, marketing, alliances, and operations. Has led global business units including leadership roles at Sharp.',
+    img: 'https://www.virsoftech.com/img/manu_paliwal.jpg', // update if exact path differs
+    linkedin: 'https://in.linkedin.com/in/manu-paliwal-a549a144', // add if available
+    mail: 'manu@virsoftech.com' // add if available
   }
 ];
 

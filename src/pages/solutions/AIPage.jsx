@@ -1,6 +1,7 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FAQ from '@/components/FAQ';
 
 const AIPage = () => {
   const howItWorks = [
@@ -26,36 +27,36 @@ const AIPage = () => {
   ];
 
   const detailedFeatures = [
-     {
-       title: 'AI Proctoring Features',
-       items: ['AI-based face detection and recognition', 'Multiple face detection alerts', 'Face mismatch detection', 'Candidate absence detection', 'Suspicious movement tracking', 'Eye movement monitoring', 'Head pose detection']
-     },
-     {
-       title: 'Live Monitoring Features',
-       items: ['Live candidate monitoring dashboard', 'Proctor intervention capability', 'Real-time alerts and notifications', 'Candidate activity tracking', 'Session recording']
-     },
-     {
-       title: 'Video & Audio Monitoring',
-       items: ['Continuous webcam recording', 'Microphone monitoring', 'Background noise detection', 'Audio activity alerts']
-     },
-     {
-       title: 'Screen & Browser Security',
-       items: ['Full screen recording and screen switching detection', 'Multiple monitor detection', 'Unauthorized application detection', 'Browser tab switching alerts', 'Secure browser lockdown (disable copy-paste, right-click, etc.)']
-     },
-     {
-       title: 'Candidate Authentication',
-       items: ['Face authentication before exam', 'ID card verification', 'Photo capture during exam', 'OTP-based login (optional)']
-     },
-     {
-       title: 'Reporting & Analytics',
-       items: ['Proctoring summary report', 'Violation logs', 'Session recording playback', 'Candidate risk level scoring', 'Detailed audit trail']
-     }
+    {
+      title: 'AI Proctoring Features',
+      items: ['AI-based face detection and recognition', 'Multiple face detection alerts', 'Face mismatch detection', 'Candidate absence detection', 'Suspicious movement tracking', 'Eye movement monitoring', 'Head pose detection']
+    },
+    {
+      title: 'Live Monitoring Features',
+      items: ['Live candidate monitoring dashboard', 'Proctor intervention capability', 'Real-time alerts and notifications', 'Candidate activity tracking', 'Session recording']
+    },
+    {
+      title: 'Video & Audio Monitoring',
+      items: ['Continuous webcam recording', 'Microphone monitoring', 'Background noise detection', 'Audio activity alerts']
+    },
+    {
+      title: 'Screen & Browser Security',
+      items: ['Full screen recording and screen switching detection', 'Multiple monitor detection', 'Unauthorized application detection', 'Browser tab switching alerts', 'Secure browser lockdown (disable copy-paste, right-click, etc.)']
+    },
+    {
+      title: 'Candidate Authentication',
+      items: ['Face authentication before exam', 'ID card verification', 'Photo capture during exam', 'OTP-based login (optional)']
+    },
+    {
+      title: 'Reporting & Analytics',
+      items: ['Proctoring summary report', 'Violation logs', 'Session recording playback', 'Candidate risk level scoring', 'Detailed audit trail']
+    }
   ];
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       {/* Hero / Overview */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(229,57,53,0.03) 0%, white 100%)' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div>
@@ -66,7 +67,7 @@ const AIPage = () => {
               </p>
               <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
                 <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem' }}>
-                   AI proctoring is particularly valuable for high-stakes examinations such as university entrance tests, government recruitment exams, professional certifications, and competitive assessments where maintaining absolute integrity is critical. The system scales to thousands of simultaneous candidates while maintaining consistency and fairness.
+                  AI proctoring is particularly valuable for high-stakes examinations such as university entrance tests, government recruitment exams, professional certifications, and competitive assessments where maintaining absolute integrity is critical. The system scales to thousands of simultaneous candidates while maintaining consistency and fairness.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
@@ -75,12 +76,12 @@ const AIPage = () => {
               </div>
             </div>
             <div style={{ position: 'relative' }}>
-               <img src="/assets/images/ai_proctoring.png" alt="AI Proctoring Dashboard" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
-               <div style={{ position: 'absolute', top: '20px', left: '-20px', background: 'white', padding: '1rem', borderRadius: '1rem', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', animation: 'pulse 2s infinite' }}>
-                  <div style={{ color: 'var(--primary)', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <Icons.AlertTriangle size={16} /> Violation Detected
-                  </div>
-               </div>
+              <img src="/assets/images/ai_proctoring.png" alt="AI Proctoring Dashboard" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+              <div style={{ position: 'absolute', top: '20px', left: '-20px', background: 'white', padding: '1rem', borderRadius: '1rem', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', animation: 'pulse 2s infinite' }}>
+                <div style={{ color: 'var(--primary)', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Icons.AlertTriangle size={16} /> Violation Detected
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -90,16 +91,16 @@ const AIPage = () => {
       <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2>How <span className="gradient-text">AI Proctoring</span> Works</h2>
+            <h2>How <span className="gradient-text">AI Proctoring</span> Works</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
-             {howItWorks.map((h, i) => (
-               <div key={i} className="card" style={{ padding: '2.5rem' }}>
-                  <div style={{ color: 'var(--primary)', marginBottom: '1.5rem' }}>{h.icon}</div>
-                  <h3 style={{ fontSize: '1.125rem', marginBottom: '1rem' }}>{h.title}</h3>
-                  <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{h.desc}</p>
-               </div>
-             ))}
+            {howItWorks.map((h, i) => (
+              <div key={i} className="card" style={{ padding: '2.5rem', background: 'var(--muted)' }}>
+                <div style={{ color: 'white', padding: '12px', background: 'var(--primary-dark)', borderRadius: '12px', display: 'inline-block', marginBottom: '1.5rem' }}>{h.icon}</div>
+                <h3 style={{ fontSize: '1.125rem', marginBottom: '1rem' }}>{h.title}</h3>
+                <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{h.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -107,55 +108,55 @@ const AIPage = () => {
       {/* Advantages */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
-           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-              <h2>Key <span className="gradient-text">Advantages</span></h2>
-           </div>
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem' }}>
-              {advantages.map((a, i) => (
-                <div key={i} style={{ display: 'flex', gap: '1.5rem' }}>
-                   <div style={{ width: '40px', height: '40px', background: 'white', color: 'var(--primary)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid var(--border)', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
-                      <Icons.Check size={20} />
-                   </div>
-                   <div>
-                      <h4 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>{a.title}</h4>
-                      <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6' }}>{a.desc}</p>
-                   </div>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <h2>Key <span className="gradient-text">Advantages</span></h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem' }}>
+            {advantages.map((a, i) => (
+              <div key={i} style={{ display: 'flex', gap: '1.5rem' }}>
+                <div style={{ width: '40px', height: '40px', background: 'white', color: 'var(--primary)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid var(--border)', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
+                  <Icons.Check size={20} />
                 </div>
-              ))}
-           </div>
+                <div>
+                  <h4 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>{a.title}</h4>
+                  <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6' }}>{a.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Feature List Grid */}
       <section className="section-padding">
         <div className="container">
-           <div style={{ background: 'var(--secondary)', color: 'white', padding: '5rem 4rem', borderRadius: '3rem' }}>
-              <h2 style={{ color: 'white', textAlign: 'center', marginBottom: '4rem' }}>Detailed <span className="gradient-text">Feature List</span></h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem' }}>
-                 {detailedFeatures.map((featureBlock, idx) => (
-                    <div key={idx}>
-                       <h4 style={{ color: 'var(--primary)', marginBottom: '1.5rem', fontSize: '1.125rem' }}>{featureBlock.title}</h4>
-                       <ul style={{ display: 'grid', gap: '1rem', padding: 0, listStyle: 'none', color: 'rgba(255,255,255,0.8)', fontSize: '0.875rem' }}>
-                          {featureBlock.items.map((item, idxi) => (
-                              <li key={idxi} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', lineHeight: '1.5' }}>
-                                 <Icons.ChevronRight size={14} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: '3px' }} />
-                                 {item}
-                              </li>
-                          ))}
-                       </ul>
-                    </div>
-                 ))}
-              </div>
-           </div>
+          <div style={{ background: 'var(--secondary)', color: 'white', padding: '5rem 4rem', borderRadius: '3rem' }}>
+            <h2 style={{ color: 'white', textAlign: 'center', marginBottom: '4rem' }}>Detailed <span className="gradient-text">Feature List</span></h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem' }}>
+              {detailedFeatures.map((featureBlock, idx) => (
+                <div key={idx}>
+                  <h4 style={{ color: 'var(--primary)', marginBottom: '1.5rem', fontSize: '1.125rem' }}>{featureBlock.title}</h4>
+                  <ul style={{ display: 'grid', gap: '1rem', padding: 0, listStyle: 'none', color: 'rgba(255,255,255,0.8)', fontSize: '0.875rem' }}>
+                    {featureBlock.items.map((item, idxi) => (
+                      <li key={idxi} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', lineHeight: '1.5' }}>
+                        <Icons.ChevronRight size={14} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: '3px' }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="section-padding">
         <div className="container" style={{ textAlign: 'center' }}>
-           <h2>Secure your examinations with AI</h2>
-           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)' }}>The most robust AI proctoring engine for universities, recruitment boards, and professional certifications.</p>
-           <Link to="/book-demo" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Experience the Integrity</Link>
+          <h2>Secure your examinations with AI</h2>
+          <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)' }}>The most robust AI proctoring engine for universities, recruitment boards, and professional certifications.</p>
+          <Link to="/book-demo" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Experience the Integrity</Link>
         </div>
       </section>
       <style>{`
@@ -165,6 +166,8 @@ const AIPage = () => {
           100% { transform: scale(1); opacity: 1; }
         }
       `}</style>
+      {/* FAQ */}
+      < FAQ />
     </div>
   );
 };

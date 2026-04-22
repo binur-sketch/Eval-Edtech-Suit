@@ -10,11 +10,11 @@ const WorkflowSection = () => {
   ];
 
   return (
-    <section className="section-padding" style={{ background: 'var(--foreground)', color: 'white' }}>
+    <section className="section-padding" style={{ background: 'white' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-          <span className="badge" style={{ background: 'rgba(255,255,255,0.1)', color: 'white' }}>How it Works</span>
-          <h2 style={{ color: 'white' }}>Streamlined <span className="gradient-text">Evaluation Workflow</span></h2>
+          <span className="badge">How it Works</span>
+          <h2>Streamlined <span className="gradient-text">Evaluation Workflow</span></h2>
         </div>
 
         <div style={{ 
@@ -34,12 +34,13 @@ const WorkflowSection = () => {
                 display: 'flex', 
                 alignItems: 'center', 
                 justifyContent: 'center',
-                boxShadow: '0 0 30px rgba(229, 57, 53, 0.4)'
+                color: 'white',
+                boxShadow: '0 4px 15px rgba(14, 165, 164, 0.2)'
               }}>
                 {s.icon}
               </div>
-              <h3 style={{ color: 'white', marginBottom: '1rem' }}>{s.title}</h3>
-              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9375rem' }}>{s.desc}</p>
+              <h3>{s.title}</h3>
+              <p style={{ color: 'var(--muted-foreground)', fontSize: '0.9375rem' }}>{s.desc}</p>
               
               {/* Connector for desktop */}
               {i < steps.length - 1 && (

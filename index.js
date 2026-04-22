@@ -21640,7 +21640,7 @@ const rb = st("VITE_FORM_SUBMIT_BASE_URL", "https://formsubmit.co/ajax"),
                     className: "footer-logo",
                     children: s.jsx("img", {
                       src: sl,
-                      alt: "VSDOX – AI-Powered Enterprise Content Management by Vir Softech",
+                      alt: "Education Evaluation System by Vir Softech",
                     }),
                   }),
                   s.jsx("p", {
@@ -22272,7 +22272,7 @@ const rb = st("VITE_FORM_SUBMIT_BASE_URL", "https://formsubmit.co/ajax"),
                         s.jsx(ne, {
                           to: "#",
                           className: "btn-primary",
-                          children: "Learn More About VSDOX",
+                          children: "Learn More About eVAL",
                         }),
                         s.jsx(ne, {
                           to: "/request-demo",
@@ -29508,7 +29508,7 @@ const gS = [
                                       onChange: m,
                                       required: !0,
                                       style: Pn,
-                                      placeholder: "+91 98765 43210",
+                                      placeholder: "+91 8467239816",
                                     }),
                                   ],
                                 }),
