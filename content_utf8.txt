@@ -1,4 +1,4 @@
-﻿VSDOX - AN ENTERPRISE CONTENT MANAGEMENT
+﻿eVAL- AN Education Evaluation System
 Reduce operational burden and management cost for your document databases. Move online in a secured environment and make content access universal and role-based.
 
 
