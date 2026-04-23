@@ -1,25 +1,37 @@
-import React, { useState } from 'react';
-import blogs from '../data/blogs.json';
+import React, { useState, useEffect } from 'react';
+import { supabase } from '../lib/supabase';
 import * as Icons from '../components/LucideFix';
 import { Link } from 'react-router-dom';
 
 const Resources = () => {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Extract categories dynamically
-  const categories = [
-    "All",
-    "OMR",
-    "CBT",
-    "OSM",
-    "AI Proctoring",
-    "LMS",
-    "QPMS",
-    "Education",
-    "Security"
-  ];
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('blogs')
+          .select('*')
+          .eq('status', 'published')
+          .order('date', { ascending: false });
+        
+        if (error) throw error;
+        setBlogs(data || []);
+      } catch (err) {
+        console.error('Error fetching blogs:', err);
+        // Fallback or error handling
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  // Filter blogs
+    fetchBlogs();
+  }, []);
+
+  const categories = ["All", ...new Set(blogs.map(b => b.category))];
+
   const filteredBlogs =
     activeCategory === 'All'
       ? blogs
@@ -34,7 +46,7 @@ const Resources = () => {
       }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '900px' }}>
           <span className="badge">Knowledge Hub</span>
-          <h1 style={{ fontSize: '3.2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.2rem)' }}>
             eVAL <span className="gradient-text">Insights</span>
           </h1>
           <p style={{
@@ -54,11 +66,10 @@ const Resources = () => {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: '280px 1fr',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '3rem'
           }}>
-
-            {/* ================= LEFT SIDEBAR ================= */}
+            {/* Sidebar / Category Filter */}
             <aside style={{
               background: 'white',
               borderRadius: '1.5rem',
@@ -102,10 +113,7 @@ const Resources = () => {
                       }}
                     >
                       <span>{cat}</span>
-                      <span style={{
-                        fontSize: '0.75rem',
-                        opacity: 0.8
-                      }}>
+                      <span style={{ fontSize: '0.75rem', opacity: 0.8 }}>
                         {count}
                       </span>
                     </button>
@@ -114,10 +122,8 @@ const Resources = () => {
               </div>
             </aside>
 
-            {/* ================= BLOG LIST ================= */}
-            <div>
-
-              {/* Header Row */}
+            {/* Blog Content */}
+            <div style={{ gridColumn: 'span 2' }}>
               <div style={{
                 display: 'flex',
                 justifyContent: 'space-between',
@@ -129,99 +135,78 @@ const Resources = () => {
                 </h3>
               </div>
 
-              {/* Blog Grid */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                gap: '2rem'
-              }}>
-                {filteredBlogs.map((blog, i) => (
-                  <article
-                    key={i}
-                    style={{
-                      background: 'white',
-                      borderRadius: '1.5rem',
-                      overflow: 'hidden',
-                      border: '1px solid var(--border)',
-                      transition: '0.3s',
-                      display: 'flex',
-                      flexDirection: 'column'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-6px)';
-                      e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.08)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = 'none';
-                    }}
-                  >
-                    {/* Image */}
-                    <div style={{ height: '220px', overflow: 'hidden' }}>
-                      <img
-                        src={blog.image}
-                        alt={blog.title}
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover'
-                        }}
-                      />
-                    </div>
-
-                    {/* Content */}
-                    <div style={{ padding: '1.75rem' }}>
-
-                      {/* Meta */}
-                      <div style={{
+              {loading ? (
+                <div style={{ display: 'flex', justifyContent: 'center', padding: '5rem' }}>
+                  <div className="loader"></div>
+                </div>
+              ) : (
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+                  gap: '2rem'
+                }}>
+                  {filteredBlogs.map((blog, i) => (
+                    <article
+                      key={blog.id || i}
+                      style={{
+                        background: 'white',
+                        borderRadius: '1.5rem',
+                        overflow: 'hidden',
+                        border: '1px solid var(--border)',
+                        transition: '0.3s',
                         display: 'flex',
-                        gap: '0.75rem',
-                        fontSize: '0.75rem',
-                        color: 'var(--muted-foreground)',
-                        marginBottom: '1rem'
-                      }}>
-                        <span>{blog.date}</span>
-                        <span>•</span>
-                        <span>{blog.time}</span>
-                        <span>•</span>
-                        <span>{blog.author}</span>
+                        flexDirection: 'column'
+                      }}
+                      className="hover-lift"
+                    >
+                      <div style={{ height: '220px', overflow: 'hidden' }}>
+                        <img
+                          src={blog.image || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=60'}
+                          alt={blog.title}
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
+                          }}
+                        />
                       </div>
 
-                      {/* Title */}
-                      <h3 style={{
-                        fontSize: '1.2rem',
-                        marginBottom: '0.75rem'
-                      }}>
-                        {blog.title}
-                      </h3>
-
-                      {/* Excerpt */}
-                      <p style={{
-                        fontSize: '0.95rem',
-                        color: 'var(--muted-foreground)',
-                        marginBottom: '1.5rem'
-                      }}>
-                        {blog.excerpt}
-                      </p>
-
-                      {/* CTA */}
-                      <Link
-                        to={`/blog/${blog.id}`}
-                        style={{
+                      <div style={{ padding: '1.75rem', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                        <div style={{
                           display: 'flex',
-                          alignItems: 'center',
-                          gap: '6px',
-                          color: 'var(--primary)',
-                          fontWeight: '700'
-                        }}
-                      >
-                        Read More <Icons.ArrowRight size={16} />
-                      </Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
+                          flexWrap: 'wrap',
+                          gap: '0.75rem',
+                          fontSize: '0.75rem',
+                          color: 'var(--muted-foreground)',
+                          marginBottom: '1rem'
+                        }}>
+                          <span>{blog.date}</span>
+                          <span>•</span>
+                          <span>{blog.read_time}</span>
+                          <span>•</span>
+                          <span>{blog.author}</span>
+                        </div>
 
+                        <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem' }}>{blog.title}</h3>
+                        <p style={{ fontSize: '0.95rem', color: 'var(--muted-foreground)', marginBottom: '1.5rem', flexGrow: 1 }}>{blog.excerpt}</p>
+
+                        <Link
+                          to={`/blog/${blog.id}`}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            color: 'var(--primary)',
+                            fontWeight: '700'
+                          }}
+                        >
+                          Read More <Icons.ArrowRight size={16} />
+                        </Link>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -230,4 +215,4 @@ const Resources = () => {
   );
 };
 
-export default Resources;
+export default Resources;

@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
 import ScrollToTop from './components/common/ScrollToTop';
 
@@ -23,6 +23,11 @@ const OSMPage = lazy(() => import('./pages/solutions/OSMPage'));
 const AIPage = lazy(() => import('./pages/solutions/AIPage')); // New AI Proctoring
 const QPMSPage = lazy(() => import('./pages/solutions/QPMSPage')); // New QPMS
 
+// Admin Pages
+const AdminLogin = lazy(() => import('./pages/admin/Login'));
+const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'));
+const BlogDetail = lazy(() => import('./pages/BlogDetail'));
+
 // Service-Specific Pages
 const OMRPrinting = lazy(() => import('./pages/services/OMRPrinting'));
 const OMRScanning = lazy(() => import('./pages/services/OMRScanning'));
@@ -36,50 +41,60 @@ const PageLoader = () => (
   </div>
 );
 
+import { HelmetProvider } from 'react-helmet-async';
+
 function App() {
   return (
-    <MainLayout>
-      <ScrollToTop />
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
-          {/* Main Entry Points */}
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/clients" element={<Clients />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/resources" element={<Blog />} />
-          <Route path="/book-demo" element={<BookDemo />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/products" element={<Products />} />
+    <HelmetProvider>
+      <MainLayout>
+        <ScrollToTop />
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            {/* Main Entry Points */}
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
+            <Route path="/resources" element={<Blog />} />
+            <Route path="/book-demo" element={<BookDemo />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/products" element={<Products />} />
 
-          {/* Solution-Specific Routes */}
-          <Route path="/omr" element={<OMRPage />} />
-          <Route path="/osm" element={<OSMPage />} />
-          <Route path="/qpms" element={<QPMSPage />} />
-          <Route path="/ai-proctoring" element={<AIPage />} />
-          <Route path="/cbt" element={<CBTPage />} />
-          <Route path="/lms" element={<LMSPage />} />
+            {/* Solution-Specific Routes */}
+            <Route path="/omr" element={<OMRPage />} />
+            <Route path="/osm" element={<OSMPage />} />
+            <Route path="/qpms" element={<QPMSPage />} />
+            <Route path="/ai-proctoring" element={<AIPage />} />
+            <Route path="/cbt" element={<CBTPage />} />
+            <Route path="/lms" element={<LMSPage />} />
 
-          {/* Service Routes */}
-          <Route path="/omr-printing" element={<OMRPrinting />} />
-          <Route path="/omr-scanning" element={<OMRScanning />} />
-          <Route path="/custom-software" element={<CustomSoftware />} />
+            {/* Service Routes */}
+            <Route path="/omr-printing" element={<OMRPrinting />} />
+            <Route path="/omr-scanning" element={<OMRScanning />} />
+            <Route path="/custom-software" element={<CustomSoftware />} />
 
-          {/* Fallbacks */}
-          <Route path="/qpms" element={<QPMSPage />} />
-          <Route path="/solutions/omr" element={<OMRPage />} />
-          <Route path="/solutions/cbt" element={<CBTPage />} />
-          <Route path="/solutions/lms" element={<LMSPage />} />
-          <Route path="/solutions/qtb" element={<QPMSPage />} />
-          <Route path="/solutions/osm" element={<OSMPage />} />
-        </Routes>
-      </Suspense>
-    </MainLayout>
+            {/* Admin Routes */}
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+
+            {/* Fallbacks */}
+            <Route path="/qpms" element={<QPMSPage />} />
+            <Route path="/solutions/omr" element={<OMRPage />} />
+            <Route path="/solutions/cbt" element={<CBTPage />} />
+            <Route path="/solutions/lms" element={<LMSPage />} />
+            <Route path="/solutions/qtb" element={<QPMSPage />} />
+            <Route path="/solutions/osm" element={<OSMPage />} />
+          </Routes>
+        </Suspense>
+      </MainLayout>
+    </HelmetProvider>
   );
 }
+
 
 export default App;
 

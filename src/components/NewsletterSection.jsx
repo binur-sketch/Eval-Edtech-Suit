@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as Icons from '@/components/LucideFix';
+import { useFormSubmit } from '@/hooks/useFormSubmit';
+import FormStatus from '@/components/common/FormStatus';
 
 const NewsletterSection = () => {
+  const [email, setEmail] = useState('');
+  const { status, message, submitForm, setStatus } = useFormSubmit({
+    successMessage: "Awesome! You're now subscribed to our monthly insights."
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    submitForm({ email }, 'Newsletter Subscription');
+    setEmail('');
+  };
+
   return (
     <section className="section-padding" style={{ background: 'white', borderTop: '1px solid var(--border)' }}>
       <div className="container">
@@ -21,23 +34,37 @@ const NewsletterSection = () => {
             <h2>Get Expert Assessment <span className="gradient-text">Insights</span></h2>
             <p style={{ marginBottom: 0 }}>Join 2000+ educational leaders receiving our monthly briefing on evaluation trends and security protocols.</p>
           </div>
-          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-            <input 
-              type="email" 
-              placeholder="Your professional email" 
-              style={{ 
-                flex: '1 1 200px',
-                minWidth: 0,
-                padding: '1rem 1.5rem', 
-                borderRadius: '1rem', 
-                border: '1px solid var(--border)',
-                background: 'white',
-                fontSize: '0.9375rem',
-                width: '100%'
-              }} 
-            />
-            <button className="btn btn-primary" style={{ flexShrink: 0 }}>Subscribe</button>
-          </div>
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', width: '100%' }}>
+            <div style={{ display: 'flex', gap: '0.75rem', flex: '1 1 300px', flexWrap: 'wrap' }}>
+              <input 
+                type="email" 
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your professional email" 
+                style={{ 
+                  flex: '1 1 200px',
+                  minWidth: 0,
+                  padding: '1rem 1.5rem', 
+                  borderRadius: '1rem', 
+                  border: '1px solid var(--border)',
+                  background: 'white',
+                  fontSize: '0.9375rem'
+                }} 
+              />
+              <button 
+                type="submit" 
+                disabled={status === 'loading'}
+                className="btn btn-primary" 
+                style={{ flexShrink: 0 }}
+              >
+                {status === 'loading' ? 'Joining...' : 'Subscribe'}
+              </button>
+            </div>
+            <div style={{ width: '100%' }}>
+              <FormStatus status={status} message={message} />
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -45,3 +72,4 @@ const NewsletterSection = () => {
 };
 
 export default NewsletterSection;
+

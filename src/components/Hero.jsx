@@ -30,9 +30,9 @@ const Hero = () => {
               Book Free Demo
             </Link>
 
-            <Link to="/omr" className="btn hero-btn-outline">
+            <a href="#how-it-works" className="btn hero-btn-outline">
               See How It Works
-            </Link>
+            </a>
           </div>
 
         </div>

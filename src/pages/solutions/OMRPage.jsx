@@ -1,5 +1,6 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import SEO from '@/components/common/SEO';
 import { Link } from 'react-router-dom';
 import FAQ from '@/components/FAQ';
 const OMRPage = () => {
@@ -97,48 +98,29 @@ const OMRPage = () => {
   ];
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <SEO 
+        title="OMR Software for Sheet Scanning & Reading | OMR Checker"
+        description="eVAL OMR is a state-of-the-art Optical Mark Reader software designed for capturing and analysing data from plain paper OMR sheets with 100% accuracy."
+        keywords="OMR Software, OMR Sheet Scanning, OMR Checker, Bubble Sheet Reader, OMR Design Software, Automated Exam Evaluation"
+      />
       {/* Hero Section */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(2rem, 8vw, 6rem)', alignItems: 'center' }}>
             <div>
               <span className="badge">100% Accurate Processing</span>
-              <h1 style={{ fontSize: '3.5rem' }}>eVAL OMR <span className="gradient-text">Exam Software</span></h1>
-              <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+              <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>eVAL OMR <span className="gradient-text">Exam Software</span></h1>
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
                 eVAL OMR is a state-of-the-art Optical Mark Reader software designed for capturing and analysing data from plain paper OMR (bubble) sheets with 100% accurate results at high speed.
               </p>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
                 <Link to="/book-demo" className="btn btn-primary">Start Free Trial</Link>
                 <Link to="/contact" className="btn btn-outline">Consult Our Team</Link>
               </div>
             </div>
             <div style={{ position: 'relative' }}>
-              <img src="/assets/images/omr_hero.png" alt="On-Screen Marking" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+              <img src="/assets/images/omr_hero.png" alt="OMR Software" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
             </div>
-
-            {/* <div className="card" style={{ padding: '3.5rem', background: 'white', borderRadius: '3rem', border: '1px solid var(--border)', boxShadow: 'var(--shadow-lg)' }}>
-              <div style={{ fontSize: '1rem', fontWeight: '800', marginBottom: '2.5rem', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div style={{ padding: '10px', background: 'var(--primary-light)', borderRadius: '12px', color: 'var(--primary)' }}><Icons.Activity size={24} /></div>
-                Performance Benchmarks
-              </div>
-              <div style={{ display: 'grid', gap: '2rem' }}>
-                {[
-                  { label: 'Processing Speed', val: '500 sheets/min', pct: '95%' },
-                  { label: 'Accuracy Rate', val: '100.00%', pct: '100%' },
-                  { label: 'Hardware Required', val: 'Standard Scanner', pct: '90%' }
-                ].map((b, i) => (
-                  <div key={i}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.875rem', marginBottom: '0.75rem' }}>
-                      <span style={{ color: 'var(--muted-foreground)', fontWeight: '600' }}>{b.label}</span>
-                      <span style={{ fontWeight: '800', color: 'var(--foreground)' }}>{b.val}</span>
-                    </div>
-                    <div style={{ height: '8px', background: 'var(--muted)', borderRadius: '4px' }}>
-                      <div style={{ width: b.pct, height: '100%', background: 'var(--primary)', borderRadius: '4px' }}></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div> */}
           </div>
         </div>
       </section>
@@ -347,130 +329,171 @@ const OMRPage = () => {
           </div>
 
           {/* Table */}
-          <div style={{
-            borderRadius: '2rem',
-            overflow: 'hidden',
-            border: '1px solid var(--border)',
-            background: 'white'
-          }}>
-
-            {/* Header */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '0.7fr 1.5fr 1.5fr',
-              background: 'var(--foreground)',
-              color: 'white',
-              fontWeight: '700'
-            }}>
-              <div style={{ padding: '1.8rem' }}></div>
+          {/* Table Container with Overflow and stacking logic */}
+          <div className="comparison-container">
+            {/* Header - Hidden on mobile, shown on desktop */}
+            <div className="comparison-header">
+              <div style={{ padding: '1.8rem' }}>Feature</div>
               <div style={{ padding: '1.8rem' }}>eVAL OMR Software</div>
               <div style={{ padding: '1.8rem' }}>Other OMR Software</div>
             </div>
 
             {/* Rows */}
             {comparisonData.map((row, i) => (
-              <div
-                key={i}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '0.7fr 1.5fr 1.5fr',
-                  borderBottom: '1px solid var(--border)',
-                  alignItems: 'stretch'
-                }}
-              >
-
-                {/* Feature Label (Auto Generated) */}
-                <div style={{
-                  padding: '1.5rem',
-                  background: 'var(--muted)',
-                  fontWeight: '700',
-                  fontSize: '0.9rem',
-                  display: 'flex',
-                  alignItems: 'center'
-                }}>
-                  <div
-                    style={{
-                      padding: '1.5rem',
-                      background: 'var(--muted)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.75rem'
-                    }}
-                  >
-                    {(() => {
-                      const Icon = featureMeta[i]?.icon;
-                      return (
-                        <>
-                          <div
-                            style={{
-                              width: '36px',
-                              height: '36px',
-                              borderRadius: '10px',
-                              background: 'rgba(14,165,164,0.1)',
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              flexShrink: 0
-                            }}
-                          >
-                            {Icon && <Icon size={18} style={{ color: 'var(--primary)' }} />}
-                          </div>
-
-                          <span
-                            style={{
-                              fontWeight: '700',
-                              fontSize: '0.9rem',
-                              color: 'var(--foreground)'
-                            }}
-                          >
-                            {featureMeta[i]?.label || `Feature ${i + 1}`}
-                          </span>
-                        </>
-                      );
-                    })()}
-                  </div>
-
+              <div key={i} className="comparison-row">
+                {/* Feature Label */}
+                <div className="feature-cell">
+                  {(() => {
+                    const Icon = featureMeta[i]?.icon;
+                    return (
+                      <>
+                        <div className="icon-badge">
+                          {Icon && <Icon size={18} style={{ color: 'var(--primary)' }} />}
+                        </div>
+                        <span className="feature-label">
+                          {featureMeta[i]?.label || `Feature ${i + 1}`}
+                        </span>
+                      </>
+                    );
+                  })()}
                 </div>
 
                 {/* eVAL */}
-                <div style={{
-                  padding: '1.5rem',
-                  color: 'var(--primary)',
-                  fontWeight: '600',
-                  background: 'rgba(14,165,164,0.03)',
-                  lineHeight: '1.6'
-                }}>
+                <div className="eval-cell">
+                  <div className="mobile-label">eVAL OMR</div>
                   {row.e}
                 </div>
 
                 {/* Others */}
-                <div style={{
-                  padding: '1.5rem',
-                  color: 'var(--muted-foreground)',
-                  lineHeight: '1.6'
-                }}>
+                <div className="other-cell">
+                  <div className="mobile-label">Others</div>
                   {row.o}
                 </div>
-
               </div>
             ))}
-
           </div>
-
         </div>
+
+        <style>{`
+          .comparison-container {
+            border-radius: 2rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: white;
+          }
+
+          .comparison-header {
+            display: grid;
+            grid-template-columns: 0.8fr 1.6fr 1.6fr;
+            background: var(--foreground);
+            color: white;
+            font-weight: 700;
+          }
+
+          .comparison-row {
+            display: grid;
+            grid-template-columns: 0.8fr 1.6fr 1.6fr;
+            border-bottom: 1px solid var(--border);
+          }
+
+          .feature-cell {
+            padding: 1.5rem;
+            background: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+          }
+
+          .icon-badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(14,165,164,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+          }
+
+          .feature-label {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--foreground);
+          }
+
+          .eval-cell {
+            padding: 1.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            background: rgba(14,165,164,0.03);
+            line-height: 1.6;
+          }
+
+          .other-cell {
+            padding: 1.5rem;
+            color: var(--muted-foreground);
+            line-height: 1.6;
+          }
+
+          .mobile-label {
+            display: none;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            opacity: 0.6;
+          }
+
+          @media (max-width: 768px) {
+            .comparison-header {
+              display: none;
+            }
+
+            .comparison-row {
+              grid-template-columns: 1fr;
+            }
+
+            .feature-cell {
+              background: var(--secondary);
+              color: white;
+              padding: 1rem 1.5rem;
+            }
+
+            .feature-label {
+              color: white;
+            }
+
+            .icon-badge {
+              background: rgba(255,255,255,0.15);
+            }
+
+            .icon-badge svg {
+              color: white !important;
+            }
+
+            .eval-cell, .other-cell {
+              padding: 1.25rem 1.5rem;
+            }
+
+            .mobile-label {
+              display: block;
+            }
+          }
+        `}</style>
       </section>
 
       {/* Institutional CTA Section */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
-          <div style={{ background: 'var(--secondary)', color: 'white', padding: '6rem 4rem', borderRadius: '4rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ background: 'var(--secondary)', color: 'white', padding: 'clamp(2rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem)', borderRadius: 'clamp(1.5rem, 5vw, 4rem)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'relative', zIndex: 1 }}>
               <span className="badge" style={{ background: 'rgba(255,255,255,0.1)', color: 'white', border: 'none', marginBottom: '1.5rem' }}>Trusted Nationwide</span>
               <h2 style={{ color: 'white' }}>Ready for a <span className="gradient-text">100% Accurate</span> Future?</h2>
-              <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '640px', margin: '2rem auto 4rem', fontSize: '1.125rem' }}>Deploy the simplest, standard-hardware driven eVAL OMR system for your educational evaluation.</p>
-              <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '2rem' }}>
-                <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Start Free Trial</Link>
-                <Link to="/book-demo" className="btn btn-outline" style={{ color: 'white', borderColor: 'white', padding: '1.25rem 3.5rem' }}>Request Demo</Link>
+              <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '640px', margin: '2rem auto 4rem', fontSize: 'clamp(1rem, 2vw, 1.125rem)' }}>Deploy the simplest, standard-hardware driven eVAL OMR system for your educational evaluation.</p>
+              <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                <Link to="/contact" className="btn btn-primary" style={{ padding: '1.1rem 2.5rem' }}>Start Free Trial</Link>
+                <Link to="/book-demo" className="btn btn-outline" style={{ color: 'white', borderColor: 'white', padding: '1.1rem 2.5rem' }}>Request Demo</Link>
               </div>
             </div>
             <div style={{ position: 'absolute', top: '-50%', right: '-20%', width: '100%', height: '200%', background: 'radial-gradient(circle, rgba(14, 165, 164, 0.1) 0%, transparent 70%)', zIndex: 0 }}></div>

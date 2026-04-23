@@ -55,21 +55,21 @@ const IndustryVerticals = () => {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
           {verticals.map((v, i) => (
-            <div key={i} className="hover-lift" style={{ 
-              padding: '2.5rem', 
-              display: 'flex', 
-              flexDirection: 'column', 
-              background: 'white', 
+            <div key={i} className="hover-lift" style={{
+              padding: '2.5rem',
+              display: 'flex',
+              flexDirection: 'column',
+              background: 'white',
               borderRadius: '1.75rem',
               boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
               border: '1px solid var(--border)',
               transition: 'all 0.4s ease'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2rem' }}>
-                <div style={{ 
-                  color: 'var(--primary)', 
-                  background: 'var(--primary-light)', 
-                  padding: '1rem', 
+                <div style={{
+                  color: 'var(--primary)',
+                  background: 'var(--primary-light)',
+                  padding: '1rem',
                   borderRadius: '1rem',
                   display: 'flex',
                   alignItems: 'center',
@@ -79,18 +79,8 @@ const IndustryVerticals = () => {
               </div>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--foreground)' }}>{v.title}</h3>
               <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', marginBottom: '2rem', flex: 1, lineHeight: '1.7' }}>{v.desc}</p>
-              
-              <Link to="/contact" style={{ 
-                fontSize: '0.875rem', 
-                fontWeight: '700', 
-                color: 'var(--primary)', 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '8px',
-                textDecoration: 'none'
-              }}>
-                Learn More <Icons.ArrowRight size={16} />
-              </Link>
+
+
             </div>
           ))}
         </div>

@@ -1,5 +1,6 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import SEO from '@/components/common/SEO';
 import { Link } from 'react-router-dom';
 import FAQ from '@/components/FAQ';
 
@@ -62,14 +63,19 @@ const QPMSPage = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <SEO 
+        title="Question Paper Management System (QPMS) | Question Bank"
+        description="Securely manage question banks and generate balanced question papers with eVAL QPMS. Advanced tagging, bloom's taxonomy, and secure workflows."
+        keywords="QPMS, Question Paper Management, Question Bank Software, Exam Paper Generator, Secure Question Bank"
+      />
       {/* Hero / Overview */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(2rem, 8vw, 6rem)', alignItems: 'center' }}>
             <div>
               <span className="badge">Confidential & Secure</span>
-              <h1 style={{ fontSize: '3.5rem' }}>Question Paper <span className="gradient-text">Management System</span></h1>
-              <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+              <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>Question Paper <span className="gradient-text">Management System</span></h1>
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
                 eVAL Question Paper Management System (QPMS) is a secure digital platform designed to manage the complete lifecycle of question paper creation — from paper setting to final approval — within a controlled and confidential environment.
               </p>
               <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
@@ -77,7 +83,7 @@ const QPMSPage = () => {
                   The system enables universities and examination bodies to engage internal and external faculty members to create multiple question papers in the institution's prescribed format, all within a secure, role-based platform. This structured digital approach eliminates risks associated with manual paper preparation, improves coordination between contributors, and ensures that question papers are created, reviewed, and finalized with complete confidentiality.
                 </p>
               </div>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
                 <Link to="/contact" className="btn btn-primary">Get Started</Link>
                 <Link to="/book-demo" className="btn btn-outline">See the Workflow</Link>
               </div>
@@ -131,8 +137,8 @@ const QPMSPage = () => {
       {/* Benefits */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ background: 'var(--secondary)', color: 'white', padding: '5rem', borderRadius: '3rem' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+          <div style={{ background: 'var(--secondary)', color: 'white', padding: 'clamp(2rem, 8vw, 5rem) clamp(1.5rem, 5vw, 4rem)', borderRadius: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2rem, 5vw, 4rem)' }}>
               <div>
                 <h2 style={{ color: 'white' }}>Institutional <span style={{ color: 'var(--primary)' }}>Benefits</span></h2>
                 <p style={{ color: 'rgba(255,255,255,0.7)', marginTop: '2rem', fontSize: '1.125rem' }}>Eliminate risks, improve coordination, and ensure absolute confidentiality for your most sensitive examination content.</p>

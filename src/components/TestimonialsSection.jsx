@@ -38,7 +38,7 @@ const TestimonialsSection = () => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '2.5rem' }}>
           {testimonials.map((t, i) => (
             <div key={i} className="card" style={{
-              padding: '3.5rem',
+              padding: 'clamp(1.5rem, 5vw, 3.5rem)',
               borderRadius: '2.5rem',
               display: 'flex',
               flexDirection: 'column',

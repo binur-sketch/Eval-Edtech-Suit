@@ -1,99 +1,144 @@
 import * as Icons from '@/components/LucideFix';
-import React from 'react';
+import React, { useState } from 'react';
+import { useFormSubmit } from '@/hooks/useFormSubmit';
+import FormStatus from '@/components/common/FormStatus';
+import SEO from '@/components/common/SEO';
+import Reveal from '@/components/common/Reveal';
 
 const Contact = () => {
-  return (
-    <div style={{ paddingTop: '5rem' }}>
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 5rem' }}>
-            <span className="badge">Connect with Us</span>
-            <h1>Get in <span className="gradient-text">Touch</span></h1>
-            <p style={{ fontSize: '1.125rem' }}>Discuss your institutional needs with our assessment experts and discover how eVAL can transform your evaluation process.</p>
-          </div>
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem' }}>
+  const { status, message, submitForm } = useFormSubmit({
+    successMessage: "Thank you for contacting us! Our team will get back to you shortly."
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    submitForm(formData, 'General Inquiry');
+  };
+
+  return (
+    <div className="contact-page" style={{ paddingTop: 'var(--nav-height)', minHeight: '100vh', background: 'var(--background)' }}>
+      <SEO 
+        title="Contact Us | eVAL Edtech"
+        description="Get in touch with the eVAL team for any questions, support, or partnership opportunities."
+      />
+
+      {/* Hero Section */}
+      <section className="section-padding" style={{ background: 'var(--secondary)', color: 'white' }}>
+        <div className="container">
+          <Reveal width="100%">
+            <div style={{ textAlign: 'center' }}>
+              <span className="badge" style={{ background: 'rgba(255,255,255,0.1)', color: 'white' }}>Get In Touch</span>
+              <h1 style={{ color: 'white' }}>How can we <span className="gradient-text">help you?</span></h1>
+              <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto' }}>
+                Whether you're looking for technical support, have a sales inquiry, or just want to say hello, we're here to help.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section-padding">
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+            
             {/* Contact Info */}
-            <div>
-              <div style={{ display: 'grid', gap: '2rem' }}>
-                {[
-                  { title: 'Corporate HQ', icon: <Icons.MapPin />, text: 'A 306, The I Thum, Plot No. A 40, Sector 62, Noida, UP 201301' },
-                  { title: 'Institutional Support', icon: <Icons.Mail />, text: 'corp@virsoftech.com' },
-                  { title: 'Call / Whatsapp', icon: <Icons.Phone />, text: '+91 9319275051' }
-                ].map((item, i) => (
-                  <div key={i} className="card hover-lift" style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', padding: '1.5rem', background: 'white' }}>
-                    <div style={{ color: 'var(--primary)', background: 'var(--primary-light)', width: '56px', height: '56px', borderRadius: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.icon}</div>
+            <Reveal direction="right">
+              <div>
+                <h3>Our <span className="gradient-text">Contact Information</span></h3>
+                <p style={{ marginBottom: '2.5rem' }}>Our team is available across multiple channels to ensure you get the support you need.</p>
+                
+                <div style={{ display: 'grid', gap: '2rem' }}>
+                  <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
+                    <div style={{ padding: '0.75rem', background: 'var(--primary-light)', color: 'var(--primary)', borderRadius: '12px' }}>
+                      <Icons.MapPin size={24} />
+                    </div>
                     <div>
-                      <h4 style={{ fontSize: '1rem', fontWeight: '800', marginBottom: '0.25rem' }}>{item.title}</h4>
-                      <p style={{ fontSize: '0.875rem', marginBottom: 0, color: 'var(--muted-foreground)' }}>{item.text}</p>
+                      <h4 style={{ marginBottom: '0.25rem' }}>Global HQ</h4>
+                      <p style={{ fontSize: '0.9375rem', margin: 0 }}>A 306, The I Thum, Plot No. A 40, Sector 62, Noida, UP 201301</p>
                     </div>
                   </div>
-                ))}
+
+                  <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
+                    <div style={{ padding: '0.75rem', background: 'var(--primary-light)', color: 'var(--primary)', borderRadius: '12px' }}>
+                      <Icons.Mail size={24} />
+                    </div>
+                    <div>
+                      <h4 style={{ marginBottom: '0.25rem' }}>Email Us</h4>
+                      <p style={{ fontSize: '0.9375rem', margin: 0 }}>corp@virsoftech.com</p>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
+                    <div style={{ padding: '0.75rem', background: 'var(--primary-light)', color: 'var(--primary)', borderRadius: '12px' }}>
+                      <Icons.Phone size={24} />
+                    </div>
+                    <div>
+                      <h4 style={{ marginBottom: '0.25rem' }}>Call Support</h4>
+                      <p style={{ fontSize: '0.9375rem', margin: 0 }}>+91 9319275051</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ marginTop: '3.5rem', padding: '2rem', background: 'var(--muted)', borderRadius: '2rem' }}>
+                  <h4 style={{ marginBottom: '1rem' }}>Interested in a Demo?</h4>
+                  <p style={{ fontSize: '0.9375rem' }}>If you're looking for a personalized walkthrough of our platform, we recommend booking a demo slot.</p>
+                  <a href="/book-demo" className="btn btn-primary" style={{ width: '100%' }}>Book a Demo Instead</a>
+                </div>
               </div>
+            </Reveal>
 
-              <div className="card" style={{ marginTop: '2rem', background: 'var(--secondary)', color: 'white', border: 'none' }}>
-                <h3 style={{ color: 'white', marginBottom: '1rem' }}>Global Presence</h3>
-                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9375rem' }}>Supporting institutions across India, Middle East, and Southeast Asia.</p>
+            {/* Form */}
+            <Reveal direction="left">
+              <div className="card" style={{ padding: '3rem', borderRadius: '2.5rem' }}>
+                <h3 style={{ marginBottom: '2rem' }}>Send us a <span className="gradient-text">Message</span></h3>
+                <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '1.5rem' }}>
+                  <div style={{ display: 'grid', gap: '0.5rem' }}>
+                    <label style={{ fontSize: '0.8125rem', fontWeight: '700' }}>Full Name</label>
+                    <input name="name" type="text" required value={formData.name} onChange={handleChange} placeholder="e.g. John Doe" />
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    <div style={{ display: 'grid', gap: '0.5rem' }}>
+                      <label style={{ fontSize: '0.8125rem', fontWeight: '700' }}>Email Address</label>
+                      <input name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="john@example.com" />
+                    </div>
+                    <div style={{ display: 'grid', gap: '0.5rem' }}>
+                      <label style={{ fontSize: '0.8125rem', fontWeight: '700' }}>Phone Number</label>
+                      <input name="phone" type="tel" required value={formData.phone} onChange={handleChange} placeholder="+91 99xx" />
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'grid', gap: '0.5rem' }}>
+                    <label style={{ fontSize: '0.8125rem', fontWeight: '700' }}>Subject</label>
+                    <input name="subject" type="text" required value={formData.subject} onChange={handleChange} placeholder="How can we help?" />
+                  </div>
+
+                  <div style={{ display: 'grid', gap: '0.5rem' }}>
+                    <label style={{ fontSize: '0.8125rem', fontWeight: '700' }}>Message</label>
+                    <textarea name="message" required value={formData.message} onChange={handleChange} rows="4" placeholder="Your message here..." style={{ width: '100%', padding: '1rem 1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', background: '#f8fafc', resize: 'none' }}></textarea>
+                  </div>
+
+                  <button type="submit" disabled={status === 'loading'} className="btn btn-primary" style={{ width: '100%', padding: '1.25rem' }}>
+                    {status === 'loading' ? 'Sending Message...' : 'Send Message'}
+                  </button>
+
+                  <FormStatus status={status} message={message} />
+                </form>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="card" style={{ padding: '3.5rem', borderRadius: '2rem', background: 'white' }}>
-              <h3 style={{ marginBottom: '2rem' }}>Request for a <span className="gradient-text">Call</span></h3>
-              <form style={{ display: 'grid', gap: '1.25rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                  <div style={{ display: 'grid', gap: '0.4rem' }}>
-                    <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Full Name</label>
-                    <input type="text" placeholder="John Doe" style={{ padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
-                  </div>
-                  <div style={{ display: 'grid', gap: '0.4rem' }}>
-                    <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Mobile No</label>
-                    <input type="tel" placeholder="+91 99xx" style={{ padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
-                  </div>
-                </div>
-
-                <div style={{ display: 'grid', gap: '0.4rem' }}>
-                  <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Work Email</label>
-                  <input type="email" placeholder="john@institution.edu" style={{ padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
-                </div>
-
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                  <div style={{ display: 'grid', gap: '0.4rem' }}>
-                    <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Company / Organisation</label>
-                    <input type="text" placeholder="Institution Name" style={{ padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
-                  </div>
-                  <div style={{ display: 'grid', gap: '0.4rem' }}>
-                    <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Country</label>
-                    <select style={{ padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem', height: '48px' }}>
-                      <option>India</option>
-                      <option>Nigeria</option>
-                      <option>Kenya</option>
-                      <option>United Arab Emirates</option>
-                      <option>United States</option>
-                      <option>United Kingdom</option>
-                      <option>Singapore</option>
-                      <option>Saudi Arabia</option>
-                      <option>Oman</option>
-                      <option>Qatar</option>
-                      <option>Kuwait</option>
-                      <option>Bangladesh</option>
-                      <option>Nepal</option>
-                      <option>Sri Lanka</option>
-                      <option>Bhutan</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                </div>
-
-
-
-                <div style={{ display: 'grid', gap: '0.4rem' }}>
-                  <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Request Message</label>
-                  <textarea rows="3" placeholder="How can we help your institution?" style={{ padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', resize: 'none', fontFamily: 'inherit', fontSize: '0.9375rem' }}></textarea>
-                </div>
-
-                <button type="submit" className="btn btn-primary" style={{ marginTop: '0.5rem', padding: '1.25rem' }}>Send Demo Request →</button>
-              </form>
-            </div>
           </div>
         </div>
       </section>

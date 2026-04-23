@@ -147,13 +147,13 @@ const Clients = () => {
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       {/* Hero */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
+        <div className="container" style={{ textAlign: 'center', maxWidth: '900px' }}>
           <span className="badge">Success Ecosystem</span>
-          <h1 style={{ fontSize: '3.5rem' }}>Empowering <span className="gradient-text">5000+ Institutions</span> <br />Across 12 Countries</h1>
-          <p style={{ fontSize: '1.25rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)' }}>Empowering <span className="gradient-text">5000+ Institutions</span> <br />Across 12 Countries</h1>
+          <p style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
             Join the global network of excellence. eVAL provides the technological foundation for the world's most demanding educational and recruitment organizations.
           </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
             <Link to="/contact" className="btn btn-primary">Join the Network</Link>
             <Link to="/book-demo" className="btn btn-outline">Request POC</Link>
           </div>
@@ -177,16 +177,16 @@ const Clients = () => {
       {/* Global HQ Info */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ background: 'var(--secondary)', color: 'white', padding: '6rem 4rem', borderRadius: '4rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+          <div style={{ background: 'var(--secondary)', color: 'white', padding: 'clamp(2rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem)', borderRadius: 'clamp(1.5rem, 5vw, 4rem)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
             <div>
               <h2 style={{ color: 'white' }}>Ready to Scale?</h2>
-              <p style={{ color: 'rgba(255,255,255,0.6)', marginTop: '2rem', fontSize: '1.125rem' }}>Our institutional consultants are available for onsite deployment strategy worldwide.</p>
-              <div style={{ marginTop: '3rem', display: 'flex', gap: '1.5rem' }}>
-                <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '1.5rem', flex: 1 }}>
+              <p style={{ color: 'rgba(255,255,255,0.6)', marginTop: '2rem', fontSize: 'clamp(0.9rem, 2vw, 1.125rem)' }}>Our institutional consultants are available for onsite deployment strategy worldwide.</p>
+              <div style={{ marginTop: '3rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '1.5rem', flex: '1 1 200px' }}>
                   <div style={{ fontWeight: '800', marginBottom: '0.5rem' }}>INDIA HQ</div>
                   <div style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.5)' }}>Noida, UP 201301</div>
                 </div>
-                <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '1.5rem', flex: 1 }}>
+                <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '1.5rem', flex: '1 1 200px' }}>
                   <div style={{ fontWeight: '800', marginBottom: '0.5rem' }}>JAPAN HQ</div>
                   <div style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.5)' }}>International Ops, Tokyo</div>
                 </div>

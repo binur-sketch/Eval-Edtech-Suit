@@ -1,5 +1,6 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import SEO from '@/components/common/SEO';
 import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -83,6 +84,11 @@ const About = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <SEO 
+        title="About Us | Pioneers in Examination Evaluation"
+        description="Learn about eVAL by Vir Softech. We are dedicated to transforming institutional assessments with smart, secure, and accurate technology solutions."
+        keywords="About eVAL, Vir Softech, Examination Technology Company, EdTech India, Assessment Experts"
+      />
       {/* Hero */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
@@ -226,168 +232,148 @@ const About = () => {
         </div>
       </section>
 
-      {/* Snake Timeline Redesign */}
-      <section className="section-padding" style={{ background: '#f8fafc', overflow: 'hidden' }}>
+      {/* Milestones - Compact Grid Redesign */}
+      <section className="section-padding" style={{ background: 'var(--muted)', overflow: 'hidden' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <div style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              background: 'var(--primary)', 
-              color: 'white', 
-              padding: '0.75rem 2rem', 
-              borderRadius: '2rem', 
-              fontSize: '1.25rem', 
-              fontWeight: '800',
-              boxShadow: '0 10px 25px rgba(14, 165, 164, 0.3)',
-              marginBottom: '4rem'
-            }}>
-              Our Growth Journey
-            </div>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <span className="badge">Our Journey</span>
+            <h2 style={{ marginBottom: '1rem' }}>A Decade of <span className="gradient-text">Innovation</span></h2>
+            <p style={{ color: 'var(--muted-foreground)', maxWidth: '600px', margin: '0 auto' }}>From our inception to becoming a global assessment leader, every milestone represents our commitment to excellence.</p>
           </div>
 
-          <div className="snake-timeline" style={{ position: 'relative' }}>
-            {/* Split milestones into groups of 4 for rows */}
-            {[
-              milestones.slice(0, 4),
-              milestones.slice(4, 8),
-              milestones.slice(8, 11)
-            ].map((group, groupIndex) => {
-              const isEvenRow = groupIndex % 2 !== 0;
+          <div className="connected-timeline" style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', padding: '1rem 0' }}>
+            <div className="timeline-line"></div>
+            
+            {milestones.map((m, i) => {
+              const isEven = i % 2 === 0;
               return (
-                <div key={groupIndex} 
-                  className={`snake-row ${isEvenRow ? 'row-reverse' : 'row-normal'}`}
-                  style={{ 
-                    display: 'flex', 
-                    flexDirection: isEvenRow ? 'row-reverse' : 'row',
-                    justifyContent: 'flex-start',
-                    gap: '2rem',
-                    marginBottom: '120px',
-                    position: 'relative'
-                  }}
-                >
-                  {/* Row Connector Line */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '25px',
-                    left: '12.5%',
-                    right: '12.5%',
-                    height: '2px',
-                    background: '#cbd5e1',
-                    zIndex: 0
-                  }}></div>
-
-                  {group.map((m, i) => {
-                    const colors = ['#84cc16', '#0ea5a9', '#f59e0b', '#ec4899', '#3b82f6', '#8b5cf6'];
-                    const color = colors[(groupIndex * 4 + i) % colors.length];
+                <div key={i} className={`timeline-item ${isEven ? 'left' : 'right'}`}>
+                  <div className="timeline-node">
+                    {React.cloneElement(m.icon, { size: 16 })}
+                  </div>
+                  <div className="timeline-content card hover-lift">
+                    <div style={{ 
+                      fontSize: '2.5rem', 
+                      fontWeight: '900', 
+                      color: 'var(--primary-light)', 
+                      position: 'absolute', 
+                      top: '-5px', 
+                      right: isEven ? '-5px' : 'auto',
+                      left: isEven ? 'auto' : '-5px',
+                      lineHeight: '1',
+                      zIndex: 0,
+                      opacity: 0.5
+                    }}>
+                      {m.year}
+                    </div>
                     
-                    return (
-                      <div key={i} style={{ 
-                        flex: '1', 
-                        maxWidth: '280px', 
-                        position: 'relative', 
-                        zIndex: 1,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center'
+                    <div style={{ position: 'relative', zIndex: 1 }}>
+                      <div style={{ 
+                        display: 'inline-flex', 
+                        alignItems: 'center', 
+                        gap: '0.4rem', 
+                        background: 'var(--primary-light)',
+                        color: 'var(--primary)',
+                        padding: '0.15rem 0.6rem',
+                        borderRadius: '100px',
+                        marginBottom: '0.5rem',
+                        fontSize: '0.75rem',
+                        fontWeight: '800'
                       }}>
-                        {/* Circle Node */}
-                        <div style={{
-                          width: '50px',
-                          height: '50px',
-                          borderRadius: '50%',
-                          background: color,
-                          color: 'white',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontWeight: '800',
-                          fontSize: '0.875rem',
-                          boxShadow: `0 4px 15px ${color}40`,
-                          marginBottom: '1.5rem',
-                          position: 'relative',
-                          zIndex: 2
-                        }}>
-                          {m.year.slice(-2)}
-                        </div>
-
-                        {/* Card */}
-                        <div style={{
-                          background: 'white',
-                          borderRadius: '1rem',
-                          padding: '1.25rem',
-                          boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-                          border: '1px solid rgba(0,0,0,0.02)',
-                          width: '100%',
-                          borderTop: `4px solid ${color}`
-                        }}>
-                          <div style={{ 
-                            fontSize: '0.6875rem', 
-                            fontWeight: '900', 
-                            color: color, 
-                            textTransform: 'uppercase', 
-                            letterSpacing: '0.1em',
-                            marginBottom: '0.5rem'
-                          }}>
-                            {m.year}
-                          </div>
-                          <h4 style={{ fontSize: '0.9375rem', marginBottom: '0.5rem', lineHeight: '1.4' }}>{m.title}</h4>
-                          <p style={{ fontSize: '0.75rem', color: 'var(--muted-foreground)', lineHeight: '1.5', margin: 0 }}>
-                            {m.desc}
-                          </p>
-                        </div>
+                        {m.year}
                       </div>
-                    );
-                  })}
+                      <h4 style={{ fontSize: '0.9375rem', marginBottom: '0.25rem', lineHeight: '1.2' }}>{m.title}</h4>
+                      <p style={{ fontSize: '0.8125rem', color: 'var(--muted-foreground)', margin: 0, lineHeight: '1.5' }}>
+                        {m.desc}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               );
             })}
           </div>
         </div>
-      </section>
 
-      <style dangerouslySetInnerHTML={{ __html: `
-        @media (min-width: 992px) {
-          .snake-row.row-normal::after {
-            content: '';
+        <style dangerouslySetInnerHTML={{ __html: `
+          .connected-timeline .timeline-line {
             position: absolute;
-            right: calc(12.5% - 60px);
-            top: 25px;
-            width: 120px;
-            height: 122px;
-            border: 2px solid #cbd5e1;
-            border-left: none;
-            border-radius: 0 60px 60px 0;
-            z-index: 0;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-light), var(--primary), var(--primary-light));
+            transform: translateX(-50%);
+            border-radius: 4px;
+            z-index: 1;
           }
-          .snake-row.row-reverse::after {
-            content: '';
+          .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 1rem;
+            width: 100%;
+          }
+          .timeline-item.right {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+          }
+          .timeline-node {
             position: absolute;
-            left: calc(12.5% - 60px);
-            top: 25px;
-            width: 120px;
-            height: 122px;
-            border: 2px solid #cbd5e1;
-            border-right: none;
-            border-radius: 60px 0 0 60px;
-            z-index: 0;
+            left: 50%;
+            top: 15px;
+            transform: translate(-50%, 0);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid var(--primary);
+            display: flex;
+            alignItems: center;
+            justify-content: center;
+            color: var(--primary);
+            z-index: 2;
+            box-shadow: 0 0 0 3px white, var(--shadow-sm);
           }
-          /* Hide curve for the last row */
-          .snake-row:last-child::after {
-            display: none;
+          .timeline-content {
+            width: calc(100% - 3rem);
+            padding: 1rem 1.25rem;
+            background: white;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
           }
-        }
-        @media (max-width: 991px) {
-          .snake-timeline > div { 
-            flex-direction: column !important; 
-            align-items: center; 
-            margin-bottom: 3rem !important; 
-            gap: 3rem !important;
+          .timeline-item.left .timeline-content {
+            margin-right: 0;
+            border-right: 3px solid var(--primary);
           }
-          .snake-timeline > div > div { max-width: 100% !important; }
-          .snake-timeline > div [style*="height: 2px"] { display: none; }
-        }
-      `}} />
+          .timeline-item.right .timeline-content {
+            margin-left: 3rem;
+            border-left: 3px solid var(--primary);
+          }
+          
+          @media (max-width: 768px) {
+            .connected-timeline .timeline-line {
+              left: 20px;
+            }
+            .timeline-item, .timeline-item.right {
+              padding-left: 50px;
+              padding-right: 0;
+              justify-content: flex-start;
+            }
+            .timeline-node {
+              left: 20px;
+            }
+            .timeline-content {
+              width: 100%;
+              margin-left: 0 !important;
+              border-left: 3px solid var(--primary) !important;
+              border-right: none !important;
+            }
+          }
+        `}} />
+      </section>
 
       {/* Leadership */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>

@@ -1,105 +1,338 @@
 import * as Icons from '@/components/LucideFix';
-import React from 'react';
+import React, { useState } from 'react';
+import { useFormSubmit } from '@/hooks/useFormSubmit';
+import FormStatus from '@/components/common/FormStatus';
+import SEO from '@/components/common/SEO';
 
 const BookDemo = () => {
-  return (
-    <div style={{ paddingTop: '8rem', minHeight: '100vh', background: 'var(--muted)' }}>
-      <div className="container" style={{ maxWidth: '1100px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '6rem', alignItems: 'center' }}>
-          <div>
-            <span className="badge">Institutional Pilot</span>
-            <h1 style={{ fontSize: '3.5rem' }}>Experience <br /><span className="gradient-text">eVAL Suite</span></h1>
-            <p style={{ margin: '2rem 0', fontSize: '1.25rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>Experience firsthand why top institutions like IIT Delhi, NCERT, and Aakash trust eVAL for their most critical examinations.</p>
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    organization: '',
+    country: 'India',
+    solution: 'Complete eVAL Suite (Recommended)',
+    message: ''
+  });
 
-            <div style={{ display: 'grid', gap: '2rem', marginTop: '4rem' }}>
-              {[
-                { title: 'Full Access Pilot', text: 'Get 14 days of unrestricted access to our OMR and CBT platforms for your pilot batch.' },
-                { title: 'Institutional Setup', text: 'Our engineers will help you map your existing evaluation workflow to eVAL.' },
-                { title: 'Faculty Onboarding', text: 'Specialized training sessions included to ensure 100% adoption and clarity.' }
-              ].map((item, i) => (
-                <div key={i} style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-                  <div style={{ color: 'var(--primary)', background: 'white', padding: '0.75rem', borderRadius: '1rem', boxShadow: 'var(--shadow-sm)' }}>
-                    <Icons.CheckCircle2 size={24} />
-                  </div>
-                  <div>
-                    <div style={{ fontWeight: '800', fontSize: '1.125rem', marginBottom: '0.25rem' }}>{item.title}</div>
-                    <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', marginBottom: 0 }}>{item.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+  const { status, message, submitForm } = useFormSubmit({
+    successMessage: "Your demo request has been received! Our Team will contact you within 24 hours."
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    submitForm(formData, 'Demo Request');
+  };
+
+  return (
+    <div className="demo-page" style={{ paddingTop: 'var(--nav-height)', minHeight: '100vh', background: 'var(--background)' }}>
+      <SEO
+        title="Schedule a Personalized Demo | eVAL Edtech"
+        description="Experience the power of eVAL's AI-driven evaluation ecosystem. Schedule a live demo with our experts today."
+      />
+
+      {/* Decorative Background Elements */}
+      <div className="bg-decoration">
+        <div className="blob blob-1"></div>
+        <div className="blob blob-2"></div>
+      </div>
+
+      <section className="section-padding" style={{ position: 'relative', zIndex: 1 }}>
+        <div className="container" style={{ maxWidth: '800px' }}>
+
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span className="badge">Institutional Access</span>
+            <h1 className="page-title">Experience the <span className="gradient-text">eVAL Suite</span></h1>
+            <p className="page-subtitle">Fill out the form below and our solution expert will guide you through a 30-minute personalized walkthrough.</p>
           </div>
 
-          <div className="card" style={{ background: 'white', padding: '3.5rem', borderRadius: '3rem', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--border)' }}>
-            <h3 style={{ marginBottom: '2.5rem', textAlign: 'center' }}>Secure Your Slot</h3>
-            <form style={{ display: 'grid', gap: '1.25rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ display: 'grid', gap: '0.4rem' }}>
-                  <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Full Name</label>
-                  <input type="text" placeholder="John Doe" style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
+          <div className="form-container">
+            <div className="form-card">
+              <form onSubmit={handleSubmit} className="demo-form">
+                <div className="form-row">
+                  <div className="input-group">
+                    <label>Full Name</label>
+                    <div className="input-with-icon">
+                      <Icons.User size={18} className="input-icon" />
+                      <input name="name" type="text" required value={formData.name} onChange={handleChange} placeholder="e.g. Dr. Sameer" />
+                    </div>
+                  </div>
+                  <div className="input-group">
+                    <label>Contact Number</label>
+                    <div className="input-with-icon">
+                      <Icons.Phone size={18} className="input-icon" />
+                      <input name="phone" type="tel" required value={formData.phone} onChange={handleChange} placeholder="+91 99xx" />
+                    </div>
+                  </div>
                 </div>
-                <div style={{ display: 'grid', gap: '0.4rem' }}>
-                  <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Mobile No</label>
-                  <input type="tel" placeholder="+91 99xx" style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
-                </div>
-              </div>
 
-              <div style={{ display: 'grid', gap: '0.4rem' }}>
-                <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Work Email</label>
-                <input type="email" placeholder="principal@institute.org" style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ display: 'grid', gap: '0.4rem' }}>
-                  <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Company / Organisation</label>
-                  <input type="text" placeholder="Institution Name" style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
+                <div className="input-group">
+                  <label>Professional Email</label>
+                  <div className="input-with-icon">
+                    <Icons.Mail size={18} className="input-icon" />
+                    <input name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="principal@institute.org" />
+                  </div>
                 </div>
-                <div style={{ display: 'grid', gap: '0.4rem' }}>
-                  <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Country</label>
-                  <select style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem', height: '48px' }}>
-                    <option>India</option>
-                    <option>Nigeria</option>
-                    <option>Kenya</option>
-                    <option>United Arab Emirates</option>
-                    <option>United States</option>
-                    <option>United Kingdom</option>
-                    <option>Singapore</option>
-                    <option>Saudi Arabia</option>
-                    <option>Oman</option>
-                    <option>Qatar</option>
-                    <option>Kuwait</option>
-                    <option>Bangladesh</option>
-                    <option>Nepal</option>
-                    <option>Sri Lanka</option>
-                    <option>Bhutan</option>
-                    <option>Other</option>
+
+                <div className="form-row">
+                  <div className="input-group">
+                    <label>Organization</label>
+                    <div className="input-with-icon">
+                      <Icons.Building size={18} className="input-icon" />
+                      <input name="organization" type="text" required value={formData.organization} onChange={handleChange} placeholder="University/School" />
+                    </div>
+                  </div>
+                  <div className="input-group">
+                    <label>Country</label>
+                    <select name="country" required value={formData.country} onChange={handleChange}>
+                      <option>India</option>
+                      <option>Nigeria</option>
+                      <option>Kenya</option>
+                      <option>United Arab Emirates</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="input-group">
+                  <label>Focus Area</label>
+                  <select name="solution" required value={formData.solution} onChange={handleChange}>
+                    <option>Complete eVAL Suite (Recommended)</option>
+                    <option>OMR Evaluation Solutions</option>
+                    <option>CBT & Proctoring Platform</option>
+                    <option>OSM (Digital Marking)</option>
+                    <option>LMS & Content Delivery</option>
                   </select>
                 </div>
-              </div>
 
-              <div style={{ display: 'grid', gap: '0.4rem' }}>
-                <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Focus Solution</label>
-                <select style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem', height: '48px' }}>
-                  <option>Complete eVAL Suite (Recommended)</option>
-                  <option>OMR Software Only</option>
-                  <option>CBT & Proctoring Platform</option>
-                  <option>OSM (Digital Marking)</option>
-                  <option>LMS & Content Delivery</option>
-                </select>
-              </div>
+                <div className="input-group">
+                  <label>Tell us about your requirements</label>
+                  <textarea name="message" required value={formData.message} onChange={handleChange} rows="3" placeholder="Number of students, specific challenges, etc..."></textarea>
+                </div>
 
-              <div style={{ display: 'grid', gap: '0.4rem' }}>
-                <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Request Message</label>
-                <textarea rows="3" placeholder="Tell us about your institutional needs..." style={{ width: '100%', padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem', resize: 'none' }}></textarea>
-              </div>
+                <button type="submit" disabled={status === 'loading'} className="btn btn-primary submit-btn">
+                  {status === 'loading' ? 'Scheduling Demo...' : 'Confirm Demo Request'}
+                  <Icons.ArrowRight size={20} />
+                </button>
 
-              <button type="submit" className="btn btn-primary" style={{ padding: '1.25rem', marginTop: '0.5rem', width: '100%', fontSize: '1.125rem' }}>Confirm Demo Request →</button>
-              <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--muted-foreground)', marginTop: '0.5rem', lineHeight: '1.5' }}>By confirming, you agree to our <span style={{ color: 'var(--primary)', fontWeight: '700' }}>institutional trial terms</span> and privacy policy.</p>
-            </form>
+                <FormStatus status={status} message={message} />
+
+                <p className="form-privacy">
+                  By clicking, you agree to our <span>Privacy Policy</span> and trial terms.
+                </p>
+              </form>
+            </div>
+
+
           </div>
         </div>
-      </div>
-      <div style={{ height: '8rem' }}></div>
+      </section>
+
+      <style>{`
+        .demo-page {
+          overflow-x: hidden;
+          position: relative;
+        }
+
+        .bg-decoration {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          pointer-events: none;
+        }
+
+        .blob {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(80px);
+          opacity: 0.15;
+          z-index: 0;
+        }
+
+        .blob-1 {
+          top: 10%;
+          right: -5%;
+          width: 500px;
+          height: 500px;
+          background: var(--primary);
+        }
+
+        .blob-2 {
+          bottom: 10%;
+          left: -5%;
+          width: 400px;
+          height: 400px;
+          background: #2563eb;
+        }
+
+        .page-title {
+          font-size: clamp(2.5rem, 5vw, 3.5rem);
+          line-height: 1.1;
+          font-weight: 900;
+          margin-bottom: 1rem;
+          color: var(--secondary);
+        }
+
+        .page-subtitle {
+          font-size: 1.125rem;
+          color: var(--muted-foreground);
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .form-container {
+          max-width: 700px;
+          margin: 0 auto;
+        }
+
+        .form-card {
+          background: white;
+          padding: 3.5rem;
+          border-radius: 3rem;
+          box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+          border: 1px solid var(--border);
+          position: relative;
+          z-index: 2;
+        }
+
+        .demo-form {
+          display: grid;
+          gap: 1.5rem;
+        }
+
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.25rem;
+        }
+
+        .input-group {
+          display: flex;
+          flex-direction: column;
+          gap: 0.6rem;
+        }
+
+        .input-group label {
+          font-size: 0.8125rem;
+          font-weight: 700;
+          color: var(--foreground);
+          margin-left: 0.25rem;
+        }
+
+        .input-with-icon {
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+
+        .input-icon {
+          position: absolute;
+          left: 1rem;
+          color: var(--muted-foreground);
+        }
+
+        .input-with-icon input {
+          padding-left: 3rem !important;
+        }
+
+        .input-group input, 
+        .input-group select, 
+        .input-group textarea {
+          width: 100%;
+          padding: 0.875rem 1.25rem;
+          border-radius: 1rem;
+          border: 1px solid var(--border);
+          background: #f8fafc;
+          font-size: 0.9375rem;
+          transition: var(--transition);
+        }
+
+        .input-group input:focus, 
+        .input-group select:focus, 
+        .input-group textarea:focus {
+          border-color: var(--primary);
+          background: white;
+          box-shadow: 0 0 0 4px var(--primary-light);
+          outline: none;
+        }
+
+        .submit-btn {
+          margin-top: 1rem;
+          padding: 1.25rem;
+          border-radius: 1rem;
+          font-size: 1.125rem;
+          font-weight: 800;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.75rem;
+          box-shadow: 0 10px 25px rgba(14, 165, 164, 0.2);
+        }
+
+        .form-privacy {
+          text-align: center;
+          font-size: 0.75rem;
+          color: var(--muted-foreground);
+          margin-top: 1rem;
+        }
+
+        .form-privacy span {
+          color: var(--primary);
+          font-weight: 700;
+          cursor: pointer;
+        }
+
+        .trust-strip {
+          text-align: center;
+          margin-top: 3rem;
+          padding: 2rem;
+          border-radius: 2rem;
+          background: rgba(255,255,255,0.5);
+          backdrop-filter: blur(10px);
+        }
+
+        .trust-strip p {
+          font-size: 0.75rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--muted-foreground);
+          margin-bottom: 1.5rem;
+        }
+
+        .trust-logos {
+          display: flex;
+          gap: 2rem;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .trust-logos span {
+          font-size: 0.875rem;
+          font-weight: 700;
+          color: var(--secondary);
+          opacity: 0.5;
+        }
+
+        @media (max-width: 640px) {
+          .form-row {
+            grid-template-columns: 1fr;
+          }
+          
+          .form-card {
+            padding: 2rem 1.5rem;
+            border-radius: 2rem;
+          }
+
+          .page-title {
+            font-size: 2.5rem;
+          }
+        }
+      `}</style>
     </div>
   );
 };

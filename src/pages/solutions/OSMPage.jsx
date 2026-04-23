@@ -1,5 +1,6 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import SEO from '@/components/common/SEO';
 import { Link } from 'react-router-dom';
 import FAQ from '@/components/FAQ';
 
@@ -65,14 +66,19 @@ const OSMPage = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <SEO 
+        title="On-Screen Marking (OSM) Solution | Digital Script Evaluation"
+        description="Digitize answer sheet evaluation with eVAL On-Screen Marking (OSM). Secure, bias-free, and automated mark compilation for descriptive examinations."
+        keywords="On-Screen Marking, OSM Solution, Digital Answer Sheet Evaluation, Examiner Marking Software, Descriptive Exam Marking"
+      />
       {/* Hero / Overview */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(2rem, 8vw, 6rem)', alignItems: 'center' }}>
             <div>
               <span className="badge">Descriptive Evaluation</span>
-              <h1 style={{ fontSize: '3.5rem' }}>On-Screen <span className="gradient-text">Marking Solution</span></h1>
-              <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+              <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>On-Screen <span className="gradient-text">Marking Solution</span></h1>
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
                 eVAL On-Screen Marking (OSM) Solution is a secure digital evaluation system designed to simplify and speed up the assessment of answer sheets. It enables examiners to evaluate scanned answer scripts directly on screen, eliminating the need for manual paper-based checking.
               </p>
               <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
@@ -80,7 +86,7 @@ const OSMPage = () => {
                   A key strength of the eVAL On-Screen Marking Solution is its ability to support both Objective and Subjective answer sheets on a single platform. OSM transforms the marking and scoring of descriptive answer scripts into a precise, simple, secure, and efficient process — eliminating logistical, administrative, and accuracy challenges of traditional paper-based evaluation.
                 </p>
               </div>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
                 <Link to="/book-demo" className="btn btn-primary">Request a Pilot</Link>
                 <Link to="/contact" className="btn btn-outline">Consult Our Team</Link>
               </div>
@@ -99,10 +105,9 @@ const OSMPage = () => {
             <h2>The <span className="gradient-text">8-Step</span> OSM Workflow</h2>
           </div>
           <div style={{ position: 'relative' }}>
-            <div style={{ position: 'absolute', top: '24px', left: '0', right: '0', height: '2px', background: 'var(--border)', zIndex: 0 }} className="md-block"></div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '3rem', position: 'relative', zIndex: 1 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', position: 'relative', zIndex: 1 }}>
               {steps.map((s, i) => (
-                <div key={i} style={{ textAlign: 'center', background: 'white', border: '1px solid var(--border)', borderRadius: '1rem', padding: '2rem' }}>
+                <div key={i} style={{ textAlign: 'center', background: 'white', border: '1px solid var(--border)', borderRadius: '1.5rem', padding: 'clamp(1.5rem, 5vw, 2.5rem)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
                   <div style={{ width: '48px', height: '48px', background: 'var(--primary)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontWeight: '900', boxShadow: '0 4px 10px rgba(14, 165, 164, 0.3)' }}>{i + 1}</div>
                   <h4 style={{ fontSize: '1.125rem', marginBottom: '0.75rem' }}>{s.title}</h4>
                   <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6', margin: 0 }}>{s.desc}</p>

@@ -1,5 +1,6 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import SEO from '@/components/common/SEO';
 import { Link } from 'react-router-dom';
 import FAQ from '@/components/FAQ';
 
@@ -70,6 +71,11 @@ const CBTPage = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <SEO 
+        title="Computer Based Test (CBT) Platform | Online Exam System"
+        description="Secure and scalable Computer Based Test (CBT) platform for entrance exams, corporate assessments, and certifications. Feature-rich online examination system."
+        keywords="CBT Platform, Online Exam Software, Computer Based Test System, Secure Online Assessment, Entrance Exam Software"
+      />
       {/* Hero / Overview */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">

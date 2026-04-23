@@ -1,5 +1,6 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import SEO from '@/components/common/SEO';
 import { Link } from 'react-router-dom';
 import FAQ from '@/components/FAQ';
 
@@ -68,20 +69,25 @@ const LMSPage = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <SEO 
+        title="Learning Management System (LMS) | Education Technology"
+        description="A powerful Learning Management System (LMS) for schools and universities. Manage courses, track student progress, and deliver blended learning."
+        keywords="LMS, Learning Management System, Education Software, E-learning Platform, School Management Software"
+      />
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(2rem, 8vw, 6rem)', alignItems: 'center' }}>
             <div>
               <span className="badge">LMS Central</span>
-              <h1 style={{ fontSize: '3.5rem' }}>Learning <span className="gradient-text">Management System</span></h1>
-              <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+              <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>Learning <span className="gradient-text">Management System</span></h1>
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
                 VIR Softech's Learning Management System (LMS) is an easy and efficient way to deliver student learning and manage the entire learning process at scale. Everything needed to manage learning efficiently, productively, and cost-effectively is built into this platform.
               </p>
               <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
                 <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem', lineHeight: '1.6' }}>
                   Whether your institution is a school, university, government cell, recruitment unit, coaching institute, or education and training centre, the eVAL LMS is designed to be flexible, scalable, and future-ready. It supports online classrooms, self-paced courses, training programmes, and a full management portal.</p>
               </div>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
                 <Link to="/contact" className="btn btn-primary">Enquiry Now</Link>
                 <Link to="/book-demo" className="btn btn-outline">Request Demo</Link>
               </div>

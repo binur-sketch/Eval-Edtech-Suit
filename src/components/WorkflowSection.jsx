@@ -10,7 +10,7 @@ const WorkflowSection = () => {
   ];
 
   return (
-    <section className="section-padding" style={{ background: 'white' }}>
+    <section id="how-it-works" className="section-padding" style={{ background: 'white' }}>
       <div className="container">
 
         {/* Header */}

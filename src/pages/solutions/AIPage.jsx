@@ -1,5 +1,6 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import SEO from '@/components/common/SEO';
 import { Link } from 'react-router-dom';
 import FAQ from '@/components/FAQ';
 
@@ -79,14 +80,19 @@ const AIPage = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <SEO 
+        title="AI Proctoring Software | Secure Remote Exam Monitoring"
+        description="Prevent cheating in online exams with AI Proctoring. Facial recognition, eye tracking, and browser lockdown for 100% secure remote assessments."
+        keywords="AI Proctoring, Remote Invigilation, Online Exam Security, Proctoring Software, Facial Recognition Exam, Anti-Cheating Software"
+      />
       {/* Hero / Overview */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(2rem, 8vw, 6rem)', alignItems: 'center' }}>
             <div>
               <span className="badge">AI-Powered Integrity</span>
-              <h1 style={{ fontSize: '3.5rem' }}>AI-Based <span className="gradient-text">Proctored</span> Exam Solution</h1>
-              <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+              <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>AI-Based <span className="gradient-text">Proctored</span> Exam Solution</h1>
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
                 The eVAL AI-Based Proctored Exam solution brings artificial intelligence to the forefront of exam integrity. Instead of relying solely on human invigilators, advanced AI systems monitor candidates in real time during online examinations — detecting suspicious behaviour, verifying identity, and generating detailed audit reports, all without requiring physical supervision.
               </p>
               <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
@@ -94,18 +100,13 @@ const AIPage = () => {
                   AI proctoring is particularly valuable for high-stakes examinations such as university entrance tests, government recruitment exams, professional certifications, and competitive assessments where maintaining absolute integrity is critical. The system scales to thousands of simultaneous candidates while maintaining consistency and fairness.
                 </p>
               </div>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
                 <Link to="/book-demo" className="btn btn-primary">Request a Live Demo</Link>
                 <Link to="/contact" className="btn btn-outline">Check Scalability</Link>
               </div>
             </div>
             <div style={{ position: 'relative' }}>
               <img src="/assets/images/ai_proctoring.png" alt="AI Proctoring Dashboard" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
-              <div style={{ position: 'absolute', top: '20px', left: '-20px', background: 'white', padding: '1rem', borderRadius: '1rem', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', animation: 'pulse 2s infinite' }}>
-                <div style={{ color: 'var(--primary)', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Icons.AlertTriangle size={16} /> Violation Detected
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -154,9 +155,9 @@ const AIPage = () => {
       {/* Feature List Grid */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ background: 'var(--secondary)', color: 'white', padding: '5rem 4rem', borderRadius: '3rem' }}>
+          <div style={{ background: 'var(--secondary)', color: 'white', padding: 'clamp(2rem, 8vw, 5rem) clamp(1.5rem, 5vw, 4rem)', borderRadius: '3rem' }}>
             <h2 style={{ color: 'white', textAlign: 'center', marginBottom: '4rem' }}>Detailed <span className="gradient-text">Feature List</span></h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(2rem, 5vw, 4rem)' }}>
               {detailedFeatures.map((featureBlock, idx) => (
                 <div key={idx}>
                   <h4 style={{ color: 'var(--primary)', marginBottom: '1.5rem', fontSize: '1.125rem' }}>{featureBlock.title}</h4>
