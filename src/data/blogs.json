@@ -5,6 +5,8 @@
         "excerpt": "How modern OMR technology is integrating with AI for 100% accurate results across diverse examination formats.",
         "author": "eVAL Tech Team",
         "date": "April 5, 2026",
+        "category": "OMR",
+        "readTime": "5 min read",
         "image": "/assets/images/omr_design_1775641567973.png"
     },
     {
@@ -13,6 +15,8 @@
         "excerpt": "Exploring the latest anti-cheating protocols and AI proctoring capabilities in computerized testing environments.",
         "author": "Security Dept.",
         "date": "March 28, 2026",
+        "category": "CBT",
+        "readTime": "6 min read",
         "image": "/assets/images/omr_scanning_unit_1775641546229.png"
     },
     {
@@ -21,6 +25,8 @@
         "excerpt": "A comprehensive look at how tier-1 and tier-2 universities are adopting hybrid examination models for scalable evaluation.",
         "author": "eVAL Research",
         "date": "March 15, 2026",
+        "category": "Education",
+        "readTime": "7 min read",
         "image": "/assets/images/omr_design_1775641567973.png"
     },
     {
@@ -29,6 +35,8 @@
         "excerpt": "Research findings on how OSM software improves marking consistency and reduces evaluator burnout in large-scale assessments.",
         "author": "Dr. Sunita Verma",
         "date": "February 22, 2026",
+        "category": "OSM",
+        "readTime": "4 min read",
         "image": "/assets/images/omr_scanning_unit_1775641546229.png"
     },
     {
@@ -37,6 +45,8 @@
         "excerpt": "How cryptographic verification is revolutionizing question paper security and eliminating pre-exam leaks.",
         "author": "eVAL Engineering",
         "date": "February 10, 2026",
+        "category": "QPMS",
+        "readTime": "6 min read",
         "image": "/assets/images/omr_design_1775641567973.png"
     }
 ]

@@ -60,7 +60,41 @@ const OMRPage = () => {
     '/assets/images/government/Council of Scientific and Industrial Research.png',
     '/assets/images/government/Maulana Azad Medical College.png'
   ];
-
+  const omrFaqs = [
+    {
+      question: "What types of OMR sheets are supported?",
+      answer: "Our OMR software supports standard as well as fully customized OMR sheet designs, including multiple sections, variable marking schemes, and barcode/QR-based identification."
+    },
+    {
+      question: "Does the software require a special OMR scanner?",
+      answer: "No, the system works with regular flatbed scanners and multifunction printers, making it cost-effective and hardware-independent."
+    },
+    {
+      question: "How accurate is the OMR evaluation process?",
+      answer: "The software ensures near 100% accuracy with advanced error detection, automatic validation, and configurable checking rules."
+    },
+    {
+      question: "Can I generate reports and analytics from OMR results?",
+      answer: "Yes, detailed reports including candidate-wise, center-wise, and overall performance analytics can be generated instantly."
+    },
+    {
+      question: "Is negative marking supported?",
+      answer: "Yes, the system allows flexible marking schemes including negative marking, section-wise scoring, and custom evaluation logic."
+    }
+  ];
+  const featureMeta = [
+    { label: "Accuracy", icon: Icons.CheckCircle2 },
+    { label: "Design", icon: Icons.Layout },
+    { label: "Compatibility", icon: Icons.Layers },
+    { label: "Complex Sheets", icon: Icons.Grid },
+    { label: "Image Capture", icon: Icons.Image },
+    { label: "QR/Barcode", icon: Icons.QrCode },
+    { label: "Validation", icon: Icons.ShieldCheck },
+    { label: "Reports", icon: Icons.BarChart3 },
+    { label: "Scalability", icon: Icons.TrendingUp },
+    { label: "Ease of Use", icon: Icons.Smile },
+    { label: "Support", icon: Icons.Headphones }
+  ];
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       {/* Hero Section */}
@@ -130,22 +164,149 @@ const OMRPage = () => {
       {/* The 5-Step Process */}
       <section className="section-padding" style={{ background: 'white' }}>
         <div className="container">
+
+          {/* Heading */}
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <span className="badge">Process Workflow</span>
-            <h2>The Simple <span className="gradient-text">5-Step Process</span></h2>
+            <h2>
+              The Simple <span className="gradient-text">5-Step Process</span>
+            </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '2.5rem' }}>
+
+          {/* Steps */}
+          <div className="process-row">
             {steps.map((s, i) => (
-              <div key={i} className="card hover-lift" style={{ textAlign: 'center', background: 'var(--muted)', borderTop: `4px solid var(--primary)` }}>
-                <div style={{ color: 'var(--primary)', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
-                  <div style={{ padding: '1rem', background: 'var(--primary-light)', borderRadius: '1rem' }}>{s.icon}</div>
+              <div key={i} className="process-col">
+
+                {/* Step */}
+                <div className="process-card">
+
+                  {/* Number */}
+                  <div className="step-badge">{i + 1}</div>
+
+                  {/* Icon */}
+                  <div className="icon-wrap">{s.icon}</div>
+
+                  {/* Content */}
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
                 </div>
-                <h3 style={{ fontSize: '1.125rem', marginBottom: '1rem' }}>{s.title}</h3>
-                <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6', margin: 0 }}>{s.desc}</p>
+
+                {/* Arrow */}
+                {i !== steps.length - 1 && (
+                  <div className="arrow">→</div>
+                )}
               </div>
             ))}
           </div>
+
         </div>
+
+        <style>{`
+
+    .process-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: nowrap;
+    }
+
+    .process-col {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    /* CARD */
+    .process-card {
+      width: 240px; /* 👈 fixed width fixes stretching */
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .process-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+
+    /* NUMBER */
+    .step-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ICON */
+    .icon-wrap {
+      margin-bottom: 1rem;
+      color: var(--primary);
+      display: flex;
+      justify-content: center;
+    }
+
+    /* TEXT */
+    .process-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+
+    .process-card p {
+      font-size: 0.85rem;
+      color: var(--muted-foreground);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ARROW */
+    .arrow {
+      font-size: 1.5rem;
+      color: var(--primary);
+      opacity: 0.5;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .process-row {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .process-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .process-col {
+        flex-direction: column;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+  `}</style>
       </section>
 
       {/* Key Features */}
@@ -169,33 +330,133 @@ const OMRPage = () => {
         </div>
       </section>
 
+
       {/* Comparison Table */}
       <section className="section-padding" style={{ background: 'white' }}>
         <div className="container">
+
+          {/* Heading */}
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span className="badge">Competitive Advantage</span>
-            <h2>eVAL OMR vs. <span className="gradient-text">Other OMR Software</span></h2>
-            <p style={{ marginTop: '1.5rem', color: 'var(--muted-foreground)' }}>How we outperform traditional OMR solutions</p>
+            <h2>
+              eVAL OMR vs. <span className="gradient-text">Other OMR Software</span>
+            </h2>
+            <p style={{ marginTop: '1.5rem', color: 'var(--muted-foreground)' }}>
+              How we outperform traditional OMR solutions
+            </p>
           </div>
 
-          <div className="card" style={{ padding: 0, overflow: 'hidden', background: 'var(--muted)' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-              <thead>
-                <tr style={{ background: 'var(--foreground)', color: 'white' }}>
-                  <th style={{ padding: '2rem', width: '50%' }}>eVAL OMR Software</th>
-                  <th style={{ padding: '2rem', width: '50%' }}>Other OMR Software</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonData.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid var(--border)' }}>
-                    <td style={{ padding: '1.5rem 2rem', color: 'var(--primary)', fontWeight: '600', background: 'rgba(14, 165, 164, 0.02)' }}>{row.e}</td>
-                    <td style={{ padding: '1.5rem 2rem', color: 'var(--muted-foreground)' }}>{row.o}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          {/* Table */}
+          <div style={{
+            borderRadius: '2rem',
+            overflow: 'hidden',
+            border: '1px solid var(--border)',
+            background: 'white'
+          }}>
+
+            {/* Header */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '0.7fr 1.5fr 1.5fr',
+              background: 'var(--foreground)',
+              color: 'white',
+              fontWeight: '700'
+            }}>
+              <div style={{ padding: '1.8rem' }}></div>
+              <div style={{ padding: '1.8rem' }}>eVAL OMR Software</div>
+              <div style={{ padding: '1.8rem' }}>Other OMR Software</div>
+            </div>
+
+            {/* Rows */}
+            {comparisonData.map((row, i) => (
+              <div
+                key={i}
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '0.7fr 1.5fr 1.5fr',
+                  borderBottom: '1px solid var(--border)',
+                  alignItems: 'stretch'
+                }}
+              >
+
+                {/* Feature Label (Auto Generated) */}
+                <div style={{
+                  padding: '1.5rem',
+                  background: 'var(--muted)',
+                  fontWeight: '700',
+                  fontSize: '0.9rem',
+                  display: 'flex',
+                  alignItems: 'center'
+                }}>
+                  <div
+                    style={{
+                      padding: '1.5rem',
+                      background: 'var(--muted)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.75rem'
+                    }}
+                  >
+                    {(() => {
+                      const Icon = featureMeta[i]?.icon;
+                      return (
+                        <>
+                          <div
+                            style={{
+                              width: '36px',
+                              height: '36px',
+                              borderRadius: '10px',
+                              background: 'rgba(14,165,164,0.1)',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              flexShrink: 0
+                            }}
+                          >
+                            {Icon && <Icon size={18} style={{ color: 'var(--primary)' }} />}
+                          </div>
+
+                          <span
+                            style={{
+                              fontWeight: '700',
+                              fontSize: '0.9rem',
+                              color: 'var(--foreground)'
+                            }}
+                          >
+                            {featureMeta[i]?.label || `Feature ${i + 1}`}
+                          </span>
+                        </>
+                      );
+                    })()}
+                  </div>
+
+                </div>
+
+                {/* eVAL */}
+                <div style={{
+                  padding: '1.5rem',
+                  color: 'var(--primary)',
+                  fontWeight: '600',
+                  background: 'rgba(14,165,164,0.03)',
+                  lineHeight: '1.6'
+                }}>
+                  {row.e}
+                </div>
+
+                {/* Others */}
+                <div style={{
+                  padding: '1.5rem',
+                  color: 'var(--muted-foreground)',
+                  lineHeight: '1.6'
+                }}>
+                  {row.o}
+                </div>
+
+              </div>
+            ))}
+
           </div>
+
         </div>
       </section>
 
@@ -208,8 +469,8 @@ const OMRPage = () => {
               <h2 style={{ color: 'white' }}>Ready for a <span className="gradient-text">100% Accurate</span> Future?</h2>
               <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '640px', margin: '2rem auto 4rem', fontSize: '1.125rem' }}>Deploy the simplest, standard-hardware driven eVAL OMR system for your educational evaluation.</p>
               <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '2rem' }}>
-                <Link to="/book-demo" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Start Free Trial</Link>
-                <Link to="/contact" className="btn btn-outline" style={{ color: 'white', borderColor: 'white', padding: '1.25rem 3.5rem' }}>Request Demo</Link>
+                <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Start Free Trial</Link>
+                <Link to="/book-demo" className="btn btn-outline" style={{ color: 'white', borderColor: 'white', padding: '1.25rem 3.5rem' }}>Request Demo</Link>
               </div>
             </div>
             <div style={{ position: 'absolute', top: '-50%', right: '-20%', width: '100%', height: '200%', background: 'radial-gradient(circle, rgba(14, 165, 164, 0.1) 0%, transparent 70%)', zIndex: 0 }}></div>
@@ -217,7 +478,7 @@ const OMRPage = () => {
         </div>
       </section>
       {/* FAQ */}
-      < FAQ />
+      <FAQ faqs={omrFaqs} />
 
     </div>
   );

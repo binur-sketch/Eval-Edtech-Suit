@@ -52,6 +52,30 @@ const AIPage = () => {
       items: ['Proctoring summary report', 'Violation logs', 'Session recording playback', 'Candidate risk level scoring', 'Detailed audit trail']
     }
   ];
+  const aiFaqs = [
+    {
+      question: "How does AI proctoring prevent cheating?",
+      answer: "The system uses AI to monitor candidates via webcam, microphone, and screen activity to detect suspicious behavior in real time."
+    },
+    {
+      question: "What kind of violations can be detected?",
+      answer: "It detects multiple faces, absence from screen, mobile usage, tab switching, and unusual movements."
+    },
+    {
+      question: "Is human intervention required during proctoring?",
+      answer: "AI handles real-time monitoring, but live proctors can also be added for hybrid supervision if required."
+    },
+    {
+      question: "Does it work on low bandwidth internet?",
+      answer: "Yes, the system is optimized for low bandwidth conditions while maintaining monitoring accuracy."
+    },
+    {
+      question: "Are the exam recordings stored?",
+      answer: "Yes, all sessions are recorded and stored securely for audit and review purposes."
+    }
+  ];
+
+
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
@@ -167,7 +191,7 @@ const AIPage = () => {
         }
       `}</style>
       {/* FAQ */}
-      < FAQ />
+      <FAQ faqs={aiFaqs} />
     </div>
   );
 };

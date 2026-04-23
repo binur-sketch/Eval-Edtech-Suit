@@ -38,7 +38,7 @@ const Contact = () => {
             </div>
 
             <div className="card" style={{ padding: '3.5rem', borderRadius: '2rem', background: 'white' }}>
-              <h3 style={{ marginBottom: '2rem' }}>Request a <span className="gradient-text">Personalized Demo</span></h3>
+              <h3 style={{ marginBottom: '2rem' }}>Request for a <span className="gradient-text">Call</span></h3>
               <form style={{ display: 'grid', gap: '1.25rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ display: 'grid', gap: '0.4rem' }}>
@@ -84,16 +84,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gap: '0.4rem' }}>
-                  <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Focus Solution</label>
-                  <select style={{ padding: '0.9rem 1.25rem', borderRadius: '0.75rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem', height: '48px' }}>
-                    <option>Complete eVAL Suite (Recommended)</option>
-                    <option>OMR Software (Scanning/Designing)</option>
-                    <option>CBT & Proctoring Platform</option>
-                    <option>OSM (On-Screen Marking)</option>
-                    <option>QPMS (Question Paper Management)</option>
-                  </select>
-                </div>
+
 
                 <div style={{ display: 'grid', gap: '0.4rem' }}>
                   <label style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Request Message</label>

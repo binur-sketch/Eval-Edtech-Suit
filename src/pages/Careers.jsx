@@ -214,7 +214,7 @@ const Careers = () => {
               <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto 3rem', fontSize: '1.125rem' }}>
                 We're always looking for exceptional talent. Send us your CV and tell us how you'd make an impact.
               </p>
-              <a href="mailto:careers@virsoftech.com" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>
+              <a href="mailto:nishac@virsoftech.com" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>
                 Send Open Application
               </a>
             </div>

@@ -207,7 +207,7 @@ const Clients = () => {
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: '3rem' }}>Partner with <span className="gradient-text">eVAL</span></h2>
           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', fontSize: '1.125rem', color: 'var(--muted-foreground)' }}>Experience 100% accuracy and institutional transparency in your examination lifecycle.</p>
-          <button className="btn btn-primary" style={{ padding: '1.25rem 4rem' }}>Request Institutional Demo</button>
+          <a href='/book-demo'> <button className="btn btn-primary" style={{ padding: '1.25rem 4rem' }}>Request Institutional Demo</button></a>
         </div>
       </section>
     </div>

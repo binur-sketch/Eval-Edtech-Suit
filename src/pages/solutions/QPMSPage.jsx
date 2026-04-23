@@ -37,6 +37,28 @@ const QPMSPage = () => {
     'Reduced risk of paper leaks',
     'Centralized management of question papers',
   ];
+  const qpmsFaqs = [
+    {
+      question: "How does QPMS ensure question paper security?",
+      answer: "QPMS uses encryption, access control, and timed access to prevent unauthorized access or leaks."
+    },
+    {
+      question: "Can multiple users collaborate on paper creation?",
+      answer: "Yes, paper setters, moderators, and approvers can work together through role-based workflows."
+    },
+    {
+      question: "Does it support random paper generation?",
+      answer: "Yes, the system can auto-generate question papers based on predefined blueprints and difficulty levels."
+    },
+    {
+      question: "Can we maintain a question bank?",
+      answer: "Absolutely, a centralized question bank with tagging, categorization, and version control is included."
+    },
+    {
+      question: "Is there an audit trail for changes?",
+      answer: "Yes, every activity is logged to ensure complete transparency and accountability."
+    }
+  ];
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
@@ -137,7 +159,7 @@ const QPMSPage = () => {
         </div>
       </section>
       {/* FAQ */}
-      < FAQ />
+      <FAQ faqs={qpmsFaqs} />
 
     </div>
   );

@@ -40,6 +40,28 @@ const OSMPage = () => {
     { role: 'OMR Validator', access: 'Responsible for correcting errors on the student information sheet manually' },
     { role: 'Student', access: 'View evaluated script online • See examiner annotations • Submit recheck request • Track recheck status' },
   ];
+  const osmFaqs = [
+    {
+      question: "What is OSM and how does it work?",
+      answer: "OSM (Onscreen Marking) allows evaluators to check scanned answer sheets digitally, eliminating the need for physical paper handling."
+    },
+    {
+      question: "Can multiple evaluators check the same answer sheet?",
+      answer: "Yes, the system supports multi-level evaluation, rechecking, and moderation workflows for improved accuracy."
+    },
+    {
+      question: "How secure is the evaluation process?",
+      answer: "The platform includes encrypted access, role-based permissions, and complete tracking of evaluator activity."
+    },
+    {
+      question: "Does OSM reduce evaluation time?",
+      answer: "Yes, it significantly reduces evaluation time by enabling parallel checking and automated mark compilation."
+    },
+    {
+      question: "Can evaluators work remotely?",
+      answer: "Yes, evaluators can securely access the system from anywhere, enabling remote and distributed evaluation."
+    }
+  ];
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
@@ -162,7 +184,7 @@ const OSMPage = () => {
         </div>
       </section>
       {/* FAQ */}
-      < FAQ />
+      <FAQ faqs={osmFaqs} />
 
     </div>
   );

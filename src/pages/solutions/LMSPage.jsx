@@ -43,29 +43,55 @@ const LMSPage = () => {
     { title: 'Payment Gateway', desc: 'Payment gateway integration ready for course fees, subscriptions, and other transactions.', icon: <Icons.CreditCard /> },
     { title: 'Reports & Roster', desc: 'High-level management reports for tracking performance, roster of users, and activity logs.', icon: <Icons.PieChart /> }
   ];
+  const lmsFaqs = [
+    {
+      question: "What features does your LMS offer?",
+      answer: "Our LMS includes course management, student tracking, assessments, content delivery, and performance analytics."
+    },
+    {
+      question: "Can we upload different types of learning content?",
+      answer: "Yes, videos, PDFs, presentations, quizzes, and interactive modules can all be uploaded."
+    },
+    {
+      question: "Does LMS support live classes??",
+      answer: "Yes, it integrates with live class tools for real-time teaching and interaction."
+    },
+    {
+      question: "Can we track student performance?",
+      answer: "Yes, detailed analytics and reports help monitor student progress and engagement."
+    },
+    {
+      question: "Is the LMS customizable?",
+      answer: "Yes, the platform can be tailored to your institution’s branding and learning requirements."
+    }
+  ];
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
-      {/* Overview */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
-          <span className="badge">LMS Central</span>
-          <h1 style={{ fontSize: '3.5rem' }}>Learning <span className="gradient-text">Management System</span></h1>
-          <p style={{ fontSize: '1.25rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
-            VIR Softech's Learning Management System (LMS) is an easy and efficient way to deliver student learning and manage the entire learning process at scale. Everything needed to manage learning efficiently, productively, and cost-effectively is built into this platform.
-          </p>
-          <div style={{ background: 'white', padding: '2rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem', display: 'inline-block' }}>
-            <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem' }}>
-              Whether your institution is a school, university, government cell, recruitment unit, coaching institute, or education and training centre, the eVAL LMS is designed to be flexible, scalable, and future-ready. It supports online classrooms, self-paced courses, training programmes, and a full management portal.
-            </p>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '3rem' }}>
-            <Link to="/contact" className="btn btn-primary">Enquire Now</Link>
-            <Link to="/book-demo" className="btn btn-outline">Request Demo</Link>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+            <div>
+              <span className="badge">LMS Central</span>
+              <h1 style={{ fontSize: '3.5rem' }}>Learning <span className="gradient-text">Management System</span></h1>
+              <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+                VIR Softech's Learning Management System (LMS) is an easy and efficient way to deliver student learning and manage the entire learning process at scale. Everything needed to manage learning efficiently, productively, and cost-effectively is built into this platform.
+              </p>
+              <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
+                <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem', lineHeight: '1.6' }}>
+                  Whether your institution is a school, university, government cell, recruitment unit, coaching institute, or education and training centre, the eVAL LMS is designed to be flexible, scalable, and future-ready. It supports online classrooms, self-paced courses, training programmes, and a full management portal.</p>
+              </div>
+              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
+                <Link to="/contact" className="btn btn-primary">Enquiry Now</Link>
+                <Link to="/book-demo" className="btn btn-outline">Request Demo</Link>
+              </div>
+            </div>
+            <div style={{ position: 'relative' }}>
+              <img src="/assets/images/LMS.png" alt="On-Screen Marking" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+            </div>
           </div>
         </div>
       </section>
-
       {/* Role Management */}
       <section className="section-padding">
         <div className="container">
@@ -155,7 +181,7 @@ const LMSPage = () => {
         </div>
       </section>
       {/* FAQ */}
-      < FAQ />
+      <FAQ faqs={lmsFaqs} />
 
     </div>
   );

@@ -45,29 +45,56 @@ const CBTPage = () => {
       items: ['Candidate performance report', 'Center-wise and session-wise performance reports', 'Attendance report and question analysis report', 'Export in Excel/PDF format']
     },
   ];
+  const cbtFaqs = [
+    {
+      question: "What types of questions are supported in CBT?",
+      answer: "The system supports MCQs, descriptive questions, case studies, and multimedia-based questions."
+    },
+    {
+      question: "Can CBT exams be conducted remotely?",
+      answer: "Yes, CBT can be conducted remotely with optional AI proctoring for secure monitoring."
+    },
+    {
+      question: "How is result processing handled?",
+      answer: "Objective questions are evaluated instantly, while descriptive answers can be assessed manually or via onscreen marking."
+    },
+    {
+      question: "Is the platform scalable for large exams?",
+      answer: "Yes, it is designed to handle thousands to lakhs of candidates simultaneously."
+    },
+    {
+      question: "Can we schedule and manage multiple exams?",
+      answer: "Yes, you can easily schedule, manage, and monitor multiple exams from a single dashboard."
+    }
+  ];
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
       {/* Hero / Overview */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
-          <span className="badge">Overview</span>
-          <h1 style={{ fontSize: '3.5rem' }}>Center Based <span className="gradient-text">Examination Solution</span></h1>
-          <p style={{ fontSize: '1.25rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
-            A comprehensive platform designed to conduct secure, scalable, and controlled computer-based tests at designated examination centers. This solution ensures a standardized testing environment, minimizes malpractice, and allows organizations to conduct large-scale examinations efficiently.
-          </p>
-          <div style={{ background: 'white', padding: '2rem', borderRadius: '1rem', border: '1px solid var(--border)', display: 'inline-block', marginTop: '2rem' }}>
-            <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)' }}>
-              It is suitable for universities, recruitment boards, certification bodies, government organizations, and corporates that require reliable exam execution across multiple locations.
-            </p>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '3rem' }}>
-            <Link to="/contact" className="btn btn-primary">Institutional Inquiry</Link>
-            <Link to="/book-demo" className="btn btn-outline">Request Demo</Link>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+            <div>
+              <span className="badge">Overview</span>
+              <h1 style={{ fontSize: '3.5rem' }}>Center Based <span className="gradient-text">Examination Solution</span></h1>
+              <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+                A comprehensive platform designed to conduct secure, scalable, and controlled computer-based tests at designated examination centers. This solution ensures a standardized testing environment, minimizes malpractice, and allows organizations to conduct large-scale examinations efficiently.</p>
+              <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
+                <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem', lineHeight: '1.6' }}>
+                  It is suitable for universities, recruitment boards, certification bodies, government organizations, and corporates that require reliable exam execution across multiple locations.e, and efficient process — eliminating logistical, administrative, and accuracy challenges of traditional paper-based evaluation.
+                </p>
+              </div>
+              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
+                <Link to="/contact" className="btn btn-primary">Institutional Enquiry</Link>
+                <Link to="/book-demo" className="btn btn-outline">Request Demo</Link>
+              </div>
+            </div>
+            <div style={{ position: 'relative' }}>
+              <img src="/assets/images/CBT.png" alt="On-Screen Marking" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+            </div>
           </div>
         </div>
       </section>
-
       {/* Process Flow */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
@@ -120,7 +147,7 @@ const CBTPage = () => {
         </div>
       </section>
       {/* FAQ */}
-      < FAQ />
+      <FAQ faqs={cbtFaqs} />
     </div>
   );
 };
