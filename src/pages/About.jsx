@@ -224,7 +224,7 @@ const About = () => {
             {values.map((v, i) => (
               <div key={i} className="card" style={{ padding: 'clamp(1.5rem, 5vw, 3.5rem)', textAlign: 'center', background: 'white' }}>
                 <div style={{ color: 'var(--primary)', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>{v.icon}</div>
-                <h3 style={{ marginBottom: '1.5rem' }}>{v.title}</h3>
+                <h3 style={{ marginBottom: '1.5rem', fontSize: '1.25rem' }}>{v.title}</h3>
                 <p style={{ color: 'var(--muted-foreground)' }}>{v.desc}</p>
               </div>
             ))}
@@ -449,7 +449,7 @@ const About = () => {
       {/* CTA */}
       <section className="section-padding">
         <div className="container" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: 'clamp(1.75rem, 8vw, 3rem)' }}>Partner with a <span className="gradient-text">Global Leader</span></h2>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 8vw, 2.5rem)' }}>Partner with a <span className="gradient-text">Global Leader</span></h2>
           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)', fontSize: '1.125rem' }}>Headquartered in New Delhi, India, and supported by our international office in Tokyo, Japan.</p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
             <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Contact HQ</Link>

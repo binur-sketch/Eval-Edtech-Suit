@@ -80,10 +80,10 @@ const Home = () => {
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem' }}>
             <span className="badge">Our Solutions</span>
-            <h2 style={{ marginBottom: '1.5rem' }}>
+            <h2>
               One Platform. <span className="gradient-text">Complete Examination Ecosystem</span>
             </h2>
-            <p style={{ color: 'var(--muted-foreground)', fontSize: '1.125rem' }}>
+            <p>
               Digitize, automate, and scale your entire assessment lifecycle — from OMR to AI-powered evaluation.
             </p>
           </div>
@@ -95,9 +95,9 @@ const Home = () => {
           }}>
             {solutions.map((s, i) => (
               <Reveal key={i} delay={i * 0.1} direction="up">
-                <Link to={s.path} className="card hover-lift" style={{ 
-                  height: '100%', 
-                  display: 'flex', 
+                <Link to={s.path} className="card hover-lift" style={{
+                  height: '100%',
+                  display: 'flex',
                   flexDirection: 'column',
                   padding: '2rem 1.5rem',
                   textDecoration: 'none',
@@ -122,10 +122,10 @@ const Home = () => {
                       Most Popular
                     </div>
                   )}
-                  <div style={{ 
-                    width: '60px', 
-                    height: '60px', 
-                    background: 'var(--primary-light)', 
+                  <div style={{
+                    width: '60px',
+                    height: '60px',
+                    background: 'var(--primary-light)',
                     color: 'var(--primary)',
                     borderRadius: '1.25rem',
                     display: 'flex',
@@ -135,15 +135,15 @@ const Home = () => {
                   }}>
                     {s.icon}
                   </div>
-                  
-                  <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--foreground)' }}>{s.title}</h3>
+
+                  <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--foreground)' }}>{s.title}</h3>
                   <p style={{ flex: 1, marginBottom: '2rem', color: 'var(--muted-foreground)' }}>{s.desc}</p>
-                  
-                  <div style={{ 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    gap: '0.5rem', 
-                    fontWeight: '700', 
+
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    fontWeight: '700',
                     color: 'var(--primary)',
                     fontSize: '0.875rem'
                   }}>
@@ -185,10 +185,10 @@ const Home = () => {
             <Reveal direction="right">
               <div>
                 <span className="badge">Why EVAL?</span>
-                <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', lineHeight: '1.2' }}>
+                <h2>
                   Built for <span className="gradient-text">Accuracy, Scale & Trust</span>
                 </h2>
-                <p style={{ fontSize: '1.1rem', color: 'var(--muted-foreground)', maxWidth: '500px' }}>
+                <p style={{ maxWidth: '500px' }}>
                   Transform your evaluation ecosystem with automation, security, and unmatched precision.
                 </p>
 
@@ -204,7 +204,7 @@ const Home = () => {
                       </div>
                       <div>
                         <h4 style={{ marginBottom: '0.3rem' }}>{item.title}</h4>
-                        <p style={{ fontSize: '0.9rem', color: 'var(--muted-foreground)', margin: 0 }}>{item.text}</p>
+                        <p style={{ margin: 0 }}>{item.text}</p>
                       </div>
                     </div>
                   ))}
@@ -279,27 +279,6 @@ const Home = () => {
       <Reveal width="100%">
         <NewsletterSection />
       </Reveal>
-
-      {/* FINAL CTA */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
-        <div className="container" style={{ textAlign: 'center' }}>
-          <Reveal width="100%">
-            <h2>
-              Evaluate 10,000+ <span className="gradient-text">Answer Sheets in Minutes</span>
-            </h2>
-            <p>Fast. Accurate. Scalable.</p>
-
-            <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center', gap: '1rem' }}>
-              <Link to="/book-demo" className="btn btn-primary">
-                Request Demo
-              </Link>
-              <Link to="/book-demo" className="btn btn-outline">
-                Contact Sales
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
     </div>
   );
 };

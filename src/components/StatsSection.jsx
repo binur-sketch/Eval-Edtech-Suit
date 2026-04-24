@@ -1,165 +1,150 @@
-import React from 'react';
-import * as Icons from '@/components/LucideFix';
+import React, { useEffect } from 'react';
+import { motion, useMotionValue, animate, useTransform } from 'framer-motion';
+
+const Counter = ({ value, duration = 1.5 }) => {
+  const count = useMotionValue(0);
+
+  // Clean the value to get the number part
+  const numPart = parseFloat(value.replace(/[^0-9.]/g, '')) || 0;
+  const suffix = value.replace(/[0-9.]/g, '');
+
+  const rounded = useTransform(count, (latest) => {
+    return Math.floor(latest).toLocaleString() + suffix;
+  });
+
+  useEffect(() => {
+    const controls = animate(count, numPart, { duration, ease: "easeOut" });
+    return controls.stop;
+  }, [numPart, duration]);
+
+  return <motion.span>{rounded}</motion.span>;
+};
 
 const StatsSection = () => {
   const stats = [
-    {
-      label: 'Academic Institutions',
-      val: '5000+',
-      sub: 'Global Partners',
-      icon: <Icons.School size={26} />
-    },
-    {
-      label: 'Evaluation Speed',
-      val: '1000K+',
-      sub: 'Sheets / Day',
-      icon: <Icons.Zap size={26} />
-    },
-    {
-      label: 'System Accuracy',
-      val: '100%',
-      sub: 'Zero-Error Logic',
-      icon: <Icons.CheckCircle size={26} />
-    },
-    {
-      label: 'Student Impact',
-      val: '10M+',
-      sub: 'Annual Candidates',
-      icon: <Icons.Users size={26} />
-    }
+    { label: 'Global Presence Countries', val: '10+' },
+    { label: 'Domestic Segment Clients', val: '5000+' },
+    { label: 'Universities', val: '200+' },
+    { label: 'Colleges', val: '2000+' },
+    { label: 'Political Parties, Survey & Others', val: '100+' },
+    { label: 'Coaching', val: '2900+' },
+    { label: 'OMR Sheets Evaluated', val: '25 Cr+' },
+    { label: 'Years Of Experience', val: '10+' }
   ];
 
   return (
-    <section
-      className="section-padding"
-      style={{
-        background: 'linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%)',
-        position: 'relative',
-        overflow: 'hidden'
-      }}
-    >
+    <section className="section-padding" style={{ background: '#ffffff', position: 'relative' }}>
       <div className="container">
 
-        {/* Heading */}
-        <div style={{
-          textAlign: 'center',
-          marginBottom: '4rem'
-        }}>
-          <h2 style={{ marginBottom: '0.75rem' }}>
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ marginBottom: '1rem' }}
+          >
             Trusted by <span className="gradient-text">Institutions Worldwide</span>
-          </h2>
-
-          <p style={{
-            color: 'var(--muted-foreground)',
-            maxWidth: '640px',
-            margin: '0 auto',
-            fontSize: '1rem'
-          }}>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            style={{ color: 'var(--muted-foreground)', maxWidth: '640px', margin: '0 auto' }}
+          >
             Powering large-scale examinations with unmatched speed, accuracy, and reliability.
-          </p>
+          </motion.p>
         </div>
 
-        {/* Stats Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '2rem'
-        }}>
-          {stats.map((item, idx) => (
-            <div
-              key={idx}
-              style={{
-                padding: '2.5rem 2rem',
-                borderRadius: '1.5rem',
-                textAlign: 'center',
-                background: 'rgba(255,255,255,0.6)',
-                backdropFilter: 'blur(12px)',
-                border: '1px solid rgba(0,0,0,0.06)',
-                transition: 'all 0.35s ease',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.04)',
-                position: 'relative'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-8px)';
-                e.currentTarget.style.boxShadow = '0 20px 50px rgba(0,0,0,0.08)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.04)';
-              }}
+        <div className="stats-grid-v3">
+          {stats.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              className="stat-item-v3"
             >
-              {/* Icon */}
-              <div style={{
-                width: '60px',
-                height: '60px',
-                borderRadius: '1rem',
-                background: 'var(--primary-light)',
-                color: 'var(--primary)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 1.5rem',
-                boxShadow: '0 6px 20px rgba(14,165,164,0.15)'
-              }}>
-                {item.icon}
-              </div>
+              <div className="stat-line-v3" />
 
-              {/* Value */}
-              <div style={{
-                fontSize: '2.75rem',
-                fontWeight: '900',
-                color: 'var(--secondary)',
-                lineHeight: '1'
-              }}>
-                {item.val}
+              <div className="stat-content-v3">
+                <div className="stat-value-v3">
+                  <Counter value={item.val} />
+                </div>
+                <div className="stat-label-v3">{item.label}</div>
               </div>
-
-              {/* Divider */}
-              <div style={{
-                width: '40px',
-                height: '3px',
-                background: 'var(--primary)',
-                margin: '0.75rem auto 1rem',
-                borderRadius: '10px'
-              }} />
-
-              {/* Label */}
-              <div style={{
-                fontSize: '0.75rem',
-                fontWeight: '800',
-                color: 'var(--primary)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.12em',
-                marginBottom: '0.4rem'
-              }}>
-                {item.label}
-              </div>
-
-              {/* Subtext */}
-              <div style={{
-                fontSize: '0.875rem',
-                color: 'var(--muted-foreground)'
-              }}>
-                {item.sub}
-              </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Soft Background Glow */}
-      <div style={{
-        position: 'absolute',
-        top: '-100px',
-        right: '-100px',
-        width: '300px',
-        height: '300px',
-        background: 'radial-gradient(circle, rgba(14,165,164,0.12), transparent 70%)',
-        zIndex: 0
-      }} />
+      <style>{`
+        .stats-grid-v3 {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 3rem 2rem;
+          max-width: 1100px;
+          margin: 0 auto;
+        }
 
-    </section>
+        .stat-item-v3 {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .stat-line-v3 {
+          width: 4px;
+          height: 60px;
+          background: #0EA5A4;
+          border-radius: 2px;
+          flex-shrink: 0;
+        }
+
+        .stat-value-v3 {
+          font-size: 2.25rem;
+          font-weight: 800;
+          color: #1A3636;
+          line-height: 1.1;
+          margin-bottom: 0.3rem;
+          font-family: 'Outfit', sans-serif;
+        }
+
+        .stat-label-v3 {
+          font-size: 0.9375rem;
+          color: #4A5568;
+          line-height: 1.3;
+          font-weight: 600;
+          max-width: 180px;
+        }
+
+        @media (max-width: 1024px) {
+          .stats-grid-v3 {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0 1rem;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .stats-grid-v3 {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+          
+          .stat-value-v3 {
+            font-size: 2rem;
+          }
+
+          .stat-line-v3 {
+            height: 50px;
+          }
+        }
+      `}</style>
+    </section >
   );
 };
+
 
 export default StatsSection;
