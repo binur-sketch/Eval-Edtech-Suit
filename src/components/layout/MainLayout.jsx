@@ -1,8 +1,10 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { motion, useScroll } from 'framer-motion';
+import { motion, useScroll, AnimatePresence } from 'framer-motion';
 import Navbar from '../Navbar';
 import SiteFooter from '../SiteFooter';
+import CookieConsent from '../common/CookieConsent';
+import BackToTop from '../common/BackToTop';
 
 const MainLayout = ({ children }) => {
   const location = useLocation();
@@ -21,9 +23,25 @@ const MainLayout = ({ children }) => {
         </>
       )}
       <main style={{ flex: 1 }}>
-        {children}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
+            {children}
+          </motion.div>
+        </AnimatePresence>
       </main>
-      {!isAdmin && <SiteFooter />}
+      {!isAdmin && (
+        <>
+          <SiteFooter />
+          <CookieConsent />
+          <BackToTop />
+        </>
+      )}
     </div>
   );
 };

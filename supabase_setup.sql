@@ -71,6 +71,4 @@ ON storage.objects FOR DELETE
 TO authenticated
 USING ( bucket_id = 'blog-images' );
 
--- 7. (Optional but recommended) Run this to create the first admin user
--- NOTE: Replace 'admin@virsoftech.com' and 'SecurePassword123!' with your desired credentials.
--- It is recommended to create users directly via the Supabase Authentication Dashboard instead.
+

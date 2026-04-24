@@ -38,7 +38,7 @@ const About = () => {
       desc: 'A gifted techno-businessman with over 20 years of experience in product innovation, strategic planning, and customer acquisition. Previously at HCL Technologies and Adobe Systems.',
       img: 'https://www.virsoftech.com/img/deepak_garg.jpg',
       linkedin: 'https://www.linkedin.com/in/deepakgarg76/',
-      mail: 'deepak.garg@virsoftech.com'
+      mail: 'deepak@virsoftech.com'
     },
     {
       name: 'Abhijeet Jain',
@@ -46,7 +46,7 @@ const About = () => {
       desc: 'A Computer Scientist, Entrepreneur, and Business Executive with over 20 years of R&D leadership. A contributor to PDF ISO specifications and chief architect for print projects.',
       img: 'https://www.virsoftech.com/img/abhijeet_pic.jpg',
       linkedin: 'https://www.linkedin.com/in/abhijeet-jain-5a9b313/',
-      mail: 'abhijeet.jain@virsoftech.com'
+      mail: 'abhijeet@virsoftech.com'
     },
     {
       name: 'Pralaypati Ta',
@@ -54,7 +54,7 @@ const About = () => {
       desc: 'A coding geek with over 18 years of tech leadership experience leading R&D teams at global product companies like Samsung and Adobe Systems.',
       img: 'https://www.virsoftech.com/img/Pralay-photo.png',
       linkedin: 'https://www.linkedin.com/in/pralaypati-ta-3944691/',
-      mail: 'pralaypati.ta@virsoftech.com'
+      mail: 'pralay@virsoftech.com'
     },
     {
       name: 'Sameer Manuja',
@@ -62,7 +62,7 @@ const About = () => {
       desc: 'Key solution architect for print and publishing technologies with over 20 years of industry experience creating path-setting innovations at Samsung and Adobe Systems.',
       img: 'https://www.virsoftech.com/sameer_manuja.jpg',
       linkedin: 'https://www.linkedin.com/in/sameermanuja/',
-      mail: 'sameer.manuja@virsoftech.com'
+      mail: 'sameer@virsoftech.com'
     },
     {
       name: 'Akihide Sugino',
@@ -84,7 +84,7 @@ const About = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
-      <SEO 
+      <SEO
         title="About Us | Pioneers in Examination Evaluation"
         description="Learn about eVAL by Vir Softech. We are dedicated to transforming institutional assessments with smart, secure, and accurate technology solutions."
         keywords="About eVAL, Vir Softech, Examination Technology Company, EdTech India, Assessment Experts"
@@ -130,17 +130,17 @@ const About = () => {
                 borderRadius: '2rem',
                 zIndex: 0
               }}></div>
-              <img 
-                src="/assets/images/whoweare.jpeg" 
-                alt="Who We Are" 
-                style={{ 
-                  width: '100%', 
-                  borderRadius: '2.5rem', 
+              <img
+                src="/assets/images/whoweare.jpeg"
+                alt="Who We Are"
+                style={{
+                  width: '100%',
+                  borderRadius: '2.5rem',
                   boxShadow: 'var(--shadow-lg)',
                   position: 'relative',
                   zIndex: 1,
                   display: 'block'
-                }} 
+                }}
               />
             </div>
           </div>
@@ -243,7 +243,7 @@ const About = () => {
 
           <div className="connected-timeline" style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', padding: '1rem 0' }}>
             <div className="timeline-line"></div>
-            
+
             {milestones.map((m, i) => {
               const isEven = i % 2 === 0;
               return (
@@ -252,12 +252,12 @@ const About = () => {
                     {React.cloneElement(m.icon, { size: 16 })}
                   </div>
                   <div className="timeline-content card hover-lift">
-                    <div style={{ 
-                      fontSize: '2.5rem', 
-                      fontWeight: '900', 
-                      color: 'var(--primary-light)', 
-                      position: 'absolute', 
-                      top: '-5px', 
+                    <div style={{
+                      fontSize: '2.5rem',
+                      fontWeight: '900',
+                      color: 'var(--primary-light)',
+                      position: 'absolute',
+                      top: '-5px',
                       right: isEven ? '-5px' : 'auto',
                       left: isEven ? 'auto' : '-5px',
                       lineHeight: '1',
@@ -266,12 +266,12 @@ const About = () => {
                     }}>
                       {m.year}
                     </div>
-                    
+
                     <div style={{ position: 'relative', zIndex: 1 }}>
-                      <div style={{ 
-                        display: 'inline-flex', 
-                        alignItems: 'center', 
-                        gap: '0.4rem', 
+                      <div style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.4rem',
                         background: 'var(--primary-light)',
                         color: 'var(--primary)',
                         padding: '0.15rem 0.6rem',
@@ -294,7 +294,8 @@ const About = () => {
           </div>
         </div>
 
-        <style dangerouslySetInnerHTML={{ __html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           .connected-timeline .timeline-line {
             position: absolute;
             top: 0;
@@ -384,39 +385,39 @@ const About = () => {
             <p style={{ maxWidth: '600px', margin: '0 auto' }}>A team of technologists, educators, and business leaders committed to transforming examination technology.</p>
           </div>
 
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             gap: '2.5rem',
             // On large screens, we force it to exactly 3 columns if feasible
           }} className="leadership-grid">
             {leadership.map((leader, i) => (
-              <div key={i} className="card hover-lift" style={{ 
-                padding: 'clamp(1.5rem, 5vw, 3rem)', 
-                textAlign: 'center', 
+              <div key={i} className="card hover-lift" style={{
+                padding: 'clamp(1.5rem, 5vw, 3rem)',
+                textAlign: 'center',
                 background: 'white',
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%'
               }}>
                 <div style={{ position: 'relative', width: 'fit-content', margin: '0 auto 1.5rem' }}>
-                  <div style={{ 
-                    position: 'absolute', 
-                    top: '-5px', 
-                    left: '-5px', 
-                    right: '-5px', 
-                    bottom: '-5px', 
-                    borderRadius: '50%', 
-                    border: '2px solid var(--primary)', 
-                    opacity: 0.2 
+                  <div style={{
+                    position: 'absolute',
+                    top: '-5px',
+                    left: '-5px',
+                    right: '-5px',
+                    bottom: '-5px',
+                    borderRadius: '50%',
+                    border: '2px solid var(--primary)',
+                    opacity: 0.2
                   }}></div>
                   <img
                     src={leader.img}
                     alt={leader.name}
-                    style={{ 
-                      width: '120px', 
-                      height: '120px', 
-                      borderRadius: '50%', 
+                    style={{
+                      width: '120px',
+                      height: '120px',
+                      borderRadius: '50%',
                       objectFit: 'cover',
                       border: '4px solid white',
                       boxShadow: '0 4px 12px rgba(0,0,0,0.1)'

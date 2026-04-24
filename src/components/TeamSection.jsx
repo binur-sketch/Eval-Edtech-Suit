@@ -8,7 +8,7 @@ const team = [
     bio: 'Techno-businessman with 20+ years of product innovation at HCL and Adobe.',
     img: 'https://www.virsoftech.com/img/deepak_garg.jpg',
     linkedin: 'https://www.linkedin.com/in/deepakgarg76/',
-    mail: 'deepak.garg@virsoftech.com'
+    mail: 'deepak@virsoftech.com'
   },
   {
     name: 'Abhijeet Jain',
@@ -16,7 +16,7 @@ const team = [
     bio: 'Computer Scientist and contributor to PDF ISO specifications.',
     img: 'https://www.virsoftech.com/img/abhijeet_pic.jpg',
     linkedin: 'https://www.linkedin.com/in/abhijeet-jain-5a9b313/',
-    mail: 'abhijeet.jain@virsoftech.com'
+    mail: 'abhijeet@virsoftech.com'
   },
   {
     name: 'Pralaypati Ta',
@@ -24,7 +24,7 @@ const team = [
     bio: '18+ years of tech leadership experience leading R&D at Samsung and Adobe.',
     img: 'https://www.virsoftech.com/img/Pralay-photo.png',
     linkedin: 'https://www.linkedin.com/in/pralaypati-ta-3944691/',
-    mail: 'pralaypati.ta@virsoftech.com'
+    mail: 'pralay@virsoftech.com'
   },
   {
     name: 'Sameer Manuja',
@@ -32,7 +32,7 @@ const team = [
     bio: 'Key architect creating path-setting innovations holding US patents.',
     img: 'https://www.virsoftech.com/sameer_manuja.jpg',
     linkedin: 'https://www.linkedin.com/in/sameermanuja/',
-    mail: 'sameer.manuja@virsoftech.com'
+    mail: 'sameer@virsoftech.com'
   },
   {
     name: 'Akihide Sugino',

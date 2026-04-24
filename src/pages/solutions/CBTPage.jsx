@@ -87,7 +87,7 @@ const CBTPage = () => {
                 A comprehensive platform designed to conduct secure, scalable, and controlled computer-based tests at designated examination centers. This solution ensures a standardized testing environment, minimizes malpractice, and allows organizations to conduct large-scale examinations efficiently.</p>
               <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
                 <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem', lineHeight: '1.6' }}>
-                  It is suitable for universities, recruitment boards, certification bodies, government organizations, and corporates that require reliable exam execution across multiple locations.e, and efficient process — eliminating logistical, administrative, and accuracy challenges of traditional paper-based evaluation.
+                  It is suitable for universities, recruitment boards, certification bodies, government organizations, and corporates that require reliable exam execution across multiple locations. It ensures a fast, secure, and efficient process — eliminating logistical, administrative, and accuracy challenges of traditional paper-based evaluation.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>

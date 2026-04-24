@@ -16,7 +16,6 @@ import FAQ from '@/components/FAQ';
 import StatsSection from '@/components/StatsSection';
 import TeamSection from '@/components/TeamSection';
 import NewsletterSection from '@/components/NewsletterSection';
-import ProductsSection from '@/components/ProductsSection';
 import CaseStudySlider from '@/components/CaseStudySlider';
 import { motion } from 'framer-motion';
 import Reveal from '@/components/common/Reveal';
