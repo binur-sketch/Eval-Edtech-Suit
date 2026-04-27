@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import * as Icons from '../components/LucideFix';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/common/SEO';
 
 const Resources = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -39,6 +40,10 @@ const Resources = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <SEO 
+        title="Insights & Resources | eVAL Edtech Blog"
+        description="Stay updated with the latest trends in OMR technology, digital marking, and AI-powered proctoring for educational institutions."
+      />
 
       {/* HERO */}
       <section className="section-padding" style={{
@@ -180,9 +185,11 @@ const Resources = () => {
                           color: 'var(--muted-foreground)',
                           marginBottom: '1rem'
                         }}>
-                          <span>{blog.date}</span>
+                          <span>{new Date(blog.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
                           <span>•</span>
-                          <span>{blog.read_time}</span>
+                          <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                            <Icons.Eye size={14} /> {blog.views || 0}
+                          </span>
                           <span>•</span>
                           <span>{blog.author}</span>
                         </div>

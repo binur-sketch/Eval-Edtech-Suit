@@ -1,6 +1,8 @@
-import * as Icons from '@/components/LucideFix';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/common/SEO';
+import SectionHeader from '@/components/common/SectionHeader';
+
 
 const ClientCategory = ({ title, clients }) => (
   <div style={{ marginBottom: '6rem' }}>
@@ -145,6 +147,10 @@ const Clients = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
+      <SEO 
+        title="Our Institutional Partners | eVAL Edtech"
+        description="Trusted by over 5000 universities, schools, and government bodies globally for accurate and secure examination evaluation."
+      />
       {/* Hero */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '900px' }}>
@@ -161,12 +167,14 @@ const Clients = () => {
       </section>
 
       {/* Main Client Logos Grid */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
-            <span className="badge">Portfolio</span>
-            <h2>Trusted by <span className="gradient-text">Segment Leaders</span></h2>
-          </div>
+          <SectionHeader 
+            badge="Portfolio"
+            title={<>Trusted by <span className="gradient-text">Segment Leaders</span></>}
+          />
+
 
           {categories.map((cat, i) => (
             <ClientCategory key={i} title={cat.title} clients={cat.clients} />
@@ -175,7 +183,8 @@ const Clients = () => {
       </section>
 
       {/* Global HQ Info */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'white' }}>
+
         <div className="container">
           <div style={{ background: 'var(--secondary)', color: 'white', padding: 'clamp(2rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem)', borderRadius: 'clamp(1.5rem, 5vw, 4rem)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
             <div>
@@ -203,7 +212,8 @@ const Clients = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: '2.5rem' }}>Partner with <span className="gradient-text">eVAL</span></h2>
           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', fontSize: '1.125rem', color: 'var(--muted-foreground)' }}>Experience 100% accuracy and institutional transparency in your examination lifecycle.</p>

@@ -1,6 +1,7 @@
 import * as Icons from '@/components/LucideFix';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/common/SEO';
 
 const Careers = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -35,6 +36,10 @@ const Careers = () => {
 
   return (
     <div style={{ paddingTop: '5rem' }}>
+      <SEO 
+        title="Careers | Join the eVAL Edtech Team"
+        description="Join a global leader in examination technology. Explore career opportunities in AI, software engineering, and educational consulting."
+      />
       {/* Hero */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>

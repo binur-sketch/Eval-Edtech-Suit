@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   const productLinks = [
@@ -23,129 +24,157 @@ const Navbar = () => {
 
   const isActive = (path) => location.pathname === path;
 
+  // Handle scroll for glass effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Auto-close menu on path change
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
 
   const navLinkStyle = (path) => ({
-    padding: '0 1rem',
+    padding: '0 0.75rem',
     height: '100%',
     display: 'flex',
     alignItems: 'center',
     color: isActive(path) ? 'var(--primary)' : 'var(--secondary)',
     fontWeight: '700',
-    fontSize: '0.8125rem',
+    fontSize: '0.75rem',
     textTransform: 'uppercase',
-    letterSpacing: '0.5px',
-    transition: 'color 0.2s ease'
+    letterSpacing: '0.05em',
+    transition: 'var(--transition)'
   });
 
   return (
-    <header style={{ position: 'fixed', width: '100%', zIndex: 1000, top: 0 }}>
-      {/* Top Bar */}
+    <header style={{ 
+      position: 'fixed', 
+      width: '100%', 
+      zIndex: 1000, 
+      top: 0,
+      transition: 'var(--transition)'
+    }}>
+      {/* Top Bar - Hide on scroll for cleaner look */}
       <div style={{
-        background: '#1F1F1F',
-        color: 'rgba(255,255,255,0.7)',
-        padding: '0.6rem 0',
-        fontSize: '0.75rem',
-        borderBottom: '1px solid rgba(255,255,255,0.05)'
+        background: 'var(--secondary)',
+        color: 'rgba(255,255,255,0.6)',
+        padding: scrolled ? '0' : '0.5rem 0',
+        height: scrolled ? '0' : 'auto',
+        overflow: 'hidden',
+        fontSize: '0.7rem',
+        borderBottom: '1px solid rgba(255,255,255,0.05)',
+        transition: 'all 0.3s ease'
       }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '2rem' }}>
-          <div className="md-flex" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.6875rem', color: 'rgba(255,255,255,0.5)' }}>
-            <Icons.MapPin size={12} style={{ color: 'var(--primary)' }} />
-            <span>New Delhi, India (HQ) | Tokyo, Japan</span>
+        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div className="md-flex" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <Icons.MapPin size={12} style={{ color: 'var(--primary)' }} />
+              <span>Global HQ: Noida, India</span>
+            </div>
+            <div style={{ width: '1px', height: '12px', background: 'rgba(255,255,255,0.1)' }} className="md-flex"></div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <Icons.Globe size={12} style={{ color: 'var(--primary)' }} />
+              <span>International: Tokyo, Japan</span>
+            </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
             <div className="md-flex" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Icons.Phone size={14} style={{ color: 'var(--primary)' }} />
-              <a href="tel:+919319275051"> <span>+91 9319275051</span></a>
+              <Icons.Phone size={12} style={{ color: 'var(--primary)' }} />
+              <a href="tel:+919319275051">+91 9319275051</a>
             </div>
             <div className="md-flex" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Icons.Mail size={14} style={{ color: 'var(--primary)' }} />
-              <a href="mailto:corp@virsoftech.com"><span>corp@virsoftech.com</span></a>
+              <Icons.Mail size={12} style={{ color: '#EA4335' }} />
+              <a href="mailto:corp@virsoftech.com">corp@virsoftech.com</a>
             </div>
-            <a href="https://wa.me/919319275051" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'inherit' }}>
-              <div style={{ color: '#25D366' }}><Icons.MessageCircle size={14} /></div>
-              <span>WhatsApp</span>
-            </a>
           </div>
         </div>
       </div>
 
       {/* Main Navbar */}
       <nav style={{
-        background: 'white',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
-        height: 'var(--nav-height)',
+        background: scrolled ? 'rgba(255, 255, 255, 0.85)' : 'white',
+        backdropFilter: scrolled ? 'blur(15px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(15px)' : 'none',
+        boxShadow: scrolled ? '0 10px 30px rgba(0,0,0,0.08)' : '0 1px 0 rgba(0,0,0,0.05)',
+        height: scrolled ? '75px' : 'var(--nav-height)',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        transition: 'var(--transition)',
+        borderBottom: scrolled ? '1px solid rgba(14, 165, 164, 0.1)' : 'none'
       }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100%', width: '100%' }}>
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', padding: '5px 0' }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', transition: 'var(--transition)' }}>
             <img
               src="/assets/images/logo.png"
               alt="eVAL Logo"
               style={{
-                height: 'clamp(40px, 8vw, 60px)',
+                height: scrolled ? '44px' : '54px',
                 width: 'auto',
-                objectFit: 'contain',
-                display: 'block'
+                transition: 'var(--transition)'
               }}
             />
           </Link>
 
-          {/* Nav Items Container */}
+          {/* Desktop Nav */}
           <div className="md-flex" style={{ alignItems: 'center', height: '100%' }}>
             <Link to="/" style={navLinkStyle('/')}>Home</Link>
 
-            {/* Products Dropdown */}
             <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
               <button style={{
-                padding: '0 1rem', height: '100%', background: 'none', border: 'none',
-                color: 'var(--secondary)', fontWeight: '700', fontSize: '0.8125rem',
-                textTransform: 'uppercase', letterSpacing: '0.5px', cursor: 'pointer',
+                padding: '0 0.75rem', height: '100%', background: 'none', border: 'none',
+                color: isActive('/products') ? 'var(--primary)' : 'var(--secondary)', 
+                fontWeight: '700', fontSize: '0.75rem',
+                textTransform: 'uppercase', letterSpacing: '0.05em', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
               }}>
                 Products <Icons.ChevronDown size={14} />
               </button>
-              <div className="dropdown" style={{ top: '100%', left: '0', width: '320px', background: 'white', borderRadius: '1rem', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--border)', padding: '1rem' }}>
+              <div className="dropdown">
                 {productLinks.map((s, i) => (
-                  <Link key={i} to={s.path} className="dropdown-item" style={{ padding: '0.75rem 1rem', borderRadius: '0.75rem', transition: 'all 0.2s ease', display: 'block' }}>
-                    <span style={{ fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem' }}>{s.title}</span>
+                  <Link key={i} to={s.path} className="dropdown-item">
+                    {s.title}
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* Services Dropdown */}
             <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
               <button style={{
-                padding: '0 1rem', height: '100%', background: 'none', border: 'none',
-                color: 'var(--secondary)', fontWeight: '700', fontSize: '0.8125rem',
-                textTransform: 'uppercase', letterSpacing: '0.5px', cursor: 'pointer',
+                padding: '0 0.75rem', height: '100%', background: 'none', border: 'none',
+                color: isActive('/services') ? 'var(--primary)' : 'var(--secondary)', 
+                fontWeight: '700', fontSize: '0.75rem',
+                textTransform: 'uppercase', letterSpacing: '0.05em', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
               }}>
                 Services <Icons.ChevronDown size={14} />
               </button>
-              <div className="dropdown" style={{ top: '100%', left: '0', width: '300px', background: 'white', borderRadius: '1rem', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--border)', padding: '1rem' }}>
+              <div className="dropdown">
                 {serviceLinks.map((s, i) => (
-                  <Link key={i} to={s.path} className="dropdown-item" style={{ padding: '0.75rem 1rem', borderRadius: '0.75rem', transition: 'all 0.2s ease', display: 'block' }}>
-                    <span style={{ fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem' }}>{s.title}</span>
+                  <Link key={i} to={s.path} className="dropdown-item">
+                    {s.title}
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* Independent Menu Items */}
-            <Link to="/about" style={navLinkStyle('/about')}>About Us</Link>
-            <Link to="/clients" style={navLinkStyle('/clients')}>Our Clients</Link>
-            <Link to="/blog" style={navLinkStyle('/blog')}>Blog</Link>
+            <Link to="/about" style={navLinkStyle('/about')}>About</Link>
+            <Link to="/clients" style={navLinkStyle('/clients')}>Clients</Link>
+            <Link to="/blog" style={navLinkStyle('/blog')}>Resources</Link>
             <Link to="/careers" style={navLinkStyle('/careers')}>Careers</Link>
             <Link to="/contact" style={navLinkStyle('/contact')}>Contact</Link>
 
-            <Link to="/book-demo" className="btn btn-primary" style={{ padding: '0.6rem 1.25rem', marginLeft: '1rem', fontSize: '0.75rem' }}>
-              Request a Demo
+            <Link to="/book-demo" className="btn btn-primary" style={{ 
+              padding: '0.65rem 1.5rem', 
+              marginLeft: '1.5rem', 
+              fontSize: '0.75rem',
+              borderRadius: '0.75rem'
+            }}>
+              Request Demo
             </Link>
           </div>
 
@@ -153,52 +182,58 @@ const Navbar = () => {
           <button
             className="md-hidden"
             onClick={() => setIsOpen(!isOpen)}
-            style={{ background: 'var(--muted)', width: '40px', height: '40px', border: 'none', borderRadius: '6px', cursor: 'pointer', color: 'var(--secondary)' }}
+            style={{ background: 'var(--muted)', width: '42px', height: '42px', border: 'none', borderRadius: '10px', cursor: 'pointer', color: 'var(--secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
-            {isOpen ? '✕' : '☰'}
+            {isOpen ? <Icons.X size={20} /> : <Icons.Menu size={20} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {isOpen && (
-          <div className="mobile-menu reveal" style={{
-            padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem',
-            background: 'white', position: 'absolute', top: '100%', left: 0, width: '100%',
-            height: 'calc(100vh - var(--nav-height))',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.1)', zIndex: 999, overflowY: 'auto'
-          }}>
-            <Link to="/" style={{ fontWeight: '800', textTransform: 'uppercase', color: isActive('/') ? 'var(--primary)' : 'var(--secondary)' }}>Home</Link>
-
-            <div style={{ padding: '0.5rem 0' }}>
-              <div style={{ fontWeight: '900', color: 'var(--primary)', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>Products</div>
-              <div style={{ display: 'grid', gap: '0.8rem', paddingLeft: '0.5rem' }}>
-                {productLinks.map((s, i) => (
-                  <Link key={i} to={s.path} style={{ fontSize: '0.9rem', fontWeight: '700', color: 'var(--secondary)' }}>{s.title}</Link>
-                ))}
-              </div>
+        <div className={`mobile-menu ${isOpen ? 'active' : ''}`} style={{
+          position: 'fixed',
+          top: scrolled ? '75px' : 'var(--nav-height)',
+          left: 0,
+          width: '100%',
+          background: 'white',
+          padding: '2rem',
+          height: 'calc(100vh - 85px)',
+          display: isOpen ? 'flex' : 'none',
+          flexDirection: 'column',
+          gap: '1.5rem',
+          zIndex: 999,
+          overflowY: 'auto',
+          borderTop: '1px solid var(--border)'
+        }}>
+          <Link to="/" style={{ fontWeight: '800', color: isActive('/') ? 'var(--primary)' : 'var(--secondary)' }}>Home</Link>
+          
+          <div>
+            <div style={{ color: 'var(--primary)', fontSize: '0.65rem', fontWeight: '900', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em' }}>Solutions</div>
+            <div style={{ display: 'grid', gap: '1rem', paddingLeft: '0.5rem' }}>
+              {productLinks.map((s, i) => (
+                <Link key={i} to={s.path} style={{ fontWeight: '600', color: 'var(--secondary)' }}>{s.title}</Link>
+              ))}
             </div>
-
-            <div style={{ padding: '0.5rem 0' }}>
-              <div style={{ fontWeight: '900', color: 'var(--primary)', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>Services</div>
-              <div style={{ display: 'grid', gap: '0.8rem', paddingLeft: '0.5rem' }}>
-                {serviceLinks.map((s, i) => (
-                  <Link key={i} to={s.path} style={{ fontSize: '0.9rem', fontWeight: '700', color: 'var(--secondary)' }}>{s.title}</Link>
-                ))}
-              </div>
-            </div>
-
-            <Link to="/about" style={{ fontWeight: '800', textTransform: 'uppercase', color: isActive('/about') ? 'var(--primary)' : 'var(--secondary)' }}>About Us</Link>
-            <Link to="/clients" style={{ fontWeight: '800', textTransform: 'uppercase', color: isActive('/clients') ? 'var(--primary)' : 'var(--secondary)' }}>Our Clients</Link>
-            <Link to="/blog" style={{ fontWeight: '800', textTransform: 'uppercase', color: isActive('/blog') ? 'var(--primary)' : 'var(--secondary)' }}>Blog</Link>
-            <Link to="/careers" style={{ fontWeight: '800', textTransform: 'uppercase', color: isActive('/careers') ? 'var(--primary)' : 'var(--secondary)' }}>Careers</Link>
-            <Link to="/contact" style={{ fontWeight: '800', textTransform: 'uppercase', color: isActive('/contact') ? 'var(--primary)' : 'var(--secondary)' }}>Contact Us</Link>
-
-            <Link to="/book-demo" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', marginTop: '1rem' }}>Request a Demo</Link>
           </div>
-        )}
+
+          <div>
+            <div style={{ color: 'var(--primary)', fontSize: '0.65rem', fontWeight: '900', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em' }}>Expertise</div>
+            <div style={{ display: 'grid', gap: '1rem', paddingLeft: '0.5rem' }}>
+              {serviceLinks.map((s, i) => (
+                <Link key={i} to={s.path} style={{ fontWeight: '600', color: 'var(--secondary)' }}>{s.title}</Link>
+              ))}
+            </div>
+          </div>
+
+          <Link to="/about" style={{ fontWeight: '800', color: isActive('/about') ? 'var(--primary)' : 'var(--secondary)' }}>About Us</Link>
+          <Link to="/clients" style={{ fontWeight: '800', color: isActive('/clients') ? 'var(--primary)' : 'var(--secondary)' }}>Our Clients</Link>
+          <Link to="/contact" style={{ fontWeight: '800', color: isActive('/contact') ? 'var(--primary)' : 'var(--secondary)' }}>Contact</Link>
+          
+          <Link to="/book-demo" className="btn btn-primary" style={{ marginTop: 'auto' }}>Book a Consultation</Link>
+        </div>
       </nav>
-    </header >
+    </header>
   );
 };
 
 export default Navbar;
+

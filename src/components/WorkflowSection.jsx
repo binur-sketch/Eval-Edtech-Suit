@@ -239,8 +239,11 @@ const WorkflowSection = () => {
           transition: 0.3s;
         }
 
-        .workflow-h-item:hover .h-step-content {
-          transform: translateY(${i => i % 2 === 0 ? '-5px' : '5px'});
+        .workflow-h-item.top-text:hover .h-step-content {
+          transform: translateY(-5px);
+        }
+        .workflow-h-item.bottom-text:hover .h-step-content {
+          transform: translateY(5px);
         }
 
         .h-step-content h3 {

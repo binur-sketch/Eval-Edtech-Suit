@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import * as Icons from './LucideFix';
+import SectionHeader from './common/SectionHeader';
+
 
 /* =========================
    FAQ ITEM
@@ -102,8 +104,10 @@ const FAQ = ({
   faqs = defaultFaqs,
   title = "Frequently Asked Questions",
   subtitle = "Support",
-  allowMultipleOpen = false
+  allowMultipleOpen = false,
+  background = 'white'
 }) => {
+
   const [openIndex, setOpenIndex] = useState(null);
   const [multiOpen, setMultiOpen] = useState([]);
 
@@ -120,19 +124,14 @@ const FAQ = ({
   };
 
   return (
-    <section className="section-padding">
+    <section className="section-padding" style={{ background }}>
       <div className="container" style={{ maxWidth: '1100px' }}>
 
-        {/* Heading */}
-        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <span className="badge">{subtitle}</span>
-          <h2>
-            {title.split(' ')[0]}{' '}
-            <span className="gradient-text">
-              {title.split(' ').slice(1).join(' ')}
-            </span>
-          </h2>
-        </div>
+        <SectionHeader 
+          badge={subtitle}
+          title={<>{title.split(' ')[0]} <span className="gradient-text">{title.split(' ').slice(1).join(' ')}</span></>}
+        />
+
 
         {/* FAQ Box */}
         <div

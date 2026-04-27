@@ -85,10 +85,11 @@ const TeamSection = () => {
                   </a>
                 )}
                 {member.mail && (
-                  <a href={`mailto:${member.mail}`} style={{ color: 'var(--primary)', transition: 'opacity 0.2s', opacity: 0.7 }} onMouseEnter={e => e.currentTarget.style.opacity = 1} onMouseLeave={e => e.currentTarget.style.opacity = 0.7}>
+                  <a href={`mailto:${member.mail}`} style={{ color: '#EA4335', transition: 'opacity 0.2s', opacity: 0.7 }} onMouseEnter={e => e.currentTarget.style.opacity = 1} onMouseLeave={e => e.currentTarget.style.opacity = 0.7}>
                     <Icons.Mail size={18} />
                   </a>
                 )}
+
               </div>
             </div>
           ))}

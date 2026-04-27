@@ -2,6 +2,8 @@ import * as Icons from '@/components/LucideFix';
 import React from 'react';
 import SEO from '@/components/common/SEO';
 import { Link } from 'react-router-dom';
+import SectionHeader from '@/components/common/SectionHeader';
+
 
 const About = () => {
   const values = [
@@ -18,17 +20,17 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: '2015', title: 'Company Incorporated', desc: 'Company incorporated to deliver innovative software solutions.', icon: <Icons.Flag size={20} /> },
-    { year: '2016', title: 'eVAL Suite Launched', desc: 'Launched the eVAL product suite in the market.', icon: <Icons.Rocket size={20} /> },
-    { year: '2017', title: 'NAS 2017 Success', desc: 'Deployed eVAL OMR across 600+ districts in India, enabling release of NAS 2017 results within one month.', icon: <Icons.Map size={20} /> },
-    { year: '2018', title: 'Statewide Census Survey', desc: 'Conducted large-scale census education survey for a major Indian state using eVAL OMR.', icon: <Icons.FileText size={20} /> },
-    { year: '2019', title: 'CBT Platform Evolution', desc: 'Launched Eval CBT Platform for computer-based testing.', icon: <Icons.Monitor size={20} /> },
-    { year: '2020', title: 'Dental College CBT', desc: 'Conducted CBT exams for a most prestigious Dental College in India.', icon: <Icons.CheckSquare size={20} /> },
-    { year: '2021', title: 'United Nations Partnership', desc: 'eVAL OMR used by the United Nations for successfully evaluating nationwide school assessments.', icon: <Icons.Globe size={20} /> },
-    { year: '2022', title: 'Board Expansion', desc: 'Successfully evaluated 30 lakh OMR sheets for a major education board in India.', icon: <Icons.Database size={20} /> },
-    { year: '2023', title: 'African Market Entry', desc: 'Conducted large-scale school assessments (40 lakh students) in Nigeria using eVAL OMR.', icon: <Icons.MapPin size={20} /> },
+    { year: '2025', title: 'CMMI Level 3 & Defense', desc: 'Achieved CMMI Level 3 (Software Development), eVAL OMR deployed across 1000 locations in India for large-scale defence sector assessments, emerging as one of the most widely adopted OMR evaluation solutions in the country.', icon: <Icons.Award size={20} /> },
     { year: '2024', title: 'Nationwide Expansion', desc: 'Executed nationwide school leaving exam evaluation in Africa using eVAL OMR.', icon: <Icons.TrendingUp size={20} /> },
-    { year: '2025', title: 'CMMI Level 3 & Defense', desc: 'Achieved CMMI Level 3 (Software Development), eVAL OMR deployed across 1000 locations in India for large-scale defence sector assessments, emerging as one of the most widely adopted OMR evaluation solutions in the country.', icon: <Icons.Award size={20} /> }
+    { year: '2023', title: 'African Market Entry', desc: 'Conducted large-scale school assessments (40 lakh students) in Nigeria using eVAL OMR.', icon: <Icons.MapPin size={20} /> },
+    { year: '2022', title: 'Board Expansion', desc: 'Successfully evaluated 30 lakh OMR sheets for a major education board in India.', icon: <Icons.Database size={20} /> },
+    { year: '2021', title: 'United Nations Partnership', desc: 'eVAL OMR used by the United Nations for successfully evaluating nationwide school assessments.', icon: <Icons.Globe size={20} /> },
+    { year: '2020', title: 'Dental College CBT', desc: 'Conducted CBT exams for a most prestigious Dental College in India.', icon: <Icons.CheckSquare size={20} /> },
+    { year: '2019', title: 'CBT Platform Evolution', desc: 'Launched Eval CBT Platform for computer-based testing.', icon: <Icons.Monitor size={20} /> },
+    { year: '2018', title: 'Statewide Census Survey', desc: 'Conducted large-scale census education survey for a major Indian state using eVAL OMR.', icon: <Icons.FileText size={20} /> },
+    { year: '2017', title: 'NAS 2017 Success', desc: 'Deployed eVAL OMR across 600+ districts in India, enabling release of NAS 2017 results within one month.', icon: <Icons.Map size={20} /> },
+    { year: '2016', title: 'eVAL Suite Launched', desc: 'Launched the eVAL product suite in the market.', icon: <Icons.Rocket size={20} /> },
+    { year: '2015', title: 'Company Incorporated', desc: 'Company incorporated to deliver innovative software solutions.', icon: <Icons.Flag size={20} /> }
   ];
 
   const leadership = [
@@ -105,8 +107,12 @@ const About = () => {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '5rem', alignItems: 'center' }}>
             <div>
-              <span className="badge">Our Identity</span>
-              <h2 style={{ marginBottom: '2rem' }}>Who We <span className="gradient-text">Are</span></h2>
+              <SectionHeader
+                badge="Our Identity"
+                title={<>Who We <span className="gradient-text">Are</span></>}
+                centered={false}
+              />
+
               <div style={{ fontSize: '1.125rem', lineHeight: '1.8', color: 'var(--muted-foreground)' }}>
                 <p style={{ marginBottom: '1.5rem' }}>
                   At VIR SOFTECH, we drive the next generation of business-focused IT transformation. Our mission is to empower organizations to turn their vision into measurable growth by reimagining workflows, optimizing operations, and delivering faster, smarter, and more cost-efficient outcomes.
@@ -152,8 +158,12 @@ const About = () => {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <div>
-              <span className="badge">Market Presence</span>
-              <h2 style={{ marginBottom: '2rem' }}>Industry & <span className="gradient-text">Growth</span></h2>
+              <SectionHeader
+                badge="Market Presence"
+                title={<>Industry & <span className="gradient-text">Growth</span></>}
+                centered={false}
+              />
+
               <p style={{ fontSize: '1.0625rem', lineHeight: '1.8', marginBottom: '1.5rem', color: 'var(--muted-foreground)' }}>
                 Our suite of products and services addresses pressing challenges faced by organizations across diverse industries — including Education, Government, Corporate Enterprises, Automotive, BFSI, Healthcare, and Print & Publishing.
               </p>
@@ -180,7 +190,8 @@ const About = () => {
       </section>
 
       {/* Certifications Bar */}
-      <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'white', overflow: 'hidden' }}>
+      <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'var(--muted)', overflow: 'hidden' }}>
+
         <div className="container" style={{ padding: '4.5rem 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '5rem', alignItems: 'center' }}>
           {[
             { src: '/assets/images/cmmi logo.png', alt: 'CMMI Level 3' },
@@ -214,15 +225,18 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section className="section-padding" style={{ background: 'white' }}>
+
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <span className="badge">Our Ethos</span>
-            <h2>Institutional <span className="gradient-text">Priorities</span></h2>
-          </div>
+          <SectionHeader
+            badge="Our Ethos"
+            title={<>Institutional <span className="gradient-text">Priorities</span></>}
+          />
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {values.map((v, i) => (
-              <div key={i} className="card" style={{ padding: 'clamp(1.5rem, 5vw, 3.5rem)', textAlign: 'center', background: 'white' }}>
+              <div key={i} className="card" style={{ padding: 'clamp(1.5rem, 5vw, 3.5rem)', textAlign: 'center', background: 'var(--muted)' }}>
+
                 <div style={{ color: 'var(--primary)', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>{v.icon}</div>
                 <h3 style={{ marginBottom: '1.5rem', fontSize: '1.25rem' }}>{v.title}</h3>
                 <p style={{ color: 'var(--muted-foreground)' }}>{v.desc}</p>
@@ -235,11 +249,12 @@ const About = () => {
       {/* Milestones - Compact Grid Redesign */}
       <section className="section-padding" style={{ background: 'var(--muted)', overflow: 'hidden' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <span className="badge">Our Journey</span>
-            <h2 style={{ marginBottom: '1rem' }}>A Decade of <span className="gradient-text">Innovation</span></h2>
-            <p style={{ color: 'var(--muted-foreground)', maxWidth: '600px', margin: '0 auto' }}>From our inception to becoming a global assessment leader, every milestone represents our commitment to excellence.</p>
-          </div>
+          <SectionHeader
+            badge="Our Journey"
+            title={<>A Decade of <span className="gradient-text">Innovation</span></>}
+            text="From our inception to becoming a global assessment leader, every milestone represents our commitment to excellence."
+          />
+
 
           <div className="connected-timeline" style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', padding: '1rem 0' }}>
             <div className="timeline-line"></div>
@@ -377,13 +392,15 @@ const About = () => {
       </section>
 
       {/* Leadership */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section className="section-padding" style={{ background: 'white' }}>
+
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <span className="badge">Leadership</span>
-            <h2>The People Behind <span className="gradient-text">eVAL</span></h2>
-            <p style={{ maxWidth: '600px', margin: '0 auto' }}>A team of technologists, educators, and business leaders committed to transforming examination technology.</p>
-          </div>
+          <SectionHeader
+            badge="Leadership"
+            title={<>The People Behind <span className="gradient-text">eVAL</span></>}
+            text="A team of technologists, educators, and business leaders committed to transforming examination technology."
+          />
+
 
           <div style={{
             display: 'grid',
@@ -395,10 +412,11 @@ const About = () => {
               <div key={i} className="card hover-lift" style={{
                 padding: 'clamp(1.5rem, 5vw, 3rem)',
                 textAlign: 'center',
-                background: 'white',
+                background: 'var(--muted)',
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%'
+
               }}>
                 <div style={{ position: 'relative', width: 'fit-content', margin: '0 auto 1.5rem' }}>
                   <div style={{
@@ -435,10 +453,11 @@ const About = () => {
                     </a>
                   )}
                   {leader.mail && (
-                    <a href={`mailto:${leader.mail}`} style={{ color: 'var(--primary)', transition: 'opacity 0.2s', opacity: 0.7 }} onMouseEnter={e => e.currentTarget.style.opacity = 1} onMouseLeave={e => e.currentTarget.style.opacity = 0.7}>
+                    <a href={`mailto:${leader.mail}`} style={{ color: '#EA4335', transition: 'opacity 0.2s', opacity: 0.7 }} onMouseEnter={e => e.currentTarget.style.opacity = 1} onMouseLeave={e => e.currentTarget.style.opacity = 0.7}>
                       <Icons.Mail size={18} />
                     </a>
                   )}
+
                 </div>
               </div>
             ))}
@@ -447,7 +466,8 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(1.75rem, 8vw, 2.5rem)' }}>Partner with a <span className="gradient-text">Global Leader</span></h2>
           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)', fontSize: '1.125rem' }}>Headquartered in New Delhi, India, and supported by our international office in Tokyo, Japan.</p>

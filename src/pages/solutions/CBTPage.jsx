@@ -1,18 +1,60 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import { motion } from 'framer-motion';
+import Reveal from '@/components/common/Reveal';
 import SEO from '@/components/common/SEO';
 import { Link } from 'react-router-dom';
 import FAQ from '@/components/FAQ';
+import SectionHeader from '@/components/common/SectionHeader';
+
+
 
 const CBTPage = () => {
   const steps = [
-    { title: 'Candidate Registration', desc: 'Candidates register online by entering their personal, academic, and contact details along with uploading photograph and signature.' },
-    { title: 'Center Setup', desc: 'Exam centers are added in the system with detailed information such as location and seating capacity.' },
-    { title: 'Center Allocation', desc: 'System allocates candidates to centers automatically based on capacity and session availability.' },
-    { title: 'Admit Card Generation', desc: 'Admit cards are generated with candidate details, exam center, date, and reporting instructions.' },
-    { title: 'Exam Conduct', desc: 'Center administrator verifies candidate identity and allows access. Candidates login and begin the computer-based test in a secure environment.' },
-    { title: 'Evaluation & Result', desc: 'Responses are evaluated automatically according to the defined marking scheme. Detailed reports are published for administrators and candidates.' },
+    {
+      title: 'Registration',
+      desc: 'Online registration with photo/signature upload.',
+      icon: <Icons.UserPlus size={32} />,
+      color: 'var(--primary)',
+      bg: 'var(--primary-light)'
+    },
+    {
+      title: 'Center Setup',
+      desc: 'Infrastructure and seating capacity config.',
+      icon: <Icons.Building size={32} />,
+      color: '#6366F1',
+      bg: 'rgba(99, 102, 241, 0.1)'
+    },
+    {
+      title: 'Allocation',
+      desc: 'Auto-allocation based on session availability.',
+      icon: <Icons.MapPin size={32} />,
+      color: '#EC4899',
+      bg: 'rgba(236, 72, 153, 0.1)'
+    },
+    {
+      title: 'Admit Cards',
+      desc: 'Automated generation with exam instructions.',
+      icon: <Icons.FileText size={32} />,
+      color: '#F59E0B',
+      bg: 'rgba(245, 158, 11, 0.1)'
+    },
+    {
+      title: 'Exam Conduct',
+      desc: 'Secure CBT execution in locked environment.',
+      icon: <Icons.Monitor size={32} />,
+      color: '#8B5CF6',
+      bg: 'rgba(139, 92, 246, 0.1)'
+    },
+    {
+      title: 'Results',
+      desc: 'Auto-evaluation and performance reports.',
+      icon: <Icons.ClipboardCheck size={32} />,
+      color: '#10B981',
+      bg: 'rgba(16, 185, 129, 0.1)'
+    },
   ];
+
 
   const features = [
     {
@@ -71,7 +113,7 @@ const CBTPage = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
-      <SEO 
+      <SEO
         title="Computer Based Test (CBT) Platform | Online Exam System"
         description="Secure and scalable Computer Based Test (CBT) platform for entrance exams, corporate assessments, and certifications. Feature-rich online examination system."
         keywords="CBT Platform, Online Exam Software, Computer Based Test System, Secure Online Assessment, Entrance Exam Software"
@@ -79,52 +121,306 @@ const CBTPage = () => {
       {/* Hero / Overview */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '6rem', alignItems: 'center' }}>
-            <div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
+            <div style={{ flex: '1.2' }}>
               <span className="badge">Overview</span>
-              <h1 style={{ fontSize: '3.5rem' }}>Center Based <span className="gradient-text">Examination Solution</span></h1>
-              <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
-                A comprehensive platform designed to conduct secure, scalable, and controlled computer-based tests at designated examination centers. This solution ensures a standardized testing environment, minimizes malpractice, and allows organizations to conduct large-scale examinations efficiently.</p>
-              <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
-                <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem', lineHeight: '1.6' }}>
-                  It is suitable for universities, recruitment boards, certification bodies, government organizations, and corporates that require reliable exam execution across multiple locations. It ensures a fast, secure, and efficient process — eliminating logistical, administrative, and accuracy challenges of traditional paper-based evaluation.
-                </p>
-              </div>
-              <div style={{ display: 'flex', gap: '1.5rem', marginTop: '3rem', flexWrap: 'wrap' }}>
+              <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>Center Based <span className="gradient-text">Examination Solution</span></h1>
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)', marginBottom: '1.5rem' }}>
+                A comprehensive platform designed to conduct secure, scalable, and controlled computer-based tests at designated examination centers. This solution ensures a standardized testing environment, minimizes malpractice, and allows organizations to conduct large-scale examinations efficiently.
+              </p>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--muted-foreground)', fontWeight: '500', marginBottom: 0 }}>
+                It is suitable for universities, recruitment boards, certification bodies, and government organizations that require reliable exam execution across multiple locations. It ensures a fast, secure, and efficient process — eliminating logistical and administrative challenges.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
                 <Link to="/contact" className="btn btn-primary">Institutional Enquiry</Link>
-                <Link to="/book-demo" className="btn btn-outline">Request Demo</Link>
+                <a href="#workflow" className="btn btn-outline">See the Workflow</a>
+
               </div>
             </div>
-            <div style={{ position: 'relative' }}>
-              <img src="/assets/images/CBT.png" alt="On-Screen Marking" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+            <div style={{ position: 'relative', maxWidth: '680px', marginLeft: 'auto' }}>
+              <img src="/assets/images/CBT.png" alt="CBT Platform" style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 30px 60px rgba(0,0,0,0.12)', border: '1px solid var(--border)' }} />
             </div>
           </div>
         </div>
       </section>
       {/* Process Flow */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section id="workflow" className="section-padding" style={{ background: 'var(--muted)' }}>
+
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h2>The CBT <span className="gradient-text">Process Flow</span></h2>
+          <SectionHeader
+            title={<>The CBT <span className="gradient-text">Process Flow</span></>}
+          />
+
+          {/* Horizontal Flow Layout */}
+          <div className="workflow-h-container">
+            {/* Connecting Path (SVG Arcs) */}
+            <div className="workflow-h-path">
+              <svg width="100%" height="120" viewBox="0 0 1000 120" fill="none" preserveAspectRatio="none">
+                {/* Arc 1-2 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  d="M 100,60 C 100,10 260,10 260,60"
+                  stroke="var(--primary)"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+                {/* Arc 2-3 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                  d="M 260,60 C 260,110 420,110 420,60"
+                  stroke="#6366F1"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+                {/* Arc 3-4 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.6 }}
+                  d="M 420,60 C 420,10 580,10 580,60"
+                  stroke="#EC4899"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+                {/* Arc 4-5 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                  d="M 580,60 C 580,110 740,110 740,60"
+                  stroke="#F59E0B"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+                {/* Arc 5-6 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 1.0 }}
+                  d="M 740,60 C 740,10 900,10 900,60"
+                  stroke="#8B5CF6"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+
+                {/* Animated Particles */}
+                {[180, 340, 500, 660, 820].map((x, i) => (
+                  <motion.circle
+                    key={i}
+                    r="4"
+                    fill={i % 2 === 0 ? 'var(--primary)' : '#6366F1'}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 1, 0], x: [x - 50, x + 50] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+                    cx={x}
+                    cy={i % 2 === 0 ? 15 : 105}
+                  />
+                ))}
+              </svg>
+            </div>
+
+            <div className="workflow-h-steps">
+              {steps.map((w, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  className={`workflow-h-item ${i % 2 === 0 ? 'top-text' : 'bottom-text'}`}
+                  style={{ width: '16.66%' }}
+                >
+                  {/* Content (Above) */}
+                  {i % 2 === 0 && (
+                    <div className="h-step-content">
+                      <h3>{w.title}</h3>
+                      <p>{w.desc}</p>
+                    </div>
+                  )}
+
+                  {/* Circle */}
+                  <div className="h-step-visual">
+                    <div className="h-step-circle" style={{ borderColor: w.color }}>
+                      <div className="h-step-icon" style={{ color: w.color, background: w.bg }}>
+                        {w.icon}
+                      </div>
+                    </div>
+                    <div className="h-step-number" style={{ background: w.color }}>{i + 1}</div>
+                  </div>
+
+                  {/* Content (Below) */}
+                  {i % 2 !== 0 && (
+                    <div className="h-step-content">
+                      <h3>{w.title}</h3>
+                      <p>{w.desc}</p>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
-            {steps.map((s, i) => (
-              <div key={i} className="card" style={{ padding: '2.5rem', position: 'relative', background: 'var(--muted)' }}>
-                <div style={{ position: 'absolute', top: '1rem', right: '1.5rem', fontSize: '3.5rem', fontWeight: '900', color: 'var(--primary)', opacity: 0.4 }}>0{i + 1}</div>
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{s.title}</h3>
-                <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{s.desc}</p>
-              </div>
-            ))}
-          </div>
+
+          <style>{`
+            .workflow-h-container {
+              position: relative;
+              width: 100%;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 4rem 0;
+            }
+
+            .workflow-h-path {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              right: 0;
+              height: 120px;
+              transform: translateY(-50%);
+              z-index: 0;
+              opacity: 0.6;
+            }
+
+            .workflow-h-steps {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              position: relative;
+              z-index: 1;
+            }
+
+            .workflow-h-item {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              position: relative;
+            }
+
+            .h-step-visual {
+              position: relative;
+              margin: 1.5rem 0;
+            }
+
+            .h-step-circle {
+              width: 80px;
+              height: 80px;
+              border-radius: 50%;
+              border: 2px solid var(--primary);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 8px;
+              background: white;
+              box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+              transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            .workflow-h-item:hover .h-step-circle {
+              transform: scale(1.15) rotate(5deg);
+              box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            }
+
+            .h-step-icon {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .h-step-number {
+              position: absolute;
+              bottom: -2px;
+              right: -2px;
+              width: 26px;
+              height: 26px;
+              border-radius: 50%;
+              color: white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: 800;
+              font-size: 0.7rem;
+              border: 2px solid white;
+              box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .h-step-content {
+              height: 80px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              transition: 0.3s;
+            }
+
+            .workflow-h-item.top-text:hover .h-step-content {
+              transform: translateY(-5px);
+            }
+            .workflow-h-item.bottom-text:hover .h-step-content {
+              transform: translateY(5px);
+            }
+
+            .h-step-content h3 {
+              font-size: 1rem;
+              margin-bottom: 0.4rem;
+              color: var(--secondary);
+              font-weight: 800;
+            }
+
+            .h-step-content p {
+              font-size: 0.8rem;
+              color: var(--muted-foreground);
+              margin: 0;
+              line-height: 1.4;
+            }
+
+            @media (max-width: 950px) {
+              .workflow-h-steps {
+                flex-direction: column;
+                gap: 3rem;
+              }
+              .workflow-h-path {
+                display: none;
+              }
+              .workflow-h-item {
+                width: 100% !important;
+                flex-direction: row !important;
+                text-align: left;
+                gap: 1.5rem;
+              }
+              .h-step-content {
+                height: auto;
+                text-align: left;
+              }
+              .top-text, .bottom-text {
+                flex-direction: row !important;
+              }
+              .h-step-visual {
+                margin: 0;
+              }
+            }
+          `}</style>
+
         </div>
       </section>
 
       {/* Key Features */}
       <section className="section-padding" style={{ background: 'white' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h2>Key <span className="gradient-text">Features</span></h2>
-          </div>
+          <SectionHeader
+            title={<>Key <span className="gradient-text">Features</span></>}
+          />
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
             {features.map((f, i) => (
               <div key={i} className="card" style={{ padding: '3rem', background: 'var(--muted)' }}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/common/SEO';
 
 const PrivacyPolicy = () => {
   const lastUpdated = 'April 1, 2026';
@@ -111,6 +112,10 @@ const PrivacyPolicy = () => {
 
   return (
     <div style={{ paddingTop: '5rem' }}>
+      <SEO 
+        title="Privacy Policy | eVAL Edtech"
+        description="Learn how eVAL protects institutional data and maintains the highest standards of examination security and privacy."
+      />
       {/* Hero */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)', paddingBottom: '4rem' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>

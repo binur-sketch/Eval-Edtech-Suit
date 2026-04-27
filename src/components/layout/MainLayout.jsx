@@ -5,6 +5,7 @@ import Navbar from '../Navbar';
 import SiteFooter from '../SiteFooter';
 import CookieConsent from '../common/CookieConsent';
 import BackToTop from '../common/BackToTop';
+import FloatingContact from '../common/FloatingContact';
 
 const MainLayout = ({ children }) => {
   const location = useLocation();
@@ -40,6 +41,7 @@ const MainLayout = ({ children }) => {
           <SiteFooter />
           <CookieConsent />
           <BackToTop />
+          <FloatingContact />
         </>
       )}
     </div>

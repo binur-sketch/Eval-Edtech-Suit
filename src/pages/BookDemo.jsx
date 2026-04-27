@@ -11,9 +11,25 @@ const BookDemo = () => {
     email: '',
     organization: '',
     country: 'India',
-    solution: 'Complete eVAL Suite (Recommended)',
+    solutions: ['Complete eVAL Suite'],
     message: ''
   });
+
+  const products = [
+    'Complete eVAL Suite',
+    'OMR Software',
+    'On Screen Marking (OSM)',
+    'Question Paper Management (QPMS)',
+    'AI Proctoring',
+    'CBT Platform',
+    'LMS Portal'
+  ];
+
+  const countries = [
+    'India', 'Nigeria', 'Kenya', 'United Arab Emirates', 'Saudi Arabia',
+    'South Africa', 'Singapore', 'United States', 'United Kingdom',
+    'Canada', 'Australia', 'Other'
+  ];
 
   const { status, message, submitForm } = useFormSubmit({
     successMessage: "Your demo request has been received! Our Team will contact you within 24 hours."
@@ -23,8 +39,27 @@ const BookDemo = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleCheckboxChange = (product) => {
+    const currentSolutions = [...formData.solutions];
+    if (currentSolutions.includes(product)) {
+      setFormData({
+        ...formData,
+        solutions: currentSolutions.filter(s => s !== product)
+      });
+    } else {
+      setFormData({
+        ...formData,
+        solutions: [...currentSolutions, product]
+      });
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (formData.solutions.length === 0) {
+      alert("Please select at least one product for the demo.");
+      return;
+    }
     submitForm(formData, 'Demo Request');
   };
 
@@ -73,9 +108,10 @@ const BookDemo = () => {
                 <div className="input-group">
                   <label>Professional Email</label>
                   <div className="input-with-icon">
-                    <Icons.Mail size={18} className="input-icon" />
+                    <Icons.Mail size={18} className="input-icon" style={{ color: '#EA4335' }} />
                     <input name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="principal@institute.org" />
                   </div>
+
                 </div>
 
                 <div className="form-row">
@@ -89,24 +125,42 @@ const BookDemo = () => {
                   <div className="input-group">
                     <label>Country</label>
                     <select name="country" required value={formData.country} onChange={handleChange}>
-                      <option>India</option>
-                      <option>Nigeria</option>
-                      <option>Kenya</option>
-                      <option>United Arab Emirates</option>
-                      <option>Other</option>
+                      {countries.map(c => <option key={c} value={c}>{c}</option>)}
                     </select>
                   </div>
                 </div>
 
                 <div className="input-group">
-                  <label>Focus Area</label>
-                  <select name="solution" required value={formData.solution} onChange={handleChange}>
-                    <option>Complete eVAL Suite (Recommended)</option>
-                    <option>OMR Evaluation Solutions</option>
-                    <option>CBT & Proctoring Platform</option>
-                    <option>OSM (Digital Marking)</option>
-                    <option>LMS & Content Delivery</option>
-                  </select>
+                  <label>Products for Demo <span style={{ fontWeight: 'normal', color: 'var(--muted-foreground)' }}>(Select multiple)</span></label>
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                    gap: '0.75rem',
+                    background: '#f8fafc',
+                    padding: '1.5rem',
+                    borderRadius: '1.25rem',
+                    border: '1px solid var(--border)'
+                  }}>
+                    {products.map((product) => (
+                      <label key={product} style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.75rem',
+                        cursor: 'pointer',
+                        fontSize: '0.875rem',
+                        fontWeight: formData.solutions.includes(product) ? '700' : '500',
+                        color: formData.solutions.includes(product) ? 'var(--primary)' : 'var(--foreground)'
+                      }}>
+                        <input
+                          type="checkbox"
+                          checked={formData.solutions.includes(product)}
+                          onChange={() => handleCheckboxChange(product)}
+                          style={{ width: '18px', height: '18px', cursor: 'pointer' }}
+                        />
+                        {product}
+                      </label>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="input-group">

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, useMotionValue, animate, useTransform } from 'framer-motion';
+import SectionHeader from './common/SectionHeader';
+
 
 const Counter = ({ value, duration = 1.5 }) => {
   const count = useMotionValue(0);
@@ -33,29 +35,16 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="section-padding" style={{ background: '#ffffff', position: 'relative' }}>
+    <section id="stats" className="section-padding" style={{ background: 'var(--muted)', position: 'relative' }}>
+
       <div className="container">
 
-        {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ marginBottom: '1rem' }}
-          >
-            Trusted by <span className="gradient-text">Institutions Worldwide</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            style={{ color: 'var(--muted-foreground)', maxWidth: '640px', margin: '0 auto' }}
-          >
-            Powering large-scale examinations with unmatched speed, accuracy, and reliability.
-          </motion.p>
-        </div>
+        <SectionHeader
+          badge="Institutional Impact"
+          title={<>Trusted by <span className="gradient-text">Institutions Worldwide</span></>}
+          text="Powering large-scale examinations with unmatched speed, accuracy, and reliability."
+        />
+
 
         <div className="stats-grid-v3">
           {stats.map((item, i) => (

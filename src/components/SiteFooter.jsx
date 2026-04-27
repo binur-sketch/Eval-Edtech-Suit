@@ -4,21 +4,6 @@ import { Link } from 'react-router-dom';
 
 const SiteFooter = () => {
 
-    const labelStyle = {
-        fontSize: '0.6875rem',
-        fontWeight: '700',
-        color: 'rgba(255,255,255,0.4)',
-        textTransform: 'uppercase',
-        letterSpacing: '0.1em'
-    };
-
-    const valueStyle = {
-        fontWeight: '800',
-        color: 'white',
-        fontSize: '1.0625rem',
-        display: 'block',
-        marginTop: '2px'
-    };
 
     return (
         <footer
@@ -32,49 +17,6 @@ const SiteFooter = () => {
         >
             <div className="container">
 
-                {/* ✅ Pre-footer CTA Bar (RESPONSIVE) */}
-                <div className="footer-top-bar">
-
-                    {/* Support */}
-                    <div className="footer-contact-item">
-                        <div className="icon primary">
-                            <Icons.Phone size={20} />
-                        </div>
-                        <div>
-                            <div className="label">Institutional Support</div>
-                            <a href="tel:+919319275051" className="value">
-                                +91 9319275051
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Enterprise */}
-                    <div className="footer-contact-item">
-                        <div className="icon primary">
-                            <Icons.Mail size={20} />
-                        </div>
-                        <div>
-                            <div className="label">Enterprise Enquiries</div>
-                            <a href="mailto:corp@virsoftech.com" className="value">
-                                corp@virsoftech.com
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Quick Chat */}
-                    <div className="footer-contact-item">
-                        <div className="icon whatsapp">
-                            <Icons.MessageCircle size={20} />
-                        </div>
-                        <div>
-                            <div className="label">Quick Chat</div>
-                            <a href="https://wa.me/919319275051" className="value">
-                                WhatsApp Us
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
 
                 <div style={{
                     display: 'grid',
@@ -131,9 +73,10 @@ const SiteFooter = () => {
                                 <a href='https://share.google/bwL9Zpu33JXuIR2sw' target="_blank" rel="noopener noreferrer"><span>A 306, The I Thum, Plot No. A 40, Sector 62, Noida, UP 201301</span></a>
                             </div>
                             <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                                <Icons.Mail size={16} style={{ color: 'var(--primary)', flexShrink: 0 }} />
+                                <Icons.Mail size={16} style={{ color: '#EA4335', flexShrink: 0 }} />
                                 <a href='mailto:corp@virsoftech.com'><span>corp@virsoftech.com</span></a>
                             </div>
+
                             <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                                 <Icons.Phone
                                     size={16}

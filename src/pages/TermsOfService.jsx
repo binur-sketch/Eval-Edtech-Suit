@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/common/SEO';
 
 const TermsOfService = () => {
   const lastUpdated = 'April 1, 2026';
@@ -95,6 +96,10 @@ const TermsOfService = () => {
 
   return (
     <div style={{ paddingTop: '5rem' }}>
+      <SEO 
+        title="Terms of Service | eVAL Edtech"
+        description="Review the terms and conditions for using eVAL's examination and evaluation ecosystem."
+      />
       {/* Hero */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)', paddingBottom: '4rem' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>

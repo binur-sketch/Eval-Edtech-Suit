@@ -8,9 +8,9 @@ const ClientLogoMarquee = () => {
   ];
 
   return (
-    <section style={{ 
-      background: 'white', 
-      padding: '3rem 0', 
+    <section style={{
+      background: 'white',
+      padding: '3rem 0',
       borderBottom: '1px solid var(--border)',
       overflow: 'hidden',
       position: 'relative'
@@ -18,7 +18,7 @@ const ClientLogoMarquee = () => {
       {/* Fade edges */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '120px', height: '100%', background: 'linear-gradient(90deg, white, transparent)', zIndex: 2 }}></div>
       <div style={{ position: 'absolute', top: 0, right: 0, width: '120px', height: '100%', background: 'linear-gradient(270deg, white, transparent)', zIndex: 2 }}></div>
-      
+
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <p style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--muted-foreground)', marginBottom: 0 }}>
           Trusted by 5000+ leading institutions worldwide
@@ -32,10 +32,10 @@ const ClientLogoMarquee = () => {
         width: 'max-content'
       }}>
         {[...logos, ...logos].map((name, i) => (
-          <div key={i} style={{ 
-            fontSize: '1.25rem', 
-            fontWeight: '900', 
-            color: '#d1d5db', 
+          <div key={i} style={{
+            fontSize: '1.25rem',
+            fontWeight: '900',
+            color: '#d1d5db',
             whiteSpace: 'nowrap',
             letterSpacing: '-0.025em',
             userSelect: 'none',

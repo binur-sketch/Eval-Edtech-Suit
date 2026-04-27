@@ -18,9 +18,10 @@ export const useFormSubmit = (options = {}) => {
       return;
     }
 
+    const formRecipient = import.meta.env.VITE_FORM_EMAIL || "binur@virsoftech.com";
     try {
-      // 3. FormSubmit.co AJAX Call (Matches vsdox.com)
-      const response = await fetch("https://formsubmit.co/ajax/binur@virsoftech.com", {
+      // 3. FormSubmit.co AJAX Call
+      const response = await fetch(`https://formsubmit.co/ajax/${formRecipient}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

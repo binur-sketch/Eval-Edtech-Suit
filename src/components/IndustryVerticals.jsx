@@ -1,6 +1,8 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SectionHeader from './common/SectionHeader';
+
 
 const IndustryVerticals = () => {
   const verticals = [
@@ -24,7 +26,7 @@ const IndustryVerticals = () => {
     },
     {
       icon: <Icons.GraduationCap size={32} />,
-      title: 'Higher Education',
+      title: 'Universities & Colleges',
       desc: 'Universities and colleges managing entrance exams, semester evaluations, and accreditation assessments.',
       stat: '2000+ Universities'
     },
@@ -45,13 +47,16 @@ const IndustryVerticals = () => {
   ];
 
   return (
-    <section className="section-padding" style={{ background: 'var(--muted)' }}>
+    <section id="industries" className="section-padding" style={{ background: 'white' }}>
+
+
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-          <span className="badge">Industry Solutions</span>
-          <h2>Empowering Every <span className="gradient-text">Sector</span></h2>
-          <p style={{ maxWidth: '640px', margin: '0 auto' }}>Purpose-built solutions for the unique assessment challenges of every industry vertical.</p>
-        </div>
+        <SectionHeader 
+          badge="Industry Solutions"
+          title={<>Empowering Every <span className="gradient-text">Sector</span></>}
+          text="Purpose-built solutions for the unique assessment challenges of every industry vertical."
+        />
+
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
           {verticals.map((v, i) => (
@@ -59,7 +64,8 @@ const IndustryVerticals = () => {
               padding: '2.5rem',
               display: 'flex',
               flexDirection: 'column',
-              background: 'white',
+              background: 'var(--muted)',
+
               borderRadius: '1.75rem',
               boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
               border: '1px solid var(--border)',

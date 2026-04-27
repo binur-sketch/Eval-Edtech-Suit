@@ -16,10 +16,10 @@ const NewsletterSection = () => {
   };
 
   return (
-    <section className="section-padding" style={{ background: 'white', borderTop: '1px solid var(--border)' }}>
+    <section className="section-padding" style={{ background: 'var(--muted)', borderTop: '1px solid var(--border)' }}>
       <div className="container">
         <div style={{ 
-          background: 'var(--muted)', 
+          background: 'white', 
           borderRadius: 'clamp(1.5rem, 3vw, 3rem)', 
           padding: 'clamp(2rem, 5vw, 5rem)',
           display: 'grid',

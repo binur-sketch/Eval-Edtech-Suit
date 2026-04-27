@@ -1,5 +1,7 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import SectionHeader from './common/SectionHeader';
+
 
 const services = [
   {
@@ -15,7 +17,7 @@ const services = [
     tag: 'Most Popular'
   },
   {
-    title: 'OMR Sheets Scanning',
+    title: 'OMR Sheets Evaluation',
     desc: 'End-to-end Pre and Post-examination result processing. We leverage advanced OMR/ICR/OCR tools for rapid and accurate data capture from Medical, Engineering, and General entrance exams.',
     img: '/assets/images/omr_scanning.png',
     tag: 'High Speed'
@@ -30,12 +32,15 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section style={{
+    <section id="services" style={{
       padding: '8rem 0',
-      background: 'linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%)',
+
+      background: 'var(--muted)',
+
       position: 'relative',
       overflow: 'hidden'
     }}>
+
       {/* Decorative background elements */}
       <div style={{
         position: 'absolute', top: '5%', left: '-5%',
@@ -51,16 +56,12 @@ const ServicesSection = () => {
       }} />
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        {/* Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 5rem' }}>
-          <span className="badge">Our Services</span>
-          <h2 style={{ marginBottom: '1.5rem' }}>
-            End-to-End <span className="gradient-text">Examination</span> Services
-          </h2>
-          <p style={{ fontSize: '1.125rem', color: 'var(--muted-foreground)' }}>
-            Beyond software, we provide mission-critical logistical services for examination boards, recruitment agencies, and academic institutions.
-          </p>
-        </div>
+        <SectionHeader 
+          badge="Our Services"
+          title={<>End-to-End <span className="gradient-text">Examination</span> Services</>}
+          text="Beyond software, we provide mission-critical logistical services for examination boards, recruitment agencies, and academic institutions."
+        />
+
 
         {/* Services Grid — 2x2 vertical cards */}
         <div style={{

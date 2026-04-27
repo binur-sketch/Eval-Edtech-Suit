@@ -20,6 +20,12 @@ const BlogDetail = () => {
         
         if (error) throw error;
         setBlog(data);
+
+        // Increment view count
+        await supabase
+          .from('blogs')
+          .update({ views: (data.views || 0) + 1 })
+          .eq('id', id);
       } catch (err) {
         console.error('Error fetching blog:', err);
       } finally {
@@ -67,8 +73,8 @@ const BlogDetail = () => {
             <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>{blog.title}</h1>
             
             <div style={{ display: 'flex', gap: '1.5rem', color: 'var(--muted-foreground)', fontSize: '0.9375rem' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Icons.Calendar size={16} /> {new Date(blog.date).toLocaleDateString()}</span>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Icons.Clock size={16} /> {blog.read_time}</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Icons.Calendar size={16} /> {new Date(blog.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Icons.Eye size={16} /> {blog.views || 0} views</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Icons.User size={16} /> {blog.author}</span>
             </div>
           </header>

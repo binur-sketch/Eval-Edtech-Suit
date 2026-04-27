@@ -20,6 +20,7 @@ import CaseStudySlider from '@/components/CaseStudySlider';
 import { motion } from 'framer-motion';
 import Reveal from '@/components/common/Reveal';
 
+
 const Home = () => {
 
   const solutions = [
@@ -65,10 +66,12 @@ const Home = () => {
       {/* HERO */}
       <Hero />
 
-      {/* TRUST */}
       <Reveal width="100%">
         <TrustSection />
       </Reveal>
+
+
+
 
       {/* STATS */}
       <Reveal width="100%">
@@ -76,17 +79,16 @@ const Home = () => {
       </Reveal>
 
       {/* SOLUTIONS */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section id="solutions" className="section-padding" style={{ background: 'white' }}>
+
+
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem' }}>
-            <span className="badge">Our Solutions</span>
-            <h2>
-              One Platform. <span className="gradient-text">Complete Examination Ecosystem</span>
-            </h2>
-            <p>
-              Digitize, automate, and scale your entire assessment lifecycle — from OMR to AI-powered evaluation.
-            </p>
-          </div>
+          <SectionHeader
+            badge="Our Solutions"
+            title={<>One Platform. <span className="gradient-text">Complete Examination Ecosystem</span></>}
+            text="Digitize, automate, and scale your entire assessment lifecycle — from OMR to AI-powered evaluation."
+          />
+
 
           <div style={{
             display: 'grid',
@@ -166,11 +168,6 @@ const Home = () => {
         <IndustryVerticals />
       </Reveal>
 
-      {/* EXISTING VISUAL WORKFLOW */}
-      <Reveal width="100%">
-        <WorkflowSection />
-      </Reveal>
-
       {/* WHY eVAL */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
@@ -184,13 +181,13 @@ const Home = () => {
             {/* LEFT CONTENT */}
             <Reveal direction="right">
               <div>
-                <span className="badge">Why EVAL?</span>
-                <h2>
-                  Built for <span className="gradient-text">Accuracy, Scale & Trust</span>
-                </h2>
-                <p style={{ maxWidth: '500px' }}>
-                  Transform your evaluation ecosystem with automation, security, and unmatched precision.
-                </p>
+                <SectionHeader
+                  badge="Why EVAL?"
+                  title={<>Built for <span className="gradient-text">Accuracy, Scale & Trust</span></>}
+                  text="Transform your evaluation ecosystem with automation, security, and unmatched precision."
+                  centered={false}
+                />
+
 
                 <div style={{ marginTop: '2.5rem', display: 'grid', gap: '1.5rem' }}>
                   {[
@@ -256,14 +253,15 @@ const Home = () => {
       </Reveal>
 
       {/* Case Studies Slider */}
-      <section className="section-padding" style={{ background: 'white' }}>
+      <section id="case-studies" className="section-padding" style={{ background: 'var(--muted)' }}>
+
+
         <div className="container">
-          <Reveal width="100%">
-            <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-              <span className="badge">Success Stories</span>
-              <h2>Proven <span className="gradient-text">Institutional Impact</span></h2>
-            </div>
-          </Reveal>
+          <SectionHeader
+            badge="Success Stories"
+            title={<>Proven <span className="gradient-text">Institutional Impact</span></>}
+          />
+
           <Reveal width="100%">
             <CaseStudySlider />
           </Reveal>

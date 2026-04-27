@@ -1,16 +1,54 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import { motion } from 'framer-motion';
+import Reveal from '@/components/common/Reveal';
+import { ScanIcon } from '@/components/common/CustomIcons';
+
 import SEO from '@/components/common/SEO';
 import { Link } from 'react-router-dom';
 import FAQ from '@/components/FAQ';
+import SectionHeader from '@/components/common/SectionHeader';
+
 const OMRPage = () => {
   const steps = [
-    { title: 'Step 1 — Design', icon: <Icons.FileEdit size={32} />, desc: 'Design your own OMR sheet using the MS Excel-based Form Designer. Modify from existing templates or create new OMR designs with variable fields like barcode, name, and roll numbers.' },
-    { title: 'Step 2 — Print', icon: <Icons.Printer size={32} />, desc: 'Print in-house in black and white using any simple inkjet or laser printer or MFP. Works with standard 70–100 GSM A4 plain paper. Even photocopies work.' },
-    { title: 'Step 3 — Scan', icon: <Icons.Scan size={32} />, desc: 'Scan using any document scanner — flatbed or ADF. No fancy or expensive hardware investment is required.' },
-    { title: 'Step 4 — Verify', icon: <Icons.CheckSquare size={32} />, desc: 'Process sheets at 300–500 sheets per minute. Proactive error detection and correction ensure 100% accuracy throughout the verification step.' },
-    { title: 'Step 5 — Results', icon: <Icons.BarChart size={32} />, desc: 'View advanced results with professional reports and graphs. Export in CSV, MS Excel, PDF, DBF formats. SMS module available for sending results to candidates.' }
+    {
+      title: 'Design',
+      icon: <Icons.FileEdit size={32} />,
+      desc: 'Design custom OMR sheets using MS Excel templates.',
+      color: 'var(--primary)',
+      bg: 'var(--primary-light)'
+    },
+    {
+      title: 'Print',
+      icon: <Icons.Printer size={32} />,
+      desc: 'Print on plain paper using any standard printer.',
+      color: '#6366F1',
+      bg: 'rgba(99, 102, 241, 0.1)'
+    },
+    {
+      title: 'Scan',
+      icon: <ScanIcon size={32} />,
+      desc: 'Scan sheets using any document scanner.',
+      color: '#EC4899',
+      bg: 'rgba(236, 72, 153, 0.1)'
+    },
+
+    {
+      title: 'Verify',
+      icon: <Icons.CheckSquare size={32} />,
+      desc: 'Process with 100% accuracy and error detection.',
+      color: '#F59E0B',
+      bg: 'rgba(245, 158, 11, 0.1)'
+    },
+    {
+      title: 'Results',
+      icon: <Icons.BarChart size={32} />,
+      desc: 'Generate advanced reports and export data.',
+      color: '#10B981',
+      bg: 'rgba(16, 185, 129, 0.1)'
+    }
   ];
+
 
   const keyFeatures = [
     { title: '100% Accuracy', text: 'Ensures complete result accuracy with effortless data analysis and an option to verify results before finalisation.', icon: <Icons.Target size={28} /> },
@@ -37,30 +75,6 @@ const OMRPage = () => {
     { e: 'Dedicated technical support and regular updates.', o: 'Limited support period and delayed updates.' }
   ];
 
-  const eduLogos = [
-    '/assets/images/school/dps.webp',
-    '/assets/images/university/BANARAS HINDU UNIVERSITY.png',
-    '/assets/images/coaching/physics wallah.webp',
-    '/assets/images/school/RPS International School.png',
-    '/assets/images/university/Parul University.png',
-    '/assets/images/coaching/aakash logo.png',
-    '/assets/images/school/OASIS International School.png',
-    '/assets/images/university/Jamia Millia Islamia.png',
-    '/assets/images/coaching/career launcher.png',
-    '/assets/images/university/Silver Oak University.png'
-  ];
-
-  const govLogos = [
-    '/assets/images/government/National Cadet Corps.png',
-    '/assets/images/government/Union Public Service Commission.png',
-    '/assets/images/government/AIIMS.svg',
-    '/assets/images/government/IIT Goa.png',
-    '/assets/images/government/NIT Goa.png',
-    '/assets/images/government/Indian Railway.png',
-    '/assets/images/government/QUALITY COUNCIL OF INDIA.png',
-    '/assets/images/government/Council of Scientific and Industrial Research.png',
-    '/assets/images/government/Maulana Azad Medical College.png'
-  ];
   const omrFaqs = [
     {
       question: "What types of OMR sheets are supported?",
@@ -98,7 +112,7 @@ const OMRPage = () => {
   ];
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
-      <SEO 
+      <SEO
         title="OMR Software for Sheet Scanning & Reading | OMR Checker"
         description="eVAL OMR is a state-of-the-art Optical Mark Reader software designed for capturing and analysing data from plain paper OMR sheets with 100% accuracy."
         keywords="OMR Software, OMR Sheet Scanning, OMR Checker, Bubble Sheet Reader, OMR Design Software, Automated Exam Evaluation"
@@ -106,20 +120,23 @@ const OMRPage = () => {
       {/* Hero Section */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(2rem, 8vw, 6rem)', alignItems: 'center' }}>
-            <div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
+            <div style={{ flex: '1.2' }}>
               <span className="badge">100% Accurate Processing</span>
               <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>eVAL OMR <span className="gradient-text">Exam Software</span></h1>
-              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)', marginBottom: '1.5rem' }}>
                 eVAL OMR is a state-of-the-art Optical Mark Reader software designed for capturing and analysing data from plain paper OMR (bubble) sheets with 100% accurate results at high speed.
               </p>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--muted-foreground)', fontWeight: '500', marginBottom: 0 }}>
+                Its simple yet sophisticated User Interface (UI) makes it easy to create, process, and analyse OMR data for any institutional application — all without requiring any special hardware investment.
+              </p>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
-                <Link to="/book-demo" className="btn btn-primary">Start Free Trial</Link>
-                <Link to="/contact" className="btn btn-outline">Consult Our Team</Link>
+                <Link to="/contact" className="btn btn-primary">Start Free Trial</Link>
+                <a href="#workflow" className="btn btn-outline">See the Workflow</a>
               </div>
             </div>
-            <div style={{ position: 'relative' }}>
-              <img src="/assets/images/omr_hero.png" alt="OMR Software" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+            <div style={{ position: 'relative', maxWidth: '680px', marginLeft: 'auto' }}>
+              <img src="/assets/images/omr_hero.png" alt="OMR Software" style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 30px 60px rgba(0,0,0,0.12)', border: '1px solid var(--border)' }} />
             </div>
           </div>
         </div>
@@ -128,176 +145,280 @@ const OMRPage = () => {
       {/* Overview */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
-          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }} className="reveal">
-            <span className="badge">Software Overview</span>
-            <h2 style={{ marginBottom: '1.5rem' }}>What is <span className="gradient-text">eVAL OMR?</span></h2>
-            <div style={{ background: 'white', padding: '2rem', borderRadius: '1.5rem', border: '1px solid var(--border)', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
-              <p style={{ fontSize: '1.125rem', color: 'var(--muted-foreground)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-                eVAL OMR is a state-of-the-art Optical Mark Reader software designed for capturing and analysing data from plain paper OMR (bubble) sheets with 100% accurate results at high speed. Its simple yet sophisticated User Interface (UI) makes it easy to create, process, and analyse OMR data for any institutional application.
-              </p>
-              <p style={{ fontSize: '1.125rem', color: 'var(--foreground)', lineHeight: '1.8', fontWeight: '500', margin: 0 }}>
-                The software is best suited for quick and accurate evaluation of tests, assessments, surveys, and filled forms — all without requiring any special hardware investment. A regular flatbed or ADF document scanner and a standard laser or inkjet printer are all you need.
-              </p>
-            </div>
+          <SectionHeader
+            badge="Software Overview"
+            title={<>What is <span className="gradient-text">eVAL OMR?</span></>}
+          />
+          <div style={{ maxWidth: '900px', margin: '0 auto', background: 'white', padding: '2rem', borderRadius: '1.5rem', border: '1px solid var(--border)', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }} className="reveal">
+            <p style={{ fontSize: '1.125rem', color: 'var(--muted-foreground)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+              eVAL OMR is a state-of-the-art Optical Mark Reader software designed for capturing and analysing data from plain paper OMR (bubble) sheets with 100% accurate results at high speed. Its simple yet sophisticated User Interface (UI) makes it easy to create, process, and analyse OMR data for any institutional application.
+            </p>
+            <p style={{ fontSize: '1.125rem', color: 'var(--foreground)', lineHeight: '1.8', fontWeight: '500', margin: 0 }}>
+              The software is best suited for quick and accurate evaluation of tests, assessments, surveys, and filled forms — all without requiring any special hardware investment. A regular flatbed or ADF document scanner and a standard laser or inkjet printer are all you need.
+            </p>
           </div>
         </div>
       </section>
 
       {/* The 5-Step Process */}
-      <section className="section-padding" style={{ background: 'white' }}>
+      <section id="workflow" className="section-padding" style={{ background: 'white' }}>
         <div className="container">
+          <SectionHeader
+            badge="Process Workflow"
+            title={<>The Simple <span className="gradient-text">5-Step Process</span></>}
+          />
 
-          {/* Heading */}
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <span className="badge">Process Workflow</span>
-            <h2>
-              The Simple <span className="gradient-text">5-Step Process</span>
-            </h2>
+          {/* Horizontal Flow Layout */}
+          <div className="workflow-h-container">
+            {/* Connecting Path (SVG Arcs) */}
+            <div className="workflow-h-path">
+              <svg width="100%" height="120" viewBox="0 0 1000 120" fill="none" preserveAspectRatio="none">
+                {/* Arc 1-2 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  d="M 100,60 C 100,10 300,10 300,60"
+                  stroke="var(--primary)"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+                {/* Arc 2-3 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                  d="M 300,60 C 300,110 500,110 500,60"
+                  stroke="#6366F1"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+                {/* Arc 3-4 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.6 }}
+                  d="M 500,60 C 500,10 700,10 700,60"
+                  stroke="#EC4899"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+                {/* Arc 4-5 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                  d="M 700,60 C 700,110 900,110 900,60"
+                  stroke="#F59E0B"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+
+                {/* Animated Particles */}
+                {[200, 400, 600, 800].map((x, i) => (
+                  <motion.circle
+                    key={i}
+                    r="4"
+                    fill={i % 2 === 0 ? 'var(--primary)' : '#6366F1'}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 1, 0], x: [x - 50, x + 50] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+                    cx={x}
+                    cy={i % 2 === 0 ? 15 : 105}
+                  />
+                ))}
+              </svg>
+            </div>
+
+            <div className="workflow-h-steps">
+              {steps.map((s, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  className={`workflow-h-item ${i % 2 === 0 ? 'top-text' : 'bottom-text'}`}
+                  style={{ width: '20%' }}
+                >
+                  {/* Content (Above) */}
+                  {i % 2 === 0 && (
+                    <div className="h-step-content">
+                      <h3>{s.title}</h3>
+                      <p>{s.desc}</p>
+                    </div>
+                  )}
+
+                  {/* Circle */}
+                  <div className="h-step-visual">
+                    <div className="h-step-circle" style={{ borderColor: s.color }}>
+                      <div className="h-step-icon" style={{ color: s.color, background: s.bg }}>
+                        {s.icon}
+                      </div>
+                    </div>
+                    <div className="h-step-number" style={{ background: s.color }}>{i + 1}</div>
+                  </div>
+
+                  {/* Content (Below) */}
+                  {i % 2 !== 0 && (
+                    <div className="h-step-content">
+                      <h3>{s.title}</h3>
+                      <p>{s.desc}</p>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
           </div>
-
-          {/* Steps */}
-          <div className="process-row">
-            {steps.map((s, i) => (
-              <div key={i} className="process-col">
-
-                {/* Step */}
-                <div className="process-card">
-
-                  {/* Number */}
-                  <div className="step-badge">{i + 1}</div>
-
-                  {/* Icon */}
-                  <div className="icon-wrap">{s.icon}</div>
-
-                  {/* Content */}
-                  <h3>{s.title}</h3>
-                  <p>{s.desc}</p>
-                </div>
-
-                {/* Arrow */}
-                {i !== steps.length - 1 && (
-                  <div className="arrow">→</div>
-                )}
-              </div>
-            ))}
-          </div>
-
         </div>
 
         <style>{`
+          .workflow-h-container {
+            position: relative;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 0;
+          }
 
-    .process-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: nowrap;
-    }
+          .workflow-h-path {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 120px;
+            transform: translateY(-50%);
+            z-index: 0;
+            opacity: 0.6;
+          }
 
-    .process-col {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
+          .workflow-h-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+          }
 
-    /* CARD */
-    .process-card {
-      width: 240px; /* 👈 fixed width fixes stretching */
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 1.5rem;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: 0.3s;
-      position: relative;
-    }
+          .workflow-h-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+          }
 
-    .process-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    }
+          .h-step-visual {
+            position: relative;
+            margin: 1.5rem 0;
+          }
 
-    /* NUMBER */
-    .step-badge {
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: white;
-      font-size: 0.9rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+          .h-step-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          }
 
-    /* ICON */
-    .icon-wrap {
-      margin-bottom: 1rem;
-      color: var(--primary);
-      display: flex;
-      justify-content: center;
-    }
+          .workflow-h-item:hover .h-step-circle {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+          }
 
-    /* TEXT */
-    .process-card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.6rem;
-      font-weight: 700;
-    }
+          .h-step-icon {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
 
-    .process-card p {
-      font-size: 0.85rem;
-      color: var(--muted-foreground);
-      line-height: 1.6;
-      margin: 0;
-    }
+          .h-step-number {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.75rem;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          }
 
-    /* ARROW */
-    .arrow {
-      font-size: 1.5rem;
-      color: var(--primary);
-      opacity: 0.5;
-    }
+          .h-step-content {
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: 0.3s;
+          }
 
-    /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      .process-row {
-        overflow-x: auto;
-        justify-content: flex-start;
-        padding-bottom: 1rem;
-      }
-    }
+          .h-step-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            font-weight: 800;
+          }
 
-    @media (max-width: 768px) {
-      .process-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
+          .h-step-content p {
+            font-size: 0.85rem;
+            color: var(--muted-foreground);
+            margin: 0;
+            line-height: 1.5;
+          }
 
-      .process-col {
-        flex-direction: column;
-      }
-
-      .arrow {
-        transform: rotate(90deg);
-      }
-    }
-
-  `}</style>
+          @media (max-width: 850px) {
+            .workflow-h-steps {
+              flex-direction: column;
+              gap: 3rem;
+            }
+            .workflow-h-path {
+              display: none;
+            }
+            .workflow-h-item {
+              width: 100% !important;
+              flex-direction: row !important;
+              text-align: left;
+              gap: 1.5rem;
+            }
+            .h-step-content {
+              height: auto;
+              text-align: left;
+            }
+            .top-text, .bottom-text {
+              flex-direction: row !important;
+            }
+            .h-step-visual {
+              margin: 0;
+            }
+          }
+        `}</style>
       </section>
 
       {/* Key Features */}
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <span className="badge">Capabilities</span>
-            <h2>Platform <span className="gradient-text">Key Features</span></h2>
-          </div>
+          <SectionHeader
+            badge="Capabilities"
+            title={<>Platform <span className="gradient-text">Key Features</span></>}
+          />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem' }}>
             {keyFeatures.map((f, i) => (
               <div key={i} style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }} className="reveal hover-lift">
@@ -316,32 +437,21 @@ const OMRPage = () => {
       {/* Comparison Table */}
       <section className="section-padding" style={{ background: 'white' }}>
         <div className="container">
+          <SectionHeader
+            badge="Competitive Advantage"
+            title={<>eVAL OMR vs. <span className="gradient-text">Other OMR Software</span></>}
+            text="How we outperform traditional OMR solutions"
+          />
 
-          {/* Heading */}
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <span className="badge">Competitive Advantage</span>
-            <h2>
-              eVAL OMR vs. <span className="gradient-text">Other OMR Software</span>
-            </h2>
-            <p style={{ marginTop: '1.5rem', color: 'var(--muted-foreground)' }}>
-              How we outperform traditional OMR solutions
-            </p>
-          </div>
-
-          {/* Table */}
-          {/* Table Container with Overflow and stacking logic */}
           <div className="comparison-container">
-            {/* Header - Hidden on mobile, shown on desktop */}
             <div className="comparison-header">
               <div style={{ padding: '1.8rem' }}>Feature</div>
               <div style={{ padding: '1.8rem' }}>eVAL OMR Software</div>
               <div style={{ padding: '1.8rem' }}>Other OMR Software</div>
             </div>
 
-            {/* Rows */}
             {comparisonData.map((row, i) => (
               <div key={i} className="comparison-row">
-                {/* Feature Label */}
                 <div className="feature-cell">
                   {(() => {
                     const Icon = featureMeta[i]?.icon;
@@ -358,13 +468,11 @@ const OMRPage = () => {
                   })()}
                 </div>
 
-                {/* eVAL */}
                 <div className="eval-cell">
                   <div className="mobile-label">eVAL OMR</div>
                   {row.e}
                 </div>
 
-                {/* Others */}
                 <div className="other-cell">
                   <div className="mobile-label">Others</div>
                   {row.o}

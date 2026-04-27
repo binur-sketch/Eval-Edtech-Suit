@@ -69,31 +69,30 @@ const LMSPage = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
-      <SEO 
+      <SEO
         title="Learning Management System (LMS) | Education Technology"
         description="A powerful Learning Management System (LMS) for schools and universities. Manage courses, track student progress, and deliver blended learning."
         keywords="LMS, Learning Management System, Education Software, E-learning Platform, School Management Software"
       />
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(2rem, 8vw, 6rem)', alignItems: 'center' }}>
-            <div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
+            <div style={{ flex: '1.2' }}>
               <span className="badge">LMS Central</span>
               <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>Learning <span className="gradient-text">Management System</span></h1>
-              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)', marginBottom: '1.5rem' }}>
                 VIR Softech's Learning Management System (LMS) is an easy and efficient way to deliver student learning and manage the entire learning process at scale. Everything needed to manage learning efficiently, productively, and cost-effectively is built into this platform.
               </p>
-              <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
-                <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem', lineHeight: '1.6' }}>
-                  Whether your institution is a school, university, government cell, recruitment unit, coaching institute, or education and training centre, the eVAL LMS is designed to be flexible, scalable, and future-ready. It supports online classrooms, self-paced courses, training programmes, and a full management portal.</p>
-              </div>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--muted-foreground)', fontWeight: '500', marginBottom: 0 }}>
+                Whether your institution is a school, university, government cell, or training centre, the eVAL LMS is designed to be flexible, scalable, and future-ready. It supports online classrooms, self-paced courses, and a full management portal.
+              </p>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
                 <Link to="/contact" className="btn btn-primary">Enquiry Now</Link>
                 <Link to="/book-demo" className="btn btn-outline">Request Demo</Link>
               </div>
             </div>
-            <div style={{ position: 'relative' }}>
-              <img src="/assets/images/LMS.png" alt="On-Screen Marking" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+            <div style={{ position: 'relative', maxWidth: '680px', marginLeft: 'auto' }}>
+              <img src="/assets/images/LMS.png" alt="LMS Dashboard" style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 30px 60px rgba(0,0,0,0.12)', border: '1px solid var(--border)' }} />
             </div>
           </div>
         </div>
@@ -161,17 +160,30 @@ const LMSPage = () => {
       </section>
 
       {/* Additional Modules */}
-      <section className="section-padding" style={{ background: '#1F1F1F', color: 'white' }}>
-        <div className="container">
+      <section className="section-padding" style={{ background: 'var(--muted)', position: 'relative', overflow: 'hidden' }}>
+        {/* Background Accent */}
+        <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(14, 165, 164, 0.03) 0%, transparent 70%)', borderRadius: '50%' }}></div>
+
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h2 style={{ color: 'white' }}>Powerful <span style={{ color: 'var(--primary)' }}>Additional Modules</span></h2>
+            <span className="badge">Extended Capabilities</span>
+            <h2>Powerful <span className="gradient-text">Additional Modules</span></h2>
+            <p style={{ maxWidth: '600px', margin: '1.5rem auto 0', color: 'var(--muted-foreground)' }}>Enhance your institutional ecosystem with these specialized integration modules.</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
             {additionalModules.map((m, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', padding: '2rem' }}>
-                <div style={{ color: 'var(--primary)', marginBottom: '1rem' }}>{m.icon}</div>
-                <h4 style={{ color: 'white', fontSize: '1.125rem', marginBottom: '0.75rem' }}>{m.title}</h4>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', lineHeight: '1.6', margin: 0 }}>{m.desc}</p>
+              <div key={i} style={{
+                background: 'white',
+                border: '1px solid var(--border)',
+                borderRadius: '1.5rem',
+                padding: '2rem',
+                transition: 'all 0.3s ease'
+              }} className="hover-lift">
+                <div style={{ color: 'var(--primary)', marginBottom: '1.5rem', background: 'var(--primary-light)', width: '48px', height: '48px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  {React.cloneElement(m.icon, { size: 24 })}
+                </div>
+                <h4 style={{ color: 'var(--secondary)', fontSize: '1.125rem', marginBottom: '0.75rem', fontWeight: '700' }}>{m.title}</h4>
+                <p style={{ color: 'var(--muted-foreground)', fontSize: '0.9375rem', lineHeight: '1.6', margin: 0 }}>{m.desc}</p>
               </div>
             ))}
           </div>

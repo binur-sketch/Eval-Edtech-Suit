@@ -98,7 +98,7 @@ const AdminDashboard = () => {
       category: 'Assessment',
       author: 'eVAL Team',
       date: new Date().toISOString().split('T')[0],
-      read_time: '5 min read',
+      views: 0,
       image: '',
       status: 'published'
     });
@@ -111,7 +111,8 @@ const AdminDashboard = () => {
 
     try {
       if (editingBlog.id) {
-        const { error } = await supabase.from('blogs').update(editingBlog).eq('id', editingBlog.id);
+        const { id, views, ...updateData } = editingBlog;
+        const { error } = await supabase.from('blogs').update(updateData).eq('id', id);
         if (error) throw error;
       } else {
         const { error } = await supabase.from('blogs').insert([editingBlog]);
@@ -201,15 +202,16 @@ const AdminDashboard = () => {
                   <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Blog Info</th>
                   <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Category</th>
                   <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Status</th>
+                  <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Views</th>
                   <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Date</th>
                   <th style={{ textAlign: 'right', padding: '1rem 1.5rem', fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {loading ? (
-                  <tr><td colSpan="4" style={{ textAlign: 'center', padding: '4rem' }}><div className="loader" style={{ margin: '0 auto' }}></div></td></tr>
+                  <tr><td colSpan="6" style={{ textAlign: 'center', padding: '4rem' }}><div className="loader" style={{ margin: '0 auto' }}></div></td></tr>
                 ) : blogs.length === 0 ? (
-                  <tr><td colSpan="4" style={{ textAlign: 'center', padding: '4rem', color: '#64748b' }}>No blogs found. Start by creating one!</td></tr>
+                  <tr><td colSpan="6" style={{ textAlign: 'center', padding: '4rem', color: '#64748b' }}>No blogs found. Start by creating one!</td></tr>
                 ) : (
                   blogs.map((blog) => (
                     <tr key={blog.id} style={{ borderBottom: '1px solid #f1f5f9', transition: '0.2s' }} className="table-row-hover">
@@ -220,7 +222,7 @@ const AdminDashboard = () => {
                           </div>
                           <div>
                             <p style={{ fontWeight: '700', color: '#1e293b', marginBottom: '0.25rem' }}>{blog.title}</p>
-                            <p style={{ fontSize: '0.75rem', color: '#94a3b8' }}>{blog.read_time}</p>
+                            <p style={{ fontSize: '0.75rem', color: '#94a3b8' }}>{blog.author}</p>
                           </div>
                         </div>
                       </td>
@@ -236,6 +238,11 @@ const AdminDashboard = () => {
                         }}>
                           {blog.status === 'published' ? 'Published' : 'Draft'}
                         </span>
+                      </td>
+                      <td style={{ padding: '1.25rem 1.5rem', color: '#64748b', fontSize: '0.875rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                          <Icons.Eye size={14} /> {blog.views || 0}
+                        </div>
                       </td>
                       <td style={{ padding: '1.25rem 1.5rem', color: '#64748b', fontSize: '0.875rem' }}>{new Date(blog.date).toLocaleDateString()}</td>
                       <td style={{ padding: '1.25rem 1.5rem', textAlign: 'right' }}>
@@ -296,8 +303,8 @@ const AdminDashboard = () => {
                   </select>
                 </div>
                 <div style={{ display: 'grid', gap: '0.75rem' }}>
-                  <label style={{ fontWeight: '700', fontSize: '0.875rem', color: '#334155' }}>Read Time</label>
-                  <input value={editingBlog.read_time} onChange={e => setEditingBlog({...editingBlog, read_time: e.target.value})} placeholder="e.g. 5 min read" style={{ padding: '1rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '1rem', width: '100%' }} />
+                  <label style={{ fontWeight: '700', fontSize: '0.875rem', color: '#334155' }}>Author</label>
+                  <input required value={editingBlog.author} onChange={e => setEditingBlog({...editingBlog, author: e.target.value})} placeholder="e.g. eVAL Team" style={{ padding: '1rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '1rem', width: '100%' }} />
                 </div>
               </div>
 

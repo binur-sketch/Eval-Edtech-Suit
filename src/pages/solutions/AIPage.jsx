@@ -1,20 +1,74 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import { motion } from 'framer-motion';
+import Reveal from '@/components/common/Reveal';
 import SEO from '@/components/common/SEO';
+import SectionHeader from '@/components/common/SectionHeader';
 import { Link } from 'react-router-dom';
+
 import FAQ from '@/components/FAQ';
+
 
 const AIPage = () => {
   const howItWorks = [
-    { title: 'Pre-Exam Identity Verification', icon: <Icons.UserCheck />, desc: "Before the exam begins, the AI system verifies the candidate's identity using facial recognition matched against their registered photograph. ID scanning and biometric analysis confirm the right individual is seated." },
-    { title: 'Real-Time Facial Monitoring', icon: <Icons.ScanEye />, desc: 'AI continuously monitors the candidate\'s face throughout the exam. It detects the presence of multiple faces, candidate absence from the camera frame, and unusual head or eye movements.' },
-    { title: 'Screen & Browser Monitoring', icon: <Icons.Lock />, desc: 'The system prevents tab-switching, restricts access to unauthorised websites and applications, and enforces full-screen mode. Any attempt to exit is flagged and the exam window is restored automatically.' },
-    { title: 'Audio Surveillance', icon: <Icons.Mic />, desc: 'AI monitors the microphone feed to detect suspicious conversations, coaching from others, or background voices that may indicate external assistance.' },
-    { title: 'Eye Movement Tracking', icon: <Icons.Eye />, desc: 'Tracks candidate eye direction (looking left, right, below) to identify patterns that may suggest reference to external materials or other screens.' },
-    { title: 'Device Detection', icon: <Icons.Smartphone />, desc: 'Detects the use of electronic devices such as mobile phones during the exam and flags such incidents in real time.' },
-    { title: 'Automated Incident Flagging', icon: <Icons.AlertTriangle />, desc: 'All suspicious activities are automatically logged, timestamped, and flagged for review. Short video clips of flagged incidents are generated for investigation.' },
-    { title: 'Post-Exam Reports', icon: <Icons.FileCheck />, desc: 'Detailed AI-generated reports highlighting all potential irregularities are provided to the exam authority for final review and decision-making.' },
+    {
+      title: 'Identity Verification',
+      desc: "Facial recognition matches against photo.",
+      icon: <Icons.UserCheck size={28} />,
+      color: 'var(--primary)',
+      bg: 'var(--primary-light)'
+    },
+    {
+      title: 'Facial Monitoring',
+      desc: 'Detects multiple faces or candidate absence.',
+      icon: <Icons.ScanEye size={28} />,
+      color: '#6366F1',
+      bg: 'rgba(99, 102, 241, 0.1)'
+    },
+    {
+      title: 'Browser Control',
+      desc: 'Prevents tab-switching and external apps.',
+      icon: <Icons.Lock size={28} />,
+      color: '#EC4899',
+      bg: 'rgba(236, 72, 153, 0.1)'
+    },
+    {
+      title: 'Audio Surveillance',
+      desc: 'Detects suspicious voices or coaching.',
+      icon: <Icons.Mic size={28} />,
+      color: '#F59E0B',
+      bg: 'rgba(245, 158, 11, 0.1)'
+    },
+    {
+      title: 'Eye Tracking',
+      desc: 'Identifies patterns of external reference.',
+      icon: <Icons.Eye size={28} />,
+      color: '#8B5CF6',
+      bg: 'rgba(139, 92, 246, 0.1)'
+    },
+    {
+      title: 'Device Detection',
+      desc: 'Detects mobile phones or gadgets.',
+      icon: <Icons.Smartphone size={28} />,
+      color: '#10B981',
+      bg: 'rgba(16, 185, 129, 0.1)'
+    },
+    {
+      title: 'Auto-Flagging',
+      desc: 'Suspicious activities are timestamped.',
+      icon: <Icons.AlertTriangle size={28} />,
+      color: '#F43F5E',
+      bg: 'rgba(244, 63, 94, 0.1)'
+    },
+    {
+      title: 'Detailed Reports',
+      desc: 'AI-generated reports for final review.',
+      icon: <Icons.FileCheck size={28} />,
+      color: '#0EA5E9',
+      bg: 'rgba(14, 165, 233, 0.1)'
+    },
   ];
+
 
   const advantages = [
     { title: '24/7 Availability', desc: 'Exams can be scheduled and accessed at any time, in any time zone, removing the need for synchronised physical attendance.' },
@@ -76,11 +130,9 @@ const AIPage = () => {
     }
   ];
 
-
-
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
-      <SEO 
+      <SEO
         title="AI Proctoring Software | Secure Remote Exam Monitoring"
         description="Prevent cheating in online exams with AI Proctoring. Facial recognition, eye tracking, and browser lockdown for 100% secure remote assessments."
         keywords="AI Proctoring, Remote Invigilation, Online Exam Security, Proctoring Software, Facial Recognition Exam, Anti-Cheating Software"
@@ -88,54 +140,271 @@ const AIPage = () => {
       {/* Hero / Overview */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(2rem, 8vw, 6rem)', alignItems: 'center' }}>
-            <div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
+            <div style={{ flex: '1.2' }}>
               <span className="badge">AI-Powered Integrity</span>
               <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>AI-Based <span className="gradient-text">Proctored</span> Exam Solution</h1>
-              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
-                The eVAL AI-Based Proctored Exam solution brings artificial intelligence to the forefront of exam integrity. Instead of relying solely on human invigilators, advanced AI systems monitor candidates in real time during online examinations — detecting suspicious behaviour, verifying identity, and generating detailed audit reports, all without requiring physical supervision.
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)', marginBottom: '1.5rem' }}>
+                The eVAL AI-Based Proctored Exam solution brings artificial intelligence to the forefront of exam integrity. Advanced AI systems monitor candidates in real time during online examinations — detecting suspicious behaviour, verifying identity, and generating detailed audit reports.
               </p>
-              <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
-                <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem' }}>
-                  AI proctoring is particularly valuable for high-stakes examinations such as university entrance tests, government recruitment exams, professional certifications, and competitive assessments where maintaining absolute integrity is critical. The system scales to thousands of simultaneous candidates while maintaining consistency and fairness.
-                </p>
-              </div>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--muted-foreground)', fontWeight: '500', marginBottom: 0 }}>
+                It is particularly valuable for high-stakes examinations such as university entrance tests, government recruitment exams, and professional certifications. The system scales to thousands of simultaneous candidates while maintaining consistency and fairness.
+              </p>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
                 <Link to="/book-demo" className="btn btn-primary">Request a Live Demo</Link>
-                <Link to="/contact" className="btn btn-outline">Check Scalability</Link>
+                <a href="#workflow" className="btn btn-outline">See the Workflow</a>
               </div>
             </div>
-            <div style={{ position: 'relative' }}>
-              <img src="/assets/images/ai_proctoring.png" alt="AI Proctoring Dashboard" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+            <div style={{ position: 'relative', maxWidth: '680px', marginLeft: 'auto' }}>
+              <img src="/assets/images/ai_proctoring.png" alt="AI Proctoring Dashboard" style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 30px 60px rgba(0,0,0,0.12)', border: '1px solid var(--border)' }} />
             </div>
           </div>
         </div>
       </section>
 
       {/* How it works */}
-      <section className="section-padding">
+      <section id="workflow" className="section-padding" style={{ background: 'var(--muted)' }}>
+
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h2>How <span className="gradient-text">AI Proctoring</span> Works</h2>
+          <SectionHeader
+            title={<>How <span className="gradient-text">AI Proctoring</span> Works</>}
+          />
+
+          {/* Horizontal Flow Layout */}
+          <div className="workflow-h-container">
+            {/* Connecting Path (SVG Arcs) */}
+            <div className="workflow-h-path">
+              <svg width="100%" height="120" viewBox="0 0 1000 120" fill="none" preserveAspectRatio="none">
+                {/* Arcs 1 to 8 */}
+                {[
+                  { d: "M 50,60 C 50,10 175,10 175,60", color: 'var(--primary)' },
+                  { d: "M 175,60 C 175,110 300,110 300,60", color: '#6366F1' },
+                  { d: "M 300,60 C 300,10 425,10 425,60", color: '#EC4899' },
+                  { d: "M 425,60 C 425,110 550,110 550,60", color: '#F59E0B' },
+                  { d: "M 550,60 C 550,10 675,10 675,60", color: '#8B5CF6' },
+                  { d: "M 675,60 C 675,110 800,110 800,60", color: '#10B981' },
+                  { d: "M 800,60 C 800,10 925,10 925,60", color: '#F43F5E' }
+                ].map((arc, i) => (
+                  <motion.path
+                    key={i}
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: i * 0.15 }}
+                    d={arc.d}
+                    stroke={arc.color}
+                    strokeWidth="2"
+                    strokeDasharray="6 6"
+                  />
+                ))}
+
+                {/* Animated Particles */}
+                {[112, 237, 362, 487, 612, 737, 862].map((x, i) => (
+                  <motion.circle
+                    key={i}
+                    r="4"
+                    fill={i % 2 === 0 ? 'var(--primary)' : '#6366F1'}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 1, 0], x: [x - 30, x + 30] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.4 }}
+                    cx={x}
+                    cy={i % 2 === 0 ? 15 : 105}
+                  />
+                ))}
+              </svg>
+            </div>
+
+            <div className="workflow-h-steps">
+              {howItWorks.map((w, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`workflow-h-item ${i % 2 === 0 ? 'top-text' : 'bottom-text'}`}
+                  style={{ width: '12.5%' }}
+                >
+                  {/* Content (Above) */}
+                  {i % 2 === 0 && (
+                    <div className="h-step-content">
+                      <h3>{w.title}</h3>
+                      <p>{w.desc}</p>
+                    </div>
+                  )}
+
+                  {/* Circle */}
+                  <div className="h-step-visual">
+                    <div className="h-step-circle" style={{ borderColor: w.color }}>
+                      <div className="h-step-icon" style={{ color: w.color, background: w.bg }}>
+                        {w.icon}
+                      </div>
+                    </div>
+                    <div className="h-step-number" style={{ background: w.color }}>{i + 1}</div>
+                  </div>
+
+                  {/* Content (Below) */}
+                  {i % 2 !== 0 && (
+                    <div className="h-step-content">
+                      <h3>{w.title}</h3>
+                      <p>{w.desc}</p>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
-            {howItWorks.map((h, i) => (
-              <div key={i} className="card" style={{ padding: '2.5rem', background: 'var(--muted)' }}>
-                <div style={{ color: 'white', padding: '12px', background: 'var(--primary-dark)', borderRadius: '12px', display: 'inline-block', marginBottom: '1.5rem' }}>{h.icon}</div>
-                <h3 style={{ fontSize: '1.125rem', marginBottom: '1rem' }}>{h.title}</h3>
-                <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{h.desc}</p>
-              </div>
-            ))}
-          </div>
+
+          <style>{`
+            .workflow-h-container {
+              position: relative;
+              width: 100%;
+              max-width: 1280px;
+              margin: 0 auto;
+              padding: 4rem 0;
+            }
+
+            .workflow-h-path {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              right: 0;
+              height: 120px;
+              transform: translateY(-50%);
+              z-index: 0;
+              opacity: 0.6;
+            }
+
+            .workflow-h-steps {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              position: relative;
+              z-index: 1;
+            }
+
+            .workflow-h-item {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              position: relative;
+            }
+
+            .h-step-visual {
+              position: relative;
+              margin: 1.2rem 0;
+            }
+
+            .h-step-circle {
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              border: 2px solid var(--primary);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 6px;
+              background: white;
+              box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+              transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            .workflow-h-item:hover .h-step-circle {
+              transform: scale(1.15) rotate(5deg);
+              box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            }
+
+            .h-step-icon {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .h-step-number {
+              position: absolute;
+              bottom: -2px;
+              right: -2px;
+              width: 24px;
+              height: 24px;
+              border-radius: 50%;
+              color: white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: 800;
+              font-size: 0.65rem;
+              border: 2px solid white;
+              box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .h-step-content {
+              height: 70px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              transition: 0.3s;
+            }
+
+            .h-step-content h3 {
+              font-size: 0.85rem;
+              margin-bottom: 0.3rem;
+              color: var(--secondary);
+              font-weight: 800;
+            }
+
+            .h-step-content p {
+              font-size: 0.7rem;
+              color: var(--muted-foreground);
+              margin: 0;
+              line-height: 1.3;
+              max-width: 110px;
+            }
+
+            @media (max-width: 1100px) {
+              .workflow-h-steps {
+                flex-direction: column;
+                gap: 2.5rem;
+              }
+              .workflow-h-path {
+                display: none;
+              }
+              .workflow-h-item {
+                width: 100% !important;
+                flex-direction: row !important;
+                text-align: left;
+                gap: 1.5rem;
+              }
+              .h-step-content {
+                height: auto;
+                text-align: left;
+              }
+              .h-step-content p {
+                max-width: none;
+              }
+              .top-text, .bottom-text {
+                flex-direction: row !important;
+              }
+              .h-step-visual {
+                margin: 0;
+              }
+            }
+          `}</style>
+
         </div>
       </section>
 
       {/* Advantages */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section className="section-padding" style={{ background: 'white' }}>
+
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h2>Key <span className="gradient-text">Advantages</span></h2>
-          </div>
+          <SectionHeader
+            title={<>Key <span className="gradient-text">Advantages</span></>}
+          />
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem' }}>
             {advantages.map((a, i) => (
               <div key={i} style={{ display: 'flex', gap: '1.5rem' }}>
@@ -153,7 +422,8 @@ const AIPage = () => {
       </section>
 
       {/* Feature List Grid */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+
         <div className="container">
           <div style={{ background: 'var(--secondary)', color: 'white', padding: 'clamp(2rem, 8vw, 5rem) clamp(1.5rem, 5vw, 4rem)', borderRadius: '3rem' }}>
             <h2 style={{ color: 'white', textAlign: 'center', marginBottom: '4rem' }}>Detailed <span className="gradient-text">Feature List</span></h2>
@@ -192,7 +462,7 @@ const AIPage = () => {
         }
       `}</style>
       {/* FAQ */}
-      <FAQ faqs={aiFaqs} />
+      <FAQ faqs={aiFaqs} background="var(--muted)" />
     </div>
   );
 };

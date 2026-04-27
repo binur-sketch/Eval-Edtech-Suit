@@ -1,8 +1,13 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import { motion } from 'framer-motion';
+import Reveal from '@/components/common/Reveal';
 import SEO from '@/components/common/SEO';
 import { Link } from 'react-router-dom';
 import FAQ from '@/components/FAQ';
+import SectionHeader from '@/components/common/SectionHeader';
+
+
 
 const QPMSPage = () => {
   const features = [
@@ -21,12 +26,48 @@ const QPMSPage = () => {
   ];
 
   const workflow = [
-    { step: '1', title: 'Admin Setup', desc: 'Configure examination structure, assign subjects and roles, define templates.' },
-    { step: '2', title: 'Paper Creation', desc: 'Paper setter logs in, creates paper using template, submits paper securely.' },
-    { step: '3', title: 'Verification', desc: 'Verifier checks formatting and structure, adds remarks if corrections are needed.' },
-    { step: '4', title: 'Moderation', desc: 'Moderator reviews content quality, approves or sends for revision.' },
-    { step: '5', title: 'Final Approval', desc: 'Approved papers are locked and stored securely for exam use.' },
+    {
+      step: '1',
+      title: 'Admin Setup',
+      desc: 'Configure examination structure and roles.',
+      icon: <Icons.UserCog size={32} />,
+      color: 'var(--primary)',
+      bg: 'var(--primary-light)'
+    },
+    {
+      step: '2',
+      title: 'Paper Creation',
+      desc: 'Paper setter creates paper using templates.',
+      icon: <Icons.FileEdit size={32} />,
+      color: '#6366F1',
+      bg: 'rgba(99, 102, 241, 0.1)'
+    },
+    {
+      step: '3',
+      title: 'Verification',
+      desc: 'Verifier checks formatting and structure.',
+      icon: <Icons.CheckSquare size={32} />,
+      color: '#EC4899',
+      bg: 'rgba(236, 72, 153, 0.1)'
+    },
+    {
+      step: '4',
+      title: 'Moderation',
+      desc: 'Moderator reviews and approves content.',
+      icon: <Icons.ShieldCheck size={32} />,
+      color: '#F59E0B',
+      bg: 'rgba(245, 158, 11, 0.1)'
+    },
+    {
+      step: '5',
+      title: 'Final Approval',
+      desc: 'Papers are locked and stored securely.',
+      icon: <Icons.Lock size={32} />,
+      color: '#10B981',
+      bg: 'rgba(16, 185, 129, 0.1)'
+    },
   ];
+
 
   const benefits = [
     'Secure handling of confidential examination content',
@@ -63,7 +104,7 @@ const QPMSPage = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
-      <SEO 
+      <SEO
         title="Question Paper Management System (QPMS) | Question Bank"
         description="Securely manage question banks and generate balanced question papers with eVAL QPMS. Advanced tagging, bloom's taxonomy, and secure workflows."
         keywords="QPMS, Question Paper Management, Question Bank Software, Exam Paper Generator, Secure Question Bank"
@@ -71,36 +112,298 @@ const QPMSPage = () => {
       {/* Hero / Overview */}
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(2rem, 8vw, 6rem)', alignItems: 'center' }}>
-            <div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
+            <div style={{ flex: '1.2' }}>
               <span className="badge">Confidential & Secure</span>
               <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>Question Paper <span className="gradient-text">Management System</span></h1>
-              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
-                eVAL Question Paper Management System (QPMS) is a secure digital platform designed to manage the complete lifecycle of question paper creation — from paper setting to final approval — within a controlled and confidential environment.
+              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)', marginBottom: '1.5rem' }}>
+                eVAL Question Paper Management System (QPMS) is a secure digital platform designed to manage the complete lifecycle of question paper creation — from paper setting to final approval — within a controlled environment.
               </p>
-              <div style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid var(--border)', marginTop: '2rem' }}>
-                <p style={{ margin: 0, fontWeight: '600', color: 'var(--foreground)', fontSize: '0.9375rem', lineHeight: '1.6' }}>
-                  The system enables universities and examination bodies to engage internal and external faculty members to create multiple question papers in the institution's prescribed format, all within a secure, role-based platform. This structured digital approach eliminates risks associated with manual paper preparation, improves coordination between contributors, and ensures that question papers are created, reviewed, and finalized with complete confidentiality.
-                </p>
-              </div>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--muted-foreground)', fontWeight: '500', marginBottom: 0 }}>
+                The system enables universities and examination bodies to engage internal and external faculty members to create multiple question papers in the institution's prescribed format securely. This structured digital approach eliminates risks associated with manual paper preparation.
+              </p>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
                 <Link to="/contact" className="btn btn-primary">Get Started</Link>
-                <Link to="/book-demo" className="btn btn-outline">See the Workflow</Link>
+                <a href="#workflow" className="btn btn-outline">See the Workflow</a>
+
               </div>
             </div>
-            <div style={{ position: 'relative' }}>
-              <img src="/assets/images/qpms_dashboard.png" alt="QPMS Dashboard" style={{ width: '100%', borderRadius: '2rem', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+            <div style={{ position: 'relative', maxWidth: '680px', marginLeft: 'auto' }}>
+              <img src="/assets/images/qpms_dashboard.png" alt="QPMS Dashboard" style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 30px 60px rgba(0,0,0,0.12)', border: '1px solid var(--border)' }} />
             </div>
           </div>
         </div>
       </section>
 
+
+
+      {/* Workflow */}
+      <section id="workflow" className="section-padding" style={{ background: 'var(--muted)' }}>
+
+        <div className="container">
+          <SectionHeader
+            title={<>Structured Secure <span className="gradient-text">Workflow</span></>}
+            text="The system follows a structured and secure workflow to ensure smooth paper creation:"
+          />
+
+          {/* Horizontal Flow Layout */}
+          <div className="workflow-h-container">
+            {/* Connecting Path (SVG Arcs) */}
+            <div className="workflow-h-path">
+              <svg width="100%" height="120" viewBox="0 0 1000 120" fill="none" preserveAspectRatio="none">
+                {/* Arc 1-2 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  d="M 100,60 C 100,10 300,10 300,60"
+                  stroke="var(--primary)"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+                {/* Arc 2-3 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                  d="M 300,60 C 300,110 500,110 500,60"
+                  stroke="#6366F1"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+                {/* Arc 3-4 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.6 }}
+                  d="M 500,60 C 500,10 700,10 700,60"
+                  stroke="#EC4899"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+                {/* Arc 4-5 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                  d="M 700,60 C 700,110 900,110 900,60"
+                  stroke="#F59E0B"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+
+                {/* Animated Particles */}
+                {[200, 400, 600, 800].map((x, i) => (
+                  <motion.circle
+                    key={i}
+                    r="4"
+                    fill={i % 2 === 0 ? 'var(--primary)' : '#6366F1'}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 1, 0], x: [x - 50, x + 50] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+                    cx={x}
+                    cy={i % 2 === 0 ? 15 : 105}
+                  />
+                ))}
+              </svg>
+            </div>
+
+            <div className="workflow-h-steps">
+              {workflow.map((w, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  className={`workflow-h-item ${i % 2 === 0 ? 'top-text' : 'bottom-text'}`}
+                  style={{ width: '20%' }}
+                >
+                  {/* Content (Above) */}
+                  {i % 2 === 0 && (
+                    <div className="h-step-content">
+                      <h3>{w.title}</h3>
+                      <p>{w.desc}</p>
+                    </div>
+                  )}
+
+                  {/* Circle */}
+                  <div className="h-step-visual">
+                    <div className="h-step-circle" style={{ borderColor: w.color }}>
+                      <div className="h-step-icon" style={{ color: w.color, background: w.bg }}>
+                        {w.icon}
+                      </div>
+                    </div>
+                    <div className="h-step-number" style={{ background: w.color }}>{w.step}</div>
+                  </div>
+
+                  {/* Content (Below) */}
+                  {i % 2 !== 0 && (
+                    <div className="h-step-content">
+                      <h3>{w.title}</h3>
+                      <p>{w.desc}</p>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <style>{`
+            .workflow-h-container {
+              position: relative;
+              width: 100%;
+              max-width: 1100px;
+              margin: 0 auto;
+              padding: 4rem 0;
+            }
+
+            .workflow-h-path {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              right: 0;
+              height: 120px;
+              transform: translateY(-50%);
+              z-index: 0;
+              opacity: 0.6;
+            }
+
+            .workflow-h-steps {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              position: relative;
+              z-index: 1;
+            }
+
+            .workflow-h-item {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              position: relative;
+            }
+
+            .h-step-visual {
+              position: relative;
+              margin: 1.5rem 0;
+            }
+
+            .h-step-circle {
+              width: 90px;
+              height: 90px;
+              border-radius: 50%;
+              border: 2px solid var(--primary);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 8px;
+              background: white;
+              box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+              transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            .workflow-h-item:hover .h-step-circle {
+              transform: scale(1.15) rotate(5deg);
+              box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            }
+
+            .h-step-icon {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .h-step-number {
+              position: absolute;
+              bottom: -2px;
+              right: -2px;
+              width: 28px;
+              height: 28px;
+              border-radius: 50%;
+              color: white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: 800;
+              font-size: 0.75rem;
+              border: 3px solid white;
+              box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .h-step-content {
+              height: 80px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              transition: 0.3s;
+            }
+
+            .workflow-h-item.top-text:hover .h-step-content {
+              transform: translateY(-5px);
+            }
+            .workflow-h-item.bottom-text:hover .h-step-content {
+              transform: translateY(5px);
+            }
+
+            .h-step-content h3 {
+              font-size: 1.1rem;
+              margin-bottom: 0.5rem;
+              color: var(--secondary);
+              font-weight: 800;
+            }
+
+            .h-step-content p {
+              font-size: 0.85rem;
+              color: var(--muted-foreground);
+              margin: 0;
+              line-height: 1.4;
+            }
+
+            @media (max-width: 850px) {
+              .workflow-h-steps {
+                flex-direction: column;
+                gap: 3rem;
+              }
+              .workflow-h-path {
+                display: none;
+              }
+              .workflow-h-item {
+                width: 100% !important;
+                flex-direction: row !important;
+                text-align: left;
+                gap: 1.5rem;
+              }
+              .h-step-content {
+                height: auto;
+                text-align: left;
+              }
+              .top-text, .bottom-text {
+                flex-direction: row !important;
+              }
+              .h-step-visual {
+                margin: 0;
+              }
+            }
+          `}</style>
+
+        </div>
+      </section>
       {/* Features Grid */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h2>System <span className="gradient-text">Key Features</span></h2>
-          </div>
+          <SectionHeader
+            title={<>System <span className="gradient-text">Key Features</span></>}
+          />
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
             {features.map((f, i) => (
               <div key={i} className="card hover-lift" style={{ padding: '2.5rem', background: 'var(--muted)' }}>
@@ -113,29 +416,9 @@ const QPMSPage = () => {
         </div>
       </section>
 
-      {/* Workflow */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h2>Structured Secure <span className="gradient-text">Workflow</span></h2>
-            <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--muted-foreground)' }}>The system follows a structured and secure workflow to ensure smooth paper creation:</p>
-          </div>
-          <div style={{ position: 'relative', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
-            {workflow.map((w, i) => (
-              <div key={i} style={{ textAlign: 'center', position: 'relative', background: 'white', padding: '2rem', borderRadius: '1rem', border: '1px solid var(--border)' }}>
-                <div style={{ fontSize: '4rem', fontWeight: '900', color: 'var(--primary)', opacity: '0.05', position: 'absolute', top: '10px', left: '50%', transform: 'translateX(-50%)', zIndex: 0 }}>{w.step}</div>
-                <div style={{ position: 'relative', zIndex: 1 }}>
-                  <h4 style={{ marginBottom: '1rem' }}>{w.step}. {w.title}</h4>
-                  <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', lineHeight: '1.6' }}>{w.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Benefits */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+
         <div className="container">
           <div style={{ background: 'var(--secondary)', color: 'white', padding: 'clamp(2rem, 8vw, 5rem) clamp(1.5rem, 5vw, 4rem)', borderRadius: '3rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2rem, 5vw, 4rem)' }}>
@@ -165,7 +448,8 @@ const QPMSPage = () => {
         </div>
       </section>
       {/* FAQ */}
-      <FAQ faqs={qpmsFaqs} />
+      <FAQ faqs={qpmsFaqs} background="var(--muted)" />
+
 
     </div>
   );

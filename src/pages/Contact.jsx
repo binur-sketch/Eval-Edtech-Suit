@@ -4,6 +4,8 @@ import { useFormSubmit } from '@/hooks/useFormSubmit';
 import FormStatus from '@/components/common/FormStatus';
 import SEO from '@/components/common/SEO';
 import Reveal from '@/components/common/Reveal';
+import SectionHeader from '@/components/common/SectionHeader';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -29,36 +31,37 @@ const Contact = () => {
 
   return (
     <div className="contact-page" style={{ paddingTop: 'var(--nav-height)', minHeight: '100vh', background: 'var(--background)' }}>
-      <SEO 
+      <SEO
         title="Contact Us | eVAL Edtech"
         description="Get in touch with the eVAL team for any questions, support, or partnership opportunities."
       />
 
       {/* Hero Section */}
-      <section className="section-padding" style={{ background: 'var(--secondary)', color: 'white' }}>
+      <section style={{ paddingTop: '5rem', paddingBottom: '0', background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
+
         <div className="container">
           <Reveal width="100%">
-            <div style={{ textAlign: 'center' }}>
-              <span className="badge" style={{ background: 'rgba(255,255,255,0.1)', color: 'white' }}>Get In Touch</span>
-              <h1 style={{ color: 'white' }}>How can we <span className="gradient-text">help you?</span></h1>
-              <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto' }}>
-                Whether you're looking for technical support, have a sales inquiry, or just want to say hello, we're here to help.
-              </p>
-            </div>
+            <SectionHeader
+              badge="Get In Touch"
+              title={<>How can we <span className="gradient-text">help you?</span></>}
+              text="Whether you're looking for technical support, have a sales inquiry, or just want to say hello, we're here to help."
+            />
+
           </Reveal>
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)', paddingTop: '2rem' }}>
+
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
-            
+
             {/* Contact Info */}
             <Reveal direction="right">
               <div>
                 <h3>Our <span className="gradient-text">Contact Information</span></h3>
                 <p style={{ marginBottom: '2.5rem' }}>Our team is available across multiple channels to ensure you get the support you need.</p>
-                
+
                 <div style={{ display: 'grid', gap: '2rem' }}>
                   <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
                     <div style={{ padding: '0.75rem', background: 'var(--primary-light)', color: 'var(--primary)', borderRadius: '12px' }}>
@@ -71,9 +74,10 @@ const Contact = () => {
                   </div>
 
                   <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
-                    <div style={{ padding: '0.75rem', background: 'var(--primary-light)', color: 'var(--primary)', borderRadius: '12px' }}>
+                    <div style={{ padding: '0.75rem', background: 'rgba(234, 67, 53, 0.1)', color: '#EA4335', borderRadius: '12px' }}>
                       <Icons.Mail size={24} />
                     </div>
+
                     <div>
                       <h4 style={{ marginBottom: '0.25rem' }}>Email Us</h4>
                       <p style={{ fontSize: '0.9375rem', margin: 0 }}>corp@virsoftech.com</p>

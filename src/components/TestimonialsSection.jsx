@@ -1,5 +1,7 @@
 import * as Icons from '@/components/LucideFix';
 import React from 'react';
+import SectionHeader from './common/SectionHeader';
+
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -27,13 +29,16 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="section-padding" style={{ background: 'var(--muted)' }}>
+    <section id="testimonials" className="section-padding" style={{ background: 'white' }}>
+
+
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-          <span className="badge">Client Testimonials</span>
-          <h2>What Institutions <span className="gradient-text">Say About Us</span></h2>
-          <p style={{ maxWidth: '600px', margin: '0 auto' }}>Real feedback from real institutional leaders who trust eVAL for their most critical evaluations.</p>
-        </div>
+        <SectionHeader 
+          badge="Client Testimonials"
+          title={<>What Institutions <span className="gradient-text">Say About Us</span></>}
+          text="Real feedback from real institutional leaders who trust eVAL for their most critical evaluations."
+        />
+
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '2.5rem' }}>
           {testimonials.map((t, i) => (
@@ -42,7 +47,8 @@ const TestimonialsSection = () => {
               borderRadius: '2.5rem',
               display: 'flex',
               flexDirection: 'column',
-              background: 'white'
+              background: 'var(--muted)'
+
             }}>
               {/* Stars */}
               <div style={{ display: 'flex', gap: '4px', marginBottom: '2rem' }}>
