@@ -98,7 +98,7 @@ const LMSPage = () => {
         </div>
       </section>
       {/* Role Management */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2>Comprehensive <span className="gradient-text">Role Management</span></h2>
@@ -106,7 +106,7 @@ const LMSPage = () => {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
             {roles.map((r, i) => (
-              <div key={i} className="card hover-lift" style={{ padding: '2rem', border: '1px solid var(--border)', background: 'var(--muted)' }}>
+              <div key={i} className="card hover-lift" style={{ padding: '2rem', border: '1px solid var(--border)', background: 'white' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                   <div style={{ color: 'white', padding: '12px', background: 'var(--primary-dark)', borderRadius: '12px', display: 'inline-block', marginBottom: '1.5rem' }}>{r.icon}</div>
                   <h3 style={{ fontSize: '1.125rem', margin: 0 }}>{r.title}</h3>
@@ -119,7 +119,7 @@ const LMSPage = () => {
       </section>
 
       {/* Course & Batch Management */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2>Course & Batch <span className="gradient-text">Management</span></h2>
@@ -141,14 +141,14 @@ const LMSPage = () => {
       </section>
 
       {/* Evaluation & Reports Management */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2>Evaluation & <span className="gradient-text">Reports Management</span></h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
             {evalReportFeatures.map((f, i) => (
-              <div key={i} className="card" style={{ padding: '3rem', borderLeft: '4px solid var(--primary)', background: 'var(--muted)' }}>
+              <div key={i} className="card" style={{ padding: '3rem', borderLeft: '4px solid var(--primary)', background: 'white' }}>
                 <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{ color: 'var(--primary)' }}>{f.icon}</span> {f.title}
                 </h3>
@@ -160,7 +160,7 @@ const LMSPage = () => {
       </section>
 
       {/* Additional Modules */}
-      <section className="section-padding" style={{ background: 'var(--muted)', position: 'relative', overflow: 'hidden' }}>
+      <section className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
         {/* Background Accent */}
         <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(14, 165, 164, 0.03) 0%, transparent 70%)', borderRadius: '50%' }}></div>
 
@@ -173,7 +173,7 @@ const LMSPage = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
             {additionalModules.map((m, i) => (
               <div key={i} style={{
-                background: 'white',
+                background: 'var(--muted)',
                 border: '1px solid var(--border)',
                 borderRadius: '1.5rem',
                 padding: '2rem',
@@ -191,7 +191,7 @@ const LMSPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <h2>Ready to empower your educators and learners?</h2>
           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', fontSize: '1.125rem', color: 'var(--muted-foreground)' }}>Build a future-ready educational ecosystem with the eVAL Learning Management System.</p>
