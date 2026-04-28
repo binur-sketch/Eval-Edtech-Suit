@@ -112,7 +112,7 @@ const PrivacyPolicy = () => {
 
   return (
     <div style={{ paddingTop: '5rem' }}>
-      <SEO 
+      <SEO
         title="Privacy Policy | eVAL Edtech"
         description="Learn how eVAL protects institutional data and maintains the highest standards of examination security and privacy."
       />
@@ -145,24 +145,6 @@ const PrivacyPolicy = () => {
               ))}
             </div>
           ))}
-
-          {/* Contact Box */}
-          <div className="card" style={{
-            padding: '3rem',
-            background: 'var(--muted)',
-            borderRadius: '2rem',
-            marginTop: '4rem',
-            textAlign: 'center'
-          }}>
-            <h4 style={{ marginBottom: '1rem' }}>Questions About Your Data?</h4>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', marginBottom: '2rem' }}>
-              Our Data Protection Office is here to help. Contact us for any privacy-related concerns or to exercise your data rights.
-            </p>
-            <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-              <a href="mailto:dpo@virsoftech.com" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>Email DPO</a>
-              <Link to="/contact" className="btn btn-outline" style={{ padding: '1rem 2.5rem' }}>Contact Form</Link>
-            </div>
-          </div>
         </div>
       </section>
     </div>

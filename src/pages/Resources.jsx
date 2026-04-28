@@ -198,7 +198,7 @@ const Resources = () => {
                         <p style={{ fontSize: '0.95rem', color: 'var(--muted-foreground)', marginBottom: '1.5rem', flexGrow: 1 }}>{blog.excerpt}</p>
 
                         <Link
-                          to={`/blog/${blog.id}`}
+                          to={`/blog/${blog.slug || blog.id}`}
                           style={{
                             display: 'flex',
                             alignItems: 'center',

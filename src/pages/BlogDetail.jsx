@@ -5,27 +5,52 @@ import * as Icons from '../components/LucideFix';
 import SEO from '../components/common/SEO';
 
 const BlogDetail = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // This could be an ID or a Slug
   const [blog, setBlog] = useState(null);
+  const [relatedBlogs, setRelatedBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    const fetchBlog = async () => {
+    const fetchBlogData = async () => {
       try {
-        const { data, error } = await supabase
-          .from('blogs')
-          .select('*')
-          .eq('id', id)
-          .single();
+        let query = supabase.from('blogs').select('*');
         
+        // Determine if we should fetch by ID or Slug
+        if (isNaN(id)) {
+          query = query.eq('slug', id);
+        } else {
+          query = query.eq('id', parseInt(id));
+        }
+
+        const { data, error } = await query.single();
+
         if (error) throw error;
         setBlog(data);
 
-        // Increment view count
-        await supabase
-          .from('blogs')
-          .update({ views: (data.views || 0) + 1 })
-          .eq('id', id);
+        // Fetch related blogs
+        if (data) {
+          const { data: related, error: relatedError } = await supabase
+            .from('blogs')
+            .select('*')
+            .neq('id', data.id)
+            .eq('category', data.category)
+            .limit(3);
+
+          if (!relatedError) setRelatedBlogs(related);
+        }
+
+        // Increment view count (silently fail if column missing)
+        if (data) {
+          try {
+            await supabase
+              .from('blogs')
+              .update({ views: (data.views || 0) + 1 })
+              .eq('id', data.id);
+          } catch (e) {
+            console.log('Read count update skipped');
+          }
+        }
       } catch (err) {
         console.error('Error fetching blog:', err);
       } finally {
@@ -33,8 +58,34 @@ const BlogDetail = () => {
       }
     };
 
-    fetchBlog();
+    fetchBlogData();
+    window.scrollTo(0, 0);
   }, [id]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const shareOnSocial = (platform) => {
+    const url = window.location.href;
+    const title = blog?.title || 'eVAL Insights';
+    let shareUrl = '';
+
+    switch (platform) {
+      case 'twitter': shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`; break;
+      case 'linkedin': shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`; break;
+      case 'facebook': shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`; break;
+    }
+
+    if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=400');
+  };
 
   if (loading) {
     return (
@@ -48,61 +99,122 @@ const BlogDetail = () => {
     return (
       <div style={{ height: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
         <h2>Post not found</h2>
-        <Link to="/blog" className="btn btn-primary">Back to Blog</Link>
+        <Link to="/blog" className="btn btn-primary">Back to Insights</Link>
       </div>
     );
   }
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
-      <SEO 
-        title={blog.title}
+      <SEO
+        title={`${blog.title} | eVAL Insights`}
         description={blog.excerpt}
         ogImage={blog.image}
         ogType="article"
       />
 
-      <article className="section-padding">
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <Link to="/blog" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontWeight: '600', marginBottom: '2rem' }}>
+      {/* Reading Progress Bar */}
+      <div className="reading-progress-container">
+        <div className="reading-progress-bar" style={{ width: `${scrollProgress}%` }}></div>
+      </div>
+
+      <article id="blog-detail-view" className="container">
+        {/* Modern Hero Header */}
+        <div className="blog-hero">
+          <Link to="/blog" className="back-link">
             <Icons.ArrowLeft size={18} /> Back to Insights
           </Link>
-
-          <header style={{ marginBottom: '3rem' }}>
-            <span className="badge" style={{ marginBottom: '1rem' }}>{blog.category}</span>
-            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>{blog.title}</h1>
-            
-            <div style={{ display: 'flex', gap: '1.5rem', color: 'var(--muted-foreground)', fontSize: '0.9375rem' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Icons.Calendar size={16} /> {new Date(blog.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Icons.Eye size={16} /> {blog.views || 0} views</span>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Icons.User size={16} /> {blog.author}</span>
-            </div>
-          </header>
-
-          <div style={{ width: '100%', height: 'auto', maxHeight: '500px', borderRadius: '1.5rem', overflow: 'hidden', marginBottom: '3rem' }}>
-            <img 
-              src={blog.image || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&auto=format&fit=crop'} 
-              alt={blog.title}
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
-          </div>
-
-          <div 
-            className="blog-content"
-            style={{ fontSize: '1.125rem', lineHeight: '1.8', color: 'var(--foreground)' }}
-            dangerouslySetInnerHTML={{ __html: blog.content }}
-          />
           
-          <div style={{ marginTop: '5rem', padding: '3rem', background: 'var(--muted)', borderRadius: '2rem', textAlign: 'center' }}>
-            <h3>Interested in our solutions?</h3>
-            <p>Schedule a personalized demo with our experts today.</p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.5rem' }}>
-              <Link to="/book-demo" className="btn btn-primary">Book Demo</Link>
-              <Link to="/contact" className="btn btn-outline">Contact Us</Link>
+          <div className="hero-content">
+            <span className="blog-badge">{blog.category}</span>
+            <h1>{blog.title}</h1>
+            
+            <div className="blog-meta">
+              <div className="author-info">
+                <div className="author-avatar">{blog.author.charAt(0)}</div>
+                <span>{blog.author}</span>
+              </div>
+              <div className="meta-item">
+                <Icons.Calendar size={18} />
+                {new Date(blog.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+              </div>
+              <div className="meta-item">
+                <Icons.Eye size={18} />
+                {blog.views || 0} views
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="blog-grid-layout">
+          {/* Sticky Sidebar Share */}
+          <aside className="blog-sidebar">
+            <div className="share-bar-pill">
+              <button onClick={() => shareOnSocial('twitter')} className="share-action tw" title="Share on Twitter"><Icons.Twitter size={22} /></button>
+              <button onClick={() => shareOnSocial('linkedin')} className="share-action li" title="Share on LinkedIn"><Icons.Linkedin size={22} /></button>
+              <button onClick={() => shareOnSocial('facebook')} className="share-action fb" title="Share on Facebook"><Icons.Facebook size={22} /></button>
+              <button onClick={() => {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard!');
+              }} className="share-action cp" title="Copy Link"><Icons.Copy size={22} /></button>
+            </div>
+          </aside>
+
+          {/* Main Content Area */}
+          <div className="blog-main">
+            <div className="featured-image-container">
+              <img
+                src={blog.image || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&auto=format&fit=crop'}
+                alt={blog.title}
+              />
+            </div>
+
+            <div
+              className="blog-content-body"
+              dangerouslySetInnerHTML={{ __html: blog.content }}
+            />
+
+            {/* Author Footer Card */}
+            <div className="author-footer-card">
+              <div className="author-footer-avatar">{blog.author.charAt(0)}</div>
+              <div className="author-footer-info">
+                <span className="written-by">Written By</span>
+                <h3>{blog.author}</h3>
+                <p>Expert in institutional digital transformation and examination security systems.</p>
+              </div>
             </div>
           </div>
         </div>
       </article>
+
+      {/* Related Posts Grid */}
+      {relatedBlogs.length > 0 && (
+        <section className="related-section">
+          <div className="container">
+            <div className="blog-related-header">
+              <h2>Related Insights</h2>
+              <Link to="/blog" className="view-all">View All <Icons.ArrowRight size={18} /></Link>
+            </div>
+
+            <div className="related-grid">
+              {relatedBlogs.map((post) => (
+                <Link key={post.id} to={`/blog/${post.slug || post.id}`} className="related-card">
+                  <div className="card-image">
+                    <img src={post.image} alt={post.title} />
+                  </div>
+                  <div className="card-body">
+                    <span className="card-category">{post.category}</span>
+                    <h3>{post.title}</h3>
+                    <div className="card-footer">
+                      Read Article <Icons.ArrowRight size={16} />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 };

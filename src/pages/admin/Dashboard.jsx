@@ -98,7 +98,6 @@ const AdminDashboard = () => {
       category: 'Assessment',
       author: 'eVAL Team',
       date: new Date().toISOString().split('T')[0],
-      views: 0,
       image: '',
       status: 'published'
     });
@@ -110,12 +109,23 @@ const AdminDashboard = () => {
     setLoading(true);
 
     try {
+      const slug = editingBlog.title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)+/g, '');
+
       if (editingBlog.id) {
         const { id, views, ...updateData } = editingBlog;
-        const { error } = await supabase.from('blogs').update(updateData).eq('id', id);
+        const { error } = await supabase
+          .from('blogs')
+          .update({ ...updateData, slug })
+          .eq('id', id);
         if (error) throw error;
       } else {
-        const { error } = await supabase.from('blogs').insert([editingBlog]);
+        const { views, ...insertData } = editingBlog;
+        const { error } = await supabase
+          .from('blogs')
+          .insert([{ ...insertData, slug }]);
         if (error) throw error;
       }
       setIsModalOpen(false);

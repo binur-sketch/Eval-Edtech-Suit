@@ -1,5 +1,6 @@
 import * as Icons from '@/components/LucideFix';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import FormStatus from '@/components/common/FormStatus';
 import SEO from '@/components/common/SEO';
@@ -176,7 +177,7 @@ const BookDemo = () => {
                 <FormStatus status={status} message={message} />
 
                 <p className="form-privacy">
-                  By clicking, you agree to our <span>Privacy Policy</span> and trial terms.
+                  By clicking, you agree to our <Link to="/privacy-policy">Privacy Policy</Link> and trial terms.
                 </p>
               </form>
             </div>
@@ -319,6 +320,7 @@ const BookDemo = () => {
           padding: 1.25rem;
           border-radius: 1rem;
           font-size: 1.125rem;
+          font-family: 'Outfit', sans-serif;
           font-weight: 800;
           display: flex;
           align-items: center;
@@ -334,10 +336,11 @@ const BookDemo = () => {
           margin-top: 1rem;
         }
 
-        .form-privacy span {
+        .form-privacy a {
           color: var(--primary);
           font-weight: 700;
           cursor: pointer;
+          text-decoration: none;
         }
 
         .trust-strip {

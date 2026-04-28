@@ -2,9 +2,11 @@ import * as Icons from '@/components/LucideFix';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/common/SEO';
+import JobApplicationModal from '@/components/JobApplicationModal';
 
 const Careers = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [selectedJob, setSelectedJob] = useState(null);
 
   const values = [
     { icon: <Icons.Target size={32} />, title: 'Impact at Scale', desc: 'Your work directly impacts millions of students and thousands of institutions worldwide.' },
@@ -17,7 +19,6 @@ const Careers = () => {
     { icon: <Icons.Heart size={24} />, title: 'Health & Wellness', items: ['Comprehensive health insurance for family', 'Mental health support & counselling', 'Gym membership reimbursement'] },
     { icon: <Icons.GraduationCap size={24} />, title: 'Learning & Development', items: ['₹1L annual learning budget', 'Conference sponsorships', 'Internal tech talks & workshops'] },
     { icon: <Icons.Clock size={24} />, title: 'Work-Life Balance', items: ['Flexible hybrid work model', '30 days paid time off', 'Sabbatical after 3 years'] },
-    { icon: <Icons.Gift size={24} />, title: 'Rewards & Perks', items: ['Competitive ESOPs', 'Performance bonuses', 'Team retreats & offsites'] }
   ];
 
   const openings = [
@@ -36,7 +37,7 @@ const Careers = () => {
 
   return (
     <div style={{ paddingTop: '5rem' }}>
-      <SEO 
+      <SEO
         title="Careers | Join the eVAL Edtech Team"
         description="Join a global leader in examination technology. Explore career opportunities in AI, software engineering, and educational consulting."
       />
@@ -92,35 +93,8 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <span className="badge">Benefits & Perks</span>
-            <h2>Comprehensive <span className="gradient-text">Total Rewards</span></h2>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2.5rem' }}>
-            {benefits.map((b, i) => (
-              <div key={i} className="card" style={{ padding: '3rem', background: 'white' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '2rem' }}>
-                  <div style={{ color: 'white', background: 'var(--primary-dark)', padding: '0.75rem', borderRadius: '1rem' }}>{b.icon}</div>
-                  <h4 style={{ fontSize: '1.125rem', marginBottom: 0 }}>{b.title}</h4>
-                </div>
-                <div style={{ display: 'grid', gap: '0.75rem' }}>
-                  {b.items.map((item, j) => (
-                    <div key={j} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9375rem', color: 'var(--muted-foreground)' }}>
-                      <Icons.Check size={16} style={{ color: 'var(--primary)', flexShrink: 0 }} /> {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Open Positions */}
-      <section className="section-padding" id="openings">
+      <section className="section-padding" id="openings" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <span className="badge">Open Positions</span>
@@ -148,7 +122,7 @@ const Careers = () => {
                 justifyContent: 'space-between',
                 flexWrap: 'wrap',
                 gap: '1.5rem',
-                background: 'var(--muted)'
+                background: 'white'
               }}>
                 <div>
                   <h4 style={{ fontSize: '1.125rem', marginBottom: '0.5rem' }}>{job.title}</h4>
@@ -163,17 +137,28 @@ const Careers = () => {
                     }}>{job.level}</span>
                   </div>
                 </div>
-                <button className="btn btn-primary" style={{ padding: '0.75rem 2rem', fontSize: '0.8125rem' }}>
+                <button 
+                  onClick={() => setSelectedJob(job)}
+                  className="btn btn-primary" 
+                  style={{ padding: '0.75rem 2rem', fontSize: '0.8125rem' }}
+                >
                   Apply Now
                 </button>
               </div>
             ))}
           </div>
         </div>
+
+        {selectedJob && (
+          <JobApplicationModal 
+            job={selectedJob} 
+            onClose={() => setSelectedJob(null)} 
+          />
+        )}
       </section>
 
       {/* Hiring Process */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section className="section-padding">
         <div className="container" style={{ maxWidth: '900px' }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span className="badge">Our Process</span>
@@ -193,7 +178,7 @@ const Careers = () => {
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontWeight: '900', fontSize: '1.25rem', flexShrink: 0
                 }}>{s.step}</div>
-                <div className="card" style={{ padding: '2rem 2.5rem', flex: 1, background: 'white' }}>
+                <div className="card" style={{ padding: '2rem 2.5rem', flex: 1, background: 'var(--muted)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '0.75rem' }}>
                     <div style={{ color: 'var(--primary)' }}>{s.icon}</div>
                     <h4 style={{ marginBottom: 0, fontSize: '1.125rem' }}>{s.title}</h4>
@@ -219,7 +204,7 @@ const Careers = () => {
               <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto 3rem', fontSize: '1.125rem' }}>
                 We're always looking for exceptional talent. Send us your CV and tell us how you'd make an impact.
               </p>
-              <a href="mailto:nishac@virsoftech.com" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>
+              <a href="mailto:corp@virsoftech.com" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>
                 Send Open Application
               </a>
             </div>

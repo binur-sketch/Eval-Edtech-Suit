@@ -18,7 +18,7 @@ export const useFormSubmit = (options = {}) => {
       return;
     }
 
-    const formRecipient = import.meta.env.VITE_FORM_EMAIL || "binur@virsoftech.com";
+    const formRecipient = import.meta.env.VITE_FORM_EMAIL || "corp@virsoftech.com";
     try {
       // 3. FormSubmit.co AJAX Call
       const response = await fetch(`https://formsubmit.co/ajax/${formRecipient}`, {
@@ -49,9 +49,9 @@ export const useFormSubmit = (options = {}) => {
     } catch (error) {
       console.error('Form submission error:', error);
       setStatus('error');
-      setMessage('Something went wrong. Please try again later or contact us directly at corp@virsoftech.com');
+      setMessage(error.message || 'Something went wrong. Please try again later or contact us directly at corp@virsoftech.com');
     }
   };
 
-  return { status, message, submitForm, setStatus };
+  return { status, message, submitForm, setStatus, setMessage };
 };
