@@ -47,7 +47,7 @@ const IndustryVerticals = () => {
   ];
 
   return (
-    <section id="industries" className="section-padding" style={{ background: 'white' }}>
+    <section id="industries" className="section-padding" style={{ background: 'var(--muted)' }}>
 
 
       <div className="container">
@@ -64,7 +64,7 @@ const IndustryVerticals = () => {
               padding: '2.5rem',
               display: 'flex',
               flexDirection: 'column',
-              background: 'var(--muted)',
+              background: 'white',
 
               borderRadius: '1.75rem',
               boxShadow: '0 4px 20px rgba(0,0,0,0.03)',

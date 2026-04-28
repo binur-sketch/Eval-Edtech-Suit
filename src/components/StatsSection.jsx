@@ -35,7 +35,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section id="stats" className="section-padding" style={{ background: 'var(--muted)', position: 'relative' }}>
+    <section id="stats" className="section-padding" style={{ background: 'white', position: 'relative' }}>
 
       <div className="container">
 

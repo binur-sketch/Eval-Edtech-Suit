@@ -56,7 +56,7 @@ const Careers = () => {
       </section>
 
       {/* Culture Stats */}
-      <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'white' }}>
+      <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'var(--muted)' }}>
         <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', padding: '4rem 0', gap: '3rem' }}>
           {[
             { label: 'Team Members', value: '120+' },
@@ -101,7 +101,7 @@ const Careers = () => {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2.5rem' }}>
             {benefits.map((b, i) => (
-              <div key={i} className="card" style={{ padding: '3rem', background: 'var(--muted)' }}>
+              <div key={i} className="card" style={{ padding: '3rem', background: 'white' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '2rem' }}>
                   <div style={{ color: 'white', background: 'var(--primary-dark)', padding: '0.75rem', borderRadius: '1rem' }}>{b.icon}</div>
                   <h4 style={{ fontSize: '1.125rem', marginBottom: 0 }}>{b.title}</h4>
@@ -193,7 +193,7 @@ const Careers = () => {
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontWeight: '900', fontSize: '1.25rem', flexShrink: 0
                 }}>{s.step}</div>
-                <div className="card" style={{ padding: '2rem 2.5rem', flex: 1, background: 'var(--muted)' }}>
+                <div className="card" style={{ padding: '2rem 2.5rem', flex: 1, background: 'white' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '0.75rem' }}>
                     <div style={{ color: 'var(--primary)' }}>{s.icon}</div>
                     <h4 style={{ marginBottom: 0, fontSize: '1.125rem' }}>{s.title}</h4>

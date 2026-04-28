@@ -11,7 +11,7 @@ const CertificationsSection = () => {
 
   return (
     <section style={{
-      background: 'white',
+      background: 'var(--muted)',
       padding: '5rem 0',
       borderTop: '1px solid var(--border)',
       borderBottom: '1px solid var(--border)'

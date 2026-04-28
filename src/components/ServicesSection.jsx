@@ -35,7 +35,7 @@ const ServicesSection = () => {
     <section id="services" style={{
       padding: '8rem 0',
 
-      background: 'var(--muted)',
+      background: 'white',
 
       position: 'relative',
       overflow: 'hidden'

@@ -196,13 +196,14 @@ const Navbar = () => {
           width: '100%',
           background: 'white',
           padding: '2rem',
-          height: 'calc(100vh - 85px)',
+          height: scrolled ? 'calc(100dvh - 75px)' : 'calc(100dvh - var(--nav-height))',
           display: isOpen ? 'flex' : 'none',
           flexDirection: 'column',
           gap: '1.5rem',
           zIndex: 999,
           overflowY: 'auto',
-          borderTop: '1px solid var(--border)'
+          borderTop: '1px solid var(--border)',
+          paddingBottom: '4rem'
         }}>
           <Link to="/" style={{ fontWeight: '800', color: isActive('/') ? 'var(--primary)' : 'var(--secondary)' }}>Home</Link>
           

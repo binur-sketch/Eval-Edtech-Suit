@@ -29,7 +29,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="testimonials" className="section-padding" style={{ background: 'white' }}>
+    <section id="testimonials" className="section-padding" style={{ background: 'var(--muted)' }}>
 
 
       <div className="container">
@@ -47,7 +47,7 @@ const TestimonialsSection = () => {
               borderRadius: '2.5rem',
               display: 'flex',
               flexDirection: 'column',
-              background: 'var(--muted)'
+              background: 'white'
 
             }}>
               {/* Stars */}

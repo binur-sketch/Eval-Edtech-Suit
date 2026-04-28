@@ -111,14 +111,14 @@ const OMRPage = () => {
     { label: "Support", icon: Icons.Headphones }
   ];
   return (
-    <div style={{ paddingTop: 'var(--nav-height)' }}>
+    <div className="omr-page" style={{ paddingTop: 'var(--nav-height)', overflowX: 'hidden' }}>
       <SEO
         title="OMR Software for Sheet Scanning & Reading | OMR Checker"
         description="eVAL OMR is a state-of-the-art Optical Mark Reader software designed for capturing and analysing data from plain paper OMR sheets with 100% accuracy."
         keywords="OMR Software, OMR Sheet Scanning, OMR Checker, Bubble Sheet Reader, OMR Design Software, Automated Exam Evaluation"
       />
       {/* Hero Section */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)', overflow: 'hidden' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
             <div style={{ flex: '1.2' }}>

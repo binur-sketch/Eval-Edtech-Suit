@@ -61,7 +61,7 @@ const FloatingContact = () => {
           display: flex;
           flex-direction: column;
           gap: 12px;
-          z-index: 1000;
+          z-index: 999;
           padding-right: 12px;
         }
 
@@ -97,29 +97,24 @@ const FloatingContact = () => {
 
         @media (max-width: 768px) {
           .floating-contact {
-            bottom: 6rem;
+            bottom: 2rem;
             top: auto;
-            right: 1.25rem;
+            right: 1rem;
             transform: none;
-            flex-direction: column;
-            gap: 12px;
+            flex-direction: row;
+            gap: 10px;
             padding-right: 0;
+            z-index: 99;
           }
 
           .contact-bubble {
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
           }
-        }
 
           .contact-bubble:hover {
-            width: 52px;
             transform: translateY(-5px);
-            padding: 0;
-          }
-
-          .bubble-label {
-            display: none;
           }
         }
       `}</style>

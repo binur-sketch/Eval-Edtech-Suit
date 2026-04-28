@@ -11,7 +11,11 @@ const ClientCategory = ({ title, clients }) => (
       <h3 style={{ fontSize: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--muted-foreground)', fontWeight: '800' }}>{title}</h3>
       <div style={{ height: '2px', flex: 1, background: 'linear-gradient(to left, transparent, var(--border))' }}></div>
     </div>
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '2rem' }}>
+    <div style={{ 
+      display: 'grid', 
+      gridTemplateColumns: 'repeat(auto-fill, minmax(clamp(140px, 40vw, 200px), 1fr))', 
+      gap: 'clamp(1rem, 3vw, 2rem)' 
+    }}>
       {clients.map((client, i) => {
         const clientName = typeof client === 'string' ? client : client.name;
         const clientLogo = typeof client === 'string' ? null : client.logo;
@@ -146,7 +150,7 @@ const Clients = () => {
 
 
   return (
-    <div style={{ paddingTop: 'var(--nav-height)' }}>
+    <div className="clients-page" style={{ paddingTop: 'var(--nav-height)', overflowX: 'hidden' }}>
       <SEO
         title="Our Institutional Partners | eVAL Edtech"
         description="Trusted by over 5000 universities, schools, and government bodies globally for accurate and secure examination evaluation."
@@ -155,7 +159,7 @@ const Clients = () => {
       <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '900px' }}>
           <span className="badge">Success Ecosystem</span>
-          <h1 style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)' }}>Empowering <span className="gradient-text">5000+ Institutions</span> <br />Across 12 Countries</h1>
+          <h1 style={{ fontSize: 'clamp(1.75rem, 8vw, 3.5rem)', marginBottom: '1.5rem' }}>Empowering <span className="gradient-text">5000+ Institutions</span> <br className="md-flex" />Across 12 Countries</h1>
           <p style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
             Join the global network of excellence. eVAL provides the technological foundation for the world's most demanding educational and recruitment organizations.
           </p>

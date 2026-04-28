@@ -85,14 +85,14 @@ const About = () => {
   ];
 
   return (
-    <div style={{ paddingTop: 'var(--nav-height)' }}>
+    <div className="about-page" style={{ paddingTop: 'var(--nav-height)', overflowX: 'hidden' }}>
       <SEO
         title="About Us | Pioneers in Examination Evaluation"
         description="Learn about eVAL by Vir Softech. We are dedicated to transforming institutional assessments with smart, secure, and accurate technology solutions."
         keywords="About eVAL, Vir Softech, Examination Technology Company, EdTech India, Assessment Experts"
       />
       {/* Hero */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)', overflow: 'hidden' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
           <span className="badge">Corporate Overview</span>
           <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>Digitizing Evaluation, <br /><span className="gradient-text">Empowering Learning</span></h1>
@@ -113,7 +113,7 @@ const About = () => {
                 centered={false}
               />
 
-              <div style={{ fontSize: '1.125rem', lineHeight: '1.8', color: 'var(--muted-foreground)' }}>
+              <div style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.8', color: 'var(--muted-foreground)' }}>
                 <p style={{ marginBottom: '1.5rem' }}>
                   At VIR SOFTECH, we drive the next generation of business-focused IT transformation. Our mission is to empower organizations to turn their vision into measurable growth by reimagining workflows, optimizing operations, and delivering faster, smarter, and more cost-efficient outcomes.
                 </p>

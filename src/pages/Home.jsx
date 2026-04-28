@@ -79,7 +79,7 @@ const Home = () => {
       </Reveal>
 
       {/* SOLUTIONS */}
-      <section id="solutions" className="section-padding" style={{ background: 'white' }}>
+      <section id="solutions" className="section-padding" style={{ background: 'var(--muted)' }}>
 
 
         <div className="container">
@@ -169,7 +169,7 @@ const Home = () => {
       </Reveal>
 
       {/* WHY eVAL */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section className="section-padding" style={{ background: 'white' }}>
         <div className="container">
           <div style={{
             display: 'grid',
@@ -213,7 +213,7 @@ const Home = () => {
             <Reveal direction="left">
               <div style={{ position: 'relative' }}>
                 <div style={{ position: 'absolute', top: '-20%', left: '-10%', width: '120%', height: '140%', background: 'radial-gradient(circle, rgba(14, 165, 164, 0.15), transparent 70%)', zIndex: 0 }} />
-                <div style={{ position: 'relative', background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)', borderRadius: '2rem', padding: '2.5rem', boxShadow: '0 20px 50px rgba(0,0,0,0.1)', border: '1px solid rgba(255,255,255,0.3)' }}>
+                <div style={{ position: 'relative', background: 'var(--muted)', borderRadius: '2rem', padding: '2.5rem', boxShadow: '0 20px 50px rgba(0,0,0,0.05)', border: '1px solid var(--border)' }}>
                   <h3 style={{ textAlign: 'center', marginBottom: '2rem' }}>Measurable Impact</h3>
                   <div style={{ display: 'grid', gap: '1.5rem' }}>
                     {[
@@ -253,7 +253,7 @@ const Home = () => {
       </Reveal>
 
       {/* Case Studies Slider */}
-      <section id="case-studies" className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section id="case-studies" className="section-padding" style={{ background: 'white' }}>
 
 
         <div className="container">
