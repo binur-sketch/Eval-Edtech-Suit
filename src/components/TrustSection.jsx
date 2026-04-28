@@ -2,7 +2,7 @@ import React from 'react';
 
 const TrustSection = () => {
   const eduLogos = [
-    '/assets/images/school/dps.webp',
+    '/assets/images/school/dps.png',
     '/assets/images/university/BANARAS HINDU UNIVERSITY.png',
     '/assets/images/coaching/physics wallah.webp',
     '/assets/images/school/RPS International School.png',

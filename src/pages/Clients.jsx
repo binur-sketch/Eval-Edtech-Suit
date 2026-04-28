@@ -84,7 +84,7 @@ const Clients = () => {
     {
       title: 'Schools',
       clients: [
-        { name: 'Delhi Public School', logo: '/assets/images/school/dps.webp' },
+        { name: 'Delhi Public School', logo: '/assets/images/school/dps.png' },
         { name: 'St Francis De Sales', logo: '/assets/images/school/St Francis De Sales Sr Sec School.webp' },
         { name: 'RPS International', logo: '/assets/images/school/RPS International School.png' },
         { name: 'Dr. Radhakrishnan Intl.', logo: '/assets/images/school/Dr. Radhakrishnan International School.png' },
@@ -147,7 +147,7 @@ const Clients = () => {
 
   return (
     <div style={{ paddingTop: 'var(--nav-height)' }}>
-      <SEO 
+      <SEO
         title="Our Institutional Partners | eVAL Edtech"
         description="Trusted by over 5000 universities, schools, and government bodies globally for accurate and secure examination evaluation."
       />
@@ -170,7 +170,7 @@ const Clients = () => {
       <section className="section-padding" style={{ background: 'var(--muted)' }}>
 
         <div className="container">
-          <SectionHeader 
+          <SectionHeader
             badge="Portfolio"
             title={<>Trusted by <span className="gradient-text">Segment Leaders</span></>}
           />
