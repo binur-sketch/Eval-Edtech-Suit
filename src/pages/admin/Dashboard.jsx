@@ -47,7 +47,7 @@ const AdminDashboard = () => {
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
-    navigate('/admin/login');
+    navigate('/');
   };
 
   const handleImageUpload = async (e) => {
@@ -104,33 +104,39 @@ const AdminDashboard = () => {
     setIsModalOpen(true);
   };
 
-  const saveBlog = async (e) => {
-    e.preventDefault();
+  const saveBlog = async (e, statusOverride = null) => {
+    if (e) e.preventDefault();
     setLoading(true);
 
     try {
+      const status = statusOverride || editingBlog.status || 'published';
       const slug = editingBlog.title
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/(^-|-$)+/g, '');
 
+      const payload = { ...editingBlog, slug, status };
+      delete payload.views; // Remove views if it exists
+      
+      console.log('Saving blog with payload:', payload);
+
       if (editingBlog.id) {
-        const { id, views, ...updateData } = editingBlog;
+        const { id, ...updateData } = payload;
         const { error } = await supabase
           .from('blogs')
-          .update({ ...updateData, slug })
+          .update(updateData)
           .eq('id', id);
         if (error) throw error;
       } else {
-        const { views, ...insertData } = editingBlog;
         const { error } = await supabase
           .from('blogs')
-          .insert([{ ...insertData, slug }]);
+          .insert([payload]);
         if (error) throw error;
       }
       setIsModalOpen(false);
       fetchBlogs();
     } catch (err) {
+      console.error('Supabase Save Error:', err);
       alert('Error saving blog: ' + err.message);
     } finally {
       setLoading(false);
@@ -372,8 +378,8 @@ const AdminDashboard = () => {
                 
                 {editingBlog.status === 'draft' || !editingBlog.id ? (
                   <button 
-                    type="submit" 
-                    onClick={() => setEditingBlog({...editingBlog, status: 'draft'})}
+                    type="button" 
+                    onClick={() => saveBlog(null, 'draft')}
                     style={{ flexGrow: 1, padding: '1rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', background: '#f8fafc', fontWeight: '700', cursor: 'pointer' }}
                   >
                     Save as Draft
@@ -381,8 +387,8 @@ const AdminDashboard = () => {
                 ) : null}
 
                 <button 
-                  type="submit" 
-                  onClick={() => setEditingBlog({...editingBlog, status: 'published'})}
+                  type="button" 
+                  onClick={() => saveBlog(null, 'published')}
                   className="btn btn-primary" 
                   style={{ flexGrow: 2, padding: '1rem', borderRadius: '0.75rem', fontWeight: '700', boxShadow: '0 10px 15px -3px rgba(14, 165, 164, 0.3)' }}
                 >

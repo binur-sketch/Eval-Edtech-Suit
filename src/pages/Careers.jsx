@@ -137,9 +137,9 @@ const Careers = () => {
                     }}>{job.level}</span>
                   </div>
                 </div>
-                <button 
+                <button
                   onClick={() => setSelectedJob(job)}
-                  className="btn btn-primary" 
+                  className="btn btn-primary"
                   style={{ padding: '0.75rem 2rem', fontSize: '0.8125rem' }}
                 >
                   Apply Now
@@ -150,9 +150,9 @@ const Careers = () => {
         </div>
 
         {selectedJob && (
-          <JobApplicationModal 
-            job={selectedJob} 
-            onClose={() => setSelectedJob(null)} 
+          <JobApplicationModal
+            job={selectedJob}
+            onClose={() => setSelectedJob(null)}
           />
         )}
       </section>
@@ -204,7 +204,7 @@ const Careers = () => {
               <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto 3rem', fontSize: '1.125rem' }}>
                 We're always looking for exceptional talent. Send us your CV and tell us how you'd make an impact.
               </p>
-              <a href="mailto:corp@virsoftech.com" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>
+              <a href="mailto:nishac@virsoftech.com" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>
                 Send Open Application
               </a>
             </div>
