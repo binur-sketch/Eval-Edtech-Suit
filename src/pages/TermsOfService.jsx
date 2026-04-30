@@ -1,147 +1,78 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import SEO from '@/components/common/SEO';
+import SectionHeader from '@/components/common/SectionHeader';
 
 const TermsOfService = () => {
-  const lastUpdated = 'April 1, 2026';
-
-  const sections = [
-    {
-      title: '1. Acceptance of Terms',
-      content: [
-        'By accessing or using any eVAL product or service ("Services"), you agree to be bound by these Terms of Service. If you are using the Services on behalf of an institution, you represent that you have the authority to bind that institution to these terms.',
-        'If you do not agree with these terms, do not use our Services.'
-      ]
-    },
-    {
-      title: '2. Description of Services',
-      content: [
-        'eVAL provides a suite of examination and evaluation technology solutions including but not limited to OMR processing, Computer-Based Testing (CBT), Learning Management System (LMS), Question Test Bank (QTB), and On-Screen Marking (OSM).',
-        'Services are provided on a subscription basis as outlined in the applicable pricing plan or enterprise agreement.'
-      ]
-    },
-    {
-      title: '3. Account Responsibilities',
-      content: [
-        'You are responsible for:',
-        '• Maintaining the confidentiality of your account credentials',
-        '• All activities that occur under your account',
-        '• Ensuring that your use complies with all applicable laws and regulations',
-        '• Providing accurate and complete registration information',
-        'You must notify us immediately of any unauthorized use of your account.'
-      ]
-    },
-    {
-      title: '4. Acceptable Use',
-      content: [
-        'You agree not to:',
-        '• Use the Services for any unlawful purpose or to solicit others to act unlawfully',
-        '• Attempt to reverse engineer, decompile, or disassemble any part of the Services',
-        '• Introduce malware, viruses, or any harmful code into the platform',
-        '• Circumvent or disable security features including anti-cheating mechanisms',
-        '• Share, resell, or redistribute access without written authorization',
-        '• Use the platform to conduct assessments that violate examination integrity standards'
-      ]
-    },
-    {
-      title: '5. Intellectual Property',
-      content: [
-        'All intellectual property rights in the Services, including software, algorithms, interfaces, documentation, and branding, remain the exclusive property of Vir Softech Pvt. Ltd.',
-        'Content you upload (question banks, answer scripts, institutional data) remains your intellectual property. By using the Services, you grant us a limited license to process this content solely for the purpose of delivering the Services.'
-      ]
-    },
-    {
-      title: '6. Service Level Agreement (SLA)',
-      content: [
-        'eVAL commits to the uptime guarantees specified in your subscription tier:',
-        '• Starter: 99.5% monthly uptime',
-        '• Professional: 99.9% monthly uptime  ',
-        '• Enterprise: 99.99% monthly uptime with dedicated SLA terms',
-        'Scheduled maintenance windows are excluded from uptime calculations and will be communicated at least 48 hours in advance.'
-      ]
-    },
-    {
-      title: '7. Payment Terms',
-      content: [
-        'Subscription fees are due as specified in your plan. Annual plans are billed upfront. Monthly plans are billed on the first of each month.',
-        'Failure to pay within 15 days of the due date may result in service suspension. Enterprise agreements may have custom payment terms as outlined in the applicable Statement of Work.'
-      ]
-    },
-    {
-      title: '8. Limitation of Liability',
-      content: [
-        'TO THE MAXIMUM EXTENT PERMITTED BY LAW, eVAL\'S TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT PAID BY YOU IN THE 12 MONTHS PRECEDING THE CLAIM.',
-        'WE SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SERVICES.',
-        'This limitation applies even if eVAL has been advised of the possibility of such damages.'
-      ]
-    },
-    {
-      title: '9. Termination',
-      content: [
-        'Either party may terminate the agreement:',
-        '• By providing 30 days written notice for convenience',
-        '• Immediately for material breach that remains uncured for 15 days after written notice',
-        '• Immediately if the other party becomes subject to insolvency proceedings',
-        'Upon termination, you may export your data within 30 days. After this period, data will be deleted per our retention policy.'
-      ]
-    },
-    {
-      title: '10. Governing Law',
-      content: [
-        'These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts in New Delhi, India.',
-        'For international clients, disputes may be resolved through binding arbitration under the rules of the Singapore International Arbitration Centre (SIAC) if mutually agreed upon.'
-      ]
-    }
-  ];
-
   return (
-    <div style={{ paddingTop: '5rem' }}>
-      <SEO 
-        title="Terms of Service | eVAL Edtech"
-        description="Review the terms and conditions for using eVAL's examination and evaluation ecosystem."
+    <div className="terms-page" style={{ paddingTop: 'var(--nav-height)' }}>
+      <SEO
+        title="Terms of Service | eVAL EdTech"
+        description="Read the terms of service and agreement for using eVAL's assessment and evaluation platform."
       />
-      {/* Hero */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)', paddingBottom: '4rem' }}>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-          <span className="badge">Legal</span>
-          <h1>Terms of <span className="gradient-text">Service</span></h1>
-          <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
-            Please read these terms carefully before using the eVAL Suite of products and services.
-          </p>
-          <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', fontWeight: '700' }}>Effective date: {lastUpdated}</p>
-        </div>
-      </section>
 
-      {/* Content */}
-      <section style={{ background: 'white', padding: '4rem 0 8rem' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          {sections.map((section, i) => (
-            <div key={i} style={{ marginBottom: '3.5rem' }}>
-              <h3 style={{ fontSize: '1.375rem', marginBottom: '1.5rem', color: 'var(--foreground)' }}>{section.title}</h3>
-              {section.content.map((paragraph, j) => (
-                <p key={j} style={{
-                  fontSize: '1rem',
-                  lineHeight: '1.8',
-                  color: 'var(--muted-foreground)',
-                  marginBottom: '0.75rem',
-                  paddingLeft: paragraph.startsWith('•') ? '1rem' : '0'
-                }}>{paragraph}</p>
-              ))}
-            </div>
-          ))}
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
+          <SectionHeader
+            badge="Legal"
+            title={<>Terms of <span className="gradient-text">Service</span></>}
+            text="Please read these terms carefully before using the eVAL platform."
+          />
 
-          <div className="card" style={{
-            padding: '3rem',
-            background: 'var(--muted)',
-            borderRadius: '2rem',
-            marginTop: '4rem',
-            textAlign: 'center'
-          }}>
-            <h4 style={{ marginBottom: '1rem' }}>Need a Custom Enterprise Agreement?</h4>
-            <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', marginBottom: '2rem' }}>
-              For national boards and large institutions, we offer tailored legal agreements with custom SLA, liability, and compliance terms.
+          <div style={{ color: 'var(--muted-foreground)', lineHeight: '1.8', fontSize: '1.0625rem' }}>
+            <p style={{ marginBottom: '2rem' }}>
+              Welcome to eVAL. These Terms of Service ("Terms") govern your access to and use of the eVAL website and services provided by <strong>Vir Softech Pvt. Ltd.</strong> ("Company", "we", "us", or "our"). By creating an account or using our services, you agree to be bound by these Terms.
             </p>
-            <Link to="/contact" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>Contact Legal Team</Link>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>1. Services and Product</h3>
+            <p>
+              eVAL is an advanced institutional assessment and evaluation platform designed to streamline examination preparation, delivery, and performance analysis. We provide customers with access to our online assessment environment via secure infrastructure.
+            </p>
+            <p>
+              <strong>Infrastructure Updates:</strong> In the event of planned maintenance or infrastructure changes, we will make reasonable efforts to notify customers in advance.
+            </p>
+            <p>
+              <strong>Account Security:</strong> You are responsible for providing accurate identification during registration and maintaining the security of your account. Any unauthorized use must be reported immediately. Vir Softech is not liable for losses resulting from inaccurate information or compromised account security.
+            </p>
+            <p>
+              <strong>Service Continuity:</strong> While our team works tirelessly to ensure 100% uptime, service is dependent on external factors like network stability and server providers. In case of technical errors, our priority support team will work to resolve issues with urgency, understanding the critical nature of examination events.
+            </p>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>2. Subscription Terms</h3>
+            <p>
+              Service begins on the date of subscription. We will notify you in advance of your renewal date. A grace period of one week is provided for renewals. Customers may request account termination by contacting our support team for subscription cancellation.
+            </p>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>3. Usage Policy</h3>
+            <div style={{ paddingLeft: '1.5rem', borderLeft: '3px solid var(--primary-light)' }}>
+              <p><strong>A. Prohibited Activities:</strong> Use of our services for spam, hacking (IP scanning, DOS attacks), or any attempt to breach network security is strictly prohibited. Intellectual property rights, including copyrights and patents, are strictly reserved by Vir Softech.</p>
+              <p><strong>B. Information Integrity:</strong> All personal and institutional information provided must be accurate. We reserve the right to suspend accounts found with mismatched or false information.</p>
+              <p><strong>C. Resource Management:</strong> Multiple accounts for a single organization are not permitted unless specified in the plan. Excessive attempt volumes beyond subscription limits may be restricted to ensure system stability.</p>
+              <p><strong>D. Concurrency:</strong> Default concurrency is set to 10% of the monthly limit. Vir Softech is not responsible for system instability if actual usage exceeds this limit without prior coordination.</p>
+            </div>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>4. Account Cancellation</h3>
+            <p>
+              Users are responsible for their account cancellation and data backup. Upon formal instruction for cancellation, all content associated with the account panel will be permanently deleted from our servers.
+            </p>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>5. Cancellation and Refund Policy</h3>
+            <p>
+              <strong>Requests:</strong> Cancellation requests must be submitted through official support channels with relevant transaction details.
+            </p>
+            <p>
+              <strong>Timeframe:</strong> Requests are processed within 15 business days. Eligible refunds will be issued to the original payment method.
+            </p>
+            <p>
+              <strong>Technical Discrepancies:</strong> In case of payment failures where money is deducted but not reflected in our ERP (Ginger Webs ERP), users must contact our support. If our bank reflects the receipt, we will manually rectify it; otherwise, the user must coordinate with the payment gateway.
+            </p>
+            <p>
+              <strong>Multiple Payments:</strong> If multiple payments occur for the same transaction, a refund will be processed upon confirmation, or the amount may be adjusted against future fees at the customer's request.
+            </p>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>6. Governing Law</h3>
+            <p style={{ marginBottom: '4rem' }}>
+              This agreement is governed by the laws of India. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts in Noida/Delhi, India.
+            </p>
           </div>
         </div>
       </section>

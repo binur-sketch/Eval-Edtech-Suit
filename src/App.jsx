@@ -8,7 +8,7 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Clients = lazy(() => import('./pages/Clients'));
-const Blog = lazy(() => import('./pages/Resources')); // Using Resources as Blog for now
+const Blog = lazy(() => import('./pages/Blogs')); // Using Blogs for insights and news
 const BookDemo = lazy(() => import('./pages/BookDemo'));
 const Careers = lazy(() => import('./pages/Careers'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
@@ -22,6 +22,7 @@ const LMSPage = lazy(() => import('./pages/solutions/LMSPage'));
 const OSMPage = lazy(() => import('./pages/solutions/OSMPage'));
 const AIPage = lazy(() => import('./pages/solutions/AIPage')); // New AI Proctoring
 const QPMSPage = lazy(() => import('./pages/solutions/QPMSPage')); // New QPMS
+const OlympiadPage = lazy(() => import('./pages/solutions/OlympiadPage'));
 
 // Admin Pages
 const AdminLogin = lazy(() => import('./pages/admin/Login'));
@@ -57,7 +58,7 @@ function App() {
             <Route path="/clients" element={<Clients />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogDetail />} />
-            <Route path="/resources" element={<Blog />} />
+            <Route path="/blogs" element={<Blog />} />
             <Route path="/book-demo" element={<BookDemo />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -71,6 +72,8 @@ function App() {
             <Route path="/ai-proctoring" element={<AIPage />} />
             <Route path="/cbt" element={<CBTPage />} />
             <Route path="/lms" element={<LMSPage />} />
+            <Route path="/solutions/olympiad" element={<OlympiadPage />} />
+            <Route path="/terms" element={<TermsOfService />} />
 
             {/* Service Routes */}
             <Route path="/omr-printing" element={<OMRPrinting />} />

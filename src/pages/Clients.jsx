@@ -11,10 +11,10 @@ const ClientCategory = ({ title, clients }) => (
       <h3 style={{ fontSize: '1.25rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--muted-foreground)', fontWeight: '800' }}>{title}</h3>
       <div style={{ height: '2px', flex: 1, background: 'linear-gradient(to left, transparent, var(--border))' }}></div>
     </div>
-    <div style={{ 
-      display: 'grid', 
-      gridTemplateColumns: 'repeat(auto-fill, minmax(clamp(140px, 40vw, 200px), 1fr))', 
-      gap: 'clamp(1rem, 3vw, 2rem)' 
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fill, minmax(clamp(140px, 40vw, 200px), 1fr))',
+      gap: 'clamp(1rem, 3vw, 2rem)'
     }}>
       {clients.map((client, i) => {
         const clientName = typeof client === 'string' ? client : client.name;
@@ -197,7 +197,7 @@ const Clients = () => {
               <div style={{ marginTop: '3rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '1.5rem', flex: '1 1 200px' }}>
                   <div style={{ fontWeight: '800', marginBottom: '0.5rem' }}>INDIA HQ</div>
-                  <div style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.5)' }}>Noida, UP 201301</div>
+                  <div style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.5)' }}>Noida, UP 201309</div>
                 </div>
                 <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '1.5rem', flex: '1 1 200px' }}>
                   <div style={{ fontWeight: '800', marginBottom: '0.5rem' }}>JAPAN HQ</div>

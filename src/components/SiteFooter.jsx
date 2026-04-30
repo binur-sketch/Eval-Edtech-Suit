@@ -20,9 +20,10 @@ const SiteFooter = () => {
 
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                    gap: 'clamp(2rem, 5vw, 3rem)',
-                    marginBottom: '4rem'
+                    gridTemplateColumns: '1.2fr 0.8fr 1fr 1.2fr',
+                    gap: 'clamp(1.5rem, 3vw, 2.5rem)',
+                    marginBottom: '4rem',
+                    justifyContent: 'center'
                 }}>
                     {/* Brand Info */}
                     <div style={{ gridColumn: 'span min(auto, 1)' }}>
@@ -60,6 +61,7 @@ const SiteFooter = () => {
                             <Link to="/qpms" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>QPMS System</Link>
                             <Link to="/ai-proctoring" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>AI Proctoring</Link>
                             <Link to="/cbt" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>CBT Platform</Link>
+                            <Link to="/solutions/olympiad" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Olympiad Solutions</Link>
                             <Link to="/lms" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>LMS Portal</Link>
                         </div>
                     </div>
@@ -70,7 +72,7 @@ const SiteFooter = () => {
                         <div style={{ display: 'grid', gap: '1.25rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>
                             <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                                 <Icons.MapPin size={16} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: '3px' }} />
-                                <a href='https://share.google/bwL9Zpu33JXuIR2sw' target="_blank" rel="noopener noreferrer"><span>A 306, The I Thum, Plot No. A 40, Sector 62, Noida, UP 201301</span></a>
+                                <a href='https://share.google/bwL9Zpu33JXuIR2sw' target="_blank" rel="noopener noreferrer"><span>A 306, The I Thum, Plot No. A 40, Sector 62, Noida, UP 201309</span></a>
                             </div>
                             <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                                 <Icons.Mail size={16} style={{ color: '#EA4335', flexShrink: 0 }} />
@@ -101,10 +103,10 @@ const SiteFooter = () => {
 
                 {/* Footer Bottom Bar */}
                 <div style={{ marginTop: '2rem', paddingTop: '2rem', paddingBottom: '2rem', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem', color: 'rgba(255,255,255,0.3)', fontSize: '0.8125rem' }}>
-                    <p style={{ marginBottom: 0 }}>© {new Date().getFullYear()} eVAL – Examination Evaluation Solutions. Powered by <a href='https://virsoftech.com' style={{ color: 'inherit', textDecoration: 'underline' }}>Vir Softech Pvt. Ltd.</a></p>
+                    <p style={{ marginBottom: 0 }}>© {new Date().getFullYear()} eVAL – Examination Evaluation Solutions. Powered by <a href='https://www.virsoftech.com/' style={{ color: 'inherit', textDecoration: 'underline' }}>Vir Softech Pvt. Ltd.</a></p>
                     <div style={{ display: 'flex', gap: '2rem' }}>
                         <Link to="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link>
-                        <Link to="/terms-of-service" style={{ color: 'inherit' }}>Terms of Service</Link>
+                        <Link to="/terms" style={{ color: 'inherit' }}>Terms of Service</Link>
                     </div>
                 </div>
             </div>

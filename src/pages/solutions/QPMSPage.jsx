@@ -66,6 +66,14 @@ const QPMSPage = () => {
       color: '#10B981',
       bg: 'rgba(16, 185, 129, 0.1)'
     },
+    {
+      step: '6',
+      title: 'Finance',
+      desc: 'Payment processing and bill settlement.',
+      icon: <Icons.CreditCard size={32} />,
+      color: '#14B8A6',
+      bg: 'rgba(20, 184, 166, 0.1)'
+    },
   ];
 
 
@@ -156,8 +164,8 @@ const QPMSPage = () => {
                   initial={{ pathLength: 0 }}
                   whileInView={{ pathLength: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.2 }}
-                  d="M 100,60 C 100,10 300,10 300,60"
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  d="M 80,60 C 80,10 240,10 240,60"
                   stroke="var(--primary)"
                   strokeWidth="2"
                   strokeDasharray="6 6"
@@ -167,8 +175,8 @@ const QPMSPage = () => {
                   initial={{ pathLength: 0 }}
                   whileInView={{ pathLength: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.4 }}
-                  d="M 300,60 C 300,110 500,110 500,60"
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  d="M 240,60 C 240,110 400,110 400,60"
                   stroke="#6366F1"
                   strokeWidth="2"
                   strokeDasharray="6 6"
@@ -178,8 +186,8 @@ const QPMSPage = () => {
                   initial={{ pathLength: 0 }}
                   whileInView={{ pathLength: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.6 }}
-                  d="M 500,60 C 500,10 700,10 700,60"
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  d="M 400,60 C 400,10 560,10 560,60"
                   stroke="#EC4899"
                   strokeWidth="2"
                   strokeDasharray="6 6"
@@ -189,21 +197,32 @@ const QPMSPage = () => {
                   initial={{ pathLength: 0 }}
                   whileInView={{ pathLength: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.8 }}
-                  d="M 700,60 C 700,110 900,110 900,60"
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  d="M 560,60 C 560,110 720,110 720,60"
                   stroke="#F59E0B"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                />
+                {/* Arc 5-6 */}
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 1.0 }}
+                  d="M 720,60 C 720,10 880,10 880,60"
+                  stroke="#10B981"
                   strokeWidth="2"
                   strokeDasharray="6 6"
                 />
 
                 {/* Animated Particles */}
-                {[200, 400, 600, 800].map((x, i) => (
+                {[160, 320, 480, 640, 800].map((x, i) => (
                   <motion.circle
                     key={i}
                     r="4"
                     fill={i % 2 === 0 ? 'var(--primary)' : '#6366F1'}
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: [0, 1, 0], x: [x - 50, x + 50] }}
+                    animate={{ opacity: [0, 1, 0], x: [x - 40, x + 40] }}
                     transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
                     cx={x}
                     cy={i % 2 === 0 ? 15 : 105}
@@ -221,7 +240,7 @@ const QPMSPage = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15 }}
                   className={`workflow-h-item ${i % 2 === 0 ? 'top-text' : 'bottom-text'}`}
-                  style={{ width: '20%' }}
+                  style={{ width: '16.66%' }}
                 >
                   {/* Content (Above) */}
                   {i % 2 === 0 && (
@@ -371,7 +390,21 @@ const QPMSPage = () => {
             @media (max-width: 850px) {
               .workflow-h-steps {
                 flex-direction: column;
-                gap: 3rem;
+                gap: 3.5rem;
+                position: relative;
+                padding-left: 1.5rem;
+              }
+              .workflow-h-steps::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 69px;
+                width: 2px;
+                background: linear-gradient(to bottom, var(--primary), #6366F1, #EC4899, #F59E0B, #10B981);
+                z-index: 0;
+                opacity: 0.3;
+                border-radius: 2px;
               }
               .workflow-h-path {
                 display: none;
@@ -380,17 +413,31 @@ const QPMSPage = () => {
                 width: 100% !important;
                 flex-direction: row !important;
                 text-align: left;
-                gap: 1.5rem;
+                gap: 2rem;
+                z-index: 1;
+                justify-content: flex-start;
+              }
+              .h-step-visual {
+                margin: 0;
+                flex-shrink: 0;
+                order: 1;
               }
               .h-step-content {
                 height: auto;
                 text-align: left;
+                order: 2;
+                padding: 0 !important;
+              }
+              .h-step-content h3 {
+                font-size: 1rem;
+                margin-bottom: 0.25rem;
+              }
+              .h-step-content p {
+                font-size: 0.75rem;
+                max-width: none;
               }
               .top-text, .bottom-text {
                 flex-direction: row !important;
-              }
-              .h-step-visual {
-                margin: 0;
               }
             }
           `}</style>
@@ -417,14 +464,17 @@ const QPMSPage = () => {
       </section>
 
       {/* Benefits */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section style={{ padding: '3rem 0', background: 'var(--muted)' }}>
 
         <div className="container">
-          <div style={{ background: 'var(--secondary)', color: 'white', padding: 'clamp(2rem, 8vw, 5rem) clamp(1.5rem, 5vw, 4rem)', borderRadius: '3rem' }}>
+          <div style={{ background: 'var(--secondary)', color: 'white', padding: 'clamp(1.5rem, 5vw, 3rem)', borderRadius: '3rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2rem, 5vw, 4rem)' }}>
               <div>
                 <h2 style={{ color: 'white' }}>Institutional <span style={{ color: 'var(--primary)' }}>Benefits</span></h2>
-                <p style={{ color: 'rgba(255,255,255,0.7)', marginTop: '2rem', fontSize: '1.125rem' }}>Eliminate risks, improve coordination, and ensure absolute confidentiality for your most sensitive examination content.</p>
+                <p style={{ color: 'rgba(255,255,255,0.7)', marginTop: '1.25rem', fontSize: '1.0625rem' }}>Eliminate risks, improve coordination, and ensure absolute confidentiality for your most sensitive examination content.</p>
+                <div style={{ marginTop: '1.5rem', maxWidth: '280px', borderRadius: '1.5rem', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <img src="/assets/images/qpms_security_visual.png" alt="Security Visual" style={{ width: '100%', height: 'auto', display: 'block', opacity: 0.9 }} />
+                </div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }}>
                 {benefits.map((b, i) => (
@@ -438,7 +488,7 @@ const QPMSPage = () => {
           </div>
         </div>
       </section>
-
+      
       {/* CTA */}
       <section className="section-padding">
         <div className="container" style={{ textAlign: 'center' }}>

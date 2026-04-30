@@ -1,150 +1,92 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import SEO from '@/components/common/SEO';
+import SectionHeader from '@/components/common/SectionHeader';
 
 const PrivacyPolicy = () => {
-  const lastUpdated = 'April 1, 2026';
-
-  const sections = [
-    {
-      title: '1. Information We Collect',
-      content: [
-        'We collect information that you provide directly to us when you create an account, request a demo, contact support, or engage with our services. This includes:',
-        '• Personal identifiers (name, email, phone number, institutional role)',
-        '• Institutional data (organization name, type, size, location)',
-        '• Technical data (IP address, browser type, device information, cookies)',
-        '• Assessment data (examination results, student performance metrics)',
-        '• Usage data (feature engagement, session duration, navigation patterns)',
-        'We never collect or store student biometric data beyond the session-level AI proctoring requirements, which are immediately discarded post-examination.'
-      ]
-    },
-    {
-      title: '2. How We Use Your Information',
-      content: [
-        'We use the information we collect to:',
-        '• Provide, maintain, and improve the eVAL Suite of products',
-        '• Process examination data and generate institutional analytics',
-        '• Send transactional communications about your account and services',
-        '• Provide technical support and respond to your inquiries',
-        '• Detect, investigate, and prevent fraudulent activity or security breaches',
-        '• Comply with legal obligations and regulatory requirements',
-        '• Develop new features based on usage patterns and institutional feedback'
-      ]
-    },
-    {
-      title: '3. Data Sharing & Third Parties',
-      content: [
-        'We do not sell your personal information. We may share data with:',
-        '• Cloud infrastructure providers (AWS, Azure) for hosting and storage—bound by strict data processing agreements',
-        '• Payment processors for handling subscription billing securely',
-        '• Analytics partners to improve product performance (anonymized data only)',
-        '• Legal authorities when required by law, regulation, or valid legal process',
-        'All third-party processors are evaluated for security compliance and bound by contractual obligations to protect your data.'
-      ]
-    },
-    {
-      title: '4. Data Security',
-      content: [
-        'We employ industry-standard security measures including:',
-        '• AES-256 encryption for data at rest and TLS 1.3 for data in transit',
-        '• Multi-factor authentication for all administrative access',
-        '• Regular penetration testing and vulnerability assessments',
-        '• SOC 2 Type II certified operational controls',
-        '• ISO 27001 certified information security management system',
-        '• Geographic data residency options for compliance-sensitive institutions'
-      ]
-    },
-    {
-      title: '5. Data Retention',
-      content: [
-        'We retain your data for the duration of your active subscription plus a grace period of 90 days. After termination:',
-        '• Institutional assessment data is retained for legal compliance periods as required by applicable education regulations',
-        '• Personal identifiers are anonymized or deleted within 30 days of account closure',
-        '• Backup copies are purged within 90 days following our data lifecycle policy',
-        'You may request early deletion by contacting our Data Protection Office at dpo@virsoftech.com.'
-      ]
-    },
-    {
-      title: '6. Your Rights',
-      content: [
-        'Depending on your jurisdiction, you may have the right to:',
-        '• Access the personal data we hold about you',
-        '• Rectify inaccurate or incomplete data',
-        '• Request deletion of your personal data',
-        '• Restrict or object to certain processing activities',
-        '• Data portability—receive your data in a structured, machine-readable format',
-        '• Withdraw consent for optional data processing',
-        'To exercise any of these rights, contact us at privacy@virsoftech.com. We respond to all verified requests within 30 days.'
-      ]
-    },
-    {
-      title: '7. Cookies & Tracking',
-      content: [
-        'We use cookies and similar technologies for:',
-        '• Essential cookies: Required for platform functionality (session management, security tokens)',
-        '• Analytics cookies: To understand usage patterns and improve our products',
-        '• Preference cookies: To remember your settings and display preferences',
-        'You can manage cookie preferences through your browser settings. Disabling essential cookies may impair platform functionality.'
-      ]
-    },
-    {
-      title: '8. International Data Transfers',
-      content: [
-        'eVAL operates globally. Your data may be processed in India, where our primary data centers are located. For international clients:',
-        '• We offer data residency options in AWS Mumbai, AWS Bahrain, and Azure UAE North',
-        '• EU data transfers are governed by Standard Contractual Clauses (SCCs)',
-        '• We comply with applicable data protection regulations including GDPR, IT Act 2000, and PDPA'
-      ]
-    },
-    {
-      title: '9. Children\'s Privacy',
-      content: [
-        'eVAL services are provided to educational institutions, not directly to children. We process student data as a data processor on behalf of the institution (data controller). We do not knowingly collect personal information directly from individuals under 13 years of age without institutional and parental consent.'
-      ]
-    },
-    {
-      title: '10. Changes to This Policy',
-      content: [
-        'We may update this Privacy Policy periodically. Material changes will be communicated via email to institutional administrators and posted on our platform with a 30-day advance notice. Continued use of our services after changes constitutes acceptance of the updated policy.'
-      ]
-    }
-  ];
-
   return (
-    <div style={{ paddingTop: '5rem' }}>
+    <div className="privacy-page" style={{ paddingTop: 'var(--nav-height)' }}>
       <SEO
-        title="Privacy Policy | eVAL Edtech"
-        description="Learn how eVAL protects institutional data and maintains the highest standards of examination security and privacy."
+        title="Privacy Policy | eVAL EdTech"
+        description="Data privacy and protection policy for eVAL assessment and evaluation platform."
       />
-      {/* Hero */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)', paddingBottom: '4rem' }}>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-          <span className="badge">Legal</span>
-          <h1>Privacy <span className="gradient-text">Policy</span></h1>
-          <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)' }}>
-            At eVAL, protecting your data is not just compliance—it's a core value. This policy explains how we collect, use, and safeguard your information.
-          </p>
-          <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)', fontWeight: '700' }}>Last updated: {lastUpdated}</p>
-        </div>
-      </section>
 
-      {/* Content */}
-      <section style={{ background: 'white', padding: '4rem 0 8rem' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          {sections.map((section, i) => (
-            <div key={i} style={{ marginBottom: '3.5rem' }}>
-              <h3 style={{ fontSize: '1.375rem', marginBottom: '1.5rem', color: 'var(--foreground)' }}>{section.title}</h3>
-              {section.content.map((paragraph, j) => (
-                <p key={j} style={{
-                  fontSize: '1rem',
-                  lineHeight: '1.8',
-                  color: 'var(--muted-foreground)',
-                  marginBottom: '0.75rem',
-                  paddingLeft: paragraph.startsWith('•') ? '1rem' : '0'
-                }}>{paragraph}</p>
-              ))}
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(14, 165, 164, 0.03) 0%, white 100%)' }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
+          <SectionHeader
+            badge="Legal"
+            title={<>Privacy <span className="gradient-text">Policy</span></>}
+            text="Version: 2.0.0.1 | Last Updated: April 1st, 2026"
+          />
+
+          <div style={{ color: 'var(--muted-foreground)', lineHeight: '1.8', fontSize: '1.0625rem' }}>
+            <p style={{ marginBottom: '2rem' }}>
+              By accessing this website, participating in our data collection initiatives, and/or availing any of our services, you agree to the terms of this Data Privacy and Protection Policy.
+            </p>
+
+            <div style={{ background: 'var(--muted)', padding: '2rem', borderRadius: '1.5rem', marginBottom: '3rem' }}>
+              <h4 style={{ color: 'var(--foreground)', marginBottom: '1rem' }}>Table of Contents</h4>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0.5rem' }}>
+                <li>1. Terms used in this policy</li>
+                <li>2. Our commitment</li>
+                <li>3. Data collection & purpose</li>
+                <li>4. Data sharing</li>
+                <li>5. Data retention</li>
+                <li>6. Data transfer</li>
+                <li>7. Your rights</li>
+                <li>8. Cookies policy</li>
+                <li>9. Data security</li>
+                <li>10. Contact us</li>
+              </ul>
             </div>
-          ))}
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>1. TERMS USED IN THIS POLICY</h3>
+            <p><strong>“Personal Data”</strong> means any information relating to an identified or identifiable natural person.</p>
+            <p><strong>“Service”</strong> refers to any assessment, evaluation, or institutional service that <strong>eVAL</strong> provides. You are using our Service when you sign up or sign in to get access to any Service provided by us.</p>
+            <p><strong>“we”, “us”, “our”, and “eVAL”</strong> refer to eVAL, a product by <strong>Vir Softech Pvt. Ltd.</strong></p>
+            <p><strong>“Processor”</strong> means eVAL (Vir Softech Pvt. Ltd.), which processes personal data on behalf of the Controller (Client Organization) in accordance with applicable data protection laws, including GDPR.</p>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>2. OUR COMMITMENT TOWARDS PROTECTING PERSONAL INFORMATION</h3>
+            <p>Your privacy is paramount. We act in accordance with applicable data protection laws, including GDPR. We are committed to safeguarding the privacy of our website visitors, clients, and research participants.</p>
+            <ul style={{ paddingLeft: '1.5rem' }}>
+              <li>We protect your privacy and treat provided information as confidential.</li>
+              <li>Information is used strictly for the purpose for which it was sought.</li>
+              <li>We do not release personal information to third parties without explicit consent.</li>
+              <li>We never sell your personal data to anyone.</li>
+            </ul>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>3. WHAT DATA DO WE COLLECT OR PROCESS?</h3>
+            <p><strong>Usage Data:</strong> We may process data about your use of our Website and Services (IP address, location, browser type, visit length) to monitor and improve our performance metrics. Legal basis: Consent or legitimate interests.</p>
+            <p><strong>Service Data:</strong> This includes your name, email, and telephone number provided during service use. This is processed for service delivery, security, and communication. Legal basis: Contractual necessity or consent.</p>
+            <p><strong>Transaction Data:</strong> Information relating to purchases, including contact and banking details, processed for supplying goods/services and record-keeping.</p>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>4. WHOM DO WE SHARE YOUR DATA WITH?</h3>
+            <p>We may disclose personal data to our employees, officers, or members of our group (Vir Softech) as reasonably necessary for service delivery. Financial transactions are handled by secure payment providers only to the extent necessary for processing payments or refunds.</p>
+            <p>We do not sell, share, or rent your personal information to market research or direct marketing companies.</p>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>5. DATA RETENTION</h3>
+            <p>Personal data is retained only as long as necessary to achieve the purposes for which it was collected, or to comply with legal obligations. Upon expiry, data is securely deleted or anonymized.</p>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>6. TRANSFER OF YOUR DATA</h3>
+            <p>Your information may be processed at our operating offices in India. For transfers outside the EEA, we rely on Standard Contractual Clauses (SCCs) and adequate security controls to ensure a high level of protection as required by Articles 44 to 49 of the GDPR.</p>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>7. YOUR RIGHTS</h3>
+            <p>Under GDPR, you have the right to access, rectification, erasure (the "right to be forgotten"), restriction of processing, and data portability. You may exercise these rights by contacting us at <strong>corp@virsoftech.com</strong>.</p>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>8. HOW DO WE USE COOKIES?</h3>
+            <p>We use cookies for authentication, security, analysis, and to store your preferences. Analytics cookies (e.g., Google Analytics) are deployed only after informed consent via our cookie banner.</p>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>9. SECURITY OF YOUR DATA</h3>
+            <p>While no method of electronic storage is 100% secure, we use commercially acceptable means to protect your data. In case of a breach, we will notify relevant authorities and affected subjects within 72 hours where required by Articles 33 and 34 of the GDPR.</p>
+
+            <h3 style={{ color: 'var(--foreground)', marginTop: '3rem', marginBottom: '1.5rem' }}>10. CONTACT US</h3>
+            <p><strong>eVAL</strong> is a product of <strong>Vir Softech Private Limited</strong>.</p>
+            <p>Registered Office: A 306, The i-Thum,, Plot No A 40, Block A, Industrial Area,, Sector 62, Noida, Uttar Pradesh 201309</p>
+            <p>
+              Email: corp@virsoftech.com<br />
+              Website: www.virsoftech.com
+            </p>
+
+          </div>
         </div>
       </section>
     </div>

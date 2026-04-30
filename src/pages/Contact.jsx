@@ -69,7 +69,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 style={{ marginBottom: '0.25rem' }}>Global HQ</h4>
-                      <p style={{ fontSize: '0.9375rem', margin: 0 }}>A 306, The I Thum, Plot No. A 40, Sector 62, Noida, UP 201301</p>
+                      <p style={{ fontSize: '0.9375rem', margin: 0 }}>A 306, The I Thum, Plot No. A 40, Sector 62, Noida, UP 201309</p>
                     </div>
                   </div>
 

@@ -10,39 +10,39 @@ const IndustryVerticals = () => {
       icon: <Icons.Award size={32} />,
       title: 'Coaching Institutes',
       desc: 'JEE, NEET, and banking exam coaching chains standardizing mock tests across hundreds of centers.',
-      stat: '800+ Coaching Centers'
+      stat: '3100+ Coaching Centers'
     },
     {
       icon: <Icons.School size={32} />,
       title: 'K-12 & Schools',
       desc: 'CBSE, ICSE, and state boards conducting periodic assessments, scholarship tests, and Olympiad evaluations.',
-      stat: '1500+ Schools'
+      stat: '1000+ Schools'
     },
     {
       icon: <Icons.Landmark size={32} />,
       title: 'Government & PSU',
       desc: 'State and national boards conducting large-scale recruitment exams, civil services prelims, and public examinations.',
-      stat: '50+ Government Bodies'
+      stat: '100+ Government Bodies'
     },
     {
       icon: <Icons.GraduationCap size={32} />,
       title: 'Universities & Colleges',
       desc: 'Universities and colleges managing entrance exams, semester evaluations, and accreditation assessments.',
-      stat: '2000+ Universities'
+      stat: '1000+ Universities'
     },
 
     {
       icon: <Icons.Building2 size={32} />,
       title: 'Corporate Training',
-      desc: 'Fortune 500 companies running certification programs, compliance assessments, and skill evaluations.',
-      stat: '200+ Corporates'
+      desc: 'Fortune 100 companies running certification programs, compliance assessments, and skill evaluations.',
+      stat: '100+ Corporates'
     },
 
     {
       icon: <Icons.Stethoscope size={32} />,
       title: 'Olympiad Examination Bodies',
       desc: 'Olympiad organizations conducting competitive exams to identify academic excellence across schools and institutions.',
-      stat: '300+ Examination Bodies'
+      stat: '100+ Examination Bodies'
     }
   ];
 
@@ -51,7 +51,7 @@ const IndustryVerticals = () => {
 
 
       <div className="container">
-        <SectionHeader 
+        <SectionHeader
           badge="Industry Solutions"
           title={<>Empowering Every <span className="gradient-text">Sector</span></>}
           text="Purpose-built solutions for the unique assessment challenges of every industry vertical."

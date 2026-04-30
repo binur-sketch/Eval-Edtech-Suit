@@ -346,7 +346,7 @@ const About = () => {
             background: white;
             border: 3px solid var(--primary);
             display: flex;
-            alignItems: center;
+            align-items: center;
             justify-content: center;
             color: var(--primary);
             z-index: 2;

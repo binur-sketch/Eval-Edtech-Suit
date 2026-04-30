@@ -293,18 +293,18 @@ const AIPage = () => {
 
             .h-step-visual {
               position: relative;
-              margin: 1.2rem 0;
+              margin: 3.5rem 0;
             }
 
             .h-step-circle {
-              width: 70px;
-              height: 70px;
+              width: 75px;
+              height: 75px;
               border-radius: 50%;
               border: 2px solid var(--primary);
               display: flex;
               align-items: center;
               justify-content: center;
-              padding: 6px;
+              padding: 8px;
               background: white;
               box-shadow: 0 10px 25px rgba(0,0,0,0.05);
               transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -342,32 +342,56 @@ const AIPage = () => {
             }
 
             .h-step-content {
-              height: 70px;
+              height: 110px;
               display: flex;
               flex-direction: column;
               justify-content: center;
               transition: 0.3s;
             }
 
+            .top-text .h-step-content {
+              justify-content: flex-end;
+              padding-bottom: 1.5rem;
+            }
+
+            .bottom-text .h-step-content {
+              justify-content: flex-start;
+              padding-top: 1.5rem;
+            }
+
             .h-step-content h3 {
-              font-size: 0.85rem;
+              font-size: 0.875rem;
               margin-bottom: 0.3rem;
               color: var(--secondary);
               font-weight: 800;
             }
 
             .h-step-content p {
-              font-size: 0.7rem;
+              font-size: 0.725rem;
               color: var(--muted-foreground);
               margin: 0;
-              line-height: 1.3;
-              max-width: 110px;
+              line-height: 1.35;
+              max-width: 130px;
             }
 
             @media (max-width: 1100px) {
               .workflow-h-steps {
                 flex-direction: column;
-                gap: 2.5rem;
+                gap: 3rem;
+                position: relative;
+                padding-left: 1.5rem;
+              }
+              .workflow-h-steps::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 61px;
+                width: 2px;
+                background: linear-gradient(to bottom, var(--primary), #6366F1, #EC4899, #F59E0B, #8B5CF6, #10B981, #F43F5E, #0EA5E9);
+                z-index: 0;
+                opacity: 0.3;
+                border-radius: 2px;
               }
               .workflow-h-path {
                 display: none;
@@ -376,20 +400,31 @@ const AIPage = () => {
                 width: 100% !important;
                 flex-direction: row !important;
                 text-align: left;
-                gap: 1.5rem;
+                gap: 2rem;
+                z-index: 1;
+                justify-content: flex-start;
+              }
+              .h-step-visual {
+                margin: 0;
+                flex-shrink: 0;
+                order: 1;
               }
               .h-step-content {
                 height: auto;
                 text-align: left;
+                order: 2;
+                padding: 0 !important;
+              }
+              .h-step-content h3 {
+                font-size: 1rem;
+                margin-bottom: 0.25rem;
               }
               .h-step-content p {
+                font-size: 0.75rem;
                 max-width: none;
               }
               .top-text, .bottom-text {
                 flex-direction: row !important;
-              }
-              .h-step-visual {
-                margin: 0;
               }
             }
           `}</style>

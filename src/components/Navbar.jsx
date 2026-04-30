@@ -13,6 +13,7 @@ const Navbar = () => {
     { title: 'Question Paper Management', path: '/qpms' },
     { title: 'AI Proctoring', path: '/ai-proctoring' },
     { title: 'CBT Platform', path: '/cbt' },
+    { title: 'Olympiad Solutions', path: '/solutions/olympiad' },
     { title: 'LMS Portal', path: '/lms' },
   ];
 
@@ -52,10 +53,10 @@ const Navbar = () => {
   });
 
   return (
-    <header style={{ 
-      position: 'fixed', 
-      width: '100%', 
-      zIndex: 1000, 
+    <header style={{
+      position: 'fixed',
+      width: '100%',
+      zIndex: 1000,
       top: 0,
       transition: 'var(--transition)'
     }}>
@@ -101,7 +102,7 @@ const Navbar = () => {
         backdropFilter: scrolled ? 'blur(15px)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(15px)' : 'none',
         boxShadow: scrolled ? '0 10px 30px rgba(0,0,0,0.08)' : '0 1px 0 rgba(0,0,0,0.05)',
-        height: scrolled ? '75px' : 'var(--nav-height)',
+        height: scrolled ? '65px' : 'var(--nav-height)',
         display: 'flex',
         alignItems: 'center',
         transition: 'var(--transition)',
@@ -113,7 +114,7 @@ const Navbar = () => {
               src="/assets/images/logo.png"
               alt="eVAL Logo"
               style={{
-                height: scrolled ? '44px' : '54px',
+                height: scrolled ? '38px' : '48px',
                 width: 'auto',
                 transition: 'var(--transition)'
               }}
@@ -127,7 +128,7 @@ const Navbar = () => {
             <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
               <button style={{
                 padding: '0 0.75rem', height: '100%', background: 'none', border: 'none',
-                color: isActive('/products') ? 'var(--primary)' : 'var(--secondary)', 
+                color: isActive('/products') ? 'var(--primary)' : 'var(--secondary)',
                 fontWeight: '700', fontSize: '0.75rem',
                 textTransform: 'uppercase', letterSpacing: '0.05em', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
@@ -146,7 +147,7 @@ const Navbar = () => {
             <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
               <button style={{
                 padding: '0 0.75rem', height: '100%', background: 'none', border: 'none',
-                color: isActive('/services') ? 'var(--primary)' : 'var(--secondary)', 
+                color: isActive('/services') ? 'var(--primary)' : 'var(--secondary)',
                 fontWeight: '700', fontSize: '0.75rem',
                 textTransform: 'uppercase', letterSpacing: '0.05em', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
@@ -164,13 +165,13 @@ const Navbar = () => {
 
             <Link to="/about" style={navLinkStyle('/about')}>About</Link>
             <Link to="/clients" style={navLinkStyle('/clients')}>Clients</Link>
-            <Link to="/blog" style={navLinkStyle('/blog')}>Resources</Link>
+            <Link to="/blogs" style={navLinkStyle('/blog')}>Blogs</Link>
             <Link to="/careers" style={navLinkStyle('/careers')}>Careers</Link>
             <Link to="/contact" style={navLinkStyle('/contact')}>Contact</Link>
 
-            <Link to="/book-demo" className="btn btn-primary" style={{ 
-              padding: '0.65rem 1.5rem', 
-              marginLeft: '1.5rem', 
+            <Link to="/book-demo" className="btn btn-primary" style={{
+              padding: '0.65rem 1.5rem',
+              marginLeft: '1.5rem',
               fontSize: '0.75rem',
               borderRadius: '0.75rem'
             }}>
@@ -206,7 +207,7 @@ const Navbar = () => {
           paddingBottom: '4rem'
         }}>
           <Link to="/" style={{ fontWeight: '800', color: isActive('/') ? 'var(--primary)' : 'var(--secondary)' }}>Home</Link>
-          
+
           <div>
             <div style={{ color: 'var(--primary)', fontSize: '0.65rem', fontWeight: '900', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em' }}>Solutions</div>
             <div style={{ display: 'grid', gap: '1rem', paddingLeft: '0.5rem' }}>
@@ -228,7 +229,7 @@ const Navbar = () => {
           <Link to="/about" style={{ fontWeight: '800', color: isActive('/about') ? 'var(--primary)' : 'var(--secondary)' }}>About Us</Link>
           <Link to="/clients" style={{ fontWeight: '800', color: isActive('/clients') ? 'var(--primary)' : 'var(--secondary)' }}>Our Clients</Link>
           <Link to="/contact" style={{ fontWeight: '800', color: isActive('/contact') ? 'var(--primary)' : 'var(--secondary)' }}>Contact</Link>
-          
+
           <Link to="/book-demo" className="btn btn-primary" style={{ marginTop: 'auto' }}>Book a Consultation</Link>
         </div>
       </nav>

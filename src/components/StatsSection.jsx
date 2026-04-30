@@ -25,11 +25,11 @@ const Counter = ({ value, duration = 1.5 }) => {
 const StatsSection = () => {
   const stats = [
     { label: 'Global Presence Countries', val: '10+' },
-    { label: 'Domestic Segment Clients', val: '5000+' },
-    { label: 'Universities', val: '200+' },
-    { label: 'Colleges', val: '2000+' },
-    { label: 'Political Parties, Survey & Others', val: '100+' },
-    { label: 'Coaching', val: '2900+' },
+    { label: 'Global Segment Clients', val: '5000+' },
+    { label: 'Universities', val: '100+' },
+    { label: 'Colleges', val: '1000+' },
+    { label: 'Olympiad conducting Bodies', val: '100+' },
+    { label: 'Coaching', val: '3100+' },
     { label: 'OMR Sheets Evaluated', val: '25 Cr+' },
     { label: 'Years Of Experience', val: '10+' }
   ];

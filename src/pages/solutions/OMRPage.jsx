@@ -42,7 +42,7 @@ const OMRPage = () => {
     },
     {
       title: 'Results',
-      icon: <Icons.BarChart size={32} />,
+      icon: <Icons.BarChart3 size={32} />,
       desc: 'Generate advanced reports and export data.',
       color: '#10B981',
       bg: 'rgba(16, 185, 129, 0.1)'
@@ -387,7 +387,21 @@ const OMRPage = () => {
           @media (max-width: 850px) {
             .workflow-h-steps {
               flex-direction: column;
-              gap: 3rem;
+              gap: 3.5rem;
+              position: relative;
+              padding-left: 1.5rem;
+            }
+            .workflow-h-steps::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 69px;
+              width: 2px;
+              background: linear-gradient(to bottom, var(--primary), #6366F1, #EC4899, #F59E0B, #10B981);
+              z-index: 0;
+              opacity: 0.3;
+              border-radius: 2px;
             }
             .workflow-h-path {
               display: none;
@@ -396,17 +410,31 @@ const OMRPage = () => {
               width: 100% !important;
               flex-direction: row !important;
               text-align: left;
-              gap: 1.5rem;
+              gap: 2rem;
+              z-index: 1;
+              justify-content: flex-start;
+            }
+            .h-step-visual {
+              margin: 0;
+              flex-shrink: 0;
+              order: 1;
             }
             .h-step-content {
               height: auto;
               text-align: left;
+              order: 2;
+              padding: 0 !important;
+            }
+            .h-step-content h3 {
+              font-size: 1rem;
+              margin-bottom: 0.25rem;
+            }
+            .h-step-content p {
+              font-size: 0.75rem;
+              max-width: none;
             }
             .top-text, .bottom-text {
               flex-direction: row !important;
-            }
-            .h-step-visual {
-              margin: 0;
             }
           }
         `}</style>

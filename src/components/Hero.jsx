@@ -4,9 +4,13 @@ import { motion } from 'framer-motion';
 import * as Icons from '@/components/LucideFix';
 
 const Hero = () => {
-  const ecosystemItems = [
+  const offlineProducts = [
     { title: 'OMR Software', icon: <Icons.FileText size={18} />, color: '#0EA5A4' },
     { title: 'On Screen Marking', icon: <Icons.Monitor size={18} />, color: '#6366F1' },
+    { title: 'Olympiad Solutions', icon: <Icons.GraduationCap size={18} />, color: '#8B5CF6' },
+  ];
+
+  const onlineProducts = [
     { title: 'AI Proctoring', icon: <Icons.ShieldCheck size={18} />, color: '#EC4899' },
     { title: 'CBT Platform', icon: <Icons.Zap size={18} />, color: '#F59E0B' },
     { title: 'Olympiad Solutions', icon: <Icons.GraduationCap size={18} />, color: '#8B5CF6' },
@@ -57,129 +61,126 @@ const Hero = () => {
           {/* Right Visual Ecosystem */}
           <div className="hero-v4-visual">
             <div className="ecosystem-container">
-              {/* Connecting Lines SVG */}
-              <svg className="ecosystem-lines" width="100%" height="100%" viewBox="0 0 740 400">
-                {/* Lines from Reg to QPMS */}
-                <motion.line
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 0.5 }}
-                  x1="64" y1="200" x2="140" y2="200"
-                  stroke="rgba(14, 165, 164, 0.2)" strokeWidth="2" strokeDasharray="4 4"
-                />
+              <div className="flow-visual-v8">
+                <svg className="flow-svg-v8" viewBox="0 0 740 400" fill="none">
+                  <defs>
+                    <linearGradient id="main-flow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#0EA5A4" stopOpacity="0.8" />
+                      <stop offset="50%" stopColor="#6366F1" stopOpacity="0.8" />
+                      <stop offset="100%" stopColor="#10B981" stopOpacity="0.8" />
+                    </linearGradient>
+                    <filter id="glow-v8">
+                      <feGaussianBlur stdDeviation="3" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                  </defs>
 
-                {/* Lines from QPMS to Central Stack */}
-                {[85, 147, 209, 271, 333].map((y, i) => (
-                  <motion.path
-                    key={`q-stack-${i}`}
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 1.5, delay: 0.7 + (i * 0.1) }}
-                    d={`M 204,200 C 240,200 270,${y} 310,${y}`}
-                    stroke="rgba(14, 165, 164, 0.15)" strokeWidth="1.5" fill="none"
+                  {/* Step 1 to Step 2: Solid Fixed Line Connection */}
+                  <path
+                    d="M 80,192 H 240" stroke="rgba(14, 165, 164, 0.4)" strokeWidth="2"
                   />
-                ))}
 
-                {/* Lines from Central Stack to Portal */}
-                {[85, 147, 209, 271, 333].map((y, i) => (
-                  <motion.path
-                    key={`stack-p-${i}`}
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 1.5, delay: 1.2 + (i * 0.1) }}
-                    d={`M 490,${y} C 520,${y} 530,200 560,200`}
-                    stroke="rgba(14, 165, 164, 0.15)" strokeWidth="1.5" fill="none"
-                  />
-                ))}
-
-                {/* Line from Portal to Results */}
-                <motion.line
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, delay: 1.8 }}
-                  x1="624" y1="200" x2="676" y2="200"
-                  stroke="rgba(14, 165, 164, 0.2)" strokeWidth="2" strokeDasharray="4 4"
-                />
-              </svg>
-
-              {/* Nodes */}
-              <div className="nodes-layer">
-
-                {/* 1. Registration */}
-                <motion.div
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                  className="eco-node eco-node-main left-node"
-                >
-                  <div className="node-icon"><Icons.UserPlus size={24} /></div>
-                  <div className="node-label" style={{ textAlign: 'center', lineHeight: '1.4' }}>Student<br />Registration</div>
-                </motion.div>
-
-                {/* 2. QPMS Hub */}
-                <motion.div
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                  className="eco-node eco-node-main qpms-node"
-                >
-                  <div className="node-icon"><Icons.Database size={24} /></div>
-                  <div className="node-label" style={{ textAlign: 'center', lineHeight: '1.4' }}>Question Paper<br />Management System</div>
-                </motion.div>
-
-                {/* 3. Central Stack */}
-                <div className="central-stack">
-                  {ecosystemItems.map((item, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ x: 30, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: 0.6 + (i * 0.1) }}
-                      className="eco-node-pill"
-                    >
-                      <div className="pill-icon" style={{ background: item.color }}>{item.icon}</div>
-                      <span>{item.title}</span>
-                    </motion.div>
+                  {/* Fan Out from QPMS to Vertical Stacks (Centered at 192) */}
+                  {/* Offline Fan */}
+                  {/* Fan Out from QPMS to Vertical Stacks (Fixed) */}
+                  {/* Offline Fan */}
+                  {[45, 90, 135].map((y, i) => (
+                    <path
+                      key={`fan-off-${i}`}
+                      d={`M 240,192 C 300,192 320,${y} 380,${y}`}
+                      stroke="#0EA5A4" strokeWidth="1.5" opacity="0.3" fill="none"
+                    />
                   ))}
+
+                  {/* Online Fan */}
+                  {[265, 310, 355].map((y, i) => (
+                    <path
+                      key={`fan-on-${i}`}
+                      d={`M 240,192 C 300,192 320,${y} 380,${y}`}
+                      stroke="#6366F1" strokeWidth="1.5" opacity="0.3" fill="none"
+                    />
+                  ))}
+
+                  {/* Fan In from Vertical Stacks to Results (Fixed) */}
+                  {/* Offline Convergence */}
+                  {[45, 90, 135].map((y, i) => (
+                    <path
+                      key={`conv-off-${i}`}
+                      d={`M 560,${y} C 620,${y} 640,192 700,192`}
+                      stroke="#10B981" strokeWidth="1.5" opacity="0.3" fill="none"
+                    />
+                  ))}
+
+                  {/* Online Convergence */}
+                  {[265, 310, 355].map((y, i) => (
+                    <path
+                      key={`conv-on-${i}`}
+                      d={`M 560,${y} C 620,${y} 640,192 700,192`}
+                      stroke="#10B981" strokeWidth="1.5" opacity="0.3" fill="none"
+                    />
+                  ))}
+                </svg>
+
+                {/* DOM Nodes Overlay */}
+                <div className="flow-nodes-v8">
+                  {/* Hub 1: Registration */}
+                  <div className="hub-node-v8" style={{ left: '20px', top: '160px' }}>
+                    <div className="hub-icon-v8"><Icons.UserPlus size={24} /></div>
+                    <span className="hub-label-v8">STUDENT REGISTRATION</span>
+                  </div>
+
+                  {/* Hub 2: QPMS */}
+                  <div className="hub-node-v8" style={{ left: '180px', top: '160px' }}>
+                    <div className="hub-icon-v8" style={{ borderColor: '#6366F1', color: '#6366F1' }}><Icons.Database size={24} /></div>
+                    <span className="hub-label-v8">QUESTION PAPER MANAGEMENT SYSTEM</span>
+                  </div>
+
+                  {/* Offline Vertical Stack (Fixed) */}
+                  <div className="track-label-v8" style={{ left: '400px', top: '10px', color: '#0EA5A4' }}>OFFLINE EXAM PRODDUCTS</div>
+                  {offlineProducts.map((p, i) => (
+                    <div
+                      key={i}
+                      className="flow-item-v8"
+                      style={{ left: '380px', top: `${35 + i * 45}px`, width: '180px' }}
+                    >
+                      <div className="item-dot-v8" style={{ background: p.color }}></div>
+                      <span>{p.title}</span>
+                    </div>
+                  ))}
+
+                  {/* Online Vertical Stack (Fixed) */}
+                  <div className="track-label-v8" style={{ left: '400px', top: '230px', color: '#6366F1' }}>ONLINE EXAM PRODUCTS</div>
+                  {onlineProducts.map((p, i) => (
+                    <div
+                      key={i}
+                      className="flow-item-v8"
+                      style={{ left: '380px', top: `${255 + i * 45}px`, width: '180px' }}
+                    >
+                      <div className="item-dot-v8" style={{ background: p.color }}></div>
+                      <span>{p.title}</span>
+                    </div>
+                  ))}
+
+                  {/* Result Hub */}
+                  <div className="hub-node-v8 result-hub-v8" style={{ left: '640px', top: '160px' }}>
+                    <div className="hub-icon-v8" style={{ borderColor: '#10B981', color: '#10B981' }}><Icons.Trophy size={24} /></div>
+                    <span className="hub-label-v8">RESULTS</span>
+                  </div>
                 </div>
-
-                {/* 4. Portal & LMS */}
-                <motion.div
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 1.5 }}
-                  className="eco-node eco-node-main portal-node"
-                >
-                  <div className="node-icon"><Icons.LayoutDashboard size={24} /></div>
-                  <div className="node-label">Portal & LMS</div>
-                </motion.div>
-
-                {/* 5. Results */}
-                <motion.div
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 1.9 }}
-                  className="eco-node eco-node-main result-node"
-                >
-                  <div className="node-icon" style={{ color: '#10B981', borderColor: 'rgba(16, 185, 129, 0.3)' }}><Icons.CheckCircle size={24} /></div>
-                  <div className="node-label">Results</div>
-                </motion.div>
-
               </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
+            </div> {/* ecosystem-container */}
+          </div> {/* hero-v4-visual */}
+        </div> {/* hero-v4-grid */}
+      </div> {/* hero-v4-inner */}
 
       <style>{`
         .hero-v4 {
           position: relative;
-          min-height: 100vh;
+          min-height: 85vh;
           background: #020617; /* Deepest Navy */
           color: white;
-          padding-top: calc(var(--nav-height) + 2rem);
-          padding-bottom: 4rem;
+          padding-top: calc(var(--nav-height) + 5rem);
+          padding-bottom: 5rem;
           display: flex;
           align-items: center;
           overflow: hidden;
@@ -229,22 +230,24 @@ const Hero = () => {
           position: relative;
           z-index: 2;
           width: 100%;
-          max-width: 1400px;
+          display: flex;
+          justify-content: center;
         }
 
         .hero-v4-grid {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
           align-items: center;
-          gap: 3rem;
-          flex-wrap: wrap;
+          justify-items: center;
+          width: 100%;
+          max-width: 1400px;
         }
 
         /* Left Content */
         .hero-v4-content {
           max-width: 600px;
-          flex: 1 1 500px;
+          text-align: left;
         }
 
         .hero-v4-badge {
@@ -260,7 +263,7 @@ const Hero = () => {
           color: var(--primary);
           text-transform: uppercase;
           letter-spacing: 0.1em;
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
         }
 
         .pulse-dot {
@@ -282,7 +285,7 @@ const Hero = () => {
           line-height: 1.1;
           font-weight: 900;
           color: white;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem;
         }
 
         .hero-v4-content p {
@@ -362,18 +365,15 @@ const Hero = () => {
         /* Visual Ecosystem Area */
         .hero-v4-visual {
           position: relative;
-          height: 450px;
           display: flex;
-          align-items: center;
           justify-content: center;
-          flex: 1 1 740px;
-          max-width: 740px;
+          align-items: center;
         }
 
         .ecosystem-container {
           position: relative;
           width: 740px;
-          height: 400px;
+          height: 420px;
           transform-origin: center center;
         }
 
@@ -437,67 +437,110 @@ const Hero = () => {
           white-space: nowrap;
         }
 
-        /* Horizontal Layout Positions */
-        .left-node { top: 168px; left: 0px; }
-        .qpms-node { top: 168px; left: 140px; }
-        
-        .central-stack {
+        /* Flow V8 - Architectural Blueprint */
+        .flow-visual-v8 {
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+
+        .flow-svg-v8 {
           position: absolute;
-          left: 310px;
-          top: 60px;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .flow-nodes-v8 {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+        }
+
+        .hub-node-v8 {
+          position: absolute;
           display: flex;
           flex-direction: column;
-          gap: 12px;
-        }
-
-        .portal-node { top: 168px; left: 560px; }
-        .result-node { top: 168px; left: 676px; }
-
-        .eco-node-pill {
-          display: flex;
           align-items: center;
-          gap: 12px;
-          background: #1e293b;
-          padding: 8px 16px 8px 8px;
-          border-radius: 100px;
-          border: 1px solid rgba(255, 255, 255, 0.05);
-          width: 180px;
-          transition: all 0.3s ease;
+          gap: 15px;
+          width: 120px;
         }
 
-        .eco-node-pill:hover {
-          transform: translateX(10px);
-          background: #334155;
-          border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .pill-icon {
-          width: 34px;
-          height: 34px;
-          border-radius: 50%;
+        .hub-icon-v8 {
+          width: 64px;
+          height: 64px;
+          background: #0f172a;
+          border: 2px solid var(--primary);
+          border-radius: 20px;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: white;
-          flex-shrink: 0;
+          color: var(--primary);
+          box-shadow: 0 0 30px rgba(14, 165, 164, 0.2);
         }
 
-        .eco-node-pill span {
+        .hub-label-v8 {
+          font-size: 0.6rem;
+          font-weight: 900;
+          color: white;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          text-align: center;
+          line-height: 1.4;
+        }
+
+        .track-label-v8 {
+          position: absolute;
+          font-size: 0.65rem;
+          font-weight: 900;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+        }
+
+        .flow-item-v8 {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background: rgba(30, 41, 59, 0.6);
+          backdrop-filter: blur(5px);
+          padding: 8px 15px;
+          border-radius: 100px;
+          border: 1px solid rgba(255,255,255,0.05);
+          width: 180px;
+        }
+
+        .item-dot-v8 {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          box-shadow: 0 0 10px currentColor;
+        }
+
+        .flow-item-v8 span {
           font-size: 0.75rem;
           font-weight: 700;
-          color: rgba(255, 255, 255, 0.9);
+          color: white;
           white-space: nowrap;
         }
 
+        .result-hub-v8 .hub-icon-v8 {
+          box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+        }
+
         @media (max-width: 1400px) {
-          .hero-v4-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
-          .hero-v4-content { margin: 0 auto; }
-          .hero-v4-cta { justify-content: center; }
-          .hero-v4-visual { margin-top: 2rem; justify-content: center; transform: scale(0.9); }
+          .hero-v4-visual { transform: scale(0.8); }
         }
 
         @media (max-width: 768px) {
-          .hero-v4-visual { transform: scale(0.6); margin-top: -4rem; margin-bottom: -4rem; }
+          .hero-v4-visual { display: none; }
+        }
+
+        @media (max-width: 1400px) {
+          .lifecycle-grid { flex-direction: column; gap: 20px; }
+          .block-arrow { transform: rotate(90deg); padding: 10px; }
+          .evaluation-block { width: 100%; }
         }
 
         @media (max-width: 480px) {
