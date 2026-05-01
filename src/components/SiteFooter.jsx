@@ -46,7 +46,6 @@ const SiteFooter = () => {
                         <div style={{ display: 'grid', gap: '0.75rem' }}>
                             <Link to="/about" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>About Us</Link>
                             <Link to="/clients" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Our Clients</Link>
-                            <Link to="/careers" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Careers</Link>
                             <Link to="/contact" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Contact Us</Link>
                             <Link to="/blog" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Blogs</Link>
                         </div>
@@ -61,7 +60,7 @@ const SiteFooter = () => {
                             <Link to="/qpms" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>QPMS System</Link>
                             <Link to="/ai-proctoring" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>AI Proctoring</Link>
                             <Link to="/cbt" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>CBT Platform</Link>
-                            <Link to="/solutions/olympiad" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Olympiad Solutions</Link>
+                            <Link to="/olympiad" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>Olympiad Solutions</Link>
                             <Link to="/lms" className="footer-link" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>LMS Portal</Link>
                         </div>
                     </div>
@@ -94,7 +93,7 @@ const SiteFooter = () => {
                                     }}
                                 >
                                     <a href="tel:+919319275051"><span>+91 9319275051,</span></a>
-                                    <a href="tel:+919871258989"><span>+91 9871258989,</span></a>
+                                    <a href="tel:+919871258989"><span>+91 9871258989</span></a>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +105,7 @@ const SiteFooter = () => {
                     <p style={{ marginBottom: 0 }}>© {new Date().getFullYear()} eVAL – Examination Evaluation Solutions. Powered by <a href='https://www.virsoftech.com/' style={{ color: 'inherit', textDecoration: 'underline' }}>Vir Softech Pvt. Ltd.</a></p>
                     <div style={{ display: 'flex', gap: '2rem' }}>
                         <Link to="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link>
-                        <Link to="/terms" style={{ color: 'inherit' }}>Terms of Service</Link>
+                        <Link to="/terms-of-service" style={{ color: 'inherit' }}>Terms of Service</Link>
                     </div>
                 </div>
             </div>

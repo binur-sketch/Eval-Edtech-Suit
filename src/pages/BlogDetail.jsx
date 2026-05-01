@@ -40,15 +40,19 @@ const BlogDetail = () => {
           if (!relatedError) setRelatedBlogs(related);
         }
 
-        // Increment view count (silently fail if column missing)
-        if (data) {
+        // Increment view count securely via RPC
+        if (data && data.id) {
           try {
-            await supabase
-              .from('blogs')
-              .update({ views: (data.views || 0) + 1 })
-              .eq('id', data.id);
+            console.log('Incrementing views for:', data.id);
+            const { error: rpcError } = await supabase.rpc('increment_blog_views', { blog_id: String(data.id) });
+            
+            if (rpcError) throw rpcError;
+            
+            // Optimistically update local state so user sees the increase
+            setBlog(prev => prev ? { ...prev, views: (prev.views || 0) + 1 } : prev);
+            
           } catch (e) {
-            console.log('Read count update skipped');
+            console.warn('View count increment failed. Ensure the SQL function "increment_blog_views" exists in your Supabase DB.', e);
           }
         }
       } catch (err) {
@@ -118,7 +122,7 @@ const BlogDetail = () => {
         <div className="reading-progress-bar" style={{ width: `${scrollProgress}%` }}></div>
       </div>
 
-      <article id="blog-detail-view" className="container">
+      <article id="blog-detail-view" className="blog-container">
         {/* Modern Hero Header */}
         <div className="blog-hero">
           <Link to="/blog" className="back-link">
@@ -129,20 +133,36 @@ const BlogDetail = () => {
             <span className="blog-badge">{blog.category}</span>
             <h1>{blog.title}</h1>
             
+            {blog.excerpt && <p className="blog-excerpt">{blog.excerpt}</p>}
+            
             <div className="blog-meta">
               <div className="author-info">
                 <div className="author-avatar">{blog.author.charAt(0)}</div>
-                <span>{blog.author}</span>
+                <div className="author-details">
+                  <span className="author-name">{blog.author}</span>
+                  <span className="post-date">{new Date(blog.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                </div>
               </div>
-              <div className="meta-item">
-                <Icons.Calendar size={18} />
-                {new Date(blog.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-              </div>
-              <div className="meta-item">
-                <Icons.Eye size={18} />
-                {blog.views || 0} views
+              <div className="meta-stats">
+                <div className="meta-item">
+                  <Icons.Clock size={16} />
+                  <span>{Math.ceil((blog.content || '').split(' ').length / 200)} min read</span>
+                </div>
+                <div className="meta-item">
+                  <Icons.Eye size={16} />
+                  <span>{blog.views || 0} views</span>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="featured-image-wide">
+          <div className="featured-image-container">
+            <img
+              src={blog.image || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&auto=format&fit=crop'}
+              alt={blog.title}
+            />
           </div>
         </div>
 
@@ -162,13 +182,6 @@ const BlogDetail = () => {
 
           {/* Main Content Area */}
           <div className="blog-main">
-            <div className="featured-image-container">
-              <img
-                src={blog.image || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&auto=format&fit=crop'}
-                alt={blog.title}
-              />
-            </div>
-
             <div
               className="blog-content-body"
               dangerouslySetInnerHTML={{ __html: blog.content }}

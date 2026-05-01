@@ -8,200 +8,321 @@ import FAQ from '@/components/FAQ';
 import SectionHeader from '@/components/common/SectionHeader';
 
 const OlympiadPage = () => {
-  const steps = [
+  const keyFeatures = [
     {
-      title: 'Registration',
-      icon: <Icons.UserPlus size={32} />,
-      desc: 'Seamless school and individual student onboarding.',
-      color: 'var(--primary)',
-      bg: 'var(--primary-light)'
+      title: 'Student & School Registration',
+      text: 'Easy onboarding for schools and individual students. Bulk registration support for institutions with secure profile management and unique login credentials.',
+      icon: <Icons.UserPlus size={28} />,
+      color: '#4F46E5'
     },
     {
-      title: 'Question Bank',
-      icon: <Icons.BookOpen size={32} />,
-      desc: 'Curated sets for varied difficulty levels.',
-      color: '#6366F1',
-      bg: 'rgba(99, 102, 241, 0.1)'
+      title: 'Online Mock Examination',
+      text: 'Practice tests with real exam simulation. Timer-based assessments with instant result generation and performance tracking for students.',
+      icon: <Icons.PlayCircle size={28} />,
+      color: '#10B981'
     },
     {
-      title: 'Examination',
-      icon: <Icons.Monitor size={32} />,
-      desc: 'Hybrid delivery: Online CBT or Offline OMR.',
-      color: '#EC4899',
-      bg: 'rgba(236, 72, 153, 0.1)'
+      title: 'Study Material Upload',
+      text: 'Upload PDFs, videos, and notes. Organized subject-wise content accessible anytime, anywhere. Supports teacher and admin uploads.',
+      icon: <Icons.BookOpen size={28} />,
+      color: '#F59E0B'
     },
     {
-      title: 'Evaluation',
-      icon: <Icons.Cpu size={32} />,
-      desc: 'Instant AI-driven or scanning-based marking.',
-      color: '#F59E0B',
-      bg: 'rgba(245, 158, 11, 0.1)'
+      title: 'Logistics Management',
+      text: 'Efficient coordination for offline exams. Center allocation, scheduling, and resource/material tracking for a smooth operational workflow.',
+      icon: <Icons.Truck size={28} />,
+      color: '#EC4899'
     },
     {
-      title: 'Merit List',
-      icon: <Icons.Trophy size={32} />,
-      desc: 'Transparent ranking and reward management.',
-      color: '#10B981',
-      bg: 'rgba(16, 185, 129, 0.1)'
+      title: 'Attendance Sheet Generation',
+      text: 'Automated attendance sheets for exam centers. Downloadable and printable formats with real-time tracking of absent students.',
+      icon: <Icons.ClipboardList size={28} />,
+      color: '#8B5CF6'
+    },
+    {
+      title: 'Admit Card Generation',
+      text: 'Auto-generated admit cards in customizable formats. QR/Barcode integration support with easy download options for students.',
+      icon: <Icons.Contact size={28} />,
+      color: '#06B6D4'
+    },
+    {
+      title: 'OMR-Based Examination',
+      text: 'Comprehensive support for offline exams using OMR sheets. Accurate scanning, evaluation, and fast result generation with minimized errors.',
+      icon: <Icons.Scan size={28} />,
+      color: '#F43F5E'
+    },
+    {
+      title: 'Online Examination System',
+      text: 'Secure browser-based exams with anti-cheating mechanisms. Auto submission and evaluation, scalable for a large number of users.',
+      icon: <Icons.Globe size={28} />,
+      color: '#3B82F6'
+    },
+    {
+      title: 'Reports & Analytics',
+      text: 'Detailed performance analysis for students and school-level comparative analytics for institutions. Progress tracking and student ranking.',
+      icon: <Icons.BarChart3 size={28} />,
+      color: '#10B981'
+    },
+    {
+      title: 'Certificate Generator',
+      text: 'Automated creation of customizable rank and participation certificates. Supports bulk generation and instant download.',
+      icon: <Icons.Award size={28} />,
+      color: '#F59E0B'
     }
   ];
 
-  const keyFeatures = [
-    { title: 'Multi-Level Hierarchy', text: 'Manage School-level, Zonal-level, and International-level rankings seamlessly.', icon: <Icons.Layers size={28} /> },
-    { title: 'Robust Proctoring', text: 'AI-enabled anti-cheating measures for home-based Olympiad exams.', icon: <Icons.ShieldCheck size={28} /> },
-    { title: 'Offline Compatibility', text: 'Full support for OMR-based offline exams in remote school locations.', icon: <Icons.Scan size={28} /> },
-    { title: 'Scholarship Engine', text: 'Automated scholarship eligibility and reward disbursement tracking.', icon: <Icons.GraduationCap size={28} /> },
-    { title: 'Detailed Analytics', text: 'Topic-wise performance breakdown for every participating student.', icon: <Icons.PieChart size={28} /> },
-    { title: 'Bulk Certificates', text: 'Automated generation and distribution of participation and merit certificates.', icon: <Icons.Award size={28} /> },
-    { title: 'Question Security', text: 'Encrypted question paper distribution to prevent paper leaks.', icon: <Icons.Lock size={28} /> },
-    { title: 'Multilingual Support', text: 'Deliver exams in multiple regional and international languages.', icon: <Icons.Languages size={28} /> }
+  const benefits = [
+    {
+      target: "For Students",
+      items: [
+        { title: "Convenient Access", desc: "Participate in exams anytime, anywhere (online mode)." },
+        { title: "Better Preparation", desc: "Practice with mock tests and structured study materials." },
+        { title: "Instant Feedback", desc: "Get quick results and performance insights." },
+        { title: "Improved Performance", desc: "Identify strengths and weaknesses with detailed analytics." },
+        { title: "Hassle-Free Experience", desc: "Easy registration, admit cards, and result access." }
+      ],
+      icon: <Icons.GraduationCap size={40} />,
+      gradient: "linear-gradient(135deg, #4F46E5 0%, #3B82F6 100%)"
+    },
+    {
+      target: "For Schools & Institutions",
+      items: [
+        { title: "Centralized Management", desc: "Manage all students, exams, and reports from one platform." },
+        { title: "Time-Saving Automation", desc: "Reduce manual work in registration, attendance, and evaluation." },
+        { title: "Accurate Results", desc: "Error-free OMR and online evaluation systems." },
+        { title: "Performance Tracking", desc: "Monitor student progress with detailed reports." },
+        { title: "Scalable Solution", desc: "Handle small to large-scale Olympiad exams efficiently." }
+      ],
+      icon: <Icons.School size={40} />,
+      gradient: "linear-gradient(135deg, #10B981 0%, #059669 100%)"
+    },
+    {
+      target: "For Exam Organizers",
+      items: [
+        { title: "End-to-End Solution", desc: "From registration to certification, everything in one place." },
+        { title: "Dual Mode Flexibility", desc: "Conduct both online and offline (OMR-based) exams." },
+        { title: "Efficient Logistics", desc: "Simplified exam center and resource management." },
+        { title: "Real-Time Insights", desc: "Access live data, reports, and analytics." },
+        { title: "Secure System", desc: "Ensures data protection and fair examination processes." }
+      ],
+      icon: <Icons.Settings size={40} />,
+      gradient: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)"
+    }
   ];
 
-  const olympiadFaqs = [
+  const operationalBenefits = [
+    { title: "Reduced Paperwork", desc: "Digitization of processes minimizes manual documentation.", icon: <Icons.FileText /> },
+    { title: "Faster Execution", desc: "Automates repetitive tasks and speeds up workflows.", icon: <Icons.Zap /> },
+    { title: "Cost-Effective", desc: "Saves operational and administrative costs.", icon: <Icons.DollarSign /> },
+    { title: "Eco-Friendly", desc: "Promotes paperless examinations (online mode).", icon: <Icons.Leaf /> },
+    { title: "Customizable", desc: "Adaptable to different exam formats and requirements.", icon: <Icons.Layers /> }
+  ];
+
+  const faqs = [
     {
       question: "Can we conduct Olympiads in both online and offline modes?",
-      answer: "Yes, eVAL supports a hybrid model where some schools can opt for OMR-based offline exams while individual students can take the exam online via our CBT platform."
+      answer: "Yes, our portal is a dual-mode platform that supports both secure browser-based online exams and OMR-based offline assessments simultaneously."
     },
     {
-      question: "How do you handle zonal and national rankings?",
-      answer: "Our engine automatically calculates rankings based on pre-defined criteria (marks, time taken, age-group) across various geographic levels instantly."
+      question: "How secure is the online examination system?",
+      answer: "We employ advanced anti-cheating mechanisms, secure browser locks, and AI-proctoring options to ensure a fair and transparent examination process."
     },
     {
-      question: "Is the platform scalable for millions of students?",
-      answer: "Absolutely. Our cloud infrastructure is designed to handle high-concurrency exams with over 100,000+ simultaneous test-takers."
+      question: "Is bulk registration available for large schools?",
+      answer: "Absolutely. Our system supports bulk student onboarding via Excel/CSV uploads, allowing institutions to register thousands of students in minutes."
     },
     {
-      question: "Can we integrate our own question bank?",
-      answer: "Yes, you can securely upload your question bank in various formats, which our system will then use to generate randomized sets."
+      question: "Can we customize the admit cards and certificates?",
+      answer: "Yes, we provide customizable templates for both admit cards and certificates where you can add your branding, QR codes, and specific student details."
     }
   ];
 
   return (
     <div className="olympiad-page" style={{ paddingTop: 'var(--nav-height)', overflowX: 'hidden' }}>
       <SEO
-        title="Olympiad Exam Management Solution | eVAL EdTech"
-        description="End-to-end management for National and International Olympiads. From registration to merit list generation, eVAL provides a secure, scalable platform."
-        keywords="Olympiad Management, Online Olympiad Platform, OMR Olympiad, Merit List Generation, Scholarship Management"
+        title="Olympiad Solution Portal | Complete Exam Management System"
+        description="Olympiad Solution Portal simplifies the entire examination lifecycle—from registration to result analysis for both online and offline exams."
+        keywords="Olympiad Management, Online Exam Portal, OMR Exam System, Exam Logistics, Certificate Generator, Result Analytics"
       />
-      
+
       {/* Hero Section */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, white 100%)', overflow: 'hidden' }}>
+      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, white 100%)', overflow: 'hidden' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
-            <div style={{ flex: '1.2' }}>
-              <span className="badge">Institutional Grade Excellence</span>
-              <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>Complete <span className="gradient-text">Olympiad</span> Management</h1>
-              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)', marginBottom: '1.5rem' }}>
-                Empower your Olympiad exams with eVAL's robust end-to-end platform. We provide the infrastructure for registration, question generation, delivery, and automated merit ranking.
-              </p>
-              <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
-                <Link to="/contact" className="btn btn-primary">Partner With Us</Link>
-                <a href="#features" className="btn btn-outline">Explore Features</a>
-              </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))', gap: '4rem', alignItems: 'center' }}>
+            <div>
+              <Reveal>
+                <span className="badge">All-in-One Solution</span>
+                <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.75rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                  Olympiad <span className="gradient-text">Solution</span>
+                </h1>
+                <h2 style={{ fontSize: '1.5rem', color: 'var(--foreground)', marginBottom: '1.5rem', fontWeight: 600 }}>
+                  Complete Digital & Offline Examination Management System
+                </h2>
+                <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)', marginBottom: '2.5rem' }}>
+                  Olympiad Solution Portal is a comprehensive platform designed to simplify the entire examination lifecycle—from registration to result analysis. Whether you are conducting online assessments or OMR-based offline exams, our system ensures a smooth, transparent, and efficient process.
+                </p>
+                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                  <Link to="/contact" className="btn btn-primary" style={{ padding: '1rem 2rem' }}>Get Started Today</Link>
+                  <Link to="/book-demo" className="btn btn-outline" style={{ padding: '1rem 2rem' }}>Schedule a Demo</Link>
+                </div>
+              </Reveal>
             </div>
-            <div style={{ position: 'relative', maxWidth: '680px', marginLeft: 'auto' }}>
-              <img src="/assets/images/olympiad_hero.png" alt="Olympiad Management" style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 30px 60px rgba(0,0,0,0.12)', border: '1px solid var(--border)' }} />
+            <div style={{ position: 'relative' }}>
+              <Reveal delay={0.2}>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <img
+                    src="/assets/images/olympiad_hero.png"
+                    alt="Olympiad Portal Dashboard"
+                    style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)', border: '1px solid var(--border)' }}
+                  />
+                  {/* Decorative Elements */}
+                  <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '100px', height: '100px', background: 'var(--primary)', borderRadius: '50%', opacity: 0.1, zIndex: -1 }}></div>
+                  <div style={{ position: 'absolute', bottom: '-30px', left: '-30px', width: '150px', height: '150px', background: '#10B981', borderRadius: '50%', opacity: 0.1, zIndex: -1 }}></div>
+                </div>
+              </Reveal>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The 5-Step Process */}
+      {/* Key Features Grid */}
       <section className="section-padding" style={{ background: 'white' }}>
         <div className="container">
           <SectionHeader
-            badge="The Lifecycle"
-            title={<>End-to-End <span className="gradient-text">Excellence</span></>}
+            badge="Key Features"
+            title={<>Everything You Need for <span className="gradient-text">Success</span></>}
+            text="A modular approach to examination management, tailored for efficiency."
           />
-          <div className="workflow-h-container">
-            <div className="workflow-h-path">
-              <svg width="100%" height="120" viewBox="0 0 1000 120" fill="none" preserveAspectRatio="none">
-                <motion.path
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1 }}
-                  d="M 100,60 H 900"
-                  stroke="var(--primary)"
-                  strokeWidth="2"
-                  strokeDasharray="6 6"
-                  opacity="0.2"
-                />
-              </svg>
-            </div>
-            <div className="workflow-h-steps">
-              {steps.map((s, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.15 }}
-                  className="workflow-h-item"
-                  style={{ width: '20%' }}
-                >
-                  <div className="h-step-visual">
-                    <div className="h-step-circle" style={{ borderColor: s.color }}>
-                      <div className="h-step-icon" style={{ color: s.color, background: s.bg }}>
-                        {s.icon}
-                      </div>
-                    </div>
-                    <div className="h-step-number" style={{ background: s.color }}>{i + 1}</div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
+            {keyFeatures.map((f, i) => (
+              <Reveal key={i} delay={i * 0.05}>
+                <div className="feature-card" style={{
+                  background: 'white',
+                  padding: '2.5rem',
+                  borderRadius: '1.5rem',
+                  border: '1px solid var(--border)',
+                  height: '100%',
+                  transition: '0.3s',
+                }}>
+                  <div style={{
+                    width: '60px',
+                    height: '60px',
+                    borderRadius: '1rem',
+                    background: `${f.color}15`,
+                    color: f.color,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '1.5rem'
+                  }}>
+                    {f.icon}
                   </div>
-                  <div className="h-step-content" style={{ height: 'auto' }}>
-                    <h3 style={{ fontSize: '1rem' }}>{s.title}</h3>
-                    <p style={{ fontSize: '0.75rem' }}>{s.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                  <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', fontWeight: 700 }}>{f.title}</h3>
+                  <p style={{ color: 'var(--muted-foreground)', fontSize: '0.95rem', lineHeight: 1.6 }}>{f.text}</p>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
         <style>{`
-          .workflow-h-container { position: relative; width: 100%; max-width: 1100px; margin: 0 auto; padding: 2rem 0; }
-          .workflow-h-path { position: absolute; top: 50px; left: 0; right: 0; height: 120px; z-index: 0; }
-          .workflow-h-steps { display: flex; justify-content: space-between; align-items: flex-start; position: relative; z-index: 1; }
-          .workflow-h-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
-          .h-step-visual { position: relative; margin-bottom: 1.5rem; }
-          .h-step-circle { width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; background: white; }
-          .h-step-icon { width: 100%; height: 100%; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-          .h-step-number { position: absolute; bottom: -2px; right: -2px; width: 24px; height: 24px; border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.7rem; border: 2px solid white; }
-          @media (max-width: 768px) {
-            .workflow-h-steps { flex-direction: column; gap: 2rem; align-items: center; }
-            .workflow-h-path { display: none; }
+          .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
           }
         `}</style>
       </section>
 
-      {/* Key Features */}
-      <section id="features" className="section-padding" style={{ background: 'var(--muted)' }}>
+      {/* Benefits Section */}
+      <section className="section-padding" style={{ background: 'var(--muted)' }}>
         <div className="container">
           <SectionHeader
-            badge="Solutions"
-            title={<>Specialized <span className="gradient-text">Capabilities</span></>}
+            badge="Ecosystem Benefits"
+            title={<>Value for Every <span className="gradient-text">Stakeholder</span></>}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem' }}>
-            {keyFeatures.map((f, i) => (
-              <div key={i} style={{ background: 'white', padding: '2rem', borderRadius: '1.5rem', border: '1px solid var(--border)' }} className="reveal hover-lift">
-                <div style={{ color: 'var(--primary)', marginBottom: '1.5rem' }}>{f.icon}</div>
-                <h4 style={{ marginBottom: '0.75rem', fontSize: '1.1rem' }}>{f.title}</h4>
-                <p style={{ fontSize: '0.9rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{f.text}</p>
-              </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '2.5rem' }}>
+            {benefits.map((b, i) => (
+              <Reveal key={i} delay={i * 0.1}>
+                <div style={{ background: 'white', borderRadius: '2rem', overflow: 'hidden', height: '100%', border: '1px solid var(--border)' }}>
+                  <div style={{ background: b.gradient, padding: '3rem', color: 'white', textAlign: 'center' }}>
+                    <div style={{ marginBottom: '1rem', display: 'inline-block' }}>{b.icon}</div>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800 }}>{b.target}</h3>
+                  </div>
+                  <div style={{ padding: '2rem' }}>
+                    {b.items.map((item, idx) => (
+                      <div key={idx} style={{ display: 'flex', gap: '1rem', marginBottom: idx === b.items.length - 1 ? 0 : '1.5rem' }}>
+                        <div style={{ color: '#10B981', flexShrink: 0 }}><Icons.CheckCircle2 size={20} /></div>
+                        <div>
+                          <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.25rem' }}>{item.title}</h4>
+                          <p style={{ fontSize: '0.875rem', color: 'var(--muted-foreground)' }}>{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <FAQ faqs={olympiadFaqs} />
+      {/* Operational Benefits */}
+      <section className="section-padding" style={{ background: 'white' }}>
+        <div className="container">
+          <div style={{
+            background: 'var(--foreground)',
+            borderRadius: '3rem',
+            padding: 'clamp(2rem, 5vw, 5rem)',
+            color: 'white',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                <span className="badge" style={{ background: 'rgba(255,255,255,0.1)', color: 'white', border: 'none' }}>Operational Excellence</span>
+                <h2 style={{ color: 'white', marginTop: '1rem' }}>Streamlined <span className="gradient-text">Operations</span></h2>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '2rem' }}>
+                {operationalBenefits.map((ob, i) => (
+                  <div key={i} style={{
+                    flex: '1',
+                    minWidth: '200px',
+                    textAlign: 'center',
+                    padding: '2rem',
+                    background: 'rgba(255,255,255,0.05)',
+                    borderRadius: '1.5rem',
+                    border: '1px solid rgba(255,255,255,0.1)'
+                  }}>
+                    <div style={{ color: 'var(--primary)', marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>
+                      {React.cloneElement(ob.icon, { size: 32 })}
+                    </div>
+                    <h4 style={{ marginBottom: '0.5rem', fontWeight: 700 }}>{ob.title}</h4>
+                    <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)' }}>{ob.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Background Glow */}
+            <div style={{ position: 'absolute', top: '-50%', left: '-50%', width: '200%', height: '200%', background: 'radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%)', zIndex: 0 }}></div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQ faqs={faqs} />
 
       {/* Final CTA */}
       <section className="section-padding" style={{ background: 'white' }}>
         <div className="container">
-          <div style={{ background: 'var(--secondary)', color: 'white', padding: '4rem', borderRadius: '3rem', textAlign: 'center' }}>
-            <h2>Ready to Host Your <span className="gradient-text">Olympiad?</span></h2>
-            <p style={{ color: 'rgba(255,255,255,0.7)', margin: '1.5rem 0 3rem' }}>Partner with eVAL to deliver a world-class examination experience.</p>
-            <Link to="/contact" className="btn btn-primary" style={{ padding: '1rem 3rem' }}>Get Started</Link>
+          <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, marginBottom: '1.5rem' }}>Get Started <span className="gradient-text">Today</span></h2>
+            <p style={{ fontSize: '1.25rem', color: 'var(--muted-foreground)', marginBottom: '3rem' }}>
+              Streamline your Olympiad exams with a powerful, all-in-one platform. Contact us to schedule a demo or learn more.
+            </p>
+            <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3rem', fontSize: '1.125rem' }}>Contact Us</Link>
+              <Link to="/book-demo" className="btn btn-outline" style={{ padding: '1.25rem 3rem', fontSize: '1.125rem' }}>Request a Demo</Link>
+            </div>
           </div>
         </div>
       </section>

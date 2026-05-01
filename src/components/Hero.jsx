@@ -76,15 +76,18 @@ const Hero = () => {
                   </defs>
 
                   {/* Step 1 to Step 2: Solid Fixed Line Connection */}
+                  <defs>
+                    <path id="offline-curve" d="M 245,185 C 310,185 330,40 450,40" />
+                    <path id="online-curve" d="M 245,199 C 310,199 330,345 450,345" />
+                  </defs>
+
                   <path
                     d="M 80,192 H 240" stroke="rgba(14, 165, 164, 0.4)" strokeWidth="2"
                   />
 
-                  {/* Fan Out from QPMS to Vertical Stacks (Centered at 192) */}
-                  {/* Offline Fan */}
                   {/* Fan Out from QPMS to Vertical Stacks (Fixed) */}
                   {/* Offline Fan */}
-                  {[45, 90, 135].map((y, i) => (
+                  {[20, 85, 150].map((y, i) => (
                     <path
                       key={`fan-off-${i}`}
                       d={`M 240,192 C 300,192 320,${y} 380,${y}`}
@@ -93,7 +96,7 @@ const Hero = () => {
                   ))}
 
                   {/* Online Fan */}
-                  {[265, 310, 355].map((y, i) => (
+                  {[235, 300, 365].map((y, i) => (
                     <path
                       key={`fan-on-${i}`}
                       d={`M 240,192 C 300,192 320,${y} 380,${y}`}
@@ -101,9 +104,17 @@ const Hero = () => {
                     />
                   ))}
 
+                  {/* Curved Labels Overlay */}
+                  <text fill="#0EA5A4" style={{ fontSize: '10px', fontWeight: '900', letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.9 }}>
+                    <textPath xlinkHref="#offline-curve" startOffset="30%" dy="-6">OFFLINE EXAM PRODUCTS</textPath>
+                  </text>
+                  <text fill="#6366F1" style={{ fontSize: '10px', fontWeight: '900', letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.9 }}>
+                    <textPath xlinkHref="#online-curve" startOffset="30%" dy="12">ONLINE EXAM PRODUCTS</textPath>
+                  </text>
+
                   {/* Fan In from Vertical Stacks to Results (Fixed) */}
                   {/* Offline Convergence */}
-                  {[45, 90, 135].map((y, i) => (
+                  {[20, 85, 150].map((y, i) => (
                     <path
                       key={`conv-off-${i}`}
                       d={`M 560,${y} C 620,${y} 640,192 700,192`}
@@ -112,7 +123,7 @@ const Hero = () => {
                   ))}
 
                   {/* Online Convergence */}
-                  {[265, 310, 355].map((y, i) => (
+                  {[235, 300, 365].map((y, i) => (
                     <path
                       key={`conv-on-${i}`}
                       d={`M 560,${y} C 620,${y} 640,192 700,192`}
@@ -136,12 +147,11 @@ const Hero = () => {
                   </div>
 
                   {/* Offline Vertical Stack (Fixed) */}
-                  <div className="track-label-v8" style={{ left: '400px', top: '10px', color: '#0EA5A4' }}>OFFLINE EXAM PRODDUCTS</div>
                   {offlineProducts.map((p, i) => (
                     <div
                       key={i}
                       className="flow-item-v8"
-                      style={{ left: '380px', top: `${35 + i * 45}px`, width: '180px' }}
+                      style={{ left: '380px', top: `${10 + i * 65}px`, width: '180px' }}
                     >
                       <div className="item-dot-v8" style={{ background: p.color }}></div>
                       <span>{p.title}</span>
@@ -149,12 +159,11 @@ const Hero = () => {
                   ))}
 
                   {/* Online Vertical Stack (Fixed) */}
-                  <div className="track-label-v8" style={{ left: '400px', top: '230px', color: '#6366F1' }}>ONLINE EXAM PRODUCTS</div>
                   {onlineProducts.map((p, i) => (
                     <div
                       key={i}
                       className="flow-item-v8"
-                      style={{ left: '380px', top: `${255 + i * 45}px`, width: '180px' }}
+                      style={{ left: '380px', top: `${225 + i * 65}px`, width: '180px' }}
                     >
                       <div className="item-dot-v8" style={{ background: p.color }}></div>
                       <span>{p.title}</span>
@@ -164,7 +173,7 @@ const Hero = () => {
                   {/* Result Hub */}
                   <div className="hub-node-v8 result-hub-v8" style={{ left: '640px', top: '160px' }}>
                     <div className="hub-icon-v8" style={{ borderColor: '#10B981', color: '#10B981' }}><Icons.Trophy size={24} /></div>
-                    <span className="hub-label-v8">RESULTS</span>
+                    <span className="hub-label-v8">REPORTS & <br />Analysis</span>
                   </div>
                 </div>
               </div>
@@ -548,7 +557,7 @@ const Hero = () => {
           .hero-v4 { min-height: auto; padding-bottom: 4rem; }
         }
       `}</style>
-    </section>
+    </section >
   );
 };
 

@@ -10,7 +10,6 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Clients = lazy(() => import('./pages/Clients'));
 const Blog = lazy(() => import('./pages/Blogs')); // Using Blogs for insights and news
 const BookDemo = lazy(() => import('./pages/BookDemo'));
-const Careers = lazy(() => import('./pages/Careers'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const Products = lazy(() => import('./pages/Products'));
@@ -60,7 +59,6 @@ function App() {
             <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/blogs" element={<Blog />} />
             <Route path="/book-demo" element={<BookDemo />} />
-            <Route path="/careers" element={<Careers />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/products" element={<Products />} />
@@ -72,7 +70,7 @@ function App() {
             <Route path="/ai-proctoring" element={<AIPage />} />
             <Route path="/cbt" element={<CBTPage />} />
             <Route path="/lms" element={<LMSPage />} />
-            <Route path="/solutions/olympiad" element={<OlympiadPage />} />
+            <Route path="/olympiad" element={<OlympiadPage />} />
             <Route path="/terms" element={<TermsOfService />} />
 
             {/* Service Routes */}
@@ -85,12 +83,13 @@ function App() {
             <Route path="/admin" element={<AdminDashboard />} />
 
             {/* Fallbacks */}
-            <Route path="/qpms" element={<QPMSPage />} />
-            <Route path="/solutions/omr" element={<OMRPage />} />
-            <Route path="/solutions/cbt" element={<CBTPage />} />
-            <Route path="/solutions/lms" element={<LMSPage />} />
-            <Route path="/solutions/qtb" element={<QPMSPage />} />
-            <Route path="/solutions/osm" element={<OSMPage />} />
+            <Route path="/solutions/omr" element={<Navigate to="/omr" replace />} />
+            <Route path="/solutions/osm" element={<Navigate to="/osm" replace />} />
+            <Route path="/solutions/cbt" element={<Navigate to="/cbt" replace />} />
+            <Route path="/solutions/lms" element={<Navigate to="/lms" replace />} />
+            <Route path="/solutions/olympiad" element={<Navigate to="/olympiad" replace />} />
+            <Route path="/solutions/qtb" element={<Navigate to="/qpms" replace />} />
+            <Route path="/solutions/qpms" element={<Navigate to="/qpms" replace />} />
           </Routes>
         </Suspense>
       </MainLayout>

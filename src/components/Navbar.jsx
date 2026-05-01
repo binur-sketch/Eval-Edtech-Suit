@@ -13,7 +13,7 @@ const Navbar = () => {
     { title: 'Question Paper Management', path: '/qpms' },
     { title: 'AI Proctoring', path: '/ai-proctoring' },
     { title: 'CBT Platform', path: '/cbt' },
-    { title: 'Olympiad Solutions', path: '/solutions/olympiad' },
+    { title: 'Olympiad Solutions', path: '/olympiad' },
     { title: 'LMS Portal', path: '/lms' },
   ];
 
@@ -165,8 +165,7 @@ const Navbar = () => {
 
             <Link to="/about" style={navLinkStyle('/about')}>About</Link>
             <Link to="/clients" style={navLinkStyle('/clients')}>Clients</Link>
-            <Link to="/blogs" style={navLinkStyle('/blog')}>Blogs</Link>
-            <Link to="/careers" style={navLinkStyle('/careers')}>Careers</Link>
+            <Link to="/blog" style={navLinkStyle('/blog')}>Blogs</Link>
             <Link to="/contact" style={navLinkStyle('/contact')}>Contact</Link>
 
             <Link to="/book-demo" className="btn btn-primary" style={{

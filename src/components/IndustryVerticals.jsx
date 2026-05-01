@@ -28,7 +28,7 @@ const IndustryVerticals = () => {
       icon: <Icons.GraduationCap size={32} />,
       title: 'Universities & Colleges',
       desc: 'Universities and colleges managing entrance exams, semester evaluations, and accreditation assessments.',
-      stat: '1000+ Universities'
+      stat: '1000+ Universities & Colleges'
     },
 
     {
@@ -42,7 +42,7 @@ const IndustryVerticals = () => {
       icon: <Icons.Stethoscope size={32} />,
       title: 'Olympiad Examination Bodies',
       desc: 'Olympiad organizations conducting competitive exams to identify academic excellence across schools and institutions.',
-      stat: '100+ Examination Bodies'
+      stat: '100+ Olympiad Bodies'
     }
   ];
 
