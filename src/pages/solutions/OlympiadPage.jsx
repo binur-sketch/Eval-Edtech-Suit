@@ -171,7 +171,7 @@ const OlympiadPage = () => {
               <Reveal delay={0.2}>
                 <div style={{ position: 'relative', zIndex: 1 }}>
                   <img
-                    src="/assets/images/olympiad_hero.png"
+                    src="/assets/images/olympiad_hero.webp"
                     alt="Olympiad Portal Dashboard"
                     style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)', border: '1px solid var(--border)' }}
                   />

@@ -92,7 +92,7 @@ const LMSPage = () => {
               </div>
             </div>
             <div style={{ position: 'relative', maxWidth: '680px', marginLeft: 'auto' }}>
-              <img src="/assets/images/LMS.png" alt="LMS Dashboard" style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 30px 60px rgba(0,0,0,0.12)', border: '1px solid var(--border)' }} />
+              <img src="/assets/images/LMS.avif" alt="LMS Dashboard" style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 30px 60px rgba(0,0,0,0.12)', border: '1px solid var(--border)' }} />
             </div>
           </div>
         </div>
