@@ -9,14 +9,14 @@ const TestimonialsSection = () => {
       quote: "The software and scanner performed excellently during our examination process. The system functioned smoothly and efficiently, and the support provided by the team is truly commendable and highly appreciated.",
       author: 'Abhishek Dwivedi',
       role: 'Smt. D G Agrawal Memorial Sr. Sec. School',
-      org: 'Chinchpada, Nandurbar Maharashtra',
+      org: 'Smt. D G Agrawal Memorial Senior Secondary School, Chinchpada, Nandurbar Maharashtra ',
       rating: 5
     },
     {
       quote: "The adoption of eVal has significantly enhanced the efficiency and accuracy of our evaluation process. It has streamlined our workflows and reduced manual effort considerably for recruitment and admissions.",
       author: 'Er. S Govind Singh',
       role: 'System Analyst',
-      org: 'Central Agricultural University, Imphal',
+      org: 'System Analyst, Central Agricultural University, Imphal, Manipur',
       rating: 5
     },
     {
