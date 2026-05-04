@@ -260,7 +260,7 @@ const AdminDashboard = () => {
                           <Icons.Eye size={14} /> {blog.views || 0}
                         </div>
                       </td>
-                      <td style={{ padding: '1.25rem 1.5rem', color: '#64748b', fontSize: '0.875rem' }}>{new Date(blog.date).toLocaleDateString()}</td>
+                      <td style={{ padding: '1.25rem 1.5rem', color: '#64748b', fontSize: '0.875rem' }}>{blog.date ? new Date(blog.date).toLocaleDateString() : 'N/A'}</td>
                       <td style={{ padding: '1.25rem 1.5rem', textAlign: 'right' }}>
                         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem' }}>
                           <button onClick={() => openModal(blog)} style={{ width: '36px', height: '36px', borderRadius: '8px', border: '1px solid #e2e8f0', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', cursor: 'pointer' }}><Icons.Edit size={16} /></button>

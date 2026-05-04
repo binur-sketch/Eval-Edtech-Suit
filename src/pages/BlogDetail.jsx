@@ -17,10 +17,16 @@ const BlogDetail = () => {
         let query = supabase.from('blogs').select('*');
         
         // Determine if we should fetch by ID or Slug
-        if (isNaN(id)) {
-          query = query.eq('slug', id);
-        } else {
+        const isNumeric = /^\d+$/.test(id);
+        const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
+        
+        if (isNumeric) {
           query = query.eq('id', parseInt(id));
+        } else if (isUuid) {
+          query = query.eq('id', id);
+        } else {
+          // It's a slug
+          query = query.eq('slug', id);
         }
 
         const { data, error } = await query.single();
@@ -140,7 +146,7 @@ const BlogDetail = () => {
                 <div className="author-avatar">{blog.author.charAt(0)}</div>
                 <div className="author-details">
                   <span className="author-name">{blog.author}</span>
-                  <span className="post-date">{new Date(blog.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                  <span className="post-date">{blog.date ? new Date(blog.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : 'Recently Published'}</span>
                 </div>
               </div>
               <div className="meta-stats">

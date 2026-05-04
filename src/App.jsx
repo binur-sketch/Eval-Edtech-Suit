@@ -83,13 +83,12 @@ function App() {
             <Route path="/admin" element={<AdminDashboard />} />
 
             {/* Fallbacks */}
-            <Route path="/solutions/omr" element={<Navigate to="/omr" replace />} />
-            <Route path="/solutions/osm" element={<Navigate to="/osm" replace />} />
-            <Route path="/solutions/cbt" element={<Navigate to="/cbt" replace />} />
-            <Route path="/solutions/lms" element={<Navigate to="/lms" replace />} />
-            <Route path="/solutions/olympiad" element={<Navigate to="/olympiad" replace />} />
-            <Route path="/solutions/qtb" element={<Navigate to="/qpms" replace />} />
-            <Route path="/solutions/qpms" element={<Navigate to="/qpms" replace />} />
+            <Route path="/qpms" element={<QPMSPage />} />
+            <Route path="/solutions/omr" element={<OMRPage />} />
+            <Route path="/solutions/cbt" element={<CBTPage />} />
+            <Route path="/solutions/lms" element={<LMSPage />} />
+            <Route path="/solutions/qtb" element={<QPMSPage />} />
+            <Route path="/solutions/osm" element={<OSMPage />} />
           </Routes>
         </Suspense>
       </MainLayout>

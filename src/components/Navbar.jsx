@@ -227,6 +227,7 @@ const Navbar = () => {
 
           <Link to="/about" style={{ fontWeight: '800', color: isActive('/about') ? 'var(--primary)' : 'var(--secondary)' }}>About Us</Link>
           <Link to="/clients" style={{ fontWeight: '800', color: isActive('/clients') ? 'var(--primary)' : 'var(--secondary)' }}>Our Clients</Link>
+          <Link to="/blog" style={{ fontWeight: '800', color: isActive('/blog') ? 'var(--primary)' : 'var(--secondary)' }}>Blogs</Link>
           <Link to="/contact" style={{ fontWeight: '800', color: isActive('/contact') ? 'var(--primary)' : 'var(--secondary)' }}>Contact</Link>
 
           <Link to="/book-demo" className="btn btn-primary" style={{ marginTop: 'auto' }}>Book a Consultation</Link>

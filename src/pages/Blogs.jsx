@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import * as Icons from '../components/LucideFix';
 import { Link } from 'react-router-dom';
-import SEO from '@/components/common/SEO';
+import SEO from '../components/common/SEO';
 
 const Blogs = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -31,7 +31,7 @@ const Blogs = () => {
     fetchBlogs();
   }, []);
 
-  const categories = ["All", ...new Set(blogs.map(b => b.category))];
+  const categories = ["All", ...new Set(blogs.map(b => b.category || 'Uncategorized'))];
 
   const filteredBlogs =
     activeCategory === 'All'
@@ -185,7 +185,7 @@ const Blogs = () => {
                           color: 'var(--muted-foreground)',
                           marginBottom: '1rem'
                         }}>
-                          <span>{new Date(blog.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                          <span>{blog.date ? new Date(blog.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : 'Recently'}</span>
                           <span>•</span>
                           <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                             <Icons.Eye size={14} /> {blog.views || 0}
