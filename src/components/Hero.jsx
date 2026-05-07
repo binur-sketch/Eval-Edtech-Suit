@@ -244,11 +244,11 @@ const Hero = () => {
           margin-bottom: 2rem;
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1150px) {
           .hero-v4-grid {
             grid-template-columns: 1fr;
             text-align: center;
-            gap: 3rem;
+            gap: 2rem;
           }
           .hero-v4-content {
             max-width: 800px;
@@ -691,7 +691,7 @@ const Hero = () => {
           .hero-v4-visual { transform: scale(0.8); }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1150px) {
           .hero-v4-visual { 
             display: flex; 
             justify-content: center;
@@ -705,8 +705,8 @@ const Hero = () => {
           }
           .hero-v4 { 
             height: auto;
-            min-height: 100vh;
-            padding: 100px 0 60px;
+            min-height: 800px;
+            padding: 120px 0 60px;
           }
         }
 
