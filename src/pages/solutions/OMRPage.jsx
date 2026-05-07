@@ -447,20 +447,42 @@ const OMRPage = () => {
             badge="Capabilities"
             title={<>Platform <span className="gradient-text">Key Features</span></>}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem' }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
+            gap: '1.5rem' 
+          }}>
             {keyFeatures.map((f, i) => (
-              <div key={i} style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }} className="reveal hover-lift">
-                <div style={{ color: 'var(--primary)', padding: '12px', background: 'var(--primary-light)', borderRadius: '12px', flexShrink: 0 }}>{f.icon}</div>
+              <div key={i} className="feature-hover-card">
+                <div style={{ color: 'var(--primary)', padding: '12px', background: 'var(--primary-light)', borderRadius: '12px', flexShrink: 0, width: 'fit-content', marginBottom: '1.25rem' }}>{f.icon}</div>
                 <div>
-                  <h4 style={{ marginBottom: '0.75rem', fontSize: '1.125rem' }}>{f.title}</h4>
+                  <h4 style={{ marginBottom: '0.75rem', fontSize: '1.125rem', color: 'var(--foreground)' }}>{f.title}</h4>
                   <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{f.text}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
 
+        <style>{`
+          .feature-hover-card {
+            padding: 2rem;
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .feature-hover-card:hover {
+            background: white;
+            border-color: var(--border);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            transform: translateY(-5px);
+          }
+        `}</style>
+      </section>
 
       {/* Comparison Table */}
       <section className="section-padding" style={{ background: 'white' }}>

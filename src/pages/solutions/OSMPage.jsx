@@ -89,6 +89,7 @@ const OSMPage = () => {
     { title: 'End-to-End Data Security', desc: 'Encrypted storage, two-factor login, role-based access, and audit trails at every step.' },
     { title: 'Bias-Free Evaluation', desc: 'Identity masking ensures evaluators never know whose script they are marking.' },
     { title: 'Deep Performance Insights', desc: 'Evaluate evaluator speed, accuracy trends, and student performance patterns from one dashboard.' },
+    { title: 'Eco-Friendly & Paperless', desc: 'Transitioning to digital evaluation eliminates the environmental impact of printing and transporting millions of paper scripts.' },
   ];
 
   const roles = [
@@ -149,7 +150,7 @@ const OSMPage = () => {
               </div>
             </div>
             <div style={{ position: 'relative', maxWidth: '680px', marginLeft: 'auto' }}>
-              <img src="/assets/images/osm_hero.png" alt="On-Screen Marking" style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 30px 60px rgba(0,0,0,0.12)', border: '1px solid var(--border)' }} />
+              <img src="/assets/images/OSMScreen.jpeg" alt="On-Screen Marking" style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 30px 60px rgba(0,0,0,0.12)', border: '1px solid var(--border)' }} />
             </div>
           </div>
         </div>
@@ -473,7 +474,11 @@ const OSMPage = () => {
             title={<>Role-Based <span className="gradient-text">Access</span></>}
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', 
+            gap: '2rem' 
+          }}>
             {roles.map((r, i) => (
               <div key={i} style={{ background: 'var(--muted)', padding: '2.5rem', borderRadius: '1.5rem', border: '1px solid var(--border)' }}>
                 <div style={{ fontSize: '0.875rem', fontWeight: '800', color: 'var(--primary)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{r.role}</div>

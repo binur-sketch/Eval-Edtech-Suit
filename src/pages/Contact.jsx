@@ -5,6 +5,7 @@ import FormStatus from '@/components/common/FormStatus';
 import SEO from '@/components/common/SEO';
 import Reveal from '@/components/common/Reveal';
 import SectionHeader from '@/components/common/SectionHeader';
+import SuccessModal from '@/components/common/SuccessModal';
 
 
 const Contact = () => {
@@ -16,8 +17,11 @@ const Contact = () => {
     message: ''
   });
 
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const { status, message, submitForm } = useFormSubmit({
-    successMessage: "Thank you for contacting us! Our team will get back to you shortly."
+    successMessage: "Thank you for contacting us! Our team will get back to you shortly.",
+    onSuccess: () => setShowSuccess(true)
   });
 
   const handleChange = (e) => {
@@ -146,6 +150,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <SuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
     </div>
   );
 };

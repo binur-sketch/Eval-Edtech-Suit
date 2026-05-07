@@ -13,8 +13,8 @@ const Navbar = () => {
     { title: 'Question Paper Management', path: '/qpms' },
     { title: 'AI Proctoring', path: '/ai-proctoring' },
     { title: 'CBT Platform', path: '/cbt' },
-    { title: 'Olympiad Solutions', path: '/olympiad' },
-    { title: 'LMS Portal', path: '/lms' },
+    { title: 'Olympiad Portal', path: '/olympiad' },
+    { title: 'Mobile Application', path: '/mobile-app' },
   ];
 
   const serviceLinks = [
@@ -92,6 +92,18 @@ const Navbar = () => {
               <Icons.Mail size={12} style={{ color: '#EA4335' }} />
               <a href="mailto:corp@virsoftech.com">corp@virsoftech.com</a>
             </div>
+            <div className="md-flex" style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              background: 'white',
+              padding: '3px 8px',
+              borderRadius: '4px',
+              boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            }}>
+              <img src="/assets/images/gem.png" alt="GeM" style={{ height: '12px', width: 'auto' }} />
+              <span style={{ fontWeight: '800', color: '#2d3748', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.02em' }}>Available as OEM on GeM</span>
+            </div>
           </div>
         </div>
       </div>
@@ -166,6 +178,10 @@ const Navbar = () => {
             <Link to="/about" style={navLinkStyle('/about')}>About</Link>
             <Link to="/clients" style={navLinkStyle('/clients')}>Clients</Link>
             <Link to="/blog" style={navLinkStyle('/blog')}>Blogs</Link>
+            <Link to="/case-studies" style={navLinkStyle('/case-studies')}>Case Studies</Link>
+            <Link to="/partner" style={navLinkStyle('/partner')}>Partner</Link>
+
+
             <Link to="/contact" style={navLinkStyle('/contact')}>Contact</Link>
 
             <Link to="/book-demo" className="btn btn-primary" style={{
@@ -228,9 +244,28 @@ const Navbar = () => {
           <Link to="/about" style={{ fontWeight: '800', color: isActive('/about') ? 'var(--primary)' : 'var(--secondary)' }}>About Us</Link>
           <Link to="/clients" style={{ fontWeight: '800', color: isActive('/clients') ? 'var(--primary)' : 'var(--secondary)' }}>Our Clients</Link>
           <Link to="/blog" style={{ fontWeight: '800', color: isActive('/blog') ? 'var(--primary)' : 'var(--secondary)' }}>Blogs</Link>
+          <Link to="/case-studies" style={{ fontWeight: '800', color: isActive('/case-studies') ? 'var(--primary)' : 'var(--secondary)' }}>Case Studies</Link>
+          <Link to="/partner" style={{ fontWeight: '800', color: isActive('/partner') ? 'var(--primary)' : 'var(--secondary)' }}>Partner with Us</Link>
+
+
           <Link to="/contact" style={{ fontWeight: '800', color: isActive('/contact') ? 'var(--primary)' : 'var(--secondary)' }}>Contact</Link>
 
-          <Link to="/book-demo" className="btn btn-primary" style={{ marginTop: 'auto' }}>Book a Consultation</Link>
+          <div style={{ marginTop: 'auto', paddingTop: '2rem', borderTop: '1px solid var(--border)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'var(--muted)', padding: '10px 15px', borderRadius: '12px', marginBottom: '1.5rem' }}>
+              <img src="/assets/images/gem.png" alt="GeM" style={{ height: '14px', width: 'auto' }} />
+              <span style={{ fontWeight: '800', color: 'var(--secondary)', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.02em' }}>Available as OEM on GeM</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <a href="tel:+919319275051" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--secondary)', fontWeight: '700', fontSize: '0.9rem' }}>
+                <Icons.Phone size={18} style={{ color: 'var(--primary)' }} /> +91 9319275051
+              </a>
+              <a href="mailto:corp@virsoftech.com" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--secondary)', fontWeight: '700', fontSize: '0.9rem' }}>
+                <Icons.Mail size={18} style={{ color: '#EA4335' }} /> corp@virsoftech.com
+              </a>
+            </div>
+          </div>
+
+          <Link to="/book-demo" className="btn btn-primary" style={{ marginTop: '1rem' }}>Book Demo</Link>
         </div>
       </nav>
     </header>

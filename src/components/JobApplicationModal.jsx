@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as Icons from './LucideFix';
 import { useFormSubmit } from '../hooks/useFormSubmit';
 import FormStatus from './common/FormStatus';
+import SuccessModal from './common/SuccessModal';
 
 const JobApplicationModal = ({ job, onClose }) => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const JobApplicationModal = ({ job, onClose }) => {
     experience: '',
   });
   const [file, setFile] = useState(null);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const { status, message, submitForm, setStatus, setMessage } = useFormSubmit({
     successMessage: "Your application has been submitted successfully! Our team will review it and get back to you."
@@ -63,9 +65,7 @@ const JobApplicationModal = ({ job, onClose }) => {
       const result = await response.json();
       if (result.success === "true" || result.success === true) {
         setStatus('success');
-        setTimeout(() => {
-          onClose();
-        }, 3000);
+        setShowSuccess(true);
       } else {
         throw new Error(result.message || 'Submission failed');
       }
@@ -257,7 +257,7 @@ const JobApplicationModal = ({ job, onClose }) => {
           margin-top: 1rem;
           border-radius: 1rem;
           font-size: 1.125rem;
-          font-family: 'Outfit', sans-serif;
+          
         }
 
         @keyframes fadeIn {
@@ -279,6 +279,7 @@ const JobApplicationModal = ({ job, onClose }) => {
           }
         }
       `}</style>
+      <SuccessModal isOpen={showSuccess} onClose={() => { setShowSuccess(false); onClose(); }} />
     </div>
   );
 };

@@ -38,7 +38,7 @@ const About = () => {
       name: 'Deepak Garg',
       role: 'Managing Director',
       desc: 'A gifted techno-businessman with over 20 years of experience in product innovation, strategic planning, and customer acquisition. Previously at HCL Technologies and Adobe Systems.',
-      img: 'https://www.virsoftech.com/img/deepak_garg.jpg',
+      img: '/assets/images/team/deepak_garg.jpg',
       linkedin: 'https://www.linkedin.com/in/deepakgarg76/',
       mail: 'deepak@virsoftech.com'
     },
@@ -46,7 +46,7 @@ const About = () => {
       name: 'Abhijeet Jain',
       role: 'Chief Technology Officer',
       desc: 'A Computer Scientist, Entrepreneur, and Business Executive with over 20 years of R&D leadership. A contributor to PDF ISO specifications and chief architect for print projects.',
-      img: 'https://www.virsoftech.com/img/abhijeet_pic.jpg',
+      img: '/assets/images/team/abhijeet_pic.jpg',
       linkedin: 'https://www.linkedin.com/in/abhijeet-jain-5a9b313/',
       mail: 'abhijeet@virsoftech.com'
     },
@@ -54,7 +54,7 @@ const About = () => {
       name: 'Pralaypati Ta',
       role: 'Principal Architect',
       desc: 'A coding geek with over 18 years of tech leadership experience leading R&D teams at global product companies like Samsung and Adobe Systems.',
-      img: 'https://www.virsoftech.com/img/Pralay-photo.png',
+      img: '/assets/images/team/Pralay-photo.png',
       linkedin: 'https://www.linkedin.com/in/pralaypati-ta-3944691/',
       mail: 'pralay@virsoftech.com'
     },
@@ -62,7 +62,7 @@ const About = () => {
       name: 'Sameer Manuja',
       role: 'Principal Architect',
       desc: 'Key solution architect for print and publishing technologies with over 20 years of industry experience creating path-setting innovations at Samsung and Adobe Systems.',
-      img: 'https://www.virsoftech.com/sameer_manuja.jpg',
+      img: '/assets/images/team/sameer_manuja.jpg',
       linkedin: 'https://www.linkedin.com/in/sameermanuja/',
       mail: 'sameer@virsoftech.com'
     },
@@ -70,7 +70,7 @@ const About = () => {
       name: 'Akihide Sugino',
       role: 'Country Head, Japan',
       desc: 'Seasoned industry veteran with 35+ years of experience in sales, marketing, and license compliance. Previously worked with Epson & Adobe.',
-      img: 'https://www.virsoftech.com/img/sugino.jpg', // update if needed
+      img: '/assets/images/team/sugino.jpg', // update if needed
       linkedin: 'https://jp.linkedin.com/in/akihide-sugino-938526154',
       mail: 'sugino@virsoftech.com'
     },
@@ -78,7 +78,7 @@ const About = () => {
       name: 'Manu Paliwal',
       role: 'Vice President – Sales',
       desc: '25+ years of experience in sales, alliances, and operations. Drives growth strategy and business expansion.',
-      img: 'https://www.virsoftech.com/img/manu-photo.jpg', // update if needed
+      img: '/assets/images/team/manu_paliwal.jpeg',
       linkedin: 'https://in.linkedin.com/in/manu-paliwal-a549a144',
       mail: 'manu@virsoftech.com'
     }
@@ -192,16 +192,21 @@ const About = () => {
       {/* Certifications Bar */}
       <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'var(--muted)', overflow: 'hidden' }}>
 
-        <div className="container" style={{ padding: '4.5rem 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '5rem', alignItems: 'center' }}>
+        <div className="container logo-row-container no-scrollbar" style={{
+          padding: '4.5rem 0',
+          gap: 'clamp(1.5rem, 5vw, 5rem)'
+        }}>
           {[
             { src: '/assets/images/cmmi logo.png', alt: 'CMMI Level 3' },
             { src: '/assets/images/iso9001.png', alt: 'ISO 9001' },
             { src: '/assets/images/iso14001.png', alt: 'ISO 14001' },
             { src: '/assets/images/msme.png', alt: 'MSME' },
-            { src: '/assets/images/gem.png', alt: 'GeM India' }
+            { src: '/assets/images/gem.png', alt: 'GeM India' },
+            { src: '/assets/images/rkcllogo.png', alt: 'RKCL' }
           ].map((cert, i) => (
             <div key={i} style={{
-              height: '90px',
+              height: 'clamp(40px, 8vw, 80px)',
+              flexShrink: 0,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -473,7 +478,7 @@ const About = () => {
           <p style={{ maxWidth: '640px', margin: '2rem auto 4rem', color: 'var(--muted-foreground)', fontSize: '1.125rem' }}>Headquartered in New Delhi, India, and supported by our international office in Tokyo, Japan.</p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
             <Link to="/contact" className="btn btn-primary" style={{ padding: '1.25rem 3.5rem' }}>Contact HQ</Link>
-            <Link to="/contact" className="btn btn-outline" style={{ padding: '1.25rem 3.5rem' }}>Global Partners</Link>
+            <Link to="/partner" className="btn btn-outline" style={{ padding: '1.25rem 3.5rem' }}>Global Partners</Link>
           </div>
         </div>
       </section>

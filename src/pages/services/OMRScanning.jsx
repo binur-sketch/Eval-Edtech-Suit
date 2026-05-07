@@ -22,7 +22,7 @@ const OMRScanning = () => {
     { title: 'Automated result generation', icon: <Icons.Cpu /> },
     { title: 'Error detection and correction', icon: <Icons.AlertCircle /> },
     { title: 'Barcode/QR code reading support', icon: <Icons.Scan /> },
-    { title: 'Candidate-wise reports', icon: <Icons.User /> },
+    { title: <>Candidate-wise <br /> reports</>, icon: <Icons.User /> },
   ];
 
   return (
@@ -55,7 +55,11 @@ const OMRScanning = () => {
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2>Our <span className="gradient-text">Capabilities</span></h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '1.5rem'
+          }}>
             {features.map((f, i) => (
               <div key={i} className="card" style={{ padding: '2.5rem', textAlign: 'center', background: 'var(--muted)' }}>
                 <div style={{ color: 'var(--primary)', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>{f.icon}</div>

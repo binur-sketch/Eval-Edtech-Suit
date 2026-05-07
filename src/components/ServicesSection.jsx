@@ -56,10 +56,10 @@ const ServicesSection = () => {
       }} />
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <SectionHeader 
+        <SectionHeader
           badge="Our Services"
           title={<>End-to-End <span className="gradient-text">Examination</span> Services</>}
-          text="Beyond software, we provide mission-critical logistical services for examination boards, recruitment agencies, and academic institutions."
+          text="Beyond software, we provide end to end examination services for boards, recruitment agencies, and academic institutions."
         />
 
 

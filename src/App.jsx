@@ -13,6 +13,10 @@ const BookDemo = lazy(() => import('./pages/BookDemo'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const Products = lazy(() => import('./pages/Products'));
+const CaseStudies = lazy(() => import('./pages/CaseStudies'));
+const Partner = lazy(() => import('./pages/Partner'));
+
+
 
 // Solution-Specific Pages
 const OMRPage = lazy(() => import('./pages/solutions/OMRPage'));
@@ -22,6 +26,7 @@ const OSMPage = lazy(() => import('./pages/solutions/OSMPage'));
 const AIPage = lazy(() => import('./pages/solutions/AIPage')); // New AI Proctoring
 const QPMSPage = lazy(() => import('./pages/solutions/QPMSPage')); // New QPMS
 const OlympiadPage = lazy(() => import('./pages/solutions/OlympiadPage'));
+const MobileApp = lazy(() => import('./pages/solutions/MobileApp'));
 
 // Admin Pages
 const AdminLogin = lazy(() => import('./pages/admin/Login'));
@@ -62,6 +67,10 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/partner" element={<Partner />} />
+
+
 
             {/* Solution-Specific Routes */}
             <Route path="/omr" element={<OMRPage />} />
@@ -71,6 +80,7 @@ function App() {
             <Route path="/cbt" element={<CBTPage />} />
             <Route path="/lms" element={<LMSPage />} />
             <Route path="/olympiad" element={<OlympiadPage />} />
+            <Route path="/mobile-app" element={<MobileApp />} />
             <Route path="/terms" element={<TermsOfService />} />
 
             {/* Service Routes */}

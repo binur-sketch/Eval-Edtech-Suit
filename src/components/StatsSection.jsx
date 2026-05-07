@@ -30,7 +30,7 @@ const StatsSection = () => {
     { label: 'Colleges', val: '1000+' },
     { label: 'Olympiad conducting Bodies', val: '100+' },
     { label: 'Coaching', val: '3100+' },
-    { label: 'OMR Sheets Evaluated', val: '25 Cr+' },
+    { label: 'OMR Sheets Evaluated', val: '250 M+' },
     { label: 'Years Of Experience', val: '10+' }
   ];
 
@@ -98,7 +98,7 @@ const StatsSection = () => {
           color: #1A3636;
           line-height: 1.1;
           margin-bottom: 0.3rem;
-          font-family: 'Outfit', sans-serif;
+          
         }
 
         .stat-label-v3 {

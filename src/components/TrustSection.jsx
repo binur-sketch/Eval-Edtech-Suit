@@ -2,16 +2,24 @@ import React from 'react';
 
 const TrustSection = () => {
   const eduLogos = [
+    // Schools
     '/assets/images/school/dps.png',
-    '/assets/images/university/BANARAS HINDU UNIVERSITY.png',
-    '/assets/images/coaching/physics wallah.webp',
     '/assets/images/school/RPS International School.png',
-    '/assets/images/university/Parul University.png',
-    '/assets/images/coaching/aakash logo.png',
     '/assets/images/school/OASIS International School.png',
+    '/assets/images/school/SURAJ SCHOOL.png',
+    '/assets/images/school/St Francis De Sales Sr Sec School.webp',
+    // Universities
+    '/assets/images/university/BANARAS HINDU UNIVERSITY.png',
+    '/assets/images/university/Parul University.png',
     '/assets/images/university/Jamia Millia Islamia.png',
+    '/assets/images/university/Silver Oak University.png',
+    '/assets/images/university/ADANI UNIVERSITY.png',
+    // Colleges & Institutes
+    '/assets/images/coaching/physics wallah.webp',
+    '/assets/images/coaching/aakash logo.png',
     '/assets/images/coaching/career launcher.png',
-    '/assets/images/university/Silver Oak University.png'
+    '/assets/images/coaching/Resonance.png',
+    '/assets/images/school/ICFAI Business School.png'
   ];
 
   const govLogos = [

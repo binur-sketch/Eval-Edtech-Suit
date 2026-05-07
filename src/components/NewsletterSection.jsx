@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import * as Icons from '@/components/LucideFix';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import FormStatus from '@/components/common/FormStatus';
+import SuccessModal from '@/components/common/SuccessModal';
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
   const { status, message, submitForm, setStatus } = useFormSubmit({
-    successMessage: "Awesome! You're now subscribed to our monthly insights."
+    successMessage: "Awesome! You're now subscribed to our monthly insights.",
+    onSuccess: () => setShowSuccess(true)
   });
 
   const handleSubmit = (e) => {
@@ -67,6 +70,7 @@ const NewsletterSection = () => {
           </form>
         </div>
       </div>
+      <SuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
     </section>
   );
 };

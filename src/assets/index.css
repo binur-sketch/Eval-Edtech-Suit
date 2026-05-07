@@ -489,8 +489,6 @@ p {
   border-radius: 2rem;
   font-size: 0.75rem;
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   margin-bottom: 1.5rem;
 }
 
@@ -849,57 +847,32 @@ select:focus-visible {
 }
 
 /* ============================
-   RESPONSIVE: MOBILE (≤768px)
+   RESPONSIVE: TABLET & MOBILE (≤1150px)
    ============================ */
 
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
   :root {
     --nav-height: 70px;
   }
 
   .container {
-    padding: 0 1.25rem;
+    padding: 0 1.5rem;
   }
 
   .section-padding {
     padding: 3.5rem 0;
   }
 
-  .card {
-    padding: 1.5rem;
-    border-radius: 1rem;
-  }
-
-  .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
-  }
-
-  .badge {
-    font-size: 0.625rem;
-    padding: 0.4rem 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.875rem;
-  }
-
-  p {
-    font-size: 0.9375rem;
-  }
-
-  .grid-cols-2 {
-    grid-template-columns: 1fr;
-  }
-
   .md-flex {
     display: none !important;
   }
 
+  .md-hidden {
+    display: flex !important;
+  }
+
   .marquee-track {
-    gap: 2.5rem;
+    gap: 2rem;
   }
 }
 
@@ -955,13 +928,17 @@ select:focus-visible {
    DESKTOP VISIBILITY HELPERS
    ============================ */
 
-@media (min-width: 769px) {
+@media (min-width: 1151px) {
   .md-hidden {
     display: none !important;
   }
 
   .md-flex {
     display: flex !important;
+  }
+
+  .mobile-menu {
+    display: none !important;
   }
 }
 
@@ -1372,6 +1349,7 @@ p {
   border-radius: 50%;
   pointer-events: none;
 }
+
 /* =========================================
    ?? PREMIUM BLOG DETAIL EXPERIENCE
    ========================================= */
@@ -1538,13 +1516,24 @@ p {
 .share-action:hover {
   transform: scale(1.15) translateY(-3px);
   color: white;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.share-action.tw:hover { background: #1DA1F2; }
-.share-action.li:hover { background: #0077B5; }
-.share-action.fb:hover { background: #1877F2; }
-.share-action.cp:hover { background: var(--primary); }
+.share-action.tw:hover {
+  background: #1DA1F2;
+}
+
+.share-action.li:hover {
+  background: #0077B5;
+}
+
+.share-action.fb:hover {
+  background: #1877F2;
+}
+
+.share-action.cp:hover {
+  background: var(--primary);
+}
 
 .featured-image-wide {
   margin-bottom: 5rem;
@@ -1595,7 +1584,8 @@ p {
   margin-bottom: 2rem;
 }
 
-.blog-content-body ul, .blog-content-body ol {
+.blog-content-body ul,
+.blog-content-body ol {
   margin-bottom: 2.5rem;
   padding-left: 1.5rem;
 }
@@ -1762,21 +1752,48 @@ p {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
-  
+
   .blog-sidebar {
     justify-content: center;
     order: 2;
   }
-  
+
   .share-bar-pill {
     flex-direction: row;
     position: static;
     border-radius: 100px;
   }
-  
+
   .author-footer-card {
     flex-direction: column;
     text-align: center;
     padding: 3rem 2rem;
+  }
+}
+
+/* UTILS */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.logo-row-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 1024px) {
+  .logo-row-container {
+    justify-content: flex-start;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }

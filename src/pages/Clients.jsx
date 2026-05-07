@@ -65,19 +65,19 @@ const ClientCategory = ({ title, clients }) => (
 const Clients = () => {
   const categories = [
     {
-      title: 'Coaching',
+      title: 'Coachings',
       clients: [
         { name: 'Physics Wallah', logo: '/assets/images/coaching/physics wallah.webp' },
         { name: 'Aakash Institute', logo: '/assets/images/coaching/aakash logo.png' },
         { name: 'Narayana Institute', logo: '/assets/images/coaching/narayana.png' },
         { name: 'Xylem Learning', logo: '/assets/images/coaching/xylem.webp' },
+        { name: 'Sri Chaitanya', logo: '/assets/images/coaching/sri chaitanya.png' },
         { name: 'Resonance', logo: '/assets/images/coaching/Resonance.png' },
         { name: 'DD Target PMT', logo: '/assets/images/coaching/dd target.webp' },
         { name: 'TAF IAS Academy', logo: '/assets/images/coaching/taf ias.png' },
         { name: 'CEDEES', logo: '/assets/images/coaching/cedeed.png' },
         { name: 'Shaheen Group', logo: '/assets/images/coaching/shaheen.png' },
         { name: 'Bansal Classes', logo: '/assets/images/coaching/bansal classes.png' },
-        { name: 'Sri Chaitanya', logo: '/assets/images/coaching/sri chaitanya.png' },
         { name: 'BASE EDUCATION', logo: '/assets/images/coaching/base education.png' },
         { name: 'KHAN GLOBAL STUDIES', logo: '/assets/images/coaching/khan global.avif' },
         { name: 'Career Launcher', logo: '/assets/images/coaching/career launcher.png' },
@@ -93,7 +93,7 @@ const Clients = () => {
         { name: 'RPS International', logo: '/assets/images/school/RPS International School.png' },
         { name: 'Dr. Radhakrishnan Intl.', logo: '/assets/images/school/Dr. Radhakrishnan International School.png' },
         { name: 'Bankura Hindu High School', logo: '/assets/images/school/BANKURA HINDU HIGH SCHOOL.png' },
-        { name: 'Mata Harki Devi Sr Sec', logo: '/assets/images/school/Mata_Harki_Devi_Senior_secondary_School-removebg-preview.png' },
+        { name: 'Mata Harki Devi Sr Sec', logo: '/assets/images/school/Mata Harki Devi Senior secondary School.png' },
         { name: 'SURAJ SCHOOL', logo: '/assets/images/school/SURAJ SCHOOL.png' },
         { name: 'Siddhi Vinayak', logo: '/assets/images/school/Siddhi Vinayak Education Trust.png' },
         { name: 'Discovery Intl.', logo: '/assets/images/school/Discovery International School.png' },
@@ -106,7 +106,7 @@ const Clients = () => {
       ]
     },
     {
-      title: 'Universities',
+      title: 'Universities & Colleges',
       clients: [
         { name: 'United University', logo: '/assets/images/university/United University.png' },
         { name: 'Parul University', logo: '/assets/images/university/Parul University.png' },
@@ -126,7 +126,7 @@ const Clients = () => {
       ]
     },
     {
-      title: 'Government',
+      title: 'Government Bodies',
       clients: [
         { name: 'National Cadet Corps', logo: '/assets/images/government/National Cadet Corps.png' },
         { name: 'Maulana Azad Medical', logo: '/assets/images/government/Maulana Azad Medical College.png' },

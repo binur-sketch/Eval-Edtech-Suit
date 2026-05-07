@@ -6,7 +6,7 @@ const team = [
     name: 'Deepak Garg',
     role: 'Managing Director',
     bio: 'Techno-businessman with 20+ years of product innovation at HCL and Adobe.',
-    img: 'https://www.virsoftech.com/img/deepak_garg.jpg',
+    img: '/assets/images/team/deepak_garg.jpg',
     linkedin: 'https://www.linkedin.com/in/deepakgarg76/',
     mail: 'deepak@virsoftech.com'
   },
@@ -14,7 +14,7 @@ const team = [
     name: 'Abhijeet Jain',
     role: 'Chief Technology Officer',
     bio: 'Computer Scientist and contributor to PDF ISO specifications.',
-    img: 'https://www.virsoftech.com/img/abhijeet_pic.jpg',
+    img: '/assets/images/team/abhijeet_pic.jpg',
     linkedin: 'https://www.linkedin.com/in/abhijeet-jain-5a9b313/',
     mail: 'abhijeet@virsoftech.com'
   },
@@ -22,7 +22,7 @@ const team = [
     name: 'Pralaypati Ta',
     role: 'Principal Architect',
     bio: '18+ years of tech leadership experience leading R&D at Samsung and Adobe.',
-    img: 'https://www.virsoftech.com/img/Pralay-photo.png',
+    img: '/assets/images/team/Pralay-photo.png',
     linkedin: 'https://www.linkedin.com/in/pralaypati-ta-3944691/',
     mail: 'pralay@virsoftech.com'
   },
@@ -30,7 +30,7 @@ const team = [
     name: 'Sameer Manuja',
     role: 'Principal Architect',
     bio: 'Key architect creating path-setting innovations holding US patents.',
-    img: 'https://www.virsoftech.com/sameer_manuja.jpg',
+    img: '/assets/images/team/sameer_manuja.jpg',
     linkedin: 'https://www.linkedin.com/in/sameermanuja/',
     mail: 'sameer@virsoftech.com'
   },
@@ -38,7 +38,7 @@ const team = [
     name: 'Akihide Sugino',
     role: 'Country Head, Japan',
     bio: 'Seasoned industry veteran with 35+ years of experience in Sales, Marketing, and License Compliance. Has worked with global firms like Epson and Adobe, managing partnerships, vendors, and enterprise sales across print and publishing. Currently leads corporate management and sales at Vir Softech.',
-    img: 'https://www.virsoftech.com/img/akihide_sugino.jpg', // update if exact path differs
+    img: '/assets/images/team/sugino.jpg',
     linkedin: 'https://jp.linkedin.com/in/akihide-sugino-938526154', // add if available
     mail: 'sugino@virsoftech.com' // add if available
   },
@@ -46,7 +46,7 @@ const team = [
     name: 'Manu Paliwal',
     role: 'Vice President – Sales',
     bio: 'Drives business growth strategy, customer value delivery, and expansion through digital solutions. Brings 25+ years of experience in sales, marketing, alliances, and operations. Has led global business units including leadership roles at Sharp.',
-    img: 'https://www.virsoftech.com/img/manu_paliwal.jpg', // update if exact path differs
+    img: '/assets/images/team/manu_paliwal.jpeg',
     linkedin: 'https://in.linkedin.com/in/manu-paliwal-a549a144', // add if available
     mail: 'manu@virsoftech.com' // add if available
   }

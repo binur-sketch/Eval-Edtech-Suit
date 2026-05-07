@@ -14,7 +14,17 @@ const SectionHeader = ({ badge, title, text, centered = true, className = "" }) 
       <h2 style={{ marginBottom: text ? '1.5rem' : '0' }}>
         {title}
       </h2>
-      {text && <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', color: 'var(--muted-foreground)' }}>{text}</p>}
+      {text && (
+        <p style={{ 
+          fontSize: 'clamp(1.1rem, 2vw, 1.25rem)', 
+          color: 'var(--muted-foreground)',
+          fontWeight: 600,
+          lineHeight: 1.6,
+          opacity: 0.9
+        }}>
+          {text}
+        </p>
+      )}
     </div>
   );
 };

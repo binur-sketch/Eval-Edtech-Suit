@@ -140,8 +140,8 @@ const OlympiadPage = () => {
   return (
     <div className="olympiad-page" style={{ paddingTop: 'var(--nav-height)', overflowX: 'hidden' }}>
       <SEO
-        title="Olympiad Solution Portal | Complete Exam Management System"
-        description="Olympiad Solution Portal simplifies the entire examination lifecycle—from registration to result analysis for both online and offline exams."
+        title="Olympiad Portal | Complete Exam Management System"
+        description="Olympiad Portal simplifies the entire examination lifecycle—from registration to result analysis for both online and offline exams."
         keywords="Olympiad Management, Online Exam Portal, OMR Exam System, Exam Logistics, Certificate Generator, Result Analytics"
       />
 
@@ -153,13 +153,13 @@ const OlympiadPage = () => {
               <Reveal>
                 <span className="badge">All-in-One Solution</span>
                 <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.75rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem' }}>
-                  Olympiad <span className="gradient-text">Solution</span>
+                  Olympiad <span className="gradient-text">Portal</span>
                 </h1>
                 <h2 style={{ fontSize: '1.5rem', color: 'var(--foreground)', marginBottom: '1.5rem', fontWeight: 600 }}>
                   Complete Digital & Offline Examination Management System
                 </h2>
                 <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--muted-foreground)', marginBottom: '2.5rem' }}>
-                  Olympiad Solution Portal is a comprehensive platform designed to simplify the entire examination lifecycle—from registration to result analysis. Whether you are conducting online assessments or OMR-based offline exams, our system ensures a smooth, transparent, and efficient process.
+                  Olympiad Portal is a comprehensive platform designed to simplify the entire examination lifecycle—from registration to result analysis. Whether you are conducting online assessments or OMR-based offline exams, our system ensures a smooth, transparent, and efficient process.
                 </p>
                 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                   <Link to="/contact" className="btn btn-primary" style={{ padding: '1rem 2rem' }}>Get Started Today</Link>
@@ -193,12 +193,16 @@ const OlympiadPage = () => {
             title={<>Everything You Need for <span className="gradient-text">Success</span></>}
             text="A modular approach to examination management, tailored for efficiency."
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', 
+            gap: '1.5rem' 
+          }}>
             {keyFeatures.map((f, i) => (
               <Reveal key={i} delay={i * 0.05}>
                 <div className="feature-card" style={{
                   background: 'white',
-                  padding: '2.5rem',
+                  padding: '1.75rem',
                   borderRadius: '1.5rem',
                   border: '1px solid var(--border)',
                   height: '100%',

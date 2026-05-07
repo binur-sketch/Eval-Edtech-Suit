@@ -21,7 +21,7 @@ const IndustryVerticals = () => {
     {
       icon: <Icons.Landmark size={32} />,
       title: 'Government & PSU',
-      desc: 'State and national boards conducting large-scale recruitment exams, civil services prelims, and public examinations.',
+      desc: 'State and national boards conducting large-scale surveys, recruitment exams, civil services, and public examinations.',
       stat: '100+ Government Bodies'
     },
     {

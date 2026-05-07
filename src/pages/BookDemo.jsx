@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useFormSubmit } from '@/hooks/useFormSubmit';
 import FormStatus from '@/components/common/FormStatus';
 import SEO from '@/components/common/SEO';
+import SuccessModal from '@/components/common/SuccessModal';
 
 const BookDemo = () => {
   const [formData, setFormData] = useState({
@@ -32,8 +33,11 @@ const BookDemo = () => {
     'Canada', 'Australia', 'Other'
   ];
 
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const { status, message, submitForm } = useFormSubmit({
-    successMessage: "Your demo request has been received! Our Team will contact you within 24 hours."
+    successMessage: "Your demo request has been received! Our Team will contact you within 24 hours.",
+    onSuccess: () => setShowSuccess(true)
   });
 
   const handleChange = (e) => {
@@ -390,6 +394,7 @@ const BookDemo = () => {
           }
         }
       `}</style>
+      <SuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
     </div>
   );
 };

@@ -155,8 +155,46 @@ const AIPage = () => {
                 <a href="#workflow" className="btn btn-outline">See the Workflow</a>
               </div>
             </div>
-            <div style={{ position: 'relative', maxWidth: '680px', marginLeft: 'auto' }}>
-              <img src="/assets/images/ai_proctoring.png" alt="AI Proctoring Dashboard" style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 30px 60px rgba(0,0,0,0.12)', border: '1px solid var(--border)' }} />
+            <div style={{ position: 'relative', maxWidth: '720px', marginLeft: 'auto' }}>
+              <div style={{
+                position: 'relative',
+                borderRadius: '2rem',
+                overflow: 'hidden',
+                boxShadow: '0 40px 80px rgba(0,0,0,0.15)',
+                border: '1px solid var(--border)',
+                background: 'white'
+              }}>
+                <img 
+                  src="/assets/images/ai_proctoring_dashboard.png" 
+                  alt="AI Proctoring Dashboard" 
+                  style={{ width: '100%', height: 'auto', display: 'block' }} 
+                />
+                
+                {/* Floating Decoration for "Live" feel */}
+                <motion.div 
+                  initial={{ x: 20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                  style={{
+                    position: 'absolute',
+                    top: '15%',
+                    right: '-2rem',
+                    background: 'white',
+                    padding: '1rem 1.5rem',
+                    borderRadius: '1.25rem',
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    border: '1px solid var(--border)',
+                    zIndex: 2,
+                    display: 'none' // Hidden by default, showing only on large screens if desired
+                  }}
+                >
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#EF4444', animation: 'pulse 2s infinite' }}></div>
+                  <div style={{ fontWeight: '700', fontSize: '0.875rem' }}>LIVE PROCTORING</div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -440,7 +478,11 @@ const AIPage = () => {
             title={<>Key <span className="gradient-text">Advantages</span></>}
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem' }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
+            gap: '3rem 2rem' 
+          }}>
             {advantages.map((a, i) => (
               <div key={i} style={{ display: 'flex', gap: '1.5rem' }}>
                 <div style={{ width: '40px', height: '40px', background: 'white', color: 'var(--primary)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid var(--border)', boxShadow: '0 4px 10px rgba(0,0,0,0.05)' }}>
