@@ -33,9 +33,9 @@ const IndustryVerticals = () => {
 
     {
       icon: <Icons.Building2 size={32} />,
-      title: 'Corporate Training',
-      desc: 'Fortune 100 companies running certification programs, compliance assessments, and skill evaluations.',
-      stat: '100+ Corporates'
+      title: 'Manufacturing',
+      desc: 'eVAL OMR tracks machinery output using shift-based reports and predefined templates.',
+      stat: '50+ Manufacturing Companies'
     },
 
     {

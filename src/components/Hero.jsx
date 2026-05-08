@@ -12,7 +12,7 @@ const Hero = () => {
     },
     {
       badge: <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Icons.Award size={14} /> Market Leader</div>,
-      title: <>India's Largest <span className="gradient-text">Examination Evaluation</span>Suite</>,
+      title: <>India's Largest <span className="gradient-text">OMR Software Selling</span>Company</>,
       desc: "eVAL provides an end-to-end ecosystem for modern institutions—from secure student registration and QPMS to high-speed OMR, OSM, CBT, and AI-driven proctoring.",
       ctaPrimary: "Book Free Demo",
       ctaSecondary: "Explore Solutions",

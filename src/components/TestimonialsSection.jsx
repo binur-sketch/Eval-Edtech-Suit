@@ -60,6 +60,24 @@ const TestimonialsSection = () => {
       images: [
         '/assets/images/Testimonials/LITTLE FLOWER.jpeg'
       ]
+    },
+    {
+      quote: "We are pleased to share our positive feedback regarding the Eval OMR Software developed by VIR Softech. We have been using the software for our examination and evaluation processes, and we are highly satisfied with its performance, accuracy, and user-friendly interface. The software has significantly streamlined the OMR assessment process, reduced manual efforts, and improved efficiency in result processing. We also appreciate the timely support and cooperation provided by the VIR Softech team whenever required.",
+      author: 'Pradip Maradiya',
+      role: 'Noble University',
+      org: 'Junagadh, Gujarat',
+      images: [
+        '/assets/images/Testimonials/noble university.png'
+      ]
+    },
+    {
+      quote: "qSarthi is pleased to place on record its appreciation for the eVAL Examination Software. The solution has significantly improved the efficiency, transparency, and accuracy of our answer script evaluation process. The software is user-friendly, secure, and well-organized, enabling our evaluators and administrators to complete assessments faster while maintaining confidentiality and fairness. Its digital workflow has minimized manual effort and reduced the chances of human error considerably.",
+      author: 'Rohit Panchal',
+      role: 'IT-Head',
+      org: 'qSarthi Kota',
+      images: [
+        '/assets/images/Testimonials/qsarthi.png'
+      ]
     }
   ];
 

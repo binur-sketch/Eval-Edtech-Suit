@@ -102,7 +102,12 @@ const Clients = () => {
         { name: 'Jawahar Navodaya', logo: '/assets/images/school/Jawahar Navodaya Vidyalaya.png' },
         { name: 'Uttam School', logo: '/assets/images/school/Uttam School for Girls.png' },
         { name: 'DAV School', logo: '/assets/images/school/DAV School.avif' },
-        { name: 'ICFAI Business School', logo: '/assets/images/school/ICFAI Business School.png' }
+        { name: 'ICFAI Business School', logo: '/assets/images/school/ICFAI Business School.png' },
+        { name: 'City Montessori School', logo: '/assets/images/school/city montesarri school.jpg' },
+        { name: 'Rashtriya Military School', logo: '/assets/images/school/RMS.jpg' },
+        { name: 'Suraj School', logo: '/assets/images/school/Suraj.jpg' },
+        { name: 'Smt. D G Agrawal Memorial', logo: '/assets/images/school/download.jpg' },
+        { name: 'Little Flowers Public School', logo: '/assets/images/school/download.png' }
       ]
     },
     {
@@ -122,13 +127,24 @@ const Clients = () => {
         { name: 'Forensic Sciences Univ', logo: '/assets/images/university/National Forensic Sciences University.png' },
         { name: 'Silver Oak Univ', logo: '/assets/images/university/Silver Oak University.png' },
         { name: 'Punjab State Open Univ', logo: '/assets/images/university/Jagat Guru Nanak Dev Punjab State Open University.png' },
-        { name: 'Central Agricultural Univ', logo: '/assets/images/university/Central Agricultural University.png' }
+        { name: 'Central Agricultural Univ', logo: '/assets/images/university/Central Agricultural University.png' },
+        { name: 'Sai Baba College', logo: '/assets/images/university/sai baba college.png' },
+        { name: 'St Albert College', logo: '/assets/images/university/st albert college.webp' },
+        { name: 'PES University', logo: '/assets/images/university/pes.jpg' },
+        { name: 'Sharad Institute', logo: '/assets/images/university/sharad.png' },
+        { name: 'Dada Lakhmi Chand Univ', logo: '/assets/images/university/DADA LAKHMI CHAND STATE UNIVERSITY.png' }
       ]
     },
     {
       title: 'Government Bodies',
       clients: [
         { name: 'National Cadet Corps', logo: '/assets/images/government/National Cadet Corps.png' },
+        { name: 'NCERT', logo: '/assets/images/government/NCERT_300px.svg' },
+        { name: 'NIOS', logo: '/assets/images/government/nios.png' },
+        { name: 'IIM Lucknow', logo: '/assets/images/government/iim lucknow.png' },
+        { name: 'Indian Coast Guard', logo: '/assets/images/government/indian coast.png' },
+        { name: 'NIPER', logo: '/assets/images/government/niper.jpeg' },
+        { name: 'SCERT', logo: '/assets/images/government/scert.svg' },
         { name: 'Maulana Azad Medical', logo: '/assets/images/government/Maulana Azad Medical College.png' },
         { name: 'Lady Hardinge Medical', logo: '/assets/images/government/Lady Hardinge Medical College.png' },
         { name: 'UPSC', logo: '/assets/images/government/Union Public Service Commission.png' },
@@ -140,10 +156,8 @@ const Clients = () => {
         { name: 'Indian Post', logo: '/assets/images/government/Indian Post.png' },
         { name: 'Indian Railway', logo: '/assets/images/government/Indian Railway.png' },
         { name: 'Bharat Electronic Ltd', logo: '/assets/images/government/Bharat Electronic Limited.png' },
-        { name: 'Quality Council of India', logo: '/assets/images/government/QUALITY COUNCIL OF INDIA.png' },
         { name: 'AIIMS', logo: '/assets/images/government/AIIMS.svg' },
         { name: 'Nuclear Power Corp', logo: '/assets/images/government/Nuclear Power Corporation Of India Ltd.png' },
-
       ]
     }
   ];

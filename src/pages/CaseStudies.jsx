@@ -88,6 +88,29 @@ const CaseStudies = () => {
       icon: <Icons.Building2 size={24} />,
       cases: [
         {
+          title: 'National Achievement Survey (NAS) - 2017',
+          client: 'Ministry of Education, Government of India',
+          tagline: 'Large-Scale Learning Outcome Assessment',
+          tags: ['National', 'OMR', 'NCERT'],
+          color: '#6366F1',
+          background: 'The National Achievement Survey (NAS) is a nationwide assessment conducted by the Ministry of Education (MoE) through NCERT to evaluate learning outcomes of school students at the system level.',
+          points: [
+            'Measures learning outcomes across schools',
+            'Identifies learning gaps at system level',
+            'Informs teaching policies & resource allocation'
+          ],
+          solution: 'Deployment of eVAL OMR Software and Scanners across 700+ DIET centers pan-India for rapid scanning and centralized reporting.',
+          features: [
+            { title: 'Nationwide Deployment', items: ['700+ DIET centers supported', 'Scanning of millions of OMR sheets'] },
+            { title: 'Data Analytics', items: ['99.9% data accuracy with auto-validation', 'Dashboard for actionable insights'] }
+          ],
+          outcomes: [
+            'Evaluated 2.2 million students rapidly',
+            'Reduced evaluation time to just a few days',
+            'Enhanced transparency for educational stakeholders'
+          ]
+        },
+        {
           title: 'National Recruitment Drive',
           client: 'Central Agency (UPSC Style)',
           tagline: 'High-Stakes Examination Security',
@@ -194,29 +217,52 @@ const CaseStudies = () => {
       icon: <Icons.Factory size={24} />,
       cases: [
         {
-          title: 'Safety Compliance Audit',
-          client: 'Automotive Giant',
-          tagline: 'Worker Skill & Safety Certification',
-          tags: ['Compliance', 'CBT', 'OSM'],
+          title: 'OEE Tracking & Machinery Output Optimization',
+          client: 'Panasonic',
+          tagline: 'Data-Driven Manufacturing Intelligence',
+          tags: ['OEE', 'Manufacturing', 'OMR'],
           color: '#F59E0B',
-          background: 'Ensuring 10,000+ assembly line workers are certified for safety compliance and technical skills periodically.',
+          background: 'Panasonic needed a precise system to track machinery output and Overall Equipment Effectiveness (OEE) across multiple shifts to ensure machines work at optimum levels.',
           points: [
-            'Kiosk-based testing in factories',
-            'Multilingual assessment support',
-            'Auto-renewal certification triggers',
-            'Skills matrix for HR'
+            'Tracking output across 2-3 daily shifts',
+            'Capturing raw OEE data for analytics',
+            'Monitoring machine-level productivity'
           ],
-          solution: 'Custom enterprise testing platform with automated certification lifecycle management.',
+          solution: 'Customized OMR-based OEE chart templates with color-coded range values (Blue, Green, Orange, Pink) for instant performance visualization.',
           features: [
-            { title: 'Enterprise CBT', items: ['Offline kiosk support', 'Multilingual interface'] },
-            { title: 'Compliance Dashboard', items: ['Safety status monitoring', 'Renewal alerts'] }
+            { title: 'OEE Chart Logic', items: ['Shift-based performance tracking', 'Color-coded range value mapping'] },
+            { title: 'Reporting Engine', items: ['Automated monthly report generation', 'Multi-format exports (CSV, Excel, PDF)'] }
           ],
           outcomes: [
-            '100% compliance across 5 global plants',
-            'Improved safety score by 25%',
-            'Real-time skill availability data for project planning'
+            'Eliminated 100% human calculation errors',
+            'Increased decision-making efficiency',
+            'Streamlined multi-shift performance audits'
           ]
-        }
+        },
+        // {
+        //   title: 'Safety Compliance Audit',
+        //   client: 'Automotive Giant',
+        //   tagline: 'Worker Skill & Safety Certification',
+        //   tags: ['Compliance', 'CBT', 'OSM'],
+        //   color: '#F59E0B',
+        //   background: 'Ensuring 10,000+ assembly line workers are certified for safety compliance and technical skills periodically.',
+        //   points: [
+        //     'Kiosk-based testing in factories',
+        //     'Multilingual assessment support',
+        //     'Auto-renewal certification triggers',
+        //     'Skills matrix for HR'
+        //   ],
+        //   solution: 'Custom enterprise testing platform with automated certification lifecycle management.',
+        //   features: [
+        //     { title: 'Enterprise CBT', items: ['Offline kiosk support', 'Multilingual interface'] },
+        //     { title: 'Compliance Dashboard', items: ['Safety status monitoring', 'Renewal alerts'] }
+        //   ],
+        //   outcomes: [
+        //     '100% compliance across 5 global plants',
+        //     'Improved safety score by 25%',
+        //     'Real-time skill availability data for project planning'
+        //   ]
+        // }
       ]
     },
     {
