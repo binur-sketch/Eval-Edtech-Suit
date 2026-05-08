@@ -131,8 +131,8 @@ const OMRPage = () => {
                 Its simple yet sophisticated User Interface (UI) makes it easy to create, process, and analyse OMR data for any institutional application — all without requiring any special hardware investment.
               </p>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
-                <Link to="/contact" className="btn btn-primary">Start Free Trial</Link>
                 <a href="#workflow" className="btn btn-outline">See the Workflow</a>
+                <Link to="https://omrsoftware.com/" className="btn btn-primary" target='blank'>Visit OMR Software Website</Link>
               </div>
             </div>
             <div style={{ position: 'relative', maxWidth: '680px', marginLeft: 'auto' }}>
@@ -447,10 +447,10 @@ const OMRPage = () => {
             badge="Capabilities"
             title={<>Platform <span className="gradient-text">Key Features</span></>}
           />
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
-            gap: '1.5rem' 
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '1.5rem'
           }}>
             {keyFeatures.map((f, i) => (
               <div key={i} className="feature-hover-card">

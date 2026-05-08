@@ -46,7 +46,7 @@ const Navbar = () => {
     alignItems: 'center',
     color: isActive(path) ? 'var(--primary)' : 'var(--secondary)',
     fontWeight: '700',
-    fontSize: '0.75rem',
+    fontSize: '0.8125rem',
     textTransform: 'uppercase',
     letterSpacing: '0.05em',
     transition: 'var(--transition)'
@@ -67,7 +67,7 @@ const Navbar = () => {
         padding: scrolled ? '0' : '0.5rem 0',
         height: scrolled ? '0' : 'auto',
         overflow: 'hidden',
-        fontSize: '0.7rem',
+        fontSize: '0.85rem',
         borderBottom: '1px solid rgba(255,255,255,0.05)',
         transition: 'all 0.3s ease'
       }}>
@@ -102,7 +102,7 @@ const Navbar = () => {
               boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
             }}>
               <img src="/assets/images/gem.png" alt="GeM" style={{ height: '12px', width: 'auto' }} />
-              <span style={{ fontWeight: '800', color: '#2d3748', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.02em' }}>Available as OEM on GeM</span>
+              <span style={{ fontWeight: '800', color: '#2d3748', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.02em' }}>Available as OEM on GeM</span>
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@ const Navbar = () => {
               <button style={{
                 padding: '0 0.75rem', height: '100%', background: 'none', border: 'none',
                 color: isActive('/products') ? 'var(--primary)' : 'var(--secondary)',
-                fontWeight: '700', fontSize: '0.75rem',
+                fontWeight: '700', fontSize: '0.8125rem',
                 textTransform: 'uppercase', letterSpacing: '0.05em', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
               }}>
@@ -160,7 +160,7 @@ const Navbar = () => {
               <button style={{
                 padding: '0 0.75rem', height: '100%', background: 'none', border: 'none',
                 color: isActive('/services') ? 'var(--primary)' : 'var(--secondary)',
-                fontWeight: '700', fontSize: '0.75rem',
+                fontWeight: '700', fontSize: '0.8125rem',
                 textTransform: 'uppercase', letterSpacing: '0.05em', cursor: 'pointer',
                 display: 'flex', alignItems: 'center', gap: '4px'
               }}>
@@ -187,7 +187,7 @@ const Navbar = () => {
             <Link to="/book-demo" className="btn btn-primary" style={{
               padding: '0.65rem 1.5rem',
               marginLeft: '1.5rem',
-              fontSize: '0.75rem',
+              fontSize: '0.8125rem',
               borderRadius: '0.75rem'
             }}>
               Request Demo
@@ -224,7 +224,7 @@ const Navbar = () => {
           <Link to="/" style={{ fontWeight: '800', color: isActive('/') ? 'var(--primary)' : 'var(--secondary)' }}>Home</Link>
 
           <div>
-            <div style={{ color: 'var(--primary)', fontSize: '0.65rem', fontWeight: '900', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em' }}>Solutions</div>
+            <div style={{ color: 'var(--primary)', fontSize: '0.75rem', fontWeight: '900', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em' }}>Solutions</div>
             <div style={{ display: 'grid', gap: '1rem', paddingLeft: '0.5rem' }}>
               {productLinks.map((s, i) => (
                 <Link key={i} to={s.path} style={{ fontWeight: '600', color: 'var(--secondary)' }}>{s.title}</Link>
@@ -233,7 +233,7 @@ const Navbar = () => {
           </div>
 
           <div>
-            <div style={{ color: 'var(--primary)', fontSize: '0.65rem', fontWeight: '900', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em' }}>Expertise</div>
+            <div style={{ color: 'var(--primary)', fontSize: '0.75rem', fontWeight: '900', textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em' }}>Expertise</div>
             <div style={{ display: 'grid', gap: '1rem', paddingLeft: '0.5rem' }}>
               {serviceLinks.map((s, i) => (
                 <Link key={i} to={s.path} style={{ fontWeight: '600', color: 'var(--secondary)' }}>{s.title}</Link>
