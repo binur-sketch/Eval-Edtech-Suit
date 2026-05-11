@@ -9,60 +9,58 @@ import SuccessModal from '@/components/common/SuccessModal';
 import { useState } from 'react';
 
 const Partner = () => {
-  const partnerTypes = [
-    {
-      title: 'Sales & Channel Partners',
-      desc: 'Expand your portfolio by offering our industry-leading examination evaluation solutions to your existing clients and new markets.',
-      benefits: ['High commission margins', 'Marketing & sales collateral support', 'Exclusive territory rights', 'Lead generation assistance'],
-      icon: <Icons.TrendingUp size={32} />,
-      color: '#0EA5A4'
-    },
-    {
-      title: 'Technology Partners',
-      desc: 'Integrate your hardware or software solutions with eVAL to create a more powerful, end-to-end ecosystem for educational institutions.',
-      benefits: ['API & SDK access', 'Joint product development', 'Co-marketing opportunities', 'Technical support & documentation'],
-      icon: <Icons.Cpu size={32} />,
-      color: '#6366F1'
-    },
-    {
-      title: 'Implementation Partners',
-      desc: 'Provide on-the-ground support, training, and configuration services for eVAL deployments at various scale institutions.',
-      benefits: ['Professional certification', 'Service revenue opportunities', 'Priority technical support', 'Dedicated partner manager'],
-      icon: <Icons.Settings size={32} />,
-      color: '#10B981'
-    }
-  ];
-
-  const steps = [
-    { title: 'Inquiry', desc: 'Share your business vision with us via our secure portal.' },
-    { title: 'Strategic Review', desc: 'Our regional heads analyze the synergy and market potential.' },
-    { title: 'Onboarding', desc: 'Get certified on eVAL technologies and access the partner toolbox.' },
-    { title: 'Launch & Scale', desc: 'Deploy solutions globally and scale your enterprise revenue.' }
-  ];
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [phone, setPhone] = useState('');
+
+  const countryCodes = {
+    'India': '+91',
+    'USA': '+1',
+    'UK': '+44',
+    'Japan': '+81',
+    'Canada': '+1',
+    'Australia': '+61',
+    'Germany': '+49',
+    'France': '+33',
+    'UAE': '+971',
+    'Singapore': '+65',
+    'South Africa': '+27',
+    'Brazil': '+55',
+    'China': '+86',
+    'Russia': '+7',
+    'Mexico': '+52',
+    'Italy': '+39'
+  };
+
+  const handleCountryChange = (e) => {
+    const country = e.target.value;
+    const code = countryCodes[country];
+    if (code) {
+      setPhone(code + ' ');
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
     try {
       const response = await fetch("https://formsubmit.co/ajax/corp@virsoftech.com", {
         method: "POST",
-        headers: { 
+        headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify(data)
       });
-      
+
       if (response.ok) {
         setShowSuccess(true);
         e.target.reset();
+        setPhone('');
       }
     } catch (error) {
       console.error("Submission error:", error);
@@ -72,221 +70,220 @@ const Partner = () => {
     }
   };
 
+  const checklistItems = [
+    'Apply to become a partner',
+    'Fill out the application form',
+    'Choose the best cooperation model for you',
+    'Complete our free Partner Training Program',
+    'Find your first business opportunity and sign a deal',
+    'Grow your business further with eVAL'
+  ];
+
   return (
-    <div className="partner-page" style={{ paddingTop: 'var(--nav-height)' }}>
-      <SEO 
-        title="Partner With Us | eVAL Global Partnership Program" 
-        description="Join the eVAL ecosystem as a sales, technology, or implementation partner. Grow your business by delivering world-class examination solutions."
+    <div className="partner-page" style={{ paddingTop: 'var(--nav-height)', background: 'white' }}>
+      <SEO
+        title="Become a Partner | eVAL Global Partnership Program"
+        description="Join our partner network today. Grow your business by delivering world-class examination solutions with eVAL."
       />
 
-      <section className="section-padding" style={{ 
-        background: `linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('/assets/images/partner_hero.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        color: 'white', 
-        position: 'relative', 
-        overflow: 'hidden',
-        minHeight: '85vh',
-        display: 'flex',
-        alignItems: 'center'
-      }}>
-        <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-          <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center' }}>
-            <Reveal>
-              <div style={{ display: 'inline-block', padding: '0.5rem 1.5rem', background: 'rgba(14, 165, 164, 0.2)', borderRadius: '100px', marginBottom: '2rem', backdropFilter: 'blur(10px)', border: '1px solid rgba(14, 165, 164, 0.3)' }}>
-                <span style={{ fontSize: '0.875rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--primary)' }}>Growth Opportunity 2026</span>
-              </div>
-              <h1 style={{ fontSize: 'clamp(3rem, 10vw, 5.5rem)', fontWeight: 950, marginBottom: '2rem', lineHeight: 1.05 }}>
-                Unleash the Power of <br /><span className="gradient-text">Collaboration</span>
-              </h1>
-              <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.7', marginBottom: '3.5rem', maxWidth: '750px', margin: '0 auto 3.5rem' }}>
-                Join the most advanced evaluation ecosystem in the world. Partner with eVAL to transform how 5,000+ global institutions evaluate, grow, and succeed.
-              </p>
-              <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href="#partner-form" className="btn btn-primary" style={{ padding: '1.25rem 4rem', fontSize: '1.125rem' }}>Join the Network</a>
-                <Link to="/contact" className="btn btn-outline" style={{ padding: '1.25rem 4rem', color: 'white', borderColor: 'rgba(255,255,255,0.4)', fontSize: '1.125rem' }}>Contact Alliance Team</Link>
-              </div>
-            </Reveal>
+      {/* Hero Section */}
+      <section style={{ padding: '6rem 0 4rem' }}>
+        <div className="container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '4rem',
+            alignItems: 'center'
+          }}>
+            <div>
+              <Reveal>
+                <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 3.5rem)', fontWeight: 800, color: '#1e293b', marginBottom: '1rem' }}>
+                  Become a Partner
+                </h1>
+                <p style={{ fontSize: '1.25rem', color: '#64748b' }}>
+                  Join our partner network today
+                </p>
+              </Reveal>
+            </div>
+            <div style={{ position: 'relative' }}>
+              <Reveal direction="left">
+                <div style={{ position: 'relative', borderRadius: '2rem', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.1)' }}>
+                  <img
+                    src="/assets/images/partner_handshake.png"
+                    alt="Become a partner"
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                </div>
+                {/* Decorative shapes */}
+                <div style={{ position: 'absolute', top: '-10px', left: '-10px', width: '40px', height: '40px', background: '#10b981', borderRadius: '8px', zIndex: -1, transform: 'rotate(15deg)' }}></div>
+                <div style={{ position: 'absolute', bottom: '20px', right: '-15px', width: '30px', height: '30px', background: '#fb923c', borderRadius: '50%', zIndex: -1 }}></div>
+              </Reveal>
+            </div>
           </div>
         </div>
-        
-        {/* Decorative Gradient Overlays */}
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '150px', background: 'linear-gradient(to top, #f8fafc, transparent)', zIndex: 11 }}></div>
       </section>
 
-      {/* Program Segments - Compact Cards */}
-      <section className="section-padding" style={{ background: '#f8fafc', marginTop: '-5rem', position: 'relative', zIndex: 20 }}>
+      {/* Form & Info Section */}
+      <section style={{ paddingBottom: '8rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
-            {partnerTypes.map((p, i) => (
-              <Reveal key={i} delay={i * 0.1}>
-                <div className="partner-type-card" style={{ 
-                  padding: '3rem', 
-                  background: 'white', 
-                  borderRadius: '2.5rem', 
-                  border: '1px solid var(--border)',
-                  height: '100%',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.04)',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '5rem'
+          }}>
+
+            {/* Left Column: Checklist & Portal Info */}
+            <div>
+              <Reveal>
+                <div style={{
+                  background: '#f0f7ff',
+                  borderRadius: '0 3rem 3rem 0',
+                  padding: '4rem 3rem',
+                  marginLeft: '-2rem',
+                  position: 'relative'
                 }}>
-                  <div style={{ 
-                    width: '64px', 
-                    height: '64px', 
-                    borderRadius: '1.25rem', 
-                    background: `${p.color}10`, 
-                    color: p.color, 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center',
-                    marginBottom: '2rem'
-                  }}>
-                    {p.icon}
-                  </div>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 900, marginBottom: '1.25rem' }}>{p.title}</h3>
-                  <p style={{ color: 'var(--muted-foreground)', marginBottom: '2.5rem', lineHeight: 1.6, fontSize: '0.9375rem' }}>{p.desc}</p>
-                  <div style={{ height: '1px', background: 'var(--border)', marginBottom: '2rem' }}></div>
-                  <ul style={{ padding: 0, listStyle: 'none', display: 'grid', gap: '1.25rem' }}>
-                    {p.benefits.map((b, idx) => (
-                      <li key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', fontSize: '0.875rem', color: 'var(--foreground)', fontWeight: 600 }}>
-                        <Icons.CheckCircle2 size={18} color={p.color} style={{ flexShrink: 0, marginTop: '2px' }} />
-                        {b}
+                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 3rem 0', display: 'grid', gap: '1.5rem' }}>
+                    {checklistItems.map((item, i) => (
+                      <li key={i} style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', fontSize: '1rem', fontWeight: 600, color: '#334155' }}>
+                        <div style={{
+                          width: '24px',
+                          height: '24px',
+                          background: '#dbeafe',
+                          color: '#3b82f6',
+                          borderRadius: '4px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0
+                        }}>
+                          <Icons.Check size={16} strokeWidth={3} />
+                        </div>
+                        {item}
                       </li>
                     ))}
                   </ul>
+
+
                 </div>
               </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
 
-      {/* Why Section */}
-      <section className="section-padding" style={{ background: 'white' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 500px), 1fr))', gap: '6rem', alignItems: 'center' }}>
+            {/* Right Column: Form */}
             <div>
-              <Reveal>
-                <span className="badge" style={{ marginBottom: '1.5rem' }}>Value Proposition</span>
-                <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 900, marginBottom: '2.5rem', lineHeight: 1.1 }}>
-                  The eVAL <span className="gradient-text">Advantage</span>
-                </h2>
-                <div style={{ display: 'grid', gap: '2.5rem' }}>
-                  {[
-                    { icon: <Icons.ShieldCheck />, title: 'Institutional Trust', desc: 'Leverage our reputation as a provider to 5000+ top-tier educational bodies.', color: 'var(--primary)' },
-                    { icon: <Icons.Cpu />, title: 'Deep Tech Integration', desc: 'Proprietary AI and OMR engines that outperform generic solutions by 400%.', color: '#6366F1' },
-                    { icon: <Icons.Zap />, title: 'Unmatched Speed', desc: 'Same-day result processing capability even for million-sheet workloads.', color: '#F59E0B' }
-                  ].map((item, idx) => (
-                    <div key={idx} style={{ display: 'flex', gap: '1.5rem' }}>
-                      <div style={{ width: '60px', height: '60px', borderRadius: '1.25rem', background: '#f8fafc', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: item.color, boxShadow: 'var(--shadow-sm)' }}>
-                        {item.icon}
-                      </div>
-                      <div>
-                        <h4 style={{ marginBottom: '0.5rem', fontWeight: 800, fontSize: '1.125rem' }}>{item.title}</h4>
-                        <p style={{ color: 'var(--muted-foreground)', fontSize: '0.9375rem', lineHeight: 1.6 }}>{item.desc}</p>
-                      </div>
+              <Reveal delay={0.2}>
+                <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '2rem' }}>
+                  <div className="form-group">
+                    <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: '#94a3b8', marginBottom: '0.5rem' }}>Business email*</label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      style={{ width: '100%', border: 'none', borderBottom: '2px solid #e2e8f0', padding: '0.75rem 0', fontSize: '1rem', outline: 'none' }}
+                    />
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                    <div className="form-group">
+                      <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: '#94a3b8', marginBottom: '0.5rem' }}>First name*</label>
+                      <input
+                        type="text"
+                        name="first_name"
+                        required
+                        style={{ width: '100%', border: 'none', borderBottom: '2px solid #e2e8f0', padding: '0.75rem 0', fontSize: '1rem', outline: 'none' }}
+                      />
                     </div>
-                  ))}
-                </div>
+                    <div className="form-group">
+                      <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: '#94a3b8', marginBottom: '0.5rem' }}>Last name*</label>
+                      <input
+                        type="text"
+                        name="last_name"
+                        required
+                        style={{ width: '100%', border: 'none', borderBottom: '2px solid #e2e8f0', padding: '0.75rem 0', fontSize: '1rem', outline: 'none' }}
+                      />
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                    <div className="form-group">
+                      <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: '#94a3b8', marginBottom: '0.5rem' }}>Company*</label>
+                      <input
+                        type="text"
+                        name="company"
+                        required
+                        style={{ width: '100%', border: 'none', borderBottom: '2px solid #e2e8f0', padding: '0.75rem 0', fontSize: '1rem', outline: 'none' }}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: '#94a3b8', marginBottom: '0.5rem' }}>Job title*</label>
+                      <input
+                        type="text"
+                        name="job_title"
+                        required
+                        style={{ width: '100%', border: 'none', borderBottom: '2px solid #e2e8f0', padding: '0.75rem 0', fontSize: '1rem', outline: 'none' }}
+                      />
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                    <div className="form-group">
+                      <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: '#94a3b8', marginBottom: '0.5rem' }}>Phone*</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="+91 99999 99999"
+                        required
+                        style={{ width: '100%', border: 'none', borderBottom: '2px solid #e2e8f0', padding: '0.75rem 0', fontSize: '1rem', outline: 'none' }}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: '#94a3b8', marginBottom: '0.5rem' }}>Country*</label>
+                      <select
+                        name="country"
+                        required
+                        onChange={handleCountryChange}
+                        style={{ width: '100%', border: 'none', borderBottom: '2px solid #e2e8f0', padding: '0.75rem 0', fontSize: '1rem', outline: 'none', background: 'transparent' }}
+                      >
+                        <option value="">Please Select</option>
+                        {Object.keys(countryCodes).sort().map(country => (
+                          <option key={country} value={country}>{country}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', marginTop: '1rem' }}>
+                    <input type="checkbox" required style={{ marginTop: '0.3rem' }} />
+                    <p style={{ fontSize: '0.8125rem', lineHeight: '1.5', color: '#64748b', margin: 0 }}>
+                      I have read and agree to the <a href="/privacy" style={{ color: '#3b82f6', textDecoration: 'none' }}>Privacy Policy</a>. I agree to receive license key information from Vir Softech as well as periodic emails about product updates and exclusive offers.*
+                    </p>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn btn-primary"
+                    style={{
+                      padding: '1rem 3rem',
+                      width: 'fit-content',
+                      borderRadius: '0.5rem',
+                      background: '#3b82f6',
+                      border: 'none',
+                      marginTop: '2rem'
+                    }}
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Submit'}
+                  </button>
+                </form>
               </Reveal>
             </div>
-            
-            {/* Connected Journey */}
-            <div style={{ position: 'relative' }}>
-                <Reveal delay={0.2}>
-                    <div style={{ background: 'var(--secondary)', padding: '4rem', borderRadius: '4rem', color: 'white', position: 'relative', overflow: 'hidden' }}>
-                        <div style={{ position: 'relative', zIndex: 1 }}>
-                          <h3 style={{ fontSize: '1.75rem', fontWeight: 900, marginBottom: '4rem' }}>The Partner <span className="gradient-text">Journey</span></h3>
-                          <div style={{ display: 'grid', gap: '3rem', position: 'relative' }}>
-                              <div style={{ position: 'absolute', left: '23px', top: '24px', bottom: '24px', width: '2px', background: 'rgba(255,255,255,0.1)' }}></div>
-                              {steps.map((s, i) => (
-                                  <div key={i} style={{ display: 'flex', gap: '2rem', position: 'relative', zIndex: 1 }}>
-                                      <div style={{ 
-                                          width: '48px', 
-                                          height: '48px', 
-                                          borderRadius: '1rem', 
-                                          background: i === 3 ? 'var(--primary)' : 'rgba(255,255,255,0.05)', 
-                                          border: '1px solid rgba(255,255,255,0.1)', 
-                                          display: 'flex', 
-                                          alignItems: 'center', 
-                                          justifyContent: 'center', 
-                                          fontWeight: 900, 
-                                          color: 'white',
-                                          flexShrink: 0,
-                                          fontSize: '1rem'
-                                      }}>{i + 1}</div>
-                                      <div>
-                                          <h4 style={{ marginBottom: '0.5rem', fontWeight: 800, fontSize: '1.125rem' }}>{s.title}</h4>
-                                          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', lineHeight: 1.5 }}>{s.desc}</p>
-                                      </div>
-                                  </div>
-                              ))}
-                          </div>
-                        </div>
-                        {/* Glow effect */}
-                        <div style={{ position: 'absolute', bottom: '-20%', right: '-20%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(14, 165, 164, 0.15) 0%, transparent 70%)', zIndex: 0 }}></div>
-                    </div>
-                </Reveal>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Inquiry Form */}
-      <section id="partner-form" className="section-padding" style={{ background: '#f8fafc' }}>
-        <div className="container">
-          <div style={{ maxWidth: '1000px', margin: '0 auto', background: 'white', borderRadius: '4rem', padding: 'clamp(2rem, 8vw, 6rem)', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--border)' }}>
-            <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                <span className="badge" style={{ marginBottom: '1.5rem' }}>Get in Touch</span>
-                <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 900 }}>Submit Your <span className="gradient-text">Proposal</span></h2>
-                <p style={{ color: 'var(--muted-foreground)', marginTop: '1rem' }}>Our partnership board reviews inquiries every Tuesday and Thursday.</p>
-            </div>
-            
-            <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '2.5rem' }}>
-                <div style={{ display: 'grid', gap: '1rem' }}>
-                    <label style={{ fontSize: '0.8125rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)' }}>Contact Person</label>
-                    <input type="text" name="name" required placeholder="Full Name" style={{ width: '100%', padding: '1.25rem', borderRadius: '1rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
-                </div>
-                <div style={{ display: 'grid', gap: '1rem' }}>
-                    <label style={{ fontSize: '0.8125rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)' }}>Business Email</label>
-                    <input type="email" name="email" required placeholder="corporate@domain.com" style={{ width: '100%', padding: '1.25rem', borderRadius: '1rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
-                </div>
-                <div style={{ display: 'grid', gap: '1rem' }}>
-                    <label style={{ fontSize: '0.8125rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)' }}>Organization</label>
-                    <input type="text" name="company" required placeholder="Company Name" style={{ width: '100%', padding: '1.25rem', borderRadius: '1rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }} />
-                </div>
-                <div style={{ display: 'grid', gap: '1rem' }}>
-                    <label style={{ fontSize: '0.8125rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)' }}>Partnership Focus</label>
-                    <select name="partnership_type" style={{ width: '100%', padding: '1.25rem', borderRadius: '1rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem' }}>
-                        <option>Sales & Channel Partner</option>
-                        <option>Technology & API Partner</option>
-                        <option>Implementation & Training</option>
-                        <option>Strategic Alliance</option>
-                    </select>
-                </div>
-                <div style={{ display: 'grid', gap: '1rem', gridColumn: 'span min(auto, 2)' }}>
-                    <label style={{ fontSize: '0.8125rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)' }}>Market & Collaboration Detail</label>
-                    <textarea name="message" required placeholder="Describe your target market and how eVAL fits into your growth strategy..." rows={5} style={{ width: '100%', padding: '1.25rem', borderRadius: '1rem', border: '1px solid var(--border)', background: 'var(--muted)', fontSize: '0.9375rem', resize: 'none' }}></textarea>
-                </div>
-                <div style={{ gridColumn: 'span min(auto, 2)', textAlign: 'center', marginTop: '2rem' }}>
-                    <button type="submit" disabled={isSubmitting} className="btn btn-primary" style={{ padding: '1.5rem 5rem', fontSize: '1.125rem', borderRadius: '1rem', opacity: isSubmitting ? 0.7 : 1 }}>
-                        {isSubmitting ? 'Submitting...' : 'Initiate Partnership Discussion'}
-                    </button>
-                    <p style={{ marginTop: '1.5rem', fontSize: '0.75rem', color: 'var(--muted-foreground)' }}>By submitting, you agree to our partner confidentiality terms.</p>
-                </div>
-            </form>
           </div>
         </div>
       </section>
 
       <SuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        .partner-type-card:hover {
-          transform: translateY(-12px);
-          border-color: var(--primary);
-          box-shadow: 0 40px 80px -15px rgba(0,0,0,0.1);
-        }
-      `}} />
     </div>
   );
 };

@@ -110,52 +110,52 @@ const CaseStudies = () => {
             'Enhanced transparency for educational stakeholders'
           ]
         },
-        {
-          title: 'National Recruitment Drive',
-          client: 'Central Agency (UPSC Style)',
-          tagline: 'High-Stakes Examination Security',
-          tags: ['Govt', 'Security', 'Scale'],
-          color: '#6366F1',
-          background: 'Executing a pan-India recruitment exam for 1.2 million aspirants with 100% security and zero dispute tolerance.',
-          points: [
-            '400+ cities, 3000+ centers',
-            'Double-blind evaluation process',
-            'Forensic auditing of OMR sheets',
-            'RT-OCR for roll number validation'
-          ],
-          solution: 'End-to-end secure evaluation workflow with physical-to-digital tracking and multi-tier auditing.',
-          features: [
-            { title: 'Security Protocol', items: ['Biometric sync with roll numbers', 'Encrypted result database'] },
-            { title: 'Auditing Suite', items: ['Full sheet image archiving', 'Log-level tracking of every marker'] }
-          ],
-          outcomes: [
-            'Completed evaluation in 15 days',
-            '100% dispute-free result publication',
-            'Saved 40% in logistics costs'
-          ]
-        },
-        {
-          title: 'State Civil Services Marks Processing',
-          client: 'State Public Service Commission',
-          tagline: 'Automated ICR/OCR Based Data Extraction',
-          tags: ['ICR', 'OCR', 'Security'],
-          color: '#6366F1',
-          background: 'The Commission needed to process handwritten marks from subjective answer scripts for thousands of aspirants with absolute data integrity.',
-          points: [
-            'Handwritten marks extraction',
-            'Automated totaling & validation',
-            'Secure integration with result database'
-          ],
-          solution: 'Advanced ICR-based marks processing system that reads examiner-written marks directly from the sheets.',
-          features: [
-            { title: 'ICR Intelligence', items: ['Reads handwritten numerical digits', 'Multi-layer validation rules'] }
-          ],
-          outcomes: [
-            'Eliminated 100% human calculation errors',
-            'Reduced result turnaround by 60%',
-            'Audit-ready digital marks archive'
-          ]
-        }
+        // {
+        //   title: 'National Recruitment Drive',
+        //   client: 'Central Agency (UPSC Style)',
+        //   tagline: 'High-Stakes Examination Security',
+        //   tags: ['Govt', 'Security', 'Scale'],
+        //   color: '#6366F1',
+        //   background: 'Executing a pan-India recruitment exam for 1.2 million aspirants with 100% security and zero dispute tolerance.',
+        //   points: [
+        //     '400+ cities, 3000+ centers',
+        //     'Double-blind evaluation process',
+        //     'Forensic auditing of OMR sheets',
+        //     'RT-OCR for roll number validation'
+        //   ],
+        //   solution: 'End-to-end secure evaluation workflow with physical-to-digital tracking and multi-tier auditing.',
+        //   features: [
+        //     { title: 'Security Protocol', items: ['Biometric sync with roll numbers', 'Encrypted result database'] },
+        //     { title: 'Auditing Suite', items: ['Full sheet image archiving', 'Log-level tracking of every marker'] }
+        //   ],
+        //   outcomes: [
+        //     'Completed evaluation in 15 days',
+        //     '100% dispute-free result publication',
+        //     'Saved 40% in logistics costs'
+        //   ]
+        // },
+        // {
+        //   title: 'State Civil Services Marks Processing',
+        //   client: 'State Public Service Commission',
+        //   tagline: 'Automated ICR/OCR Based Data Extraction',
+        //   tags: ['ICR', 'OCR', 'Security'],
+        //   color: '#6366F1',
+        //   background: 'The Commission needed to process handwritten marks from subjective answer scripts for thousands of aspirants with absolute data integrity.',
+        //   points: [
+        //     'Handwritten marks extraction',
+        //     'Automated totaling & validation',
+        //     'Secure integration with result database'
+        //   ],
+        //   solution: 'Advanced ICR-based marks processing system that reads examiner-written marks directly from the sheets.',
+        //   features: [
+        //     { title: 'ICR Intelligence', items: ['Reads handwritten numerical digits', 'Multi-layer validation rules'] }
+        //   ],
+        //   outcomes: [
+        //     'Eliminated 100% human calculation errors',
+        //     'Reduced result turnaround by 60%',
+        //     'Audit-ready digital marks archive'
+        //   ]
+        // }
       ]
     },
     // {
@@ -218,25 +218,25 @@ const CaseStudies = () => {
       cases: [
         {
           title: 'OEE Tracking & Machinery Output Optimization',
-          client: 'Panasonic',
+          client: 'Panasonic (Factory Automation)',
           tagline: 'Data-Driven Manufacturing Intelligence',
           tags: ['OEE', 'Manufacturing', 'OMR'],
           color: '#F59E0B',
-          background: 'Panasonic needed a precise system to track machinery output and Overall Equipment Effectiveness (OEE) across multiple shifts to ensure machines work at optimum levels.',
+          background: 'Panasonic faced critical challenges in monitoring shop-floor productivity across 3 daily shifts. Manual logbook entries were prone to errors, leading to inaccurate OEE (Overall Equipment Effectiveness) data and delayed performance audits.',
           points: [
-            'Tracking output across 2-3 daily shifts',
-            'Capturing raw OEE data for analytics',
-            'Monitoring machine-level productivity'
+            'Monitoring 50+ production lines across multiple shifts',
+            'Requirement for 100% data integrity for ISO audits',
+            'Need for instant visual performance indicators'
           ],
-          solution: 'Customized OMR-based OEE chart templates with color-coded range values (Blue, Green, Orange, Pink) for instant performance visualization.',
+          solution: 'Implemented a high-speed OMR-based data capture system using ruggedized "OEE Log Sheets". Operators bubble in machine status and output, which are scanned and processed by eVAL OMR using proprietary color-coded logic (Blue/Green/Orange/Pink) for instant visualization.',
           features: [
-            { title: 'OEE Chart Logic', items: ['Shift-based performance tracking', 'Color-coded range value mapping'] },
-            { title: 'Reporting Engine', items: ['Automated monthly report generation', 'Multi-format exports (CSV, Excel, PDF)'] }
+            { title: 'OEE Logic Engine', items: ['Shift-segregated performance tracking', 'Color-coded threshold mapping (Blue to Pink)'] },
+            { title: 'Reporting Analytics', items: ['Automated OEE dashboard generation', 'Instant CSV/PDF export for ISO compliance'] }
           ],
           outcomes: [
-            'Eliminated 100% human calculation errors',
-            'Increased decision-making efficiency',
-            'Streamlined multi-shift performance audits'
+            'Data Precision: Eliminated 100% of manual calculation errors',
+            'Time Efficiency: Reduced monthly reporting time from 5 days to 10 minutes',
+            'Proactive Maintenance: Identified machinery bottlenecks 25% faster'
           ]
         },
         // {
@@ -271,29 +271,55 @@ const CaseStudies = () => {
       icon: <Icons.Trophy size={24} />,
       cases: [
         {
-          title: 'Global Science Olympiad',
-          client: 'Education Foundation',
-          tagline: 'Unified Global Merit Ranking',
-          tags: ['Global', 'Hybrid', 'Ranking'],
+          title: 'Olympiad Management Solution',
+          client: 'Leading Pan-India Olympiad Organization',
+          tagline: 'End-to-End Automated Examination Workflow',
+          tags: ['Pan India', 'Automation', '1000+ Schools'],
           color: '#8B5CF6',
-          background: 'Conducting a science Olympiad for students across 12 countries with a single unified merit list.',
+          background: 'A leading Olympiad organization conducting offline examinations across Pan India with more than 1,000+ schools was managing the entire examination process manually. From student registration and payment collection to OMR evaluation and result generation, every activity required significant manpower, resulting in delays and operational challenges.',
           points: [
-            'Time-zone synced testing',
-            'Multi-currency registration support',
-            'International rank calculation',
-            'Digital global certifications'
+            'Manual registration and payment collection challenges',
+            'Complex logistics for 1,000+ schools',
+            'Delayed OMR evaluation and result generation',
+            'Difficulties in managing large-scale examinations efficiently'
           ],
-          solution: 'Cloud-based hybrid platform supporting both OMR and CBT for international reach.',
+          solution: 'We introduced a complete end-to-end Olympiad Management Solution that automated the entire examination workflow, streamlining operations and improving accuracy across all participating schools.',
           features: [
-            { title: 'Global Sync', items: ['Real-time participation tracking', 'Unified scoring engine'] },
-            { title: 'Certification Hub', items: ['Digital badge generation', 'Secured sharable results'] }
+            { title: 'Registration & Portals', items: ['Website Design & Development', 'School & Student Registration Portal', 'Online Payment Management', 'Online Mock Examination Platform'] },
+            { title: 'Operational Logistics', items: ['Logistics Management', 'OMR Sheet Printing & Personalization', 'OMR Processing & Evaluation'] },
+            { title: 'Post-Exam Analytics', items: ['Result Generation & Performance Analytics', 'Automated E-Certificate Generation'] }
           ],
           outcomes: [
-            'Rankings published in 48 hours',
-            'Participants from 12 countries managed seamlessly',
-            'Enhanced global brand value for the foundation'
+            'Lakhs of candidates managed smoothly every year',
+            'Fully automated and scalable digital platform',
+            'Faster processing and accurate results',
+            'Seamless experience for schools and students'
           ]
-        }
+        },
+        // {
+        //   title: 'Global Science Olympiad',
+        //   client: 'Education Foundation',
+        //   tagline: 'Unified Global Merit Ranking',
+        //   tags: ['Global', 'Hybrid', 'Ranking'],
+        //   color: '#8B5CF6',
+        //   background: 'Conducting a science Olympiad for students across 12 countries with a single unified merit list.',
+        //   points: [
+        //     'Time-zone synced testing',
+        //     'Multi-currency registration support',
+        //     'International rank calculation',
+        //     'Digital global certifications'
+        //   ],
+        //   solution: 'Cloud-based hybrid platform supporting both OMR and CBT for international reach.',
+        //   features: [
+        //     { title: 'Global Sync', items: ['Real-time participation tracking', 'Unified scoring engine'] },
+        //     { title: 'Certification Hub', items: ['Digital badge generation', 'Secured sharable results'] }
+        //   ],
+        //   outcomes: [
+        //     'Rankings published in 48 hours',
+        //     'Participants from 12 countries managed seamlessly',
+        //     'Enhanced global brand value for the foundation'
+        //   ]
+        // }
       ]
     }
   ];

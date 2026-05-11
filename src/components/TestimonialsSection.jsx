@@ -78,6 +78,33 @@ const TestimonialsSection = () => {
       images: [
         '/assets/images/Testimonials/qsarthi.png'
       ]
+    },
+    {
+      quote: "National Cadet Corps(NCC) is pleased to place on record its appreciation for the eVAL Examination Software provided by VIR Softech Pvt. Ltd. The implementation of this solution has greatly enhanced the efficiency and transparency of our examination answer script evaluation process. The software is well-structured, easy to operate, and has enabled our evaluators and administrators to complete assessments in a much faster and more organized manner. We would also like to acknowledge the dedicated technical assistance and timely support extended by the VIR Softech team during deployment, training and live operations. Their professional approach and responsiveness ensured a seamless transition from conventional evaluation methods to a modern digital platform.",
+      author: 'Brig KS BAWA',
+      role: 'Gp Cdr',
+      org: "NCC Group HQ Mumbai 'A'",
+      images: [
+        '/assets/images/Testimonials/ncc.png'
+      ]
+    },
+    {
+      quote: "We would like to share our experience of eVAL OMR reader software. We are pleased with the services and support provided through the eVAL OMR Reading Software. The software has helped streamline the OMR answer sheet processing work with good accuracy and faster result generation. The platform is easy to operate and has reduced manual effort and chances of human error during OMR evaluation. One of the useful features is the ability to design customized OMR sheets as per examination requirements. The overall performance and support provided by VIR Softech have been satisfactory. At the same time, there is scope for further improvement in terms of OMR sheet design flexibility. Currently, some customization options are limited, such as modification of bubble size and certain layout parameters according to institutional requirements. Additional flexibility in OMR template design would make the software even more user-friendly and adaptable. Overall, our experience with the software has been positive, and we appreciate VIR Softech for providing a reliable OMR evaluation solution.",
+      author: 'V.K. Vishwakarma',
+      role: 'Examination Manager',
+      org: 'School for Aircraft Maintenance Engineering',
+      images: [
+        '/assets/images/Testimonials/same.png'
+      ]
+    },
+    {
+      quote: "We are highly satisfied with the OMR Evaluation Software provided by Virsoftech. Their solution has significantly improved the accuracy, efficiency, and speed of our examination evaluation process. The software is user-friendly, reliable, and supported by a highly responsive technical team. Virsoftech has proven to be a dependable technology partner, and we confidently recommend their OMR Evaluation Software to institutions seeking efficient and accurate examination management solutions",
+      author: 'Team RPSIS‑89',
+      role: 'RPS International School',
+      org: 'Gurugram',
+      images: [
+        '/assets/images/Testimonials/rpsis.jpg'
+      ]
     }
   ];
 

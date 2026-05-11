@@ -171,7 +171,7 @@ const OlympiadPage = () => {
               <Reveal delay={0.2}>
                 <div style={{ position: 'relative', zIndex: 1 }}>
                   <img
-                    src="/assets/images/olympiad_hero.webp"
+                    src="/assets/images/olympiad_hero.png"
                     alt="Olympiad Portal Dashboard"
                     style={{ width: '100%', height: 'auto', borderRadius: '2rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)', border: '1px solid var(--border)' }}
                   />
@@ -193,10 +193,10 @@ const OlympiadPage = () => {
             title={<>Everything You Need for <span className="gradient-text">Success</span></>}
             text="A modular approach to examination management, tailored for efficiency."
           />
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', 
-            gap: '1.5rem' 
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
+            gap: '1.5rem'
           }}>
             {keyFeatures.map((f, i) => (
               <Reveal key={i} delay={i * 0.05}>
