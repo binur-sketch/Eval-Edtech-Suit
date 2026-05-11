@@ -1,16 +1,16 @@
 import React from 'react';
-import { 
-  Smartphone, 
-  Zap, 
-  UploadCloud, 
-  Target, 
-  Maximize2, 
-  Wrench, 
-  Users, 
-  DollarSign, 
-  ShieldCheck, 
-  MessageSquare, 
-  ArrowRight, 
+import {
+  Smartphone,
+  Zap,
+  UploadCloud,
+  Target,
+  Maximize2,
+  Wrench,
+  Users,
+  DollarSign,
+  ShieldCheck,
+  MessageSquare,
+  ArrowRight,
   Layout,
   CheckCircle2
 } from 'lucide-react';
@@ -90,26 +90,26 @@ const MobileApp = () => {
       />
 
       {/* Hero Section */}
-      <section className="section-padding" style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, white 100%)', overflow: 'hidden' }}>
+      <section style={{ padding: '2.5rem 0', background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, white 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: 'clamp(1rem, 3vw, 2rem)', alignItems: 'center' }}>
             <div style={{ flex: '1.2' }}>
-              <span className="badge" style={{ background: 'var(--primary-light)', color: 'var(--primary)' }}>New: Mobile Revolution</span>
-              <h1 style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>The Future of <span className="gradient-text">OMR Scanning</span> is Mobile</h1>
-              <p style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: '1.7', color: 'var(--muted-foreground)', marginBottom: '1.5rem' }}>
+              <span className="badge" style={{ background: 'var(--primary-light)', color: 'var(--primary)', marginBottom: '0.75rem', padding: '0.4rem 1rem' }}>New: Mobile Revolution</span>
+              <h1 style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', marginBottom: '0.75rem' }}>The Future of <span className="gradient-text">OMR Scanning</span> is Mobile</h1>
+              <p style={{ fontSize: 'clamp(0.95rem, 1.5vw, 1.05rem)', lineHeight: '1.6', color: 'var(--muted-foreground)', marginBottom: '0.75rem' }}>
                 Replace expensive, bulky hardware scanners with the eVAL Mobile Application. Turn any smartphone into a high-precision OMR scanning hub that transfers data directly to your evaluation software.
               </p>
-              <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
-                <Link to="/contact" className="btn btn-primary">Download App</Link>
-                <Link to="/book-demo" className="btn btn-outline">Watch Demo Video</Link>
+              <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+                <Link to="/contact" className="btn btn-primary" style={{ padding: '0.75rem 1.5rem' }}>Contact Us</Link>
+                <Link to="/book-demo" className="btn btn-outline" style={{ padding: '0.75rem 1.5rem' }}>Book Demo</Link>
               </div>
             </div>
-            <div style={{ position: 'relative', maxWidth: '320px', marginLeft: 'auto', marginRight: 'auto' }}>
+            <div style={{ position: 'relative', maxWidth: '260px', marginLeft: 'auto', marginRight: 'auto' }}>
               <div className="phone-mockup-wrapper">
-                <img 
-                  src="/assets/images/Mobile App.jpeg" 
-                  alt="eVAL Mobile App" 
-                  style={{ width: '100%', height: 'auto', borderRadius: '3.5rem', boxShadow: '0 40px 80px rgba(0,0,0,0.2)', border: '12px solid #1e293b' }} 
+                <img
+                  src="/assets/images/Mobile App.jpeg"
+                  alt="eVAL Mobile App"
+                  style={{ width: '100%', height: 'auto', borderRadius: '3rem', boxShadow: '0 30px 60px rgba(0,0,0,0.2)', border: '10px solid #1e293b' }}
                 />
                 <div className="phone-glow"></div>
               </div>
@@ -127,11 +127,11 @@ const MobileApp = () => {
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {features.map((f, i) => (
-              <div key={i} style={{ 
-                background: 'white', 
-                padding: '2.5rem', 
-                borderRadius: '2rem', 
-                height: '100%', 
+              <div key={i} style={{
+                background: 'white',
+                padding: '2.5rem',
+                borderRadius: '2rem',
+                height: '100%',
                 border: '1px solid var(--border)',
                 transition: 'transform 0.3s ease'
               }} className="hover-lift reveal">
@@ -164,10 +164,10 @@ const MobileApp = () => {
                   { step: '4', title: 'Final Report', desc: 'Generate reports on your PC just as you would with a hardware scanner.' }
                 ].map((item, i) => (
                   <div key={i} style={{ display: 'flex', gap: '1rem' }}>
-                    <div style={{ 
-                      width: '32px', height: '32px', borderRadius: '50%', background: 'var(--primary)', 
-                      color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', 
-                      fontSize: '0.8rem', fontWeight: '800', flexShrink: 0 
+                    <div style={{
+                      width: '32px', height: '32px', borderRadius: '50%', background: 'var(--primary)',
+                      color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontSize: '0.8rem', fontWeight: '800', flexShrink: 0
                     }}>{item.step}</div>
                     <div>
                       <h4 style={{ fontSize: '1.05rem', marginBottom: '0.25rem' }}>{item.title}</h4>
@@ -196,10 +196,10 @@ const MobileApp = () => {
             badge="Institutional Gains"
             title={<>Mobile <span className="gradient-text">Advantages</span></>}
           />
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-            gap: '1.5rem' 
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '1.5rem'
           }}>
             {benefits.map((b, i) => (
               <div key={i} style={{ padding: '2rem', borderRadius: '1.5rem', background: 'white', border: '1px solid var(--border)' }}>
@@ -215,10 +215,10 @@ const MobileApp = () => {
       {/* CTA */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ 
-            background: 'var(--secondary)', 
-            borderRadius: '3rem', 
-            padding: '5rem 2rem', 
+          <div style={{
+            background: 'var(--secondary)',
+            borderRadius: '3rem',
+            padding: '5rem 2rem',
             textAlign: 'center',
             color: 'white'
           }}>

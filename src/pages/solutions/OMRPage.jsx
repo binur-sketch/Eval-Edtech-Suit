@@ -132,7 +132,7 @@ const OMRPage = () => {
               </p>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '3rem', flexWrap: 'wrap' }}>
                 <a href="#workflow" className="btn btn-outline">See the Workflow</a>
-                <Link to="https://omrsoftware.com/" className="btn btn-primary" target='blank'>Visit OMR Software Website</Link>
+                <Link to="https://omrsoftware.com/" className="btn btn-primary" target='blank'>Explore More</Link>
               </div>
             </div>
             <div style={{ position: 'relative', maxWidth: '680px', marginLeft: 'auto' }}>

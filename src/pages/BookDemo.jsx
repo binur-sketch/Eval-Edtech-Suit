@@ -5,6 +5,7 @@ import { useFormSubmit } from '@/hooks/useFormSubmit';
 import FormStatus from '@/components/common/FormStatus';
 import SEO from '@/components/common/SEO';
 import SuccessModal from '@/components/common/SuccessModal';
+import { countries } from '@/lib/countryData';
 
 const BookDemo = () => {
   const [formData, setFormData] = useState({
@@ -27,12 +28,6 @@ const BookDemo = () => {
     'LMS Portal'
   ];
 
-  const countries = [
-    'India', 'Nigeria', 'Kenya', 'United Arab Emirates', 'Saudi Arabia',
-    'South Africa', 'Singapore', 'United States', 'United Kingdom',
-    'Canada', 'Australia', 'Other'
-  ];
-
   const [showSuccess, setShowSuccess] = useState(false);
 
   const { status, message, submitForm } = useFormSubmit({
@@ -41,7 +36,22 @@ const BookDemo = () => {
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    
+    if (name === 'country') {
+      const selectedCountry = countries.find(c => c.name === value);
+      if (selectedCountry) {
+        setFormData({
+          ...formData,
+          country: value,
+          phone: selectedCountry.dial_code + ' '
+        });
+      } else {
+        setFormData({ ...formData, country: value });
+      }
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleCheckboxChange = (product) => {
@@ -130,7 +140,10 @@ const BookDemo = () => {
                   <div className="input-group">
                     <label>Country</label>
                     <select name="country" required value={formData.country} onChange={handleChange}>
-                      {countries.map(c => <option key={c} value={c}>{c}</option>)}
+                      <option value="">Please Select</option>
+                      {[...countries].sort((a, b) => a.name.localeCompare(b.name)).map(c => (
+                        <option key={c.code} value={c.name}>{c.name}</option>
+                      ))}
                     </select>
                   </div>
                 </div>

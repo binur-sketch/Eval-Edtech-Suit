@@ -8,35 +8,18 @@ import SectionHeader from '@/components/common/SectionHeader';
 import SuccessModal from '@/components/common/SuccessModal';
 import { useState } from 'react';
 
+import { countries } from '@/lib/countryData';
+
 const Partner = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [phone, setPhone] = useState('');
 
-  const countryCodes = {
-    'India': '+91',
-    'USA': '+1',
-    'UK': '+44',
-    'Japan': '+81',
-    'Canada': '+1',
-    'Australia': '+61',
-    'Germany': '+49',
-    'France': '+33',
-    'UAE': '+971',
-    'Singapore': '+65',
-    'South Africa': '+27',
-    'Brazil': '+55',
-    'China': '+86',
-    'Russia': '+7',
-    'Mexico': '+52',
-    'Italy': '+39'
-  };
-
   const handleCountryChange = (e) => {
-    const country = e.target.value;
-    const code = countryCodes[country];
-    if (code) {
-      setPhone(code + ' ');
+    const countryName = e.target.value;
+    const country = countries.find(c => c.name === countryName);
+    if (country) {
+      setPhone(country.dial_code + ' ');
     }
   };
 
@@ -246,8 +229,8 @@ const Partner = () => {
                         style={{ width: '100%', border: 'none', borderBottom: '2px solid #e2e8f0', padding: '0.75rem 0', fontSize: '1rem', outline: 'none', background: 'transparent' }}
                       >
                         <option value="">Please Select</option>
-                        {Object.keys(countryCodes).sort().map(country => (
-                          <option key={country} value={country}>{country}</option>
+                        {[...countries].sort((a, b) => a.name.localeCompare(b.name)).map(country => (
+                          <option key={country.code} value={country.name}>{country.name}</option>
                         ))}
                       </select>
                     </div>

@@ -48,7 +48,7 @@ const Hero = () => {
         <div className="glow-circle glow-2"></div>
       </div>
 
-      <div className="container hero-v4-inner">
+      <div className={slides[currentSlide].visual === "diagram" ? "hero-v4-inner-full" : "container hero-v4-inner"}>
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -81,16 +81,14 @@ const Hero = () => {
 
             <div className={`hero-v4-visual ${slides[currentSlide].visual === "diagram" ? 'full-width' : ''}`}>
               {slides[currentSlide].visual === "diagram" ? (
-                <div className="ecosystem-container detailed-suite" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
+                <div className="ecosystem-container detailed-suite" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: 'auto' }}>
                   <img
                     src="/assets/images/ecosystem-diagram.png"
                     alt="eVAL Examination Evaluation Suite Ecosystem"
                     style={{
-                      width: 'auto',
+                      width: '100%',
                       height: 'auto',
-                      maxWidth: 'min(100%, 1000px)',
-                      maxHeight: '70vh',
-                      objectFit: 'contain',
+                      maxWidth: '1440px',
                       borderRadius: '20px',
                       boxShadow: '0 20px 50px rgba(0,0,0,0.5)'
                     }}
@@ -206,12 +204,17 @@ const Hero = () => {
           left: -5%;
         }
 
-        .hero-v4-inner {
+        .hero-v4-inner, .hero-v4-inner-full {
           position: relative;
           z-index: 2;
           width: 100%;
           display: flex;
           justify-content: center;
+        }
+
+        .hero-v4-inner-full {
+          max-width: 100%;
+          padding: 0 4rem;
         }
 
         .hero-v4-grid {
@@ -234,6 +237,7 @@ const Hero = () => {
           gap: 1rem;
           width: 100%;
           height: 100%;
+          max-width: 100%;
         }
 
         .hero-v4-grid.diagram-mode .hero-v4-content {
@@ -366,8 +370,8 @@ const Hero = () => {
 
         .ecosystem-container {
           position: relative;
-          width: 1100px;
-          height: 550px;
+          width: 100%;
+          height: auto;
           transform-origin: center center;
         }
 
