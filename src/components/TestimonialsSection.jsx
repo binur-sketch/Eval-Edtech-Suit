@@ -89,7 +89,7 @@ const TestimonialsSection = () => {
       ]
     },
     {
-      quote: "We would like to share our experience of eVAL OMR reader software. We are pleased with the services and support provided through the eVAL OMR Reading Software. The software has helped streamline the OMR answer sheet processing work with good accuracy and faster result generation. The platform is easy to operate and has reduced manual effort and chances of human error during OMR evaluation. One of the useful features is the ability to design customized OMR sheets as per examination requirements. The overall performance and support provided by VIR Softech have been satisfactory. At the same time, there is scope for further improvement in terms of OMR sheet design flexibility. Currently, some customization options are limited, such as modification of bubble size and certain layout parameters according to institutional requirements. Additional flexibility in OMR template design would make the software even more user-friendly and adaptable. Overall, our experience with the software has been positive, and we appreciate VIR Softech for providing a reliable OMR evaluation solution.",
+      quote: "We would like to share our experience of eVAL OMR reader software. We are pleased with the services and support provided through the eVAL OMR Reading Software. The software has helped streamline the OMR answer sheet processing work with good accuracy and faster result generation. The platform is easy to operate and has reduced manual effort and chances of human error during OMR evaluation. One of the useful features is the ability to design customized OMR sheets as per examination requirements. The overall performance and support provided by VIR Softech have been satisfactory.",
       author: 'V.K. Vishwakarma',
       role: 'Examination Manager',
       org: 'School for Aircraft Maintenance Engineering',
@@ -117,7 +117,7 @@ const TestimonialsSection = () => {
   }, [testimonials.length]);
 
   return (
-    <section id="testimonials" className="section-padding" style={{ background: 'var(--muted)', overflow: 'hidden' }}>
+    <section id="testimonials" className="section-padding" style={{ background: 'white', overflow: 'hidden' }}>
       <div className="container">
         <SectionHeader
           badge="Global Success"
@@ -158,11 +158,11 @@ const TestimonialsSection = () => {
                     <div style={{ color: 'var(--primary)', marginBottom: '1.5rem' }}>
                       <Icons.Quote size={48} fill="var(--primary)" strokeWidth={0} />
                     </div>
-                    
-                    <p style={{ 
-                      fontSize: '1.0625rem', 
-                      lineHeight: '1.7', 
-                      color: 'var(--muted-foreground)', 
+
+                    <p style={{
+                      fontSize: '1.0625rem',
+                      lineHeight: '1.7',
+                      color: 'var(--muted-foreground)',
                       marginBottom: '4rem',
                       fontWeight: '500'
                     }}>
@@ -186,10 +186,10 @@ const TestimonialsSection = () => {
                         alignItems: 'center',
                         justifyContent: 'center'
                       }}>
-                        <img 
-                          src={testimonials[idx].images[0]} 
-                          alt="Client" 
-                          style={{ width: '85%', height: '85%', objectFit: 'contain' }} 
+                        <img
+                          src={testimonials[idx].images[0]}
+                          alt="Client"
+                          style={{ width: '85%', height: '85%', objectFit: 'contain' }}
                         />
                       </div>
                     </div>

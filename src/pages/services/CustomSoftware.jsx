@@ -52,7 +52,7 @@ const CustomSoftware = () => {
       </section>
 
       {/* Expertise */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--primary-light)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2>Our <span className="gradient-text">Expertise</span></h2>
@@ -60,7 +60,7 @@ const CustomSoftware = () => {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
             {expertise.map((e, i) => (
-              <div key={i} className="card" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.5rem', background: 'var(--muted)' }}>
+              <div key={i} className="card hover-lift" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.5rem', background: 'white' }}>
                 <div style={{ color: 'var(--primary)', flexShrink: 0 }}><Icons.CheckCircle size={20} /></div>
                 <div style={{ fontWeight: '700', fontSize: '0.9375rem' }}>{e}</div>
               </div>
@@ -70,14 +70,14 @@ const CustomSoftware = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section-padding" style={{ background: 'var(--muted)' }}>
+      <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2>Key <span className="gradient-text">Features</span></h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
             {features.map((f, i) => (
-              <div key={i} className="card" style={{ padding: '3rem', background: 'var(--muted)' }}>
+              <div key={i} className="card hover-lift" style={{ padding: '3rem', background: 'white' }}>
                 <h3 style={{ fontSize: '1.25rem', marginBottom: '1.25rem', color: 'var(--primary)' }}>{f.title}</h3>
                 <p style={{ fontSize: '0.9375rem', color: 'var(--muted-foreground)', lineHeight: '1.6', marginBottom: 0 }}>{f.desc}</p>
               </div>
@@ -87,7 +87,7 @@ const CustomSoftware = () => {
       </section>
 
       {/* Reasons */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ background: 'var(--primary-light)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <div>

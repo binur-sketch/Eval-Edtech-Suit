@@ -12,6 +12,7 @@ import ServicesSection from '@/components/ServicesSection';
 import IndustryVerticals from '@/components/IndustryVerticals';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import CertificationsSection from '@/components/CertificationsSection';
+import AwardsSection from '@/components/AwardsSection';
 import FAQ from '@/components/FAQ';
 import StatsSection from '@/components/StatsSection';
 import TeamSection from '@/components/TeamSection';
@@ -251,9 +252,12 @@ const Home = () => {
       <Reveal width="100%">
         <CertificationsSection />
       </Reveal>
+      <Reveal width="100%">
+        <AwardsSection />
+      </Reveal>
 
       {/* Case Studies Slider */}
-      <section id="case-studies" className="section-padding" style={{ background: 'white' }}>
+      <section id="case-studies" className="section-padding" style={{ background: 'var(--muted)' }}>
 
 
         <div className="container">
