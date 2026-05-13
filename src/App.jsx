@@ -12,7 +12,6 @@ const Blog = lazy(() => import('./pages/Blogs')); // Using Blogs for insights an
 const BookDemo = lazy(() => import('./pages/BookDemo'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
-const Products = lazy(() => import('./pages/Products'));
 const CaseStudies = lazy(() => import('./pages/CaseStudies'));
 const Partner = lazy(() => import('./pages/Partner'));
 
@@ -66,7 +65,6 @@ function App() {
             <Route path="/book-demo" element={<BookDemo />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/products" element={<Products />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/partner" element={<Partner />} />
 
@@ -93,7 +91,6 @@ function App() {
             <Route path="/admin" element={<AdminDashboard />} />
 
             {/* Fallbacks */}
-            <Route path="/qpms" element={<QPMSPage />} />
             <Route path="/solutions/omr" element={<OMRPage />} />
             <Route path="/solutions/cbt" element={<CBTPage />} />
             <Route path="/solutions/lms" element={<LMSPage />} />

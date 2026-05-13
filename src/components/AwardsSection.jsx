@@ -3,30 +3,30 @@ import Reveal from './common/Reveal';
 
 const AwardsSection = () => {
   const awards = [
-    { 
-      src: '/assets/images/award_best_edtech.png', 
-      title: 'Best EdTech Solution',
-      desc: 'Annual Innovation Excellence'
+    {
+      src: '/assets/images/award_best_edtech.png',
+      name: 'New Normal Award',
+      desc: 'Partner Recognition'
     },
-    { 
-      src: '/assets/images/award_innovation.png', 
-      title: 'Innovation in Assessment',
-      desc: 'Tech Leadership Summit'
+    {
+      src: '/assets/images/award_innovation.png',
+      name: 'Amar Ujala',
+      desc: 'Leading Technology Company in Education Domain'
     },
-    { 
-      src: '/assets/images/award_excellence.png', 
-      title: 'Excellence in Tech',
-      desc: 'Global Education Awards'
+    {
+      src: '/assets/images/award_excellence.png',
+      name: 'Deccan College Pune',
+      desc: 'Appreciation for development of Virasat'
     },
-    { 
-      src: '/assets/images/award_top_omr.png', 
-      title: 'Top OMR Provider',
-      desc: 'Market Leadership Recognition'
+    {
+      src: '/assets/images/award_top_omr.png',
+      name: 'EGN- Winner',
+      desc: 'Excellence in Education Technology'
     },
-    { 
-      src: '/assets/images/award_trusted.png', 
-      title: 'Trusted Institutional Partner',
-      desc: 'Academic Partnership Excellence'
+    {
+      src: '/assets/images/award_trusted.png',
+      name: 'New Normal Award',
+      desc: 'Partner Excellence'
     }
   ];
 
@@ -35,20 +35,20 @@ const AwardsSection = () => {
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <Reveal>
-            <p style={{ 
-              fontSize: '0.75rem', 
-              fontWeight: '800', 
-              textTransform: 'uppercase', 
-              letterSpacing: '0.15em', 
-              color: 'var(--primary)', 
-              marginBottom: '0.75rem' 
+            <p style={{
+              fontSize: '0.75rem',
+              fontWeight: '800',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: 'var(--primary)',
+              marginBottom: '0.75rem'
             }}>
               Recognition
             </p>
-            <h3 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
+            <h3 style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', fontWeight: 800, marginBottom: '1rem' }}>
               Awards & <span className="gradient-text">Recognitions</span>
             </h3>
-            <p style={{ color: 'var(--muted-foreground)', maxWidth: '600px', margin: '0 auto' }}>
+            <p style={{ color: 'var(--muted-foreground)', maxWidth: '600px', margin: '0 auto', fontSize: '1.125rem' }}>
               Our commitment to excellence has been recognized by leading industry bodies and educational institutions.
             </p>
           </Reveal>
@@ -56,48 +56,58 @@ const AwardsSection = () => {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '3rem',
-          alignItems: 'start'
-        }}>
+          gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+          gap: '1.5rem',
+          alignItems: 'stretch'
+        }} className="awards-grid">
           {awards.map((award, i) => (
             <Reveal key={i} delay={i * 0.1} direction="up">
-              <div style={{ textAlign: 'center' }}>
-                <div className="hover-lift" style={{
-                  background: 'var(--muted)',
-                  borderRadius: '2rem',
-                  padding: '2.5rem',
-                  marginBottom: '1.5rem',
+              <div className="hover-lift" style={{ 
+                textAlign: 'center', 
+                height: '100%', 
+                display: 'flex', 
+                flexDirection: 'column',
+                background: 'white',
+                padding: '1.25rem',
+                borderRadius: '2rem',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.04)',
+                transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
+              }}>
+                <div style={{
+                  borderRadius: '1.25rem',
+                  overflow: 'hidden',
+                  marginBottom: '1.25rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  aspectRatio: '1',
-                  border: '1px solid var(--border)',
-                  transition: 'all 0.4s ease'
+                  aspectRatio: '1.2',
+                  padding: '0'
                 }}>
                   <img
                     src={award.src}
-                    alt={award.title}
-                    style={{ 
-                      width: '100%', 
-                      height: '100%', 
-                      objectFit: 'contain',
-                      filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.1))'
+                    alt={award.name}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'contain'
                     }}
                   />
                 </div>
-                <h4 style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: '800', 
-                  marginBottom: '0.5rem',
-                  color: 'var(--foreground)'
+                <h4 style={{
+                  fontSize: '0.875rem',
+                  fontWeight: '800',
+                  marginBottom: '0.4rem',
+                  color: 'var(--secondary)',
+                  lineHeight: '1.3'
                 }}>
-                  {award.title}
+                  {award.name}
                 </h4>
                 <p style={{ 
-                  fontSize: '0.875rem', 
-                  color: 'var(--muted-foreground)',
-                  fontWeight: '600'
+                  fontSize: '0.75rem', 
+                  color: 'var(--muted-foreground)', 
+                  lineHeight: '1.4',
+                  margin: 0,
+                  fontWeight: '500'
                 }}>
                   {award.desc}
                 </p>
@@ -105,6 +115,14 @@ const AwardsSection = () => {
             </Reveal>
           ))}
         </div>
+
+        <style>{`
+          @media (min-width: 1024px) {
+            .awards-grid {
+              grid-template-columns: repeat(5, 1fr) !important;
+            }
+          }
+        `}</style>
       </div>
     </section>
   );

@@ -37,7 +37,12 @@ const Partner = () => {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify({
+          ...data,
+          _subject: "New Partnership Form Inquiry from eVAL Website",
+          _template: 'table',
+          form_type: "Partnership Form"
+        })
       });
 
       if (response.ok) {
@@ -214,7 +219,12 @@ const Partner = () => {
                         type="tel"
                         name="phone"
                         value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          if (/^[0-9+\s]*$/.test(val)) {
+                            setPhone(val);
+                          }
+                        }}
                         placeholder="+91 99999 99999"
                         required
                         style={{ width: '100%', border: 'none', borderBottom: '2px solid #e2e8f0', padding: '0.75rem 0', fontSize: '1rem', outline: 'none' }}

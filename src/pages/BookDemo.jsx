@@ -49,6 +49,10 @@ const BookDemo = () => {
       } else {
         setFormData({ ...formData, country: value });
       }
+    } else if (name === 'phone') {
+      if (/^[0-9+\s]*$/.test(value)) {
+        setFormData({ ...formData, [name]: value });
+      }
     } else {
       setFormData({ ...formData, [name]: value });
     }
