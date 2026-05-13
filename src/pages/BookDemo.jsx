@@ -10,7 +10,7 @@ import { countries } from '@/lib/countryData';
 const BookDemo = () => {
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
+    phone: '+91 ',
     email: '',
     organization: '',
     country: 'India',
@@ -32,7 +32,18 @@ const BookDemo = () => {
 
   const { status, message, submitForm } = useFormSubmit({
     successMessage: "Your demo request has been received! Our Team will contact you within 24 hours.",
-    onSuccess: () => setShowSuccess(true)
+    onSuccess: () => {
+      setShowSuccess(true);
+      setFormData({
+        name: '',
+        phone: '+91 ',
+        email: '',
+        organization: '',
+        country: 'India',
+        solutions: ['Complete eVAL Suite'],
+        message: ''
+      });
+    }
   });
 
   const handleChange = (e) => {

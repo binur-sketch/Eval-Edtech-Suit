@@ -13,12 +13,14 @@ import { countries } from '@/lib/countryData';
 const Partner = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const [phone, setPhone] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState('India');
+  const [phone, setPhone] = useState('+91 ');
 
   const handleCountryChange = (e) => {
     const countryName = e.target.value;
     const country = countries.find(c => c.name === countryName);
     if (country) {
+      setSelectedCountry(country.name);
       setPhone(country.dial_code + ' ');
     }
   };
@@ -48,7 +50,8 @@ const Partner = () => {
       if (response.ok) {
         setShowSuccess(true);
         e.target.reset();
-        setPhone('');
+        setSelectedCountry('India');
+        setPhone('+91 ');
       }
     } catch (error) {
       console.error("Submission error:", error);
@@ -235,6 +238,7 @@ const Partner = () => {
                       <select
                         name="country"
                         required
+                        value={selectedCountry}
                         onChange={handleCountryChange}
                         style={{ width: '100%', border: 'none', borderBottom: '2px solid #e2e8f0', padding: '0.75rem 0', fontSize: '1rem', outline: 'none', background: 'transparent' }}
                       >

@@ -135,6 +135,31 @@ const CaseStudies = () => {
             'Standardized dataset for policy analysis'
           ]
         },
+        {
+          title: 'Ethiopia National Examination Transformation',
+          client: 'Ethiopian Assessment & Examination Service (EAES)',
+          tagline: 'Nationwide Digital OMR Examination Platform',
+          tags: ['International', 'UNOPS', 'Scalability'],
+          color: '#6366F1',
+          background: 'EAES conducts large-scale national examinations for millions of students. They transitioned from expensive proprietary hardware and vendor-dependent systems to a scalable digital platform.',
+          points: [
+            'Dependency on expensive proprietary OMR hardware',
+            'Slow result processing and limited scalability',
+            'Vendor dependency for system modifications',
+            'Need for secure and transparent evaluation'
+          ],
+          solution: 'Deployed the eVAL OMR Platform in partnership with UNOPS, providing an end-to-end digital examination solution for national-scale assessments.',
+          features: [
+            { title: 'Infrastructure', items: ['40 evaluation workstations deployed', '20 scanner stations for digitization', 'Stations for verification and evaluation'] },
+            { title: 'Rapid Deployment', items: ['Implementation delivered within 3-4 months', 'On-site training completed in 2 weeks', 'Full staff adoption within 1 week'] }
+          ],
+          outcomes: [
+            '200,000+ sheets processed per day',
+            'Significant reduction in examination costs',
+            'Complete removal of proprietary hardware dependency',
+            'Real-time report generation and analytics'
+          ]
+        },
         // {
         //   title: 'National Recruitment Drive',
         //   client: 'Central Agency (UPSC Style)',
