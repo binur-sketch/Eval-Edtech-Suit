@@ -110,6 +110,31 @@ const CaseStudies = () => {
             'Enhanced transparency for educational stakeholders'
           ]
         },
+        {
+          title: 'Odisha State-Wide SEBC Survey - 2023',
+          client: 'Govt of Odisha (Socially & Educationally Backward Classes)',
+          tagline: 'Large-Scale Survey Digitization & Data Analytics',
+          tags: ['Govt', 'OMR/ICR', 'Big Data'],
+          color: '#6366F1',
+          background: 'The 2023 Odisha Socially and Educationally Backward Classes Survey was conducted across 314 blocks and 114 urban local bodies to assess the status of backward communities, capturing data from millions of households.',
+          points: [
+            'Digitization of 55+ lakhs physical survey forms',
+            'Error-free data entry without manual intervention',
+            'Eliminating time delays in processing large datasets',
+            'Standardization across 314 blocks and 114 urban bodies'
+          ],
+          solution: 'Deployed a robust eVAL OMR/ICR Processing Solution built on a Client-Server Architecture for secure and efficient handling of millions of survey forms.',
+          features: [
+            { title: 'Processing Workflow', items: ['High-speed scanning deployment', 'Automated OMR/ICR data extraction', 'Real-time monitoring architecture'] },
+            { title: 'Quality Assurance', items: ['Multi-stage validation (Scanning to Export)', 'Parallel processing in multiple shifts'] }
+          ],
+          outcomes: [
+            '90% reduction in manual data entry effort',
+            'Significant improvement in data accuracy',
+            'Faster processing of millions of records',
+            'Standardized dataset for policy analysis'
+          ]
+        },
         // {
         //   title: 'National Recruitment Drive',
         //   client: 'Central Agency (UPSC Style)',
