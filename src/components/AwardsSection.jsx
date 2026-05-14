@@ -6,7 +6,7 @@ const AwardsSection = () => {
     {
       src: '/assets/images/award_best_edtech.png',
       name: 'New Normal Award',
-      desc: 'Partner Recognition'
+      desc: 'Partner'
     },
     {
       src: '/assets/images/award_innovation.png',
@@ -26,7 +26,7 @@ const AwardsSection = () => {
     {
       src: '/assets/images/award_trusted.png',
       name: 'New Normal Award',
-      desc: 'Partner Excellence'
+      desc: 'Partner'
     }
   ];
 
@@ -62,10 +62,10 @@ const AwardsSection = () => {
         }} className="awards-grid">
           {awards.map((award, i) => (
             <Reveal key={i} delay={i * 0.1} direction="up">
-              <div className="hover-lift" style={{ 
-                textAlign: 'center', 
-                height: '100%', 
-                display: 'flex', 
+              <div className="hover-lift" style={{
+                textAlign: 'center',
+                height: '100%',
+                display: 'flex',
                 flexDirection: 'column',
                 background: 'white',
                 padding: '1.25rem',
@@ -102,9 +102,9 @@ const AwardsSection = () => {
                 }}>
                   {award.name}
                 </h4>
-                <p style={{ 
-                  fontSize: '0.75rem', 
-                  color: 'var(--muted-foreground)', 
+                <p style={{
+                  fontSize: '0.75rem',
+                  color: 'var(--muted-foreground)',
                   lineHeight: '1.4',
                   margin: 0,
                   fontWeight: '500'

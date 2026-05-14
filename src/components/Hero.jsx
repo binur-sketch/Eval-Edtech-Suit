@@ -161,7 +161,7 @@ const Hero = () => {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          padding-top: 60px;
+          padding-top: 120px; /* Account for navbar */
         }
 
         .hero-v4-bg {
@@ -214,7 +214,10 @@ const Hero = () => {
 
         .hero-v4-inner-full {
           max-width: 100%;
-          padding: 0 4rem;
+          padding: 120px 4rem 0; /* Account for navbar */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         .hero-v4-grid {
@@ -710,7 +713,10 @@ const Hero = () => {
           .hero-v4 { 
             height: auto;
             min-height: 800px;
-            padding: 120px 0 60px;
+            padding: 20px 0 60px; /* Reduced top padding as inner has it */
+          }
+          .hero-v4-inner, .hero-v4-inner-full {
+            padding-top: 100px;
           }
         }
 

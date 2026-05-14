@@ -21577,9 +21577,8 @@ const rb = st("VITE_FORM_SUBMIT_BASE_URL", "https://formsubmit.co/ajax"),
   He = {
     recipientEmail: st("VITE_CONTACT_EMAIL", "corp@virsoftech.com"),
     supportEmail: st("VITE_CONTACT_SUPPORT_EMAIL", "support@virsoftech.com"),
-    tollFree: st("VITE_CONTACT_TOLL_FREE", "18005717711"),
     whatsapp: st("VITE_CONTACT_WHATSAPP", "9871258989"),
-    whatsapp2: st("VITE_CONTACT_WHATSAPP2", "9315152290"),
+    whatsapp2: st("VITE_CONTACT_WHATSAPP2", "9319275051"),
     whatsappCountryCode: st("VITE_CONTACT_WHATSAPP_COUNTRY_CODE", "91"),
   },
   Zn = {
