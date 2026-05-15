@@ -101,7 +101,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 style={{ marginBottom: '0.25rem' }}>Call Support</h4>
-                      <p style={{ fontSize: '0.9375rem', margin: 0 }}>+91 9319275051</p>
+                      <p style={{ fontSize: '0.9375rem', margin: 0 }}>
+                        +91 9319275051, +91 9871258989, +91 9312339803
+                      </p>
                     </div>
                   </div>
                 </div>

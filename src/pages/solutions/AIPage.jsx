@@ -183,12 +183,11 @@ const AIPage = () => {
                     padding: '1rem 1.5rem',
                     borderRadius: '1.25rem',
                     boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
-                    display: 'flex',
+                    display: 'none', // Hidden by default
                     alignItems: 'center',
                     gap: '12px',
                     border: '1px solid var(--border)',
                     zIndex: 2,
-                    display: 'none' // Hidden by default, showing only on large screens if desired
                   }}
                 >
                   <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#EF4444', animation: 'pulse 2s infinite' }}></div>

@@ -83,7 +83,7 @@ const PrivacyPolicy = () => {
             <p>Registered Office: A 306, The i-Thum,, Plot No A 40, Block A, Industrial Area,, Sector 62, Noida, Uttar Pradesh 201309</p>
             <p>
               Email: corp@virsoftech.com<br />
-              Website: www.virsoftech.com
+              Website: <a href="https://evalexam.com" style={{ color: 'inherit', textDecoration: 'underline' }}>evalexam.com</a> (Powered by virsoftech.com)
             </p>
 
           </div>
