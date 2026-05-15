@@ -19,23 +19,37 @@ const ClientCategory = ({ title, clients }) => (
       {clients.map((client, i) => {
         const clientName = typeof client === 'string' ? client : client.name;
         const clientLogo = typeof client === 'string' ? null : client.logo;
+        const theme = client.theme || 'light';
+
         return (
           <div key={i} className="hover-lift" style={{
-            background: 'white',
-            border: '1px solid var(--border)',
+            background: theme === 'dark' ? '#002B49' : 'white',
+            border: theme === 'dark' ? 'none' : '1px solid var(--border)',
             borderRadius: '1.5rem',
             height: '160px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: clientLogo ? '0.75rem' : '1.5rem',
+            padding: clientLogo ? '1rem' : '1.5rem',
             textAlign: 'center',
-            transition: 'all 0.3s ease'
+            transition: 'all 0.3s ease',
+            boxShadow: theme === 'dark' ? '0 10px 30px -10px rgba(0,43,73,0.3)' : 'none'
           }}>
             {clientLogo ? (
               <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src={clientLogo} alt={clientName} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+                <img
+                  src={clientLogo}
+                  alt={clientName}
+                  style={{ maxWidth: '85%', maxHeight: '85%', objectFit: 'contain' }}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'block';
+                  }}
+                />
+                <div style={{ display: 'none', fontSize: '0.75rem', fontWeight: '700', color: theme === 'dark' ? 'white' : 'var(--foreground)' }}>
+                  {clientName}
+                </div>
               </div>
             ) : (
               <>
@@ -70,11 +84,13 @@ const Clients = () => {
         { name: 'Physics Wallah', logo: '/assets/images/coaching/physics wallah.webp' },
         { name: 'Aakash Institute', logo: '/assets/images/coaching/aakash logo.png' },
         { name: 'Narayana Institute', logo: '/assets/images/coaching/narayana.png' },
-        { name: 'Career Launcher', logo: '/assets/images/coaching/career launcher.png' },
         { name: 'Sri Chaitanya', logo: '/assets/images/coaching/sri chaitanya.png' },
+        { name: 'TAF IAS Academy', logo: '/assets/images/coaching/taf ias.png' },
+        { name: 'Career Launcher', logo: '/assets/images/coaching/career launcher.png' },
+
         { name: 'Resonance', logo: '/assets/images/coaching/Resonance.png' },
         { name: 'DD Target PMT', logo: '/assets/images/coaching/dd target.webp' },
-        { name: 'TAF IAS Academy', logo: '/assets/images/coaching/taf ias.png' },
+
         { name: 'CEDEES', logo: '/assets/images/coaching/cedeed.png' },
         { name: 'Shaheen Group', logo: '/assets/images/coaching/shaheen.png' },
         { name: 'Bansal Classes', logo: '/assets/images/coaching/bansal classes.png' },
@@ -136,13 +152,39 @@ const Clients = () => {
       ]
     },
     {
+      title: 'International Clients',
+      clients: [
+        { name: 'Trinity College – UK', logo: '/assets/images/International Client/logo-01.webp' },
+        { name: 'DPS Monarch International School – Doha', logo: '/assets/images/International Client/dps-mon-logo.png' },
+        { name: 'Central Washington College of Nursing Sciences and Tech – Nigeria', logo: '/assets/images/International Client/Central washington college nigeria.png', theme: 'dark' },
+        { name: 'Michigan State University – USA', logo: '/assets/images/International Client/msu_logo_white.svg', theme: 'dark' },
+
+        { name: 'GEMS United Indian School – Abu Dhabi', logo: '/assets/images/International Client/UIS_Logo.svg', theme: 'dark' },
+        { name: 'Ministry of Education - Edo State, Nigeria', logo: '/assets/images/International Client/edo-state-government.png' },
+        { name: 'Alexandria University – Egypt', logo: '/assets/images/International Client/logo-alex-en.webp' },
+
+        { name: 'Delhi Private School Sharjah', logo: '/assets/images/International Client/logo_header.png' },
+        { name: 'Birla Public School – Doha', logo: '/assets/images/International Client/logo1.png' },
+        { name: 'The Milleunnium School – Dubai', logo: '/assets/images/International Client/TMS_logo_vector_2025_v2.svg' },
+
+        { name: 'GEMS Our Own Indian School – Dubai', logo: '/assets/images/International Client/OOL_Logo.svg' },
+        { name: 'Assuit University Egypt', logo: '/assets/images/International Client/aun-logo.png' },
+        { name: 'Alamein University Egypt', logo: '/assets/images/International Client/web-Final-logo-02.png' },
+
+        { name: 'City School Ajman', logo: '/assets/images/International Client/logo_small.png' },
+        { name: 'Riyadh College of Excellence – Saudi Arabia', logo: '/assets/images/International Client/logo-1.svg' }
+
+      ]
+    },
+    {
       title: 'Government Bodies',
       clients: [
+        { name: 'UPSC', logo: '/assets/images/government/Union Public Service Commission.png' },
         { name: 'National Cadet Corps', logo: '/assets/images/government/National Cadet Corps.png' },
         { name: 'NCERT', logo: '/assets/images/government/NCERT_300px.svg' },
         { name: 'SCERT', logo: '/assets/images/government/scert.svg' },
         { name: 'NIOS', logo: '/assets/images/government/nios.png' },
-        { name: 'UPSC', logo: '/assets/images/government/Union Public Service Commission.png' },
+
         { name: 'IIM Lucknow', logo: '/assets/images/government/iim lucknow.png' },
         { name: 'Indian Coast Guard', logo: '/assets/images/government/indian coast.png' },
         { name: 'NIPER', logo: '/assets/images/government/niper.jpeg' },

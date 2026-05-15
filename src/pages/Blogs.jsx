@@ -71,22 +71,29 @@ const Blogs = () => {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '3rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+            gap: 'clamp(1.5rem, 5vw, 3rem)'
           }}>
             {/* Sidebar / Category Filter */}
             <aside style={{
               background: 'white',
               borderRadius: '1.5rem',
-              padding: '2rem',
+              padding: 'clamp(1.25rem, 3vw, 2rem)',
               height: 'fit-content',
               border: '1px solid var(--border)',
-              position: 'sticky',
+              position: window.innerWidth > 1024 ? 'sticky' : 'static',
               top: '120px'
             }}>
               <h4 style={{ marginBottom: '1.5rem' }}>Categories</h4>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <div style={{ 
+                display: 'flex', 
+                flexDirection: window.innerWidth > 1024 ? 'column' : 'row', 
+                gap: '0.75rem',
+                flexWrap: 'wrap',
+                overflowX: 'auto',
+                paddingBottom: '0.5rem'
+              }}>
                 {categories.map((cat, i) => {
                   const count =
                     cat === 'All'
@@ -101,24 +108,26 @@ const Blogs = () => {
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'center',
-                        padding: '0.75rem 1rem',
+                        padding: '0.75rem 1.25rem',
                         borderRadius: '0.75rem',
                         border: 'none',
                         cursor: 'pointer',
+                        whiteSpace: 'nowrap',
                         background:
                           activeCategory === cat
                             ? 'var(--primary)'
-                            : 'transparent',
+                            : 'var(--muted)',
                         color:
                           activeCategory === cat
                             ? 'white'
                             : 'var(--foreground)',
-                        fontWeight: '600',
+                        fontWeight: '700',
+                        fontSize: '0.875rem',
                         transition: '0.3s'
                       }}
                     >
-                      <span>{cat}</span>
-                      <span style={{ fontSize: '0.75rem', opacity: 0.8 }}>
+                      <span style={{ marginRight: '0.75rem' }}>{cat}</span>
+                      <span style={{ fontSize: '0.75rem', opacity: 0.6, background: activeCategory === cat ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.05)', padding: '2px 8px', borderRadius: '10px' }}>
                         {count}
                       </span>
                     </button>
@@ -128,7 +137,7 @@ const Blogs = () => {
             </aside>
 
             {/* Blog Content */}
-            <div style={{ gridColumn: 'span 2' }}>
+            <div style={{ gridColumn: window.innerWidth > 1024 ? 'span 2' : 'auto' }}>
               <div style={{
                 display: 'flex',
                 justifyContent: 'space-between',

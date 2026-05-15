@@ -22,7 +22,7 @@ const Home = () => {
 
   const solutions = [
     {
-      title: 'OSM Marking',
+      title: 'On Screen Marking Software',
       desc: 'On-screen evaluation for descriptive answer sheets.',
       path: '/osm',
       icon: <Icons.Users size={28} />,
@@ -30,21 +30,21 @@ const Home = () => {
       isPopular: true
     },
     {
-      title: 'OMR Software',
+      title: 'Optical Mark Reader Software',
       desc: 'Process 300–500 sheets/min with 100% accuracy using plain paper.',
       path: '/omr',
       icon: <Icons.Zap size={28} />,
       color: '#0EA5A4'
     },
     {
-      title: 'CBT Platform',
+      title: 'Computer Based Examination Solution',
       desc: 'Secure online exam system with anti-cheating & analytics.',
       path: '/cbt',
       icon: <Icons.ShieldCheck size={28} />,
       color: '#1F1F1F'
     },
     {
-      title: 'QPM System',
+      title: 'Question Paper Management System',
       desc: 'Advanced question bank with tagging & workflows.',
       path: '/qpms',
       icon: <Icons.Database size={28} />,

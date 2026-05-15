@@ -15,11 +15,11 @@ const BlogDetail = () => {
     const fetchBlogData = async () => {
       try {
         let query = supabase.from('blogs').select('*');
-        
+
         // Determine if we should fetch by ID or Slug
         const isNumeric = /^\d+$/.test(id);
         const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
-        
+
         if (isNumeric) {
           query = query.eq('id', parseInt(id));
         } else if (isUuid) {
@@ -51,12 +51,12 @@ const BlogDetail = () => {
           try {
             console.log('Incrementing views for:', data.id);
             const { error: rpcError } = await supabase.rpc('increment_blog_views', { blog_id: String(data.id) });
-            
+
             if (rpcError) throw rpcError;
-            
+
             // Optimistically update local state so user sees the increase
             setBlog(prev => prev ? { ...prev, views: (prev.views || 0) + 1 } : prev);
-            
+
           } catch (e) {
             console.warn('View count increment failed. Ensure the SQL function "increment_blog_views" exists in your Supabase DB.', e);
           }
@@ -134,13 +134,13 @@ const BlogDetail = () => {
           <Link to="/blog" className="back-link">
             <Icons.ArrowLeft size={18} /> Back to Insights
           </Link>
-          
+
           <div className="hero-content">
             <span className="blog-badge">{blog.category}</span>
             <h1>{blog.title}</h1>
-            
+
             {blog.excerpt && <p className="blog-excerpt">{blog.excerpt}</p>}
-            
+
             <div className="blog-meta">
               <div className="author-info">
                 <div className="author-avatar">{blog.author.charAt(0)}</div>

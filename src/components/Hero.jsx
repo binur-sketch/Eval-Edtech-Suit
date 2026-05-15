@@ -12,7 +12,23 @@ const Hero = () => {
     },
     {
       badge: <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Icons.Award size={14} /> Market Leader</div>,
-      title: <>India's Largest <span className="gradient-text">OMR Software Selling </span> Company</>,
+      title: (
+        <>
+          The Complete Examination <br />
+          <span className="gradient-text" style={{ whiteSpace: "nowrap" }}> Evaluation Suite</span>
+          <br />
+          <span style={{
+            fontSize: "clamp(1.1rem, 2.5vw, 1.3rem)",
+            fontWeight: "800",
+            color: "rgba(255, 255, 255, 0.9)",
+            marginTop: "10px",
+            display: "inline-block"
+          }}>
+            <span style={{ color: "var(--primary)", marginRight: "6px" }}>eVAL{'\u00a0'}OMR</span>{' '}
+            <span style={{ wordSpacing: "4px", letterSpacing: "0.02em" }}>Largest Selling OMR Software</span>
+          </span>
+        </>
+      ),
       desc: "eVAL provides an end-to-end ecosystem for modern institutions—from secure student registration and QPMS to high-speed OMR, OSM, CBT, and AI-driven proctoring.",
       ctaPrimary: "Book Free Demo",
       ctaSecondary: "Explore Solutions",
@@ -52,14 +68,14 @@ const Hero = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 10 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className={`hero-v4-grid ${slides[currentSlide].visual === "diagram" ? 'diagram-mode' : ''}`}
           >
-            {/* Content Area - Only for non-diagram slides */}
-            {slides[currentSlide].visual !== "diagram" && (
+            {/* Content Area - Visible on all slides */}
+            {slides[currentSlide].title && (
               <div className="hero-v4-content">
                 <div className="hero-v4-badge">
                   <div className="pulse-dot"></div>
@@ -149,8 +165,8 @@ const Hero = () => {
         @media (max-width: 768px) {
           .hero-v4 {
             height: auto;
-            min-height: 100vh;
-            padding: 100px 0 60px;
+            min-height: auto;
+            padding: 120px 0 60px;
           }
         }
 
@@ -227,7 +243,7 @@ const Hero = () => {
           align-items: center;
           justify-items: center;
           width: 100%;
-          max-width: 1400px;
+          max-width: 1500px;
           min-height: 600px;
         }
 
@@ -272,7 +288,7 @@ const Hero = () => {
 
         /* Left Content */
         .hero-v4-content {
-          max-width: 600px;
+          max-width: 1000px;
           text-align: left;
         }
 
@@ -305,18 +321,18 @@ const Hero = () => {
         }
 
         .hero-v4-content h1 {
-          font-size: clamp(2.5rem, 4vw, 3.5rem);
+          font-size: clamp(2.2rem, 5vw, 3rem);
           line-height: 1.1;
           font-weight: 900;
           color: white;
-          margin-bottom: 1rem;
+          margin-bottom: 1.5rem;
         }
 
         .hero-v4-content p {
-          font-size: 1.25rem;
+          font-size: clamp(1rem, 2vw, 1.15rem);
           line-height: 1.6;
-          font-weight: 600;
-          color: rgba(255, 255, 255, 0.8);
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.7);
           margin-bottom: 2.5rem;
           max-width: 650px;
         }

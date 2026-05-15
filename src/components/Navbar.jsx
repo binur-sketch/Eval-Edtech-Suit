@@ -134,7 +134,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="md-flex" style={{ alignItems: 'center', height: '100%' }}>
+          <div className="md-flex desktop-nav" style={{ alignItems: 'center', height: '100%' }}>
             <Link to="/" style={navLinkStyle('/')}>Home</Link>
 
             <div className="dropdown-container" style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}>
@@ -198,28 +198,36 @@ const Navbar = () => {
           <button
             className="md-hidden"
             onClick={() => setIsOpen(!isOpen)}
-            style={{ background: 'var(--muted)', width: '42px', height: '42px', border: 'none', borderRadius: '10px', cursor: 'pointer', color: 'var(--secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            aria-label="Toggle Menu"
+            style={{ 
+              background: isOpen ? 'var(--primary-light)' : 'var(--muted)', 
+              width: '42px', height: '42px', border: 'none', 
+              borderRadius: '12px', cursor: 'pointer', 
+              color: isOpen ? 'var(--primary)' : 'var(--secondary)', 
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              transition: 'all 0.3s ease'
+            }}
           >
-            {isOpen ? <Icons.X size={20} /> : <Icons.Menu size={20} />}
+            {isOpen ? <Icons.X size={22} /> : <Icons.Menu size={22} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         <div className={`mobile-menu ${isOpen ? 'active' : ''}`} style={{
           position: 'fixed',
-          top: scrolled ? '75px' : 'var(--nav-height)',
+          top: scrolled ? '65px' : 'var(--nav-height)',
           left: 0,
           width: '100%',
           background: 'white',
-          padding: '2rem',
-          height: scrolled ? 'calc(100dvh - 75px)' : 'calc(100dvh - var(--nav-height))',
+          padding: '1.5rem 1.5rem 4rem',
+          height: `calc(100vh - ${scrolled ? '65px' : 'var(--nav-height)'})`,
           display: isOpen ? 'flex' : 'none',
           flexDirection: 'column',
-          gap: '1.5rem',
+          gap: '1.25rem',
           zIndex: 999,
           overflowY: 'auto',
           borderTop: '1px solid var(--border)',
-          paddingBottom: '4rem'
+          animation: 'fadeIn 0.3s ease-out'
         }}>
           <Link to="/" style={{ fontWeight: '800', color: isActive('/') ? 'var(--primary)' : 'var(--secondary)' }}>Home</Link>
 

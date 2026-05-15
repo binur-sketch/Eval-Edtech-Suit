@@ -119,8 +119,6 @@ const AdminDashboard = () => {
       const payload = { ...editingBlog, slug, status };
       delete payload.views; // Remove views if it exists
       
-      console.log('Saving blog with payload:', payload);
-
       if (editingBlog.id) {
         const { id, ...updateData } = payload;
         const { error } = await supabase
@@ -147,18 +145,19 @@ const AdminDashboard = () => {
   if (!user) return null;
 
   return (
-    <div className="admin-layout" style={{ display: 'flex', minHeight: '100vh', background: '#f8fafc' }}>
+    <div className="admin-layout" style={{ display: 'flex', minHeight: '100vh', background: '#f8fafc', overflowX: 'hidden' }}>
       
       {/* Mobile Toggle */}
       <button 
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className="mobile-menu-toggle"
         style={{ 
-          position: 'fixed', bottom: '2rem', right: '2rem', 
+          position: 'fixed', bottom: '1.5rem', right: '1.5rem', 
           width: '56px', height: '56px', borderRadius: '50%', 
           background: 'var(--primary)', color: 'white', border: 'none', 
           boxShadow: '0 10px 25px rgba(0,0,0,0.2)', zIndex: 1100,
-          display: 'none', alignItems: 'center', justifyContent: 'center'
+          display: 'none', alignItems: 'center', justifyContent: 'center',
+          cursor: 'pointer'
         }}
       >
         {isSidebarOpen ? <Icons.X size={24} /> : <Icons.Menu size={24} />}
@@ -168,7 +167,7 @@ const AdminDashboard = () => {
       {isSidebarOpen && (
         <div 
           onClick={() => setIsSidebarOpen(false)}
-          style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 900, backdropFilter: 'blur(4px)' }}
+          style={{ position: 'fixed', inset: 0, background: 'rgba(15, 23, 42, 0.4)', zIndex: 900, backdropFilter: 'blur(4px)' }}
         />
       )}
 
@@ -202,86 +201,92 @@ const AdminDashboard = () => {
 
       {/* Main Content */}
       <main className="admin-main" style={{ 
-        marginLeft: '280px', flexGrow: 1, padding: 'clamp(1rem, 5vw, 3rem)', minHeight: '100vh', width: '100%',
-        transition: 'margin-left 0.3s ease'
+        marginLeft: '280px', flexGrow: 1, padding: 'clamp(1rem, 5vw, 3rem)', minHeight: '100vh', width: 'calc(100% - 280px)',
+        transition: 'all 0.3s ease'
       }}>
         
         {/* Header */}
-        <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem', flexWrap: 'wrap', gap: '1.5rem' }}>
+        <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1.5rem' }}>
           <div>
-            <h2 style={{ fontSize: '2rem', fontWeight: '800', color: '#0f172a', marginBottom: '0.5rem', letterSpacing: '-0.025em' }}>Blog Management</h2>
-            <p style={{ color: '#64748b', fontSize: '1rem' }}>Welcome back, <span style={{ fontWeight: '600', color: 'var(--primary)' }}>{user.email}</span></p>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', fontWeight: '800', color: '#0f172a', marginBottom: '0.25rem', letterSpacing: '-0.025em' }}>Blog Management</h2>
+            <p style={{ color: '#64748b', fontSize: '0.9375rem' }}>Logged in as <span style={{ fontWeight: '600', color: 'var(--primary)' }}>{user.email}</span></p>
           </div>
           <button className="btn btn-primary" onClick={() => openModal()} style={{ padding: '0.875rem 1.75rem', borderRadius: '0.75rem', fontWeight: '700', boxShadow: '0 10px 15px -3px rgba(14, 165, 164, 0.4)' }}>
-            <Icons.Plus size={20} style={{ marginRight: '0.5rem' }} /> Create New Post
+            <Icons.Plus size={20} /> <span style={{ marginLeft: '0.5rem' }}>Create New Post</span>
           </button>
         </header>
 
         {/* Stats Grid */}
-        <div className="admin-stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+        <div className="admin-stats-grid" style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(200px, 100%, 300px), 1fr))', 
+          gap: '1.25rem', 
+          marginBottom: '2.5rem' 
+        }}>
           {[
             { label: 'Total Blogs', value: blogs.length, icon: <Icons.FileText color="#0ea5a4" />, bg: '#f0fdfa' },
-            { label: 'Published', value: blogs.length, icon: <Icons.CheckCircle color="#10b981" />, bg: '#f0fdf4' },
-            { label: 'Pending', value: 0, icon: <Icons.Clock color="#f59e0b" />, bg: '#fffbeb' },
+            { label: 'Published', value: blogs.filter(b => b.status === 'published').length, icon: <Icons.CheckCircle color="#10b981" />, bg: '#f0fdf4' },
+            { label: 'Drafts', value: blogs.filter(b => b.status === 'draft').length, icon: <Icons.Clock color="#f59e0b" />, bg: '#fffbeb' },
           ].map((stat, i) => (
-            <div key={i} style={{ background: 'white', padding: '1.5rem', borderRadius: '1rem', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: stat.bg, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div key={i} style={{ background: 'white', padding: '1.25rem', borderRadius: '1rem', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', gap: '1rem', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: stat.bg, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {stat.icon}
               </div>
               <div>
-                <p style={{ fontSize: '0.875rem', color: '#64748b', fontWeight: '500' }}>{stat.label}</p>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#0f172a' }}>{stat.value}</h3>
+                <p style={{ fontSize: '0.8125rem', color: '#64748b', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.02em' }}>{stat.label}</p>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '800', color: '#0f172a' }}>{stat.value}</h3>
               </div>
             </div>
           ))}
         </div>
 
         {/* Table Container */}
-        <div style={{ background: 'white', borderRadius: '1rem', border: '1px solid #e2e8f0', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
-          <div style={{ padding: '1.5rem', borderBottom: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-            <h4 style={{ fontWeight: '700' }}>Recent Posts</h4>
+        <div style={{ background: 'white', borderRadius: '1.25rem', border: '1px solid #e2e8f0', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
+          <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+            <h4 style={{ fontWeight: '800', color: '#0f172a' }}>Recent Posts</h4>
             <div style={{ position: 'relative', width: 'min(100%, 300px)' }}>
               <Icons.Search size={16} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} />
-              <input placeholder="Search blogs..." style={{ width: '100%', padding: '0.5rem 1rem 0.5rem 2.5rem', borderRadius: '0.5rem', border: '1px solid #e2e8f0', fontSize: '0.875rem' }} />
+              <input placeholder="Search blogs..." style={{ width: '100%', padding: '0.625rem 1rem 0.625rem 2.5rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '0.875rem', background: '#f8fafc' }} />
             </div>
           </div>
           
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '800px' }}>
+          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '700px' }}>
               <thead style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
                 <tr>
-                  <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Blog Info</th>
-                  <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Category</th>
-                  <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Views</th>
-                  <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Date</th>
-                  <th style={{ textAlign: 'right', padding: '1rem 1.5rem', fontSize: '0.75rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '600' }}>Actions</th>
+                  <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.7rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '700', letterSpacing: '0.05em' }}>Blog Info</th>
+                  <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.7rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '700', letterSpacing: '0.05em' }}>Status</th>
+                  <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.7rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '700', letterSpacing: '0.05em' }}>Views</th>
+                  <th style={{ textAlign: 'left', padding: '1rem 1.5rem', fontSize: '0.7rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '700', letterSpacing: '0.05em' }}>Date</th>
+                  <th style={{ textAlign: 'right', padding: '1rem 1.5rem', fontSize: '0.7rem', textTransform: 'uppercase', color: '#64748b', fontWeight: '700', letterSpacing: '0.05em' }}>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {loading ? (
-                  <tr><td colSpan="5" style={{ textAlign: 'center', padding: '4rem' }}><div className="loader" style={{ margin: '0 auto' }}></div></td></tr>
+                  <tr><td colSpan="5" style={{ textAlign: 'center', padding: '4rem' }}><div style={{ width: '32px', height: '32px', border: '3px solid var(--primary-light)', borderTopColor: 'var(--primary)', borderRadius: '50%', animation: 'spin 0.8s linear infinite', margin: '0 auto' }}></div></td></tr>
                 ) : blogs.length === 0 ? (
                   <tr><td colSpan="5" style={{ textAlign: 'center', padding: '4rem', color: '#64748b' }}>No blogs found. Start by creating one!</td></tr>
                 ) : (
                   blogs.map((blog) => (
                     <tr key={blog.id} style={{ borderBottom: '1px solid #f1f5f9', transition: '0.2s' }} className="table-row-hover">
-                      <td style={{ padding: '1.25rem 1.5rem' }}>
+                      <td style={{ padding: '1rem 1.5rem' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                          <div style={{ width: '48px', height: '48px', borderRadius: '8px', overflow: 'hidden', background: '#f1f5f9', flexShrink: 0 }}>
-                            <img src={blog.image || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=100&auto=format&fit=crop'} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                          <div style={{ width: '44px', height: '44px', borderRadius: '10px', overflow: 'hidden', background: '#f1f5f9', flexShrink: 0 }}>
+                            <img src={blog.image || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=100&auto=format&fit=crop'} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                           </div>
-                          <div style={{ maxWidth: '200px' }}>
-                            <p style={{ fontWeight: '700', color: '#1e293b', marginBottom: '0.25rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{blog.title}</p>
-                            <p style={{ fontSize: '0.75rem', color: '#94a3b8' }}>{blog.author}</p>
+                          <div style={{ maxWidth: '240px' }}>
+                            <p style={{ fontWeight: '700', color: '#1e293b', marginBottom: '0.15rem', fontSize: '0.9375rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{blog.title}</p>
+                            <p style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: '500' }}>{blog.author}</p>
                           </div>
                         </div>
                       </td>
-                      <td style={{ padding: '1.25rem 1.5rem' }}>
+                      <td style={{ padding: '1rem 1.5rem' }}>
                         <span style={{ 
-                          padding: '0.375rem 0.75rem', 
+                          padding: '0.25rem 0.75rem', 
                           borderRadius: '2rem', 
-                          fontSize: '0.75rem', 
-                          fontWeight: '600', 
+                          fontSize: '0.7rem', 
+                          fontWeight: '700', 
+                          textTransform: 'uppercase',
                           background: blog.status === 'published' ? '#f0fdf4' : '#f1f5f9', 
                           color: blog.status === 'published' ? '#166534' : '#475569',
                           border: `1px solid ${blog.status === 'published' ? '#bcf0da' : '#e2e8f0'}`
@@ -289,16 +294,16 @@ const AdminDashboard = () => {
                           {blog.status === 'published' ? 'Published' : 'Draft'}
                         </span>
                       </td>
-                      <td style={{ padding: '1.25rem 1.5rem', color: '#64748b', fontSize: '0.875rem' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                      <td style={{ padding: '1rem 1.5rem', color: '#64748b', fontSize: '0.875rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontWeight: '600' }}>
                           <Icons.Eye size={14} /> {blog.views || 0}
                         </div>
                       </td>
-                      <td style={{ padding: '1.25rem 1.5rem', color: '#64748b', fontSize: '0.875rem' }}>{blog.date ? new Date(blog.date).toLocaleDateString() : 'N/A'}</td>
-                      <td style={{ padding: '1.25rem 1.5rem', textAlign: 'right' }}>
+                      <td style={{ padding: '1rem 1.5rem', color: '#64748b', fontSize: '0.875rem', fontWeight: '500' }}>{blog.date ? new Date(blog.date).toLocaleDateString() : 'N/A'}</td>
+                      <td style={{ padding: '1rem 1.5rem', textAlign: 'right' }}>
                         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem' }}>
-                          <button onClick={() => openModal(blog)} style={{ width: '36px', height: '36px', borderRadius: '8px', border: '1px solid #e2e8f0', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', cursor: 'pointer' }}><Icons.Edit size={16} /></button>
-                          <button onClick={() => handleDelete(blog.id)} style={{ width: '36px', height: '36px', borderRadius: '8px', border: '1px solid #fee2e2', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ef4444', cursor: 'pointer' }}><Icons.Trash2 size={16} /></button>
+                          <button onClick={() => openModal(blog)} title="Edit" style={{ width: '34px', height: '34px', borderRadius: '8px', border: '1px solid #e2e8f0', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', cursor: 'pointer', transition: '0.2s' }}><Icons.Edit size={15} /></button>
+                          <button onClick={() => handleDelete(blog.id)} title="Delete" style={{ width: '34px', height: '34px', borderRadius: '8px', border: '1px solid #fee2e2', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ef4444', cursor: 'pointer', transition: '0.2s' }}><Icons.Trash2 size={15} /></button>
                         </div>
                       </td>
                     </tr>
@@ -308,36 +313,33 @@ const AdminDashboard = () => {
             </table>
           </div>
         </div>
-
       </main>
 
       {/* Editor Modal */}
       {isModalOpen && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(15, 23, 42, 0.7)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1200, padding: 'clamp(0.5rem, 3vw, 1.5rem)' }}>
-          <div style={{ background: 'white', maxWidth: '800px', width: '100%', maxHeight: '95vh', overflowY: 'auto', borderRadius: '1.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', animation: 'slideUp 0.3s ease-out' }}>
-            <div style={{ padding: '1.5rem 2rem', borderBottom: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'white', zIndex: 10 }}>
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(15, 23, 42, 0.7)', backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1200, padding: 'clamp(0.5rem, 3vw, 1.5rem)' }}>
+          <div style={{ background: 'white', maxWidth: '850px', width: '100%', maxHeight: '95vh', overflowY: 'auto', borderRadius: '1.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', animation: 'slideUp 0.3s ease-out' }}>
+            <div style={{ padding: '1.25rem 2rem', borderBottom: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'white', zIndex: 10 }}>
               <div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: '800', color: '#0f172a' }}>{editingBlog.id ? 'Edit Blog Post' : 'Create New Post'}</h3>
               </div>
-              <button onClick={() => setIsModalOpen(false)} style={{ width: '36px', height: '36px', borderRadius: '50%', border: 'none', background: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#64748b' }}><Icons.X size={18} /></button>
+              <button onClick={() => setIsModalOpen(false)} style={{ width: '36px', height: '36px', borderRadius: '50%', border: 'none', background: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#64748b', transition: '0.2s' }}><Icons.X size={18} /></button>
             </div>
             
             <form onSubmit={saveBlog} style={{ padding: '2rem', display: 'grid', gap: '1.5rem' }}>
               
-              {/* Title Section */}
               <div style={{ display: 'grid', gap: '0.75rem' }}>
                 <label style={{ fontWeight: '700', fontSize: '0.875rem', color: '#334155' }}>Post Title</label>
-                <input required placeholder="Enter a catchy title..." value={editingBlog.title} onChange={e => setEditingBlog({...editingBlog, title: e.target.value})} style={{ padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '1rem', width: '100%', outlineColor: 'var(--primary)' }} />
+                <input required placeholder="Enter a catchy title..." value={editingBlog.title} onChange={e => setEditingBlog({...editingBlog, title: e.target.value})} style={{ padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '1rem', width: '100%', outlineColor: 'var(--primary)', background: '#f8fafc' }} />
               </div>
 
-              {/* Grid 2 Columns */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
                 <div style={{ display: 'grid', gap: '0.75rem' }}>
                   <label style={{ fontWeight: '700', fontSize: '0.875rem', color: '#334155' }}>Category</label>
                   <select 
                     value={editingBlog.category} 
                     onChange={e => setEditingBlog({...editingBlog, category: e.target.value})} 
-                    style={{ padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '1rem', width: '100%', background: 'white' }}
+                    style={{ padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '1rem', width: '100%', background: '#f8fafc', cursor: 'pointer' }}
                   >
                     <option>Assessment</option>
                     <option>OMR</option>
@@ -353,11 +355,10 @@ const AdminDashboard = () => {
                 </div>
                 <div style={{ display: 'grid', gap: '0.75rem' }}>
                   <label style={{ fontWeight: '700', fontSize: '0.875rem', color: '#334155' }}>Author</label>
-                  <input required value={editingBlog.author} onChange={e => setEditingBlog({...editingBlog, author: e.target.value})} placeholder="e.g. eVAL Team" style={{ padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '1rem', width: '100%' }} />
+                  <input required value={editingBlog.author} onChange={e => setEditingBlog({...editingBlog, author: e.target.value})} placeholder="e.g. eVAL Team" style={{ padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '1rem', width: '100%', background: '#f8fafc' }} />
                 </div>
               </div>
 
-              {/* Custom Category Input (Only if 'Other' is selected) */}
               {(editingBlog.category === 'Other' || !['Assessment', 'OMR', 'CBT', 'OSM', 'AI Proctoring', 'LMS', 'QPMS', 'Education', 'Security'].includes(editingBlog.category)) && (
                 <div style={{ display: 'grid', gap: '0.75rem', animation: 'slideDown 0.2s ease-out' }}>
                   <label style={{ fontWeight: '700', fontSize: '0.875rem', color: '#334155' }}>Custom Category Name</label>
@@ -365,66 +366,64 @@ const AdminDashboard = () => {
                     placeholder="Enter custom category..." 
                     value={editingBlog.category === 'Other' ? '' : editingBlog.category} 
                     onChange={e => setEditingBlog({...editingBlog, category: e.target.value})} 
-                    style={{ padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '1rem', width: '100%' }} 
+                    style={{ padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '1rem', width: '100%', background: '#f8fafc' }} 
                   />
                 </div>
               )}
 
-              {/* Excerpt */}
               <div style={{ display: 'grid', gap: '0.75rem' }}>
                 <label style={{ fontWeight: '700', fontSize: '0.875rem', color: '#334155' }}>Short Excerpt</label>
-                <textarea rows="2" placeholder="Brief summary for the blog card..." value={editingBlog.excerpt} onChange={e => setEditingBlog({...editingBlog, excerpt: e.target.value})} style={{ padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '0.9375rem', width: '100%', resize: 'vertical' }} />
+                <textarea rows="2" placeholder="Brief summary for the blog card..." value={editingBlog.excerpt} onChange={e => setEditingBlog({...editingBlog, excerpt: e.target.value})} style={{ padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '0.9375rem', width: '100%', resize: 'vertical', background: '#f8fafc' }} />
               </div>
 
-              {/* Image Upload Area */}
               <div style={{ display: 'grid', gap: '0.75rem' }}>
                 <label style={{ fontWeight: '700', fontSize: '0.875rem', color: '#334155' }}>Cover Image</label>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1.5rem', alignItems: 'center' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1.5rem', alignItems: 'center' }}>
                   {editingBlog.image && (
-                    <div style={{ height: '100px', borderRadius: '0.75rem', overflow: 'hidden', border: '2px solid #e2e8f0' }}>
-                      <img src={editingBlog.image} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <div style={{ height: '120px', borderRadius: '0.75rem', overflow: 'hidden', border: '2px solid #e2e8f0' }}>
+                      <img src={editingBlog.image} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                   )}
-                  <label style={{ position: 'relative', border: '2px dashed #cbd5e1', borderRadius: '1rem', padding: '1.5rem', textAlign: 'center', transition: '0.3s', cursor: 'pointer', display: 'block' }} className="upload-zone">
+                  <label style={{ position: 'relative', border: '2px dashed #cbd5e1', borderRadius: '1rem', padding: '2rem', textAlign: 'center', transition: '0.3s', cursor: 'pointer', display: 'block' }}>
                     <input type="file" accept="image/*" onChange={handleImageUpload} style={{ position: 'absolute', inset: 0, opacity: 0, cursor: 'pointer', width: '100%', height: '100%' }} />
                     <div style={{ pointerEvents: 'none' }}>
                       <Icons.Upload size={24} style={{ color: 'var(--primary)', marginBottom: '0.5rem' }} />
-                      <p style={{ fontSize: '0.875rem', fontWeight: '700', color: '#1e293b' }}>{uploading ? 'Uploading...' : 'Upload Image'}</p>
+                      <p style={{ fontSize: '0.875rem', fontWeight: '800', color: '#1e293b' }}>{uploading ? 'Uploading...' : 'Upload Image'}</p>
+                      <p style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '0.25rem' }}>PNG, JPG or WEBP</p>
                     </div>
                   </label>
                 </div>
-                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginTop: '0.5rem' }}>
-                  <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>URL:</span>
-                  <input placeholder="https://..." value={editingBlog.image} onChange={e => setEditingBlog({...editingBlog, image: e.target.value})} style={{ flexGrow: 1, padding: '0.4rem 0.75rem', borderRadius: '0.5rem', border: '1px solid #e2e8f0', fontSize: '0.875rem' }} />
+                <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', marginTop: '0.5rem' }}>
+                  <span style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: '600' }}>OR URL:</span>
+                  <input placeholder="https://..." value={editingBlog.image} onChange={e => setEditingBlog({...editingBlog, image: e.target.value})} style={{ flexGrow: 1, padding: '0.5rem 0.875rem', borderRadius: '0.5rem', border: '1px solid #e2e8f0', fontSize: '0.875rem', background: '#f8fafc' }} />
                 </div>
               </div>
 
-              {/* Content */}
               <div style={{ display: 'grid', gap: '0.75rem' }}>
                 <label style={{ fontWeight: '700', fontSize: '0.875rem', color: '#334155' }}>Blog Content (HTML Supported)</label>
-                <textarea rows="10" placeholder="Write your content here..." value={editingBlog.content} onChange={e => setEditingBlog({...editingBlog, content: e.target.value})} style={{ padding: '1rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '0.9375rem', width: '100%', resize: 'vertical', fontFamily: 'monospace' }} />
+                <textarea rows="10" placeholder="Write your content here..." value={editingBlog.content} onChange={e => setEditingBlog({...editingBlog, content: e.target.value})} style={{ padding: '1rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', fontSize: '0.9375rem', width: '100%', resize: 'vertical', fontFamily: 'monospace', background: '#f8fafc' }} />
               </div>
 
-              <div style={{ display: 'flex', gap: '1rem', position: 'sticky', bottom: 0, background: 'white', padding: '1.5rem 0', borderTop: '1px solid #f1f5f9', flexWrap: 'wrap' }}>
-                <button type="button" onClick={() => setIsModalOpen(false)} style={{ flexGrow: 1, padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', background: 'white', fontWeight: '700', cursor: 'pointer' }}>Cancel</button>
+              <div style={{ display: 'flex', gap: '1rem', position: 'sticky', bottom: 0, background: 'white', padding: '1.5rem 0', borderTop: '1px solid #f1f5f9', flexWrap: 'wrap-reverse' }}>
+                <button type="button" onClick={() => setIsModalOpen(false)} style={{ flex: '1 1 120px', padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', background: 'white', fontWeight: '700', cursor: 'pointer', transition: '0.2s' }}>Cancel</button>
                 
-                {editingBlog.status === 'draft' || !editingBlog.id ? (
+                {(editingBlog.status === 'draft' || !editingBlog.id) && (
                   <button 
                     type="button" 
                     onClick={() => saveBlog(null, 'draft')}
-                    style={{ flexGrow: 1, padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', background: '#f8fafc', fontWeight: '700', cursor: 'pointer' }}
+                    style={{ flex: '1 1 120px', padding: '0.875rem', borderRadius: '0.75rem', border: '1px solid #e2e8f0', background: '#f8fafc', fontWeight: '700', cursor: 'pointer', transition: '0.2s' }}
                   >
-                    Draft
+                    Save Draft
                   </button>
-                ) : null}
+                )}
 
                 <button 
                   type="button" 
                   onClick={() => saveBlog(null, 'published')}
                   className="btn btn-primary" 
-                  style={{ flexGrow: 2, padding: '0.875rem', borderRadius: '0.75rem', fontWeight: '700' }}
+                  style={{ flex: '2 1 200px', padding: '0.875rem', borderRadius: '0.75rem', fontWeight: '700' }}
                 >
-                  {loading ? '...' : (editingBlog.status === 'published' && editingBlog.id ? 'Update' : 'Publish')}
+                  {loading ? 'Processing...' : (editingBlog.status === 'published' && editingBlog.id ? 'Update Post' : 'Publish Post')}
                 </button>
               </div>
             </form>
@@ -432,35 +431,22 @@ const AdminDashboard = () => {
         </div>
       )}
 
-      {/* Global CSS for redone dashboard */}
       <style>{`
         .table-row-hover:hover {
           background-color: #f8fafc !important;
         }
-        .upload-zone:hover {
-          border-color: var(--primary);
-          background: rgba(14, 165, 164, 0.02);
-        }
-        @keyframes slideUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 1024px) {
-          .admin-sidebar {
-            transform: translateX(-100%);
-          }
-          .admin-sidebar.open {
-            transform: translateX(0);
-          }
-          .admin-main {
-            margin-left: 0 !important;
-          }
-          .mobile-menu-toggle {
-            display: flex !important;
-          }
+          .admin-sidebar { transform: translateX(-100%); }
+          .admin-sidebar.open { transform: translateX(0); }
+          .admin-main { margin-left: 0 !important; width: 100% !important; }
+          .mobile-menu-toggle { display: flex !important; }
         }
       `}</style>
     </div>
   );
 };
+
 export default AdminDashboard;

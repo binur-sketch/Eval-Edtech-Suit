@@ -34,7 +34,7 @@ const IndustryVerticals = () => {
     {
       icon: <Icons.Building2 size={32} />,
       title: 'Manufacturing',
-      desc: 'eVAL OMR tracks machinery output using shift-based reports and predefined templates.',
+      desc: 'eVAL OMR leading to inaccurate OEE (Overall Equipment Effectiveness) data and delayed performance audits.',
       stat: '50+ Manufacturing Companies'
     },
 

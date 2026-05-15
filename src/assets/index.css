@@ -825,30 +825,32 @@ select:focus-visible {
 }
 
 /* ============================
-   RESPONSIVE: TABLET (≤1024px)
+   RESPONSIVE UTILITIES
    ============================ */
+
+.mobile-only { display: none !important; }
+.desktop-only { display: block !important; }
 
 @media (max-width: 1024px) {
   .section-padding {
-    padding: 5rem 0;
+    padding: clamp(3rem, 10vw, 5rem) 0;
   }
 
   .card {
-    padding: 2rem;
+    padding: clamp(1.25rem, 4vw, 2rem);
   }
 
   h1 {
-    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 
   h2 {
-    font-size: clamp(1rem, 4vw, 2.25rem);
+    font-size: clamp(1.5rem, 6vw, 2.25rem);
   }
-}
 
-/* ============================
-   RESPONSIVE: TABLET & MOBILE (≤1150px)
-   ============================ */
+  .mobile-only { display: block !important; }
+  .desktop-only { display: none !important; }
+}
 
 @media (max-width: 1150px) {
   :root {
@@ -857,10 +859,6 @@ select:focus-visible {
 
   .container {
     padding: 0 1.5rem;
-  }
-
-  .section-padding {
-    padding: 3.5rem 0;
   }
 
   .md-flex {
@@ -876,51 +874,46 @@ select:focus-visible {
   }
 }
 
-/* ============================
-   RESPONSIVE: SMALL (≤480px)
-   ============================ */
-
-@media (max-width: 480px) {
-  :root {
-    --nav-height: 60px;
-  }
-
+@media (max-width: 768px) {
   .container {
     padding: 0 1.25rem;
   }
 
-  .section-padding {
-    padding: 3rem 0;
+  .two-col {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .desktop-nav {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --nav-height: 65px;
   }
 
   h1 {
-    font-size: clamp(1.75rem, 8vw, 2.15rem);
-    margin-bottom: 0.75rem;
+    font-size: clamp(1.85rem, 10vw, 2.25rem);
+    letter-spacing: -0.02em;
   }
 
   h2 {
-    font-size: clamp(1.25rem, 6vw, 1.6rem);
-    margin-bottom: 0.75rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-  }
-
-  .card {
-    padding: 1.25rem;
-    border-radius: 1rem;
+    font-size: clamp(1.4rem, 8vw, 1.75rem);
   }
 
   .btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.875rem;
     width: 100%;
+    padding: 1rem 1.5rem;
   }
 
-  .two-col {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .section-padding {
+    padding: 3.5rem 0;
   }
 }
 
@@ -942,20 +935,16 @@ select:focus-visible {
   }
 }
 
-.md-flex {
-  display: flex;
-}
-
 /* ============================
    PRINT
    ============================ */
 
 @media print {
-
   .btn,
   nav,
   footer,
-  .badge {
+  .badge,
+  .reading-progress-container {
     display: none !important;
   }
 }
