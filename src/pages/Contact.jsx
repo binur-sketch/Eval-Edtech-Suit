@@ -126,7 +126,7 @@ const Contact = () => {
                     <input name="name" type="text" required value={formData.name} onChange={handleChange} placeholder="e.g. John Doe" />
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div className="grid-cols-2" style={{ gap: '1rem' }}>
                     <div style={{ display: 'grid', gap: '0.5rem' }}>
                       <label style={{ fontSize: '0.8125rem', fontWeight: '700' }}>Email Address</label>
                       <input name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="john@example.com" />

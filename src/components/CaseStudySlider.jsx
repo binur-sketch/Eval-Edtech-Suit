@@ -79,7 +79,7 @@ const CaseStudySlider = () => {
         {/* Header */}
         <div style={{ 
           background: current.color, 
-          padding: '2.5rem 4rem', 
+          padding: 'clamp(1.5rem, 5vw, 2.5rem) clamp(1.25rem, 5vw, 4rem)', 
           display: 'flex', 
           alignItems: 'center', 
           gap: '2rem', 
@@ -118,7 +118,7 @@ const CaseStudySlider = () => {
           </div>
         </div>
 
-        <div style={{ padding: '3rem 4rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem' }}>
+        <div style={{ padding: 'clamp(1.5rem, 5vw, 3rem) clamp(1.25rem, 5vw, 4rem)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)' }}>
           {/* Left Column */}
           <div>
             <h4 style={{ color: current.color, fontSize: '0.75rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1rem' }}>Background</h4>
@@ -162,7 +162,7 @@ const CaseStudySlider = () => {
         {/* Outcome Strip */}
         <div style={{ 
           background: activeIndex === 0 ? 'var(--secondary)' : 'var(--primary)', 
-          padding: '2rem 4rem', 
+          padding: 'clamp(1.5rem, 5vw, 2rem) clamp(1.25rem, 5vw, 4rem)', 
           display: 'flex', 
           alignItems: 'center', 
           gap: '2rem', 

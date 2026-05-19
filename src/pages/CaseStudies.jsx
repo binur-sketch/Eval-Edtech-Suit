@@ -457,7 +457,7 @@ const CaseStudies = () => {
                   <Reveal key={i}>
                     <div className="case-detail-card" style={{
                       background: 'white',
-                      borderRadius: '3rem',
+                      borderRadius: 'clamp(1.5rem, 5vw, 3rem)',
                       overflow: 'hidden',
                       border: '1px solid var(--border)',
                       boxShadow: '0 30px 60px -12px rgba(0,0,0,0.03)'
@@ -465,10 +465,10 @@ const CaseStudies = () => {
                       {/* Card Header */}
                       <div style={{
                         background: c.color,
-                        padding: '2rem 3rem',
+                        padding: 'clamp(1.25rem, 4vw, 2rem) clamp(1.25rem, 5vw, 3rem)',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '2rem',
+                        gap: '1.5rem',
                         flexWrap: 'wrap'
                       }}>
                         <div style={{
@@ -503,7 +503,7 @@ const CaseStudies = () => {
                       </div>
 
                       {/* Card Body */}
-                      <div style={{ padding: '3rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+                      <div style={{ padding: 'clamp(1.25rem, 5vw, 3rem)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)' }}>
                         {/* Left: Background & Points */}
                         <div>
                           <h4 style={{ color: c.color, fontSize: '0.75rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '1.25rem' }}>Background & Context</h4>
@@ -547,11 +547,11 @@ const CaseStudies = () => {
                       {/* Card Footer: Outcomes */}
                       <div style={{
                         background: '#f8fafc',
-                        padding: '2rem 3rem',
+                        padding: 'clamp(1.25rem, 4vw, 2rem) clamp(1.25rem, 5vw, 3rem)',
                         borderTop: '1px solid var(--border)',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '3rem',
+                        gap: '2rem',
                         flexWrap: 'wrap'
                       }}>
                         <div style={{ fontSize: '0.75rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--muted-foreground)' }}>Impact & Outcomes</div>
