@@ -3,32 +3,40 @@ import * as Icons from '@/components/LucideFix';
 
 const PopupBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    // Show banner immediately on load
-    // To ensure it doesn't annoy the user on every single page load, we check sessionStorage
-    const hasSeenBanner = sessionStorage.getItem('eventBannerShown_v4');
-
+    // Show banner only after the image is fully downloaded
+    const hasSeenBanner = sessionStorage.getItem('eventBannerShown_v5');
+    
     if (!hasSeenBanner) {
-      setIsVisible(true);
-      sessionStorage.setItem('eventBannerShown_v4', 'true');
-
-      // Auto close after 30 seconds
-      const timer = setTimeout(() => {
-        setIsVisible(false);
-      }, 30000);
-
-      return () => clearTimeout(timer);
+      const img = new Image();
+      img.src = '/assets/images/event-banner.png';
+      
+      img.onload = () => {
+        setIsReady(true);
+        setIsVisible(true);
+        sessionStorage.setItem('eventBannerShown_v5', 'true');
+        
+        // Auto close after 30 seconds
+        const timer = setTimeout(() => {
+          setIsVisible(false);
+        }, 30000);
+      };
+      
+      return () => {
+        img.onload = null;
+      };
     }
   }, []);
 
-  if (!isVisible) return null;
+  if (!isVisible || !isReady) return null;
 
   return (
     <div style={{
       position: 'fixed',
       inset: 0,
-      backgroundColor: 'rgba(15, 23, 42, 0.85)',
+      backgroundColor: 'rgba(0, 0, 0, 0.7)',
       zIndex: 9999,
       display: 'flex',
       alignItems: 'center',
