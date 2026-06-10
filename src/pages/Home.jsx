@@ -16,6 +16,7 @@ import NewsletterSection from '@/components/NewsletterSection';
 import CaseStudySlider from '@/components/CaseStudySlider';
 import { motion } from 'framer-motion';
 import Reveal from '@/components/common/Reveal';
+import PopupBanner from '@/components/PopupBanner';
 
 
 const Home = () => {
@@ -54,6 +55,7 @@ const Home = () => {
   ];
   return (
     <div className="home-page">
+      <PopupBanner />
       <SEO
         title="Home"
         description="eVAL provides end-to-end examination solutions including OMR software, CBT platforms, AI Proctoring, and LMS for schools, universities, and corporate assessments."
